@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: hexaprep
+Version: 0.1.0
+Requires-Python: >=3.13
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: sqlalchemy>=2
+Requires-Dist: alembic
+Requires-Dist: fsrs
+Requires-Dist: pydantic>=2
+Requires-Dist: uuid6
+Requires-Dist: httpx
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"

@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+sqlalchemy>=2
+alembic
+fsrs
+pydantic>=2
+uuid6
+httpx
+
+[dev]
+pytest
