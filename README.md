@@ -55,7 +55,7 @@ Datos:
 - `data\backups\`: copias de seguridad. Al arrancar se crea una automática si la última tiene 7 días o más. También puedes crear una manual desde Ajustes.
 - `data\exports\`: `weak.json`, `eventos.csv` y el banco exportado.
 
-Para restaurar una copia, ve a Ajustes, sección de copia de seguridad y restauración, y elige el archivo de `data\backups\` que quieres recuperar. Antes de restaurar, haz una copia manual por si acaso.
+Para restaurar, ve a Ajustes y pulsa «Restaurar esta copia»: recupera la última copia que muestra la pantalla, tras pedirte confirmación. La base actual no se pierde: se guarda aparte, junto a `data\hexaprep.db`, con el sufijo `.pre-restore-` y la fecha.
 
 ## Banco de preguntas
 
