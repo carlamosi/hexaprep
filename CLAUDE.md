@@ -10,6 +10,8 @@ App web local de práctica tipo test para Carla Monté Sihuro («Monté» siempr
 
 ## Modelos
 - Esta sesión debe ir en **Sonnet 5.5, esfuerzo medio**. Una sesión no puede cambiarse sola de modelo: para usar otro, lanza un **subagente** con la herramienta Agent y el parámetro `model` (`"opus"` o `"haiku"`) según `docs/MODELOS.md`. No uses `"fable"` salvo un bloqueo real que Opus no resuelva.
+- Al empezar, di en una línea con qué modelo vas. Si no es Sonnet 5.5, avisa a Carla antes de seguir.
+- Si trabajas en un worktree, copia antes `banks/economia/fuentes/` desde la carpeta principal (esos PDF no están en git).
 - Cada subagente recibe solo lo que necesita (rutas de brief, spec y archivos), no el historial.
 
 ## Estilo y calidad
