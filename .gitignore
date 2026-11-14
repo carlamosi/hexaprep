@@ -1,0 +1,12 @@
+data/
+.venv/
+node_modules/
+.superpowers/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+playwright-report/
+test-results/
+.vite/
+banks/*/fuentes/
