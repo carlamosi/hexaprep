@@ -38,3 +38,11 @@ def bank_with(bank: BankFile, **changes_first) -> BankFile:
     data = json.loads(bank.model_dump_json())
     data["preguntas"][0].update(changes_first)
     return BankFile.model_validate(data)
+
+
+def make_bank(base: BankFile, items: list[tuple[str, str, str, int]]) -> BankFile:
+    """Banco con una pregunta por (id, concepto, subtema, dificultad), clonando la primera del ejemplo."""
+    data = json.loads(base.model_dump_json())
+    tpl = data["preguntas"][0]
+    data["preguntas"] = [{**tpl, "id": i, "concepto": c, "subtema": s, "dificultad": d} for i, c, s, d in items]
+    return BankFile.model_validate(data)
