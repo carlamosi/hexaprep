@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api, type AnswerResult, type Confianza, type Letra, type Question } from "../api";
-import { t } from "../i18n";
+import { t, tn } from "../i18n";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
@@ -136,7 +136,10 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
     <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-white p-5 sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <span className="text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
-          {total ? `${answered + 1} ${t("practica.de")} ${total}` : `${answered} ${t("practica.respondidas")}`}
+          {question.tema && question.subtema ? `${question.tema} · ${question.subtema}` : ""}
+        </span>
+        <span className="text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
+          {total ? `${answered + 1} ${t("practica.de")} ${total}` : tn("practica.respondidas", answered)}
         </span>
         {!result && !reported && (
           <details className="relative">
@@ -174,7 +177,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
                 key={c.id}
                 type="button"
                 aria-pressed={confianza === c.id}
-                disabled={locked.current}
+                disabled={chosen !== null}
                 onClick={() => setConfianza(confianza === c.id ? null : c.id)}
                 className={`rounded-full border px-3 py-1 text-sm ${
                   confianza === c.id ? "border-[var(--lila-ink)] bg-[var(--lila-soft)] text-[var(--lila-ink)]" : "border-[var(--rule-2)]"
@@ -208,7 +211,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
                             : "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]"
                     }`}
                   >
-                    <span aria-hidden="true" className="font-semibold text-[var(--lila-ink)]">{LETTERS[i]}</span>
+                    <span aria-hidden="true" className="flex h-[30px] w-[34px] shrink-0 items-center justify-center bg-[var(--lila-soft)] text-sm font-semibold text-[var(--lila-ink)] [clip-path:var(--hex-flat)]">{LETTERS[i]}</span>
                     <span><RichText text={o.texto} /></span>
                   </button>
                 </li>

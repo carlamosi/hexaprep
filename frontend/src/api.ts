@@ -29,6 +29,7 @@ export interface Question {
   pregunta_id: string; concepto_id: string; subtema_id: string; enunciado: string;
   opciones: { letra: Letra; texto: string }[]; orden: Letra[]; dificultad: number;
   ayuda_larga: string | null; fuente_id: string | null; fuente_pagina: number | null; fuente_cara: number | null;
+  tema?: string; subtema?: string;
 }
 export interface SessionState { sesion_id: string; modo: Modo; filtro: Record<string, unknown>; respondidas: string[]; pendiente: string | null }
 export interface AnswerBody {

@@ -130,3 +130,12 @@ def test_reported_questions_can_be_listed_and_loaded_for_editing(client, loaded)
     assert len(content["opciones"]) == 4 and content["correcta"] in "abcd" and content["excluida"] is True
     assert {"enunciado", "explicacion", "ayuda_larga", "dificultad", "version"} <= set(content)
     assert client.get("/api/questions/no-existe").status_code == 404
+
+
+def test_serves_built_frontend_when_dist_exists(paths, tmp_path):
+    dist = tmp_path / "dist"
+    dist.mkdir()
+    (dist / "index.html").write_text("<html><body>HexaPrep</body></html>", encoding="utf-8")
+    with TestClient(create_app(**paths, static_dir=dist)) as c:
+        assert "HexaPrep" in c.get("/").text
+        assert c.get("/api/subjects").status_code == 200  # la API sigue por delante de los estáticos

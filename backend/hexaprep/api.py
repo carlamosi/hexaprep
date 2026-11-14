@@ -8,6 +8,7 @@ from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
@@ -56,10 +57,12 @@ def get_session(request: Request):
         yield s
 
 
-def create_app(db_path: Path | None = None, data_dir: Path | None = None, booklet_dir: Path | None = None) -> FastAPI:
+def create_app(db_path: Path | None = None, data_dir: Path | None = None, booklet_dir: Path | None = None,
+               static_dir: Path | None = None) -> FastAPI:
     data_dir = Path(data_dir or ROOT / "data")
     db_path = Path(db_path or data_dir / "hexaprep.db")
     booklet_dir = Path(booklet_dir or ROOT / "banks" / "economia" / "fuentes")
+    static_dir = Path(static_dir or ROOT / "frontend" / "dist")
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
@@ -282,6 +285,10 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         if found is None:
             raise HTTPException(404, f"No encuentro el PDF {f.archivo} en {booklet_dir}. Copia el booklet en esa carpeta.")
         return FileResponse(found, media_type="application/pdf", content_disposition_type="inline")
+
+    # El frontend compilado va al final: las rutas /api tienen prioridad.
+    if static_dir.is_dir():
+        app.mount("/", StaticFiles(directory=static_dir, html=True), name="frontend")
 
     return app
 

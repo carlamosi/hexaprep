@@ -66,7 +66,8 @@ export function Editor({ preguntaId, asignaturaId, client = api }: { preguntaId:
         setContent({ ...content!, excluida: false });
         setReincluir(false);
       }
-      setMensaje(`${t("editor.version")} ${r.version} ${t("editor.guardada")}`);
+      const soloReincluir = Object.keys(cambios).length === 1 && "excluida" in cambios;
+      setMensaje(soloReincluir ? t("editor.reincluida") : `${t("editor.version")} ${r.version} ${t("editor.guardada")}`);
     } catch (e) {
       setError((e as Error).message);
     }

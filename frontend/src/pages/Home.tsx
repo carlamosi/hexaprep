@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { api, type MapResponse } from "../api";
 import { HexMap } from "../components/HexMap";
 import { Hexagon } from "../components/Hexagon";
-import { t } from "../i18n";
+import { t, tn } from "../i18n";
 
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string };
 
 /** Inicio: solo el panal de la primera asignatura, sin mensajes por días sin usar. */
-export function Home({ onSelectSubtema, onNivel }: { onSelectSubtema?: (id: string) => void; onNivel?: () => void }) {
+export function Home({ onSelectSubtema, onNivel, onPracticar }: { onSelectSubtema?: (id: string) => void; onNivel?: () => void; onPracticar?: () => void }) {
   const [state, setState] = useState<State>({ kind: "loading" });
 
   useEffect(() => {
@@ -37,19 +37,24 @@ export function Home({ onSelectSubtema, onNivel }: { onSelectSubtema?: (id: stri
             <span className="kicker">{t("panal.titulo")}</span>
             <h1>{map.asignatura}</h1>
             <p className="lede">
-              {temas} {t("panal.temas")} · {map.subtemas.length} {t("panal.subtemas")} · {map.hexes.length} {t("panal.conceptos")}
+              {tn("panal.temas", temas)} · {tn("panal.subtemas", map.subtemas.length)} · {tn("panal.conceptos", map.hexes.length)}
             </p>
+          </div>
+          <div className="flex flex-wrap gap-3 sm:ml-auto">
+            {onPracticar && (
+              <button type="button" onClick={onPracticar} className="rounded-[11px] bg-[var(--ink)] px-5 py-2.5 font-semibold text-white shadow-[4px_4px_0_var(--lila)]">
+                {t("home.practicar")}
+              </button>
+            )}
+            {onNivel && (
+              <button type="button" onClick={onNivel} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
+                {t("nivel.boton")}
+              </button>
+            )}
           </div>
         </div>
       </section>
       <HexMap hexes={map.hexes} subtemas={map.subtemas} onSelect={(id) => onSelectSubtema?.(id)} />
-      {onNivel && (
-        <p className="mt-8">
-          <button type="button" onClick={onNivel} className="text-[var(--lila-ink)] underline underline-offset-4">
-            {t("nivel.hacer")}
-          </button>
-        </p>
-      )}
     </main>
   );
 }

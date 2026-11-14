@@ -124,3 +124,9 @@ def test_failed_concept_keeps_spacing_after_a_second_failure(session, bank):
         submit_answer(session, sid, ids[c], ORDEN, letra, None, {})
     q = next_question(session, sid, Filtro(asig))
     assert not clave(session, q).startswith("A")  # el último fallo fue hace 0 respuestas
+
+
+def test_question_out_names_its_tema_and_subtema(session, bank):
+    asig, sid = setup(session, bank, [("q1", "c1", "Mi subtema", 3)])
+    q = next_question(session, sid, Filtro(asig))
+    assert (q.tema, q.subtema) == ("T1 Decisiones", "Mi subtema")

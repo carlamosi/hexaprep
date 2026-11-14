@@ -91,12 +91,21 @@ const es: Dict = {
   "editor.explicacion": "Explicación",
   "editor.ayuda": "Ayuda larga",
   "editor.reincluir": "Volver a incluirla en las estadísticas",
+  "editor.reincluida": "Pregunta incluida de nuevo en las estadísticas.",
   "editor.guardar": "Guardar como versión nueva",
   "editor.version": "Versión",
   "editor.guardada": "guardada",
   "editor.sin_cambios": "Sin cambios que guardar.",
   "editor.exportar": "Exportar banco",
   "editor.exportado": "Banco exportado en",
+  "panal.temas.uno": "tema",
+  "panal.subtemas.uno": "subtema",
+  "panal.conceptos.uno": "concepto",
+  "practica.respondidas.uno": "respondida",
+  "home.practicar": "Practicar",
+  "nivel.boton": "Test de nivel",
+  "practica.libre": "Práctica libre",
+  "practica.terminar": "Terminar sesión",
   "panal.sinAsignaturas": "Todavía no hay ninguna asignatura importada.",
 };
 
@@ -112,4 +121,9 @@ export function setLang(next: string): void {
 /** Texto de la interfaz. Si falta en el idioma activo usa el castellano; si falta del todo, devuelve la clave. */
 export function t(key: string): string {
   return dictionaries[lang][key] ?? es[key] ?? key;
+}
+
+/** «n cosas» con el singular cuando n es 1 (clave del plural + ".uno" para el singular). */
+export function tn(key: string, n: number): string {
+  return `${n} ${n === 1 ? t(`${key}.uno`) : t(key)}`;
 }

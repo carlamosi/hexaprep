@@ -21,7 +21,7 @@
 .lede { color: var(--ink-2); max-width: 58ch; margin: .7rem 0 0; font-size: 1.04rem; }
 .page-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 32px; padding: 44px 0 34px; }
 .page-head .kicker { margin-bottom: 12px; }
-.subject-hero { display: flex; align-items: center; gap: 22px; }
+.subject-hero { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
 .subject-hero .hex-wrap { width: 132px; flex: none; }
 .subject-hero .hex-pct { font-size: 1.9rem; letter-spacing: -.02em; }
 .subject-hero .hex-pct small { font-size: .55em; font-weight: 500; }

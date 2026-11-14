@@ -85,6 +85,7 @@ describe("editor de preguntas", () => {
     await user.click(await screen.findByLabelText("Volver a incluirla en las estadísticas"));
     await user.click(screen.getByRole("button", { name: "Guardar como versión nueva" }));
     expect(client.editQuestion).toHaveBeenCalledWith("p1", { excluida: false });
+    expect(await screen.findByText(/incluida de nuevo/)).toBeInTheDocument();
   });
 
   it("editor shows the API error when the edit is invalid", async () => {
