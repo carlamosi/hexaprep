@@ -1,30 +1,10 @@
-import { useState } from "react";
-import { bookletUrl, type AnswerResult } from "../api";
+import type { AnswerResult } from "../api";
 import { t } from "../i18n";
+import { BookletButton } from "./BookletButton";
 import { RichText } from "./RichText";
 
 /** Feedback breve tipo entrenador, explicación plegada y enlace al booklet. */
 export function Explanation({ result, onNext }: { result: AnswerResult; onNext: () => void }) {
-  const [bookletError, setBookletError] = useState<string | null>(null);
-
-  async function openBooklet() {
-    if (!result.fuente_id) return;
-    const url = bookletUrl(result.fuente_id, result.fuente_cara);
-    setBookletError(null);
-    try {
-      // Se comprueba antes de abrir para poder dar un aviso claro si el PDF no está.
-      const res = await fetch(url, { headers: { Range: "bytes=0-0" } });
-      if (res.ok) {
-        window.open(url, "_blank", "noopener");
-        return;
-      }
-      const data = await res.json().catch(() => null);
-      setBookletError(data && typeof data.detail === "string" ? data.detail : t("practica.booklet_falta"));
-    } catch {
-      setBookletError(t("practica.booklet_falta"));
-    }
-  }
-
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
       <div
@@ -51,13 +31,7 @@ export function Explanation({ result, onNext }: { result: AnswerResult; onNext: 
 
       <div className="flex flex-wrap items-center gap-3">
         {result.fuente_id && result.fuente_pagina && (
-          <button
-            type="button"
-            onClick={openBooklet}
-            className="rounded-[11px] border border-[var(--rule-2)] bg-white px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]"
-          >
-            {t("practica.booklet")} {result.fuente_pagina}
-          </button>
+          <BookletButton fuenteId={result.fuente_id} cara={result.fuente_cara} pagina={result.fuente_pagina} />
         )}
         <button
           type="button"
@@ -67,11 +41,6 @@ export function Explanation({ result, onNext }: { result: AnswerResult; onNext: 
           {t("practica.siguiente")}
         </button>
       </div>
-      {bookletError && (
-        <p role="alert" className="rounded-[11px] bg-[var(--ko-soft)] px-4 py-3 text-[var(--ko)]">
-          {bookletError}
-        </p>
-      )}
     </section>
   );
 }

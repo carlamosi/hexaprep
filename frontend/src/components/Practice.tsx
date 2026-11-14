@@ -17,9 +17,21 @@ interface Props {
   sesionId: string;
   client?: PracticeClient;
   onDone?: () => void;
+  /** Test de nivel: sin feedback entre preguntas, pasa a la siguiente al responder. */
+  sinFeedback?: boolean;
+  /** Si se indica, la cabecera muestra «n de total» en lugar del contador de respondidas. */
+  total?: number;
+  onAnswered?: (question: Question, result: AnswerResult) => void;
 }
 
-export function Practice({ sesionId, client = api, onDone }: Props) {
+export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedback, total, onAnswered }: Props) {
+  // Los callbacks y el cliente van por ref: un padre que los recree en cada render no debe relanzar la carga.
+  const client = useRef(clientProp);
+  client.current = clientProp;
+  const onDoneRef = useRef(onDone);
+  onDoneRef.current = onDone;
+  const onAnsweredRef = useRef(onAnswered);
+  onAnsweredRef.current = onAnswered;
   const [question, setQuestion] = useState<Question | null | undefined>(undefined); // undefined = cargando
   const [chosen, setChosen] = useState<Letra | null>(null);
   const [result, setResult] = useState<AnswerResult | null>(null);
@@ -43,11 +55,11 @@ export function Practice({ sesionId, client = api, onDone }: Props) {
     locked.current = false;
     firstClickAt.current = null;
     try {
-      const q = await client.nextQuestion(sesionId);
+      const q = await client.current.nextQuestion(sesionId);
       if (id !== loadId.current) return;
       if (q === null) {
         setQuestion(null);
-        onDone?.();
+        onDoneRef.current?.();
         return;
       }
       shownAt.current = performance.now();
@@ -55,7 +67,7 @@ export function Practice({ sesionId, client = api, onDone }: Props) {
     } catch {
       if (id === loadId.current) setFailed(true);
     }
-  }, [client, sesionId, onDone]);
+  }, [sesionId]);
 
   useEffect(() => {
     void load();
@@ -70,7 +82,7 @@ export function Practice({ sesionId, client = api, onDone }: Props) {
       firstClickAt.current = now;
       setChosen(letra);
       try {
-        const res = await client.answer({
+        const res = await client.current.answer({
           sesion_id: sesionId,
           pregunta_id: question.pregunta_id,
           orden_opciones: question.orden,
@@ -78,13 +90,18 @@ export function Practice({ sesionId, client = api, onDone }: Props) {
           confianza,
           tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
         });
-        setResult(res);
+        onAnsweredRef.current?.(question, res);
         setAnswered((n) => n + 1);
+        if (sinFeedback) {
+          await load();
+          return;
+        }
+        setResult(res);
       } catch {
         setFailed(true);
       }
     },
-    [client, confianza, question, sesionId],
+    [confianza, load, question, sesionId, sinFeedback],
   );
 
   useEffect(() => {
@@ -107,7 +124,7 @@ export function Practice({ sesionId, client = api, onDone }: Props) {
 
   async function report(motivo: string) {
     if (!question) return;
-    await client.reportQuestion(question.pregunta_id, motivo, sesionId);
+    await client.current.reportQuestion(question.pregunta_id, motivo, sesionId);
     setReported(true);
   }
 
@@ -119,7 +136,7 @@ export function Practice({ sesionId, client = api, onDone }: Props) {
     <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-white p-5 sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <span className="text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
-          {answered} {t("practica.respondidas")}
+          {total ? `${answered + 1} ${t("practica.de")} ${total}` : `${answered} ${t("practica.respondidas")}`}
         </span>
         {!result && !reported && (
           <details className="relative">
