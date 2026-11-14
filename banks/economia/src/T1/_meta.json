@@ -1,0 +1,3 @@
+{"tema": "T1 Decisiones", "prefijo": "eco-t1", "caras": 6, "bloque": "Economía",
+ "fuente": {"nombre": "Economía T1 Decisiones", "archivo": "Economia_T1_Decisiones.pdf"},
+ "lote": {"modelo": "claude-sonnet-5-5", "version_prompt": "v1"}}

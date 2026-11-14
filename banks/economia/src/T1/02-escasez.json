@@ -1,0 +1,307 @@
+{
+ "subtema": "La escasez",
+ "conceptos": [
+  {
+   "nombre": "Escasez física y escasez económica",
+   "pagina": 6,
+   "ayuda": "La escasez nace de la diferencia entre necesidades ilimitadas y recursos limitados. Hay dos tipos que no hay que confundir. La escasez física (o absoluta) es la falta real de recursos básicos para sobrevivir, como alimentos, agua potable o vivienda; afecta sobre todo a países en desarrollo o a regiones en crisis o con desastres naturales, y su ejemplo es una sequía que deja a un pueblo sin agua. La escasez económica (o relativa) es la sensación de que los recursos no bastan para todos nuestros deseos, también los no básicos: dinero finito, tiempo finito y deseos ilimitados. Existe en todas las sociedades, incluso en las más ricas; ejemplo: quieres un móvil nuevo y un viaje, y solo te llega el dinero para uno.",
+   "preguntas": [
+    [
+     1,
+     "¿De qué nace la escasez según el tema?",
+     "De la diferencia entre necesidades ilimitadas y recursos limitados",
+     [
+      "De que los precios de los bienes son demasiado altos",
+      "confunde escasez con precios altos"
+     ],
+     [
+      "De que el Estado reparte mal los recursos",
+      "atribuye la escasez a una causa política"
+     ],
+     [
+      "De que las empresas producen menos de lo que podrían",
+      "atribuye la escasez a la producción"
+     ],
+     "Escasez: necesidades ilimitadas frente a recursos limitados."
+    ],
+    [
+     2,
+     "¿Cuál es el ejemplo de escasez física que da el tema?",
+     "Una sequía que deja a un pueblo sin agua",
+     [
+      "Querer un móvil nuevo y un viaje y tener dinero solo para uno",
+      "es el ejemplo de escasez económica"
+     ],
+     [
+      "No tener tiempo para ver una serie y estudiar",
+      "es una forma de escasez económica"
+     ],
+     [
+      "Un precio muy alto en el supermercado",
+      "no es falta real de recursos básicos"
+     ],
+     "Escasez física: falta real de recursos básicos para sobrevivir. Ejemplo: una sequía."
+    ],
+    [
+     2,
+     "¿Cuál es el ejemplo de escasez económica que da el tema?",
+     "Querer un móvil nuevo y un viaje y tener dinero solo para uno",
+     [
+      "Una sequía que deja a un pueblo sin agua",
+      "es el ejemplo de escasez física"
+     ],
+     [
+      "Un terremoto que destruye viviendas",
+      "es un caso de escasez física por desastre natural"
+     ],
+     [
+      "No tener alimentos suficientes en una región en crisis",
+      "es un caso de escasez física"
+     ],
+     "Escasez económica: los recursos no bastan para todos los deseos, aunque no sean básicos."
+    ],
+    [
+     3,
+     "¿A quién afecta sobre todo la escasez física, según el tema?",
+     "A países en desarrollo y a regiones en crisis o con desastres naturales",
+     [
+      "A todas las sociedades por igual, incluso las más ricas",
+      "describe la escasez económica"
+     ],
+     [
+      "Solo a las personas con bajos ingresos de países ricos",
+      "limita la escasez física a la renta individual"
+     ],
+     [
+      "Solo a quienes no ahorran lo suficiente",
+      "atribuye la escasez física a la conducta individual"
+     ],
+     "La escasez física afecta sobre todo a países en desarrollo y a regiones en crisis o con desastres naturales."
+    ],
+    [
+     3,
+     "¿Cuál de las siguientes frases describe la escasez económica?",
+     "Es la sensación de que los recursos no bastan para todos nuestros deseos, también los no básicos",
+     [
+      "Es la falta real de recursos básicos para sobrevivir",
+      "describe la escasez física"
+     ],
+     [
+      "Es la falta de dinero en un país determinado",
+      "reduce la escasez al dinero"
+     ],
+     [
+      "Es el agotamiento de los recursos naturales",
+      "confunde escasez con agotamiento"
+     ],
+     "Escasez económica o relativa: los recursos (dinero, tiempo) no alcanzan para todos los deseos."
+    ],
+    [
+     4,
+     "Un país rico tiene alimentos, agua y vivienda para todos. ¿Se puede afirmar que no tiene escasez?",
+     "No: carece de escasez física, pero tiene escasez económica porque los deseos siguen siendo ilimitados",
+     [
+      "Sí: sin escasez física no hay ningún tipo de escasez",
+      "niega la escasez económica"
+     ],
+     [
+      "Sí: los países ricos no tienen necesidades por cubrir",
+      "supone que la riqueza elimina los deseos"
+     ],
+     [
+      "No: tiene escasez física porque siempre falta alguna cosa",
+      "confunde faltar algo con escasez física"
+     ],
+     "La escasez económica existe en todas las sociedades, incluso en las más ricas."
+    ],
+    [
+     4,
+     "Una amiga dice que no puede comprarse un viaje y una moto a la vez, y que eso es escasez física. ¿Qué corrección es la adecuada?",
+     "Es escasez económica: no le falta lo básico para sobrevivir, pero sus recursos no alcanzan para todos sus deseos",
+     [
+      "Es correcto: cualquier falta de dinero es escasez física",
+      "confunde falta de dinero con falta de recursos básicos"
+     ],
+     [
+      "No es escasez de ningún tipo, porque la moto no es una necesidad",
+      "niega la escasez cuando los deseos no son básicos"
+     ],
+     [
+      "Es escasez física, porque el dinero es un recurso físico",
+      "cree que el dinero determina el tipo de escasez"
+     ],
+     "La física es la falta de lo básico para sobrevivir. Aquí hay deseos que no caben en el presupuesto: escasez económica."
+    ],
+    [
+     5,
+     "Tras un huracán, una región se queda sin agua potable ni viviendas. Una comerciante de otra región duda entre ampliar su tienda o cambiar de coche. ¿Qué tipo de escasez afecta a cada situación?",
+     "Escasez física en la región afectada y escasez económica en la decisión de la comerciante",
+     [
+      "Escasez económica en las dos, porque en ambos casos faltan recursos",
+      "ignora la diferencia entre falta básica y falta relativa"
+     ],
+     [
+      "Escasez física en las dos, porque ambas son falta de recursos",
+      "trata toda falta de recursos como escasez física y olvida que la económica es relativa a los deseos"
+     ],
+     [
+      "Escasez económica en la región afectada y física en la tienda",
+      "invierte los tipos de escasez"
+     ],
+     "Sin agua ni vivienda tras un desastre: escasez física. Elegir entre dos inversiones con un presupuesto limitado: escasez económica."
+    ],
+    [
+     5,
+     "Un docente dice que la escasez se resolverá cuando todos los países sean ricos. ¿Qué parte de la teoría del tema la contradice?",
+     "La escasez económica existe en todas las sociedades, incluso en las más ricas, porque los deseos son ilimitados",
+     [
+      "La escasez física afecta solo a países en desarrollo",
+      "no contradice nada: solo habla de un tipo de escasez"
+     ],
+     [
+      "Los bienes libres no tienen precio",
+      "es otra clasificación, sobre la abundancia"
+     ],
+     [
+      "La pirámide de Maslow tiene cinco niveles",
+      "es un tema distinto"
+     ],
+     "Aunque desaparezca la escasez física, la económica se mantiene mientras los deseos sean ilimitados."
+    ],
+    [
+     3,
+     "El tema denomina «absoluta» a una de las escaseces. ¿A cuál?",
+     "A la escasez física",
+     [
+      "A la escasez económica",
+      "la económica se llama relativa"
+     ],
+     [
+      "A las dos, porque ambas son escasez",
+      "ignora que cada una tiene su nombre"
+     ],
+     [
+      "A ninguna, porque el tema solo habla de escasez relativa",
+      "ignora la escasez física"
+     ],
+     "Física = absoluta. Económica = relativa."
+    ]
+   ]
+  },
+  {
+   "nombre": "Una escasez universal y relativa",
+   "pagina": 6,
+   "ayuda": "El tema dice que la escasez económica es universal y relativa. Es universal porque todos queremos más de lo que tenemos: no desaparece al hacerse más ricos ni distingue países. Es relativa porque afecta de modo distinto a cada persona según sus preferencias: para una persona la escasez puede estar en el tiempo para sus aficiones y para otra en el dinero para viajar. Lo que unos sienten como falta de recursos, otros ni lo notan. Por eso se llama también escasez relativa.",
+   "preguntas": [
+    [
+     2,
+     "¿Por qué la escasez económica es universal?",
+     "Porque todos queremos más de lo que tenemos",
+     [
+      "Porque afecta igual a todas las personas",
+      "confunde universal con uniforme"
+     ],
+     [
+      "Porque solo existe en los países con mercados abiertos",
+      "limita la universalidad a un tipo de países"
+     ],
+     [
+      "Porque los recursos naturales se están agotando",
+      "confunde escasez con agotamiento"
+     ],
+     "Universal: todos queremos más de lo que tenemos."
+    ],
+    [
+     3,
+     "¿Por qué la escasez económica es relativa?",
+     "Porque afecta de forma distinta a cada persona según sus preferencias",
+     [
+      "Porque solo existe en comparación con otros países",
+      "confunde relativa con comparativa entre países"
+     ],
+     [
+      "Porque depende del precio de cada bien",
+      "liga la escasez al precio"
+     ],
+     [
+      "Porque desaparece si se trabaja más",
+      "supone que el esfuerzo la elimina"
+     ],
+     "Relativa: depende de las preferencias de cada persona."
+    ],
+    [
+     4,
+     "Dos amigos con el mismo sueldo: uno siente que no le llega el dinero y el otro dice que le sobra. ¿Qué rasgo de la escasez económica ilustra la situación?",
+     "Que es relativa: depende de las preferencias de cada persona",
+     [
+      "Que es física: uno de los dos carece de lo básico",
+      "confunde tener menos con carecer de lo básico para sobrevivir (escasez física)"
+     ],
+     [
+      "Que es absoluta: afecta a todos igual",
+      "confunde escasez relativa con escasez absoluta"
+     ],
+     [
+      "Que es un bien libre: no cuesta nada",
+      "confunde escasez con tipo de bien"
+     ],
+     "Con los mismos recursos, quien desea más siente más escasez: es relativa."
+    ],
+    [
+     4,
+     "Una persona millonaria dice que nunca le sobra tiempo para viajar, estudiar y hacer deporte. Con el tema, ¿qué puede afirmarse?",
+     "Tiene escasez económica porque sus deseos superan su tiempo: la escasez es universal",
+     [
+      "No puede tener escasez porque es rica",
+      "supone que la riqueza elimina la escasez"
+     ],
+     [
+      "Tiene escasez física, porque le falta tiempo",
+      "confunde tiempo con recurso básico para sobrevivir"
+     ],
+     [
+      "Es un bien libre, porque el tiempo no tiene precio",
+      "confunde el tiempo con un bien libre"
+     ],
+     "Escasez universal: incluso con mucho dinero, el tiempo y los deseos ilimitados siguen limitando."
+    ],
+    [
+     5,
+     "Una afirmación dice: «Como la escasez es relativa, ya no existe cuando una persona se contenta con poco». ¿Qué matiz del tema es el más correcto?",
+     "Es relativa a las preferencias, pero sigue existiendo mientras haya deseos que no se puedan cubrir con los recursos disponibles",
+     [
+      "Es correcto: si no hay deseos, no hay ninguna escasez de ningún tipo",
+      "ignora que existe además la escasez física"
+     ],
+     [
+      "Es incorrecto: la escasez es la misma para todas las personas",
+      "contradice que sea relativa"
+     ],
+     [
+      "Es incorrecto: la escasez es solo la falta de recursos básicos",
+      "reduce la escasez a la física"
+     ],
+     "La escasez económica depende de los deseos de cada persona, pero la escasez física (falta de lo básico) es un caso aparte."
+    ],
+    [
+     3,
+     "¿Cuál de estas frases describe correctamente las dos características de la escasez económica?",
+     "Universal, porque todos queremos más de lo que tenemos, y relativa, porque depende de las preferencias",
+     [
+      "Universal, porque afecta igual a todos, y relativa, porque cambia con el precio",
+      "convierte universal en uniforme y relativa en precio"
+     ],
+     [
+      "Física, porque falta de lo básico, y absoluta, porque es igual para todos",
+      "mezcla con la escasez física"
+     ],
+     [
+      "Local, porque depende del país, y variable, porque depende del Estado",
+      "inventa características que el tema no menciona"
+     ],
+     "Escasez económica: universal y relativa."
+    ]
+   ]
+  }
+ ]
+}

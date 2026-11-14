@@ -1,0 +1,361 @@
+{
+ "subtema": "Áreas de estudio",
+ "conceptos": [
+  {
+   "nombre": "Microeconomía y macroeconomía",
+   "pagina": 10,
+   "ayuda": "Según la escala de análisis, la economía se divide en dos. La microeconomía (micro significa pequeño) estudia el comportamiento individual de los agentes (familias, consumidores, empresas) y cómo interactúan en mercados concretos: el precio del alquiler en Barcelona, cuánto cobra un supermercado por la leche, si a una empresa le compensa contratar a otro empleado. La macroeconomía (macro significa grande) estudia el comportamiento global de la economía con magnitudes agregadas: PIB, tasa de desempleo, inflación, deuda pública. Ejemplos macro: la tasa de paro de España, la inflación de la zona euro, cuánto crece el PIB este año. Regla: si miras a un agente o un mercado concreto, micro; si miras al conjunto del país, macro.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué estudia la microeconomía?",
+     "El comportamiento individual de los agentes y cómo interactúan en mercados concretos",
+     [
+      "El comportamiento global de la economía con magnitudes agregadas",
+      "describe la macroeconomía"
+     ],
+     [
+      "Solo el comportamiento de las empresas pequeñas",
+      "confunde micro con tamaño de empresa"
+     ],
+     [
+      "Las decisiones del Estado y sus presupuestos",
+      "reduce la micro al Estado"
+     ],
+     "Micro: agentes individuales y mercados concretos."
+    ],
+    [
+     2,
+     "¿Cuál de los siguientes temas es de macroeconomía?",
+     "La tasa de paro de España",
+     [
+      "El precio del alquiler de un piso en Barcelona",
+      "es un mercado concreto: micro"
+     ],
+     [
+      "Cuánto cobra un supermercado por la leche",
+      "es un precio concreto: micro"
+     ],
+     [
+      "Si a una empresa le compensa contratar a otro empleado",
+      "es una decisión de una empresa: micro"
+     ],
+     "Macro: PIB, paro, inflación y deuda pública, magnitudes agregadas."
+    ],
+    [
+     2,
+     "¿Cuál de los siguientes temas es de microeconomía?",
+     "Si a una empresa le compensa contratar a otro empleado",
+     [
+      "La inflación de la zona euro",
+      "es una magnitud agregada: macro"
+     ],
+     [
+      "El crecimiento del PIB este año",
+      "es una magnitud agregada: macro"
+     ],
+     [
+      "La deuda pública de un país",
+      "es una magnitud agregada: macro"
+     ],
+     "Micro: decisiones de agentes concretos, como una empresa."
+    ],
+    [
+     3,
+     "Un economista analiza cuánto ha subido el precio de la vivienda en toda España el último año y qué efecto tiene en el consumo de las familias en general. ¿De qué área es?",
+     "De la macroeconomía, porque trabaja con magnitudes de toda la economía",
+     [
+      "De la microeconomía, porque habla de las familias",
+      "confunde familias con micro"
+     ],
+     [
+      "De la microeconomía, porque trata de un solo mercado",
+      "ignora que son magnitudes agregadas"
+     ],
+     [
+      "De ninguna, porque no mide el PIB",
+      "cree que macro es solo el PIB"
+     ],
+     "Magnitudes de toda la economía son macro; un mercado o agente concreto, micro."
+    ],
+    [
+     3,
+     "¿Qué significan los prefijos micro y macro?",
+     "Micro significa pequeño y macro, grande",
+     [
+      "Micro significa individual y macro, público",
+      "da significados ajenos"
+     ],
+     [
+      "Micro significa antiguo y macro, moderno",
+      "da significados ajenos"
+     ],
+     [
+      "Micro significa privado y macro, estatal",
+      "da significados ajenos"
+     ],
+     "Micro = pequeño; macro = grande."
+    ],
+    [
+     4,
+     "Una política que busca bajar la tasa de desempleo de un país, ¿de qué rama se ocupa?",
+     "De la macroeconomía, porque la tasa de desempleo es una magnitud agregada",
+     [
+      "De la microeconomía, porque el desempleo afecta a personas",
+      "confunde personas con escala individual"
+     ],
+     [
+      "De la microeconomía, porque trata de empresas",
+      "ignora que es una magnitud agregada"
+     ],
+     [
+      "De la economía normativa únicamente",
+      "confunde escala con tipo de análisis"
+     ],
+     "El desempleo del conjunto del país se estudia con la macroeconomía."
+    ],
+    [
+     4,
+     "Un estudio analiza por qué la leche cuesta distinto en dos supermercados de una misma ciudad. ¿De qué rama es?",
+     "De la microeconomía, porque estudia agentes y precios de mercados concretos",
+     [
+      "De la macroeconomía, porque habla de precios",
+      "cree que precios implica macro"
+     ],
+     [
+      "De la macroeconomía, porque compara dos supermercados",
+      "cree que comparar implica macro"
+     ],
+     [
+      "De ninguna, porque no estudia el PIB",
+      "cree que macro es solo el PIB"
+     ],
+     "Precios y agentes concretos: microeconomía."
+    ],
+    [
+     5,
+     "¿Cuál de estos pares de ejemplos corresponde respectivamente a micro y macro?",
+     "Cuánto cobra un supermercado por la leche; cuánto crece el PIB este año",
+     [
+      "Cuánto crece el PIB este año; la inflación de la zona euro",
+      "ambos son macro"
+     ],
+     [
+      "El precio del alquiler en Barcelona; si a una empresa le compensa contratar",
+      "ambos son micro"
+     ],
+     [
+      "La deuda pública; la tasa de paro",
+      "ambos son macro"
+     ],
+     "Supermercado y leche: mercado concreto (micro). PIB: magnitud agregada (macro)."
+    ]
+   ]
+  },
+  {
+   "nombre": "Economía positiva y normativa",
+   "pagina": 10,
+   "ayuda": "Según el tipo de análisis, la economía puede ser positiva o normativa. La economía positiva describe la realidad tal como es; se basa en hechos contrastables y no incluye juicios de valor. Ejemplo: «Un aumento del impuesto sobre el tabaco reduce su consumo un 10 %», porque se puede medir comparando el consumo antes y después de la subida. La economía normativa plantea cómo debería ser la realidad; se basa en opiniones, valores éticos o ideologías políticas. Ejemplo: «El Gobierno debería subir el salario mínimo para reducir la pobreza», porque depende de valores y otra persona podría defender lo contrario. Para distinguirlas pregunta: ¿se puede comprobar con datos? Si sí, positiva; si se opina, normativa. Palabras pista: positiva usa reduce, aumenta, un 10 %; normativa usa debería, hay que, es justo.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué describe la economía positiva?",
+     "La realidad tal como es, con hechos contrastables y sin juicios de valor",
+     [
+      "Cómo debería ser la realidad, según valores éticos",
+      "describe la economía normativa"
+     ],
+     [
+      "Las opiniones de los economistas",
+      "confunde con opinión"
+     ],
+     [
+      "Solo las políticas del Gobierno",
+      "reduce la positiva a política económica"
+     ],
+     "Positiva: lo que es. Normativa: lo que debería ser."
+    ],
+    [
+     2,
+     "¿Cuál de las siguientes afirmaciones es positiva?",
+     "Un aumento del impuesto sobre el tabaco reduce su consumo un 10 %",
+     [
+      "El Gobierno debería subir el salario mínimo para reducir la pobreza",
+      "usa debería: es normativa"
+     ],
+     [
+      "Es justo que los ricos paguen más impuestos",
+      "incluye un juicio de valor"
+     ],
+     [
+      "Hay que prohibir la publicidad de bebidas azucaradas",
+      "usa hay que: es normativa"
+     ],
+     "Positiva: se puede comprobar con datos (consumo antes y después)."
+    ],
+    [
+     2,
+     "¿Cuál de las siguientes afirmaciones es normativa?",
+     "El Gobierno debería subir el salario mínimo para reducir la pobreza",
+     [
+      "El paro en España subió un 2 % el año pasado",
+      "es un hecho contrastable"
+     ],
+     [
+      "La inflación de la zona euro fue del 3 %",
+      "es un hecho contrastable"
+     ],
+     [
+      "Los precios del alquiler aumentaron un 5 % en Barcelona",
+      "es un hecho contrastable"
+     ],
+     "Normativa: dice cómo debería ser y depende de valores."
+    ],
+    [
+     3,
+     "¿Qué pregunta ayuda a distinguir una afirmación positiva de una normativa?",
+     "¿Se puede comprobar con datos?",
+     [
+      "¿Tiene números?",
+      "una afirmación normativa también puede incluir números"
+     ],
+     [
+      "¿Quién la dice?",
+      "confunde el criterio de verificación con la autoría de la frase"
+     ],
+     [
+      "¿Habla del Gobierno?",
+      "confunde el tipo de análisis con el tema de la frase"
+     ],
+     "Positiva: se puede comprobar con datos. Normativa: se opina."
+    ],
+    [
+     3,
+     "¿Qué palabras suelen indicar una afirmación normativa?",
+     "Debería, hay que, es justo",
+     [
+      "Reduce, aumenta, un 10 %",
+      "son palabras pista de la positiva"
+     ],
+     [
+      "Aumentó, disminuyó, subió",
+      "son palabras de hechos medibles"
+     ],
+     [
+      "Es, fue, será",
+      "son verbos descriptivos, propios de la afirmación positiva (lo que es)"
+     ],
+     "Normativa: debería, hay que, es justo."
+    ],
+    [
+     4,
+     "Una afirmación dice: «Subir el IVA en un 2 % es injusto». ¿Cómo se clasifica?",
+     "Normativa, porque incluye un juicio de valor (injusto)",
+     [
+      "Positiva, porque incluye una cifra (2 %)",
+      "confunde incluir un número con ser positiva"
+     ],
+     [
+      "Positiva, porque habla de impuestos",
+      "confunde el tema con el tipo de análisis"
+     ],
+     [
+      "Ni positiva ni normativa, porque habla de un impuesto",
+      "confunde el tema de la frase con su tipo de análisis"
+     ],
+     "Tener un número no la hace positiva: «injusto» es un juicio de valor."
+    ],
+    [
+     4,
+     "«Si el precio de un producto sube, la cantidad que se compra baja». ¿Cómo se clasifica?",
+     "Positiva, porque se puede contrastar con datos de compras",
+     [
+      "Normativa, porque habla de lo que ocurre en los mercados",
+      "confunde describir con opinar"
+     ],
+     [
+      "Normativa, porque no incluye una cifra",
+      "cree que sin cifra es normativa"
+     ],
+     [
+      "Ni positiva ni normativa, porque es muy general",
+      "no admite generalidad como criterio"
+     ],
+     "Describe una relación observable y comprobable: es positiva."
+    ],
+    [
+     4,
+     "¿Por qué la afirmación «el Gobierno debería subir el salario mínimo para reducir la pobreza» es normativa?",
+     "Porque depende de valores, y otra persona podría defender lo contrario",
+     [
+      "Porque no se refiere a ninguna medida concreta",
+      "se refiere a una medida concreta"
+     ],
+     [
+      "Porque contiene cifras muy elevadas",
+      "no contiene cifras"
+     ],
+     [
+      "Porque la dice el Gobierno",
+      "no depende de quién la dice"
+     ],
+     "Depende de valores éticos o ideológicos: no se comprueba con datos."
+    ],
+    [
+     5,
+     "Un analista dice: «La subida del salario mínimo ha reducido el empleo juvenil un 3 %, por lo que habría que revertirla». ¿Cómo se clasifican sus dos partes?",
+     "La primera es positiva (dato contrastable) y la segunda es normativa (habría que)",
+     [
+      "Las dos son positivas, porque llevan una cifra",
+      "ignora que «habría que» es normativa"
+     ],
+     [
+      "Las dos son normativas, porque hablan de política",
+      "ignora que la primera es un hecho"
+     ],
+     [
+      "La primera es normativa y la segunda es positiva",
+      "invierte la clasificación"
+     ],
+     "El dato del 3 % es contrastable (positiva); «habría que revertirla» es una recomendación (normativa)."
+    ],
+    [
+     5,
+     "Dos economistas discrepan: uno dice que un impuesto reduce el consumo de tabaco y otro que debería subir aunque no lo reduzca. ¿Qué tipo de desacuerdo hay?",
+     "Uno es sobre hechos (positivo) y otro sobre valores (normativo)",
+     [
+      "Los dos son normativos, porque hablan de impuestos",
+      "cree que hablar de impuestos hace normativas las dos afirmaciones"
+     ],
+     [
+      "Los dos son positivos, porque hablan del tabaco",
+      "cree que hablar del tabaco hace positivas las dos afirmaciones"
+     ],
+     [
+      "Ninguno, porque las dos afirmaciones pueden ser ciertas",
+      "confunde verdad con tipo de análisis"
+     ],
+     "Lo primero se verifica con datos; lo segundo depende de valores."
+    ],
+    [
+     3,
+     "¿Cuál es una ventaja práctica de distinguir entre economía positiva y normativa?",
+     "Saber si un desacuerdo se resuelve con datos o depende de valores",
+     [
+      "Saber qué afirmaciones son verdaderas y cuáles falsas",
+      "confunde positiva con verdadera"
+     ],
+     [
+      "Saber qué afirmaciones favorecen al Gobierno",
+      "ajeno al criterio"
+     ],
+     [
+      "Saber cuántas cifras contiene un texto",
+      "criterio irrelevante"
+     ],
+     "Las afirmaciones positivas se contrastan con datos; las normativas dependen de valores."
+    ]
+   ]
+  }
+ ]
+}

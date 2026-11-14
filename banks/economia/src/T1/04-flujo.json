@@ -1,0 +1,343 @@
+{
+ "subtema": "Flujo circular de la renta",
+ "conceptos": [
+  {
+   "nombre": "El flujo circular: agentes y circuitos",
+   "pagina": 9,
+   "ayuda": "El flujo circular de la renta es un modelo simplificado de cómo circulan el dinero y los bienes y servicios entre familias, empresas y el Estado (el tercer agente). Hay dos circuitos superpuestos que van en sentidos contrarios. El flujo real: las familias aportan factores de producción a las empresas y las empresas entregan bienes y servicios a las familias. El flujo monetario: las empresas pagan a las familias por los factores (salarios, rentas...) y las familias pagan a las empresas con su gasto en consumo. Regla práctica: por cada flujo real hay un flujo de dinero en dirección contraria. Es un esquema simplificado, no una descripción exacta de toda la economía.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué agentes aparecen en el modelo del flujo circular del tema?",
+     "Familias, empresas y Estado",
+     [
+      "Familias, bancos y extranjero",
+      "añade agentes que el esquema del tema no incluye"
+     ],
+     [
+      "Empresas, Estado y sindicatos",
+      "omite a las familias"
+     ],
+     [
+      "Familias y empresas únicamente",
+      "olvida al Estado como tercer agente"
+     ],
+     "Agentes: familias, empresas y Estado (3.er agente)."
+    ],
+    [
+     2,
+     "¿Qué circula en el flujo real?",
+     "Factores de producción y bienes y servicios",
+     [
+      "Dinero en forma de salarios y gasto",
+      "describe el flujo monetario"
+     ],
+     [
+      "Impuestos y subvenciones del Estado",
+      "confunde con el sector público"
+     ],
+     [
+      "Solo bienes y servicios",
+      "olvida los factores"
+     ],
+     "Flujo real: factores y bienes y servicios. Flujo monetario: dinero en sentido contrario."
+    ],
+    [
+     2,
+     "¿Qué circula en el flujo monetario?",
+     "Dinero: pagos por los factores y gasto en consumo",
+     [
+      "Factores y bienes y servicios",
+      "describe el flujo real"
+     ],
+     [
+      "Solo salarios",
+      "olvida el gasto en consumo y otras retribuciones"
+     ],
+     [
+      "Solo gasto de las familias",
+      "olvida los pagos por factores"
+     ],
+     "Flujo monetario: pagos por factores (salarios, rentas...) y gasto en consumo."
+    ],
+    [
+     3,
+     "¿En qué dirección circula el dinero respecto de los factores y los bienes?",
+     "En sentido contrario a ellos",
+     [
+      "En el mismo sentido que ellos",
+      "supone que se mueven juntos"
+     ],
+     [
+      "No circula, porque el flujo real lo sustituye",
+      "niega el flujo monetario"
+     ],
+     [
+      "Solo circula de empresas a familias",
+      "olvida el gasto en consumo"
+     ],
+     "Los dos circuitos van en sentidos contrarios: el dinero compensa lo que se entrega."
+    ],
+    [
+     3,
+     "Una familia aporta trabajo a una empresa. ¿Qué recibe a cambio, según el esquema?",
+     "Un pago (salario) en el flujo monetario",
+     [
+      "Bienes y servicios, que son el pago del factor trabajo",
+      "mezcla el flujo real de bienes con el pago de factores"
+     ],
+     [
+      "Un impuesto del Estado",
+      "introduce un agente que no interviene en este intercambio"
+     ],
+     [
+      "Un factor de producción de la empresa",
+      "confunde lo recibido con lo entregado"
+     ],
+     "Entrega trabajo (flujo real) y recibe un salario (flujo monetario)."
+    ],
+    [
+     4,
+     "Una familia compra un coche a una empresa. ¿Qué flujos se producen?",
+     "Un flujo real de bienes (coche) de la empresa a la familia y un flujo monetario (gasto en consumo) de la familia a la empresa",
+     [
+      "Un flujo real de dinero de la familia a la empresa",
+      "mezcla real y monetario"
+     ],
+     [
+      "Un flujo monetario de la empresa a la familia",
+      "invierte el sentido del dinero"
+     ],
+     [
+      "Solo un flujo de factores de producción",
+      "olvida el consumo"
+     ],
+     "El coche va de la empresa a la familia; el dinero del gasto va de la familia a la empresa."
+    ],
+    [
+     4,
+     "¿Quién es el tercer agente del modelo del flujo circular del tema?",
+     "El Estado",
+     [
+      "Los bancos",
+      "no figura en el esquema del tema"
+     ],
+     [
+      "Los sindicatos",
+      "no figura en el esquema del tema"
+     ],
+     [
+      "El mercado exterior",
+      "no figura en el esquema del tema"
+     ],
+     "Familias, empresas y Estado (3.er agente)."
+    ],
+    [
+     4,
+     "¿Por qué se dice que son dos circuitos superpuestos?",
+     "Porque factores y bienes circulan en un sentido y el dinero en el contrario, a la vez",
+     [
+      "Porque hay dos tipos de familias y dos de empresas",
+      "inventa una duplicidad de agentes"
+     ],
+     [
+      "Porque uno circula en España y otro en el extranjero",
+      "inventa una división geográfica"
+     ],
+     [
+      "Porque el flujo real y el monetario circulan en el mismo sentido",
+      "contradice el esquema"
+     ],
+     "Los dos circuitos (real y monetario) se dan a la vez y en sentidos contrarios."
+    ],
+    [
+     5,
+     "Una afirmación dice: «Si las familias dejan de gastar en consumo, las empresas siguen produciendo igual porque el flujo real no cambia». ¿Qué problema tiene según el modelo?",
+     "Que ignora que el gasto en consumo es parte del flujo monetario que paga a las empresas; sin él, las empresas pierden ingresos",
+     [
+      "Ninguno, porque el flujo real es independiente del monetario",
+      "no ve la relación entre ambos flujos"
+     ],
+     [
+      "Que olvida que el Estado produce todos los bienes",
+      "atribuye al Estado un papel que no tiene"
+     ],
+     [
+      "Que confunde factores con bienes",
+      "no es el error de la frase"
+     ],
+     "Los dos flujos se sostienen mutuamente: sin gasto en consumo, las empresas no reciben el dinero que remunera los factores."
+    ],
+    [
+     5,
+     "En el esquema, ¿cuál de estos pares es un flujo real y su correspondiente flujo monetario?",
+     "Trabajo de las familias a las empresas y salarios de las empresas a las familias",
+     [
+      "Salarios de las empresas a las familias y trabajo de las empresas a las familias",
+      "invierte quién aporta cada cosa"
+     ],
+     [
+      "Gasto en consumo de las familias y bienes de las familias a las empresas",
+      "invierte el sentido del flujo real"
+     ],
+     [
+      "Bienes de las empresas a las familias y salarios de las familias a las empresas",
+      "mezcla flujos y sentidos"
+     ],
+     "Factores van de familias a empresas (real); los pagos por ellos, de empresas a familias (monetario)."
+    ]
+   ]
+  },
+  {
+   "nombre": "Factores de producción y su retribución",
+   "pagina": 9,
+   "ayuda": "Los factores de producción son los recursos que se usan para producir y cada uno recibe una retribución: la tierra (recursos naturales como suelo, minerales o agua) se retribuye con renta o alquiler; el trabajo (esfuerzo físico o mental humano) con salario; el capital (bienes duraderos para producir: maquinaria, instalaciones, herramientas) con interés; y la iniciativa empresarial (organizar los demás factores y asumir riesgos) con beneficio. Truco: Tierra, renta; Trabajo, salario; Capital, interés; Iniciativa, beneficio. Ejemplos: una finca agrícola es tierra, una médica es trabajo, un tractor es capital y fundar una startup es iniciativa empresarial.",
+   "preguntas": [
+    [
+     1,
+     "¿Cómo se retribuye el factor trabajo?",
+     "Con un salario",
+     [
+      "Con una renta",
+      "es la retribución de la tierra"
+     ],
+     [
+      "Con un interés",
+      "es la retribución del capital"
+     ],
+     [
+      "Con un beneficio",
+      "es la retribución de la iniciativa empresarial"
+     ],
+     "Trabajo, salario."
+    ],
+    [
+     1,
+     "¿Cómo se retribuye el factor tierra?",
+     "Con una renta o alquiler",
+     [
+      "Con un salario",
+      "es la retribución del trabajo"
+     ],
+     [
+      "Con un interés",
+      "es la retribución del capital"
+     ],
+     [
+      "Con un beneficio",
+      "es la retribución de la iniciativa empresarial"
+     ],
+     "Tierra, renta (o alquiler)."
+    ],
+    [
+     2,
+     "¿Qué retribución recibe el capital?",
+     "Interés",
+     [
+      "Salario",
+      "es la del trabajo"
+     ],
+     [
+      "Renta",
+      "es la de la tierra"
+     ],
+     [
+      "Beneficio",
+      "es la de la iniciativa empresarial"
+     ],
+     "Capital, interés."
+    ],
+    [
+     2,
+     "¿Cuál de los siguientes ejemplos es capital como factor de producción?",
+     "Un tractor o los servidores de una web",
+     [
+      "Una finca agrícola",
+      "es tierra"
+     ],
+     [
+      "Una médica",
+      "es trabajo"
+     ],
+     [
+      "Fundar una startup",
+      "es iniciativa empresarial"
+     ],
+     "Capital: bienes duraderos para producir (maquinaria, instalaciones, herramientas)."
+    ],
+    [
+     3,
+     "¿Qué factor consiste en organizar los demás factores y asumir riesgos?",
+     "La iniciativa empresarial",
+     [
+      "El capital",
+      "aporta bienes duraderos, no organiza"
+     ],
+     [
+      "El trabajo",
+      "aporta esfuerzo, no asume el riesgo de organizar"
+     ],
+     [
+      "La tierra",
+      "aporta recursos naturales"
+     ],
+     "Iniciativa empresarial: organizar y asumir riesgos. Se retribuye con beneficio."
+    ],
+    [
+     3,
+     "Una persona fundó una startup, contrató equipo y asumió el riesgo del proyecto. ¿Qué retribución le corresponde por su función de iniciativa empresarial?",
+     "Beneficio",
+     [
+      "Salario",
+      "retribuye el trabajo"
+     ],
+     [
+      "Interés",
+      "retribuye el capital"
+     ],
+     [
+      "Renta",
+      "retribuye la tierra"
+     ],
+     "Iniciativa empresarial, beneficio."
+    ],
+    [
+     4,
+     "Un agricultor alquila una finca y paga una cuota anual al propietario. ¿Qué factor y retribución se identifican en el pago?",
+     "Tierra, retribuida con una renta o alquiler",
+     [
+      "Capital, retribuido con interés",
+      "confunde finca con capital"
+     ],
+     [
+      "Trabajo, retribuido con salario",
+      "confunde finca con trabajo"
+     ],
+     [
+      "Iniciativa empresarial, retribuida con beneficio",
+      "confunde alquilar con emprender"
+     ],
+     "La finca es tierra y su retribución es la renta o alquiler."
+    ],
+    [
+     5,
+     "Una panadera presta 20.000 euros para comprar un horno a su hermano, que monta un negocio. A cambio él le paga un porcentaje anual del préstamo. ¿Qué factor aporta ella y cómo se retribuye?",
+     "Aporta capital y recibe un interés",
+     [
+      "Aporta trabajo y recibe un salario",
+      "no aporta esfuerzo sino bienes o dinero para producir"
+     ],
+     [
+      "Aporta tierra y recibe una renta",
+      "no aporta recursos naturales"
+     ],
+     [
+      "Aporta iniciativa empresarial y recibe un beneficio",
+      "no organiza ni asume el riesgo del negocio"
+     ],
+     "El capital (aquí, el dinero que financia el horno) se retribuye con interés."
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,476 @@
+{
+ "subtema": "Indicadores e impuestos",
+ "conceptos": [
+  {
+   "nombre": "Indicadores macroeconómicos",
+   "pagina": 17,
+   "ayuda": "Los indicadores macroeconómicos sirven para saber cómo evoluciona la economía de un país (producción, empleo, precios, coste del dinero) y ayudan al Estado a decidir su política económica. PIB (Producto Interior Bruto): valor de todos los bienes y servicios finales producidos dentro de un país durante un período, normalmente un año; mide el tamaño y el nivel de actividad de la economía; lo publica el INE y se compara con el año anterior. Tasa de paro: porcentaje de personas desempleadas que buscan trabajo activamente respecto a la población activa; se calcula con la EPA (Encuesta de Población Activa) del INE. IPC (Índice de Precios de Consumo): refleja la evolución de los precios de una cesta de bienes y servicios que consumen los hogares y permite calcular la inflación; lo publica el INE cada mes y se usa, por ejemplo, para actualizar las pensiones. Tipo de interés: precio que se paga por usar dinero prestado durante un período; mide el coste de pedir prestado y lo que se gana por ahorrar o prestar; el Banco Central Europeo fija los tipos oficiales de la zona euro y afectan a las hipotecas; si bajan, pedir préstamos es más barato y puede impulsarse el consumo y la inversión.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es el PIB?",
+     "El valor de todos los bienes y servicios finales producidos dentro de un país durante un período, normalmente un año",
+     [
+      "El valor de todo lo que poseen los ciudadanos de un país",
+      "confunde producción con riqueza acumulada"
+     ],
+     [
+      "El total de impuestos que recauda el Estado en un año",
+      "confunde PIB con ingresos públicos"
+     ],
+     [
+      "La suma de las exportaciones de un país",
+      "reduce el PIB al comercio exterior"
+     ],
+     "PIB: producción final dentro de un país en un período."
+    ],
+    [
+     2,
+     "¿Qué mide el PIB?",
+     "El tamaño y el nivel de actividad de una economía",
+     [
+      "El nivel de desempleo",
+      "es la tasa de paro"
+     ],
+     [
+      "La evolución de los precios",
+      "es el IPC"
+     ],
+     [
+      "El coste del dinero",
+      "es el tipo de interés"
+     ],
+     "El PIB mide el tamaño y el nivel de actividad."
+    ],
+    [
+     2,
+     "¿Qué es la tasa de paro?",
+     "El porcentaje de personas desempleadas que buscan trabajo activamente respecto a la población activa",
+     [
+      "El porcentaje de la población total que no tiene empleo",
+      "usa la población total en vez de la activa"
+     ],
+     [
+      "El número de personas que cobran el paro",
+      "confunde desempleo con prestación"
+     ],
+     [
+      "El porcentaje de jóvenes sin estudios",
+      "confunde con otro indicador"
+     ],
+     "Tasa de paro: desempleados que buscan trabajo entre la población activa."
+    ],
+    [
+     3,
+     "¿Qué encuesta del INE se utiliza para calcular la tasa de paro?",
+     "La EPA, Encuesta de Población Activa",
+     [
+      "El IPC",
+      "mide los precios"
+     ],
+     [
+      "El PIB trimestral",
+      "mide la producción"
+     ],
+     [
+      "Los registros del SEPE",
+      "confunde la encuesta del INE con los registros de prestaciones del SEPE"
+     ],
+     "El paro se calcula con la EPA del INE."
+    ],
+    [
+     3,
+     "¿Qué refleja el IPC?",
+     "La evolución de los precios de una cesta de bienes y servicios que consumen habitualmente los hogares, y permite calcular la inflación",
+     [
+      "La evolución de los salarios de los hogares",
+      "confunde precios con salarios"
+     ],
+     [
+      "El valor de la producción de un país",
+      "es el PIB"
+     ],
+     [
+      "El precio del dinero prestado",
+      "es el tipo de interés"
+     ],
+     "IPC: evolución de los precios de la cesta de la compra; sirve para calcular la inflación."
+    ],
+    [
+     3,
+     "¿Para qué se usa el IPC, por ejemplo, según el tema?",
+     "Para actualizar las pensiones",
+     [
+      "Para fijar los tipos oficiales de la zona euro",
+      "los fija el Banco Central Europeo"
+     ],
+     [
+      "Para calcular el PIB",
+      "confunde el IPC con el cálculo de la producción"
+     ],
+     [
+      "Para medir el paro",
+      "confunde el IPC con la medición del desempleo"
+     ],
+     "El IPC se usa, por ejemplo, para actualizar las pensiones."
+    ],
+    [
+     3,
+     "¿Qué es el tipo de interés?",
+     "El precio que se paga por usar dinero prestado durante un período determinado",
+     [
+      "El precio de un bien en el mercado",
+      "lo confunde con un precio de bien"
+     ],
+     [
+      "El porcentaje de impuestos sobre los ingresos",
+      "lo confunde con un impuesto"
+     ],
+     [
+      "La variación anual de los precios",
+      "lo confunde con la inflación"
+     ],
+     "Tipo de interés: precio del dinero prestado."
+    ],
+    [
+     4,
+     "Si bajan los tipos de interés, ¿qué ocurre según el tema?",
+     "Pedir préstamos es más barato y puede impulsarse el consumo y la inversión",
+     [
+      "Pedir préstamos es más caro y baja el consumo",
+      "invierte el efecto"
+     ],
+     [
+      "Ahorrar resulta más rentable y se frena el consumo",
+      "invierte el efecto sobre el ahorro y el consumo"
+     ],
+     [
+      "Baja el PIB de forma automática",
+      "extrae una consecuencia que el tema no recoge"
+     ],
+     "Con tipos más bajos, el crédito es más barato y puede aumentar el consumo y la inversión."
+    ],
+    [
+     4,
+     "¿Quién fija los tipos de interés oficiales de la zona euro y a qué afectan, por ejemplo?",
+     "El Banco Central Europeo; afectan, por ejemplo, a las hipotecas",
+     [
+      "El INE; afectan a las pensiones",
+      "el INE publica estadísticas"
+     ],
+     [
+      "El Gobierno español; afectan al IPC",
+      "no los fija el Gobierno español"
+     ],
+     [
+      "El SEPE; afectan al paro",
+      "el SEPE gestiona prestaciones"
+     ],
+     "El BCE fija los tipos oficiales; afectan a las hipotecas."
+    ]
+   ]
+  },
+  {
+   "nombre": "Cálculos con indicadores: proporción, tasa de variación y puntos porcentuales",
+   "pagina": 18,
+   "ayuda": "Hay tres cálculos para comparar datos y se elige según qué comparas y qué unidad tiene el dato. Proporción: comparas dos países (o dos datos) en el mismo año; P = x / y, resultado en veces; pon el más grande arriba. Ejemplo: PIB total 2025, Alemania entre España: 4.190.000 / 1.631.000 = 2,57 veces. Tasa de variación: un mismo dato en dos años; (x2 menos x1) dividido entre x1, por 100, resultado en %. Ejemplo: PIB de España 2024 a 2025: (1.631.000 menos 1.585.000) / 1.585.000 por 100 = +2,90 %. Puntos porcentuales: un dato que ya es un porcentaje (paro, inflación, tipos) en dos años; pp = x2 (%) menos x1 (%); se resta, no se divide. Ejemplo: paro de España 2024 a 2025: 10,6 % menos 11,2 % = -0,6 pp. Trampa de examen: puntos porcentuales no es lo mismo que porcentaje. Inflación de España: 2,4 % en 2024 y 2,8 % en 2025: diferencia +0,4 pp, tasa de variación +16,7 %. Truco: escribe siempre la unidad del resultado.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué cálculo conviene para comparar dos países en el mismo año?",
+     "La proporción (x entre y, en veces)",
+     [
+      "La tasa de variación",
+      "compara un mismo dato en dos años"
+     ],
+     [
+      "Los puntos porcentuales",
+      "se usan cuando el dato ya es un porcentaje"
+     ],
+     [
+      "La suma de los dos datos",
+      "no es un cálculo del tema"
+     ],
+     "Proporción: dos países o datos en el mismo año; resultado en veces."
+    ],
+    [
+     2,
+     "El PIB del país A es 3.000.000 y el del país B es 1.200.000. ¿Cuántas veces mayor es el de A?",
+     "2,5 veces",
+     [
+      "1,8 veces",
+      "resta en lugar de dividir"
+     ],
+     [
+      "0,4 veces",
+      "pone el dato menor arriba"
+     ],
+     [
+      "150 %",
+      "da la tasa de variación (1,5) en lugar de la proporción"
+     ],
+     "P = 3.000.000 / 1.200.000 = 2,5 veces."
+    ],
+    [
+     3,
+     "El PIB de un país pasa de 800.000 a 840.000 millones. ¿Cuál es su tasa de variación?",
+     "+5 %",
+     [
+      "+40 %",
+      "confunde la diferencia absoluta con un porcentaje"
+     ],
+     [
+      "+4,8 %",
+      "divide entre el dato final en lugar del inicial"
+     ],
+     [
+      "+0,05 %",
+      "olvida multiplicar por 100"
+     ],
+     "(840.000 menos 800.000) / 800.000 por 100 = +5 %."
+    ],
+    [
+     3,
+     "El paro baja del 12 % al 10 %. ¿Cómo se calcula la variación en puntos porcentuales y cuánto es?",
+     "Restando: 10 % menos 12 % = -2 pp",
+     [
+      "Dividiendo: (10 menos 12) / 12 = -16,7 pp",
+      "aplica la tasa de variación y llama pp al resultado"
+     ],
+     [
+      "Restando: 10 menos 12 = -2 %",
+      "usa % en lugar de pp"
+     ],
+     [
+      "Dividiendo: 10 / 12 = 0,83 veces",
+      "calcula una proporción"
+     ],
+     "Dato que ya es %: se resta. pp = 10 menos 12 = -2 pp."
+    ],
+    [
+     3,
+     "¿Cuál debe ser la unidad del resultado en cada cálculo, según el truco del tema?",
+     "Veces en la proporción, % en la tasa de variación y pp en un dato que ya era un %",
+     [
+      "% en la proporción, pp en la tasa de variación y veces en los puntos porcentuales",
+      "reparte mal las unidades"
+     ],
+     [
+      "Siempre % en los tres cálculos",
+      "ignora que cada cálculo tiene su unidad"
+     ],
+     [
+      "Siempre pp porque son datos económicos",
+      "ignora que cada cálculo tiene su unidad"
+     ],
+     "Proporción: veces. Tasa de variación: %. Puntos porcentuales: pp."
+    ],
+    [
+     4,
+     "¿Por qué no se divide al calcular la variación en puntos porcentuales?",
+     "Porque el dato ya es un porcentaje y se compara por diferencia: x2 menos x1",
+     [
+      "Porque dividir daría siempre un valor negativo",
+      "cree que dividir da siempre negativo, lo que no explica por qué se resta"
+     ],
+     [
+      "Porque los puntos porcentuales son más exactos",
+      "atribuye la resta a una mayor exactitud y no a que el dato ya es un porcentaje"
+     ],
+     [
+      "Porque solo se divide en el cálculo de la proporción",
+      "no explica por qué en pp se resta"
+     ],
+     "pp = x2 (%) menos x1 (%): se resta, no se divide."
+    ],
+    [
+     4,
+     "La inflación pasa del 2,4 % al 2,8 %. ¿Qué expresiones son correctas?",
+     "Subió 0,4 pp y su tasa de variación es +16,7 %",
+     [
+      "Subió 0,4 % y su tasa de variación es +0,4 pp",
+      "intercambia las unidades"
+     ],
+     [
+      "Subió 16,7 pp y su tasa de variación es +0,4 %",
+      "intercambia las unidades"
+     ],
+     [
+      "Subió 0,4 pp y su tasa de variación es +14,3 %",
+      "divide entre el dato final"
+     ],
+     "Diferencia: 2,8 menos 2,4 = +0,4 pp. Tasa de variación: 0,4 / 2,4 por 100 = +16,7 %."
+    ],
+    [
+     5,
+     "El PIB de España pasó de 1.585.000 a 1.631.000 millones. ¿Cuál es la tasa de variación, redondeada a un decimal?",
+     "+2,9 %",
+     [
+      "+2,8 %",
+      "divide entre el dato final en lugar del inicial"
+     ],
+     [
+      "+46 %",
+      "confunde la diferencia absoluta (46.000 millones) con un porcentaje"
+     ],
+     [
+      "+2,9 pp",
+      "usa pp en un dato que no era un porcentaje"
+     ],
+     "(1.631.000 menos 1.585.000) / 1.585.000 por 100 = +2,9 %."
+    ],
+    [
+     5,
+     "El paro de España pasó del 11,2 % al 10,6 %. Un periodista dice: «El paro bajó un 0,6 %». ¿Qué corrección es adecuada?",
+     "Debería decir que bajó 0,6 puntos porcentuales; en tasa de variación el descenso es del 5,4 %",
+     [
+      "Es correcto: la diferencia entre dos porcentajes se expresa en %",
+      "confunde pp con %"
+     ],
+     [
+      "Debería decir que bajó 5,7 pp",
+      "mezcla la tasa de variación con pp y divide entre el dato final"
+     ],
+     [
+      "Debería decir que bajó 11,2 pp",
+      "toma el dato inicial como resultado"
+     ],
+     "pp = 10,6 menos 11,2 = -0,6 pp. Tasa de variación: -0,6 / 11,2 por 100 = -5,4 %."
+    ]
+   ]
+  },
+  {
+   "nombre": "Los impuestos: directos e indirectos",
+   "pagina": 19,
+   "ayuda": "Los impuestos son cantidades de dinero que personas y empresas están obligadas a pagar al Estado según la ley. Con ellos se financian los servicios públicos (educación, sanidad, pensiones, infraestructuras), el Estado del Bienestar, y se redistribuye la renta. Impuestos directos: gravan directamente la renta o la riqueza de personas y empresas, es decir, lo que ganas o tienes. IRPF (Impuesto sobre la Renta de las Personas Físicas): la renta de las personas, como el salario. Impuesto sobre Sociedades: los beneficios de empresas y otras sociedades. Impuesto sobre el Patrimonio: el patrimonio neto de determinadas personas físicas. Impuestos indirectos: gravan el consumo o determinadas operaciones, lo que gastas. IVA (Impuesto sobre el Valor Añadido): el consumo de bienes y servicios, como el IVA incluido al comprar un móvil (tipos del 21 %, 10 % y 4 %). Impuestos especiales: el consumo de determinados productos, como alcohol, tabaco o hidrocarburos. ITPAJD (Transmisiones Patrimoniales y Actos Jurídicos Documentados): determinadas transmisiones de bienes y actos jurídicos, como la compra de una vivienda de segunda mano.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es un impuesto?",
+     "Una cantidad de dinero que personas y empresas están obligadas a pagar al Estado según la ley",
+     [
+      "Un pago voluntario al Estado por un servicio concreto",
+      "confunde impuesto con tasa voluntaria"
+     ],
+     [
+      "Una multa por incumplir una norma",
+      "confunde impuesto con sanción"
+     ],
+     [
+      "Un préstamo que se hace al Estado",
+      "confunde impuesto con deuda"
+     ],
+     "Impuestos: pagos obligatorios al Estado según la ley."
+    ],
+    [
+     2,
+     "¿Para qué sirven los impuestos según el tema?",
+     "Para financiar los servicios públicos y el Estado del Bienestar y para redistribuir la renta",
+     [
+      "Para que el Estado obtenga beneficios como una empresa",
+      "confunde impuestos con beneficio empresarial"
+     ],
+     [
+      "Para fijar los precios de los bienes básicos",
+      "confunde los impuestos con una herramienta de fijación de precios"
+     ],
+     [
+      "Para sustituir a las empresas privadas",
+      "cree que los impuestos sirven para sustituir a las empresas privadas"
+     ],
+     "Los impuestos financian servicios públicos y redistribuyen la renta."
+    ],
+    [
+     2,
+     "¿Cuál es la diferencia entre impuestos directos e indirectos?",
+     "Los directos gravan lo que ganas o tienes y los indirectos lo que gastas",
+     [
+      "Los directos gravan lo que gastas y los indirectos lo que ganas",
+      "invierte la distinción"
+     ],
+     [
+      "Los directos los paga el Estado y los indirectos las empresas",
+      "inventa quién paga"
+     ],
+     [
+      "Los directos son voluntarios y los indirectos obligatorios",
+      "ambos son obligatorios"
+     ],
+     "Directos: renta o riqueza. Indirectos: consumo u operaciones."
+    ],
+    [
+     3,
+     "¿Qué grava el IRPF?",
+     "La renta de las personas físicas, como el salario de una trabajadora",
+     [
+      "El consumo de bienes y servicios",
+      "es el IVA"
+     ],
+     [
+      "Los beneficios de las empresas",
+      "es el impuesto sobre Sociedades"
+     ],
+     [
+      "La compra de una vivienda de segunda mano",
+      "es el ITPAJD"
+     ],
+     "IRPF: renta de las personas físicas."
+    ],
+    [
+     3,
+     "¿Cuál de los siguientes es un impuesto directo?",
+     "El impuesto sobre Sociedades, que grava el beneficio de las empresas",
+     [
+      "El IVA",
+      "es un impuesto indirecto"
+     ],
+     [
+      "Los impuestos especiales sobre tabaco y alcohol",
+      "son indirectos"
+     ],
+     [
+      "El ITPAJD",
+      "es un impuesto indirecto"
+     ],
+     "Directos: IRPF, Sociedades y Patrimonio."
+    ],
+    [
+     3,
+     "¿Qué grava el ITPAJD?",
+     "Determinadas transmisiones de bienes y actos jurídicos, como la compra de una vivienda de segunda mano",
+     [
+      "El salario de las personas",
+      "es el IRPF"
+     ],
+     [
+      "El consumo de alcohol y tabaco",
+      "son los impuestos especiales"
+     ],
+     [
+      "El patrimonio neto de las personas",
+      "es el impuesto sobre el Patrimonio"
+     ],
+     "ITPAJD: transmisiones patrimoniales y actos jurídicos documentados."
+    ],
+    [
+     4,
+     "Una persona cobra un salario, compra tabaco y adquiere un móvil. ¿Cuántos de los impuestos implicados (IRPF, impuestos especiales, IVA) son indirectos?",
+     "Dos: los impuestos especiales y el IVA; el IRPF es directo",
+     [
+      "Los tres, porque los paga la misma persona",
+      "ignora la distinción entre ganar y gastar"
+     ],
+     [
+      "Uno: solo el IVA",
+      "olvida que los impuestos especiales también gravan el consumo"
+     ],
+     [
+      "Ninguno, porque todos los paga la persona",
+      "ignora la distinción entre ganar y gastar"
+     ],
+     "IRPF grava lo que ganas (directo). IVA y especiales gravan lo que gastas (indirectos)."
+    ]
+   ]
+  }
+ ]
+}

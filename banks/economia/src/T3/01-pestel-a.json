@@ -1,0 +1,415 @@
+{
+ "subtema": "El entorno y el análisis PESTEL",
+ "conceptos": [
+  {
+   "nombre": "Entorno general y entorno específico",
+   "pagina": 3,
+   "ayuda": "El entorno empresarial es el conjunto de factores externos que afectan al funcionamiento, el desarrollo y la competitividad de una empresa. Es importante porque influye en sus decisiones estratégicas, su posicionamiento y su capacidad para alcanzar objetivos; conocerlo permite diseñar estrategias y tomar decisiones informadas. Se divide en dos. El entorno general o macroentorno son los factores que afectan a la empresa de manera indirecta y son comunes para todas las organizaciones de una economía o sociedad; se analiza con el análisis PESTEL. Ejemplo: si el BCE sube los tipos de interés, se encarecen los préstamos para constructoras, bancos, tiendas y fábricas. El entorno específico o microentorno es el sector concreto en el que compite la empresa, con factores más directos y particulares; se analiza con las 5 fuerzas de Porter. Ejemplo: si Digi baja sus tarifas, Movistar, Vodafone y Orange tienen que responder, pero a una panadería no le afecta. Para recordarlo: general es lo que le pasa a todo el país y afecta a todas las empresas; específico es lo que le pasa a tu sector y afecta a ti y a tus rivales.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es el entorno empresarial?",
+     "El conjunto de factores externos que afectan al funcionamiento, el desarrollo y la competitividad de una empresa",
+     [
+      "El conjunto de recursos internos que posee una empresa",
+      "confunde entorno con recursos propios"
+     ],
+     [
+      "El conjunto de empleados y directivos de la empresa",
+      "confunde entorno con organización interna"
+     ],
+     [
+      "El mercado donde la empresa vende únicamente sus productos",
+      "reduce el entorno a un solo aspecto"
+     ],
+     "Entorno: factores externos que condicionan a la empresa."
+    ],
+    [
+     2,
+     "¿Por qué es importante que una empresa conozca su entorno?",
+     "Porque le permite diseñar estrategias y tomar decisiones informadas sobre su dirección y competitividad",
+     [
+      "Porque le permite controlar todos los factores externos",
+      "confunde conocer con controlar"
+     ],
+     [
+      "Porque sustituye el análisis de sus propios recursos",
+      "no sustituye el análisis interno"
+     ],
+     [
+      "Porque obliga a todas las empresas a competir",
+      "confunde conocer el entorno con obligar a competir"
+     ],
+     "Conocer el entorno permite estrategias y decisiones informadas."
+    ],
+    [
+     2,
+     "¿Qué es el entorno general o macroentorno?",
+     "Los factores que afectan a la empresa de forma indirecta y son comunes para todas las organizaciones de una economía o sociedad",
+     [
+      "El sector concreto en el que compite la empresa",
+      "describe el entorno específico"
+     ],
+     [
+      "Los factores internos de la empresa",
+      "confunde entorno con interior"
+     ],
+     [
+      "Los clientes y proveedores directos de la empresa",
+      "describe el microentorno"
+     ],
+     "Entorno general: indirecto, global y común a todas las empresas."
+    ],
+    [
+     2,
+     "¿Con qué herramienta se analiza el entorno general?",
+     "El análisis PESTEL",
+     [
+      "Las 5 fuerzas de Porter",
+      "es la herramienta del microentorno"
+     ],
+     [
+      "El análisis del balance contable",
+      "no analiza el entorno"
+     ],
+     [
+      "La pirámide de Maslow",
+      "analiza las necesidades, no el entorno empresarial"
+     ],
+     "Entorno general: PESTEL."
+    ],
+    [
+     2,
+     "¿Con qué herramienta se analiza el entorno específico o microentorno?",
+     "Las 5 fuerzas de Porter",
+     [
+      "El análisis PESTEL",
+      "es la herramienta del macroentorno"
+     ],
+     [
+      "El flujo circular de la renta",
+      "es un modelo macroeconómico"
+     ],
+     [
+      "El cálculo de la tasa de variación",
+      "es un cálculo de indicadores"
+     ],
+     "Entorno específico: 5 fuerzas de Porter."
+    ],
+    [
+     3,
+     "Si el BCE sube los tipos de interés, se encarecen los préstamos para constructoras, bancos, tiendas y fábricas. ¿Qué tipo de factor es?",
+     "De entorno general: afecta a todas las empresas del país",
+     [
+      "De entorno específico: afecta solo a un sector",
+      "confunde el efecto sobre todo el país con el que afecta a un solo sector"
+     ],
+     [
+      "Interno: depende de las decisiones de la empresa",
+      "es externo a la empresa"
+     ],
+     [
+      "De entorno específico: depende de los clientes",
+      "no depende de clientes concretos"
+     ],
+     "Lo que le pasa a todo el país es entorno general."
+    ],
+    [
+     3,
+     "Si Digi baja sus tarifas, Movistar, Vodafone y Orange tienen que responder, pero a una panadería no le afecta. ¿Qué tipo de factor es?",
+     "De entorno específico: afecta solo al sector de las telecomunicaciones",
+     [
+      "De entorno general: afecta a todas las empresas",
+      "confunde lo que afecta a un sector con lo que afecta a todas las empresas"
+     ],
+     [
+      "De entorno general: lo decide el Gobierno",
+      "no lo decide el Gobierno"
+     ],
+     [
+      "Interno: depende de la panadería",
+      "es externo y de otro sector"
+     ],
+     "Lo que le pasa a un sector concreto es entorno específico."
+    ],
+    [
+     4,
+     "¿Qué regla ayuda a distinguir el entorno general del específico?",
+     "General es lo que le pasa a todo el país y afecta a todas las empresas; específico es lo que le pasa a tu sector y afecta a ti y a tus rivales",
+     [
+      "General es lo que decide la empresa; específico lo que decide el Estado",
+      "confunde entorno general y específico con decisiones de empresa y de Estado"
+     ],
+     [
+      "General afecta a una sola empresa; específico a todas",
+      "invierte los alcances"
+     ],
+     [
+      "General se mide con Porter y específico con PESTEL",
+      "invierte las herramientas"
+     ],
+     "Regla: general, a todo el país; específico, a tu sector."
+    ],
+    [
+     4,
+     "Una subida del salario mínimo afecta a todas las empresas con empleados de un país. ¿Qué tipo de entorno es y con qué herramienta se analiza?",
+     "Entorno general, con el análisis PESTEL",
+     [
+      "Entorno específico, con las 5 fuerzas de Porter",
+      "confunde lo que afecta a todo el país con lo que afecta a un solo sector"
+     ],
+     [
+      "Entorno específico, con el análisis PESTEL",
+      "mezcla entorno y herramienta"
+     ],
+     [
+      "Entorno general, con las 5 fuerzas de Porter",
+      "usa la herramienta del microentorno"
+     ],
+     "Afecta a todas las empresas: general, PESTEL."
+    ],
+    [
+     5,
+     "Una empresa de ropa online observa que su principal rival ha bajado los precios y que se ha aprobado una ley de protección de datos. ¿Cómo se clasifican ambos factores?",
+     "La bajada del rival es del entorno específico y la ley es del entorno general",
+     [
+      "Los dos son del entorno general",
+      "ignora que el rival es de su sector"
+     ],
+     [
+      "Los dos son del entorno específico",
+      "ignora que la ley afecta a todas las empresas"
+     ],
+     [
+      "La bajada del rival es del entorno general y la ley del específico",
+      "invierte la clasificación"
+     ],
+     "El rival es microentorno; la ley de datos afecta a todas las empresas: macroentorno."
+    ]
+   ]
+  },
+  {
+   "nombre": "PESTEL: factores políticos, económicos y sociales",
+   "pagina": 4,
+   "ayuda": "El análisis PESTEL analiza el entorno general y evalúa factores en seis áreas, una por letra: Políticos, Económicos, Sociales, Tecnológicos, Ecológicos y Legales. P (Políticos): estabilidad gubernamental, políticas fiscales, leyes y regulaciones comerciales y laborales; ejemplos: cambios en el IVA o en el impuesto de sociedades que cambian precios y beneficios, aranceles entre países que encarecen exportar aceite, vino o coches, un Gobierno sin presupuestos aprobados que retrasa inversiones públicas. E (Económicos): inflación, tipo de interés, crecimiento económico, PIB, nivel de empleo y poder adquisitivo (variables macroeconómicas); ejemplos: si el BCE sube los tipos, las hipotecas se encarecen y se venden menos viviendas; con inflación alta crecen las ventas de marca blanca; con más paro, cae el consumo en restaurantes y viajes. S (Sociales): cambios demográficos, valores, cultura, estilos de vida y educación de la población; ejemplos: el envejecimiento impulsa residencias, farmacias y seguros de salud, la vida sana impulsa gimnasios y productos sin azúcar, la conciencia ecológica hace crecer la ropa de segunda mano (Vinted).",
+   "preguntas": [
+    [
+     1,
+     "¿Qué significan las letras de PESTEL?",
+     "Políticos, Económicos, Sociales, Tecnológicos, Ecológicos y Legales",
+     [
+      "Productivos, Empresariales, Sectoriales, Tecnológicos, Estratégicos y Laborales",
+      "inventa significados"
+     ],
+     [
+      "Precios, Empleo, Salarios, Tipos, Exportaciones y Leyes",
+      "inventa significados"
+     ],
+     [
+      "Políticos, Éticos, Sociales, Técnicos, Económicos y Locales",
+      "cambia el significado de varias letras"
+     ],
+     "PESTEL: Políticos, Económicos, Sociales, Tecnológicos, Ecológicos y Legales."
+    ],
+    [
+     2,
+     "¿Qué factores abarca la P de Políticos?",
+     "Estabilidad gubernamental, políticas fiscales, leyes y regulaciones comerciales y laborales",
+     [
+      "Inflación, tipos de interés y PIB",
+      "son factores económicos"
+     ],
+     [
+      "Demografía, valores y cultura",
+      "son factores sociales"
+     ],
+     [
+      "Innovación e inversión en I+D",
+      "son factores tecnológicos"
+     ],
+     "P: estabilidad del Gobierno, política fiscal, leyes y normas comerciales y laborales."
+    ],
+    [
+     2,
+     "¿Qué factores abarca la E de Económicos?",
+     "Inflación, tipo de interés, crecimiento económico, PIB, nivel de empleo y poder adquisitivo",
+     [
+      "Estabilidad del Gobierno y política fiscal",
+      "son factores políticos"
+     ],
+     [
+      "Cambios demográficos y estilos de vida",
+      "son factores sociales"
+     ],
+     [
+      "Leyes de sostenibilidad y cambio climático",
+      "son factores ecológicos"
+     ],
+     "E: variables macroeconómicas."
+    ],
+    [
+     2,
+     "¿Qué factores abarca la S de Sociales?",
+     "Cambios demográficos, valores, cultura, estilos de vida y educación de la población",
+     [
+      "Inflación, tipos de interés y empleo",
+      "son factores económicos"
+     ],
+     [
+      "Innovación tecnológica y velocidad del cambio",
+      "son factores tecnológicos"
+     ],
+     [
+      "Protección del consumidor y derechos laborales",
+      "son factores legales"
+     ],
+     "S: demografía, valores, cultura, estilos de vida y educación."
+    ],
+    [
+     3,
+     "Un cambio en el IVA o en el impuesto de sociedades que modifica precios y beneficios es un factor…",
+     "Político",
+     [
+      "Económico",
+      "confunde decisión del Gobierno con variable macroeconómica"
+     ],
+     [
+      "Legal",
+      "confunde decisión política con norma ya vigente"
+     ],
+     [
+      "Social",
+      "confunde una decisión fiscal del Gobierno con un cambio de valores sociales"
+     ],
+     "Una decisión del Gobierno sobre impuestos es política (P)."
+    ],
+    [
+     3,
+     "Los aranceles entre países encarecen exportar aceite, vino o coches. ¿A qué letra de PESTEL corresponden?",
+     "P, Políticos",
+     [
+      "E, Económicos",
+      "confunde política comercial con variable macroeconómica"
+     ],
+     [
+      "L, Legales",
+      "confunde decisión del Gobierno con norma sectorial"
+     ],
+     [
+      "T, Tecnológicos",
+      "confunde una política comercial con un avance tecnológico"
+     ],
+     "Los aranceles son decisiones políticas sobre comercio."
+    ],
+    [
+     3,
+     "Si el BCE sube los tipos de interés, las hipotecas se encarecen y se venden menos viviendas. ¿Qué factor PESTEL es?",
+     "Económico",
+     [
+      "Político",
+      "confunde un tipo de interés con una decisión del Gobierno"
+     ],
+     [
+      "Legal",
+      "confunde una variable económica con una norma del sector"
+     ],
+     [
+      "Social",
+      "confunde una variable económica con un cambio de valores"
+     ],
+     "El tipo de interés es una variable económica (E)."
+    ],
+    [
+     3,
+     "Con inflación alta crecen las ventas de marca blanca en los supermercados. ¿Qué factor PESTEL actúa?",
+     "Económico: la inflación afecta al poder adquisitivo",
+     [
+      "Social: cambia el estilo de vida de los consumidores",
+      "confunde efecto con causa"
+     ],
+     [
+      "Político: el Gobierno ha decidido subir precios",
+      "confunde la inflación con una decisión del Gobierno"
+     ],
+     [
+      "Legal: hay una norma sobre marcas blancas",
+      "confunde el efecto en las ventas con una norma legal"
+     ],
+     "La inflación es una variable económica."
+    ],
+    [
+     3,
+     "El envejecimiento de la población impulsa residencias, farmacias y seguros de salud. ¿Qué factor PESTEL es?",
+     "Social, por el cambio demográfico",
+     [
+      "Económico, porque aumenta el gasto",
+      "confunde efecto con causa"
+     ],
+     [
+      "Político, porque el Estado lo regula",
+      "confunde un cambio demográfico con una decisión política"
+     ],
+     [
+      "Tecnológico, porque hay más innovación sanitaria",
+      "confunde un cambio demográfico con un avance tecnológico"
+     ],
+     "La demografía pertenece a los factores sociales (S)."
+    ],
+    [
+     4,
+     "La conciencia ecológica hace crecer la ropa de segunda mano (Vinted). ¿Por qué se clasifica como factor social y no ecológico?",
+     "Porque es un cambio de valores y estilos de vida de la población",
+     [
+      "Porque Vinted es una empresa tecnológica",
+      "mezcla el tipo de empresa con el tipo de factor"
+     ],
+     [
+      "Porque existe una ley que lo obliga",
+      "no hay ley en el ejemplo"
+     ],
+     [
+      "Porque lo provoca el cambio climático",
+      "confunde la causa con el factor del ejemplo"
+     ],
+     "Cambios de valores y estilos de vida: factor social."
+    ],
+    [
+     4,
+     "Con más paro cae el consumo en restaurantes y viajes. ¿Qué factor PESTEL es?",
+     "Económico: nivel de empleo y poder adquisitivo",
+     [
+      "Social: cambia el estilo de vida",
+      "confunde el efecto en el consumo con un cambio de estilo de vida"
+     ],
+     [
+      "Político: lo decide el Gobierno",
+      "confunde el desempleo con una decisión política"
+     ],
+     [
+      "Legal: hay una norma que lo provoca",
+      "confunde el desempleo con una norma legal"
+     ],
+     "El nivel de empleo es una variable económica."
+    ],
+    [
+     5,
+     "Un Gobierno sin presupuestos aprobados retrasa inversiones públicas. ¿Qué letra de PESTEL es y qué empresas se verían más afectadas?",
+     "P (estabilidad gubernamental), sobre todo las que dependen de la obra pública",
+     [
+      "E, sobre todo las que venden al consumidor final",
+      "confunde el tipo de factor"
+     ],
+     [
+      "L, sobre todo las que incumplen la normativa",
+      "confunde el tipo de factor"
+     ],
+     [
+      "S, sobre todo las que dependen de la demografía",
+      "confunde el tipo de factor"
+     ],
+     "Presupuestos y estabilidad del Gobierno son factores políticos."
+    ]
+   ]
+  }
+ ]
+}

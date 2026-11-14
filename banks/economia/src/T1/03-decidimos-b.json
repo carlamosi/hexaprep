@@ -1,0 +1,415 @@
+{
+ "subtema": "Cómo decidimos",
+ "conceptos": [
+  {
+   "nombre": "Análisis marginal",
+   "pagina": 8,
+   "ayuda": "La mayoría de las decisiones diarias no son todo o nada: consisten en ajustar en el margen, una unidad más o una menos. El coste marginal (CMg) es el coste extra de producir o consumir una unidad adicional. El beneficio marginal (BMg) es el beneficio extra que obtienes por esa unidad adicional. En el ejemplo de las porciones de pizza (cada una cuesta 2 euros), el CMg es siempre 2 euros, mientras que el BMg baja con cada porción: la primera la disfrutas muchísimo porque tienes mucha hambre, y la tercera ya casi no, porque estás lleno. La regla clave del tema: vale la pena si el beneficio marginal es igual o mayor que el coste marginal (BMg mayor o igual que CMg). Cuando el BMg cae por debajo del CMg, paras.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es el coste marginal?",
+     "El coste extra de producir o consumir una unidad adicional",
+     [
+      "El coste total de producir todas las unidades",
+      "confunde marginal con total"
+     ],
+     [
+      "El valor de la mejor alternativa a la que se renuncia",
+      "es el coste de oportunidad"
+     ],
+     [
+      "El coste que ya no se puede recuperar",
+      "es un coste hundido"
+     ],
+     "Coste marginal: coste extra de una unidad más."
+    ],
+    [
+     2,
+     "¿Qué es el beneficio marginal?",
+     "El beneficio extra que se obtiene por una unidad adicional",
+     [
+      "El beneficio total de todas las unidades consumidas",
+      "confunde marginal con total"
+     ],
+     [
+      "El beneficio de la primera unidad exclusivamente",
+      "limita el marginal a la primera unidad"
+     ],
+     [
+      "La ganancia de una empresa en un mes",
+      "lo confunde con beneficio empresarial"
+     ],
+     "Beneficio marginal: beneficio extra de una unidad adicional."
+    ],
+    [
+     2,
+     "En el ejemplo de la pizza, cada porción cuesta 2 euros. ¿Qué ocurre con el coste marginal?",
+     "Es siempre 2 euros, igual para cada porción",
+     [
+      "Baja con cada porción",
+      "confunde con el beneficio marginal"
+     ],
+     [
+      "Sube con cada porción",
+      "supone un coste creciente que el ejemplo no tiene"
+     ],
+     [
+      "Es cero en la primera porción",
+      "no hay porciones gratuitas en el ejemplo"
+     ],
+     "El CMg del ejemplo es constante (2 euros). Lo que baja es el BMg."
+    ],
+    [
+     3,
+     "En el ejemplo de la pizza, ¿por qué baja el beneficio marginal con cada porción?",
+     "Porque, a medida que te sientes lleno, disfrutas menos cada porción adicional",
+     [
+      "Porque el precio de cada porción baja",
+      "confunde beneficio marginal con precio"
+     ],
+     [
+      "Porque el cocinero cobra menos por porciones extra",
+      "supone una causa del coste"
+     ],
+     [
+      "Porque cada porción es distinta de la anterior",
+      "inventa una diferencia de producto"
+     ],
+     "Cada porción extra da menos satisfacción: el beneficio marginal es decreciente."
+    ],
+    [
+     3,
+     "Según la regla clave, ¿cuándo vale la pena una unidad adicional?",
+     "Cuando el beneficio marginal es igual o mayor que el coste marginal",
+     [
+      "Cuando el coste marginal es mayor que el beneficio marginal",
+      "invierte la regla"
+     ],
+     [
+      "Cuando el beneficio total supera al coste total del pasado",
+      "mezcla marginal con total y pasado"
+     ],
+     [
+      "Siempre que se tenga dinero para pagarla",
+      "ignora la comparación marginal"
+     ],
+     "Regla clave: BMg mayor o igual que CMg, entonces hazlo."
+    ],
+    [
+     4,
+     "Una porción de pizza cuesta 2 euros. Para ti, la 1.ª aporta un beneficio de 6 euros y la 3.ª, uno de 1 euro. Según el análisis marginal:",
+     "Conviene la primera porción y no la tercera",
+     [
+      "Conviene comprar las tres, porque la primera compensa a las demás",
+      "compensa las unidades entre sí"
+     ],
+     [
+      "No conviene ninguna, porque el coste total supera el beneficio de la tercera",
+      "ignora el análisis marginal"
+     ],
+     [
+      "Conviene la tercera y no la primera",
+      "invierte la lógica"
+     ],
+     "1.ª: BMg 6 ≥ CMg 2, se compra. 3.ª: BMg 1 < CMg 2, no se compra."
+    ],
+    [
+     4,
+     "Un estudiante valora en 5 euros la primera hora extra de estudio, en 3 la segunda y en 1 la tercera. Cada hora le cuesta 2 euros en renuncias. ¿Cuántas horas extra le conviene estudiar?",
+     "Dos horas",
+     [
+      "Una hora, porque la primera es la más valiosa",
+      "se detiene antes del punto óptimo"
+     ],
+     [
+      "Tres horas, porque el beneficio total sigue creciendo",
+      "mira el total en lugar del margen"
+     ],
+     [
+      "Ninguna, porque el coste total supera al beneficio de la tercera",
+      "ignora el análisis marginal"
+     ],
+     "Sigue mientras BMg ≥ CMg: 5 y 3 superan 2; el 1 de la tercera hora no."
+    ],
+    [
+     4,
+     "¿Qué hace que una decisión sea «en el margen»?",
+     "Que consiste en ajustar una unidad más o una menos, no en elegir todo o nada",
+     [
+      "Que se toma sobre el último euro del presupuesto",
+      "confunde margen con presupuesto"
+     ],
+     [
+      "Que afecta a un margen de error pequeño",
+      "interpreta margen como error"
+     ],
+     [
+      "Que la toma el Estado en lugar de las personas",
+      "atribuye la decisión a un agente"
+     ],
+     "La mayoría de las decisiones diarias son marginales: una unidad más o menos."
+    ],
+    [
+     5,
+     "Una fábrica produce una unidad más con un coste de 8 euros y la vende por 8. Un directivo dice que no compensa porque el coste medio de toda la producción es 10. ¿Qué respuesta es coherente con el análisis marginal?",
+     "Para decidir esa unidad solo cuenta que su beneficio marginal (8) es igual a su coste marginal (8), así que compensa o es indiferente",
+     [
+      "Tiene razón: si el coste medio es mayor, no compensa ninguna unidad",
+      "mira el coste medio en lugar del marginal"
+     ],
+     [
+      "No hay respuesta, porque el análisis marginal solo vale para consumidores",
+      "limita el análisis a consumidores"
+     ],
+     [
+      "Tiene razón: debe parar la fábrica porque el coste total es alto",
+      "confunde margen con total"
+     ],
+     "Regla: BMg ≥ CMg. Con BMg = CMg = 8, la unidad no resta ni suma: es indiferente."
+    ],
+    [
+     5,
+     "Una persona va a comprar su cuarta porción de pizza. Su beneficio marginal es 1 euro y el coste marginal, 2. Otra persona le dice «ya has gastado 6 euros en tres porciones, no te las dejes sin rentabilizar». ¿Qué conceptos del tema se están mezclando?",
+     "El análisis marginal (que dice no comprar) y el coste hundido (los 6 euros ya gastados, que no cuentan)",
+     [
+      "Los incentivos (que dicen comprar) y el coste de oportunidad",
+      "confunde conceptos que no aparecen en el caso"
+     ],
+     [
+      "El coste de oportunidad y los bienes complementarios",
+      "añade conceptos ajenos al caso"
+     ],
+     [
+      "Solo el análisis marginal, que dice comprar",
+      "la regla dice lo contrario"
+     ],
+     "Regla marginal: BMg 1 < CMg 2, no comprar. Los 6 euros anteriores son un coste hundido que no debe influir."
+    ],
+    [
+     3,
+     "La primera porción de pizza se disfruta muchísimo y la tercera mucho menos. Esto ilustra que el beneficio marginal…",
+     "Suele disminuir a medida que se consumen más unidades",
+     [
+      "Aumenta con cada unidad consumida",
+      "afirma lo contrario"
+     ],
+     [
+      "Es siempre igual a cualquier unidad",
+      "confunde con el coste marginal del ejemplo"
+     ],
+     [
+      "No tiene relación con el hambre",
+      "ignora el ejemplo"
+     ],
+     "En el ejemplo, el BMg baja con cada porción."
+    ],
+    [
+     5,
+     "Un negocio decide cuántas bolsas fabricar. El beneficio marginal de cada bolsa extra baja de 6 a 5, 4, 3 y 2 euros, y el coste marginal es 3. ¿Cuántas bolsas conviene fabricar?",
+     "Las que tienen BMg igual o mayor que 3: las cuatro primeras",
+     [
+      "Cinco, porque todas aportan algo de beneficio",
+      "ignora que la quinta tiene BMg menor que el CMg"
+     ],
+     [
+      "Solo la primera, que es la más rentable",
+      "se detiene antes del óptimo"
+     ],
+     [
+      "Ninguna, porque el coste marginal es alto",
+      "ignora los beneficios marginales superiores"
+     ],
+     "BMg de 6, 5, 4 y 3 son iguales o mayores que el CMg (3). La quinta aporta 2 y no compensa."
+    ]
+   ]
+  },
+  {
+   "nombre": "Los incentivos",
+   "pagina": 8,
+   "ayuda": "Un incentivo es un estímulo, una recompensa o un castigo, que cambia la conducta o las decisiones de las personas porque modifica sus costes o beneficios. Las recompensas te animan a hacer algo: bonificaciones (un plus por objetivos), subvenciones (ayuda para comprar un coche eléctrico), descuentos como el del carné joven. Los castigos te frenan para no hacerlo: multas (por aparcar mal), recargos (por pagar tarde un recibo), impuestos extra (sobre el tabaco). La idea clave: los incentivos funcionan porque las personas comparan costes y beneficios, y el incentivo cambia esa comparación.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es un incentivo?",
+     "Un estímulo, recompensa o castigo, que cambia la conducta porque modifica costes o beneficios",
+     [
+      "Un descuento que ofrece una empresa en un solo producto",
+      "limita el concepto a un tipo de recompensa"
+     ],
+     [
+      "Un impuesto que paga una empresa al Estado",
+      "lo confunde con un castigo concreto"
+     ],
+     [
+      "Una decisión que se toma en el margen",
+      "lo confunde con el análisis marginal"
+     ],
+     "Incentivo: estímulo que cambia las decisiones al modificar costes o beneficios."
+    ],
+    [
+     2,
+     "¿Cuál de los siguientes es un incentivo de tipo recompensa?",
+     "Una subvención para comprar un coche eléctrico",
+     [
+      "Una multa por aparcar mal",
+      "es un castigo"
+     ],
+     [
+      "Un recargo por pagar tarde un recibo",
+      "es un castigo"
+     ],
+     [
+      "Un impuesto extra sobre el tabaco",
+      "es un castigo"
+     ],
+     "Recompensas: bonificaciones, subvenciones, descuentos. Castigos: multas, recargos, impuestos extra."
+    ],
+    [
+     2,
+     "¿Cuál de los siguientes es un incentivo de tipo castigo?",
+     "Un recargo por pagar tarde un recibo",
+     [
+      "Una bonificación por cumplir objetivos",
+      "es una recompensa"
+     ],
+     [
+      "Un descuento con el carné joven",
+      "es una recompensa"
+     ],
+     [
+      "Una subvención para la vivienda",
+      "es una recompensa"
+     ],
+     "Los castigos frenan: multas, recargos, impuestos extra."
+    ],
+    [
+     3,
+     "¿Por qué un impuesto extra sobre el tabaco puede reducir su consumo?",
+     "Porque sube su coste y cambia la comparación entre coste y beneficio de consumirlo",
+     [
+      "Porque prohíbe vender tabaco",
+      "confunde impuesto con prohibición"
+     ],
+     [
+      "Porque convierte el tabaco en un bien público",
+      "confunde con la propiedad"
+     ],
+     [
+      "Porque obliga a comprar una cantidad fija",
+      "supone una obligación que no existe"
+     ],
+     "Los incentivos funcionan modificando costes o beneficios: el impuesto encarece el tabaco."
+    ],
+    [
+     3,
+     "Una empresa da un plus por objetivos a sus empleados. ¿Qué tipo de incentivo es y qué busca?",
+     "Una recompensa (bonificación) que aumenta el beneficio de esforzarse",
+     [
+      "Un castigo, porque sube los costes laborales",
+      "confunde el efecto en la empresa con el del empleado"
+     ],
+     [
+      "Una subvención del Estado para contratar",
+      "confunde con otro incentivo"
+     ],
+     [
+      "Un coste hundido que no cambia ninguna conducta",
+      "confunde incentivo con coste hundido"
+     ],
+     "La bonificación es una recompensa: sube el beneficio de lograr objetivos y anima a lograrlos."
+    ],
+    [
+     4,
+     "El Gobierno quiere que más hogares compren coches eléctricos. ¿Qué medida es un incentivo del tipo recompensa?",
+     "Una subvención que reduce el precio de compra",
+     [
+      "Una multa a quienes usan coches de combustión",
+      "es un castigo"
+     ],
+     [
+      "Una norma que prohíbe vender coches de combustión",
+      "es una prohibición, no un incentivo"
+     ],
+     [
+      "Un impuesto que encarece los coches de combustión",
+      "es un castigo"
+     ],
+     "Una subvención baja el coste de comprar un eléctrico: es una recompensa."
+    ],
+    [
+     4,
+     "Una ciudad sube la multa por aparcar en doble fila de 50 a 150 euros. ¿Qué razonamiento explica el posible cambio de conducta?",
+     "Aumenta el coste esperado de aparcar mal y, para algunos, su beneficio ya no compensa",
+     [
+      "Disminuye el beneficio marginal de conducir",
+      "confunde multa con beneficio de conducir"
+     ],
+     [
+      "Convierte el aparcamiento en un bien público",
+      "confunde con la propiedad"
+     ],
+     [
+      "Elimina el coste de oportunidad de aparcar bien",
+      "usa un concepto que no encaja"
+     ],
+     "Un castigo funciona subiendo el coste. Si el coste supera al beneficio, deja de compensar."
+    ],
+    [
+     4,
+     "¿Cuál de estas frases explica mejor por qué funcionan los incentivos?",
+     "Porque las personas comparan costes y beneficios, y el incentivo modifica esa comparación",
+     [
+      "Porque las personas siempre obedecen a la autoridad",
+      "atribuye el efecto a la obediencia"
+     ],
+     [
+      "Porque eliminan la escasez de recursos",
+      "no tienen ese efecto"
+     ],
+     [
+      "Porque todas las personas reaccionan igual ante ellos",
+      "supone reacciones uniformes"
+     ],
+     "Los incentivos cambian costes o beneficios: de ahí el cambio de decisiones."
+    ],
+    [
+     5,
+     "Un ayuntamiento regala bolsas reutilizables y, a la vez, cobra 0,10 euros por cada bolsa de plástico. ¿Qué afirmación es correcta?",
+     "Combina una recompensa (la bolsa gratuita) y un castigo (el cobro), ambos buscan cambiar la conducta modificando costes",
+     [
+      "Son dos castigos, porque ambos limitan la libertad del consumidor",
+      "toma la bolsa gratuita por un castigo en vez de una recompensa"
+     ],
+     [
+      "Son dos recompensas, porque ambos ofrecen algo al consumidor",
+      "interpreta el cobro como recompensa"
+     ],
+     [
+      "No son incentivos, porque no obligan a nada",
+      "cree que incentivar es obligar"
+     ],
+     "Regalar la bolsa reutilizable es una recompensa; cobrar por la de plástico es un castigo. Los dos cambian costes."
+    ],
+    [
+     5,
+     "Una academia ofrece un 10 % de descuento a quien pague todo el curso por adelantado. ¿Qué incentivo es y a qué decisión apunta?",
+     "Una recompensa que reduce el coste de pagar por adelantado y anima a hacerlo",
+     [
+      "Un castigo que sube el coste de pagar por plazos",
+      "confunde recompensa con castigo"
+     ],
+     [
+      "Una subvención del Estado a la formación",
+      "atribuye el incentivo a un agente público"
+     ],
+     [
+      "Un coste hundido que no cambia la decisión",
+      "confunde incentivo con coste hundido"
+     ],
+     "El descuento es una recompensa: modifica el coste relativo de pagar por adelantado y anima a hacerlo."
+    ]
+   ]
+  }
+ ]
+}

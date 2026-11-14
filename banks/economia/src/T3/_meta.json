@@ -1,0 +1,3 @@
+{"tema": "T3 Mercado y entorno", "prefijo": "eco-t3", "caras": 8, "bloque": "Economía",
+ "fuente": {"nombre": "Economía T3 Mercado y entorno", "archivo": "Economia_T3_Mercado_y_entorno.pdf"},
+ "lote": {"modelo": "claude-sonnet-5-5", "version_prompt": "v1"}}

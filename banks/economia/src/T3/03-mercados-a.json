@@ -1,0 +1,458 @@
+{
+ "subtema": "Los mercados y sus tipos",
+ "conceptos": [
+  {
+   "nombre": "Qué es un mercado y los cuatro tipos según la competencia",
+   "pagina": 12,
+   "ayuda": "En microeconomía, el entorno específico se denomina mercado: el conjunto de compradores y vendedores que interactúan para intercambiar bienes y servicios a un precio determinado por la oferta y la demanda. Pueden ser mercados físicos (un lugar donde compradores y vendedores se encuentran en persona: una lonja de pescado, un mercado municipal, la tienda del barrio) o virtuales o digitales (no son necesariamente espacios físicos: Amazon o Vinted ponen en contacto a millones de compradores y vendedores). Según el grado de competencia hay cuatro tipos, de más a menos competencia: competencia perfecta (muchas empresas iguales), competencia monopolística (muchas empresas distintas), oligopolio (pocas empresas grandes) y monopolio (una sola empresa sin rivales). Sirven para entender las dinámicas de competencia y analizar cómo se forman los precios, se distribuyen los recursos y se toman decisiones en los distintos sectores. Para recordarlo (CP, CM, O, M): en la lonja, muchos iguales; en la calle de zapatillas, muchos distintos; en las gasolineras, pocos grandes; y en el grifo del agua, uno solo.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es un mercado en microeconomía?",
+     "El conjunto de compradores y vendedores que interactúan para intercambiar bienes y servicios a un precio determinado por la oferta y la demanda",
+     [
+      "Un lugar físico con puestos donde se vende comida",
+      "reduce el mercado a un tipo físico"
+     ],
+     [
+      "El conjunto de empresas de un mismo sector",
+      "ignora a los compradores"
+     ],
+     [
+      "El conjunto de impuestos que paga un sector",
+      "confunde un mercado con los impuestos de un sector"
+     ],
+     "Mercado: compradores y vendedores que intercambian a un precio fijado por oferta y demanda."
+    ],
+    [
+     2,
+     "En microeconomía, ¿cómo se denomina el entorno específico?",
+     "Mercado",
+     [
+      "Macroentorno",
+      "es el entorno general"
+     ],
+     [
+      "Entorno interno",
+      "no es un entorno externo"
+     ],
+     [
+      "Sector público",
+      "confunde el entorno específico con el sector público"
+     ],
+     "En microeconomía, el entorno específico es el mercado."
+    ],
+    [
+     2,
+     "¿Un mercado tiene que ser siempre un espacio físico?",
+     "No: puede ser un entorno virtual o digital, como Amazon o Vinted",
+     [
+      "Sí, siempre es un lugar donde se encuentran en persona",
+      "contradice el tema"
+     ],
+     [
+      "Solo si hay precios fijados por el Estado",
+      "no es un criterio del tema"
+     ],
+     [
+      "Solo si participan empresas públicas",
+      "no es un criterio del tema"
+     ],
+     "Los mercados pueden ser físicos o virtuales."
+    ],
+    [
+     2,
+     "¿Cuáles son los cuatro tipos de mercado según el grado de competencia?",
+     "Competencia perfecta, competencia monopolística, oligopolio y monopolio",
+     [
+      "Local, nacional, europeo y mundial",
+      "clasifica por alcance geográfico"
+     ],
+     [
+      "Físico, virtual, público y privado",
+      "clasifica por otro criterio"
+     ],
+     [
+      "Primario, secundario, terciario y cuaternario",
+      "clasifica por sectores económicos"
+     ],
+     "Competencia perfecta, monopolística, oligopolio y monopolio."
+    ],
+    [
+     3,
+     "¿Cuál es el orden correcto de los tipos de mercado, de más a menos competencia?",
+     "Competencia perfecta, competencia monopolística, oligopolio y monopolio",
+     [
+      "Monopolio, oligopolio, competencia monopolística y competencia perfecta",
+      "invierte el orden"
+     ],
+     [
+      "Competencia monopolística, competencia perfecta, monopolio y oligopolio",
+      "desordena los tipos"
+     ],
+     [
+      "Oligopolio, monopolio, competencia perfecta y competencia monopolística",
+      "desordena los tipos"
+     ],
+     "De más a menos competencia: CP, CM, O, M."
+    ],
+    [
+     3,
+     "¿Para qué sirve clasificar los mercados según el grado de competencia?",
+     "Para entender las dinámicas de competencia y analizar cómo se forman los precios, se distribuyen los recursos y se toman decisiones en cada sector",
+     [
+      "Para calcular el PIB de cada sector",
+      "confunde clasificar mercados con calcular el PIB"
+     ],
+     [
+      "Para fijar los impuestos que paga cada empresa",
+      "confunde clasificar mercados con fijar impuestos"
+     ],
+     [
+      "Para decidir qué empresas deben cerrar",
+      "confunde clasificar mercados con decidir cierres de empresas"
+     ],
+     "Permiten analizar la formación de precios y las decisiones en cada sector."
+    ],
+    [
+     4,
+     "Una tienda de barrio y la aplicación Vinted son, respectivamente…",
+     "Un mercado físico y un mercado virtual",
+     [
+      "Un mercado virtual y un mercado físico",
+      "invierte los tipos"
+     ],
+     [
+      "Dos mercados físicos",
+      "ignora que Vinted es digital"
+     ],
+     [
+      "Un monopolio y un oligopolio",
+      "confunde tipo de espacio con grado de competencia"
+     ],
+     "La tienda de barrio es un espacio físico; Vinted es un entorno digital."
+    ],
+    [
+     4,
+     "¿Qué frase del tema recuerda los cuatro tipos de mercado (CP, CM, O, M)?",
+     "En la lonja, muchos iguales; en la calle de zapatillas, muchos distintos; en las gasolineras, pocos grandes; y en el grifo del agua, uno solo",
+     [
+      "En la lonja, pocos grandes; en la calle de zapatillas, muchos iguales; en las gasolineras, muchos distintos; y en el grifo del agua, uno solo",
+      "cambia las asociaciones"
+     ],
+     [
+      "En la lonja, uno solo; en la calle de zapatillas, pocos grandes; en las gasolineras, muchos distintos; y en el grifo del agua, muchos iguales",
+      "invierte el orden"
+     ],
+     [
+      "En la lonja y la calle de zapatillas, pocos grandes; en las gasolineras y el grifo del agua, muchos iguales",
+      "mezcla los tipos"
+     ],
+     "CP: muchos iguales (lonja). CM: muchos distintos (zapatillas). O: pocos grandes (gasolineras). M: uno solo (agua)."
+    ]
+   ]
+  },
+  {
+   "nombre": "Competencia perfecta",
+   "pagina": 13,
+   "ayuda": "En la competencia perfecta hay muchos vendedores y compradores, los productos son homogéneos (idénticos), la información es perfecta y hay libertad de entrada y salida. Ningún productor tiene poder para influir en el precio: lo determinan la oferta y la demanda del mercado (son precio-aceptantes). Ejemplos: mercados agrícolas en los que los productos son similares, como el trigo o el maíz; en economía, las lonjas de pescado y los mercados mayoristas de frutas. La clave: ninguna empresa puede subir el precio por su cuenta porque perdería todos sus clientes; el precio lo fija el mercado. Si un agricultor cobra 1,50 euros por un producto idéntico que todos venden a 1,20 euros, nadie le compra.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las características de la competencia perfecta?",
+     "Muchos vendedores y compradores, productos homogéneos, información perfecta y libertad de entrada y salida",
+     [
+      "Pocos vendedores, productos diferenciados y barreras elevadas",
+      "describe un oligopolio"
+     ],
+     [
+      "Un solo vendedor y un producto sin sustitutos",
+      "describe un monopolio"
+     ],
+     [
+      "Muchos vendedores con productos diferenciados por marcas",
+      "describe la competencia monopolística"
+     ],
+     "Competencia perfecta: muchos, producto homogéneo, información perfecta y libre entrada y salida."
+    ],
+    [
+     2,
+     "¿Qué significa que las empresas en competencia perfecta son precio-aceptantes?",
+     "Que ninguna tiene poder para influir en el precio, que lo determinan la oferta y la demanda del mercado",
+     [
+      "Que todas se ponen de acuerdo para fijar el precio",
+      "describe un cártel"
+     ],
+     [
+      "Que el Estado les fija el precio",
+      "cree que el precio lo fija el Estado y no el mercado"
+     ],
+     [
+      "Que tienen un control total sobre el precio",
+      "describe el monopolio"
+     ],
+     "Precio-aceptantes: aceptan el precio que fija el mercado."
+    ],
+    [
+     2,
+     "¿Qué ocurre si una empresa en competencia perfecta sube el precio por su cuenta?",
+     "Pierde todos sus clientes",
+     [
+      "Gana más porque cobra más por unidad",
+      "ignora que el producto es idéntico"
+     ],
+     [
+      "Sus clientes pagan el nuevo precio por fidelidad",
+      "describe un mercado con marcas"
+     ],
+     [
+      "El Estado la multa",
+      "no es la consecuencia del tema"
+     ],
+     "Con producto idéntico, los clientes compran a otra empresa."
+    ],
+    [
+     2,
+     "¿Cuáles son ejemplos de competencia perfecta que cita el tema?",
+     "Las lonjas de pescado, los mercados mayoristas de frutas y los mercados agrícolas de trigo o maíz",
+     [
+      "Los restaurantes y la ropa de marca",
+      "son ejemplos de competencia monopolística"
+     ],
+     [
+      "La telefonía móvil y las gasolineras",
+      "son ejemplos de oligopolio"
+     ],
+     [
+      "La red de agua y los trenes de Cercanías",
+      "son ejemplos de monopolio"
+     ],
+     "Productos similares y muchos vendedores: lonjas, mayoristas, trigo, maíz."
+    ],
+    [
+     3,
+     "¿Por qué los mercados de trigo o maíz se consideran ejemplos de competencia perfecta?",
+     "Porque los productos son similares y ningún productor puede influir en el precio",
+     [
+      "Porque solo hay una empresa que los vende",
+      "describe un monopolio"
+     ],
+     [
+      "Porque cada productor tiene una marca muy conocida",
+      "describe la competencia monopolística"
+     ],
+     [
+      "Porque el Estado decide los precios",
+      "describe una economía planificada"
+     ],
+     "Producto homogéneo y muchos productores."
+    ],
+    [
+     3,
+     "¿Qué tipo de producto se vende en un mercado de competencia perfecta?",
+     "Homogéneo (idéntico)",
+     [
+      "Diferenciado por marcas",
+      "es propio de la competencia monopolística"
+     ],
+     [
+      "Único y sin sustitutos",
+      "es propio del monopolio"
+     ],
+     [
+      "Similar o diferenciado, con pocos vendedores",
+      "es propio del oligopolio"
+     ],
+     "Producto homogéneo en competencia perfecta."
+    ],
+    [
+     4,
+     "¿Cuál es la clave estratégica del precio en la competencia perfecta?",
+     "Ninguna empresa puede subirlo por su cuenta porque perdería todos sus clientes: lo fija el mercado",
+     [
+      "Cada empresa lo fija según su marca",
+      "describe la competencia monopolística"
+     ],
+     [
+      "Las empresas lo acuerdan entre ellas",
+      "describe un cártel"
+     ],
+     [
+      "Una sola empresa lo impone",
+      "describe un monopolio"
+     ],
+     "El precio lo fija el mercado."
+    ],
+    [
+     4,
+     "Un agricultor de trigo decide cobrar 1,50 euros el kilo cuando todos cobran 1,20 euros por el mismo producto. ¿Qué ocurre y por qué?",
+     "Nadie le compra, porque el producto es idéntico y el precio lo fija el mercado",
+     [
+      "Vende igual, porque su producto es de mejor marca",
+      "ignora que el producto es idéntico"
+     ],
+     [
+      "Vende más, porque cobra más por kilo",
+      "ignora la reacción de los clientes"
+     ],
+     [
+      "El Estado le obliga a bajar el precio",
+      "atribuye al Estado la reacción de los clientes ante un precio más alto"
+     ],
+     "En competencia perfecta, quien sube el precio por su cuenta pierde a todos sus clientes."
+    ],
+    [
+     5,
+     "Mercado A: naranjas en un mayorista, todas iguales, con cientos de vendedores. Mercado B: zapatillas de varias marcas con distinto diseño. ¿Cuál es de competencia perfecta y cuál da cierto control sobre el precio?",
+     "A es de competencia perfecta; en B las empresas tienen cierto control sobre el precio gracias a la marca",
+     [
+      "B es de competencia perfecta; en A las empresas tienen cierto control sobre el precio",
+      "invierte los mercados"
+     ],
+     [
+      "Los dos son de competencia perfecta",
+      "ignora la diferenciación del segundo"
+     ],
+     [
+      "Ninguno es de competencia perfecta",
+      "ignora el primero"
+     ],
+     "Producto idéntico y muchos vendedores: competencia perfecta. Con marcas, hay cierto control del precio."
+    ]
+   ]
+  },
+  {
+   "nombre": "Competencia monopolística",
+   "pagina": 13,
+   "ayuda": "En la competencia monopolística hay muchos vendedores que ofrecen productos similares pero no idénticos, lo que permite la diferenciación (por marca, calidad o servicio). Hay una cierta libertad de entrada y salida. Cada empresa tiene cierto control sobre el precio, porque los productos se diferencian; la competencia se basa más en la diferenciación y en la publicidad. Ejemplos: restaurantes, productos de higiene personal o ropa de marca; en economía, las zapatillas de deporte: Nike, Adidas o New Balance compiten con diseño y publicidad. La clave: las empresas invierten mucho en marketing para convencer al cliente de que su producto es especial y cobrar un precio más alto (mismo uso, distinto precio: 45, 70 o 120 euros).",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las características de la competencia monopolística?",
+     "Muchos vendedores ofrecen productos similares pero no idénticos, lo que permite la diferenciación, y hay cierta libertad de entrada y salida",
+     [
+      "Muchos vendedores con productos idénticos e información perfecta",
+      "describe la competencia perfecta"
+     ],
+     [
+      "Pocos vendedores que se vigilan entre sí",
+      "describe el oligopolio"
+     ],
+     [
+      "Un solo vendedor con barreras elevadas",
+      "describe el monopolio"
+     ],
+     "Muchos vendedores, productos diferenciados y cierta libertad de entrada."
+    ],
+    [
+     2,
+     "¿En qué se basa la competencia en la competencia monopolística?",
+     "En la diferenciación y la publicidad",
+     [
+      "Solo en el precio",
+      "describe la competencia perfecta"
+     ],
+     [
+      "En las patentes y licencias",
+      "describe una barrera de entrada"
+     ],
+     [
+      "En los acuerdos entre empresas",
+      "describe un cártel"
+     ],
+     "Las empresas compiten con diferenciación y publicidad."
+    ],
+    [
+     2,
+     "¿Qué control sobre el precio tiene cada empresa en la competencia monopolística?",
+     "Cierto control, porque sus productos se diferencian",
+     [
+      "Ninguno, porque lo fija el mercado",
+      "describe la competencia perfecta"
+     ],
+     [
+      "Total, porque no tiene rivales",
+      "describe el monopolio"
+     ],
+     [
+      "Un control compartido con las demás por acuerdo",
+      "describe un cártel"
+     ],
+     "Cierto control sobre el precio gracias a la diferenciación."
+    ],
+    [
+     3,
+     "¿Cuáles son ejemplos de competencia monopolística que cita el tema?",
+     "Restaurantes, productos de higiene personal, ropa de marca y zapatillas de deporte",
+     [
+      "Lonjas de pescado y trigo",
+      "son ejemplos de competencia perfecta"
+     ],
+     [
+      "Telefonía móvil y gasolineras",
+      "son ejemplos de oligopolio"
+     ],
+     [
+      "Red de agua y trenes de Cercanías",
+      "son ejemplos de monopolio"
+     ],
+     "Muchos vendedores con productos diferenciados."
+    ],
+    [
+     3,
+     "Nike, Adidas y New Balance compiten con diseño y publicidad en zapatillas de deporte. ¿Qué tipo de mercado es, según el tema?",
+     "Competencia monopolística",
+     [
+      "Competencia perfecta",
+      "el producto no es idéntico"
+     ],
+     [
+      "Oligopolio",
+      "el tema las incluye en competencia monopolística"
+     ],
+     [
+      "Monopolio",
+      "hay muchas empresas"
+     ],
+     "Productos similares pero diferenciados por marca y publicidad."
+    ],
+    [
+     4,
+     "¿Cuál es la clave estratégica de la competencia monopolística?",
+     "Invertir en marketing para convencer al cliente de que el producto es especial y cobrar un precio más alto",
+     [
+      "No subir el precio nunca por miedo a perder clientes",
+      "describe la competencia perfecta vecina"
+     ],
+     [
+      "Vigilar al rival antes de fijar el precio",
+      "describe el oligopolio"
+     ],
+     [
+      "Pedir al Estado que evite abusos",
+      "describe el monopolio"
+     ],
+     "Marketing y diferenciación para cobrar más."
+    ],
+    [
+     4,
+     "Tres marcas de un mismo tipo de producto, con el mismo uso, cobran 45, 70 y 120 euros. ¿Qué lo explica en este tipo de mercado?",
+     "La diferenciación (marca, calidad, publicidad) les da cierto control sobre el precio",
+     [
+      "Que el mercado fija un único precio para todas",
+      "cree que el mercado fija un único precio pese a la diferenciación"
+     ],
+     [
+      "Que hay una sola empresa que fija los tres precios",
+      "confunde marcas diferenciadas con una única empresa que fija precios"
+     ],
+     [
+      "Que se ponen de acuerdo para repartirse el mercado",
+      "describe un cártel"
+     ],
+     "Mismo uso y distinto precio: diferenciación del producto."
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,422 @@
+{
+ "subtema": "La economía de mercado",
+ "conceptos": [
+  {
+   "nombre": "Cómo funciona el mercado: el precio como señal",
+   "pagina": 5,
+   "ayuda": "En la economía de mercado, qué producir, cómo y para quién se decide sobre todo por la interacción entre compradores y vendedores. Las empresas ofrecen: producen bienes y servicios para satisfacer necesidades y obtener beneficios. Los consumidores demandan: deciden qué comprar según sus necesidades, preferencias y capacidad económica. El precio actúa de señal, porque transmite información a los dos lados. Ejemplo de los apuntes, las bicicletas eléctricas: sube mucho la demanda, las empresas ven una oportunidad de beneficio y aumentan la producción, y si la oferta no sube al ritmo de la demanda el precio sube. Idea clave: las decisiones son descentralizadas, las toman millones de consumidores y empresas a la vez sin que nadie dé órdenes; el precio es el mensaje que los pone de acuerdo.",
+   "preguntas": [
+    [
+     1,
+     "En la economía de mercado, ¿qué deciden los consumidores?",
+     "Qué comprar, según sus necesidades, preferencias y capacidad económica",
+     [
+      "Qué producir para obtener beneficios",
+      "es la decisión de las empresas"
+     ],
+     [
+      "Qué precio debe fijarse a cada producto por ley",
+      "atribuye al consumidor una función del Estado"
+     ],
+     [
+      "Qué empresas deben cerrar",
+      "ninguna decisión individual del consumidor"
+     ],
+     "Los consumidores demandan: deciden qué comprar según necesidades, preferencias y capacidad económica."
+    ],
+    [
+     2,
+     "¿Qué papel tiene el precio en la economía de mercado?",
+     "Es una señal que transmite información a consumidores y empresas",
+     [
+      "Es una orden del Estado que fija qué se produce",
+      "atribuye al Estado la fijación de precios en el mercado"
+     ],
+     [
+      "Es un impuesto sobre las compras",
+      "lo confunde con un impuesto"
+     ],
+     [
+      "Es solo el coste de producir",
+      "ignora la función de coordinación"
+     ],
+     "El precio informa a ambos lados del mercado."
+    ],
+    [
+     2,
+     "¿Por qué se dice que las decisiones en el mercado son descentralizadas?",
+     "Porque las toman millones de consumidores y empresas a la vez, sin que nadie dé órdenes",
+     [
+      "Porque las toman distintas regiones del Estado",
+      "atribuye la decisión a regiones"
+     ],
+     [
+      "Porque cada empresa decide por todos los consumidores",
+      "concentra la decisión en las empresas"
+     ],
+     [
+      "Porque el Estado las delega en las familias",
+      "supone un reparto de funciones del Estado"
+     ],
+     "Descentralizadas: no hay un centro que ordene, el precio coordina."
+    ],
+    [
+     3,
+     "En el ejemplo del tema, sube mucho la demanda de bicicletas eléctricas. ¿Qué ocurre después?",
+     "Las empresas ven una oportunidad de beneficio y aumentan la producción",
+     [
+      "Los precios bajan de inmediato",
+      "ignora el efecto de la demanda sobre el precio"
+     ],
+     [
+      "El Estado fija cuántas bicicletas se producen",
+      "atribuye la decisión al Estado"
+     ],
+     [
+      "Las empresas reducen la producción",
+      "interpreta mal la señal de la demanda"
+     ],
+     "Más demanda y más precio señalan oportunidad de beneficio y empujan a producir más."
+    ],
+    [
+     3,
+     "Si la oferta de bicicletas eléctricas no sube al mismo ritmo que la demanda, ¿qué sucede con el precio?",
+     "Sube",
+     [
+      "Baja",
+      "invierte el efecto"
+     ],
+     [
+      "No cambia",
+      "ignora el desequilibrio"
+     ],
+     [
+      "Se fija por ley",
+      "atribuye la decisión al Estado"
+     ],
+     "Cuando la demanda crece más deprisa que la oferta, el precio sube."
+    ],
+    [
+     4,
+     "En 2023 el aceite de oliva casi duplicó su precio por la sequía. ¿Cómo se explica con el mecanismo del mercado?",
+     "La sequía redujo la cosecha (menos oferta) mientras la demanda se mantenía, así que el precio subió",
+     [
+      "La demanda cayó y el precio subió por una decisión del Estado",
+      "atribuye al Estado y a una caída de la demanda"
+     ],
+     [
+      "La oferta aumentó más que la demanda y el precio subió",
+      "invierte la relación oferta y precio"
+     ],
+     [
+      "Las empresas bajaron el precio para vender más",
+      "contradice el hecho"
+     ],
+     "Menos oferta con demanda estable hace subir el precio."
+    ],
+    [
+     4,
+     "¿Qué contraste resume el tema entre la economía de mercado y la planificada?",
+     "En el mercado muchos deciden un poco; en la planificada uno, el Estado, lo decide todo",
+     [
+      "En el mercado el Estado decide todo; en la planificada deciden muchos",
+      "invierte los sistemas"
+     ],
+     [
+      "En el mercado nadie decide; en la planificada deciden muchos",
+      "niega que haya decisiones en el mercado"
+     ],
+     [
+      "En el mercado deciden solo las empresas; en la planificada solo las familias",
+      "reparte las decisiones entre agentes erróneos"
+     ],
+     "Mercado: muchos deciden un poco. Planificada: decide uno, el Estado."
+    ],
+    [
+     5,
+     "Una empresa observa que el precio de un producto sube de forma sostenida. Según el tema, ¿qué mensaje transmite y qué conducta induce?",
+     "Que la demanda crece más deprisa que la oferta; induce a producir más al ver beneficios",
+     [
+      "Que el Estado va a intervenir; induce a esperar",
+      "atribuye al precio un anuncio estatal"
+     ],
+     [
+      "Que los costes están bajando; induce a producir menos",
+      "interpreta mal la señal"
+     ],
+     [
+      "Que los consumidores quieren menos; induce a reducir la producción",
+      "invierte el significado del precio"
+     ],
+     "El precio alto es una señal de escasez relativa y de oportunidad de beneficio."
+    ]
+   ]
+  },
+  {
+   "nombre": "Los cinco principios de la economía de mercado",
+   "pagina": 6,
+   "ayuda": "La economía de mercado se apoya en cinco reglas de juego. Libertad económica (libre mercado): personas y empresas tienen libertad para tomar decisiones económicas, como crear una empresa y elegir el sector. Propiedad privada: los recursos y medios de producción pueden ser de particulares o empresas; ejemplo, la fábrica de SEAT en Martorell es de la empresa, no del Estado. Búsqueda del beneficio: las empresas producen para obtener un beneficio económico; las que cotizan en bolsa reparten parte como dividendos. Competencia: las empresas compiten por atraer consumidores y ofrecen mejores productos, precios o servicios; ejemplo, Ouigo e Iryo abarataron los billetes del AVE. Precios determinados por el mercado: se fijan por la oferta y la demanda; los hoteles de Barcelona suben precios durante el Mobile World Congress. Para recordarlo: «La Panadería Busca Clientes con Precios» (L P B C P).",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son los cinco principios de la economía de mercado?",
+     "Libertad económica, propiedad privada, búsqueda del beneficio, competencia y precios determinados por el mercado",
+     [
+      "Planificación, propiedad pública, igualdad, control de precios y distribución de recursos",
+      "son los principios de la economía planificada"
+     ],
+     [
+      "Marco legal, bienes públicos, corregir fallos, redistribuir y estabilizar",
+      "son funciones del Estado en la economía mixta"
+     ],
+     [
+      "Oferta, demanda, precio, coste y beneficio",
+      "mezcla conceptos de funcionamiento con principios"
+     ],
+     "Los cinco principios: L P B C P."
+    ],
+    [
+     2,
+     "¿Qué significa libertad económica en el mercado?",
+     "Que personas y empresas pueden tomar decisiones económicas, como qué consumir o qué fabricar",
+     [
+      "Que el Estado garantiza el acceso a los bienes básicos",
+      "describe el papel del Estado en la planificada o la mixta"
+     ],
+     [
+      "Que las empresas pueden fijar cualquier precio sin ninguna norma",
+      "confunde libertad con ausencia total de reglas"
+     ],
+     [
+      "Que todos los bienes son gratuitos",
+      "confunde libertad con gratuidad"
+     ],
+     "Libertad económica: libertad para tomar decisiones, como crear una empresa."
+    ],
+    [
+     2,
+     "La fábrica de SEAT en Martorell es propiedad de la empresa, no del Estado. ¿Qué principio del mercado ilustra?",
+     "Propiedad privada",
+     [
+      "Libertad económica",
+      "confunde tener la propiedad de la fábrica con la libertad de decidir qué producir"
+     ],
+     [
+      "Búsqueda del beneficio",
+      "confunde ser dueño de la fábrica con el objetivo de obtener beneficios"
+     ],
+     [
+      "Competencia",
+      "confunde la propiedad privada con la rivalidad entre empresas"
+     ],
+     "Los medios de producción pueden pertenecer a particulares o empresas."
+    ],
+    [
+     3,
+     "Las empresas que cotizan en bolsa reparten parte de su beneficio como dividendos. ¿Qué principio ilustra?",
+     "Búsqueda del beneficio",
+     [
+      "Propiedad privada",
+      "ilustra la propiedad pero no el beneficio"
+     ],
+     [
+      "Competencia",
+      "confunde repartir dividendos con competir por los clientes"
+     ],
+     [
+      "Precios determinados por el mercado",
+      "confunde repartir dividendos con fijar precios por oferta y demanda"
+     ],
+     "Las empresas producen para obtener un beneficio económico."
+    ],
+    [
+     3,
+     "La llegada de Ouigo e Iryo al AVE abarató los billetes. ¿Qué principio ilustra?",
+     "Competencia",
+     [
+      "Libertad económica",
+      "ilustra la libertad solo de forma indirecta"
+     ],
+     [
+      "Propiedad privada",
+      "confunde la entrada de rivales con la propiedad de los recursos"
+     ],
+     [
+      "Búsqueda del beneficio",
+      "confunde la bajada de precios por competencia con el afán de beneficio"
+     ],
+     "La competencia empuja a ofrecer mejores productos, precios o servicios."
+    ],
+    [
+     3,
+     "Los hoteles de Barcelona suben precios durante el Mobile World Congress. ¿Qué principio ilustra?",
+     "Precios determinados por el mercado",
+     [
+      "Libertad económica",
+      "ilustra la libertad solo de forma indirecta"
+     ],
+     [
+      "Competencia",
+      "confunde subir precios por la demanda con competir por los clientes"
+     ],
+     [
+      "Propiedad privada",
+      "confunde precios de mercado con propiedad de los recursos"
+     ],
+     "Los precios se fijan principalmente por oferta y demanda: más demanda, más precio."
+    ],
+    [
+     4,
+     "¿Qué frase mnemotécnica del tema recuerda los cinco principios de la economía de mercado?",
+     "«La Panadería Busca Clientes con Precios»",
+     [
+      "«Por Plan, El Comité Decide Igual»",
+      "es la frase de la economía planificada"
+     ],
+     [
+      "«Más Bienestar Con Renta Estable y Creciente»",
+      "es la frase de las funciones del Estado en la economía mixta"
+     ],
+     [
+      "«Dice Adam: El Invisible Erra»",
+      "es la frase de los fallos del mercado"
+     ],
+     "L P B C P: Libertad, Propiedad privada, Beneficio, Competencia y Precios de mercado."
+    ],
+    [
+     5,
+     "Una empresa de reparto llega a una ciudad con precios más bajos y obliga a las existentes a mejorar su servicio para no perder clientes. ¿Qué dos principios actúan sobre todo?",
+     "Competencia y búsqueda del beneficio",
+     [
+      "Propiedad pública y control de precios",
+      "son principios de la economía planificada"
+     ],
+     [
+      "Planificación y competencia",
+      "la planificación no es un principio del mercado"
+     ],
+     [
+      "Libertad económica y propiedad pública",
+      "la propiedad pública no es un principio del mercado"
+     ],
+     "Las empresas compiten por clientes buscando su beneficio."
+    ]
+   ]
+  },
+  {
+   "nombre": "Adam Smith y la mano invisible",
+   "pagina": 7,
+   "ayuda": "Adam Smith (1723 a 1790, escocés) fue economista y filósofo, uno de los principales autores del pensamiento económico clásico. Su obra es La riqueza de las naciones (1776). La mano invisible es la expresión con que explicó cómo las decisiones individuales se coordinan a través del mercado: nadie lo organiza, lo hacen el mecanismo de los precios y la competencia. Su idea: buscando mejorar su propia situación, las personas contribuyen también, sin pretenderlo, al bienestar de la sociedad. Ejemplo de la panadería: el panadero abre su negocio por interés propio, para vender necesita un buen pan a un precio adecuado, los clientes compran lo que necesitan y, así, obtiene ingresos y además genera empleo. Pero atención: la mano invisible no significa que los mercados sean perfectos; existen fallos del mercado.",
+   "preguntas": [
+    [
+     1,
+     "¿Quién usó la expresión mano invisible?",
+     "Adam Smith",
+     [
+      "Karl Marx",
+      "es el autor de El Capital y de la crítica al capitalismo"
+     ],
+     [
+      "John Maynard Keynes",
+      "defendió la intervención del Estado"
+     ],
+     [
+      "Un economista planificador soviético",
+      "ajeno a la idea del mercado"
+     ],
+     "Adam Smith, autor de La riqueza de las naciones (1776)."
+    ],
+    [
+     2,
+     "¿Qué explica la expresión mano invisible?",
+     "Cómo las decisiones individuales se coordinan a través del mercado sin que nadie lo organice",
+     [
+      "Cómo el Estado dirige la economía sin que se note",
+      "atribuye la coordinación al Estado"
+     ],
+     [
+      "Cómo las empresas se ponen de acuerdo para fijar precios",
+      "lo confunde con un cártel"
+     ],
+     [
+      "Por qué los mercados siempre son perfectos",
+      "atribuye perfección al mercado"
+     ],
+     "Mano invisible: coordinación mediante precios y competencia, sin que nadie la organice."
+    ],
+    [
+     3,
+     "En el ejemplo de la panadería, ¿qué consigue el panadero al buscar su beneficio?",
+     "Abastecer a los clientes y crear empleo, sin proponérselo",
+     [
+      "Que el Estado le subvencione la producción",
+      "añade una intervención ajena al ejemplo"
+     ],
+     [
+      "Que los precios bajen por orden del Estado",
+      "añade una intervención ajena al ejemplo"
+     ],
+     [
+      "Nada, porque su interés no beneficia a nadie más",
+      "contradice la idea de la mano invisible"
+     ],
+     "Buscando su interés, abastece a otros y genera empleo."
+    ],
+    [
+     3,
+     "¿Qué mecanismos permiten que el interés propio beneficie a la sociedad, según Smith?",
+     "Los precios y la competencia",
+     [
+      "Las leyes y los impuestos",
+      "atribuye el resultado al Estado"
+     ],
+     [
+      "El plan del Estado",
+      "atribuye el resultado a la planificación"
+     ],
+     [
+      "La propiedad colectiva de los medios de producción",
+      "es una idea de la economía planificada"
+     ],
+     "La mano invisible actúa mediante precios y competencia."
+    ],
+    [
+     4,
+     "¿Qué dice el tema sobre la mano invisible y los mercados perfectos?",
+     "Que no significa que los mercados sean perfectos: el interés individual no siempre produce el mejor resultado y existen fallos del mercado",
+     [
+      "Que significa que el mercado siempre alcanza el mejor resultado",
+      "interpreta la mano invisible como perfección"
+     ],
+     [
+      "Que significa que el Estado nunca debe intervenir",
+      "extrae una conclusión que el tema no recoge"
+     ],
+     [
+      "Que los fallos del mercado no existen",
+      "niega los fallos del mercado"
+     ],
+     "La mano invisible no implica mercados perfectos: por eso hay fallos y puede hacer falta el Estado."
+    ],
+    [
+     4,
+     "¿Cuál de estas ideas NO corresponde a la aportación de Adam Smith según el tema?",
+     "El Estado debe decidir qué se produce, cómo y para quién",
+     [
+      "Buscando mejorar su situación, las personas contribuyen al bienestar de la sociedad",
+      "es la idea central de Smith"
+     ],
+     [
+      "Las decisiones individuales se coordinan a través del mercado",
+      "es la mano invisible"
+     ],
+     [
+      "Los precios y la competencia coordinan sin que nadie organice",
+      "es el mecanismo de la mano invisible"
+     ],
+     "Que el Estado decida todo es la lógica de la planificación, no la de Smith."
+    ]
+   ]
+  }
+ ]
+}

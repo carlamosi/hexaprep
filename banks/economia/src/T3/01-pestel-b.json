@@ -1,0 +1,397 @@
+{
+ "subtema": "El entorno y el análisis PESTEL",
+ "conceptos": [
+  {
+   "nombre": "PESTEL: factores tecnológicos, ecológicos y legales",
+   "pagina": 5,
+   "ayuda": "Las tres últimas letras de PESTEL son tecnología, medio ambiente y leyes. T (Tecnológicos): innovaciones y avances tecnológicos, nivel de inversión en I+D y velocidad del cambio tecnológico; ejemplos: el comercio electrónico obliga a las tiendas físicas a vender también online, la inteligencia artificial automatiza la atención al cliente en bancos y aerolíneas, los pagos con el móvil (Bizum) reducen el uso de efectivo. E (Ecológicos): aspectos medioambientales, leyes de sostenibilidad, uso de recursos naturales y cambio climático; ejemplos: las sequías encarecen el aceite de oliva y la fruta, las zonas de bajas emisiones limitan los coches más contaminantes en las ciudades, los impuestos al plástico de un solo uso suben los costes de envasar. L (Legales): normas, regulaciones y leyes que afectan al sector, como la protección del consumidor o los derechos laborales; ejemplos: las compras online tienen 14 días de desistimiento, la protección de datos obliga a las webs a pedir permiso para usar cookies, una subida del salario mínimo aumenta los costes laborales. No confundir P con L: una decisión del Gobierno (impuestos, aranceles) es P; una norma que ya obliga al sector es L. No confundir E con L: si la ley trata del medio ambiente (sostenibilidad, emisiones), va en E de Ecológicos.",
+   "preguntas": [
+    [
+     2,
+     "¿Qué factores abarca la T de Tecnológicos?",
+     "Innovaciones y avances tecnológicos, nivel de inversión en I+D y velocidad del cambio tecnológico",
+     [
+      "Inflación, tipos de interés y PIB",
+      "son factores económicos"
+     ],
+     [
+      "Demografía, valores y estilos de vida",
+      "son factores sociales"
+     ],
+     [
+      "Protección del consumidor y derechos laborales",
+      "son factores legales"
+     ],
+     "T: innovación, I+D y velocidad del cambio tecnológico."
+    ],
+    [
+     2,
+     "¿Qué factores abarca la E de Ecológicos?",
+     "Aspectos medioambientales, leyes de sostenibilidad, uso de recursos naturales y cambio climático",
+     [
+      "Estabilidad del Gobierno y política fiscal",
+      "son factores políticos"
+     ],
+     [
+      "Inflación y nivel de empleo",
+      "son factores económicos"
+     ],
+     [
+      "Educación y cultura de la población",
+      "son factores sociales"
+     ],
+     "E: medio ambiente, sostenibilidad, recursos naturales y cambio climático."
+    ],
+    [
+     2,
+     "¿Qué factores abarca la L de Legales?",
+     "Normas, regulaciones y leyes que afectan al sector, como la protección del consumidor o los derechos laborales",
+     [
+      "Decisiones del Gobierno sobre impuestos y aranceles",
+      "son factores políticos"
+     ],
+     [
+      "Innovación y velocidad del cambio tecnológico",
+      "son factores tecnológicos"
+     ],
+     [
+      "Cambios demográficos y de valores",
+      "son factores sociales"
+     ],
+     "L: normas y leyes que afectan al sector."
+    ],
+    [
+     3,
+     "El comercio electrónico obliga a las tiendas físicas a vender también online. ¿Qué factor PESTEL es?",
+     "Tecnológico",
+     [
+      "Económico",
+      "confunde una innovación tecnológica con una variable macroeconómica"
+     ],
+     [
+      "Social",
+      "confunde un avance tecnológico con un cambio de valores"
+     ],
+     [
+      "Legal",
+      "confunde una innovación con una norma legal"
+     ],
+     "El comercio electrónico es un avance tecnológico (T)."
+    ],
+    [
+     3,
+     "La inteligencia artificial automatiza la atención al cliente en bancos y aerolíneas. ¿Qué factor PESTEL es?",
+     "Tecnológico",
+     [
+      "Político",
+      "confunde una innovación con una decisión del Gobierno"
+     ],
+     [
+      "Económico",
+      "confunde una innovación con una variable macroeconómica"
+     ],
+     [
+      "Ecológico",
+      "confunde una innovación con un factor medioambiental"
+     ],
+     "La IA es una innovación tecnológica (T)."
+    ],
+    [
+     3,
+     "Los pagos con el móvil, como Bizum, reducen el uso de efectivo. ¿Qué factor PESTEL es?",
+     "Tecnológico",
+     [
+      "Social",
+      "es una consecuencia, no el factor del ejemplo"
+     ],
+     [
+      "Económico",
+      "confunde un avance tecnológico con una variable macroeconómica"
+     ],
+     [
+      "Legal",
+      "confunde un avance tecnológico con una norma legal"
+     ],
+     "Los pagos móviles son un avance tecnológico (T)."
+    ],
+    [
+     3,
+     "Las sequías encarecen el aceite de oliva y la fruta. ¿Qué factor PESTEL es?",
+     "Ecológico",
+     [
+      "Económico",
+      "confunde efecto en precios con la causa"
+     ],
+     [
+      "Político",
+      "confunde un fenómeno climático con una decisión del Gobierno"
+     ],
+     [
+      "Social",
+      "confunde un fenómeno climático con un cambio de valores"
+     ],
+     "Las sequías y el cambio climático son factores ecológicos (E)."
+    ],
+    [
+     3,
+     "Las zonas de bajas emisiones limitan los coches más contaminantes en las ciudades. ¿Qué letra PESTEL corresponde?",
+     "E, Ecológicos",
+     [
+      "L, Legales",
+      "confunde ley con el tema de la ley"
+     ],
+     [
+      "P, Políticos",
+      "confunde decisión política con el factor medioambiental"
+     ],
+     [
+      "T, Tecnológicos",
+      "no es un avance tecnológico"
+     ],
+     "Si la norma trata del medio ambiente, va en Ecológicos (E)."
+    ],
+    [
+     3,
+     "Las compras online tienen 14 días de desistimiento: la tienda debe aceptar devoluciones. ¿Qué factor PESTEL es?",
+     "Legal",
+     [
+      "Político",
+      "confunde una norma ya vigente con una decisión política del momento"
+     ],
+     [
+      "Social",
+      "confunde una norma de consumo con un cambio de valores"
+     ],
+     [
+      "Económico",
+      "confunde una norma de consumo con una variable macroeconómica"
+     ],
+     "Es una norma que ya obliga al sector (L)."
+    ],
+    [
+     3,
+     "La protección de datos obliga a las webs a pedir permiso para usar cookies. ¿Qué factor PESTEL es?",
+     "Legal",
+     [
+      "Tecnológico",
+      "no es un avance tecnológico"
+     ],
+     [
+      "Político",
+      "confunde una norma que ya obliga con una decisión fiscal del Gobierno"
+     ],
+     [
+      "Social",
+      "confunde una norma de protección de datos con un cambio de valores"
+     ],
+     "Norma que ya obliga al sector: Legal (L)."
+    ],
+    [
+     4,
+     "¿Cómo se distinguen los factores políticos de los legales según el tema?",
+     "Una decisión del Gobierno, como impuestos o aranceles, es P; una norma que ya obliga al sector es L",
+     [
+      "Los políticos son leyes y los legales son decisiones del Gobierno",
+      "invierte los criterios"
+     ],
+     [
+      "Los políticos afectan a empresas públicas y los legales a privadas",
+      "distingue político y legal por el tipo de empresa y no por decisión frente a norma vigente"
+     ],
+     [
+      "No hay diferencia: son lo mismo",
+      "ignora que son dos letras distintas"
+     ],
+     "P: decisión del Gobierno. L: norma que ya obliga."
+    ],
+    [
+     5,
+     "Una subida del salario mínimo aumenta los costes laborales de las empresas. Según el ejemplo del tema, ¿qué letra PESTEL es?",
+     "L, Legales: es una norma que obliga al sector y encarece los costes laborales",
+     [
+      "P, Políticos: es una decisión del Gobierno",
+      "confunde una norma ya vigente con una decisión del Gobierno en curso"
+     ],
+     [
+      "E, Económicos: es una variable económica",
+      "confunde coste con variable macroeconómica"
+     ],
+     [
+      "S, Sociales: cambia los valores de los trabajadores",
+      "confunde un coste laboral fijado por ley con un cambio de valores"
+     ],
+     "Norma que ya obliga al sector: Legal."
+    ],
+    [
+     5,
+     "Una ley regula las emisiones de las fábricas. ¿En qué letra de PESTEL va y por qué?",
+     "En E de Ecológicos, porque la ley trata del medio ambiente",
+     [
+      "En L, porque es una ley",
+      "ignora que el tema la sitúa en Ecológicos"
+     ],
+     [
+      "En P, porque la aprueba el Gobierno",
+      "confunde quién la aprueba con el contenido"
+     ],
+     [
+      "En T, porque afecta a las fábricas",
+      "confunde destinatario con contenido"
+     ],
+     "Si la ley trata del medio ambiente, va en E de Ecológicos."
+    ]
+   ]
+  },
+  {
+   "nombre": "PESTEL aplicado: el automóvil",
+   "pagina": 6,
+   "ayuda": "Ejemplo resuelto: cómo afecta el entorno general a un fabricante de coches en España. Para cada letra se busca un factor real y se decide si es una oportunidad (ayuda a vender o ganar más) o una amenaza (lo pone más difícil); así la empresa sabe qué estrategia le conviene. P: ayudas públicas a la compra de coches eléctricos (Plan MOVES), oportunidad, fabricar más modelos eléctricos. E: tipos de interés altos, financiar un coche sale más caro, amenaza, ofrecer financiación propia o modelos más baratos. S: los jóvenes de ciudad usan coche compartido, bici y patinete, amenaza, crear servicios de alquiler por minutos. T: avance del coche eléctrico y conectado, oportunidad, invertir en I+D de baterías y software. E (ecológico): zonas de bajas emisiones y límites de CO2 de la UE, amenaza, reducir emisiones para poder seguir vendiendo. L: garantía legal de 3 años y normas de seguridad obligatorias, amenaza, mejorar la calidad para reducir reparaciones. Cómo se hace un PESTEL: 1) elige el sector y el país, 2) busca un factor real por letra (noticias, datos del INE, leyes), 3) marca cada factor como oportunidad (+) o amenaza (-), 4) propón qué puede hacer la empresa ante cada uno. Fíjate: el mismo factor puede ser oportunidad para una empresa y amenaza para otra.",
+   "preguntas": [
+    [
+     2,
+     "¿Cuál es el procedimiento básico para hacer un PESTEL según el tema?",
+     "Elegir sector y país, buscar un factor real por letra, marcar cada uno como oportunidad o amenaza y proponer qué puede hacer la empresa",
+     [
+      "Elegir la empresa, calcular su beneficio, comparar con rivales y bajar precios",
+      "describe otro tipo de análisis"
+     ],
+     [
+      "Analizar solo los factores económicos y ajustar el precio",
+      "ignora las demás letras"
+     ],
+     [
+      "Estudiar el sector con las 5 fuerzas y después con el PESTEL",
+      "mezcla las dos herramientas"
+     ],
+     "Cuatro pasos: sector y país, un factor real por letra, oportunidad o amenaza, y respuesta de la empresa."
+    ],
+    [
+     3,
+     "En el ejemplo del automóvil, las ayudas públicas a la compra de coches eléctricos (Plan MOVES) se clasifican como…",
+     "Político, oportunidad: la empresa puede fabricar más modelos eléctricos",
+     [
+      "Político, amenaza",
+      "es una ayuda que favorece las ventas"
+     ],
+     [
+      "Económico, oportunidad",
+      "es una decisión política y no una variable macroeconómica"
+     ],
+     [
+      "Legal, amenaza",
+      "confunde una ayuda pública con una norma que perjudica a las empresas"
+     ],
+     "Las ayudas son una decisión política que favorece al sector eléctrico."
+    ],
+    [
+     3,
+     "Los tipos de interés altos hacen que financiar un coche salga más caro. ¿Cómo se clasifica y qué puede hacer la empresa?",
+     "Económico, amenaza: puede ofrecer financiación propia o modelos más baratos",
+     [
+      "Económico, oportunidad: puede subir los precios",
+      "interpreta mal el efecto sobre las ventas"
+     ],
+     [
+      "Político, amenaza: debe pedir ayudas",
+      "confunde la letra"
+     ],
+     [
+      "Social, amenaza: debe cambiar la publicidad",
+      "confunde la letra"
+     ],
+     "Tipos altos encarecen el crédito: amenaza económica."
+    ],
+    [
+     3,
+     "Los jóvenes de ciudad usan coche compartido, bici y patinete. ¿Cómo se clasifica y qué puede hacer el fabricante?",
+     "Social, amenaza: puede crear servicios de alquiler por minutos",
+     [
+      "Tecnológico, oportunidad: puede invertir en baterías",
+      "confunde la letra y el efecto"
+     ],
+     [
+      "Económico, amenaza: puede bajar sus precios",
+      "confunde la letra"
+     ],
+     [
+      "Legal, amenaza: debe mejorar la garantía",
+      "confunde la letra"
+     ],
+     "Cambio de estilos de vida: amenaza social."
+    ],
+    [
+     3,
+     "El avance del coche eléctrico y conectado, ¿cómo se clasifica y qué puede hacer el fabricante?",
+     "Tecnológico, oportunidad: invertir en I+D de baterías y software",
+     [
+      "Tecnológico, amenaza: dejar de producir",
+      "interpreta mal el efecto"
+     ],
+     [
+      "Político, oportunidad: pedir ayudas",
+      "confunde la letra"
+     ],
+     [
+      "Ecológico, amenaza: reducir emisiones",
+      "confunde la letra"
+     ],
+     "El avance tecnológico es una oportunidad si se invierte en I+D."
+    ],
+    [
+     4,
+     "La garantía legal de 3 años y las normas de seguridad obligatorias, ¿cómo se clasifican y qué puede hacer el fabricante?",
+     "Legal, amenaza: mejorar la calidad para reducir reparaciones",
+     [
+      "Político, amenaza: pedir una subvención",
+      "confunde letra y respuesta"
+     ],
+     [
+      "Económico, oportunidad: subir el precio",
+      "confunde letra y efecto"
+     ],
+     [
+      "Social, oportunidad: ampliar la gama",
+      "confunde letra y efecto"
+     ],
+     "Son normas que ya obligan: factor legal con efecto de amenaza."
+    ],
+    [
+     4,
+     "El tema afirma que el mismo factor puede ser oportunidad para una empresa y amenaza para otra. ¿Qué ejemplo da?",
+     "Las zonas de bajas emisiones frenan los coches de gasolina, pero impulsan a los eléctricos y al transporte público",
+     [
+      "Los tipos de interés altos benefician a todas las empresas",
+      "cree que los tipos altos favorecen a todas las empresas por igual"
+     ],
+     [
+      "La garantía legal beneficia por igual a todos los fabricantes",
+      "cree que la garantía legal beneficia por igual a todos los fabricantes"
+     ],
+     [
+      "Los aranceles benefician igual al importador y al exportador",
+      "no es el ejemplo del tema"
+     ],
+     "Un mismo factor puede ser oportunidad o amenaza según la empresa."
+    ],
+    [
+     5,
+     "Un fabricante de coches de gasolina se enfrenta a zonas de bajas emisiones y a límites de CO2 de la UE. ¿Cómo lo clasifica y qué puede hacer?",
+     "Ecológico, amenaza: reducir emisiones para poder seguir vendiendo",
+     [
+      "Legal, oportunidad: aprovechar la norma para subir precios",
+      "confunde letra y efecto"
+     ],
+     [
+      "Político, amenaza: dejar de fabricar coches",
+      "confunde letra y respuesta"
+     ],
+     [
+      "Tecnológico, oportunidad: no hacer nada",
+      "confunde letra y efecto"
+     ],
+     "Las normas medioambientales son factores ecológicos; para este fabricante son una amenaza."
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,476 @@
+{
+ "subtema": "Economía mixta y Estado del Bienestar",
+ "conceptos": [
+  {
+   "nombre": "La economía mixta y Keynes",
+   "pagina": 14,
+   "ayuda": "La economía mixta es el sistema de la mayoría de los países desarrollados: combina la economía de mercado (familias y empresas toman la mayor parte de las decisiones) con la intervención del Estado (corrige problemas y garantiza servicios y derechos). No sustituye al mercado ni lo deja sin ninguna intervención. John Maynard Keynes (1883 a 1946, economista británico) defendió que el Estado interviniera en la economía, sobre todo durante las crisis. El mercado tiene un papel fundamental, pero a veces el Estado debe actuar con gasto público, impuestos y otras políticas económicas para estimular la actividad, reducir el desempleo y favorecer la estabilidad. Sus ideas impulsaron las economías mixtas y el Estado del Bienestar en el siglo XX. Ejemplo: en la crisis de la COVID-19 el Gobierno pagó los ERTE para que las empresas no despidieran (idea keynesiana). Tres sistemas, tres autores: mercado y Adam Smith, planificada y Karl Marx, mixta y J. M. Keynes.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué combina la economía mixta?",
+     "La economía de mercado con la intervención del Estado",
+     [
+      "La planificación central con la propiedad colectiva",
+      "describe la economía planificada"
+     ],
+     [
+      "El feudalismo con el mercantilismo",
+      "mezcla dos sistemas históricos"
+     ],
+     [
+      "El mercado con un control total de los precios",
+      "exagera la intervención del Estado"
+     ],
+     "Mixta = mercado + Estado."
+    ],
+    [
+     2,
+     "¿Quién fue John Maynard Keynes?",
+     "Un economista británico (1883 a 1946) que defendió la intervención del Estado, sobre todo en las crisis",
+     [
+      "Un economista escocés, autor de La riqueza de las naciones",
+      "es Adam Smith"
+     ],
+     [
+      "Un filósofo alemán, autor de El Capital",
+      "es Karl Marx"
+     ],
+     [
+      "Un dirigente soviético, creador de los planes quinquenales",
+      "no es la figura que describe el tema"
+     ],
+     "Keynes: economista británico, 1883 a 1946, partidario de la intervención en crisis."
+    ],
+    [
+     3,
+     "¿Con qué herramientas defendía Keynes que el Estado actuara en la economía?",
+     "Gasto público, impuestos y otras políticas económicas",
+     [
+      "Solo con prohibiciones y cuotas de producción",
+      "atribuye a Keynes herramientas de prohibición y no de gasto e impuestos"
+     ],
+     [
+      "Solo con la fijación de todos los precios",
+      "describe la planificación"
+     ],
+     [
+      "Con la propiedad colectiva de las empresas",
+      "describe la planificación"
+     ],
+     "Gasto público, impuestos y otras políticas económicas."
+    ],
+    [
+     3,
+     "¿Para qué defendía Keynes que el Estado interviniera en la economía?",
+     "Para estimular la actividad, reducir el desempleo y favorecer la estabilidad",
+     [
+      "Para sustituir al mercado en todas las decisiones",
+      "describe la planificación"
+     ],
+     [
+      "Para eliminar las empresas privadas",
+      "contradice la economía mixta"
+     ],
+     [
+      "Para fijar todos los precios de la economía",
+      "describe la planificación"
+     ],
+     "El mercado es fundamental, pero a veces el Estado debe actuar para estabilizar."
+    ],
+    [
+     3,
+     "En la crisis de la COVID-19 el Gobierno pagó los ERTE para que las empresas no despidieran. ¿Qué idea ilustra?",
+     "Una idea keynesiana: el Estado interviene en las crisis para sostener la actividad y el empleo",
+     [
+      "Una idea de Adam Smith: la mano invisible resuelve la crisis",
+      "es la idea contraria"
+     ],
+     [
+      "Una idea de Marx: la propiedad colectiva de las empresas",
+      "confunde los ERTE con la propiedad colectiva de Marx"
+     ],
+     [
+      "Una idea mercantilista: acumular metales preciosos",
+      "confunde los ERTE con acumular metales preciosos"
+     ],
+     "Los ERTE son un ejemplo de intervención del Estado en crisis."
+    ],
+    [
+     4,
+     "¿Cuál de estas asociaciones entre autor y sistema es correcta?",
+     "Smith con el mercado, Marx con la planificación y Keynes con la economía mixta",
+     [
+      "Smith con la mixta, Marx con el mercado y Keynes con la planificación",
+      "cruza los autores"
+     ],
+     [
+      "Smith con la planificación, Marx con la mixta y Keynes con el mercado",
+      "cruza los autores"
+     ],
+     [
+      "Smith con el mercado, Marx con la mixta y Keynes con la planificación",
+      "cruza dos autores"
+     ],
+     "Mercado: Smith. Planificada: Marx. Mixta: Keynes."
+    ],
+    [
+     4,
+     "¿Qué papel tiene el mercado en el planteamiento de Keynes?",
+     "Fundamental, aunque a veces el Estado debe actuar",
+     [
+      "Ninguno, porque el Estado lo sustituye",
+      "contradice su planteamiento"
+     ],
+     [
+      "Es el único mecanismo, y el Estado nunca debe actuar",
+      "describe la posición de Smith"
+     ],
+     [
+      "Solo funciona en tiempos de crisis",
+      "cree que el mercado solo funciona cuando hay crisis"
+     ],
+     "El mercado es fundamental, pero el Estado debe corregir y estabilizar."
+    ],
+    [
+     5,
+     "Un país en recesión sube el gasto público y reduce algunos impuestos para estimular la actividad y reducir el paro. ¿Con qué enfoque coincide?",
+     "El keynesiano de la economía mixta",
+     [
+      "El mercantilista",
+      "busca acumular riqueza con comercio y metales"
+     ],
+     [
+      "El de la mano invisible de Smith, que rechaza intervenir",
+      "es el enfoque contrario"
+     ],
+     [
+      "El de la planificación de Marx",
+      "propone propiedad colectiva y planificación central"
+     ],
+     "Gasto público e impuestos para estimular la actividad: enfoque keynesiano."
+    ]
+   ]
+  },
+  {
+   "nombre": "Funciones del Estado en la economía mixta",
+   "pagina": 15,
+   "ayuda": "En la economía mixta el mercado organiza la actividad económica y el Estado interviene para corregir fallos, dar servicios, redistribuir y estabilizar. Seis funciones: 1) establecer un marco legal (normas para empresas y consumidores; garantiza mercados, derechos de propiedad y contratos; ejemplos: Código de Consumo, Ley de Competencia); 2) proporcionar bienes y servicios públicos (educación, sanidad, seguridad; a los no rentables y estratégicos se suman los de interés para toda la sociedad; ejemplos: institutos públicos, centros de salud); 3) corregir los fallos del mercado (regula actividades con externalidades negativas, como la contaminación; ejemplo: límites de emisiones a las fábricas); 4) redistribuir la renta (con impuestos, prestaciones y servicios públicos reduce las desigualdades y garantiza un bienestar mínimo; ejemplos: quien más gana paga más con el IRPF, Ingreso Mínimo Vital); 5) estabilizar la economía (políticas para reducir el desempleo, las crisis o una inflación elevada; ejemplo: ayudas y ERTE durante la COVID-19); 6) favorecer el crecimiento (invierte en infraestructuras, educación, investigación y tecnología; ejemplos: red de AVE, becas de investigación). Para recordarlo: «Más Bienestar Con Renta Estable y Creciente».",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las seis funciones del Estado en la economía mixta?",
+     "Marco legal, bienes y servicios públicos, corregir fallos del mercado, redistribuir la renta, estabilizar la economía y favorecer el crecimiento",
+     [
+      "Planificar, fijar precios, poseer todas las empresas, repartir recursos, controlar la producción y garantizar la igualdad",
+      "son rasgos de la economía planificada"
+     ],
+     [
+      "Producir, vender, comprar, ahorrar, invertir y consumir",
+      "son funciones de empresas y familias"
+     ],
+     [
+      "Libertad, propiedad privada, beneficio, competencia, precios y regulación",
+      "mezcla los principios del mercado"
+     ],
+     "Seis funciones: M B C R E C."
+    ],
+    [
+     2,
+     "El Código de Consumo y la Ley de Competencia son ejemplos de la función de…",
+     "Establecer un marco legal",
+     [
+      "Proporcionar bienes y servicios públicos",
+      "se trata de normas, no de servicios"
+     ],
+     [
+      "Redistribuir la renta",
+      "no se trata de impuestos ni de ayudas"
+     ],
+     [
+      "Favorecer el crecimiento",
+      "no se trata de inversiones"
+     ],
+     "Marco legal: normas para empresas y consumidores."
+    ],
+    [
+     2,
+     "Los institutos públicos y los centros de salud ilustran la función de…",
+     "Proporcionar bienes y servicios públicos",
+     [
+      "Redistribuir la renta",
+      "confunde un servicio público con redistribuir renta"
+     ],
+     [
+      "Estabilizar la economía",
+      "confunde un servicio público con estabilizar la economía"
+     ],
+     [
+      "Establecer un marco legal",
+      "confunde un servicio con una norma legal"
+     ],
+     "Educación y sanidad son servicios públicos de interés para toda la sociedad."
+    ],
+    [
+     3,
+     "Poner límites de emisiones a las fábricas ilustra la función de…",
+     "Corregir los fallos del mercado, en concreto una externalidad negativa",
+     [
+      "Redistribuir la renta",
+      "no se trata de impuestos para reducir desigualdades"
+     ],
+     [
+      "Estabilizar la economía",
+      "confunde regular la contaminación con estabilizar la economía"
+     ],
+     [
+      "Favorecer el crecimiento",
+      "confunde regular la contaminación con invertir para crecer"
+     ],
+     "Regula actividades con externalidades negativas, como la contaminación."
+    ],
+    [
+     3,
+     "Que quien más gana pague más con el IRPF y que exista el Ingreso Mínimo Vital ilustra la función de…",
+     "Redistribuir la renta",
+     [
+      "Corregir fallos del mercado",
+      "no es una externalidad ni un abuso"
+     ],
+     [
+      "Estabilizar la economía",
+      "confunde redistribuir con estabilizar frente a las crisis"
+     ],
+     [
+      "Establecer un marco legal",
+      "no es un conjunto de normas de mercado"
+     ],
+     "Con impuestos y prestaciones se reducen las desigualdades y se garantiza un bienestar mínimo."
+    ],
+    [
+     3,
+     "Las ayudas y los ERTE durante la COVID-19 ilustran la función de…",
+     "Estabilizar la economía",
+     [
+      "Redistribuir la renta",
+      "confunde estabilizar ante una crisis con redistribuir renta"
+     ],
+     [
+      "Favorecer el crecimiento",
+      "no es una inversión a largo plazo"
+     ],
+     [
+      "Proporcionar bienes públicos",
+      "confunde estabilizar ante una crisis con ofrecer bienes públicos"
+     ],
+     "Estabilizar: reducir el desempleo, las crisis o una inflación elevada."
+    ],
+    [
+     3,
+     "La red de AVE y las becas de investigación ilustran la función de…",
+     "Favorecer el crecimiento",
+     [
+      "Estabilizar la economía",
+      "confunde invertir para crecer con estabilizar ante crisis"
+     ],
+     [
+      "Redistribuir la renta",
+      "confunde invertir para crecer con redistribuir renta"
+     ],
+     [
+      "Corregir fallos del mercado",
+      "confunde invertir para crecer con corregir externalidades"
+     ],
+     "Invierte en infraestructuras, educación, investigación y tecnología para crecer y ganar productividad."
+    ],
+    [
+     4,
+     "¿Qué frase mnemotécnica recuerda las seis funciones del Estado en la economía mixta?",
+     "«Más Bienestar Con Renta Estable y Creciente»",
+     [
+      "«Dice Adam: El Invisible Erra»",
+      "recuerda los fallos del mercado"
+     ],
+     [
+      "«Por Plan, El Comité Decide Igual»",
+      "recuerda los principios de la economía planificada"
+     ],
+     [
+      "«La Panadería Busca Clientes con Precios»",
+      "recuerda los principios del mercado"
+     ],
+     "M B C R E C: Marco legal, Bienes públicos, Corregir fallos, Redistribuir, Estabilizar, Crecimiento."
+    ],
+    [
+     5,
+     "Un Gobierno invierte en investigación y en educación, y a la vez grava más a quienes más ganan para financiar ayudas a familias con pocos recursos. ¿Qué dos funciones cumple?",
+     "Favorecer el crecimiento y redistribuir la renta",
+     [
+      "Estabilizar la economía y establecer el marco legal",
+      "confunde invertir y gravar con estabilizar y legislar"
+     ],
+     [
+      "Corregir externalidades y estabilizar la economía",
+      "confunde invertir y gravar con corregir externalidades y estabilizar"
+     ],
+     [
+      "Proporcionar bienes estratégicos y establecer el marco legal",
+      "confunde invertir y gravar con ofrecer bienes estratégicos y legislar"
+     ],
+     "Inversión en investigación y educación: crecimiento. Impuestos progresivos y ayudas: redistribución."
+    ]
+   ]
+  },
+  {
+   "nombre": "El Estado del Bienestar",
+   "pagina": 16,
+   "ayuda": "El Estado del Bienestar es el conjunto de políticas con las que el Estado intenta garantizar a toda la población un nivel de bienestar y protección social, sobre todo en situaciones de necesidad. Se paga con impuestos: ciudadanos y empresas pagan impuestos, el Estado los recauda y reparte, y se convierten en servicios y prestaciones para toda la población. Piezas: educación pública (escuelas, institutos, becas; corrige la desigualdad y la externalidad positiva), sanidad pública (centros de atención primaria y hospitales públicos; corrige la desigualdad y la externalidad positiva, como las vacunas), pensiones (jubilación y viudedad de la Seguridad Social; corrige la desigualdad porque quien ya no trabaja no tiene renta), prestaciones por desempleo (el «paro» del SEPE; corrige la inestabilidad cíclica porque en las crisis sube el paro), ayudas y servicios sociales (Ingreso Mínimo Vital; corrigen la distribución desigual de la renta) y otras políticas de protección (dependencia, discapacidad y conciliación; Ley de Dependencia, permisos por nacimiento; corrigen servicios poco rentables para las empresas).",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es el Estado del Bienestar?",
+     "El conjunto de políticas con las que el Estado intenta garantizar a toda la población un nivel de bienestar y protección social, sobre todo en situaciones de necesidad",
+     [
+      "Un sistema en el que el Estado produce todos los bienes",
+      "describe la economía planificada"
+     ],
+     [
+      "Un sistema en el que el mercado decide sin intervención",
+      "contradice el concepto"
+     ],
+     [
+      "El conjunto de impuestos que pagan las empresas",
+      "confunde el sistema con una fuente de ingresos"
+     ],
+     "Estado del Bienestar: bienestar y protección social para toda la población."
+    ],
+    [
+     2,
+     "¿Cómo se paga el Estado del Bienestar?",
+     "Con los impuestos que pagan ciudadanos y empresas, que el Estado recauda y reparte en servicios y prestaciones",
+     [
+      "Con los beneficios de las empresas públicas únicamente",
+      "cree que se paga solo con los beneficios de empresas públicas"
+     ],
+     [
+      "Con préstamos de otros países",
+      "cree que se financia con deuda exterior y no con impuestos"
+     ],
+     [
+      "Con las tarifas que paga cada usuario por cada servicio",
+      "contradice el carácter público y general"
+     ],
+     "Ciudadanos y empresas pagan impuestos; el Estado recauda y reparte."
+    ],
+    [
+     3,
+     "¿Qué fallos del mercado corrigen sobre todo la educación y la sanidad públicas?",
+     "La desigualdad y la externalidad positiva",
+     [
+      "Los abusos de las empresas y la escasez de bienes no rentables",
+      "confunde desigualdad y externalidad positiva con abusos y bienes no rentables"
+     ],
+     [
+      "La inestabilidad cíclica y los abusos de las empresas",
+      "confunde desigualdad y externalidad positiva con inestabilidad y abusos"
+     ],
+     [
+      "Solo la inestabilidad cíclica",
+      "atribuye solo a la inestabilidad cíclica lo que corrigen estos servicios"
+     ],
+     "Educación y sanidad corrigen desigualdad y externalidad positiva (formar a uno beneficia a todos; las vacunas)."
+    ],
+    [
+     3,
+     "Las pensiones de jubilación y viudedad de la Seguridad Social corrigen sobre todo…",
+     "La desigualdad: quien ya no trabaja no tiene renta",
+     [
+      "La inestabilidad cíclica",
+      "es el fallo que corrigen las prestaciones por desempleo"
+     ],
+     [
+      "La externalidad positiva",
+      "es el fallo que corrigen educación y sanidad"
+     ],
+     [
+      "Los abusos de poder de mercado",
+      "confunde la protección a quien no trabaja con el abuso de poder de mercado"
+     ],
+     "Pensiones: dan ingresos a quienes ya no trabajan."
+    ],
+    [
+     3,
+     "Las prestaciones por desempleo, el «paro» del SEPE, corrigen…",
+     "La inestabilidad cíclica: en las crisis sube el paro",
+     [
+      "La desigualdad de renta únicamente",
+      "cree que el paro corrige solo la desigualdad y no la inestabilidad"
+     ],
+     [
+      "Los abusos de las empresas",
+      "confunde proteger a quien pierde el empleo con corregir abusos de empresas"
+     ],
+     [
+      "Las externalidades negativas",
+      "confunde proteger a quien pierde el empleo con corregir externalidades"
+     ],
+     "Protegen a quien pierde su empleo; en las crisis sube el paro."
+    ],
+    [
+     3,
+     "El Ingreso Mínimo Vital forma parte de…",
+     "Las ayudas y servicios sociales, que protegen a personas o familias en situación de necesidad",
+     [
+      "Las prestaciones por desempleo",
+      "no es una prestación de desempleo"
+     ],
+     [
+      "Las pensiones de jubilación",
+      "no es una pensión de jubilación"
+     ],
+     [
+      "La sanidad pública",
+      "confunde una ayuda de renta con un servicio sanitario"
+     ],
+     "Ingreso Mínimo Vital: ayudas y servicios sociales."
+    ],
+    [
+     4,
+     "La Ley de Dependencia y los permisos por nacimiento son ejemplos de…",
+     "Otras políticas de protección: dependencia, discapacidad y conciliación",
+     [
+      "Prestaciones por desempleo",
+      "no se dirigen a quien pierde su empleo"
+     ],
+     [
+      "Pensiones de la Seguridad Social",
+      "no son pensiones"
+     ],
+     [
+      "Educación pública",
+      "no son servicios educativos"
+     ],
+     "Otras políticas de protección: dependencia, discapacidad y conciliación."
+    ],
+    [
+     5,
+     "Un trabajador pierde su empleo en una recesión y cobra el paro del SEPE. ¿Qué elementos del tema intervienen?",
+     "Una prestación por desempleo del Estado del Bienestar, que corrige la inestabilidad cíclica y se financia con impuestos",
+     [
+      "Una pensión, que corrige la desigualdad y se financia con tarifas de los usuarios",
+      "confunde la prestación y la financiación"
+     ],
+     [
+      "Una ayuda social, que corrige los abusos de las empresas y se financia con deuda",
+      "confunde el fallo y la financiación"
+     ],
+     [
+      "Un servicio no rentable, que corrige las externalidades y se financia con beneficios empresariales",
+      "confunde el tipo de política y la financiación"
+     ],
+     "El paro del SEPE protege ante la inestabilidad cíclica y se paga con impuestos."
+    ]
+   ]
+  }
+ ]
+}

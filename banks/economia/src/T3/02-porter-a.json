@@ -1,0 +1,458 @@
+{
+ "subtema": "El microentorno y las 5 fuerzas",
+ "conceptos": [
+  {
+   "nombre": "El microentorno y el modelo de las 5 fuerzas de Porter",
+   "pagina": 7,
+   "ayuda": "Michael Porter diseñó el modelo de las 5 fuerzas para medir lo atractivo y rentable que es un sector. El entorno específico o microentorno es el sector concreto en el que compite la empresa (por ejemplo, el de la moda joven, el de las telecomunicaciones o el de la restauración); incluye factores más directos y particulares que determinan la estructura de la industria y la competencia, y son únicos para cada mercado o sector. Las cinco fuerzas son: 1) rivalidad entre competidores, 2) amenaza de nuevos entrantes, 3) poder de los clientes, 4) poder de los proveedores y 5) amenaza de productos sustitutivos. La regla de Porter: cuanto más intensas sean las fuerzas, más difícil será obtener beneficios en ese mercado. Dónde está cada fuerza: dentro del sector, los rivales; en la puerta, los nuevos; antes de la empresa, los proveedores; después, los clientes; y desde otro sector, los sustitutivos.",
+   "preguntas": [
+    [
+     1,
+     "¿Quién diseñó el modelo de las 5 fuerzas para medir lo atractivo y rentable que es un sector?",
+     "Michael Porter",
+     [
+      "Adam Smith",
+      "es el autor de la mano invisible"
+     ],
+     [
+      "Karl Marx",
+      "es el autor de El Capital"
+     ],
+     [
+      "John Maynard Keynes",
+      "defendió la intervención del Estado"
+     ],
+     "Michael Porter diseñó el modelo de las 5 fuerzas."
+    ],
+    [
+     1,
+     "¿Cuáles son las 5 fuerzas de Porter?",
+     "Rivalidad entre competidores, amenaza de nuevos entrantes, poder de los clientes, poder de los proveedores y amenaza de productos sustitutivos",
+     [
+      "Política, economía, sociedad, tecnología y ecología",
+      "son factores del PESTEL"
+     ],
+     [
+      "Libertad, propiedad, beneficio, competencia y precios",
+      "son principios de la economía de mercado"
+     ],
+     [
+      "Oferta, demanda, precio, coste y beneficio",
+      "son conceptos de funcionamiento del mercado"
+     ],
+     "Cinco fuerzas: rivalidad, nuevos entrantes, clientes, proveedores y sustitutivos."
+    ],
+    [
+     2,
+     "¿Qué mide el modelo de las 5 fuerzas de Porter?",
+     "Lo atractivo y rentable que es un sector",
+     [
+      "El tamaño de una empresa",
+      "mide un sector y no una empresa"
+     ],
+     [
+      "La inflación de un sector",
+      "no es un indicador de precios"
+     ],
+     [
+      "La productividad de los trabajadores",
+      "confunde atractivo de un sector con productividad laboral"
+     ],
+     "El modelo mide el atractivo y la rentabilidad de un sector."
+    ],
+    [
+     2,
+     "El sector de la moda joven, el de las telecomunicaciones o el de la restauración son ejemplos de…",
+     "Microentorno o entorno específico",
+     [
+      "Macroentorno o entorno general",
+      "son sectores concretos"
+     ],
+     [
+      "Entorno interno de la empresa",
+      "son externos a la empresa"
+     ],
+     [
+      "Factores políticos del PESTEL",
+      "no son factores políticos"
+     ],
+     "El sector concreto en el que compite la empresa es el microentorno."
+    ],
+    [
+     3,
+     "¿Qué dice la regla de Porter?",
+     "Cuanto más intensas son las fuerzas, más difícil es obtener beneficios en ese mercado",
+     [
+      "Cuanto más intensas son las fuerzas, mayores son los beneficios",
+      "invierte la relación"
+     ],
+     [
+      "Las fuerzas no influyen en la rentabilidad del sector",
+      "contradice el modelo"
+     ],
+     [
+      "Solo la rivalidad determina los beneficios",
+      "ignora las otras cuatro fuerzas"
+     ],
+     "Fuerzas débiles: más beneficio. Fuerzas intensas: menos beneficio."
+    ],
+    [
+     4,
+     "¿Dónde se sitúa cada fuerza respecto de la empresa?",
+     "Dentro del sector, los rivales; en la puerta, los nuevos; antes de la empresa, los proveedores; después, los clientes; y desde otro sector, los sustitutivos",
+     [
+      "Dentro del sector, los clientes; en la puerta, los proveedores; antes, los rivales; después, los nuevos; y desde otro sector, los sustitutivos",
+      "coloca mal las cuatro primeras fuerzas"
+     ],
+     [
+      "Dentro del sector, los sustitutivos; en la puerta, los rivales; antes, los clientes; después, los proveedores; y desde otro sector, los nuevos",
+      "coloca mal las fuerzas"
+     ],
+     [
+      "Dentro del sector, los proveedores y los clientes; fuera, los rivales y los sustitutivos",
+      "coloca mal las fuerzas"
+     ],
+     "Rivales dentro, nuevos en la puerta, proveedores antes, clientes después y sustitutivos desde otro sector."
+    ]
+   ]
+  },
+  {
+   "nombre": "Fuerza 1: la rivalidad entre competidores",
+   "pagina": 8,
+   "ayuda": "La rivalidad mide la intensidad de las luchas entre las empresas que ya operan en el sector vendiendo el mismo tipo de producto. Es alta si: hay muchas empresas o son de tamaño similar (nadie domina claramente), como Mercadona, Carrefour, Lidl y Dia disputándose cada cliente; el sector no crece y la única forma de vender más es quitarle clientes a la competencia, como en telefonía móvil, donde casi todos ya tienen línea y las operadoras se roban clientes con ofertas de portabilidad; o los productos son muy parecidos (homogéneos) y los clientes eligen solo por precio, como la gasolina. Una guerra de precios (McDonald's frente a Burger King, o Digi, Vodafone y Movistar) hace que cada rebaja obligue al rival a rebajar más: resultado, precios más bajos para el cliente y menos beneficio para todas. La rivalidad es alta con muchas empresas iguales, sector parado y producto idéntico; es baja con pocas empresas y una líder clara, sector que crece y productos muy distintos.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué mide la fuerza de rivalidad entre competidores?",
+     "La intensidad de las luchas entre las empresas que ya operan en el sector vendiendo el mismo tipo de producto",
+     [
+      "La facilidad con la que entran nuevas empresas al sector",
+      "describe la fuerza de nuevos entrantes"
+     ],
+     [
+      "La capacidad de los clientes para exigir precios más bajos",
+      "describe el poder de los clientes"
+     ],
+     [
+      "La amenaza de productos de otros sectores",
+      "describe los sustitutivos"
+     ],
+     "Rivalidad: competencia entre las empresas actuales del sector."
+    ],
+    [
+     2,
+     "¿Cuál de estas es una condición de rivalidad alta?",
+     "Hay muchas empresas o son de tamaño similar y nadie domina claramente",
+     [
+      "Hay pocas empresas y una de ellas es claramente líder",
+      "es una condición de rivalidad baja"
+     ],
+     [
+      "El sector crece con rapidez",
+      "reduce la rivalidad porque hay clientes para todas"
+     ],
+     [
+      "Los productos son muy distintos entre sí",
+      "reduce la rivalidad"
+     ],
+     "Muchas empresas de tamaño similar: rivalidad alta."
+    ],
+    [
+     3,
+     "Mercadona, Carrefour, Lidl y Dia se disputan cada cliente. ¿Qué condición de rivalidad alta ilustra?",
+     "Muchas empresas de tamaño similar, sin que nadie domine claramente",
+     [
+      "Un sector que no crece",
+      "confunde muchos rivales de tamaño similar con un sector estancado"
+     ],
+     [
+      "Productos homogéneos que se eligen solo por precio",
+      "confunde muchos rivales con productos homogéneos"
+     ],
+     [
+      "Una única empresa líder",
+      "confunde competencia entre varios con una única empresa líder"
+     ],
+     "Competidores numerosos y de tamaño similar."
+    ],
+    [
+     3,
+     "En telefonía móvil casi todos ya tienen línea y las operadoras se roban clientes con ofertas de portabilidad. ¿Qué condición de rivalidad alta ilustra?",
+     "Un sector que no crece: la única forma de vender más es quitar clientes a la competencia",
+     [
+      "Muchas empresas de tamaño similar",
+      "confunde un sector estancado con muchas empresas de tamaño similar"
+     ],
+     [
+      "Productos homogéneos que se eligen solo por precio",
+      "confunde un sector estancado con productos homogéneos"
+     ],
+     [
+      "Un sector con barreras de entrada muy bajas",
+      "confunde quitar clientes al rival con barreras de entrada bajas"
+     ],
+     "Sector parado: se vende más quitando clientes al rival."
+    ],
+    [
+     3,
+     "La gasolina de una gasolinera u otra es casi igual y gana la más barata. ¿Qué condición de rivalidad alta ilustra?",
+     "Productos muy parecidos (homogéneos) y clientes que eligen solo por precio",
+     [
+      "Un sector que crece rápido",
+      "confunde productos homogéneos con un sector que crece"
+     ],
+     [
+      "Una empresa líder muy clara",
+      "confunde productos homogéneos con una líder clara"
+     ],
+     [
+      "Barreras de entrada muy altas",
+      "confunde productos homogéneos con barreras de entrada"
+     ],
+     "Producto idéntico: se compite por precio."
+    ],
+    [
+     3,
+     "¿Qué es una guerra de precios y qué provoca?",
+     "Rebajas sucesivas entre rivales para no perder clientes; da precios más bajos para el cliente y menos beneficio para las empresas",
+     [
+      "Una subida acordada de precios entre rivales",
+      "describe un cártel"
+     ],
+     [
+      "Una rebaja de precios que aumenta los beneficios de todas",
+      "contradice el efecto"
+     ],
+     [
+      "Una bajada de precios impuesta por el Estado",
+      "atribuye la causa al Estado"
+     ],
+     "Cada rebaja obliga al rival a rebajar más."
+    ],
+    [
+     4,
+     "¿En cuál de estas situaciones es BAJA la rivalidad?",
+     "Pocas empresas con una líder clara, sector que crece y productos muy distintos",
+     [
+      "Muchas empresas iguales, sector parado y producto idéntico",
+      "es la situación de rivalidad alta"
+     ],
+     [
+      "Muchas empresas iguales y productos idénticos",
+      "es la situación de rivalidad alta"
+     ],
+     [
+      "Un sector parado con pocas empresas parecidas",
+      "mantiene condiciones de rivalidad alta"
+     ],
+     "Rivalidad baja: pocas empresas, líder clara, sector que crece, productos distintos."
+    ],
+    [
+     4,
+     "Una empresa líder indiscutible lanza un producto único en un sector que crece cada año. ¿Qué rivalidad cabe esperar?",
+     "Baja, por la líder clara, el producto distinto y el crecimiento del sector",
+     [
+      "Alta, porque es la única empresa",
+      "confunde ser única con rivalidad"
+     ],
+     [
+      "Alta, porque el sector crece",
+      "el crecimiento reduce la rivalidad"
+     ],
+     [
+      "Alta, porque el producto es único",
+      "el producto distinto reduce la rivalidad"
+     ],
+     "Con líder clara, producto distinto y crecimiento, la rivalidad es baja."
+    ],
+    [
+     5,
+     "Sector A: cinco empresas del mismo tamaño venden gasolina en un mercado que no crece. Sector B: dos empresas con productos muy distintos en un mercado en fuerte crecimiento. ¿Dónde es mayor la rivalidad?",
+     "En A: tamaños similares, producto idéntico y sector parado",
+     [
+      "En B: porque el crecimiento atrae competidores",
+      "el crecimiento reduce la rivalidad"
+     ],
+     [
+      "En B: porque hay menos empresas",
+      "pocas empresas reducen la rivalidad"
+     ],
+     [
+      "Es igual en los dos, porque ambos tienen competidores",
+      "ignora las condiciones del tema"
+     ],
+     "A reúne las tres condiciones de rivalidad alta."
+    ]
+   ]
+  },
+  {
+   "nombre": "Fuerza 2: la amenaza de nuevos competidores",
+   "pagina": 9,
+   "ayuda": "Esta fuerza mide la facilidad o dificultad que tienen nuevas empresas para entrar a vender en el sector. La entrada de nuevos rivales se frena mediante barreras de entrada. Hay cuatro principales: 1) imagen de marca y fidelidad (marcas muy consolidadas que los clientes no cambian fácilmente: Coca-Cola o Nike); 2) elevadas inversiones iniciales y economía de escala (necesidad de mucho capital para empezar o para producir a costes muy bajos: fabricar aviones como Airbus o tender una red de fibra óptica); 3) patentes y licencias legales (protección legal para que nadie copie la tecnología o el producto: un medicamento patentado o las licencias de taxi); 4) acceso a los canales de distribución (dificultad para conseguir espacio en las estanterías de supermercados o tiendas: un refresco nuevo compite por el lineal con marcas que ocupan los mejores sitios). Barreras altas: Apple, Nike; barreras muy bajas: una frutería, camisetas online. Para recordarlo: «Ante el muro, el nuevo choca»: la Marca enamora, la Inversión asusta, la Patente prohíbe y la Distribución cierra la tienda (M I P D).",
+   "preguntas": [
+    [
+     1,
+     "¿Qué mide la amenaza de nuevos competidores?",
+     "La facilidad o dificultad que tienen nuevas empresas para entrar a vender en el sector",
+     [
+      "La intensidad de la lucha entre las empresas actuales",
+      "describe la rivalidad"
+     ],
+     [
+      "El poder de los proveedores para subir precios",
+      "describe el poder de los proveedores"
+     ],
+     [
+      "La existencia de productos de otro sector que cubren la misma necesidad",
+      "describe los sustitutivos"
+     ],
+     "Nuevos competidores: facilidad o dificultad de entrada al sector."
+    ],
+    [
+     2,
+     "¿Cómo se frena la entrada de nuevos rivales a un sector?",
+     "Mediante barreras de entrada",
+     [
+      "Mediante la bajada de precios de todas las empresas",
+      "cree que bajar precios impide la entrada de nuevos rivales"
+     ],
+     [
+      "Mediante la publicidad conjunta del sector",
+      "cree que la publicidad conjunta frena a los nuevos entrantes"
+     ],
+     [
+      "Mediante ayudas obligatorias del Estado",
+      "cree que las ayudas obligatorias del Estado frenan la entrada"
+     ],
+     "Las barreras de entrada frenan la llegada de nuevos competidores."
+    ],
+    [
+     2,
+     "¿Cuáles son las cuatro barreras de entrada principales?",
+     "Marca y fidelidad, inversión inicial y economía de escala, patentes y licencias, y acceso a los canales de distribución",
+     [
+      "Precio, calidad, publicidad y servicio",
+      "son variables de competencia, no barreras"
+     ],
+     [
+      "Rivalidad, clientes, proveedores y sustitutivos",
+      "son las otras fuerzas de Porter"
+     ],
+     [
+      "Política, economía, sociedad y tecnología",
+      "son factores del PESTEL"
+     ],
+     "Cuatro barreras: M I P D."
+    ],
+    [
+     3,
+     "Coca-Cola o Nike: el cliente repite por la marca. ¿Qué barrera de entrada ilustra?",
+     "Imagen de marca y fidelidad",
+     [
+      "Elevadas inversiones iniciales",
+      "confunde fidelidad a la marca con necesidad de capital"
+     ],
+     [
+      "Patentes y licencias legales",
+      "confunde fidelidad a la marca con protección legal"
+     ],
+     [
+      "Acceso a los canales de distribución",
+      "confunde fidelidad a la marca con espacio en el lineal"
+     ],
+     "Marcas muy consolidadas que los clientes no cambian fácilmente."
+    ],
+    [
+     3,
+     "Fabricar aviones (Airbus) o tender una red de fibra óptica requiere mucho capital. ¿Qué barrera de entrada ilustra?",
+     "Elevadas inversiones iniciales y economía de escala",
+     [
+      "Imagen de marca y fidelidad",
+      "confunde necesidad de capital con fidelidad a la marca"
+     ],
+     [
+      "Patentes y licencias legales",
+      "confunde necesidad de capital con protección legal"
+     ],
+     [
+      "Acceso a los canales de distribución",
+      "confunde necesidad de capital con acceso a la distribución"
+     ],
+     "Necesidad de mucho capital para empezar o producir a costes muy bajos."
+    ],
+    [
+     3,
+     "Un medicamento patentado o las licencias de taxi son ejemplos de…",
+     "Patentes y licencias legales",
+     [
+      "Imagen de marca y fidelidad",
+      "confunde protección legal con fidelidad a la marca"
+     ],
+     [
+      "Elevadas inversiones iniciales",
+      "confunde protección legal con necesidad de capital"
+     ],
+     [
+      "Acceso a los canales de distribución",
+      "confunde protección legal con acceso a la distribución"
+     ],
+     "Protección legal para que nadie copie la tecnología o el producto."
+    ],
+    [
+     3,
+     "Un refresco nuevo compite por el lineal con marcas que ya ocupan los mejores sitios. ¿Qué barrera ilustra?",
+     "Acceso a los canales de distribución",
+     [
+      "Imagen de marca y fidelidad",
+      "describe a las marcas que ya ocupan el lineal, no la dificultad para entrar en él"
+     ],
+     [
+      "Patentes y licencias legales",
+      "confunde dificultad de distribución con protección legal"
+     ],
+     [
+      "Elevadas inversiones iniciales",
+      "confunde dificultad de distribución con necesidad de capital"
+     ],
+     "Dificultad para conseguir espacio en estanterías o tiendas."
+    ],
+    [
+     4,
+     "Una frutería o una tienda de camisetas online frente a Apple o Nike: ¿qué sectores tienen barreras de entrada altas y cuáles bajas?",
+     "Frutería y camisetas online, barreras muy bajas; Apple y Nike, barreras altas por marca y tecnología",
+     [
+      "Frutería y camisetas online, barreras altas; Apple y Nike, bajas",
+      "invierte la situación"
+     ],
+     [
+      "Todos tienen barreras igual de altas",
+      "ignora el contraste del tema"
+     ],
+     [
+      "Todos tienen barreras igual de bajas",
+      "ignora el contraste del tema"
+     ],
+     "Barreras muy bajas en frutería o camisetas online; altas en Apple y Nike."
+    ],
+    [
+     5,
+     "Una nueva empresa quiere vender zapatillas deportivas en un mercado dominado por marcas muy fieles a sus clientes, y además necesita grandes pedidos para producir barato y espacio en tiendas. ¿Qué diagnóstico de la fuerza de nuevos entrantes es correcto?",
+     "Amenaza baja: hay barreras altas de marca, inversión y distribución",
+     [
+      "Amenaza alta: cualquiera puede vender zapatillas",
+      "ignora las barreras"
+     ],
+     [
+      "Amenaza alta: hay muchas marcas",
+      "confunde rivalidad con entrada"
+     ],
+     [
+      "No se puede evaluar sin conocer el PIB",
+      "mezcla herramientas distintas"
+     ],
+     "Con barreras de marca, inversión y distribución, entrar es difícil: la amenaza es baja."
+    ]
+   ]
+  }
+ ]
+}

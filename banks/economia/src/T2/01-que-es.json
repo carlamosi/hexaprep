@@ -1,0 +1,530 @@
+{
+ "subtema": "Qué es y evolución histórica",
+ "conceptos": [
+  {
+   "nombre": "Sistema económico y las tres preguntas básicas",
+   "pagina": 3,
+   "ayuda": "Un sistema económico es la forma en que una sociedad organiza su actividad económica para responder a las tres preguntas básicas de la economía: qué producir (qué bienes y servicios y en qué cantidad), cómo producir (con qué recursos y técnicas) y para quién producir (cómo se reparten los bienes entre la población). Todas las sociedades tienen que responderlas porque los recursos son limitados y las necesidades son prácticamente ilimitadas: no se puede producir todo para todos, y ese es el problema de la escasez. Lo que distingue a unos sistemas de otros no es el nivel de riqueza, sino quién toma esas decisiones.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es un sistema económico?",
+     "La forma en que una sociedad organiza su actividad económica para responder a las tres preguntas básicas de la economía",
+     [
+      "El conjunto de impuestos y leyes que regulan los mercados",
+      "reduce el sistema a las normas fiscales"
+     ],
+     [
+      "La lista de bienes y servicios que produce un país en un año",
+      "confunde sistema con producción total"
+     ],
+     [
+      "El reparto de las empresas entre los sectores de un país",
+      "confunde sistema con estructura sectorial"
+     ],
+     "Un sistema económico organiza la actividad económica para responder a qué, cómo y para quién producir."
+    ],
+    [
+     1,
+     "¿Cuáles son las tres preguntas básicas de la economía?",
+     "¿Qué producir?, ¿cómo producir? y ¿para quién producir?",
+     [
+      "¿Cuánto producir?, ¿dónde producir? y ¿cuándo producir?",
+      "cambia las preguntas por otras de lugar y tiempo"
+     ],
+     [
+      "¿Qué producir?, ¿cuánto cobrar? y ¿a quién vender?",
+      "mezcla preguntas de gestión de empresa"
+     ],
+     [
+      "¿Quién ahorra?, ¿quién invierte? y ¿quién consume?",
+      "sustituye las preguntas por agentes"
+     ],
+     "Las tres preguntas: qué, cómo y para quién."
+    ],
+    [
+     2,
+     "«¿Más coches eléctricos o de gasolina?, ¿más viviendas o más hoteles?» son ejemplos de la pregunta…",
+     "¿Qué producir?",
+     [
+      "¿Cómo producir?",
+      "confunde tipo de bien con técnica"
+     ],
+     [
+      "¿Para quién producir?",
+      "confunde tipo de bien con reparto"
+     ],
+     [
+      "¿Cuándo producir?",
+      "no es una de las tres preguntas básicas"
+     ],
+     "Qué producir: qué bienes y servicios y en qué cantidad."
+    ],
+    [
+     2,
+     "Decidir si una fábrica de automóviles usa robots o si la fruta se recoge a mano responde a la pregunta…",
+     "¿Cómo producir?",
+     [
+      "¿Qué producir?",
+      "confunde técnica con tipo de bien"
+     ],
+     [
+      "¿Para quién producir?",
+      "confunde técnica con reparto"
+     ],
+     [
+      "¿Cuánto cuesta producir?",
+      "formula una pregunta de costes que no es una de las tres básicas"
+     ],
+     "Cómo producir: qué recursos y técnicas se utilizan."
+    ],
+    [
+     2,
+     "Que un coche lo obtenga quien pueda pagarlo y que la sanidad pública se reparta según la necesidad ilustra la pregunta…",
+     "¿Para quién producir?",
+     [
+      "¿Qué producir?",
+      "confunde reparto con tipo de bien"
+     ],
+     [
+      "¿Cómo producir?",
+      "confunde reparto con técnica"
+     ],
+     [
+      "¿Dónde producir?",
+      "no es una de las tres preguntas básicas"
+     ],
+     "Para quién producir: cómo se distribuyen los bienes y servicios entre la población."
+    ],
+    [
+     3,
+     "¿Por qué toda sociedad tiene que responder a las tres preguntas básicas?",
+     "Porque los recursos son limitados y las necesidades prácticamente ilimitadas, así que no se puede producir todo para todos",
+     [
+      "Porque el Estado exige planificar la producción",
+      "atribuye la necesidad a una decisión del Estado"
+     ],
+     [
+      "Porque los precios cambian constantemente",
+      "da una causa propia del mercado"
+     ],
+     [
+      "Porque hay más empresas que consumidores",
+      "da una causa sin relación con la escasez"
+     ],
+     "La escasez obliga a decidir qué, cómo y para quién producir."
+    ],
+    [
+     3,
+     "El hecho de que no se pueda producir todo para todos es el problema de…",
+     "La escasez",
+     [
+      "La inflación",
+      "confunde con la subida de precios"
+     ],
+     [
+      "El paro",
+      "confunde con el desempleo"
+     ],
+     [
+      "La desigualdad de renta",
+      "confunde con un fallo de distribución"
+     ],
+     "Recursos limitados y necesidades ilimitadas dan lugar a la escasez."
+    ],
+    [
+     4,
+     "Un país decide destinar más suelo a viviendas, construirlas con técnicas industrializadas y venderlas con ayudas a familias jóvenes. ¿Qué preguntas básicas está respondiendo?",
+     "Qué producir (viviendas), cómo producir (técnicas industrializadas) y para quién (familias jóvenes)",
+     [
+      "Qué producir (ayudas), cómo producir (familias) y para quién (viviendas)",
+      "cruza las respuestas con las preguntas"
+     ],
+     [
+      "Solo qué producir, porque las otras dos las decide el mercado",
+      "supone que no se deciden"
+     ],
+     [
+      "Solo para quién producir, porque habla de ayudas",
+      "ignora las otras dos decisiones"
+     ],
+     "Cada decisión responde a una pregunta: qué (viviendas), cómo (técnicas) y para quién (familias jóvenes)."
+    ],
+    [
+     4,
+     "Dos países responden de forma distinta a las tres preguntas básicas. ¿Qué los distingue realmente como sistemas económicos?",
+     "Quién toma las decisiones: el mercado, el Estado o una combinación de ambos",
+     [
+      "El nivel de riqueza de cada uno",
+      "confunde sistema con riqueza"
+     ],
+     [
+      "Si producen más bienes o más servicios",
+      "criterio que no define sistemas"
+     ],
+     [
+      "El número de empresas que tienen",
+      "criterio que no define sistemas"
+     ],
+     "El sistema económico fija quién decide y qué papel tienen Estado, empresas y familias."
+    ],
+    [
+     5,
+     "Dos afirmaciones: A) «Todo sistema económico debe responder a qué, cómo y para quién.» B) «Solo la economía planificada tiene que responderlas, porque el mercado las resuelve solo.» ¿Cuál es correcta según el tema?",
+     "Solo la A: todos los sistemas las responden, aunque lo hacen de formas distintas",
+     [
+      "Solo la B: el mercado no necesita decidir nada",
+      "supone que el mercado no responde a las preguntas"
+     ],
+     [
+      "Las dos, porque en el mercado también decide el Estado",
+      "mezcla los dos sistemas"
+     ],
+     [
+      "Ninguna, porque cada sistema elige qué preguntas se plantea",
+      "niega que las preguntas sean básicas"
+     ],
+     "En el mercado también se responden las tres preguntas, mediante la interacción de consumidores y empresas."
+    ]
+   ]
+  },
+  {
+   "nombre": "Quién decide: mercado, planificada y mixta",
+   "pagina": 3,
+   "ayuda": "Cada sistema fija quién decide y qué papel tienen Estado, empresas y familias. Las familias consumen y trabajan, las empresas producen y venden, y el Estado regula y da servicios. En la economía de mercado deciden sobre todo familias y empresas; en la economía planificada decide el Estado; y entre ambas está la economía mixta (mercado más Estado), que es la de la mayoría de los países desarrollados hoy. Piénsalo como una línea: en un extremo decide el mercado, en el otro decide el Estado y en el medio se combinan.",
+   "preguntas": [
+    [
+     1,
+     "En una economía de mercado, ¿quién decide sobre todo qué, cómo y para quién producir?",
+     "Las familias y las empresas",
+     [
+      "El Estado mediante un plan central",
+      "describe la economía planificada"
+     ],
+     [
+      "El Estado y las empresas a partes iguales",
+      "describe la economía mixta"
+     ],
+     [
+      "Los sindicatos y el Banco Central",
+      "atribuye la decisión a agentes ajenos al esquema"
+     ],
+     "En el mercado deciden sobre todo familias y empresas."
+    ],
+    [
+     1,
+     "¿Quién decide en la economía planificada?",
+     "El Estado",
+     [
+      "Las familias y las empresas",
+      "describe la economía de mercado"
+     ],
+     [
+      "El mercado mediante los precios",
+      "describe la economía de mercado"
+     ],
+     [
+      "Cada empresa por separado",
+      "supone decisiones descentralizadas"
+     ],
+     "En la economía planificada decide el Estado."
+    ],
+    [
+     2,
+     "¿Qué sistema predomina hoy en la mayoría de los países desarrollados?",
+     "La economía mixta, que combina mercado y Estado",
+     [
+      "La economía de mercado sin ninguna intervención del Estado",
+      "ignora el papel del Estado"
+     ],
+     [
+      "La economía planificada",
+      "no predomina hoy"
+     ],
+     [
+      "El feudalismo",
+      "es un sistema histórico"
+     ],
+     "Hoy la mayoría de los países desarrollados tienen economías mixtas."
+    ],
+    [
+     2,
+     "En el esquema del tema, ¿qué papel tiene cada agente?",
+     "Las familias consumen y trabajan, las empresas producen y venden, y el Estado regula y da servicios",
+     [
+      "Las familias producen y venden, las empresas consumen y el Estado trabaja",
+      "invierte las funciones"
+     ],
+     [
+      "Las familias regulan, las empresas dan servicios y el Estado produce",
+      "mezcla las funciones"
+     ],
+     [
+      "Las familias y las empresas regulan y el Estado consume",
+      "atribuye funciones que no corresponden"
+     ],
+     "Familias: consumen y trabajan. Empresas: producen y venden. Estado: regula y da servicios."
+    ],
+    [
+     3,
+     "En la línea que va de la economía de mercado a la economía planificada, ¿dónde se sitúa la economía mixta?",
+     "En el medio, porque combina mercado y Estado",
+     [
+      "En el extremo del mercado",
+      "ignora la intervención del Estado"
+     ],
+     [
+      "En el extremo de la planificación",
+      "ignora el papel del mercado"
+     ],
+     [
+      "Fuera de la línea, porque nadie decide",
+      "supone que no hay decisores"
+     ],
+     "La mixta combina mercado y Estado, así que está en medio."
+    ],
+    [
+     4,
+     "Un país tiene sanidad y educación públicas, pero casi todas las empresas son privadas y los precios los fija el mercado. ¿Qué sistema es?",
+     "Una economía mixta",
+     [
+      "Una economía planificada, porque hay servicios públicos",
+      "confunde servicios públicos con planificación"
+     ],
+     [
+      "Una economía de mercado sin Estado, porque hay empresas privadas",
+      "ignora el papel del Estado"
+     ],
+     [
+      "Un sistema feudal, porque lo público importa",
+      "confunde con un sistema histórico"
+     ],
+     "Mercado más intervención del Estado: economía mixta."
+    ],
+    [
+     4,
+     "¿Cuál de estas frases describe correctamente la economía mixta?",
+     "No sustituye al mercado ni lo deja sin ninguna intervención",
+     [
+      "El Estado sustituye al mercado en las decisiones",
+      "describe la economía planificada"
+     ],
+     [
+      "El mercado decide sin intervención del Estado",
+      "describe el mercado puro"
+     ],
+     [
+      "Empresas y Estado deciden a partes iguales todo",
+      "inventa un reparto exacto"
+     ],
+     "La mixta combina las dos: ni sustituye al mercado ni lo deja sin intervención."
+    ],
+    [
+     5,
+     "Alguien afirma que las economías de mercado actuales funcionan sin ninguna intervención del Estado. ¿Qué indica el tema?",
+     "Es incorrecto: el Estado fija las reglas y puede intervenir para corregir problemas, y hoy predominan las economías mixtas",
+     [
+      "Es correcto si hay propiedad privada",
+      "confunde propiedad privada con ausencia del Estado"
+     ],
+     [
+      "Es correcto en los países desarrollados",
+      "contradice que predominan las mixtas"
+     ],
+     [
+      "Es incorrecto solo porque la mayoría de los países son planificados",
+      "ignora que hoy predominan las mixtas"
+     ],
+     "Incluso en el mercado el Estado establece las reglas y puede intervenir."
+    ]
+   ]
+  },
+  {
+   "nombre": "Evolución histórica de los sistemas económicos",
+   "pagina": 4,
+   "ayuda": "Los sistemas económicos han cambiado a lo largo de la historia, y también el papel del Estado: unas veces interviene muy poco y otras controla gran parte de la economía. Feudalismo (siglos X a XV): economía agraria y de subsistencia, la tierra como principal recurso, poder muy descentralizado en manos de los señores feudales (el campesino trabajaba la tierra del señor y le entregaba parte de la cosecha). Mercantilismo (siglos XVI a XVIII): se busca aumentar la riqueza del Estado con el comercio y la acumulación de metales preciosos, con intervención elevada (regula el comercio, aranceles); ejemplo, la Corona española con el oro y la plata de América. Economía de mercado (siglos XIX a XXI): las decisiones surgen de la interacción de consumidores y empresas, los precios son fundamentales y la intervención del Estado es limitada; ejemplo, la Revolución Industrial en el Reino Unido. Economía planificada (siglo XX): medios de producción del Estado, planificación central e intervención muy elevada; ejemplo, los planes quinquenales de la URSS.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué sistema se asocia a una economía agraria y de subsistencia con la tierra como principal recurso?",
+     "El feudalismo",
+     [
+      "El mercantilismo",
+      "es un sistema basado en el comercio y los metales"
+     ],
+     [
+      "La economía de mercado",
+      "es un sistema basado en los precios"
+     ],
+     [
+      "La economía planificada",
+      "es un sistema basado en la planificación"
+     ],
+     "Feudalismo: economía agraria y de subsistencia."
+    ],
+    [
+     2,
+     "¿Cuál es el papel del Estado en el feudalismo?",
+     "Poder muy descentralizado: los señores feudales tenían gran poder económico y político",
+     [
+      "Intervención muy elevada con planificación central",
+      "describe la economía planificada"
+     ],
+     [
+      "Intervención elevada con aranceles",
+      "describe el mercantilismo"
+     ],
+     [
+      "Intervención limitada fijando las reglas del mercado",
+      "describe la economía de mercado"
+     ],
+     "En el feudalismo el poder estaba descentralizado en los señores feudales."
+    ],
+    [
+     2,
+     "¿Qué buscaba el mercantilismo?",
+     "Aumentar la riqueza del Estado mediante el comercio y la acumulación de metales preciosos",
+     [
+      "Repartir las tierras entre los campesinos",
+      "no es un objetivo del mercantilismo"
+     ],
+     [
+      "Que los precios se fijaran por la oferta y la demanda",
+      "describe la economía de mercado"
+     ],
+     [
+      "Que los medios de producción fueran colectivos",
+      "describe la planificación"
+     ],
+     "El mercantilismo buscaba enriquecer al Estado con comercio y metales preciosos."
+    ],
+    [
+     3,
+     "¿Cuál de las siguientes medidas es típica del mercantilismo?",
+     "Aranceles para proteger la producción nacional",
+     [
+      "Planes quinquenales",
+      "es propia de la economía planificada"
+     ],
+     [
+      "Entrega de parte de la cosecha al señor",
+      "es propia del feudalismo"
+     ],
+     [
+      "Libertad total de precios",
+      "es propia de la economía de mercado"
+     ],
+     "El mercantilismo regulaba el comercio y protegía la producción nacional con aranceles."
+    ],
+    [
+     3,
+     "La acumulación de oro y plata de América por la Corona española, con la Casa de Contratación de Sevilla, ilustra…",
+     "El mercantilismo",
+     [
+      "El feudalismo",
+      "es un sistema agrario"
+     ],
+     [
+      "La economía de mercado",
+      "es un sistema de precios"
+     ],
+     [
+      "La economía planificada",
+      "es un sistema de planes del Estado"
+     ],
+     "El ejemplo del tema para el mercantilismo es la Corona española con el oro y la plata."
+    ],
+    [
+     3,
+     "¿Cómo es el papel del Estado en la economía de mercado según el esquema histórico?",
+     "Intervención limitada: establece las reglas del mercado y puede intervenir para corregir problemas",
+     [
+      "Intervención muy elevada: decide qué, cómo y para quién producir",
+      "describe la economía planificada"
+     ],
+     [
+      "Poder descentralizado en manos de señores",
+      "describe el feudalismo"
+     ],
+     [
+      "Intervención elevada para acumular metales preciosos",
+      "describe el mercantilismo"
+     ],
+     "En el mercado el Estado fija las reglas y puede intervenir, pero de forma limitada."
+    ],
+    [
+     3,
+     "La Revolución Industrial del Reino Unido en el siglo XIX es el ejemplo del tema de…",
+     "Economía de mercado",
+     [
+      "Feudalismo",
+      "es anterior"
+     ],
+     [
+      "Mercantilismo",
+      "es anterior"
+     ],
+     [
+      "Economía planificada",
+      "es de otro modelo"
+     ],
+     "La Revolución Industrial británica ilustra la economía de mercado."
+    ],
+    [
+     4,
+     "Alguien afirma que el papel del Estado ha sido el mismo a lo largo de toda la historia. ¿Qué dice el tema?",
+     "Es falso: unas veces el Estado interviene muy poco y otras controla gran parte de la economía",
+     [
+      "Es verdadero: el Estado siempre decidió qué producir",
+      "ignora los cambios históricos"
+     ],
+     [
+      "Es verdadero: solo cambió el sistema de precios",
+      "ignora el papel del Estado"
+     ],
+     [
+      "Es falso: el Estado dejó de existir en la economía de mercado",
+      "confunde intervención limitada con ausencia"
+     ],
+     "El papel del Estado cambia con el sistema: muy poco en unos casos y mucho en otros."
+    ],
+    [
+     4,
+     "¿Qué rasgo distingue a la economía planificada en el esquema histórico?",
+     "Los medios de producción pertenecen al Estado y las decisiones se toman mediante una planificación central",
+     [
+      "La tierra es el principal recurso económico",
+      "describe el feudalismo"
+     ],
+     [
+      "Los precios tienen un papel fundamental",
+      "describe la economía de mercado"
+     ],
+     [
+      "Se busca la riqueza acumulando metales preciosos",
+      "describe el mercantilismo"
+     ],
+     "Planificada: medios de producción estatales y planificación central."
+    ],
+    [
+     5,
+     "¿Qué pareja sistema y ejemplo es correcta según el tema?",
+     "Economía planificada y los planes quinquenales de la URSS",
+     [
+      "Mercantilismo y la Revolución Industrial en el Reino Unido",
+      "mezcla los ejemplos"
+     ],
+     [
+      "Feudalismo y la Casa de Contratación de Sevilla",
+      "mezcla los ejemplos"
+     ],
+     [
+      "Economía de mercado y los planes quinquenales",
+      "mezcla los ejemplos"
+     ],
+     "Planes quinquenales de la URSS: economía planificada. Revolución Industrial: mercado. Casa de Contratación: mercantilismo."
+    ]
+   ]
+  }
+ ]
+}

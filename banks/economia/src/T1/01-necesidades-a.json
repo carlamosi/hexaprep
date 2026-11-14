@@ -1,0 +1,458 @@
+{
+ "subtema": "Necesidades y bienes",
+ "conceptos": [
+  {
+   "nombre": "Definición de economía",
+   "pagina": 2,
+   "ayuda": "La economía es la ciencia social que estudia cómo las sociedades gestionan recursos limitados para satisfacer necesidades ilimitadas. Fíjate en tres palabras: ciencia social (estudia personas, no cosas), limitados (el dinero, el tiempo y las materias primas no sobran) e ilimitadas (siempre queremos algo más). De ahí sale la idea central: nunca hay para todo, así que hay que elegir. Esa elección no es solo cosa de gobiernos o de empresas: cada persona decide a diario en qué gasta su dinero y su tiempo. Por eso decidir qué hacer con una tarde también es una decisión económica.",
+   "preguntas": [
+    [
+     2,
+     "¿Cuál de las siguientes frases describe mejor el objeto de estudio de la economía?",
+     "Cómo las sociedades gestionan recursos limitados para satisfacer necesidades ilimitadas",
+     [
+      "Cómo las empresas consiguen el máximo beneficio posible en cada mercado",
+      "reduce la economía a la empresa y al dinero"
+     ],
+     [
+      "Cómo se calcula y se reparte el dinero que circula dentro de un país",
+      "confunde economía con contabilidad monetaria"
+     ],
+     [
+      "Cómo el Estado fija los precios de los bienes básicos de la población",
+      "confunde economía con intervención estatal"
+     ],
+     "La economía estudia la gestión de recursos limitados ante necesidades ilimitadas. Regla: recursos limitados + necesidades ilimitadas = hay que elegir."
+    ],
+    [
+     3,
+     "En economía se dice que un recurso es escaso. ¿Qué significa exactamente?",
+     "Que no hay cantidad suficiente para cubrir todos los deseos que se querrían satisfacer con él",
+     [
+      "Que solo se encuentra en países pobres o en regiones en crisis",
+      "confunde escasez económica con escasez física"
+     ],
+     [
+      "Que su precio es muy elevado en cualquier mercado",
+      "confunde escasez con precio alto"
+     ],
+     [
+      "Que se va a agotar en pocos años",
+      "confunde escasez con agotamiento"
+     ],
+     "Escaso quiere decir insuficiente para todos los deseos. Es una relación entre deseos y recursos, no una cuestión de precio ni de agotamiento."
+    ],
+    [
+     3,
+     "¿Qué consecuencia directa tiene que las necesidades sean ilimitadas y los recursos limitados?",
+     "Que hay que elegir, porque no se puede tener todo",
+     [
+      "Que los precios deben bajar hasta cubrir todas las necesidades",
+      "supone que el mercado elimina la limitación"
+     ],
+     [
+      "Que el Estado debe repartir los recursos a partes iguales",
+      "salta de la escasez a una solución política concreta"
+     ],
+     [
+      "Que las personas dejan de generar nuevas necesidades",
+      "niega que las necesidades sean ilimitadas"
+     ],
+     "El choque entre necesidades ilimitadas y recursos limitados obliga a elegir. Nunca hay para todo: hay que ELEGIR."
+    ],
+    [
+     4,
+     "Alguien dice que a una familia muy rica la economía no le afecta porque puede comprar lo que quiera. Desde la definición de economía, ¿qué error comete?",
+     "Olvida que su tiempo y su dinero también son limitados, así que también tiene que elegir",
+     [
+      "Ninguno, porque la economía solo estudia a quienes tienen pocos recursos",
+      "cree que la economía es solo pobreza"
+     ],
+     [
+      "Ninguno, porque con suficiente dinero las necesidades se acaban",
+      "confunde riqueza con necesidades limitadas"
+     ],
+     [
+      "Que no tiene en cuenta que el Estado decide qué puede comprar cada familia",
+      "introduce un supuesto ajeno a la definición"
+     ],
+     "La escasez económica existe en todas las sociedades, incluso en las más ricas: las necesidades siguen siendo ilimitadas."
+    ],
+    [
+     4,
+     "¿Cuál de estas afirmaciones sobre las decisiones económicas es correcta según el tema?",
+     "Las toman individuos y organizaciones cada día, no solo los gobiernos o las grandes empresas",
+     [
+      "Solo las toman las empresas, porque son las que gestionan recursos",
+      "limita la decisión económica a la empresa"
+     ],
+     [
+      "Solo son económicas las decisiones que implican pagar con dinero",
+      "identifica economía con dinero"
+     ],
+     [
+      "Solo se producen en épocas de crisis, cuando faltan recursos",
+      "asocia decisión económica a crisis"
+     ],
+     "La economía analiza cómo individuos y organizaciones deciden cada día. Elegir cómo usar tiempo o dinero ya es decidir económicamente."
+    ],
+    [
+     5,
+     "Una estudiante duda entre estudiar toda la tarde o trabajar de cuidadora. Un compañero dice que eso no es una decisión económica porque estudiar no implica dinero. ¿Qué respuesta se ajusta mejor a la definición de economía?",
+     "Sí lo es: el tiempo es un recurso limitado y elegir una opción implica renunciar a la otra",
+     [
+      "No lo es: la economía solo analiza decisiones donde se intercambia dinero",
+      "reduce la economía a transacciones monetarias"
+     ],
+     [
+      "Sí lo es, pero solo porque trabajar le daría un salario",
+      "acepta el dinero como único criterio"
+     ],
+     [
+      "No lo es: son decisiones personales que estudia la psicología",
+      "separa lo personal de lo económico"
+     ],
+     "Los recursos limitados incluyen el tiempo. Cualquier elección entre alternativas con un recurso limitado es una decisión económica."
+    ]
+   ]
+  },
+  {
+   "nombre": "La necesidad: carencia más deseo",
+   "pagina": 2,
+   "ayuda": "Una necesidad económica no es solo que algo te falte. Según el tema, necesidad = carencia + deseo. La carencia es la sensación de que algo te falta; el deseo son las ganas de satisfacer esa carencia. Si tienes sed (carencia) y quieres beber (deseo), tienes una necesidad. Las necesidades son ilimitadas, porque al cubrir unas aparecen otras, y cambiantes, porque lo que se considera necesario varía con la época: hace treinta años nadie necesitaba un móvil. Esto es lo que alimenta el problema económico: siempre queremos más de lo que tenemos.",
+   "preguntas": [
+    [
+     1,
+     "Según el tema, una necesidad es la suma de…",
+     "una carencia (sensación de que algo falta) y un deseo de satisfacerla",
+     [
+      "un deseo y la capacidad económica de pagarlo",
+      "mezcla necesidad con demanda con poder de compra"
+     ],
+     [
+      "una carencia y una obligación legal de cubrirla",
+      "añade un elemento que no está en la definición"
+     ],
+     [
+      "un bien y un servicio que la cubran",
+      "confunde la necesidad con lo que la satisface"
+     ],
+     "Necesidad = carencia + deseo. Sin deseo de satisfacerla, solo hay una carencia."
+    ],
+    [
+     2,
+     "Tienes sed y quieres beber. Según el esquema de necesidad, ¿qué elementos aparecen?",
+     "La sed es la carencia y las ganas de beber son el deseo; juntos forman la necesidad",
+     [
+      "La sed es el deseo y las ganas de beber son la carencia",
+      "invierte carencia y deseo"
+     ],
+     [
+      "La sed es la necesidad y las ganas de beber son el recurso",
+      "confunde deseo con recurso"
+     ],
+     [
+      "La sed es una necesidad solo cuando se compra una bebida",
+      "liga la necesidad a la compra"
+     ],
+     "Carencia: te falta algo (sed). Deseo: quieres satisfacerla (beber). Las dos juntas son la necesidad."
+    ],
+    [
+     3,
+     "¿Por qué se dice que las necesidades son cambiantes?",
+     "Porque lo que se considera necesario varía con el tiempo: hace décadas nadie necesitaba un móvil",
+     [
+      "Porque dependen del precio de los bienes que las satisfacen",
+      "liga las necesidades al precio"
+     ],
+     [
+      "Porque desaparecen en cuanto se satisfacen una vez",
+      "confunde cambiantes con satisfechas para siempre"
+     ],
+     [
+      "Porque cada persona tiene siempre el mismo número de necesidades",
+      "afirma justo lo contrario de cambiantes"
+     ],
+     "Cambiantes: varían con la época y las circunstancias. Ejemplo del tema: el móvil."
+    ],
+    [
+     3,
+     "Una persona siente que le falta compañía, pero no tiene ganas de buscarla. Según la definición de necesidad del tema:",
+     "Hay una carencia, pero todavía no una necesidad, porque falta el deseo de satisfacerla",
+     [
+      "Ya es una necesidad, porque basta con la carencia",
+      "ignora el componente de deseo"
+     ],
+     [
+      "No hay ni carencia ni necesidad, porque la compañía no es un bien",
+      "confunde bien con carencia"
+     ],
+     [
+      "Solo es una necesidad si decide pagar por un servicio de compañía",
+      "exige un pago para hablar de necesidad"
+     ],
+     "Sin deseo de satisfacerla no hay necesidad en sentido económico: carencia + deseo."
+    ],
+    [
+     4,
+     "Alguien afirma que las necesidades se acabarán cuando la tecnología produzca bienes suficientes. ¿Qué punto del tema lo contradice con más fuerza?",
+     "Que las necesidades son ilimitadas y cambiantes: al cubrir unas aparecen otras nuevas",
+     [
+      "Que los bienes se clasifican en libres y económicos",
+      "aplica una clasificación de bienes a una cuestión sobre las necesidades"
+     ],
+     [
+      "Que la economía solo estudia los recursos naturales",
+      "atribuye a la economía un objeto que no tiene"
+     ],
+     [
+      "Que la escasez física solo afecta a los países en desarrollo",
+      "traslada el debate a la escasez física"
+     ],
+     "Como las necesidades son ilimitadas y cambiantes, producir más no las agota: surgen nuevas."
+    ],
+    [
+     5,
+     "Dos amigas ven un anuncio de zapatillas. Una dice «las necesito» y la otra «solo las quiero». Con la definición del tema, ¿qué conviene aclarar antes de discutir?",
+     "Si hay de verdad una carencia además del deseo, porque solo las dos juntas forman una necesidad",
+     [
+      "Cuánto cuestan, porque el precio decide si es una necesidad",
+      "usa el precio como criterio de necesidad"
+     ],
+     [
+      "Si son un bien de consumo o un bien de capital",
+      "aplica una clasificación de bienes a una cuestión de necesidades"
+     ],
+     [
+      "Si las zapatillas son un bien libre",
+      "confunde bien libre con gratuito"
+     ],
+     "Querer algo (deseo) no basta: hace falta también la carencia. Necesidad = carencia + deseo."
+    ]
+   ]
+  },
+  {
+   "nombre": "La pirámide de Maslow",
+   "pagina": 3,
+   "ayuda": "El psicólogo Abraham Maslow ordenó las necesidades humanas en cinco niveles, de la base a la cúspide: 1) fisiológicas (alimentación, descanso, agua), 2) seguridad (vivienda, empleo, salud, ahorros), 3) afiliación (amistad, familia, pertenencia a un grupo), 4) reconocimiento o estima (respeto, estatus, buena nota, ascenso) y 5) autorrealización (desarrollar el máximo potencial, crear, emprender). Cada nivel tiene su reflejo económico: el sector agroalimentario para el primero, las aseguradoras y los planes de pensiones para el segundo, las redes sociales y los clubes para el tercero, las marcas de lujo para el cuarto y la formación o la financiación de emprendedores para el quinto. La regla de la jerarquía dice que buscas un nivel superior solo cuando los inferiores están razonablemente cubiertos; por eso, al subir la renta de un país, crece el gasto en ocio, marcas y formación.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuál es el orden de los niveles de la pirámide de Maslow, de la base a la cúspide?",
+     "Fisiológicas, seguridad, afiliación, reconocimiento y autorrealización",
+     [
+      "Seguridad, fisiológicas, afiliación, autorrealización y reconocimiento",
+      "intercambia niveles contiguos"
+     ],
+     [
+      "Fisiológicas, afiliación, seguridad, reconocimiento y autorrealización",
+      "invierte seguridad y afiliación"
+     ],
+     [
+      "Autorrealización, reconocimiento, afiliación, seguridad y fisiológicas",
+      "recorre la pirámide al revés"
+     ],
+     "De abajo arriba: fisiológicas, seguridad, afiliación, reconocimiento, autorrealización."
+    ],
+    [
+     1,
+     "¿Quién ordenó las necesidades humanas en una jerarquía de cinco niveles?",
+     "El psicólogo Abraham Maslow",
+     [
+      "El economista Adam Smith",
+      "atribuye la jerarquía a un economista clásico"
+     ],
+     [
+      "El sociólogo Max Weber",
+      "atribuye la jerarquía a un sociólogo"
+     ],
+     [
+      "El filósofo Aristóteles",
+      "atribuye la jerarquía a un filósofo antiguo"
+     ],
+     "La jerarquía de necesidades es obra del psicólogo Abraham Maslow."
+    ],
+    [
+     2,
+     "¿En qué nivel de la pirámide de Maslow encajan tener un contrato fijo y unos ahorros?",
+     "Seguridad",
+     [
+      "Fisiológicas",
+      "confunde seguridad económica con supervivencia biológica"
+     ],
+     [
+      "Reconocimiento",
+      "lo toma por estatus"
+     ],
+     [
+      "Afiliación",
+      "lo toma por pertenencia a un grupo"
+     ],
+     "Vivienda, empleo, salud, ahorros y contrato fijo son necesidades de seguridad (nivel 2)."
+    ],
+    [
+     2,
+     "¿Qué actividades económicas atienden sobre todo el nivel fisiológico, según el tema?",
+     "El sector agroalimentario, las cadenas de supermercados y el suministro de agua y energía",
+     [
+      "Las aseguradoras y los planes de pensiones",
+      "son del nivel de seguridad"
+     ],
+     [
+      "Las redes sociales y la telefonía",
+      "son del nivel de afiliación"
+     ],
+     [
+      "Las marcas de lujo y los másteres de prestigio",
+      "son del nivel de reconocimiento"
+     ],
+     "Alimentación, descanso y agua (nivel 1) se atienden con agroalimentación, supermercados y suministros."
+    ],
+    [
+     3,
+     "Un ejemplo del nivel de afiliación junto con su reflejo económico es:",
+     "Amistad o pertenencia a un grupo, con redes sociales, telefonía y clubes deportivos",
+     [
+      "Buena nota o ascenso, con marcas de lujo y másteres de prestigio",
+      "corresponde al nivel de reconocimiento"
+     ],
+     [
+      "Vivienda y empleo, con aseguradoras y mercado hipotecario",
+      "corresponde al nivel de seguridad"
+     ],
+     [
+      "Creatividad y emprendimiento, con formación y financiación para emprendedores",
+      "corresponde a la autorrealización"
+     ],
+     "Afiliación (nivel 3): integración social y afecto. Reflejo económico: redes sociales, telefonía, ocio y clubes."
+    ],
+    [
+     3,
+     "El ascenso en el trabajo y una buena nota se sitúan en el nivel de…",
+     "Reconocimiento (estima)",
+     [
+      "Autorrealización",
+      "confunde reconocimiento ajeno con desarrollo del propio potencial"
+     ],
+     [
+      "Seguridad",
+      "confunde estatus con estabilidad"
+     ],
+     [
+      "Afiliación",
+      "confunde respeto con afecto"
+     ],
+     "Autoestima, respeto y estatus forman el nivel 4. El ascenso y la buena nota son ejemplos de reconocimiento."
+    ],
+    [
+     3,
+     "Según la regla de la jerarquía, ¿cuándo se busca un nivel superior de la pirámide?",
+     "Solo cuando los niveles inferiores están razonablemente cubiertos",
+     [
+      "Siempre a la vez que los inferiores, sin ningún orden",
+      "niega la jerarquía"
+     ],
+     [
+      "Solo cuando se dispone de ahorros elevados",
+      "mezcla nivel de necesidad con riqueza"
+     ],
+     [
+      "Nunca, porque los niveles son independientes entre sí",
+      "niega la relación entre niveles"
+     ],
+     "Regla de la jerarquía: subes de nivel solo cuando los de abajo están razonablemente cubiertos."
+    ],
+    [
+     4,
+     "Al subir la renta de un país crece el gasto en ocio, marcas y formación. ¿Qué explicación ofrece Maslow?",
+     "Cubiertos los niveles básicos, las personas pasan a atender niveles superiores",
+     [
+      "Los precios del ocio bajan cuando sube la renta",
+      "da una causa de precios que el tema no menciona"
+     ],
+     [
+      "Las necesidades básicas desaparecen en los países ricos",
+      "dice que desaparecen en lugar de estar cubiertas"
+     ],
+     [
+      "El Estado obliga a gastar en ocio y formación",
+      "atribuye al Estado una conducta espontánea"
+     ],
+     "Con más renta, los niveles inferiores quedan cubiertos y se atienden los superiores."
+    ],
+    [
+     4,
+     "Una persona con empleo precario y sin ahorros se matricula en un máster de prestigio muy caro. Con la lógica del tema, esa decisión es…",
+     "Poco coherente con la jerarquía, porque busca reconocimiento sin tener razonablemente cubierta la seguridad",
+     [
+      "Totalmente coherente, porque el reconocimiento va antes que la seguridad",
+      "invierte el orden de los niveles"
+     ],
+     [
+      "Coherente, porque el máster cubre una necesidad fisiológica",
+      "clasifica mal el máster"
+     ],
+     [
+      "Irrelevante para Maslow, porque solo trata de necesidades biológicas",
+      "reduce Maslow a lo fisiológico"
+     ],
+     "Seguridad (nivel 2) va antes que reconocimiento (nivel 4). Priorizar el nivel superior sin cubrir el inferior choca con la regla."
+    ],
+    [
+     4,
+     "En una crisis, muchas familias recortan antes el ocio y las marcas que la alimentación y la vivienda. ¿Qué idea del tema lo refleja mejor?",
+     "La jerarquía: cuando peligran los niveles inferiores, se renuncia antes a los superiores",
+     [
+      "El coste de oportunidad, porque el ocio no tiene ningún valor",
+      "aplica mal el coste de oportunidad"
+     ],
+     [
+      "La escasez física, que afecta a todos por igual",
+      "confunde escasez económica con física"
+     ],
+     [
+      "El análisis marginal, que prohíbe consumir ocio",
+      "el análisis marginal no prohíbe nada"
+     ],
+     "La jerarquía de Maslow explica que se protejan antes los niveles básicos."
+    ],
+    [
+     5,
+     "¿Cuál de estas parejas necesidad-actividad económica respeta la clasificación del tema?",
+     "Autorrealización y financiación para emprendedores",
+     [
+      "Seguridad y restauración y ocio",
+      "mezcla seguridad con afiliación"
+     ],
+     [
+      "Afiliación y sanidad privada",
+      "la sanidad privada es del nivel de seguridad"
+     ],
+     [
+      "Fisiológicas y coches de alta gama",
+      "los coches de alta gama son del nivel de reconocimiento"
+     ],
+     "Autorrealización: formación, viajes culturales y financiación para emprendedores. Sanidad privada: seguridad. Coches de alta gama: reconocimiento."
+    ],
+    [
+     5,
+     "Un ayuntamiento ofrece clases de iniciación al emprendimiento y microcréditos. ¿A qué nivel responde sobre todo y por qué?",
+     "Autorrealización: busca desarrollar el máximo potencial mediante la creación y el emprendimiento",
+     [
+      "Seguridad, porque da un empleo estable a quienes participan",
+      "emprender no garantiza estabilidad"
+     ],
+     [
+      "Reconocimiento, porque su fin es conseguir marcas y estatus",
+      "reduce el emprendimiento al estatus"
+     ],
+     [
+      "Afiliación, porque reúne a personas en un grupo",
+      "se fija en el medio y no en la finalidad"
+     ],
+     "Crear, emprender y desarrollar metas personales son rasgos del nivel 5."
+    ]
+   ]
+  }
+ ]
+}

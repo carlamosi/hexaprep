@@ -1,0 +1,415 @@
+{
+ "subtema": "Cómo decidimos",
+ "conceptos": [
+  {
+   "nombre": "Coste de oportunidad",
+   "pagina": 7,
+   "ayuda": "Toda decisión económica implica elegir una opción y renunciar a otras. El coste de oportunidad es el valor de la mejor alternativa a la que renuncias al tomar una decisión. La clave está en la palabra mejor: solo cuenta la mejor opción descartada, no todas. Ejemplo del tema: un sábado por la tarde puedes estudiar para el examen, trabajar de canguro (40 euros) o ir al cine. Si eliges estudiar, renuncias a las otras dos, pero el coste de oportunidad son los 40 euros del trabajo, porque es la mejor alternativa que dejas. Elegir algo implica necesariamente descartar otra cosa; nunca es gratis, aunque no pagues dinero.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es el coste de oportunidad?",
+     "El valor de la mejor alternativa a la que se renuncia al tomar una decisión",
+     [
+      "El dinero que se paga por lo que se elige",
+      "confunde coste de oportunidad con coste monetario"
+     ],
+     [
+      "La suma del valor de todas las alternativas descartadas",
+      "cuenta todas las alternativas y no solo la mejor"
+     ],
+     [
+      "El coste de oportunidades de negocio que ya se han perdido",
+      "lo confunde con costes pasados"
+     ],
+     "Coste de oportunidad = valor de la mejor alternativa que dejas."
+    ],
+    [
+     2,
+     "Un sábado por la tarde puedes estudiar, trabajar de canguro por 40 euros o ir al cine. Eliges estudiar. ¿Cuál es el coste de oportunidad?",
+     "Los 40 euros que no ganas por no trabajar de canguro",
+     [
+      "Los 40 euros más el valor de ir al cine",
+      "suma todas las alternativas descartadas"
+     ],
+     [
+      "El valor de ir al cine",
+      "toma una alternativa que no es la mejor"
+     ],
+     [
+      "Cero, porque estudiar no cuesta dinero",
+      "identifica coste con pago de dinero"
+     ],
+     "Solo cuenta la mejor alternativa descartada: aquí, el trabajo de canguro (40 euros)."
+    ],
+    [
+     2,
+     "¿Cuántas alternativas cuentan para calcular el coste de oportunidad?",
+     "Solo la mejor alternativa a la que se renuncia",
+     [
+      "Todas las alternativas a las que se renuncia",
+      "suma todas las alternativas"
+     ],
+     [
+      "La última alternativa que se pensó",
+      "elige por orden y no por valor"
+     ],
+     [
+      "Ninguna, porque no se pagan",
+      "cree que no hay coste sin pago"
+     ],
+     "Cuenta solo la mejor opción descartada."
+    ],
+    [
+     3,
+     "Una persona dedica una hora a ver una serie en lugar de estudiar o de salir a correr. Valora más estudiar que correr. ¿Cuál es su coste de oportunidad?",
+     "El valor de la hora de estudio, que es su mejor alternativa",
+     [
+      "El valor de la hora de estudio más el de salir a correr",
+      "suma las alternativas descartadas"
+     ],
+     [
+      "El precio de la suscripción a la serie",
+      "usa el coste monetario"
+     ],
+     [
+      "El valor de salir a correr, porque la serie no cuesta nada",
+      "no escoge la mejor alternativa"
+     ],
+     "La mejor alternativa descartada (estudiar) define el coste de oportunidad."
+    ],
+    [
+     3,
+     "¿Por qué se dice que elegir algo nunca es gratis, aunque no se pague dinero?",
+     "Porque se renuncia al menos a otra opción, y eso es un coste",
+     [
+      "Porque todo el mundo debe pagar impuestos",
+      "da una razón ajena al concepto"
+     ],
+     [
+      "Porque los bienes libres tienen precio",
+      "confunde con bienes libres"
+     ],
+     [
+      "Porque el Estado fija el valor del tiempo",
+      "introduce un agente que no interviene"
+     ],
+     "Elegir implica renunciar: ese es el coste de oportunidad."
+    ],
+    [
+     4,
+     "Una estudiante recibe una entrada gratuita para un concierto el mismo día que tiene un turno de 60 euros en su trabajo. Si va al concierto, ¿cuál es su coste de oportunidad?",
+     "Los 60 euros que no ganará por no trabajar",
+     [
+      "Cero, porque la entrada es gratuita",
+      "confunde gratis con sin coste"
+     ],
+     [
+      "El valor de la entrada del concierto",
+      "confunde con el valor de lo que se elige"
+     ],
+     [
+      "Los 60 euros más el precio normal de la entrada",
+      "mezcla lo elegido con lo descartado"
+     ],
+     "El concierto es lo que elige. Lo que deja de ganar con el trabajo (60 euros) es su coste de oportunidad."
+    ],
+    [
+     4,
+     "Un agricultor puede usar su terreno para cultivar trigo, que le da 3.000 euros, o maíz, que le da 4.000. ¿Cuál es el coste de oportunidad de elegir maíz?",
+     "3.000 euros, el valor de la mejor alternativa descartada",
+     [
+      "4.000 euros, lo que obtiene al elegir maíz",
+      "toma el valor de lo elegido"
+     ],
+     [
+      "7.000 euros, la suma de ambas opciones",
+      "suma elegido y descartado"
+     ],
+     [
+      "1.000 euros, la diferencia entre ambas",
+      "confunde coste de oportunidad con ganancia extra"
+     ],
+     "Elegir maíz supone renunciar al trigo (3.000 euros): ese es el coste de oportunidad."
+    ],
+    [
+     4,
+     "¿Cuál de estas frases confunde coste de oportunidad con coste monetario?",
+     "El coste de oportunidad de ir al cine es solo el precio de la entrada",
+     [
+      "El coste de oportunidad de ir al cine incluye lo que se deja de hacer en ese tiempo",
+      "es una frase correcta"
+     ],
+     [
+      "El coste de oportunidad puede existir aunque no se pague dinero",
+      "es una frase correcta"
+     ],
+     [
+      "El coste de oportunidad depende de cuál sea la mejor alternativa",
+      "es una frase correcta"
+     ],
+     "El coste de oportunidad no es lo que pagas, sino el valor de lo mejor a que renuncias."
+    ],
+    [
+     5,
+     "Una joven puede estudiar un grado (renuncia a un empleo de 18.000 euros al año) o hacer un curso corto (renuncia a un trabajo de 10.000). Elige el grado. ¿Qué afirmación es correcta sobre el coste de oportunidad?",
+     "Es de 18.000 euros al año, el valor de la mejor alternativa descartada",
+     [
+      "Es de 28.000 euros, porque renuncia a las dos cosas",
+      "suma las alternativas"
+     ],
+     [
+      "Es de 10.000 euros, porque el curso es la alternativa más cercana",
+      "elige la alternativa por proximidad y no por valor"
+     ],
+     [
+      "Es cero, porque el grado es una inversión",
+      "ignora la renuncia"
+     ],
+     "Solo cuenta la mejor alternativa descartada: aquí el empleo de 18.000 euros."
+    ],
+    [
+     5,
+     "En el ejemplo del tema, además de trabajar de canguro, la persona renuncia a ir al cine. ¿Por qué el cine no forma parte del coste de oportunidad?",
+     "Porque solo cuenta la mejor alternativa descartada, y esa es el trabajo de canguro",
+     [
+      "Porque ir al cine siempre es gratis",
+      "supone una razón que no está en el tema"
+     ],
+     [
+      "Porque solo cuenta lo que se paga con dinero",
+      "confunde coste de oportunidad con monetario"
+     ],
+     [
+      "Porque el cine es un bien libre",
+      "confunde con bienes libres"
+     ],
+     "El tema lo indica: también renuncias al cine, pero no cuenta, porque solo cuenta la mejor opción."
+    ],
+    [
+     3,
+     "¿Cuál de estas decisiones tiene coste de oportunidad?",
+     "Cualquier decisión en la que se elige una opción y se renuncia a otra",
+     [
+      "Solo las decisiones que implican pagar",
+      "ata el coste al pago"
+     ],
+     [
+      "Solo las decisiones de las empresas",
+      "limita el concepto a las empresas"
+     ],
+     [
+      "Solo las decisiones que salen mal",
+      "confunde coste con error"
+     ],
+     "Toda decisión económica implica elegir y renunciar, así que todas tienen coste de oportunidad."
+    ],
+    [
+     5,
+     "Una empresa decide ampliar su fábrica con 100.000 euros que tenía en un depósito al 3 % anual. Un directivo dice que la ampliación no tiene coste porque el dinero ya estaba en la empresa. ¿Qué error comete?",
+     "Olvida el coste de oportunidad: renuncia al interés que ganaría con el depósito",
+     [
+      "Ninguno, porque lo que ya se tiene no cuesta nada",
+      "ignora el valor de la alternativa"
+     ],
+     [
+      "Confunde coste de oportunidad con coste irrecuperable",
+      "no hay gasto pasado en el ejemplo"
+     ],
+     [
+      "Olvida que las empresas no tienen costes de oportunidad",
+      "afirma algo falso sobre las empresas"
+     ],
+     "Usar un recurso propio también tiene coste: lo que se dejaría de ganar con su mejor alternativa (el interés)."
+    ]
+   ]
+  },
+  {
+   "nombre": "Costes irrecuperables (costes hundidos)",
+   "pagina": 7,
+   "ayuda": "Los costes irrecuperables o hundidos son gastos del pasado que ya se han producido y no se pueden recuperar, decidas lo que decidas ahora. Una persona racional no los tiene en cuenta al decidir sobre el futuro. La idea se resume así: el pasado no cuenta y el futuro sí. Ejemplo del tema: entras al cine y la película es un rollo. Los 8 euros de la entrada ya no vuelven, te quedes o te vayas, así que decides solo si te compensa seguir dentro. Contraste con el coste de oportunidad: este mira lo que dejas de tener y el coste hundido mira lo que ya pagaste.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué es un coste irrecuperable o hundido?",
+     "Un gasto del pasado que ya se ha producido y no se puede recuperar",
+     [
+      "Un gasto que se recupera al vender el bien",
+      "contradice la definición"
+     ],
+     [
+      "El valor de la mejor alternativa a la que se renuncia",
+      "es el coste de oportunidad"
+     ],
+     [
+      "Un gasto futuro que todavía no se ha pagado",
+      "confunde pasado con futuro"
+     ],
+     "Costes hundidos: gastos pasados que no se pueden recuperar."
+    ],
+    [
+     2,
+     "Entras al cine y la película es muy mala. Según el tema, ¿cómo debe decidir una persona racional si se queda?",
+     "Sin tener en cuenta los 8 euros de la entrada, comparando solo lo que ganará o perderá a partir de ahora",
+     [
+      "Quedándose, para no perder los 8 euros pagados",
+      "cae en la trampa del coste hundido"
+     ],
+     [
+      "Pidiendo que le devuelvan los 8 euros",
+      "supone una recuperación que no existe"
+     ],
+     [
+      "Quedándose solo si la película dura menos de una hora",
+      "inventa un criterio ajeno"
+     ],
+     "El coste hundido no cuenta: decides solo según lo que ganarás o perderás de aquí en adelante."
+    ],
+    [
+     2,
+     "¿Cuál es la regla que resume el tratamiento de los costes irrecuperables?",
+     "El pasado no cuenta y el futuro sí",
+     [
+      "El pasado cuenta siempre más que el futuro",
+      "invierte la regla"
+     ],
+     [
+      "Solo cuentan los costes que se pagan en efectivo",
+      "mezcla coste con forma de pago"
+     ],
+     [
+      "Cuentan todos los costes con independencia del momento",
+      "ignora que los hundidos no cuentan"
+     ],
+     "Regla del tema: pasado no cuenta, futuro sí."
+    ],
+    [
+     3,
+     "Una persona ha pagado una matrícula no reembolsable de 300 euros a un gimnasio y dejó de ir. Dice que seguirá yendo para no perder el dinero. Desde la lógica de los costes hundidos:",
+     "Los 300 euros ya están perdidos: debe decidir según si le compensa ir a partir de ahora",
+     [
+      "Hace bien, porque así rentabiliza el dinero pagado",
+      "cae en la trampa del coste hundido"
+     ],
+     [
+      "Hace bien, porque el gimnasio le devolverá el dinero si va",
+      "supone una recuperación que no existe"
+     ],
+     [
+      "Hace mal, porque nunca hay que gastar dinero en gimnasios",
+      "introduce un juicio ajeno al tema"
+     ],
+     "La matrícula es un gasto pasado e irrecuperable: no debe influir en la decisión futura."
+    ],
+    [
+     3,
+     "¿En qué se diferencian el coste de oportunidad y el coste hundido?",
+     "El de oportunidad mira lo que se deja de tener, y el hundido, lo que ya se pagó",
+     [
+      "El de oportunidad mira el pasado y el hundido, el futuro",
+      "invierte los dos conceptos"
+     ],
+     [
+      "Son lo mismo, pero con distinto nombre",
+      "identifica el coste de oportunidad con el coste hundido"
+     ],
+     [
+      "El de oportunidad solo se aplica a empresas y el hundido a personas",
+      "reparte los conceptos por tipo de agente"
+     ],
+     "Contraste del tema: el de oportunidad mira lo que dejas de tener; el hundido, lo que ya pagaste."
+    ],
+    [
+     4,
+     "Una empresa ha gastado 2 millones en desarrollar un producto que ahora se prevé que dará pérdidas. Seguir produciendo costaría 500.000 euros más y vendería por 300.000. ¿Qué decisión es coherente con la teoría?",
+     "Dejar de producir: los 2 millones son hundidos y seguir da pérdidas de 200.000",
+     [
+      "Seguir produciendo, para no desperdiciar los 2 millones",
+      "cae en la trampa del coste hundido"
+     ],
+     [
+      "Seguir produciendo, porque los costes pasados cuentan igual",
+      "contradice la regla del tema"
+     ],
+     [
+      "Dejar de producir y reclamar los 2 millones al Estado",
+      "supone una recuperación inexistente"
+     ],
+     "Solo cuentan los costes y beneficios futuros: gastar 500.000 para ingresar 300.000 es una pérdida."
+    ],
+    [
+     4,
+     "Alguien compra un billete de tren no reembolsable por 40 euros. Al día siguiente le ofrecen una actividad que valora en 60 euros y que se hace a la hora del tren. ¿Cómo influyen los 40 euros en la decisión?",
+     "No influyen: son un coste hundido y compara solo los 60 euros de valor con lo que gana yendo en tren",
+     [
+      "Influyen del todo: debe ir en tren para no perderlos",
+      "cae en la trampa del coste hundido"
+     ],
+     [
+      "Influyen la mitad, porque se pueden recuperar parcialmente",
+      "supone una recuperación parcial inexistente"
+     ],
+     [
+      "Influyen porque son el coste de oportunidad de la actividad",
+      "confunde coste hundido con de oportunidad"
+     ],
+     "El billete no reembolsable ya está pagado y no se recupera: no debe condicionar la decisión."
+    ],
+    [
+     4,
+     "¿Cuál de estas frases es un razonamiento basado en costes hundidos?",
+     "«Ya he pagado la entrada, así que me quedo aunque sea aburrida»",
+     [
+      "«Voy a quedarme porque lo que veo ahora me gusta más que irme»",
+      "razona según el futuro"
+     ],
+     [
+      "«Me voy porque con el tiempo puedo hacer algo mejor»",
+      "razona según el coste de oportunidad"
+     ],
+     [
+      "«No pago otra entrada porque el precio ha subido»",
+      "razona según un cambio de precio"
+     ],
+     "Quedarse para no perder lo ya pagado es un razonamiento basado en un coste hundido."
+    ],
+    [
+     5,
+     "Un estudiante lleva dos años en una carrera que ya no le gusta y piensa: «He invertido tanto que no puedo cambiar». ¿Qué puntos de la teoría aplican?",
+     "Los dos años son un coste hundido: debe comparar su valor futuro en cada opción, incluido el coste de oportunidad de seguir",
+     [
+      "Los dos años son un coste de oportunidad que debe compensar",
+      "confunde coste hundido con coste de oportunidad"
+     ],
+     [
+      "Los dos años son un incentivo para seguir",
+      "confunde incentivo con coste hundido"
+     ],
+     [
+      "No aplica ninguna idea del tema, porque no hay dinero implicado",
+      "ignora que el tiempo es un recurso"
+     ],
+     "El tiempo ya empleado es irrecuperable; lo relevante es lo que ganará o perderá en adelante (y a qué renuncia por seguir)."
+    ],
+    [
+     5,
+     "¿Cuál de las siguientes afirmaciones sobre costes hundidos y decisiones racionales es correcta?",
+     "Una decisión racional sobre el futuro ignora los costes hundidos, pero sí cuenta el coste de oportunidad",
+     [
+      "Una decisión racional cuenta los costes hundidos y el coste de oportunidad por igual",
+      "cree que el coste hundido debe contar en las decisiones futuras"
+     ],
+     [
+      "Una decisión racional cuenta los costes hundidos y ignora el coste de oportunidad",
+      "invierte el tratamiento"
+     ],
+     [
+      "Una decisión racional ignora los dos tipos de costes",
+      "ignora el coste de oportunidad"
+     ],
+     "Pasado no cuenta (hundidos); futuro sí, incluido el coste de oportunidad."
+    ]
+   ]
+  }
+ ]
+}

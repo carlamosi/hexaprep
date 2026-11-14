@@ -1,0 +1,508 @@
+{
+ "subtema": "La economía de mercado",
+ "conceptos": [
+  {
+   "nombre": "El papel del Estado en el mercado",
+   "pagina": 8,
+   "ayuda": "Aunque en el mercado deciden sobre todo consumidores y empresas, el Estado no deja de intervenir del todo. Tiene dos funciones principales. Primera, establecer el marco jurídico: crea y hace cumplir las leyes que regulan la actividad económica para proteger los derechos de consumidores y empresas; ejemplos, el SMI (Salario Mínimo Interprofesional, el sueldo más bajo que permite la ley), la libre competencia (prohíbe pactar precios entre empresas, los cárteles; la CNMC vigila y multa) y la protección del consumidor. Segunda, proporcionar bienes y servicios públicos: los no rentables (las empresas privadas no los quieren producir o los ofrecerían a un precio demasiado alto: carreteras, parques, autovías gratuitas, alumbrado) y los estratégicos (garantizan el buen funcionamiento de la democracia: ejército, policía, administración de justicia, Guardia Civil, Mossos d'Esquadra, juzgados). Palabra pista: no rentable, infraestructuras y espacios de todos; estratégico, seguridad y justicia.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las dos funciones del Estado en el mercado que describe el tema?",
+     "Establecer el marco jurídico y proporcionar bienes y servicios públicos",
+     [
+      "Fijar todos los precios y planificar la producción",
+      "describe la economía planificada"
+     ],
+     [
+      "Producir todos los bienes y repartirlos entre las familias",
+      "describe la economía planificada"
+     ],
+     [
+      "Cobrar impuestos y controlar a las familias",
+      "reduce la acción del Estado a cobrar impuestos"
+     ],
+     "Marco jurídico y bienes y servicios públicos."
+    ],
+    [
+     2,
+     "¿Qué es el SMI?",
+     "El Salario Mínimo Interprofesional: el sueldo más bajo permitido por ley",
+     [
+      "El Sistema Monetario Internacional",
+      "usa una sigla parecida de otro ámbito"
+     ],
+     [
+      "El sueldo medio de un país",
+      "lo confunde con la media"
+     ],
+     [
+      "La subvención mínima que reciben las empresas",
+      "lo confunde con una ayuda a empresas"
+     ],
+     "SMI: salario mínimo interprofesional, parte del marco jurídico."
+    ],
+    [
+     2,
+     "¿Qué institución vigila la libre competencia en España y multa a los cárteles?",
+     "La CNMC",
+     [
+      "El INE",
+      "elabora estadísticas"
+     ],
+     [
+      "El SEPE",
+      "gestiona prestaciones por desempleo"
+     ],
+     [
+      "El Banco Central Europeo",
+      "fija los tipos de interés oficiales"
+     ],
+     "La CNMC vigila la competencia y multa los cárteles."
+    ],
+    [
+     3,
+     "¿Qué es un cártel?",
+     "Un pacto de precios entre empresas, que la libre competencia prohíbe",
+     [
+      "Una empresa pública que domina un mercado",
+      "confunde cártel con monopolio público"
+     ],
+     [
+      "Un impuesto sobre los beneficios de las empresas",
+      "lo confunde con un impuesto"
+     ],
+     [
+      "Un acuerdo entre Estado y empresas para fijar el SMI",
+      "lo confunde con la fijación del salario mínimo"
+     ],
+     "La libre competencia prohíbe pactar precios entre empresas (cárteles)."
+    ],
+    [
+     3,
+     "¿Por qué el Estado ofrece bienes no rentables como carreteras o parques?",
+     "Porque las empresas privadas no querrían producirlos o los ofrecerían a un precio demasiado alto",
+     [
+      "Porque son bienes de lujo",
+      "supone que el Estado solo ofrece bienes de lujo"
+     ],
+     [
+      "Porque el Estado obtiene beneficios con ellos",
+      "contradice la idea de bien no rentable"
+     ],
+     [
+      "Porque son la única forma de que se paguen impuestos",
+      "da una razón que no está en el tema"
+     ],
+     "Los no rentables los ofrece el Estado porque no dan beneficio a las empresas."
+    ],
+    [
+     3,
+     "¿Qué es un servicio estratégico según el tema?",
+     "El que garantiza el buen funcionamiento de la democracia, como ejército, policía o administración de justicia",
+     [
+      "Una infraestructura de todos, como carreteras o parques",
+      "describe los bienes no rentables"
+     ],
+     [
+      "Una actividad que da mucho beneficio a las empresas",
+      "confunde estratégico con rentable"
+     ],
+     [
+      "Un servicio que presta una empresa privada con ánimo de lucro",
+      "confunde estratégico con privado"
+     ],
+     "Estratégicos: seguridad y justicia, que protegen la democracia."
+    ],
+    [
+     4,
+     "¿Cómo se clasifican, respectivamente, las autovías gratuitas y el alumbrado de las calles, y la Guardia Civil, los Mossos y los juzgados?",
+     "Los primeros son bienes no rentables y los segundos son servicios estratégicos",
+     [
+      "Los primeros son estratégicos y los segundos no rentables",
+      "invierte la clasificación"
+     ],
+     [
+      "Todos son bienes no rentables",
+      "ignora la categoría de estratégicos"
+     ],
+     [
+      "Todos son servicios estratégicos",
+      "ignora la categoría de no rentables"
+     ],
+     "Autovías y alumbrado: no rentables. Guardia Civil, Mossos y juzgados: estratégicos."
+    ],
+    [
+     5,
+     "Una empresa privada se niega a ofrecer una línea de autobús en un pueblo con muy pocos habitantes y el ayuntamiento decide ofrecerla. ¿Qué función del Estado ilustra y por qué?",
+     "Proporcionar un servicio no rentable: a las empresas no les da suficiente beneficio",
+     [
+      "Establecer el marco jurídico: porque regula el transporte",
+      "confunde ofrecer un servicio con regular"
+     ],
+     [
+      "Servicio estratégico: porque garantiza el buen funcionamiento de la democracia",
+      "confunde un servicio poco rentable con un servicio de seguridad o justicia"
+     ],
+     [
+      "Control de precios de una economía planificada",
+      "aplica un principio de otro sistema"
+     ],
+     "Si una empresa privada no lo quiere ofrecer por falta de beneficio, el Estado lo presta como bien o servicio público no rentable."
+    ]
+   ]
+  },
+  {
+   "nombre": "Los fallos del mercado: qué son y cuáles son",
+   "pagina": 9,
+   "ayuda": "Hay fallo del mercado cuando su funcionamiento da resultados que perjudican a la sociedad o no permite una asignación eficiente de los recursos. El tema distingue cinco: 1) distribución desigual de la renta, 2) abusos de las empresas, 3) escasez de bienes no rentables, 4) inestabilidad cíclica o crisis y 5) externalidades. Para recordarlos: «Dice Adam: El Invisible Erra» (D A E I E: Desigualdad, Abusos de las empresas, Escasez de bienes no rentables, Inestabilidad cíclica, Externalidades). Hasta la mano invisible de Adam Smith se equivoca, y por eso interviene el Estado. Ejemplo de desigualdad: un directivo del IBEX 35 cobra muchas veces más que un empleado de su empresa.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuándo hay un fallo del mercado?",
+     "Cuando su funcionamiento da resultados que perjudican a la sociedad o no permite una asignación eficiente de los recursos",
+     [
+      "Cuando el Estado interviene en los precios",
+      "confunde el fallo con la intervención"
+     ],
+     [
+      "Cuando las empresas obtienen beneficios",
+      "confunde beneficio con fallo"
+     ],
+     [
+      "Cuando los precios suben",
+      "confunde subida de precios con fallo"
+     ],
+     "Fallo del mercado: resultados que perjudican a la sociedad o asignación ineficiente de recursos."
+    ],
+    [
+     2,
+     "¿Cuál de las siguientes listas recoge los cinco fallos del mercado del tema?",
+     "Desigualdad de la renta, abusos de las empresas, escasez de bienes no rentables, inestabilidad cíclica y externalidades",
+     [
+      "Inflación, paro, déficit, deuda e impuestos",
+      "son indicadores y variables macroeconómicas"
+     ],
+     [
+      "Libertad, propiedad, beneficio, competencia y precios",
+      "son los principios del mercado"
+     ],
+     [
+      "Desigualdad, inflación, paro, competencia y monopolios",
+      "mezcla elementos que no son los cinco fallos"
+     ],
+     "Los cinco fallos: D A E I E."
+    ],
+    [
+     3,
+     "¿Qué regla mnemotécnica recuerda los cinco fallos del mercado?",
+     "«Dice Adam: El Invisible Erra»",
+     [
+      "«La Panadería Busca Clientes con Precios»",
+      "recuerda los principios del mercado"
+     ],
+     [
+      "«Por Plan, El Comité Decide Igual»",
+      "recuerda los principios de la economía planificada"
+     ],
+     [
+      "«Más Bienestar Con Renta Estable y Creciente»",
+      "recuerda las funciones del Estado en la economía mixta"
+     ],
+     "D A E I E: Desigualdad, Abusos, Escasez de bienes no rentables, Inestabilidad, Externalidades."
+    ],
+    [
+     4,
+     "Un directivo de una empresa del IBEX 35 cobra muchas veces más que un empleado de su empresa. ¿Qué fallo del mercado ilustra?",
+     "La distribución desigual de la renta",
+     [
+      "Abusos de las empresas",
+      "confunde diferencias de ingresos con abuso de poder de mercado"
+     ],
+     [
+      "Inestabilidad cíclica",
+      "confunde diferencias de ingresos con crisis económicas"
+     ],
+     [
+      "Externalidad negativa",
+      "confunde diferencias de ingresos con efectos sobre terceros"
+     ],
+     "El mercado puede generar grandes diferencias de ingresos y riqueza."
+    ],
+    [
+     4,
+     "¿Por qué los fallos del mercado justifican la intervención del Estado?",
+     "Porque el mercado no siempre da por sí solo el mejor resultado para la sociedad y el Estado puede corregirlo",
+     [
+      "Porque el Estado siempre decide mejor que el mercado",
+      "generaliza más de lo que dice el tema"
+     ],
+     [
+      "Porque los fallos desaparecen si el Estado planifica toda la economía",
+      "contradice el fracaso de la planificación"
+     ],
+     [
+      "Porque los fallos solo afectan a las empresas",
+      "ignora el efecto sobre la sociedad"
+     ],
+     "La mano invisible no es perfecta: de ahí la intervención del Estado."
+    ]
+   ]
+  },
+  {
+   "nombre": "Abusos de las empresas y escasez de bienes no rentables",
+   "pagina": 9,
+   "ayuda": "Segundo fallo, abusos de las empresas: cuando hay poca competencia, algunas empresas usan su poder de mercado para imponer precios elevados, reducir la calidad o poner condiciones desfavorables a los consumidores. Si solo una empresa ofrece un servicio, los consumidores tienen pocas alternativas. La CNMC ha multado a empresas por pactar precios entre ellas (cárteles). Tercer fallo, escasez de bienes no rentables: las empresas producen sobre todo lo que les da beneficios, así que pueden faltar bienes o servicios necesarios para la sociedad pero poco rentables. Ejemplo: una empresa puede no querer ofrecer servicios en una zona rural con muy pocos habitantes; en la España vaciada, muchos pueblos se han quedado sin oficina bancaria ni cajero (pocos clientes significan poco beneficio).",
+   "preguntas": [
+    [
+     2,
+     "¿Qué ocurre cuando hay poca competencia, según el fallo de abusos de las empresas?",
+     "Algunas empresas usan su poder de mercado para imponer precios elevados, reducir la calidad o poner condiciones desfavorables",
+     [
+      "Los precios bajan para atraer a más clientes",
+      "describe un efecto de la competencia"
+     ],
+     [
+      "El Estado fija todos los precios",
+      "no es un efecto de la falta de competencia"
+     ],
+     [
+      "Aumenta el número de empresas del sector",
+      "contradice la falta de competencia"
+     ],
+     "Con poca competencia, el poder de mercado permite abusar de los consumidores."
+    ],
+    [
+     3,
+     "La CNMC ha multado a empresas por pactar precios entre ellas. ¿Qué fallo del mercado ilustra?",
+     "Abusos de las empresas",
+     [
+      "Escasez de bienes no rentables",
+      "confunde pactar precios con falta de servicios en zonas poco rentables"
+     ],
+     [
+      "Distribución desigual de la renta",
+      "confunde pactar precios con diferencias de renta"
+     ],
+     [
+      "Externalidades",
+      "confunde pactar precios con efectos sobre terceros"
+     ],
+     "Pactar precios es un abuso de poder de mercado ante la falta de competencia."
+    ],
+    [
+     3,
+     "En la España vaciada, muchos pueblos se han quedado sin oficina bancaria ni cajero. ¿Qué fallo ilustra?",
+     "Escasez de bienes no rentables",
+     [
+      "Abusos de las empresas",
+      "confunde falta de servicios con imposición de precios elevados"
+     ],
+     [
+      "Inestabilidad cíclica",
+      "confunde falta de servicios con crisis económicas"
+     ],
+     [
+      "Distribución desigual de la renta",
+      "confunde falta de servicios con diferencias de renta"
+     ],
+     "Pocos clientes significan poco beneficio: las empresas dejan de ofrecer el servicio."
+    ],
+    [
+     4,
+     "¿Por qué las empresas no suelen ofrecer servicios en zonas con muy pocos habitantes?",
+     "Porque pocos clientes significan poco beneficio, y las empresas producen sobre todo lo que les da beneficios",
+     [
+      "Porque el Estado se lo prohíbe",
+      "atribuye la falta de servicios a una prohibición del Estado"
+     ],
+     [
+      "Porque en esas zonas la demanda es infinita",
+      "supone una demanda infinita donde faltan clientes"
+     ],
+     [
+      "Porque son servicios estratégicos",
+      "confunde no rentable con estratégico"
+     ],
+     "Las empresas producen lo que da beneficio: lo no rentable puede faltar."
+    ]
+   ]
+  },
+  {
+   "nombre": "Inestabilidad cíclica",
+   "pagina": 10,
+   "ayuda": "Cuarto fallo, inestabilidad cíclica: las economías de mercado alternan crecimiento y expansión con crisis o recesión, que traen más paro y menos producción. En una crisis, las empresas reducen su actividad y contratan menos. El tema recoge las grandes crisis en este orden: 1929 (crac del 29, Gran Depresión), 1939 a 1945 (II Guerra Mundial), 1973 (crisis del petróleo), 2008 (burbuja inmobiliaria) y 2020 (COVID-19, parón mundial). El Estado interviene para estabilizar la economía, por ejemplo, con ayudas y ERTE durante la COVID-19.",
+   "preguntas": [
+    [
+     2,
+     "¿Qué es la inestabilidad cíclica?",
+     "La alternancia entre crecimiento y expansión con crisis o recesión, que traen más paro y menos producción",
+     [
+      "Una subida constante de los precios",
+      "describe la inflación"
+     ],
+     [
+      "Un exceso permanente de beneficios en las empresas",
+      "no es un fallo cíclico"
+     ],
+     [
+      "La caída de un único sector económico",
+      "reduce un fenómeno general a un sector"
+     ],
+     "Las economías de mercado alternan expansión y crisis."
+    ],
+    [
+     3,
+     "¿Cuál es el orden correcto de las grandes crisis recogidas en el tema?",
+     "1929, II Guerra Mundial (1939 a 1945), 1973 del petróleo, 2008 inmobiliaria y 2020 COVID-19",
+     [
+      "1929, 1973, II Guerra Mundial, 2008 y 2020",
+      "cambia de lugar la guerra y el petróleo"
+     ],
+     [
+      "II Guerra Mundial, 1929, 1973, 2020 y 2008",
+      "desordena las fechas"
+     ],
+     [
+      "1973, 2008, 1929, 2020 y II Guerra Mundial",
+      "desordena las fechas"
+     ],
+     "Cronología: 1929, 1939 a 1945, 1973, 2008, 2020."
+    ],
+    [
+     4,
+     "¿Qué hacen normalmente las empresas en una crisis?",
+     "Reducen su actividad y contratan menos",
+     [
+      "Aumentan la producción y contratan más",
+      "invierte el efecto"
+     ],
+     [
+      "Suben los salarios para retener a los trabajadores",
+      "supone que las crisis suben los salarios"
+     ],
+     [
+      "Abren nuevos mercados en todo el mundo",
+      "supone que las crisis impulsan la expansión de las empresas"
+     ],
+     "En las crisis hay más paro y menos producción."
+    ],
+    [
+     4,
+     "La crisis de 2008 se relaciona en el tema con…",
+     "La burbuja inmobiliaria",
+     [
+      "El crac del 29",
+      "es la crisis de 1929"
+     ],
+     [
+      "La crisis del petróleo",
+      "es la crisis de 1973"
+     ],
+     [
+      "El parón mundial por la COVID-19",
+      "es la crisis de 2020"
+     ],
+     "2008: burbuja inmobiliaria."
+    ]
+   ]
+  },
+  {
+   "nombre": "Externalidades",
+   "pagina": 10,
+   "ayuda": "Quinto fallo, las externalidades: la actividad de una persona o empresa afecta a otras que no participan en ella, y ese efecto no se refleja en el precio. Pueden ser negativas (perjudican) o positivas (benefician). Externalidad negativa: una fábrica contamina un río y perjudica a quienes viven en la zona; el tráfico (de ahí las zonas de bajas emisiones). ¿Quién paga? Los vecinos, no quien compra el producto; el Estado regula o pone multas e impuestos. Externalidad positiva: una persona se vacuna y se protege ella y reduce el riesgo de contagiar a otras; una empresa forma a su plantilla y otras lo aprovechan. ¿Quién gana? Otros que no han pagado nada; el Estado lo fomenta (vacunas gratuitas).",
+   "preguntas": [
+    [
+     2,
+     "¿Qué es una externalidad?",
+     "El efecto de la actividad de una persona o empresa sobre otras que no participan en ella, y que no se refleja en el precio",
+     [
+      "Un impuesto sobre el comercio exterior",
+      "confunde externalidad con comercio exterior"
+     ],
+     [
+      "Un beneficio que solo cobra el Estado",
+      "confunde una externalidad con un ingreso del Estado"
+     ],
+     [
+      "Un servicio público gratuito",
+      "confunde externalidad con servicio público"
+     ],
+     "Externalidad: efecto sobre terceros no reflejado en el precio."
+    ],
+    [
+     3,
+     "Una fábrica contamina un río y perjudica a quienes viven cerca. ¿Qué tipo de externalidad es y quién paga?",
+     "Negativa; la pagan los vecinos y no quien compra el producto",
+     [
+      "Positiva; la paga la fábrica",
+      "confunde el signo y quién paga"
+     ],
+     [
+      "Negativa; la paga quien compra el producto",
+      "ignora a quien soporta el daño"
+     ],
+     [
+      "Positiva; la pagan los vecinos",
+      "confunde el signo"
+     ],
+     "El daño recae en terceros, no se refleja en el precio."
+    ],
+    [
+     3,
+     "Una persona se vacuna y reduce el riesgo de contagio a otras. ¿Qué tipo de externalidad es?",
+     "Positiva: beneficia a otros que no han pagado nada",
+     [
+      "Negativa: perjudica a quienes no se vacunan",
+      "confunde el signo"
+     ],
+     [
+      "Ninguna, porque beneficia solo a quien se vacuna",
+      "ignora el beneficio a terceros"
+     ],
+     [
+      "Es un abuso de las empresas",
+      "confunde el fallo"
+     ],
+     "Externalidad positiva: otros se benefician sin pagar."
+    ],
+    [
+     4,
+     "Una empresa forma a su plantilla y otras empresas aprovechan esa formación cuando contratan a esas personas. ¿Qué es?",
+     "Una externalidad positiva",
+     [
+      "Una externalidad negativa",
+      "confunde el signo"
+     ],
+     [
+      "Un abuso de poder de mercado",
+      "confunde un beneficio para terceros con un abuso de poder de mercado"
+     ],
+     [
+      "Un bien no rentable",
+      "no se trata de la escasez de un bien"
+     ],
+     "Hay un beneficio para terceros que no se refleja en el precio."
+    ],
+    [
+     5,
+     "¿Cómo suele reaccionar el Estado ante cada tipo de externalidad, según el tema?",
+     "Regula o impone multas e impuestos a las negativas y fomenta las positivas, por ejemplo con vacunas gratuitas",
+     [
+      "Fomenta las negativas y multa las positivas",
+      "invierte el tratamiento"
+     ],
+     [
+      "No interviene en ninguna, porque no tienen precio",
+      "ignora la intervención del Estado"
+     ],
+     [
+      "Prohíbe todas las externalidades por igual",
+      "cree que el Estado trata igual las externalidades positivas y las negativas"
+     ],
+     "Negativas: regulación, multas e impuestos. Positivas: fomento, como las vacunas gratuitas."
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,494 @@
+{
+ "subtema": "Los mercados y sus tipos",
+ "conceptos": [
+  {
+   "nombre": "Oligopolio",
+   "pagina": 14,
+   "ayuda": "En un oligopolio pocos vendedores dominan el mercado y cada uno puede influir en los precios y en las decisiones de los otros. Existe interdependencia entre las empresas y las barreras de entrada son moderadas o elevadas. Las empresas pueden colaborar y fijar precios (cárteles) o competir de manera agresiva; las decisiones de una empresa afectan directamente a las otras. Ejemplos: el mercado de automóviles, las telecomunicaciones o las aerolíneas; en España, la telefonía móvil, las gasolineras y los bancos. La clave: observan constantemente a sus rivales (interdependencia estratégica): compiten ferozmente en precios o pactan de forma ilegal (cártel). Pactar precios es un cártel y es ilegal.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las características de un oligopolio?",
+     "Pocos vendedores dominan el mercado y cada uno puede influir en los precios y en las decisiones de los otros; hay interdependencia y barreras de entrada moderadas o elevadas",
+     [
+      "Muchas empresas iguales sin poder sobre el precio",
+      "describe la competencia perfecta"
+     ],
+     [
+      "Un solo vendedor que controla todo el mercado",
+      "describe el monopolio"
+     ],
+     [
+      "Muchos vendedores con productos diferenciados por marca",
+      "describe la competencia monopolística"
+     ],
+     "Oligopolio: pocas empresas, interdependencia y barreras de entrada."
+    ],
+    [
+     2,
+     "¿Qué significa interdependencia estratégica en un oligopolio?",
+     "Que las decisiones de una empresa afectan directamente a las otras, por lo que observan constantemente a sus rivales",
+     [
+      "Que todas las empresas dependen del Estado para fijar el precio",
+      "atribuye la dependencia al Estado"
+     ],
+     [
+      "Que las empresas no pueden decidir su precio",
+      "cree que la interdependencia impide a las empresas decidir su precio"
+     ],
+     [
+      "Que cada empresa actúa sin tener en cuenta a las demás",
+      "contradice la interdependencia"
+     ],
+     "En un oligopolio cada empresa mira qué hace la otra."
+    ],
+    [
+     2,
+     "¿Qué estrategias de precio pueden seguir las empresas de un oligopolio?",
+     "Colaborar y fijar precios (cárteles) o competir de manera agresiva",
+     [
+      "Aceptar el precio que fija el mercado sin poder influir en él",
+      "describe la competencia perfecta"
+     ],
+     [
+      "Fijar el precio sin ninguna limitación",
+      "describe el monopolio"
+     ],
+     [
+      "Basar la competencia solo en la publicidad",
+      "describe la competencia monopolística"
+     ],
+     "Cártel o competencia agresiva."
+    ],
+    [
+     3,
+     "¿Por qué es un problema que las empresas de un oligopolio pacten los precios?",
+     "Porque es un cártel, y los cárteles son ilegales",
+     [
+      "Porque es legal pero poco eficiente",
+      "contradice la prohibición"
+     ],
+     [
+      "Porque es obligatorio por ley",
+      "contradice la prohibición"
+     ],
+     [
+      "Porque es una guerra de precios",
+      "confunde pactar con competir"
+     ],
+     "Pactar precios = cártel (ilegal)."
+    ],
+    [
+     3,
+     "¿Cuáles son ejemplos de oligopolio en España que cita el tema?",
+     "La telefonía móvil, las gasolineras y los bancos",
+     [
+      "Las lonjas de pescado y el trigo",
+      "son ejemplos de competencia perfecta"
+     ],
+     [
+      "Los restaurantes y la ropa de marca",
+      "son ejemplos de competencia monopolística"
+     ],
+     [
+      "La red de agua y los trenes de Cercanías",
+      "son ejemplos de monopolio"
+     ],
+     "Telefonía móvil, gasolineras y bancos se vigilan entre sí."
+    ],
+    [
+     3,
+     "En una ciudad hay tres grandes bancos que miran lo que hacen los otros antes de cambiar sus comisiones. ¿Qué tipo de mercado es?",
+     "Oligopolio",
+     [
+      "Competencia perfecta",
+      "no hay muchas empresas iguales"
+     ],
+     [
+      "Competencia monopolística",
+      "no hay muchos vendedores con marcas diferentes"
+     ],
+     [
+      "Monopolio",
+      "no hay un único vendedor"
+     ],
+     "Pocas empresas con interdependencia: oligopolio."
+    ],
+    [
+     4,
+     "¿Qué diferencia hay entre una guerra de precios y un cártel en un oligopolio?",
+     "La guerra de precios es competir agresivamente; el cártel es pactar los precios, y es ilegal",
+     [
+      "La guerra de precios es ilegal y el cártel es legal",
+      "invierte la legalidad"
+     ],
+     [
+      "Son lo mismo con dos nombres",
+      "identifica una guerra de precios con un cártel"
+     ],
+     [
+      "La guerra de precios la decide el Estado y el cártel las empresas",
+      "atribuye la guerra de precios al Estado"
+     ],
+     "Guerra de precios: competencia. Cártel: pacto ilegal."
+    ],
+    [
+     4,
+     "¿Por qué las decisiones de una empresa de un oligopolio afectan directamente a las demás?",
+     "Porque son pocas y cada una tiene un peso importante en el mercado",
+     [
+      "Porque son muchas y venden lo mismo",
+      "describe la competencia perfecta"
+     ],
+     [
+      "Porque el Estado las obliga a copiarse",
+      "cree que el Estado obliga a las empresas del oligopolio a copiarse"
+     ],
+     [
+      "Porque no tienen ningún peso en el mercado",
+      "contradice el oligopolio"
+     ],
+     "Pocas empresas con mucho peso: interdependencia."
+    ],
+    [
+     5,
+     "Tres aerolíneas dominan una ruta y suben sus precios a la vez tras acordarlo en secreto. ¿Qué es y qué consecuencia puede tener?",
+     "Un cártel dentro de un oligopolio, que es ilegal y puede ser multado por las autoridades de competencia",
+     [
+      "Una guerra de precios, que es una conducta legal",
+      "confunde pactar con competir"
+     ],
+     [
+      "Un monopolio natural, que el Estado protege",
+      "no es el caso descrito"
+     ],
+     [
+      "Competencia perfecta, que beneficia al consumidor",
+      "contradice el pacto"
+     ],
+     "Pactar precios es un cártel; la CNMC vigila y multa en España."
+    ]
+   ]
+  },
+  {
+   "nombre": "Monopolio",
+   "pagina": 14,
+   "ayuda": "En un monopolio hay un solo vendedor que controla todo el mercado de un producto o servicio sin sustitutos cercanos, y existen barreras elevadas de entrada para nuevos competidores. La empresa puede fijar los precios porque no hay competencia directa, pero está limitada por la demanda y, en algunos casos, por la regulación gubernamental. Ejemplos: empresas de servicios públicos en algunos países, como la electricidad o el agua; en economía, la red de distribución de agua de una ciudad o los trenes de Renfe en Cercanías. La clave: una sola empresa domina y fija las condiciones, por eso el Estado suele intervenir para evitar abusos.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las características de un monopolio?",
+     "Un solo vendedor controla todo el mercado de un producto o servicio sin sustitutos cercanos, con barreras elevadas de entrada",
+     [
+      "Pocos vendedores que se vigilan entre sí",
+      "describe un oligopolio"
+     ],
+     [
+      "Muchos vendedores que ofrecen productos distintos",
+      "describe la competencia monopolística"
+     ],
+     [
+      "Muchos vendedores con productos idénticos",
+      "describe la competencia perfecta"
+     ],
+     "Monopolio: un único vendedor, sin sustitutos y con barreras elevadas."
+    ],
+    [
+     2,
+     "¿Qué poder tiene un monopolio sobre el precio?",
+     "Total, aunque limitado por la demanda y, en algunos casos, por la regulación del Estado",
+     [
+      "Nulo, porque lo fija el mercado",
+      "describe la competencia perfecta"
+     ],
+     [
+      "Cierto control gracias a la marca",
+      "describe la competencia monopolística"
+     ],
+     [
+      "Compartido con los demás mediante pactos",
+      "describe un cártel"
+     ],
+     "Poder total, con los límites de la demanda y la ley."
+    ],
+    [
+     2,
+     "¿Por qué suele intervenir el Estado en un monopolio?",
+     "Para evitar abusos, porque una sola empresa domina el mercado y fija las condiciones",
+     [
+      "Para aumentar los beneficios del monopolista",
+      "contradice el objetivo"
+     ],
+     [
+      "Para convertirlo en un mercado de competencia perfecta",
+      "cree que el Estado busca convertir el monopolio en competencia perfecta"
+     ],
+     [
+      "Para impedir que los consumidores compren",
+      "cree que el Estado impide a los consumidores comprar"
+     ],
+     "El Estado interviene para evitar abusos."
+    ],
+    [
+     3,
+     "¿Cuáles son ejemplos de monopolio que cita el tema?",
+     "La red de distribución de agua de una ciudad y los trenes de Renfe en Cercanías",
+     [
+      "Los restaurantes y las zapatillas deportivas",
+      "son ejemplos de competencia monopolística"
+     ],
+     [
+      "La telefonía móvil y las gasolineras",
+      "son ejemplos de oligopolio"
+     ],
+     [
+      "Las lonjas de pescado y el trigo",
+      "son ejemplos de competencia perfecta"
+     ],
+     "Un solo oferente: agua, trenes de Cercanías."
+    ],
+    [
+     3,
+     "¿Por qué un monopolio no tiene competencia directa?",
+     "Porque hay una sola empresa y las barreras de entrada son muy elevadas",
+     [
+      "Porque el Estado prohíbe vender al resto de empresas",
+      "atribuye la falta de rivales a una prohibición del Estado"
+     ],
+     [
+      "Porque sus productos son idénticos a los de otras empresas",
+      "contradice el monopolio"
+     ],
+     [
+      "Porque los clientes no compran nunca",
+      "cree que los clientes no compran nunca a un monopolio"
+     ],
+     "Una sola empresa y barreras muy elevadas."
+    ],
+    [
+     4,
+     "Si un monopolio puede fijar el precio, ¿qué lo limita?",
+     "La demanda y, en algunos casos, la regulación del Estado",
+     [
+      "La competencia de otros vendedores",
+      "no existe en un monopolio"
+     ],
+     [
+      "Nada en absoluto",
+      "ignora la demanda y la regulación"
+     ],
+     [
+      "Los acuerdos con otras empresas",
+      "describe un cártel"
+     ],
+     "El monopolio está limitado por la demanda o la ley."
+    ],
+    [
+     4,
+     "Compara la influencia sobre el precio en competencia perfecta y en monopolio.",
+     "Nula en competencia perfecta (precio-aceptantes) y total en monopolio (con límites de demanda o ley)",
+     [
+      "Total en competencia perfecta y nula en monopolio",
+      "invierte los mercados"
+     ],
+     [
+      "Igual en los dos, porque ambos tienen compradores",
+      "ignora la diferencia"
+     ],
+     [
+      "Elevada en competencia perfecta y baja en monopolio",
+      "invierte los mercados"
+     ],
+     "Competencia perfecta: influencia nula. Monopolio: total, con límites."
+    ],
+    [
+     5,
+     "En una ciudad una única empresa distribuye el agua, sube su tarifa y el ayuntamiento le impone un límite. ¿Qué tipo de mercado es y qué dos hechos ilustra?",
+     "Un monopolio: la empresa fija condiciones, pero la regulación limita su precio",
+     [
+      "Un oligopolio: las empresas pactan, pero el Estado se lo permite",
+      "no hay varias empresas"
+     ],
+     [
+      "Competencia perfecta: la empresa acepta el precio del mercado",
+      "cree que un monopolio acepta el precio del mercado"
+     ],
+     [
+      "Competencia monopolística: la marca da control del precio",
+      "no hay varias empresas con marcas"
+     ],
+     "Una sola empresa y un límite regulatorio: monopolio."
+    ]
+   ]
+  },
+  {
+   "nombre": "Cómo identificar el tipo de mercado",
+   "pagina": 15,
+   "ayuda": "El tipo de mercado se identifica con dos preguntas. Primera: ¿cuántas empresas venden? Una sola, monopolio; pocas, oligopolio; muchas, pasa a la segunda pregunta. Segunda: ¿el producto es idéntico? Si es idéntico, competencia perfecta; si no, competencia monopolística. Si dudas entre pocas y muchas, en el oligopolio cada empresa mira lo que hace la otra antes de decidir su precio. Tabla resumen: competencia perfecta (muchas empresas, producto homogéneo, ninguna barrera, influencia nula en el precio; lonjas de pescado, trigo, frutas); competencia monopolística (muchas, diferenciado por marca o publicidad, barreras bajas, cierto control; zapatillas de deporte, restaurantes, ropa); oligopolio (pocas, similar o diferenciado, barreras altas, influencia elevada con fuerte interdependencia; telefonía móvil, gasolineras, bancos); monopolio (una sola, producto único sin sustitutos, barreras muy elevadas, influencia total con límites de demanda o ley; red de distribución de agua o trenes de Renfe). Práctica: naranjas en un mercado mayorista, todas iguales y al mismo precio: competencia perfecta; peluquerías de una ciudad, muchas y cada una con su estilo: competencia monopolística; refrescos de cola, Coca-Cola y Pepsi se vigilan los precios: oligopolio; la red de agua de tu ciudad, una sola empresa: monopolio.",
+   "preguntas": [
+    [
+     2,
+     "¿Cuáles son las dos preguntas del tema para identificar un tipo de mercado?",
+     "¿Cuántas empresas venden? y, si son muchas, ¿el producto es idéntico?",
+     [
+      "¿Cuál es el precio? y ¿cuántos clientes hay?",
+      "propone preguntas sobre precio y clientes que no identifican el tipo de mercado"
+     ],
+     [
+      "¿Hay Estado? y ¿hay publicidad?",
+      "propone preguntas sobre Estado y publicidad que no identifican el tipo de mercado"
+     ],
+     [
+      "¿Cuánto ganan las empresas? y ¿cuánto invierten?",
+      "propone preguntas sobre beneficios e inversión que no identifican el tipo de mercado"
+     ],
+     "Primero cuántas empresas venden; después, si el producto es idéntico."
+    ],
+    [
+     2,
+     "Si en un mercado vende una sola empresa, ¿qué tipo de mercado es?",
+     "Monopolio",
+     [
+      "Oligopolio",
+      "hay pocas empresas, no una"
+     ],
+     [
+      "Competencia monopolística",
+      "hay muchas empresas"
+     ],
+     [
+      "Competencia perfecta",
+      "hay muchas empresas"
+     ],
+     "Una sola empresa: monopolio."
+    ],
+    [
+     2,
+     "Si en un mercado venden pocas empresas, ¿qué tipo de mercado es?",
+     "Oligopolio",
+     [
+      "Monopolio",
+      "hay más de una empresa"
+     ],
+     [
+      "Competencia perfecta",
+      "hay muchas empresas"
+     ],
+     [
+      "Competencia monopolística",
+      "hay muchas empresas"
+     ],
+     "Pocas empresas: oligopolio."
+    ],
+    [
+     3,
+     "Muchas empresas venden un producto idéntico. ¿Qué tipo de mercado es?",
+     "Competencia perfecta",
+     [
+      "Competencia monopolística",
+      "el producto no es idéntico"
+     ],
+     [
+      "Oligopolio",
+      "hay muchas empresas"
+     ],
+     [
+      "Monopolio",
+      "hay muchas empresas"
+     ],
+     "Muchas empresas y producto idéntico: competencia perfecta."
+    ],
+    [
+     3,
+     "Muchas empresas venden un producto diferenciado por marcas. ¿Qué tipo de mercado es?",
+     "Competencia monopolística",
+     [
+      "Competencia perfecta",
+      "el producto no es idéntico"
+     ],
+     [
+      "Oligopolio",
+      "hay muchas empresas"
+     ],
+     [
+      "Monopolio",
+      "hay muchas empresas"
+     ],
+     "Muchas empresas y producto diferenciado: competencia monopolística."
+    ],
+    [
+     3,
+     "Naranjas en un mercado mayorista: todas iguales y al mismo precio. ¿Qué tipo de mercado es?",
+     "Competencia perfecta",
+     [
+      "Competencia monopolística",
+      "el producto es idéntico"
+     ],
+     [
+      "Oligopolio",
+      "no hay pocas empresas"
+     ],
+     [
+      "Monopolio",
+      "confunde muchas empresas iguales con una sola empresa"
+     ],
+     "Producto idéntico, muchos vendedores y mismo precio."
+    ],
+    [
+     4,
+     "Refrescos de cola: Coca-Cola y Pepsi se vigilan los precios. ¿Qué tipo de mercado es?",
+     "Oligopolio",
+     [
+      "Competencia perfecta",
+      "no hay muchas empresas iguales"
+     ],
+     [
+      "Competencia monopolística",
+      "hay pocas empresas, no muchas"
+     ],
+     [
+      "Monopolio",
+      "no hay un único vendedor"
+     ],
+     "Pocas empresas con interdependencia: oligopolio."
+    ],
+    [
+     4,
+     "Si dudas entre pocas y muchas empresas, ¿qué indica que estás ante un oligopolio?",
+     "Que cada empresa mira lo que hace la otra antes de decidir su precio",
+     [
+      "Que los productos son idénticos",
+      "es un rasgo de la competencia perfecta"
+     ],
+     [
+      "Que el Estado fija el precio",
+      "cree que el precio fijado por el Estado indica oligopolio"
+     ],
+     [
+      "Que hay una marca líder única",
+      "describe un monopolio"
+     ],
+     "En el oligopolio hay fuerte interdependencia."
+    ],
+    [
+     5,
+     "Peluquerías de una ciudad (muchas, cada una con su estilo) y la red de agua de esa misma ciudad (una sola empresa). ¿Qué tipos de mercado son, respectivamente?",
+     "Competencia monopolística y monopolio",
+     [
+      "Competencia perfecta y oligopolio",
+      "ignora la diferenciación y el número de empresas"
+     ],
+     [
+      "Oligopolio y competencia monopolística",
+      "confunde los dos casos"
+     ],
+     [
+      "Monopolio y competencia perfecta",
+      "invierte los casos"
+     ],
+     "Muchas empresas con estilos propios: competencia monopolística. Una sola empresa: monopolio."
+    ]
+   ]
+  }
+ ]
+}

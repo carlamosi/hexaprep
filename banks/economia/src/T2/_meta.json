@@ -1,0 +1,3 @@
+{"tema": "T2 Sistemas", "prefijo": "eco-t2", "caras": 10, "bloque": "Economía",
+ "fuente": {"nombre": "Economía T2 Sistemas", "archivo": "Economia_T2_Sistemas.pdf"},
+ "lote": {"modelo": "claude-sonnet-5-5", "version_prompt": "v1"}}

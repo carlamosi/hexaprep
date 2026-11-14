@@ -1,0 +1,544 @@
+{
+ "subtema": "La economía planificada",
+ "conceptos": [
+  {
+   "nombre": "La economía planificada y sus ejemplos históricos",
+   "pagina": 11,
+   "ayuda": "En la economía planificada, las decisiones sobre qué, cómo y para quién producir las toma el Estado (planificación central), no las empresas ni los consumidores a través del mercado. El Estado fija los objetivos de producción (qué producir), controla empresas y recursos naturales (cómo producir) y decide la distribución (para quién). Contraste: en el mercado deciden millones; aquí decide uno, el Estado. Ejemplos históricos: la URSS (Unión Soviética, buena parte del siglo XX; de 1922 a 1991, con planes quinquenales), Cuba (con características propias, en determinadas etapas, desde la revolución de 1959) y China (con características propias, en determinadas etapas, sobre todo antes de las reformas de 1978).",
+   "preguntas": [
+    [
+     1,
+     "¿Quién toma las decisiones sobre qué, cómo y para quién producir en la economía planificada?",
+     "El Estado, mediante la planificación central",
+     [
+      "Las empresas, a través de la competencia",
+      "describe la economía de mercado"
+     ],
+     [
+      "Los consumidores, a través de sus compras",
+      "describe la economía de mercado"
+     ],
+     [
+      "Las empresas y el Estado de forma compartida",
+      "describe la economía mixta"
+     ],
+     "En la planificada decide el Estado."
+    ],
+    [
+     2,
+     "Según el esquema del tema, ¿qué hace el Estado planificador respecto a ¿cómo producir?",
+     "Controla las empresas y los recursos naturales",
+     [
+      "Fija los objetivos de producción",
+      "es la respuesta a qué producir"
+     ],
+     [
+      "Decide la distribución de los bienes",
+      "es la respuesta a para quién producir"
+     ],
+     [
+      "Deja que cada empresa elija su técnica",
+      "contradice la planificación central"
+     ],
+     "Qué producir: objetivos de producción. Cómo producir: control de empresas y recursos. Para quién: distribución."
+    ],
+    [
+     2,
+     "¿Qué país es el ejemplo histórico de economía planificada con planes quinquenales de 1922 a 1991?",
+     "La URSS",
+     [
+      "Cuba",
+      "es un ejemplo desde la revolución de 1959"
+     ],
+     [
+      "China",
+      "es un ejemplo sobre todo antes de las reformas de 1978"
+     ],
+     [
+      "El Reino Unido",
+      "es el ejemplo de la Revolución Industrial y el mercado"
+     ],
+     "URSS: 1922 a 1991, con planes quinquenales."
+    ],
+    [
+     3,
+     "¿Desde cuándo es Cuba un ejemplo de economía planificada, según el tema?",
+     "Desde la revolución de 1959, en determinadas etapas",
+     [
+      "Desde 1922",
+      "es el inicio de la URSS"
+     ],
+     [
+      "Desde las reformas de 1978",
+      "es la fecha de las reformas chinas"
+     ],
+     [
+      "Desde la caída del muro de Berlín",
+      "es posterior al inicio de la planificación cubana"
+     ],
+     "Cuba: desde la revolución de 1959, con características propias."
+    ],
+    [
+     3,
+     "¿Cuándo ejemplifica China sobre todo la economía planificada?",
+     "Antes de las reformas de 1978",
+     [
+      "Después de las reformas de 1978",
+      "contradice el cambio hacia el mercado"
+     ],
+     [
+      "Desde 1991",
+      "es el año de la desaparición de la URSS"
+     ],
+     [
+      "Solo durante la Revolución Industrial",
+      "es un periodo del mercado británico"
+     ],
+     "China: sobre todo antes de las reformas de 1978."
+    ],
+    [
+     4,
+     "¿Cuál es la diferencia clave entre la planificada y el mercado en cómo se decide qué producir?",
+     "En la planificada lo fija el Estado con objetivos de producción; en el mercado surge de la interacción entre compradores y vendedores",
+     [
+      "En la planificada lo fijan las empresas y en el mercado el Estado",
+      "invierte los sistemas"
+     ],
+     [
+      "En ambas lo fija el Estado, pero con distinto plan",
+      "ignora el papel del mercado"
+     ],
+     [
+      "En ambas surge de los precios, aunque con distinta intensidad",
+      "ignora la planificación central"
+     ],
+     "Planificada: decide uno (el Estado). Mercado: deciden millones mediante precios."
+    ]
+   ]
+  },
+  {
+   "nombre": "Karl Marx",
+   "pagina": 11,
+   "ayuda": "Karl Marx (1818 a 1883, alemán) fue filósofo, economista y pensador. Su obra es El Capital. Criticó el capitalismo por las desigualdades económicas y la explotación de los trabajadores. Defendió que los medios de producción fueran de propiedad colectiva y que la economía sirviera para satisfacer las necesidades de la población, no solo para el beneficio privado. Influyó en el socialismo y el comunismo y en sistemas planificados como el de la Unión Soviética. Ojo: Marx no llegó a diseñar un modelo concreto de planificación económica.",
+   "preguntas": [
+    [
+     1,
+     "¿Quién fue Karl Marx?",
+     "Un filósofo, economista y pensador alemán (1818 a 1883), autor de El Capital",
+     [
+      "Un economista escocés, autor de La riqueza de las naciones",
+      "es Adam Smith"
+     ],
+     [
+      "Un economista británico que defendió la intervención del Estado en las crisis",
+      "es John Maynard Keynes"
+     ],
+     [
+      "Un dirigente soviético que creó el Gosplan",
+      "no es la figura que describe el tema"
+     ],
+     "Marx: alemán, 1818 a 1883, autor de El Capital."
+    ],
+    [
+     2,
+     "¿Qué criticó Marx?",
+     "El capitalismo, por las desigualdades económicas y la explotación de los trabajadores",
+     [
+      "La economía planificada, por falta de incentivos",
+      "es una crítica posterior al fracaso de la planificación"
+     ],
+     [
+      "El comercio exterior, por los aranceles",
+      "confunde la crítica al capitalismo con una crítica al comercio exterior"
+     ],
+     [
+      "La propiedad colectiva de los medios de producción",
+      "es lo que él defendió"
+     ],
+     "Marx criticó el capitalismo."
+    ],
+    [
+     3,
+     "¿Qué defendió Marx sobre los medios de producción?",
+     "Que fueran de propiedad colectiva y que la economía sirviera para satisfacer las necesidades de la población",
+     [
+      "Que fueran de propiedad privada para buscar el beneficio",
+      "describe la economía de mercado"
+     ],
+     [
+      "Que los fijara el mercado a través de la competencia",
+      "describe la economía de mercado"
+     ],
+     [
+      "Que se repartieran en acciones entre los ciudadanos",
+      "confunde la propiedad colectiva con el reparto de acciones"
+     ],
+     "Defendió la propiedad colectiva de los medios de producción."
+    ],
+    [
+     4,
+     "Marx influyó en sistemas planificados como el de la Unión Soviética. ¿Qué matiz importante señala el tema?",
+     "Que no llegó a diseñar un modelo concreto de planificación económica",
+     [
+      "Que diseñó los planes quinquenales de la URSS",
+      "le atribuye un diseño que el tema niega"
+     ],
+     [
+      "Que rechazó cualquier forma de intervención del Estado",
+      "confunde defender la propiedad colectiva con rechazar toda intervención del Estado"
+     ],
+     [
+      "Que dirigió el Gosplan durante años",
+      "le atribuye un cargo que no tuvo"
+     ],
+     "Influyó en el socialismo y el comunismo, pero no diseñó un modelo concreto de planificación."
+    ]
+   ]
+  },
+  {
+   "nombre": "Principios de la economía planificada",
+   "pagina": 12,
+   "ayuda": "En la economía planificada el Estado sustituye en gran medida al mercado como mecanismo de asignación de los recursos. Seis principios: 1) propiedad pública (las principales empresas y recursos productivos pertenecen al Estado), 2) planificación económica (el Estado hace planes sobre qué bienes y servicios, en qué cantidad y con qué recursos), 3) escasa importancia del mercado (precios y cantidades no se determinan principalmente por la oferta y la demanda), 4) control de precios (el Estado puede fijar los precios de numerosos bienes y servicios), 5) distribución de los recursos (el Estado decide cómo se usan el trabajo, las materias primas o el capital) y 6) mayor igualdad económica (reducir las diferencias de renta y garantizar el acceso a bienes y servicios básicos). Para recordarlo: «Por Plan, El Comité Decide Igual» (P P E C D I). En la práctica: el Gosplan elaboraba los planes quinquenales; en Cuba, la libreta de abastecimiento reparte alimentos básicos a precios fijados por el Estado; en la URSS, vivienda, sanidad y educación las daba el Estado a precios muy bajos o gratis.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son los seis principios de la economía planificada?",
+     "Propiedad pública, planificación económica, escasa importancia del mercado, control de precios, distribución de recursos e igualdad",
+     [
+      "Libertad económica, propiedad privada, beneficio, competencia y precios de mercado",
+      "son los principios de la economía de mercado"
+     ],
+     [
+      "Marco legal, bienes públicos, corregir fallos, redistribuir, estabilizar y crecimiento",
+      "son las funciones del Estado en la economía mixta"
+     ],
+     [
+      "Propiedad pública, libertad de precios, competencia, beneficio y desigualdad",
+      "mezcla principios de sistemas distintos"
+     ],
+     "Los seis principios: P P E C D I."
+    ],
+    [
+     2,
+     "¿Qué significa propiedad pública en la economía planificada?",
+     "Que las principales empresas y recursos productivos pertenecen al Estado",
+     [
+      "Que las empresas son de particulares pero el Estado las vigila",
+      "describe una economía mixta o de mercado"
+     ],
+     [
+      "Que los consumidores son dueños de las empresas",
+      "inventa una propiedad que el tema no recoge"
+     ],
+     [
+      "Que solo la tierra pertenece al Estado",
+      "limita la propiedad pública a un recurso"
+     ],
+     "Propiedad pública: las principales empresas y recursos son del Estado."
+    ],
+    [
+     2,
+     "¿Cómo se determinan los precios y las cantidades en la economía planificada?",
+     "No principalmente por la oferta y la demanda: el Estado puede fijar los precios de numerosos bienes y servicios",
+     [
+      "Por la oferta y la demanda, igual que en la economía de mercado",
+      "describe la economía de mercado"
+     ],
+     [
+      "Por las empresas, que fijan libremente sus precios",
+      "contradice el control estatal"
+     ],
+     [
+      "Por los consumidores, que votan los precios",
+      "inventa un mecanismo ajeno al tema"
+     ],
+     "Escasa importancia del mercado y control de precios."
+    ],
+    [
+     3,
+     "¿Qué era el Gosplan?",
+     "El organismo soviético que elaboraba los planes quinquenales, con objetivos de producción a cinco años",
+     [
+      "Una empresa estatal de alimentación",
+      "inventa su naturaleza"
+     ],
+     [
+      "El banco central de la URSS",
+      "inventa su naturaleza"
+     ],
+     [
+      "El ministerio de comercio exterior de China",
+      "mezcla países y funciones"
+     ],
+     "Gosplan: planes quinquenales de la URSS."
+    ],
+    [
+     3,
+     "La libreta de abastecimiento de Cuba reparte alimentos básicos a precios fijados por el Estado. ¿Qué principio ilustra?",
+     "Control de precios: el Estado fija los precios de los alimentos que reparte",
+     [
+      "Propiedad privada: las familias son dueñas de los alimentos",
+      "confunde precios fijados por el Estado con propiedad privada"
+     ],
+     [
+      "Competencia: hay varios proveedores en el reparto",
+      "confunde el reparto estatal con competencia entre proveedores"
+     ],
+     [
+      "Búsqueda del beneficio: el reparto da ganancias al Estado",
+      "confunde repartir alimentos con obtener beneficio"
+     ],
+     "El ejemplo ilustra el control de precios por el Estado."
+    ],
+    [
+     3,
+     "¿Qué frase mnemotécnica recuerda los principios de la economía planificada?",
+     "«Por Plan, El Comité Decide Igual»",
+     [
+      "«La Panadería Busca Clientes con Precios»",
+      "recuerda los principios del mercado"
+     ],
+     [
+      "«Dice Adam: El Invisible Erra»",
+      "recuerda los fallos del mercado"
+     ],
+     [
+      "«Más Bienestar Con Renta Estable y Creciente»",
+      "recuerda las funciones del Estado en la economía mixta"
+     ],
+     "P P E C D I: Propiedad pública, Planificación, Escasa importancia del mercado, Control de precios, Distribución, Igualdad."
+    ],
+    [
+     4,
+     "En la URSS la vivienda, la sanidad y la educación las daba el Estado a precios muy bajos o gratis. ¿Qué principio ilustra sobre todo?",
+     "Mayor igualdad económica: garantizar el acceso a bienes y servicios básicos",
+     [
+      "Propiedad privada de la vivienda",
+      "confunde servicios que da el Estado con propiedad privada"
+     ],
+     [
+      "Competencia entre proveedores de servicios",
+      "confunde servicios casi gratuitos con competencia entre proveedores"
+     ],
+     [
+      "Libertad económica de las familias",
+      "no es el principio del ejemplo"
+     ],
+     "Igualdad: reducir diferencias de renta y garantizar el acceso a bienes y servicios básicos."
+    ],
+    [
+     5,
+     "Un comité central decide cuántos pares de zapatos se fabrican y en qué fábricas, y los reparte por igual entre la población. ¿Qué principios aplica?",
+     "Planificación económica, distribución de los recursos e igualdad",
+     [
+      "Libertad económica, competencia y búsqueda del beneficio",
+      "son principios del mercado"
+     ],
+     [
+      "Propiedad privada, precios de mercado y competencia",
+      "son principios del mercado"
+     ],
+     [
+      "Escasa intervención del Estado, beneficio y competencia",
+      "confunde un comité que decide todo con una intervención escasa del Estado"
+     ],
+     "El comité planifica qué producir y cómo distribuirlo, buscando la igualdad."
+    ]
+   ]
+  },
+  {
+   "nombre": "Causas del fracaso de la economía planificada",
+   "pagina": 13,
+   "ayuda": "La experiencia histórica de la economía planificada mostró problemas que impidieron un funcionamiento eficiente. Cuatro causas: 1) falta de incentivos (poca competencia y poca relación entre esfuerzo, productividad y recompensa: «si cobro lo mismo, ¿para qué esforzarme más?»); 2) problemas de información y errores de previsión (es muy difícil que un organismo central conozca las necesidades y preferencias de millones de consumidores: se producían bienes poco demandados y había escasez de otros, como las colas en las tiendas soviéticas mientras sobraban otros productos); 3) falta de competencia y poca innovación (sin competencia hay menos incentivos para mejorar la calidad, reducir costes o innovar: el Trabant de la RDA, casi igual durante décadas); 4) exceso de burocracia (decidir toda la economía requería una estructura administrativa muy grande: miles de funcionarios fijando precios y cantidades). Después, a finales del siglo XX, muchos países hicieron reformas hacia un mayor uso del mercado: 1978 China empieza sus reformas de mercado, 1989 cae el muro de Berlín y 1991 desaparece la URSS.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuáles son las cuatro causas del fracaso de la economía planificada?",
+     "Falta de incentivos, problemas de información y errores de previsión, falta de competencia e innovación, y exceso de burocracia",
+     [
+      "Exceso de competencia, falta de planificación, precios libres y propiedad privada",
+      "describe lo contrario de la planificación"
+     ],
+     [
+      "Desigualdad de renta, abusos de las empresas, inestabilidad y externalidades",
+      "son los fallos del mercado"
+     ],
+     [
+      "Inflación, paro, déficit y deuda",
+      "son indicadores macroeconómicos"
+     ],
+     "Las cuatro causas: incentivos, información, competencia e innovación, burocracia."
+    ],
+    [
+     2,
+     "«Si cobro lo mismo, ¿para qué esforzarme más?» ilustra…",
+     "La falta de incentivos",
+     [
+      "El exceso de burocracia",
+      "confunde la falta de esfuerzo con los trámites administrativos"
+     ],
+     [
+      "Los problemas de información",
+      "confunde la falta de esfuerzo con errores al prever necesidades"
+     ],
+     [
+      "La falta de competencia",
+      "confunde la falta de esfuerzo con la falta de rivales"
+     ],
+     "Poca relación entre esfuerzo, productividad y recompensa."
+    ],
+    [
+     3,
+     "¿Por qué era difícil que un organismo central conociera las necesidades de los consumidores?",
+     "Porque tendría que conocer las necesidades y preferencias de millones de consumidores",
+     [
+      "Porque los consumidores no tenían necesidades",
+      "es falso"
+     ],
+     [
+      "Porque los precios eran completamente libres",
+      "contradice la planificación"
+     ],
+     [
+      "Porque había demasiada competencia entre empresas",
+      "contradice la planificación"
+     ],
+     "Problemas de información y errores de previsión."
+    ],
+    [
+     3,
+     "Las colas en las tiendas soviéticas mientras sobraban otros productos ilustran…",
+     "Problemas de información y errores de previsión",
+     [
+      "Falta de incentivos",
+      "confunde errores de previsión con falta de esfuerzo"
+     ],
+     [
+      "Exceso de burocracia",
+      "confunde errores de previsión con trámites administrativos"
+     ],
+     [
+      "Falta de innovación",
+      "confunde errores de previsión con falta de innovación"
+     ],
+     "Se producían bienes poco demandados y faltaban otros."
+    ],
+    [
+     3,
+     "El Trabant de la RDA, un coche de diseño casi igual durante décadas, ilustra…",
+     "Falta de competencia y poca innovación",
+     [
+      "Falta de incentivos al ahorro",
+      "confunde falta de innovación con falta de ahorro"
+     ],
+     [
+      "Exceso de burocracia",
+      "confunde falta de innovación con trámites administrativos"
+     ],
+     [
+      "Problemas de información",
+      "confunde falta de innovación con errores de previsión"
+     ],
+     "Sin competencia hay menos incentivos para mejorar calidad o innovar."
+    ],
+    [
+     4,
+     "Miles de funcionarios fijando precios y cantidades de cada producto ilustran…",
+     "Exceso de burocracia",
+     [
+      "Falta de competencia",
+      "confunde la burocracia con la falta de rivales"
+     ],
+     [
+      "Falta de incentivos",
+      "confunde la burocracia con la falta de esfuerzo"
+     ],
+     [
+      "Errores de previsión",
+      "confunde la burocracia con predicciones erróneas"
+     ],
+     "Decidir toda la economía requería una estructura administrativa muy grande."
+    ],
+    [
+     5,
+     "¿Qué relación hay entre la falta de competencia y la innovación en una economía planificada, según el tema?",
+     "Sin competencia entre empresas hay menos incentivos para mejorar la calidad, reducir costes o innovar",
+     [
+      "Sin competencia las empresas innovan más porque el Estado las financia",
+      "contradice el tema"
+     ],
+     [
+      "La competencia reduce la innovación porque obliga a bajar costes",
+      "contradice el tema"
+     ],
+     [
+      "No hay relación, porque la innovación depende solo de la tecnología",
+      "niega la relación que establece el tema"
+     ],
+     "La falta de competencia desincentiva la mejora y la innovación."
+    ]
+   ]
+  },
+  {
+   "nombre": "El final de la planificación central",
+   "pagina": 13,
+   "ayuda": "A finales del siglo XX muchos países con planificación centralizada hicieron reformas hacia un mayor uso del mercado. Tres fechas para situarte: 1978, China empieza sus reformas de mercado; 1989, cae el muro de Berlín; 1991, desaparece la URSS. Son fechas añadidas en los apuntes para ubicar el proceso.",
+   "preguntas": [
+    [
+     2,
+     "¿Qué hicieron muchos países con planificación centralizada a finales del siglo XX?",
+     "Reformas hacia un mayor uso del mercado",
+     [
+      "Reforzaron la planificación central",
+      "contradice el proceso histórico"
+     ],
+     [
+      "Eliminaron todas las empresas del Estado de golpe",
+      "exagera el proceso"
+     ],
+     [
+      "Volvieron al feudalismo",
+      "es un sistema histórico anterior"
+     ],
+     "A finales del siglo XX muchos países reformaron sus economías hacia el mercado."
+    ],
+    [
+     3,
+     "¿En qué año empezó China sus reformas de mercado?",
+     "1978",
+     [
+      "1989",
+      "es el año de la caída del muro de Berlín"
+     ],
+     [
+      "1991",
+      "es el año de la desaparición de la URSS"
+     ],
+     [
+      "1959",
+      "es el año de la revolución cubana"
+     ],
+     "China, 1978."
+    ],
+    [
+     4,
+     "¿Cuál es el orden cronológico correcto de estos hechos?",
+     "Reformas de mercado de China, caída del muro de Berlín y desaparición de la URSS",
+     [
+      "Desaparición de la URSS, reformas de China y caída del muro de Berlín",
+      "desordena las fechas"
+     ],
+     [
+      "Caída del muro de Berlín, reformas de China y desaparición de la URSS",
+      "coloca el muro antes que las reformas"
+     ],
+     [
+      "Reformas de China, desaparición de la URSS y caída del muro de Berlín",
+      "coloca la URSS antes que el muro"
+     ],
+     "1978, 1989 y 1991."
+    ]
+   ]
+  }
+ ]
+}

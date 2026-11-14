@@ -1,0 +1,537 @@
+{
+ "subtema": "El microentorno y las 5 fuerzas",
+ "conceptos": [
+  {
+   "nombre": "Fuerza 3: el poder de negociación de los clientes",
+   "pagina": 10,
+   "ayuda": "El poder de negociación de los clientes mide la capacidad que tienen los compradores para exigir precios más bajos, descuentos o mejoras en la calidad del producto. Tienen mucho poder si son pocos clientes pero compran grandes volúmenes, o si existen muchos productos parecidos en el mercado y cambiar de marca no le cuesta nada al cliente. Ejemplos: El Corte Inglés o Mercadona compran miles de unidades y tienen un enorme poder frente a sus proveedores; una estudiante que compra un billete de avión tiene poder nulo: acepta el precio de la aerolínea o no vuela. Para recordarlo: manda el que compra mucho y puede irse a otro sin coste.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué mide el poder de negociación de los clientes?",
+     "La capacidad de los compradores para exigir precios más bajos, descuentos o mejoras en la calidad",
+     [
+      "La capacidad de los suministradores para subir los precios",
+      "describe el poder de los proveedores"
+     ],
+     [
+      "La facilidad de entrada de nuevas empresas",
+      "describe la amenaza de nuevos entrantes"
+     ],
+     [
+      "La intensidad de la lucha entre las empresas del sector",
+      "describe la rivalidad"
+     ],
+     "Poder de los clientes: capacidad de los compradores para exigir mejores condiciones."
+    ],
+    [
+     2,
+     "¿Cuándo tienen los clientes mucho poder de negociación?",
+     "Si son pocos pero compran grandes volúmenes, o si hay muchos productos parecidos y cambiar de marca no les cuesta nada",
+     [
+      "Si son muchos y cada uno compra muy poco",
+      "es la situación de poder bajo"
+     ],
+     [
+      "Si el producto es único y no hay alternativas",
+      "es la situación de poder bajo del cliente"
+     ],
+     [
+      "Si cambiar de marca les cuesta mucho",
+      "es la situación de poder bajo del cliente"
+     ],
+     "Mucho poder: pocos y grandes compradores, o productos parecidos y cambio sin coste."
+    ],
+    [
+     3,
+     "El Corte Inglés o Mercadona compran miles de unidades a sus proveedores. ¿Qué poder tienen y por qué?",
+     "Un poder enorme, porque son pocos clientes que compran grandes volúmenes",
+     [
+      "Un poder nulo, porque venden al público",
+      "confunde su papel como vendedores con el de compradores"
+     ],
+     [
+      "Un poder bajo, porque tienen muchos proveedores",
+      "ignora el volumen de compra"
+     ],
+     [
+      "Ningún poder, porque los precios los fija el Estado",
+      "atribuye la fijación de precios al Estado"
+     ],
+     "Grandes volúmenes de compra dan mucho poder de negociación."
+    ],
+    [
+     3,
+     "Una estudiante compra un billete de avión: acepta el precio de la aerolínea o no vuela. ¿Qué poder tiene como cliente?",
+     "Nulo: es un cliente individual que compra poco",
+     [
+      "Alto, porque puede decidir no volar",
+      "confunde la libertad de no comprar con poder de negociación"
+     ],
+     [
+      "Alto, porque hay muchas aerolíneas",
+      "no cambia el poder individual de un cliente"
+     ],
+     [
+      "Medio, porque paga con tarjeta",
+      "cree que el medio de pago da poder de negociación al cliente"
+     ],
+     "Un cliente individual que compra poco no puede negociar."
+    ],
+    [
+     4,
+     "Un sector vende productos casi idénticos y cambiar de marca no le cuesta nada al cliente. ¿Qué se puede decir del poder de los clientes?",
+     "Es alto, porque pueden irse a otra marca sin coste",
+     [
+      "Es bajo, porque hay muchos productos",
+      "ignora el coste de cambio"
+     ],
+     [
+      "Es nulo, porque los productos son iguales",
+      "confunde producto idéntico con falta de poder"
+     ],
+     [
+      "Depende solo del Estado",
+      "atribuye el poder al Estado"
+     ],
+     "Productos parecidos y cambio sin coste dan mucho poder al cliente."
+    ],
+    [
+     4,
+     "¿Qué frase del tema resume el poder de los clientes?",
+     "Manda el que compra mucho y puede irse a otro sin coste",
+     [
+      "Manda el que es único y del que no puedes cambiar",
+      "resume el poder de los proveedores"
+     ],
+     [
+      "Manda el que más barato vende",
+      "describe la rivalidad por precios"
+     ],
+     [
+      "Manda el que tiene la mejor marca",
+      "describe una barrera de entrada"
+     ],
+     "Clientes: compran mucho y pueden cambiar sin coste."
+    ],
+    [
+     5,
+     "Una empresa vende el 90 % de su producción a un único cliente que puede cambiar de proveedor sin coste. ¿Qué fuerza es alta y qué consecuencia tiene?",
+     "El poder de los clientes: puede exigir precios bajos y mejor calidad, y reduce el beneficio de la empresa",
+     [
+      "El poder de los proveedores: puede subir los precios",
+      "confunde a quién compra con quién vende"
+     ],
+     [
+      "La rivalidad: todos bajan los precios",
+      "confunde el poder de un gran cliente con la rivalidad entre competidores"
+     ],
+     [
+      "La amenaza de nuevos entrantes: el cliente fabrica el producto",
+      "confunde el poder de un gran cliente con la entrada de nuevos competidores"
+     ],
+     "Un cliente grande y con facilidad para cambiar tiene mucho poder de negociación."
+    ]
+   ]
+  },
+  {
+   "nombre": "Fuerza 4: el poder de negociación de los proveedores",
+   "pagina": 10,
+   "ayuda": "El poder de negociación de los proveedores mide la capacidad que tienen los suministradores de materias primas o servicios para fijar precios altos o imponer sus condiciones de entrega. Tienen mucho poder si hay muy pocos proveedores de ese recurso clave en el mundo, si el producto que venden es único o no tiene sustitutos fáciles, o si a la empresa le cuesta mucho dinero o tiempo cambiar de proveedor. Ejemplo: Intel, Nvidia y TSMC (procesadores) tienen un poder enorme frente a las marcas de ordenadores y móviles, porque apenas hay alternativas. Para recordarlo: manda el que es único y del que no puedes cambiar.",
+   "preguntas": [
+    [
+     1,
+     "¿Qué mide el poder de negociación de los proveedores?",
+     "La capacidad de los suministradores de materias primas o servicios para fijar precios altos o imponer sus condiciones de entrega",
+     [
+      "La capacidad de los compradores para exigir descuentos",
+      "describe el poder de los clientes"
+     ],
+     [
+      "La dificultad para entrar en el sector",
+      "describe las barreras de entrada"
+     ],
+     [
+      "La amenaza de productos de otro sector",
+      "describe los sustitutivos"
+     ],
+     "Poder de los proveedores: fijar precios altos o imponer condiciones."
+    ],
+    [
+     2,
+     "¿Cuándo tienen los proveedores mucho poder de negociación?",
+     "Si hay muy pocos proveedores de un recurso clave, su producto es único o sin sustitutos fáciles, o cambiar de proveedor sale caro en dinero o tiempo",
+     [
+      "Si hay muchos proveedores iguales y cambiar es gratis",
+      "es la situación de poder bajo"
+     ],
+     [
+      "Si la empresa compra grandes volúmenes",
+      "es una condición de poder de los clientes"
+     ],
+     [
+      "Si el producto que venden es fácilmente sustituible",
+      "es la situación de poder bajo"
+     ],
+     "Pocos proveedores, producto único y alto coste de cambiar."
+    ],
+    [
+     3,
+     "Intel, Nvidia y TSMC fabrican procesadores y apenas hay alternativas en el mundo. ¿Qué poder tienen frente a las marcas de ordenadores y móviles?",
+     "Un poder enorme, porque hay muy pocos proveedores de ese recurso clave",
+     [
+      "Un poder bajo, porque venden a muchos clientes",
+      "ignora la ausencia de alternativas"
+     ],
+     [
+      "Ningún poder, porque son empresas privadas",
+      "no es un criterio del tema"
+     ],
+     [
+      "Un poder igual al de los clientes",
+      "ignora el contexto"
+     ],
+     "Pocos proveedores de un recurso clave dan un enorme poder."
+    ],
+    [
+     3,
+     "Una empresa compra un producto estándar que ofrecen muchos proveedores y puede cambiar de uno a otro sin coste. ¿Qué poder tienen los proveedores?",
+     "Bajo",
+     [
+      "Alto, porque son los que venden",
+      "confunde vender con tener poder"
+     ],
+     [
+      "Alto, porque la empresa depende de ellos",
+      "ignora la facilidad de cambio"
+     ],
+     [
+      "Nulo, porque el cliente siempre manda",
+      "no es una regla del tema"
+     ],
+     "Muchos proveedores y cambio sin coste: poder bajo."
+    ],
+    [
+     4,
+     "¿Qué frase del tema resume el poder de los proveedores?",
+     "Manda el que es único y del que no puedes cambiar",
+     [
+      "Manda el que compra mucho y puede irse sin coste",
+      "resume el poder de los clientes"
+     ],
+     [
+      "Manda el que tiene más empresas",
+      "confunde el poder de los proveedores con el número de empresas que tienen"
+     ],
+     [
+      "Manda el que tiene la marca más conocida",
+      "describe una barrera de entrada"
+     ],
+     "Proveedores: únicos y difíciles de sustituir."
+    ],
+    [
+     4,
+     "¿En qué se diferencian las condiciones de mucho poder de clientes y de proveedores?",
+     "Clientes: pocos y grandes compradores, o cambio sin coste; proveedores: pocos y únicos, y cambio costoso",
+     [
+      "Clientes: únicos y con producto sin sustitutos; proveedores: grandes compradores",
+      "intercambia las condiciones"
+     ],
+     [
+      "Son las mismas condiciones para ambos",
+      "ignora las diferencias"
+     ],
+     [
+      "Clientes: muchos y dispersos; proveedores: muchos y dispersos",
+      "describe poder bajo en ambos casos"
+     ],
+     "El poder crece cuando el otro lado puede irse con facilidad y el propio es difícil de sustituir."
+    ],
+    [
+     5,
+     "Una fábrica de teléfonos depende de un único fabricante de pantallas con una patente exclusiva, y cambiar de proveedor le costaría meses de rediseño. ¿Qué fuerza es alta y cómo afecta?",
+     "El poder de los proveedores: puede subir los precios o imponer condiciones, reduciendo el beneficio",
+     [
+      "El poder de los clientes: puede exigir precios bajos",
+      "confunde a quién vende con quién compra"
+     ],
+     [
+      "La rivalidad: los competidores bajan precios",
+      "confunde la dependencia de un proveedor con la rivalidad entre competidores"
+     ],
+     [
+      "Los sustitutivos: el cliente cambia de producto",
+      "confunde la dependencia de un proveedor con productos sustitutivos"
+     ],
+     "Proveedor único, patente y alto coste de cambiar: poder alto."
+    ]
+   ]
+  },
+  {
+   "nombre": "Fuerza 5: la amenaza de productos sustitutivos",
+   "pagina": 11,
+   "ayuda": "Los productos sustitutivos son productos que no pertenecen al mismo sector, pero satisfacen exactamente la misma necesidad a través de una tecnología o formato diferente. Ejemplos: para ir de Madrid a Barcelona, el AVE o Ouigo sustituyen a los vuelos nacionales; para ver películas y oír música, el streaming (Netflix, Spotify) sustituye a los DVD y CD físicos. La amenaza es alta si el sustitutivo ofrece un precio mucho más bajo o una calidad superior y el consumidor se acostumbra fácilmente al cambio. No confundir rival con sustitutivo: un rival vende lo mismo en tu sector (Iberia frente a Vueling); un sustitutivo cubre la misma necesidad desde otro sector (Iberia frente al AVE).",
+   "preguntas": [
+    [
+     1,
+     "¿Qué son los productos sustitutivos en el modelo de Porter?",
+     "Productos que no pertenecen al mismo sector pero satisfacen exactamente la misma necesidad con una tecnología o formato diferente",
+     [
+      "Productos del mismo sector que se venden a precios distintos",
+      "describe a los rivales"
+     ],
+     [
+      "Productos que usan los proveedores para fabricar",
+      "confunde con materias primas"
+     ],
+     [
+      "Productos nuevos que lanzan las empresas del sector",
+      "confunde con innovación"
+     ],
+     "Sustitutivos: otro sector, misma necesidad."
+    ],
+    [
+     2,
+     "Para ir de Madrid a Barcelona, el AVE o Ouigo sustituyen a los vuelos nacionales. ¿Qué fuerza ilustra?",
+     "La amenaza de productos sustitutivos",
+     [
+      "La rivalidad entre competidores",
+      "no son del mismo sector"
+     ],
+     [
+      "La amenaza de nuevos entrantes",
+      "no hablan de entrada al sector"
+     ],
+     [
+      "El poder de los clientes",
+      "no hablan de poder de compra"
+     ],
+     "Misma necesidad desde otro sector: sustitutivo."
+    ],
+    [
+     2,
+     "El streaming (Netflix, Spotify) frente a los DVD y CD físicos es un ejemplo de…",
+     "Producto sustitutivo: misma necesidad con otro formato",
+     [
+      "Barrera de entrada de marca",
+      "confunde un sustitutivo con una barrera de marca"
+     ],
+     [
+      "Poder de los proveedores",
+      "confunde un sustitutivo con el poder de los proveedores"
+     ],
+     [
+      "Rivalidad entre competidores del mismo sector",
+      "no son del mismo sector"
+     ],
+     "Streaming sustituye a los discos físicos."
+    ],
+    [
+     3,
+     "¿Cuándo es alta la amenaza de los productos sustitutivos?",
+     "Si ofrecen un precio mucho más bajo o una calidad superior y el consumidor se acostumbra fácilmente al cambio",
+     [
+      "Si son más caros y de peor calidad",
+      "contradice la condición"
+     ],
+     [
+      "Si cambiar de producto es muy difícil para el consumidor",
+      "reduce la amenaza"
+     ],
+     [
+      "Si pertenecen al mismo sector que la empresa",
+      "entonces serían rivales"
+     ],
+     "Precio o calidad superior y cambio fácil: amenaza alta."
+    ],
+    [
+     3,
+     "Iberia frente a Vueling, e Iberia frente al AVE: ¿cómo se clasifican respectivamente?",
+     "Rival y sustitutivo",
+     [
+      "Sustitutivo y rival",
+      "invierte la clasificación"
+     ],
+     [
+      "Los dos son rivales",
+      "trata como rivales a empresas de sectores distintos"
+     ],
+     [
+      "Los dos son sustitutivos",
+      "trata como sustitutivos a empresas del mismo sector"
+     ],
+     "Vueling vende lo mismo en tu sector (rival); el AVE cubre la necesidad desde otro sector (sustitutivo)."
+    ],
+    [
+     3,
+     "¿Cuál es el criterio para distinguir un rival de un sustitutivo?",
+     "El rival vende lo mismo en tu sector; el sustitutivo cubre la misma necesidad desde otro sector",
+     [
+      "El rival es más barato que el sustitutivo",
+      "distingue rival y sustitutivo por el precio y no por el sector"
+     ],
+     [
+      "El rival es de otro país y el sustitutivo del mismo",
+      "distingue rival y sustitutivo por el origen y no por el sector"
+     ],
+     [
+      "No hay diferencia entre ambos",
+      "ignora el criterio del tema"
+     ],
+     "Mismo sector: rival. Otro sector con la misma necesidad: sustitutivo."
+    ],
+    [
+     4,
+     "Una cadena de cines ve que muchos clientes prefieren plataformas de streaming. ¿Qué fuerza de Porter actúa?",
+     "Amenaza de productos sustitutivos",
+     [
+      "Rivalidad entre competidores",
+      "las plataformas son de otro sector"
+     ],
+     [
+      "Poder de los proveedores",
+      "confunde el cambio a otro formato con el poder de los proveedores"
+     ],
+     [
+      "Barreras de entrada",
+      "confunde el cambio a otro formato con barreras de entrada"
+     ],
+     "Streaming cubre la misma necesidad (entretenimiento) desde otro sector."
+    ],
+    [
+     4,
+     "Coca-Cola y Pepsi, ¿son rivales o sustitutivos entre sí?",
+     "Rivales: venden lo mismo en el mismo sector",
+     [
+      "Sustitutivos: cubren la misma necesidad",
+      "trata como sustitutivos a empresas que venden lo mismo en el mismo sector"
+     ],
+     [
+      "Nuevos entrantes: acaban de aparecer",
+      "confunde dos rivales consolidados con nuevos entrantes"
+     ],
+     [
+      "Proveedores: se venden entre sí",
+      "confunde dos rivales con proveedores"
+     ],
+     "Mismo sector y mismo producto: rivales."
+    ],
+    [
+     5,
+     "Una aerolínea comprueba que el tren de alta velocidad es más barato y cómodo y que los pasajeros se acostumbran enseguida. ¿Qué fuerza es alta y qué consecuencia tiene?",
+     "La amenaza de sustitutivos: la aerolínea puede perder clientes y beneficio",
+     [
+      "La rivalidad: otras aerolíneas bajan precios",
+      "el tren no es del mismo sector"
+     ],
+     [
+      "El poder de los proveedores: el tren sube los precios",
+      "confunde un sustitutivo más barato con un proveedor que sube precios"
+     ],
+     [
+      "La amenaza de nuevos entrantes: aparecen nuevas aerolíneas",
+      "confunde un sustitutivo con la llegada de nuevas aerolíneas"
+     ],
+     "Precio y calidad superiores con cambio fácil: amenaza alta."
+    ]
+   ]
+  },
+  {
+   "nombre": "Las 5 fuerzas aplicadas a la telefonía móvil",
+   "pagina": 11,
+   "ayuda": "Ejemplo resuelto de las 5 fuerzas en la telefonía móvil. Rivalidad: Movistar, Vodafone, Orange y Digi, con ofertas y guerra de precios constantes (alta). Nuevos entrantes: barreras altas, por las licencias del espectro y las redes muy caras de construir. Clientes: cambiar de compañía (portabilidad) es gratis y rápido (poder alto). Proveedores: pocos fabricantes de antenas y equipos de red (Ericsson, Nokia), por lo que su poder es alto. Sustitutivos: WhatsApp y las llamadas por internet sustituyen a los SMS y a las llamadas. Conclusión: fuerzas intensas, sector poco rentable para entrar.",
+   "preguntas": [
+    [
+     3,
+     "En el ejemplo de la telefonía móvil, ¿cómo es la rivalidad entre Movistar, Vodafone, Orange y Digi?",
+     "Alta: hay ofertas y guerra de precios constantes",
+     [
+      "Baja: hay una empresa líder muy clara",
+      "confunde guerra de precios con una líder clara"
+     ],
+     [
+      "Nula: hay solo una empresa",
+      "confunde varias operadoras con una sola empresa"
+     ],
+     [
+      "Baja: el sector crece muy deprisa",
+      "confunde guerra de precios con un sector en fuerte crecimiento"
+     ],
+     "Ofertas y guerra de precios constantes: rivalidad alta."
+    ],
+    [
+     3,
+     "En el ejemplo de la telefonía móvil, ¿por qué hay barreras de entrada altas?",
+     "Por las licencias del espectro y las redes muy caras de construir",
+     [
+      "Por la imagen de marca de una única empresa",
+      "confunde barreras de entrada con la marca de una sola empresa"
+     ],
+     [
+      "Por la falta de clientes",
+      "confunde barreras de entrada con falta de clientes"
+     ],
+     [
+      "Por los aranceles del comercio exterior",
+      "confunde barreras de entrada con aranceles al comercio"
+     ],
+     "Licencias del espectro e inversión en redes."
+    ],
+    [
+     3,
+     "En la telefonía móvil, ¿cómo es el poder de los clientes y por qué?",
+     "Alto, porque cambiar de compañía (portabilidad) es gratis y rápido",
+     [
+      "Bajo, porque hay pocas operadoras",
+      "ignora el coste de cambio"
+     ],
+     [
+      "Nulo, porque los precios los fija el Estado",
+      "cree que el Estado fija los precios y anula el poder del cliente"
+     ],
+     [
+      "Bajo, porque la portabilidad es cara",
+      "cree que la portabilidad es cara cuando es gratuita"
+     ],
+     "Cambiar de compañía es gratis y rápido: poder alto del cliente."
+    ],
+    [
+     4,
+     "En la telefonía móvil, ¿cómo es el poder de los proveedores y por qué?",
+     "Alto, porque hay pocos fabricantes de antenas y equipos de red, como Ericsson o Nokia",
+     [
+      "Bajo, porque hay muchos fabricantes",
+      "cree que hay muchos fabricantes de equipos de red"
+     ],
+     [
+      "Nulo, porque las operadoras fabrican sus equipos",
+      "cree que las operadoras fabrican sus propios equipos"
+     ],
+     [
+      "Bajo, porque los clientes pueden cambiar de operadora",
+      "confunde proveedores con clientes"
+     ],
+     "Pocos fabricantes de equipos de red: poder alto."
+    ],
+    [
+     4,
+     "En el ejemplo de la telefonía móvil, ¿qué productos actúan como sustitutivos y cuál es la conclusión del análisis?",
+     "WhatsApp y las llamadas por internet sustituyen a SMS y llamadas; fuerzas intensas, sector poco rentable para entrar",
+     [
+      "Otras operadoras son sustitutivas; fuerzas débiles, sector muy rentable",
+      "confunde rivales con sustitutivos y la conclusión"
+     ],
+     [
+      "Los fabricantes de móviles son sustitutivos; fuerzas débiles, sector rentable",
+      "confunde proveedores con sustitutivos"
+     ],
+     [
+      "Los clientes son sustitutivos; fuerzas intensas, sector muy rentable",
+      "confunde fuerzas y conclusión"
+     ],
+     "Mensajería y llamadas por internet son sustitutivos. Con fuerzas intensas, es un sector poco rentable."
+    ]
+   ]
+  }
+ ]
+}

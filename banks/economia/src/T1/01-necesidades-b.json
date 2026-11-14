@@ -1,0 +1,551 @@
+{
+ "subtema": "Necesidades y bienes",
+ "conceptos": [
+  {
+   "nombre": "Bienes y servicios",
+   "pagina": 4,
+   "ayuda": "Para satisfacer las necesidades usamos bienes y servicios. Los bienes son objetos tangibles: se pueden tocar, como un pantalón o un libro. Los servicios son actividades intangibles que prestan personas u organizaciones, como una clase o un corte de pelo. La diferencia clave es la tangibilidad: si lo puedes tocar y guardar es un bien; si es una actividad que alguien hace por ti, es un servicio. Después, tanto los bienes como los servicios se pueden clasificar con cinco criterios (abundancia, función, transformación, relación y propiedad).",
+   "preguntas": [
+    [
+     1,
+     "¿Qué diferencia a un bien de un servicio según el tema?",
+     "Los bienes son objetos tangibles y los servicios son actividades intangibles",
+     [
+      "Los bienes tienen precio y los servicios son gratuitos",
+      "confunde la tangibilidad con el precio"
+     ],
+     [
+      "Los bienes satisfacen necesidades y los servicios no",
+      "cree que los servicios no cubren necesidades"
+     ],
+     [
+      "Los bienes los producen empresas y los servicios, el Estado",
+      "atribuye cada tipo a un productor distinto"
+     ],
+     "Bien: tangible (se toca). Servicio: actividad intangible. Ambos satisfacen necesidades."
+    ],
+    [
+     2,
+     "¿Cuál de los siguientes elementos es un servicio?",
+     "Una clase particular de matemáticas",
+     [
+      "Un libro de texto de matemáticas",
+      "es un bien tangible"
+     ],
+     [
+      "Una calculadora científica",
+      "es un bien tangible"
+     ],
+     [
+      "Un pantalón deportivo",
+      "es un bien tangible"
+     ],
+     "Una clase es una actividad intangible que presta una persona: es un servicio."
+    ],
+    [
+     3,
+     "Una peluquería ofrece cortes de pelo y vende también champús. ¿Cómo se clasifica cada cosa?",
+     "El corte es un servicio y el champú es un bien",
+     [
+      "Ambos son servicios, porque los vende una empresa de servicios",
+      "clasifica por quién vende y no por tangibilidad"
+     ],
+     [
+      "Ambos son bienes, porque se pagan con dinero",
+      "clasifica por el pago y no por tangibilidad"
+     ],
+     [
+      "El corte es un bien y el champú es un servicio",
+      "invierte la clasificación"
+     ],
+     "Lo tangible (champú) es un bien. La actividad (corte) es un servicio."
+    ],
+    [
+     4,
+     "¿Qué afirmación sobre bienes y servicios es correcta?",
+     "Los dos tipos se pueden clasificar con criterios como abundancia, función o propiedad",
+     [
+      "Solo los bienes se pueden clasificar por su abundancia",
+      "excluye los servicios de la clasificación"
+     ],
+     [
+      "Los servicios siempre son bienes públicos",
+      "asocia servicio con propiedad pública"
+     ],
+     [
+      "Los bienes siempre son de consumo",
+      "ignora los bienes de capital"
+     ],
+     "Los bienes y servicios se clasifican con cinco criterios: abundancia, función, transformación, relación y propiedad."
+    ],
+    [
+     5,
+     "Un tractor es un bien tangible; el trabajo de un técnico que lo repara es una actividad intangible. ¿Cuál es la clasificación correcta de ambos por su naturaleza?",
+     "El tractor es un bien y la reparación es un servicio",
+     [
+      "Ambos son bienes, porque ambos son económicos",
+      "confunde tangibilidad con ser económico"
+     ],
+     [
+      "El tractor es un servicio porque produce otros bienes",
+      "mezcla naturaleza con función"
+     ],
+     [
+      "Ambos son servicios, porque se pagan",
+      "clasifica por el pago"
+     ],
+     "Por su naturaleza: lo tangible es un bien (tractor) y la actividad es un servicio (reparación). Que el tractor produzca otros bienes es un criterio de función."
+    ]
+   ]
+  },
+  {
+   "nombre": "Bienes libres y bienes económicos",
+   "pagina": 4,
+   "ayuda": "Según su abundancia, los bienes pueden ser libres o económicos. Un bien libre es ilimitado y muy abundante, nadie es su propietario, no tiene precio y no hace falta producirlo: el aire o la luz solar. Un bien económico es escaso, se puede apropiar, tiene precio y requiere producirse: un teléfono, la comida. Ojo con una trampa frecuente: libre no significa gratis por decisión de alguien, sino que es tan abundante que nadie lo posee ni lo produce. Que algo se regale (una muestra gratuita) no lo convierte en bien libre, porque sigue siendo escaso y hubo que producirlo.",
+   "preguntas": [
+    [
+     1,
+     "¿Cuál de estos es un bien libre según el tema?",
+     "La luz solar",
+     [
+      "Un teléfono móvil",
+      "es un bien económico: escaso y producido"
+     ],
+     [
+      "La comida de un restaurante",
+      "es un bien económico: tiene precio"
+     ],
+     [
+      "Una camiseta",
+      "es un bien económico: hay que producirlo"
+     ],
+     "Los bienes libres son ilimitados, sin propietario ni precio, como el aire o la luz solar."
+    ],
+    [
+     2,
+     "¿Qué característica define a un bien económico?",
+     "Es escaso, tiene propietario y precio, y requiere producirse",
+     [
+      "Es ilimitado y no hace falta producirlo",
+      "describe un bien libre"
+     ],
+     [
+      "Es siempre un objeto tangible",
+      "confunde económico con bien frente a servicio"
+     ],
+     [
+      "Lo ofrece siempre una empresa privada",
+      "confunde económico con privado"
+     ],
+     "Bien económico: escaso, apropiable, con precio y producido."
+    ],
+    [
+     3,
+     "En un centro comercial reparten muestras gratuitas de un perfume. ¿Cómo se clasifica ese perfume según su abundancia?",
+     "Como un bien económico, porque es escaso y hubo que producirlo aunque se regale",
+     [
+      "Como un bien libre, porque no tiene precio para quien lo recibe",
+      "confunde libre con gratis"
+     ],
+     [
+      "Como un servicio, porque lo entregan personas",
+      "confunde bien con servicio"
+     ],
+     [
+      "Como un bien público, porque es de uso común",
+      "confunde abundancia con propiedad"
+     ],
+     "Libre es lo abundante, sin dueño y sin producir. Un perfume regalado sigue siendo un bien económico."
+    ],
+    [
+     3,
+     "¿Qué diferencia a un bien libre de un bien económico en relación con la producción?",
+     "El libre no requiere producirse y el económico sí",
+     [
+      "El libre se produce en menos tiempo que el económico",
+      "mezcla producción con rapidez"
+     ],
+     [
+      "El libre lo produce el Estado y el económico las empresas",
+      "atribuye cada uno a un productor"
+     ],
+     [
+      "Los dos requieren producción, pero el libre es más barato",
+      "supone que ambos se producen"
+     ],
+     "En la ficha del tema: Producción: libre no hace falta; económico requieren producirse."
+    ],
+    [
+     4,
+     "Una persona dice que el agua embotellada es un bien libre porque el agua es natural. ¿Qué respuesta es más correcta?",
+     "Embotellada es un bien económico: requiere producirse, es apropiable y tiene precio",
+     [
+      "Es un bien libre, porque el agua es ilimitada",
+      "ignora que la embotellada se produce y tiene precio"
+     ],
+     [
+      "Es un servicio, porque se bebe",
+      "confunde bien con servicio"
+     ],
+     [
+      "Es un bien de capital, porque se usa para vivir",
+      "confunde función con abundancia"
+     ],
+     "El criterio es la abundancia y la producción. El agua embotellada se produce, se posee y se vende."
+    ],
+    [
+     5,
+     "Una empresa pone aire acondicionado gratuito en su sala de espera. ¿Qué afirmación es correcta?",
+     "El aire acondicionado es un bien económico: aunque no se cobre, requiere producirse y es escaso",
+     [
+      "Es un bien libre, porque el cliente no lo paga",
+      "confunde libre con gratis"
+     ],
+     [
+      "Es un bien libre, porque el aire es un bien libre",
+      "generaliza el aire natural al producido"
+     ],
+     [
+      "Es un servicio público, porque lo usan varias personas",
+      "confunde abundancia con propiedad"
+     ],
+     "Libre significa abundante y sin producción. Climatizar requiere producir (energía, máquinas): es un bien económico."
+    ]
+   ]
+  },
+  {
+   "nombre": "Bienes de consumo y bienes de capital",
+   "pagina": 4,
+   "ayuda": "Según su función, un bien puede ser de consumo o de capital. Los bienes de consumo satisfacen directamente una necesidad: una manzana, una camiseta. Los bienes de capital no satisfacen directamente una necesidad: sirven para producir otros bienes, como la maquinaria de una fábrica o las herramientas. La pista del tema: si no te lo comes ni lo usas tú, sino que fabrica otras cosas, es capital. Dentro de los de consumo hay duraderos (se usan muchas veces, como un coche) y perecederos (se acaban con el uso o el tiempo, como los alimentos).",
+   "preguntas": [
+    [
+     1,
+     "¿Cuál de los siguientes es un bien de capital?",
+     "La maquinaria de una fábrica",
+     [
+      "Una manzana",
+      "es un bien de consumo: satisface directamente una necesidad"
+     ],
+     [
+      "Una camiseta",
+      "es un bien de consumo"
+     ],
+     [
+      "Un coche particular para ir de excursión",
+      "es un bien de consumo duradero"
+     ],
+     "Los bienes de capital sirven para producir otros bienes, como la maquinaria."
+    ],
+    [
+     2,
+     "¿Qué hace que una camiseta sea un bien de consumo?",
+     "Satisface directamente una necesidad de quien la usa",
+     [
+      "Que se fabrica con maquinaria",
+      "confunde el proceso con la función del bien"
+     ],
+     [
+      "Que dura poco tiempo",
+      "confunde consumo con perecedero"
+     ],
+     [
+      "Que tiene precio",
+      "confunde función con abundancia"
+     ],
+     "Bien de consumo: satisface directamente una necesidad."
+    ],
+    [
+     3,
+     "Un coche y los alimentos son ambos bienes de consumo. ¿En qué se diferencian?",
+     "El coche es duradero y los alimentos son perecederos",
+     [
+      "El coche es un bien de capital y los alimentos de consumo",
+      "cambia la función del coche"
+     ],
+     [
+      "El coche es un bien libre y los alimentos son económicos",
+      "confunde con la abundancia"
+     ],
+     [
+      "El coche es un servicio y los alimentos son bienes",
+      "confunde bien con servicio"
+     ],
+     "Dentro de los bienes de consumo: duraderos (un coche) y perecederos (los alimentos)."
+    ],
+    [
+     3,
+     "¿Qué pista da el tema para reconocer un bien de capital?",
+     "No lo comes ni lo usas tú, sino que fabrica otras cosas",
+     [
+      "Es muy caro y dura muchos años",
+      "confunde capital con duradero y caro"
+     ],
+     [
+      "Lo compra una empresa en lugar de una familia",
+      "confunde función con comprador"
+     ],
+     [
+      "Es un objeto tangible y no un servicio",
+      "confunde tangibilidad (bien o servicio) con la función de capital"
+     ],
+     "Pista del tema: si no te lo comes ni lo usas tú, sino que fabrica otras cosas, es capital."
+    ],
+    [
+     4,
+     "Una pastelera compra un horno profesional para producir tartas. ¿Cómo se clasifica el horno?",
+     "Bien de capital, porque sirve para producir otros bienes",
+     [
+      "Bien de consumo, porque lo usa ella a diario",
+      "confunde usar con consumir directamente"
+     ],
+     [
+      "Bien perecedero, porque se desgasta con el uso",
+      "confunde desgaste con perecedero"
+     ],
+     [
+      "Bien libre, porque no se vende el horno",
+      "confunde función con abundancia"
+     ],
+     "El horno produce tartas: no satisface directamente una necesidad, es un bien de capital."
+    ],
+    [
+     4,
+     "¿Qué afirmación sobre los bienes duraderos y perecederos es correcta?",
+     "Ambas categorías pertenecen a los bienes de consumo",
+     [
+      "Los duraderos son bienes de capital y los perecederos de consumo",
+      "reparte las categorías entre capital y consumo"
+     ],
+     [
+      "Los perecederos son siempre bienes libres",
+      "confunde con la abundancia"
+     ],
+     [
+      "Los duraderos son siempre servicios",
+      "confunde con tangibilidad"
+     ],
+     "Duraderos (un coche) y perecederos (los alimentos) son tipos de bienes de consumo."
+    ],
+    [
+     5,
+     "Una familia compra una nevera para su casa y una cafetería compra una nevera igual para guardar sus productos. ¿Cuál es la clasificación más ajustada al criterio de función?",
+     "La de la familia es de consumo duradero y la de la cafetería es de capital",
+     [
+      "Las dos son de consumo, porque son el mismo objeto",
+      "ignora que el criterio es la función"
+     ],
+     [
+      "Las dos son de capital, porque son electrodomésticos duraderos",
+      "confunde capital con duradero"
+     ],
+     [
+      "La de la familia es de capital y la de la cafetería de consumo",
+      "invierte la clasificación"
+     ],
+     "El mismo objeto puede ser de consumo o de capital según su función: la cafetería lo usa para producir su negocio."
+    ]
+   ]
+  },
+  {
+   "nombre": "Bienes intermedios y bienes finales",
+   "pagina": 5,
+   "ayuda": "Según su grado de transformación, un bien es intermedio si todavía debe transformarse (la harina, que hay que amasar y hornear) o final si ya está listo para consumir o usar (una barra de pan). Se trata de un criterio sobre el proceso productivo. El mismo producto puede ser intermedio para una empresa y final para una familia, pero en el tema el criterio es si aún necesita transformación antes de llegar al consumidor.",
+   "preguntas": [
+    [
+     2,
+     "¿Cuál de los siguientes es un bien intermedio según el tema?",
+     "La harina",
+     [
+      "Una barra de pan",
+      "es un bien final: ya está listo para consumir"
+     ],
+     [
+      "Un servicio de reparto de pan",
+      "es un servicio y no un bien"
+     ],
+     [
+      "El aire de la panadería",
+      "es un bien libre"
+     ],
+     "El bien intermedio aún debe transformarse: la harina (hay que amasar y hornear)."
+    ],
+    [
+     3,
+     "¿Qué diferencia a un bien final de un bien intermedio?",
+     "El final está listo para consumirse o usarse y el intermedio aún debe transformarse",
+     [
+      "El final es siempre más caro que el intermedio",
+      "confunde transformación con precio"
+     ],
+     [
+      "El final se consume y el intermedio es siempre un bien de capital",
+      "mezcla dos criterios distintos"
+     ],
+     [
+      "El final es un servicio y el intermedio es un bien",
+      "confunde bien con servicio"
+     ],
+     "Grado de transformación: intermedio, aún sin terminar; final, listo para consumir o usar."
+    ],
+    [
+     5,
+     "Una frutería vende manzanas a una familia y a una fábrica de zumos. Con el criterio de transformación del tema, ¿qué se puede afirmar?",
+     "Para la fábrica, las manzanas son un bien intermedio, y para la familia, que las consume tal cual, un bien final",
+     [
+      "Las manzanas son siempre un bien final, porque se pueden comer",
+      "ignora que depende del uso"
+     ],
+     [
+      "Las manzanas son siempre un bien intermedio, porque son un producto agrícola",
+      "clasifica por origen y no por uso"
+     ],
+     [
+      "Las manzanas son un bien de capital, porque producen zumo",
+      "confunde transformación con función"
+     ],
+     "El criterio es si el bien aún debe transformarse antes de llegar al uso final: la fábrica de zumos las transforma."
+    ]
+   ]
+  },
+  {
+   "nombre": "Bienes complementarios y sustitutivos",
+   "pagina": 5,
+   "ayuda": "Según la relación entre dos bienes, pueden ser complementarios o sustitutivos. Los complementarios se consumen juntos para satisfacer una necesidad: uno sin el otro no sirve (un coche y la gasolina). Los sustitutivos satisfacen la misma necesidad de forma alternativa: uno u otro (el café y el té). Para distinguirlos pregúntate: ¿los uso a la vez o elijo entre ellos? Si los uso a la vez, son complementarios; si elijo uno de los dos, son sustitutivos.",
+   "preguntas": [
+    [
+     2,
+     "¿Cuál de las siguientes parejas son bienes complementarios?",
+     "Un coche y la gasolina",
+     [
+      "El café y el té",
+      "son bienes sustitutivos"
+     ],
+     [
+      "Una manzana y una pera",
+      "satisfacen la misma necesidad de forma alternativa"
+     ],
+     [
+      "El pan de molde y el pan de barra",
+      "uno puede sustituir al otro"
+     ],
+     "Complementarios: se consumen juntos y uno sin el otro no sirve. Coche y gasolina."
+    ],
+    [
+     3,
+     "¿Qué relación hay entre el café y el té según el tema?",
+     "Son sustitutivos: satisfacen la misma necesidad de forma alternativa",
+     [
+      "Son complementarios: se consumen juntos",
+      "confunde alternativa con consumo conjunto"
+     ],
+     [
+      "Son bienes de capital",
+      "confunde la relación con la función"
+     ],
+     [
+      "Son bienes intermedios",
+      "confunde con el grado de transformación"
+     ],
+     "Sustitutivos: satisfacen la misma necesidad, uno u otro."
+    ],
+    [
+     4,
+     "Una consola de videojuegos y sus juegos, ¿qué relación tienen?",
+     "Son complementarios: uno sin el otro no satisface la necesidad de jugar",
+     [
+      "Son sustitutivos: ambos sirven para entretenerse",
+      "confunde la finalidad con la relación"
+     ],
+     [
+      "Son bienes libres porque se pueden compartir",
+      "confunde relación con abundancia"
+     ],
+     [
+      "Son bienes intermedios porque hay que transformarlos",
+      "confunde con transformación"
+     ],
+     "La consola sin juegos no sirve y los juegos sin consola tampoco: complementarios."
+    ],
+    [
+     5,
+     "Subiendo mucho el precio de la gasolina, una persona deja de usar el coche y viaja en tren. ¿Qué relaciones aparecen entre los bienes del ejemplo?",
+     "Coche y gasolina son complementarios, y coche y tren son sustitutivos",
+     [
+      "Coche y gasolina son sustitutivos, y coche y tren son complementarios",
+      "invierte ambas relaciones"
+     ],
+     [
+      "Todos son complementarios, porque sirven para viajar",
+      "confunde finalidad común con complementariedad"
+     ],
+     [
+      "Todos son sustitutivos, porque satisfacen una necesidad de transporte",
+      "confunde finalidad común con sustitución"
+     ],
+     "Gasolina y coche se usan juntos (complementarios). Tren y coche satisfacen la misma necesidad de forma alternativa (sustitutivos)."
+    ]
+   ]
+  },
+  {
+   "nombre": "Bienes privados y bienes públicos",
+   "pagina": 5,
+   "ayuda": "Según su propiedad, un bien es privado si pertenece a particulares y su uso excluye a otros (una vivienda particular), o público si es de uso común y no se excluye a nadie de su consumo (un parque municipal, el alumbrado público). Piensa en una pregunta sencilla: ¿puede alguien impedirme usarlo o usarlo yo a costa de otro? En los privados sí; en los públicos no. Además, el tema ofrece un truco para memorizar los cinco criterios: A F T R P, de Abundancia, Función, Transformación, Relación y Propiedad.",
+   "preguntas": [
+    [
+     2,
+     "¿Cuál de los siguientes es un bien público según el tema?",
+     "El alumbrado público de una calle",
+     [
+      "Una vivienda particular",
+      "es un bien privado: su uso excluye a otros"
+     ],
+     [
+      "Un coche de una familia",
+      "es un bien privado"
+     ],
+     [
+      "Un libro comprado en una librería",
+      "es un bien privado"
+     ],
+     "Bien público: de uso común, no se excluye a nadie de su consumo."
+    ],
+    [
+     3,
+     "¿Qué diferencia a un bien privado de un bien público?",
+     "El privado pertenece a particulares y su uso excluye a otros; el público es de uso común",
+     [
+      "El privado siempre es gratis y el público es de pago",
+      "confunde propiedad con precio"
+     ],
+     [
+      "El privado es un servicio y el público es un bien",
+      "confunde bien y servicio"
+     ],
+     [
+      "El privado es de consumo y el público es de capital",
+      "confunde propiedad con función"
+     ],
+     "Propiedad: privados, de particulares y excluyentes; públicos, de uso común."
+    ],
+    [
+     4,
+     "Los cinco criterios de clasificación de los bienes del tema se recuerdan con A F T R P. ¿A qué corresponden esas letras?",
+     "Abundancia, Función, Transformación, Relación y Propiedad",
+     [
+      "Alimentos, Fábrica, Turrón, Recursos y Productos",
+      "toma la frase para memorizar como si fueran los criterios"
+     ],
+     [
+      "Abundancia, Función, Tangibilidad, Renta y Precio",
+      "sustituye criterios por otros que no están en el tema"
+     ],
+     [
+      "Alcance, Fuente, Tamaño, Riesgo y Pago",
+      "inventa criterios sin relación con el tema"
+     ],
+     "A F T R P: Abundancia, Función, Transformación, Relación y Propiedad."
+    ]
+   ]
+  }
+ ]
+}
