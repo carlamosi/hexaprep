@@ -122,3 +122,15 @@ def test_rejects_double_answer_and_bad_input(ctx, session):
     with pytest.raises(ValueError):
         record_event(session, sid, "tipo_raro", None, {}, NOW)
     assert len(session.scalars(select(Intento)).all()) == 1
+
+
+def test_derived_failure_does_not_lose_the_answer(ctx, session, db_path, monkeypatch):
+    from hexaprep import scheduling
+
+    sid, (p1, _) = ctx
+    monkeypatch.setattr(scheduling, "apply_attempt", lambda *a: (_ for _ in ()).throw(RuntimeError("boom")))
+    res = submit_answer(session, sid, p1.id, ORDEN, "a", None, {})
+    assert res.correcta and not session.in_transaction()
+    other = Session(get_engine(db_path))
+    assert len(other.scalars(select(Intento)).all()) == 1
+    other.close()

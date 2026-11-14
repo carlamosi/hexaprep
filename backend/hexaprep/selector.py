@@ -101,11 +101,13 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
         return None
 
     # conceptos fallados en esta sesión que ya toca reintroducir con otra pregunta
-    due: list[str] = []
+    last_fail: dict[str, int] = {}
     for idx, (_, correcta, concepto_id) in enumerate(answered):
-        if not correcta and concepto_id not in due and len(answered) - 1 - idx >= FAIL_GAP:
-            if not any(c == concepto_id and ok for _, ok, c in answered[idx + 1:]):
-                due.append(concepto_id)
+        if correcta:
+            last_fail.pop(concepto_id, None)
+        else:
+            last_fail[concepto_id] = idx
+    due = [c for c, idx in last_fail.items() if len(answered) - 1 - idx >= FAIL_GAP]
     due_cands = [(p, s) for p, s in cands if p.concepto_id in due]
     pool = due_cands or cands
 

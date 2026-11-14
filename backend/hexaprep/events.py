@@ -1,3 +1,4 @@
+import logging
 import time
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
@@ -8,6 +9,7 @@ from sqlalchemy.orm import Session
 from . import mastery, scheduling
 from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
 
+logger = logging.getLogger(__name__)
 MODOS = {"nivel", "practica", "repaso_subtema", "repaso_fallos"}
 TIPOS = {
     "pregunta_mostrada", "opcion_seleccionada", "confianza", "respuesta_enviada", "explicacion_abierta",
@@ -128,9 +130,15 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     )
     session.add(intento)
     session.flush()
-    mastery.apply_attempt(session, intento)
-    scheduling.apply_attempt(session, intento)
-    _commit(session)
+    intento_id = intento.id
+    _commit(session)  # la respuesta queda guardada antes de calcular nada derivado
+    try:
+        mastery.apply_attempt(session, intento)
+        scheduling.apply_attempt(session, intento)
+        session.commit()
+    except Exception:
+        session.rollback()  # dominio y FSRS son reconstruibles (mastery.rebuild, scheduling.rebuild)
+        logger.exception("no se pudo actualizar el dominio tras la respuesta %s", intento_id)
     return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa)
 
 

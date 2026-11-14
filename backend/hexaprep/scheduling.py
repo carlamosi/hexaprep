@@ -7,12 +7,13 @@ from fsrs import Card, Rating, Scheduler
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from .mastery import expected_correct, sigmoid, update
+from .mastery import _dominio, expected_correct, sigmoid, update
 from .models import Concepto, Dominio, Intento, Pregunta
 
 # Sin pasos de aprendizaje: las sesiones son libres, el primer intervalo ya es de días.
 _SCHEDULER = Scheduler(learning_steps=(), relearning_steps=(), enable_fuzzing=False)
 SECONDS_PER_QUESTION = 60.0
+MIN_SECONDS = 10.0  # t_envio va en segundos; tiempos minúsculos no deben disparar la ganancia por minuto
 
 
 def _aware(dt: datetime) -> datetime:
@@ -57,7 +58,7 @@ def apply_attempt(session: Session, intento: Intento) -> None:
 
 def rebuild(session: Session, concepto_id: str) -> None:
     """Reconstruye el estado FSRS de un concepto repitiendo sus intentos no excluidos."""
-    dom = session.scalar(select(Dominio).where(Dominio.concepto_id == concepto_id))
+    dom = _dominio(session, concepto_id)
     rows = session.scalars(
         select(Intento).join(Pregunta, Pregunta.id == Intento.pregunta_id)
         .where(Intento.concepto_id == concepto_id, Pregunta.excluida.is_(False), Intento.deleted_at.is_(None))
@@ -85,7 +86,7 @@ def _gain_per_minute(dom: Dominio, dificultad: float, segundos: float) -> float:
     """Aumento esperado del porcentaje de dominio por minuto al acertar una pregunta del nivel adecuado."""
     p = expected_correct(dom.theta, round(dificultad))
     theta_up, _ = update(dom.theta, dom.sigma, round(dificultad), True)
-    return p * 100 * (sigmoid(theta_up) - sigmoid(dom.theta)) * 60.0 / segundos
+    return p * 100 * (sigmoid(theta_up) - sigmoid(dom.theta)) * 60.0 / max(segundos, MIN_SECONDS)
 
 
 def suggestions(session: Session, now: datetime, n: int = 5) -> list[Suggestion]:

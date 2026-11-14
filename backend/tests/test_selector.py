@@ -114,3 +114,13 @@ def test_solo_fallos_only_offers_failed_concepts(session, bank):
     assert clave(session, q) == "f1"
     answer(session, sid2, q)
     assert next_question(session, sid2, Filtro(asig, solo_fallos=True)) is None  # "O" nunca sale
+
+
+def test_failed_concept_keeps_spacing_after_a_second_failure(session, bank):
+    items = [(f"A{i}", "A", "s", 3) for i in range(5)] + [(f"B{i}", f"B{i}", "s", 3) for i in range(6)]
+    asig, sid = setup(session, bank, items)
+    ids = {c: session.scalar(select(Pregunta.id).where(Pregunta.clave == c)) for c in ("A0", "A1", "B0", "B1")}
+    for c, letra in (("A0", "b"), ("B0", "a"), ("B1", "a"), ("A1", "b")):
+        submit_answer(session, sid, ids[c], ORDEN, letra, None, {})
+    q = next_question(session, sid, Filtro(asig))
+    assert not clave(session, q).startswith("A")  # el último fallo fue hace 0 respuestas

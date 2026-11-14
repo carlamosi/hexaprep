@@ -87,3 +87,18 @@ def test_rebuild_matches_incremental(session, bank):
     rebuild(session, dom.concepto_id)
     session.refresh(dom)
     assert snap() == before
+
+
+def test_rebuild_without_dominio_row_does_not_crash(session, bank):
+    import_bank(session, make_bank(bank, [("q1", "A", "s", 3)]))
+    rebuild(session, session.scalar(select(Concepto.id)))
+
+
+def test_tiny_response_time_does_not_dominate_gain(session, bank):
+    from hexaprep.scheduling import _gain_per_minute
+
+    import_bank(session, make_bank(bank, [("q1", "A", "s", 3)]))
+    submit_answer(session, start_session(session, "practica", {}), session.scalar(select(Pregunta.id)), ORDEN, "a",
+                  None, {})
+    dom = session.scalar(select(Dominio))
+    assert _gain_per_minute(dom, 3, 0.001) == _gain_per_minute(dom, 3, 5.0)
