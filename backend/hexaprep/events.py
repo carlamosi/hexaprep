@@ -5,7 +5,7 @@ from datetime import UTC, datetime
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from . import mastery
+from . import mastery, scheduling
 from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
 
 MODOS = {"nivel", "practica", "repaso_subtema", "repaso_fallos"}
@@ -129,6 +129,7 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     session.add(intento)
     session.flush()
     mastery.apply_attempt(session, intento)
+    scheduling.apply_attempt(session, intento)
     _commit(session)
     return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa)
 
