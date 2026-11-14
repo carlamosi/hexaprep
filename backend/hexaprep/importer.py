@@ -21,6 +21,10 @@ def _digest(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
+def question_digest(q: PreguntaIn) -> str:
+    return _digest(q.model_dump_json())
+
+
 def _get_or_create(session: Session, model, **keys):
     row = session.scalar(select(model).filter_by(**keys, deleted_at=None))
     if row is None:
@@ -68,7 +72,7 @@ def import_bank(session: Session, bank: BankFile, archivo: str = "") -> ImportRe
     lote = None
 
     for q in bank.preguntas:
-        digest = _digest(q.model_dump_json())
+        digest = question_digest(q)
         current = session.scalar(select(Pregunta).where(Pregunta.clave == q.id, Pregunta.es_actual.is_(True)))
         if current is not None and current.content_hash == digest:
             report.unchanged += 1

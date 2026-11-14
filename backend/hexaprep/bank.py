@@ -3,7 +3,7 @@ from collections import Counter
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, ValidationError, field_validator, model_validator
+from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 DASHES = ("—", "–")
 
@@ -61,6 +61,14 @@ class PreguntaIn(Strict):
     fuente_pagina: int = Field(ge=1)
     fuente_cara: int = Field(ge=1)
 
+    @model_validator(mode="before")
+    @classmethod
+    def _no_dashes(cls, data):
+        bad = _find_dashes(data)
+        if bad:
+            raise ValueError(f"guion largo en {', '.join(bad)}")
+        return data
+
     @model_validator(mode="after")
     def _traps(self):
         for i, o in enumerate(self.opciones):
@@ -77,14 +85,6 @@ class BankFile(Strict):
     fuente: FuenteIn | None = None
     lote: LoteIn | None = None
     preguntas: list[PreguntaIn]
-
-    @field_validator("preguntas", mode="before")
-    @classmethod
-    def _no_dashes(cls, v):
-        bad = _find_dashes(v)
-        if bad:
-            raise ValueError(f"guion largo en {bad[0]} (y {len(bad) - 1} más)" if len(bad) > 1 else f"guion largo en {bad[0]}")
-        return v
 
     @model_validator(mode="after")
     def _unique_ids(self):
