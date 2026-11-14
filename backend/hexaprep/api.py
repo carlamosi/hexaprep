@@ -70,7 +70,10 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         app.state.engine = get_engine(db_path)
         upgrade(app.state.engine)
         check_integrity(app.state.engine)
-        backup.maybe_weekly_backup(db_path, data_dir / "backups", utcnow())
+        weekly = backup.maybe_weekly_backup(db_path, data_dir / "backups", utcnow())
+        if weekly is not None:  # que Ajustes la muestre y se pueda restaurar desde la app
+            with Session(app.state.engine) as s:
+                backup.record_backup(s, weekly)
         yield
         app.state.engine.dispose()
 
@@ -134,7 +137,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         except events.UnknownSession:
             raise HTTPException(404, "Sesión desconocida")
         if state.modo == "nivel":
-            left = [i for i in state.filtro.get("nivel_ids", []) if i not in state.respondidas]
+            left = [i for i in state.filtro.get("nivel_ids", []) if i not in state.respondidas
+                    and not s.get(Pregunta, i).excluida]  # una reportada no vuelve a salir
             q = selector.question_out(s, left[0]) if left else None
         else:
             q = selector.next_question(s, sesion_id, selector.Filtro(**{

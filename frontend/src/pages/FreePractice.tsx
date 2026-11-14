@@ -2,25 +2,29 @@ import { useEffect, useRef, useState } from "react";
 import { api } from "../api";
 import { Practice } from "../components/Practice";
 import { t } from "../i18n";
+import { clearSession, openSession } from "../session";
 import { Review, type Fallo } from "./Review";
 
-type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion">;
+type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "getSession">>;
 
 /** Práctica adaptativa libre: sin duración fija, mezclando temas. «Terminar sesión» enseña los fallos agrupados. */
 export function FreePractice({ asignaturaId, client = api, onFinish }: { asignaturaId: string; client?: Client; onFinish: () => void }) {
   const [sid, setSid] = useState<string | null>(null);
-  const [fin, setFin] = useState(false);
+  const [answered, setAnswered] = useState(0);
+  const [fin, setFinState] = useState(false);
   const [failed, setFailed] = useState(false);
   const fallos = useRef<Fallo[]>([]);
   const started = useRef(false);
+  const key = `hexaprep.sesion.practica.${asignaturaId}`;
+  const setFin = (v: boolean) => { if (v) clearSession(key); setFinState(v); };
 
   useEffect(() => {
     if (started.current) return;
     started.current = true;
-    client.createSession("practica", { asignatura_id: asignaturaId })
-      .then((r) => setSid(r.sesion_id))
+    openSession(key, client, () => client.createSession("practica", { asignatura_id: asignaturaId }))
+      .then((o) => { setSid(o.sid); setAnswered(o.answered); })
       .catch(() => setFailed(true));
-  }, [asignaturaId, client]);
+  }, [asignaturaId, client, key]);
 
   if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   if (!sid) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
@@ -46,6 +50,7 @@ export function FreePractice({ asignaturaId, client = api, onFinish }: { asignat
       <Practice
         sesionId={sid}
         client={client}
+        initialAnswered={answered}
         onDone={() => setFin(true)}
         onAnswered={(q, r) => {
           if (!r.correcta) {

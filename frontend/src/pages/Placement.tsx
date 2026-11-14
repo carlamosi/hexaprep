@@ -3,14 +3,17 @@ import { api, type MapResponse } from "../api";
 import { HexMap } from "../components/HexMap";
 import { Practice } from "../components/Practice";
 import { t } from "../i18n";
+import { clearSession, openSession } from "../session";
 
 const TOTAL = 15;
-type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion" | "getMap">;
+const KEY = (asignaturaId: string) => `hexaprep.sesion.nivel.${asignaturaId}`;
+type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion" | "getMap"> & Partial<Pick<typeof api, "getSession">>;
 
 /** Test de nivel: 15 preguntas sin feedback entre ellas; al terminar muestra el panal actualizado. */
 export function Placement({ asignaturaId, client = api, onFinish }: { asignaturaId: string; client?: Client; onFinish: () => void }) {
   const [sid, setSid] = useState<string | null>(null);
   const [aviso, setAviso] = useState<string | null>(null);
+  const [answered, setAnswered] = useState(0);
   const [map, setMap] = useState<MapResponse | null>(null);
   const [failed, setFailed] = useState(false);
   const started = useRef(false);
@@ -18,12 +21,13 @@ export function Placement({ asignaturaId, client = api, onFinish }: { asignatura
   useEffect(() => {
     if (started.current) return;
     started.current = true;
-    client.createSession("nivel", { asignatura_id: asignaturaId })
-      .then((r) => { setSid(r.sesion_id); setAviso(r.aviso); })
+    openSession(KEY(asignaturaId), client, () => client.createSession("nivel", { asignatura_id: asignaturaId }))
+      .then((o) => { setSid(o.sid); setAviso(o.aviso); setAnswered(o.answered); })
       .catch(() => setFailed(true));
   }, [asignaturaId, client]);
 
   async function finish() {
+    clearSession(KEY(asignaturaId));
     try {
       setMap(await client.getMap(asignaturaId));
     } catch {
@@ -47,7 +51,7 @@ export function Placement({ asignaturaId, client = api, onFinish }: { asignatura
   return (
     <section className="px-4 py-6">
       {aviso && <p role="status" className="mx-auto mb-4 max-w-3xl rounded-[11px] bg-[var(--lila-soft)] px-4 py-3">{aviso}</p>}
-      <Practice sesionId={sid} client={client} sinFeedback total={TOTAL} onDone={() => void finish()} />
+      <Practice sesionId={sid} client={client} sinFeedback total={TOTAL} initialAnswered={answered} onDone={() => void finish()} />
     </section>
   );
 }

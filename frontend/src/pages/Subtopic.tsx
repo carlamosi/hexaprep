@@ -2,9 +2,10 @@ import { useEffect, useRef, useState } from "react";
 import { api, type MapResponse } from "../api";
 import { Practice } from "../components/Practice";
 import { t } from "../i18n";
+import { clearSession, openSession, savedSession } from "../session";
 import { Review, type Fallo } from "./Review";
 
-type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion" | "getMap">;
+type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion" | "getMap"> & Partial<Pick<typeof api, "getSession">>;
 
 interface Props {
   asignaturaId: string;
@@ -17,9 +18,11 @@ interface Props {
 export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Props) {
   const [map, setMap] = useState<MapResponse | null>(null);
   const [sid, setSid] = useState<string | null>(null);
+  const [answered, setAnswered] = useState(0);
   const [fin, setFin] = useState(false);
   const [failed, setFailed] = useState(false);
   const fallos = useRef<Fallo[]>([]);
+  const key = `hexaprep.sesion.subtema.${subtemaId}`;
 
   useEffect(() => {
     let alive = true;
@@ -28,16 +31,19 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
   }, [asignaturaId, client]);
 
   async function start() {
-    fallos.current = [];
+    if (!savedSession(key)) fallos.current = [];
     try {
-      const r = await client.createSession("repaso_subtema", { asignatura_id: asignaturaId, subtema_id: subtemaId });
-      setSid(r.sesion_id);
+      const o = await openSession(key, client, () =>
+        client.createSession("repaso_subtema", { asignatura_id: asignaturaId, subtema_id: subtemaId }));
+      setSid(o.sid);
+      setAnswered(o.answered);
     } catch {
       setFailed(true);
     }
   }
 
   function done() {
+    clearSession(key);
     setFin(true);
     client.getMap(asignaturaId).then(setMap).catch(() => undefined);
   }
@@ -55,6 +61,7 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
         <Practice
           sesionId={sid}
           client={client}
+          initialAnswered={answered}
           onDone={done}
           onAnswered={(q, r) => {
             if (!r.correcta) {

@@ -90,11 +90,14 @@ def restore(path: Path, db_path: Path) -> None:
     tmp.unlink(missing_ok=True)
     _copy(path, tmp)
     if db_path.exists():
-        con = sqlite3.connect(db_path)
         try:
-            con.execute("PRAGMA wal_checkpoint(TRUNCATE)")
-        finally:
-            con.close()
+            con = sqlite3.connect(db_path)
+            try:
+                con.execute("PRAGMA wal_checkpoint(TRUNCATE)")
+            finally:
+                con.close()
+        except sqlite3.DatabaseError:
+            pass  # base dañada: justo el caso en que se restaura; se aparta tal cual
         db_path.replace(db_path.with_name(f"{db_path.name}.pre-restore-{utcnow().strftime(STAMP)}"))
     for suffix in ("-wal", "-shm"):
         db_path.with_name(db_path.name + suffix).unlink(missing_ok=True)

@@ -94,8 +94,10 @@ def test_backup_export_and_restore(client, loaded, paths):
     q = client.get(f"/api/sessions/{sid}/next").json()
     client.post("/api/answers", json={"sesion_id": sid, "pregunta_id": q["pregunta_id"], "orden_opciones": q["orden"],
                                       "elegida": "b"})
-    assert client.get("/api/backup").json() is None
+    inicial = client.get("/api/backup").json()  # la copia automática del arranque ya figura
+    assert inicial is not None
     b = client.post("/api/backup").json()
+    assert b["ruta"] != inicial["ruta"]
     assert b["verificada"] and b["n_eventos"] >= 1 and Path(b["ruta"]).is_file()
     assert client.get("/api/backup").json()["ruta"] == b["ruta"]
     assert Path(client.post("/api/export/weak", json={"n": 5}).json()["ruta"]).is_file()
@@ -139,3 +141,17 @@ def test_serves_built_frontend_when_dist_exists(paths, tmp_path):
     with TestClient(create_app(**paths, static_dir=dist)) as c:
         assert "HexaPrep" in c.get("/").text
         assert c.get("/api/subjects").status_code == 200  # la API sigue por delante de los estáticos
+
+
+def test_reporting_during_placement_does_not_serve_the_same_question_again(client, loaded):
+    sid = client.post("/api/sessions", json={"modo": "nivel", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    first = client.get(f"/api/sessions/{sid}/next").json()["pregunta_id"]
+    client.post(f"/api/questions/{first}/report", json={"motivo": "dudosa", "sesion_id": sid})
+    nxt = client.get(f"/api/sessions/{sid}/next").json()
+    assert nxt is not None and nxt["pregunta_id"] != first
+
+
+def test_automatic_weekly_backup_is_registered_and_listed(paths):
+    with TestClient(create_app(**paths)) as c:
+        row = c.get("/api/backup").json()
+        assert row is not None and row["verificada"] and Path(row["ruta"]).is_file()

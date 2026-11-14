@@ -74,7 +74,10 @@ def import_bank(session: Session, bank: BankFile, archivo: str = "") -> ImportRe
     for q in bank.preguntas:
         digest = question_digest(q)
         current = session.scalar(select(Pregunta).where(Pregunta.clave == q.id, Pregunta.es_actual.is_(True)))
-        if current is not None and current.content_hash == digest:
+        # Un banco que coincide con cualquier versión ya guardada no ha cambiado desde entonces. Así, volver a
+        # importar el JSON original (run.ps1 lo hace en cada arranque) no deshace las correcciones hechas en la app.
+        known = set(session.scalars(select(Pregunta.content_hash).where(Pregunta.clave == q.id)))
+        if current is not None and digest in known:
             report.unchanged += 1
             continue
         if lote is None and bank.lote:
@@ -88,7 +91,7 @@ def import_bank(session: Session, bank: BankFile, archivo: str = "") -> ImportRe
         else:
             current.es_actual = False
             session.flush()
-            _add_question(session, q, concepto, current.version + 1, fuente and fuente.id, lote and lote.id,
+            _add_question(session, q, concepto, current.version + 1, (fuente and fuente.id) or current.fuente_id, lote and lote.id,
                           digest, current.excluida)
             report.updated += 1
 

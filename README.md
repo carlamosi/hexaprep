@@ -7,7 +7,7 @@ Sin cuentas, sin nube, sin claves de API y sin telemetría.
 ## Requisitos
 
 - Windows 11 con PowerShell.
-- Python 3.13 o superior (probado con 3.14).
+- Python 3.14 o superior (usa `uuid.uuid7`, que solo existe desde 3.14).
 - Node.js (probado con la versión 24), solo para compilar el frontend.
 
 ## Instalación y primer arranque
@@ -98,5 +98,5 @@ run.ps1           arranque en un paso
 - **Falta un PDF de booklet.** La app avisa con un mensaje claro al abrir el booklet. Copia el PDF que falta en `banks\economia\fuentes\` con el nombre indicado en el aviso.
 - **No se ve el frontend.** Falta compilarlo. Ejecuta `cd frontend`, `npm run build` y vuelve a la carpeta principal.
 - **Falló la instalación a medias.** Como `run.ps1` solo crea `.venv` si no existe, borra la carpeta `.venv` y vuelve a ejecutar el script.
-- **Python o Node no se encuentran.** `run.ps1` lo indica. Instala Python 3.13 o superior desde python.org (marca "Add python.exe to PATH") o Node.js desde nodejs.org.
+- **Python o Node no se encuentran.** `run.ps1` lo indica. Instala Python 3.14 o superior desde python.org (marca "Add python.exe to PATH") o Node.js desde nodejs.org.
 - **PowerShell no deja ejecutar `run.ps1`.** Usa el comando con `-ExecutionPolicy Bypass` de la sección de instalación.

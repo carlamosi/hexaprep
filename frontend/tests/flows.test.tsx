@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { AnswerResult, MapResponse, Question, Suggestion } from "../src/api";
 import { Placement } from "../src/pages/Placement";
 import { Review } from "../src/pages/Review";
@@ -37,6 +37,8 @@ function fakeClient(n: number, answer: Partial<AnswerResult> = {}) {
     suggestions: vi.fn(),
   };
 }
+
+beforeEach(() => localStorage.clear());
 
 describe("flujos", () => {
   it("placement_runs_15_questions_then_updates_map", async () => {
@@ -125,5 +127,36 @@ describe("flujos", () => {
     render(<Suggestions client={{ suggestions: vi.fn().mockResolvedValue(hint) }} onPracticeSubtema={vi.fn()} onPlacement={onPlacement} />);
     await user.click(await screen.findByRole("button", { name: "Hacer el test de nivel" }));
     await waitFor(() => expect(onPlacement).toHaveBeenCalled());
+  });
+});
+
+describe("reanudar una sesión interrumpida", () => {
+  it("placement_resumes_the_saved_session_instead_of_starting_again", async () => {
+    localStorage.setItem("hexaprep.sesion.nivel.a1", "vieja");
+    const client = { ...fakeClient(10), getSession: vi.fn().mockResolvedValue({ sesion_id: "vieja", respondidas: ["p1", "p2", "p3", "p4", "p5"] }) };
+    render(<Placement asignaturaId="a1" client={client} onFinish={vi.fn()} />);
+    expect(await screen.findByText("6 de 15")).toBeInTheDocument();
+    expect(client.getSession).toHaveBeenCalledWith("vieja");
+    expect(client.createSession).not.toHaveBeenCalled();
+  });
+
+  it("placement_starts_a_new_session_when_the_saved_one_no_longer_exists", async () => {
+    localStorage.setItem("hexaprep.sesion.nivel.a1", "borrada");
+    const client = { ...fakeClient(3), getSession: vi.fn().mockRejectedValue(new Error("Sesión desconocida")) };
+    render(<Placement asignaturaId="a1" client={client} onFinish={vi.fn()} />);
+    expect(await screen.findByText("1 de 15")).toBeInTheDocument();
+    expect(client.createSession).toHaveBeenCalledTimes(1);
+    expect(localStorage.getItem("hexaprep.sesion.nivel.a1")).toBe("s1");
+  });
+
+  it("placement_forgets_the_session_once_finished", async () => {
+    const client = fakeClient(1);
+    const user = userEvent.setup();
+    render(<Placement asignaturaId="a1" client={client} onFinish={vi.fn()} />);
+    await screen.findByText("Pregunta 1");
+    expect(localStorage.getItem("hexaprep.sesion.nivel.a1")).toBe("s1");
+    await user.click(screen.getByRole("button", { name: /Opción A/ }));
+    await screen.findByRole("button", { name: /37 por ciento de dominio/ });
+    expect(localStorage.getItem("hexaprep.sesion.nivel.a1")).toBeNull();
   });
 });

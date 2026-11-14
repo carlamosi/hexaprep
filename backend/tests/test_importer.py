@@ -60,3 +60,28 @@ def test_unknown_concept_is_created_under_subtema(session, bank):
     assert n(session, Concepto) == before + 1
     c = session.scalar(select(Concepto).where(Concepto.nombre == "Concepto totalmente nuevo"))
     assert session.get(Subtema, c.subtema_id).nombre == bank.preguntas[0].subtema
+
+
+def test_reimporting_the_original_bank_does_not_revert_an_edit_made_in_the_app(session, bank):
+    from hexaprep.quality import edit_question
+
+    import_bank(session, bank)
+    clave = bank.preguntas[0].id
+    pid = session.scalar(select(Pregunta.id).where(Pregunta.clave == clave))
+    edit_question(session, pid, {"enunciado": "Corregido en la app"})
+    report = import_bank(session, bank)  # el banco original vuelve a importarse (run.ps1 lo hace en cada arranque)
+    assert (report.created, report.updated) == (0, 0)
+    cur = session.scalar(select(Pregunta).where(Pregunta.clave == clave, Pregunta.es_actual.is_(True)))
+    assert (cur.version, cur.enunciado) == (2, "Corregido en la app")
+
+
+def test_edited_bank_without_source_keeps_the_booklet_link(session, bank):
+    import_bank(session, bank)
+    clave = bank.preguntas[0].id
+    before = session.scalar(select(Pregunta.fuente_id).where(Pregunta.clave == clave))
+    assert before is not None
+    edited = bank_with(bank, enunciado="Versión nueva del enunciado")
+    edited = edited.model_copy(update={"fuente": None})  # como un banco exportado de una asignatura con varias fuentes
+    import_bank(session, edited)
+    cur = session.scalar(select(Pregunta).where(Pregunta.clave == clave, Pregunta.es_actual.is_(True)))
+    assert cur.version == 2 and cur.fuente_id == before

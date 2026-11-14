@@ -21,10 +21,12 @@ interface Props {
   sinFeedback?: boolean;
   /** Si se indica, la cabecera muestra «n de total» en lugar del contador de respondidas. */
   total?: number;
+  /** Respuestas ya dadas si se reanuda una sesión. */
+  initialAnswered?: number;
   onAnswered?: (question: Question, result: AnswerResult) => void;
 }
 
-export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedback, total, onAnswered }: Props) {
+export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedback, total, initialAnswered = 0, onAnswered }: Props) {
   // Los callbacks y el cliente van por ref: un padre que los recree en cada render no debe relanzar la carga.
   const client = useRef(clientProp);
   client.current = clientProp;
@@ -37,7 +39,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
   const [result, setResult] = useState<AnswerResult | null>(null);
   const [confianza, setConfianza] = useState<Confianza | null>(null);
   const [reported, setReported] = useState(false);
-  const [answered, setAnswered] = useState(0);
+  const [answered, setAnswered] = useState(initialAnswered);
   const [failed, setFailed] = useState(false);
   const locked = useRef(false); // respuesta firme: el primer clic cuenta, aunque la respuesta tarde
   const shownAt = useRef(0);

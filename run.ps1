@@ -16,10 +16,10 @@ if (-not (Test-Path $venvPy)) {
         $pyCmd = "python"
     }
     if (-not $pyCmd) {
-        throw "No encuentro Python. Instálalo desde python.org (3.13 o superior) y marca 'Add python.exe to PATH'."
+        throw "No encuentro Python. Instálalo desde python.org (3.14 o superior) y marca 'Add python.exe to PATH'."
     }
-    & $pyCmd @pyArgs -c "import sys; sys.exit(0 if sys.version_info >= (3, 13) else 1)"
-    if ($LASTEXITCODE -ne 0) { throw "Hace falta Python 3.13 o superior." }
+    & $pyCmd @pyArgs -c "import sys; sys.exit(0 if sys.version_info >= (3, 14) else 1)"
+    if ($LASTEXITCODE -ne 0) { throw "Hace falta Python 3.14 o superior." }
 
     Write-Host "Creando el entorno virtual en .venv..."
     & $pyCmd @pyArgs -m venv .venv
