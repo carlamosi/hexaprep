@@ -53,7 +53,7 @@ docs/mockups/  data/ (hexaprep.db, backups/, exports/; fuera de git)
 **Files:** Create `backend/pyproject.toml`, `backend/hexaprep/__init__.py`, `backend/tests/test_env.py` (el repositorio y `.gitignore` ya existen).
 **Interfaces:** Produces: paquete `hexaprep` instalable con `pip install -e backend`.
 - [ ] **Step 1: Test** `test_env.py::test_dependencies_import` importa `fastapi`, `sqlalchemy`, `alembic`, `fsrs`, `pydantic`; `test_python_version` exige `sys.version_info >= (3, 13)`.
-- [ ] **Step 2:** Crear `.venv`, instalar dependencias. Si alguna no instala en 3.14, recrear con `uv venv --python 3.13` y anotarlo en `README.md`.
+- [ ] **Step 2:** Crear `.venv`, instalar dependencias. Las dependencias ya resuelven en 3.14 (comprobado con `pip install --dry-run`). Si alguna falla al importar, instalar `uv` (`pip install uv`, no está instalado), recrear con `uv venv --python 3.13` y anotarlo en `README.md`.
 - [ ] **Step 3:** Ejecutar `pytest backend/tests/test_env.py -v`; esperado: 2 passed.
 - [ ] **Step 4: Commit** `chore: backend skeleton`.
 
@@ -164,7 +164,8 @@ docs/mockups/  data/ (hexaprep.db, backups/, exports/; fuera de git)
 **Files:** Create `frontend/` (Vite, React, TS, Tailwind), `frontend/src/tokens.css`, `i18n.ts`, `api.ts`, `frontend/tests/tokens.test.ts`, `frontend/tests/copy.test.ts`.
 **Interfaces:** Produces: tokens CSS para la paleta y Lexend; `t(key: string): string`; cliente tipado para cada endpoint de Task 11.
 - [ ] **Step 1: Tests** `tokens.test.ts::palette_matches_spec` (los 8 colores y `#B05A8F`); `copy.test.ts::no_em_dashes_in_ui_strings` (ningún `—` ni `–` en `src/**`).
-- [ ] **Step 2-4:** Implementar y pasar. **Step 5: Commit** `feat: frontend skeleton`.
+- [ ] **Step 2:** Crear el proyecto con Vite (React + TS), instalar Tailwind, Motion, KaTeX, `@fontsource/lexend`, Vitest, Playwright y descargar el navegador de pruebas una sola vez con `npx playwright install chromium`.
+- [ ] **Step 3-4:** Implementar y pasar. **Step 5: Commit** `feat: frontend skeleton`.
 
 ### Task 16: Panal de dominio e inicio
 **Comando de la tarea (para `task-done`):** `cd frontend && npx vitest run tests/HexMap.test.tsx`
