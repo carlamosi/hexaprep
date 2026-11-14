@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+@theme {
+  --color-azul: var(--azul);
+  --color-ambar: var(--ambar);
+  --color-verde: var(--verde);
+  --color-rosa: var(--rosa);
+  --color-naranja: var(--naranja);
+  --color-indigo: var(--indigo);
+  --color-marron: var(--marron);
+  --color-carmin: var(--carmin);
+  --color-lila: var(--lila);
+  --color-lila-ink: var(--lila-ink);
+  --color-lila-soft: var(--lila-soft);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-rule: var(--rule);
+  --font-sans: var(--font);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 16px/1.55 var(--font);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 3px; border-radius: 8px; }
