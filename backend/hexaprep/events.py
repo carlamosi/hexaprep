@@ -20,6 +20,14 @@ LETRAS = ["a", "b", "c", "d"]
 VERSION_APP = "0.1.0"
 
 
+class UnknownSession(ValueError):
+    pass
+
+
+class AlreadyAnswered(ValueError):
+    pass
+
+
 @dataclass
 class AnswerResult:
     correcta: bool
@@ -51,7 +59,7 @@ def _commit(session: Session) -> None:
 def _require_session(session: Session, sesion_id: str) -> Sesion:
     ses = session.get(Sesion, sesion_id)
     if ses is None:
-        raise ValueError(f"sesión desconocida: {sesion_id}")
+        raise UnknownSession(f"sesión desconocida: {sesion_id}")
     return ses
 
 
@@ -99,7 +107,7 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     if confianza is not None and confianza not in CONFIANZAS:
         raise ValueError(f"confianza no válida: {confianza}")
     if session.scalar(select(Intento.id).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)):
-        raise ValueError("pregunta ya respondida en esta sesión")
+        raise AlreadyAnswered("pregunta ya respondida en esta sesión")
 
     opciones = {o.posicion: o for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == pregunta_id))}
     correcta_letra = next(l for l, o in opciones.items() if o.correcta)

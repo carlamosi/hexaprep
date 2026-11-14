@@ -165,3 +165,10 @@ def placement_test(session: Session, asignatura_id: str, rng: random.Random | No
     chosen += leftovers[: PLACEMENT_SIZE - len(chosen)]
     rng.shuffle(chosen)
     return [_to_out(session, p, sub, rng) for p, sub in chosen]
+
+
+def question_out(session: Session, pregunta_id: str, rng: random.Random | None = None) -> QuestionOut:
+    """La pregunta con las opciones barajadas de nuevo (para el test de nivel, que fija la lista de antemano)."""
+    p = session.get(Pregunta, pregunta_id)
+    sub = session.scalar(select(Concepto.subtema_id).where(Concepto.id == p.concepto_id))
+    return _to_out(session, p, sub, rng or random.Random())
