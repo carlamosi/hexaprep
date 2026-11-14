@@ -1,0 +1,47 @@
+{
+  "asignatura": {"nombre": "Economía", "idioma": "es", "color": "#B05A8F", "acento": "#B05A8F"},
+  "fuente": {"nombre": "Economía T1 Decisiones", "archivo": "Economia_T1_Decisiones.pdf"},
+  "lote": {"modelo": "ejemplo", "version_prompt": "v0"},
+  "preguntas": [
+    {
+      "id": "eco-ejemplo-0001",
+      "bloque": "Decisiones",
+      "tema": "T1 Decisiones",
+      "subtema": "Coste de oportunidad",
+      "concepto": "Definición de coste de oportunidad",
+      "dificultad": 3,
+      "enunciado": "Una empresa elige invertir en la máquina A y renuncia a la B. ¿Qué es el coste de oportunidad de esa decisión?",
+      "opciones": [
+        {"texto": "El valor de la mejor alternativa a la que se renuncia"},
+        {"texto": "El precio pagado por la máquina A", "trampa": "confunde coste de oportunidad con coste monetario"},
+        {"texto": "El coste total de producir con la máquina A", "trampa": "confunde con coste total"},
+        {"texto": "El beneficio que da la máquina A", "trampa": "confunde con beneficio"}
+      ],
+      "correcta": "a",
+      "explicacion": "El coste de oportunidad es lo que se deja de ganar al elegir una opción.",
+      "ayuda_larga": "Cada elección implica renunciar a otras. El coste de oportunidad mide el valor de la mejor opción descartada.",
+      "fuente_pagina": 3,
+      "fuente_cara": 2
+    },
+    {
+      "id": "eco-ejemplo-0002",
+      "bloque": "Decisiones",
+      "tema": "T1 Decisiones",
+      "subtema": "Coste de oportunidad",
+      "concepto": "Frontera de posibilidades de producción",
+      "dificultad": 4,
+      "enunciado": "Un punto situado dentro de la frontera de posibilidades de producción indica que la economía:",
+      "opciones": [
+        {"texto": "Usa recursos de forma ineficiente o tiene recursos ociosos"},
+        {"texto": "Produce al máximo con sus recursos", "trampa": "confunde interior con frontera"},
+        {"texto": "Es inalcanzable con la tecnología actual", "trampa": "confunde interior con exterior"},
+        {"texto": "Ha duplicado su capacidad", "trampa": "confunde movimiento con desplazamiento de la frontera"}
+      ],
+      "correcta": "a",
+      "explicacion": "Dentro de la frontera hay recursos sin usar o mal usados.",
+      "ayuda_larga": "La frontera marca lo máximo posible con recursos y tecnología dados.",
+      "fuente_pagina": 4,
+      "fuente_cara": 2
+    }
+  ]
+}
