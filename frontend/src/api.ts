@@ -48,6 +48,12 @@ export interface History {
   dias: string[];
   evolucion: { subtema_id: string; subtema: string; puntos: { fecha: string; percent: number }[] }[];
 }
+export interface QuestionContent {
+  pregunta_id: string; version: number; excluida: boolean; enunciado: string;
+  opciones: { texto: string; trampa?: string | null }[]; correcta: Letra; explicacion: string;
+  ayuda_larga: string; dificultad: number; fuente_pagina: number; fuente_cara: number;
+}
+export interface ReportedQuestion { pregunta_id: string; enunciado: string; motivo: string | null }
 export interface BackupRow { ruta: string; verificada: boolean; n_eventos: number; fecha: string }
 
 async function request<T>(path: string, method = "GET", body?: unknown): Promise<T> {
@@ -77,6 +83,8 @@ export const api = {
     request<{ ok: boolean }>(`/api/questions/${id}/report`, "POST", { motivo, sesion_id: sesionId ?? null }),
   editQuestion: (id: string, cambios: Record<string, unknown>) =>
     request<{ version: number }>(`/api/questions/${id}`, "PUT", cambios),
+  getQuestion: (id: string) => request<QuestionContent>(`/api/questions/${id}`),
+  reportedQuestions: () => request<ReportedQuestion[]>("/api/questions/reported"),
   suggestions: () => request<Suggestion[]>("/api/suggestions"),
   history: () => request<History>("/api/history"),
   getBackup: () => request<BackupRow | null>("/api/backup"),

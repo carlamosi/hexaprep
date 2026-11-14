@@ -117,3 +117,16 @@ def test_weekly_backup_runs_on_startup(paths):
     with TestClient(create_app(**paths)):
         pass
     assert len(list((paths["data_dir"] / "backups").glob("*.db"))) == 1  # reciente: no repite
+
+
+def test_reported_questions_can_be_listed_and_loaded_for_editing(client, loaded):
+    sid = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    qid = client.get(f"/api/sessions/{sid}/next").json()["pregunta_id"]
+    assert client.get("/api/questions/reported").json() == []
+    client.post(f"/api/questions/{qid}/report", json={"motivo": "Está mal formulada"})
+    reported = client.get("/api/questions/reported").json()
+    assert len(reported) == 1 and reported[0]["pregunta_id"] and reported[0]["motivo"] == "Está mal formulada"
+    content = client.get(f"/api/questions/{reported[0]['pregunta_id']}").json()
+    assert len(content["opciones"]) == 4 and content["correcta"] in "abcd" and content["excluida"] is True
+    assert {"enunciado", "explicacion", "ayuda_larga", "dificultad", "version"} <= set(content)
+    assert client.get("/api/questions/no-existe").status_code == 404

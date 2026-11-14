@@ -165,6 +165,17 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             "percent": mastery.percent(dom.theta) if dom and dom.n_intentos else 0,
         }
 
+    @app.get("/api/questions/reported")
+    def reported(s: Session = Depends(get_session)):
+        return quality.reported_questions(s)
+
+    @app.get("/api/questions/{pregunta_id}")
+    def question_detail(pregunta_id: str, s: Session = Depends(get_session)):
+        try:
+            return quality.question_content(s, pregunta_id)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+
     @app.post("/api/questions/{pregunta_id}/report")
     def report(pregunta_id: str, body: ReportIn, s: Session = Depends(get_session)):
         try:

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useAsignaturaId } from "./hooks";
 import { t } from "./i18n";
+import { History } from "./pages/History";
 import { Home } from "./pages/Home";
 import { Placement } from "./pages/Placement";
+import { Settings } from "./pages/Settings";
 import { Subtopic } from "./pages/Subtopic";
 import { Suggestions } from "./pages/Suggestions";
 
@@ -27,6 +29,8 @@ export default function App() {
   if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onNivel={() => go("nivel")} />;
   else if (failed) page = <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   else if (asignaturaId && route === "hoy") page = <Suggestions onPracticeSubtema={(s) => go(`subtema/${s}`)} onPlacement={() => go("nivel")} />;
+  else if (route === "historial") page = <History />;
+  else if (asignaturaId && route === "ajustes") page = <Settings asignaturaId={asignaturaId} />;
   else if (asignaturaId && route === "nivel") page = <Placement asignaturaId={asignaturaId} onFinish={() => go("panal")} />;
   else if (asignaturaId && route === "subtema" && arg) page = <Subtopic asignaturaId={asignaturaId} subtemaId={arg} onBack={() => go("panal")} />;
 

@@ -61,6 +61,28 @@ def _to_bank_question(session: Session, p: Pregunta) -> PreguntaIn:
         ayuda_larga=p.ayuda_larga or "", fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara)
 
 
+def question_content(session: Session, pregunta_id: str) -> dict:
+    """Contenido editable de la versión vigente de una pregunta (para el editor de la app)."""
+    cur = _current(session, pregunta_id)
+    q = _to_bank_question(session, cur)
+    return {"pregunta_id": cur.id, "version": cur.version, "excluida": cur.excluida, "enunciado": q.enunciado,
+            "opciones": [o.model_dump() for o in q.opciones], "correcta": q.correcta, "explicacion": q.explicacion,
+            "ayuda_larga": q.ayuda_larga, "dificultad": q.dificultad, "fuente_pagina": q.fuente_pagina,
+            "fuente_cara": q.fuente_cara}
+
+
+def reported_questions(session: Session) -> list[dict]:
+    """Preguntas reportadas que siguen excluidas (versión vigente), con el último motivo."""
+    out = []
+    for p in session.scalars(select(Pregunta).where(Pregunta.es_actual.is_(True), Pregunta.excluida.is_(True),
+                                                      Pregunta.deleted_at.is_(None)).order_by(Pregunta.clave)):
+        motivo = session.scalar(
+            select(ReporteCalidad.motivo).join(Pregunta, Pregunta.id == ReporteCalidad.pregunta_id)
+            .where(Pregunta.clave == p.clave).order_by(ReporteCalidad.id.desc()).limit(1))
+        out.append({"pregunta_id": p.id, "enunciado": p.enunciado, "motivo": motivo})
+    return out
+
+
 def edit_question(session: Session, pregunta_id: str, cambios: dict) -> int:
     """Crea una versión nueva con los cambios y devuelve su número. Lanza ValidationError si no es válida."""
     unknown = set(cambios) - EDITABLE
