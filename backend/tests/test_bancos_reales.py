@@ -43,3 +43,18 @@ def test_each_subject_keeps_one_identity_across_its_banks():
         asig = load_bank(a).asignatura
         por_asignatura.setdefault(asig.nombre, set()).add((asig.idioma, asig.color, asig.acento))
     assert all(len(v) == 1 for v in por_asignatura.values()), por_asignatura
+
+
+def test_import_all_orders_banks_by_subject_then_theme_original_first():
+    import sys
+
+    sys.path.insert(0, str(BANKS.parent / "tools"))
+    from import_bank import descubrir_bancos
+
+    orden = [f"{f.parent.name}/{f.name}" for f in descubrir_bancos(BANKS)]
+    assert orden.index("mates/S.json") < orden.index("mates/G.json")  # T1 y T2 antes que Gauss (T3)
+    assert orden.index("quimica/T2.json") < orden.index("quimica/T3.json")
+    assert orden.index("economia/T1.json") < orden.index("economia/A1.json")  # el booklet antes que sus apuntes
+    assert orden.index("economia/T2.json") < orden.index("economia/A2.json") and orden.index("economia/T3.json") < orden.index("economia/A3.json")
+    assert orden.index("economia/A1.json") < orden.index("economia/T2.json")  # y los temas en orden
+    assert "catala/N1.json" in orden

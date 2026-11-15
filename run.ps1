@@ -50,13 +50,12 @@ if (-not (Test-Path (Join-Path $PSScriptRoot "frontend\dist\index.html"))) {
 }
 
 # 3. Banco de preguntas (idempotente: repetirlo no duplica nada)
-$bancos = @("banks\economia\T1.json", "banks\economia\T2.json", "banks\economia\T3.json") | Where-Object { Test-Path $_ }
-if ($bancos) {
-    Write-Host "Importando el banco de preguntas..."
-    & $venvPy tools\import_bank.py @bancos
-    if ($LASTEXITCODE -ne 0) { throw "Falló la importación del banco." }
+if (Get-ChildItem -Path "banks\*\*.json" -ErrorAction SilentlyContinue) {
+    Write-Host "Importando los bancos de preguntas (Economía, Química, Matemáticas y Català)..."
+    & $venvPy tools\import_bank.py --all
+    if ($LASTEXITCODE -ne 0) { throw "Falló la importación de los bancos." }
 } else {
-    Write-Host "No encuentro los bancos en banks\economia, se omite la importación."
+    Write-Host "No encuentro bancos en banks\, se omite la importación."
 }
 
 # 4. Navegador y servidor en primer plano
