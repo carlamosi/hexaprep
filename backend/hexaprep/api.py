@@ -1,4 +1,8 @@
 """API HTTP local (FastAPI). Todo cuelga de create_app para poder probarla con rutas temporales."""
+import base64
+import os
+import secrets
+import tempfile
 from collections import defaultdict
 from contextlib import asynccontextmanager
 from dataclasses import asdict
@@ -6,7 +10,7 @@ from datetime import UTC, date, datetime
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import func, select
@@ -14,7 +18,7 @@ from sqlalchemy.orm import Session
 
 from . import analytics, backup, events, export, mastery, quality, scheduling, selector
 from .bank import RUTA_IMAGEN, load_bank, validate_bank
-from .db import check_integrity, get_engine, upgrade
+from .db import check_integrity, database_url, get_engine, get_engine_online, upgrade
 from .importer import import_bank
 from .models import (
     Asignatura, Bloque, Concepto, CopiaSeguridad, Dominio, DominioSnapshot, Evento, Explicacion, Fuente, Opcion,
@@ -69,18 +73,20 @@ def get_session(request: Request):
 
 def create_app(db_path: Path | None = None, data_dir: Path | None = None, booklet_dir: Path | None = None,
                static_dir: Path | None = None) -> FastAPI:
-    data_dir = Path(data_dir or ROOT / "data")
+    online_url = database_url()  # Postgres en Vercel; el disco allí es de solo lectura salvo /tmp
+    data_dir = Path(data_dir or (Path(tempfile.gettempdir()) / "hexaprep" if online_url else ROOT / "data"))
     db_path = Path(db_path or data_dir / "hexaprep.db")
+    password = os.environ.get("HEXAPREP_PASSWORD")
     booklet_dir = Path(booklet_dir or ROOT / "banks")  # rglob: cada asignatura guarda sus PDF en banks/<asignatura>/fuentes
     static_dir = Path(static_dir or ROOT / "frontend" / "dist")
 
     @asynccontextmanager
     async def lifespan(app: FastAPI):
         data_dir.mkdir(parents=True, exist_ok=True)
-        app.state.engine = get_engine(db_path)
+        app.state.engine = get_engine_online(online_url) if online_url else get_engine(db_path)
         upgrade(app.state.engine)
         check_integrity(app.state.engine)
-        weekly = backup.maybe_weekly_backup(db_path, data_dir / "backups", utcnow())
+        weekly = None if online_url else backup.maybe_weekly_backup(db_path, data_dir / "backups", utcnow())
         if weekly is not None:  # que Ajustes la muestre y se pueda restaurar desde la app
             with Session(app.state.engine) as s:
                 backup.record_backup(s, weekly)
@@ -88,6 +94,21 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         app.state.engine.dispose()
 
     app = FastAPI(title="HexaPrep", lifespan=lifespan)
+
+    if password:  # acceso por contraseña (HTTP Basic: el navegador la pide solo; el usuario da igual)
+        esperada = password.encode()
+
+        @app.middleware("http")
+        async def acceso(request: Request, call_next):
+            auth, ok = request.headers.get("authorization", ""), False
+            if auth.startswith("Basic "):
+                try:
+                    ok = secrets.compare_digest(base64.b64decode(auth[6:]).partition(b":")[2], esperada)
+                except ValueError:
+                    ok = False
+            if not ok:
+                return Response(status_code=401, headers={"WWW-Authenticate": 'Basic realm="HexaPrep"'})
+            return await call_next(request)
 
     # ---------- catálogo y panal ----------
     @app.get("/api/subjects")
@@ -262,6 +283,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     # ---------- copias, exportaciones, importación ----------
     @app.post("/api/backup")
     def backup_now(s: Session = Depends(get_session)):
+        if online_url:
+            raise HTTPException(501, "No disponible online: las copias las hace Neon")
         try:
             path = backup.backup_now(db_path, data_dir / "backups")
         except backup.BackupError as e:
@@ -275,6 +298,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
 
     @app.post("/api/restore")
     def restore(body: PathIn, request: Request):
+        if online_url:
+            raise HTTPException(501, "No disponible online: las copias las hace Neon")
         request.app.state.engine.dispose()
         try:
             backup.restore(Path(body.ruta), db_path)

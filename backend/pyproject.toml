@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "hexaprep"
 version = "0.1.0"
 requires-python = ">=3.14"
-dependencies = ["fastapi", "uvicorn", "sqlalchemy>=2", "alembic", "fsrs", "pydantic>=2", "httpx", "pdfplumber"]
+dependencies = ["fastapi", "uvicorn", "sqlalchemy>=2", "alembic", "fsrs", "pydantic>=2", "psycopg[binary]"]
 
 [project.optional-dependencies]
-dev = ["pytest", "pdfplumber", "reportlab"]
+dev = ["pytest", "pdfplumber", "reportlab", "httpx"]
 
 [tool.setuptools.packages.find]
 include = ["hexaprep*"]

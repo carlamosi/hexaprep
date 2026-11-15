@@ -1,3 +1,4 @@
+import os
 import platform
 from pathlib import Path
 
@@ -5,6 +6,7 @@ from alembic import command
 from alembic.config import Config
 from sqlalchemy import Engine, create_engine, event, text
 from sqlalchemy.exc import DatabaseError
+from sqlalchemy.pool import NullPool
 
 MIGRATIONS = Path(__file__).resolve().parent.parent / "migrations"
 
@@ -15,6 +17,22 @@ class DatabaseCorrupt(Exception):
 
 def device_id() -> str:
     return platform.node() or "local"
+
+
+def database_url() -> str | None:
+    """URL de Postgres (modo online, Vercel + Neon) o None para usar SQLite local. Fuerza el driver psycopg 3."""
+    url = os.environ.get("DATABASE_URL") or os.environ.get("POSTGRES_URL")
+    if not url:
+        return None
+    for viejo in ("postgres://", "postgresql://"):
+        if url.startswith(viejo):
+            return "postgresql+psycopg://" + url[len(viejo):]
+    return url
+
+
+def get_engine_online(url: str) -> Engine:
+    # NullPool: en funciones serverless cada invocación abre y cierra su conexión (Neon ya hace el pooling).
+    return create_engine(url, poolclass=NullPool)
 
 
 def get_engine(path: Path) -> Engine:
@@ -39,6 +57,8 @@ def upgrade(engine: Engine) -> None:
 
 
 def check_integrity(engine: Engine) -> None:
+    if engine.dialect.name != "sqlite":
+        return
     try:
         with engine.connect() as c:
             result = c.execute(text("PRAGMA integrity_check")).scalar()
