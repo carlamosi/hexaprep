@@ -72,7 +72,7 @@ def rebuild(session: Session, concepto_id: str) -> None:
 
 @dataclass
 class Suggestion:
-    tipo: Literal["concepto", "placement"]
+    tipo: Literal["concepto"]
     concepto_id: str | None
     concepto: str | None
     subtema_id: str | None
@@ -92,7 +92,7 @@ def _gain_per_minute(dom: Dominio, dificultad: float, segundos: float) -> float:
 def suggestions(session: Session, now: datetime, n: int = 5) -> list[Suggestion]:
     doms = session.scalars(select(Dominio).where(Dominio.n_intentos > 0)).all()
     if not doms:
-        return [Suggestion("placement", None, None, None, "Haz el test de nivel para empezar", 0.0, 0.0, 0.0)]
+        return []
     dom_by_concept = {d.concepto_id: d for d in doms}
     avg_secs = {c: s for c, s in session.execute(
         select(Intento.concepto_id, func.avg(Intento.t_envio))

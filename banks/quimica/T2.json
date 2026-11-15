@@ -4086,6 +4086,2464 @@
    ],
    "correcta": "b",
    "explicacion": "La línia d'origen es fa amb llapis: el grafit no s'arrossega amb el dissolvent, mentre que la tinta del bolígraf sí que podria separar-se i enganyar el resultat."
+  },
+  {
+   "id": "qui-t2-0162",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 1,
+   "enunciado": "Quin és el nom d'aquest pictograma?",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/explosiu.png",
+   "opciones": [
+    {
+     "texto": "Explosiu"
+    },
+    {
+     "texto": "Inflamable",
+     "trampa": "confondre una bomba que esclata amb una flama"
+    },
+    {
+     "texto": "Comburent",
+     "trampa": "confondre explotar amb avivar el foc"
+    },
+    {
+     "texto": "Gas a pressió",
+     "trampa": "pensar que tot el que esclata és un recipient amb gas"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El dibuix d'una bomba que esclata és l'explosiu: avisa de substàncies que poden explotar amb flama, espurna, calor, xoc o fricció. Regla: bomba que esclata, explosiu."
+  },
+  {
+   "id": "qui-t2-0163",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 2,
+   "enunciado": "Quin perill indica aquest pictograma?",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/inflamable.png",
+   "opciones": [
+    {
+     "texto": "Crema molt fàcilment, fins i tot per sota de 0 °C"
+    },
+    {
+     "texto": "Aviva el foc i pot agreujar un incendi",
+     "trampa": "confondre inflamable amb comburent"
+    },
+    {
+     "texto": "Pot explotar amb una flama, un xoc o la fricció",
+     "trampa": "confondre cremar amb explotar"
+    },
+    {
+     "texto": "Destrueix metalls i causa danys irreversibles",
+     "trampa": "confondre la flama amb el pictograma de corrosiu"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'inflamable és el material que crema, i ho fa molt fàcilment, fins i tot a temperatures baixes. Regla: la flama sola és inflamable, la flama sobre un cercle és comburent."
+  },
+  {
+   "id": "qui-t2-0164",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom d'aquest pictograma?",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/comburent.png",
+   "opciones": [
+    {
+     "texto": "Inflamable",
+     "trampa": "confondre la flama sobre un cercle amb la flama sola"
+    },
+    {
+     "texto": "Explosiu",
+     "trampa": "pensar que qualsevol foc avisa d'una explosió"
+    },
+    {
+     "texto": "Comburent"
+    },
+    {
+     "texto": "Gas a pressió",
+     "trampa": "confondre el cercle amb una bombona"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El comburent mostra una flama sobre un cercle: la substància és rica en oxigen i aviva el foc. Regla: el cercle sota la flama indica oxigen, és a dir, comburent."
+  },
+  {
+   "id": "qui-t2-0165",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 3,
+   "enunciado": "Quin perill indica aquest pictograma?",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/gas-pressio.png",
+   "opciones": [
+    {
+     "texto": "Destrueix metalls i causa danys a la pell i als ulls",
+     "trampa": "confondre la bombona amb el pictograma de corrosiu"
+    },
+    {
+     "texto": "Crema molt fàcilment, fins i tot per sota de 0 °C",
+     "trampa": "pensar que un gas és sempre inflamable"
+    },
+    {
+     "texto": "Verinós en petites dosis amb efectes immediats",
+     "trampa": "pensar que un gas és sempre tòxic"
+    },
+    {
+     "texto": "Pot explotar amb la calor i, si és refrigerat, causa cremades per fred"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La bombona és el gas a pressió: el recipient pot explotar amb la calor i, si el gas és refrigerat, com el nitrogen líquid, crema per fred. Regla: la bombona avisa del recipient, no del gas que conté."
+  },
+  {
+   "id": "qui-t2-0166",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 3,
+   "enunciado": "Quin perill indica aquest pictograma?",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/corrosiu.png",
+   "opciones": [
+    {
+     "texto": "Destrueix metalls i causa danys irreversibles a la pell i als ulls"
+    },
+    {
+     "texto": "Irrita la pell, els ulls, el nas i la gola en dosis altes",
+     "trampa": "confondre dany irreversible amb irritació"
+    },
+    {
+     "texto": "Verinós en petites dosis amb efectes immediats",
+     "trampa": "confondre dany local amb enverinament"
+    },
+    {
+     "texto": "Pot explotar amb la calor perquè està a pressió",
+     "trampa": "confondre el corrosiu amb el gas a pressió"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El corrosiu mostra un líquid que fa malbé una mà i un metall: destrueix metalls i fa danys irreversibles a pell i ulls. Regla: corrosiu és destruir, irritació és molestar."
+  },
+  {
+   "id": "qui-t2-0167",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 4,
+   "enunciado": "A quin grup pertany aquest pictograma?",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/corrosiu.png",
+   "opciones": [
+    {
+     "texto": "Als que avisen del perill segons la dosi i com entra al cos",
+     "trampa": "pensar que un perill per a la pell és de salut i no físic"
+    },
+    {
+     "texto": "Als que avisen només de perills per al medi aquàtic",
+     "trampa": "creure que destruir materials és un perill ambiental"
+    },
+    {
+     "texto": "Als que avisen només de recipients sota pressió",
+     "trampa": "confondre el grup amb el pictograma de gas a pressió"
+    },
+    {
+     "texto": "Als que avisen de substàncies que poden explotar, cremar o corroir"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El corrosiu és a la pàgina 5 amb l'explosiu, l'inflamable, el comburent i el gas a pressió: els que poden explotar, cremar o corroir. La pàgina 6 és la dels perills per a la salut i el medi ambient."
+  },
+  {
+   "id": "qui-t2-0168",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de perill físic",
+   "dificultad": 3,
+   "enunciado": "El pictograma de la imatge també avisa de cremades per fred quan el gas està refrigerat.",
+   "ayuda_larga": "Els pictogrames són rombes de vora vermella amb un dibuix negre. Els cinc de la pàgina 5 avisen de substàncies que poden explotar, cremar o corroir. L'explosiu mostra una bomba que esclata, l'inflamable una flama, el comburent una flama sobre un cercle, el gas a pressió una bombona i el corrosiu un líquid que fa malbé una mà i un metall. Per no confondre'ls, pensa en què fa la substància: explotar, cremar, avivar el foc, estar sota pressió o destruir.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/gas-pressio.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que la bombona només avisa d'explosió i mai d'efectes de temperatura"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El gas a pressió avisa que el recipient pot explotar amb la calor i, si el gas està refrigerat, com el nitrogen líquid, també causa cremades per fred."
+  },
+  {
+   "id": "qui-t2-0169",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de salut i medi ambient",
+   "dificultad": 1,
+   "enunciado": "Quin és el nom d'aquest pictograma?",
+   "ayuda_larga": "Els quatre pictogrames de la pàgina 6 avisen del perill per a les persones i per al medi ambient, segons la dosi, quan actuen i com entren al cos. L'irritació cutània té un senyal d'exclamació i indica molèsties en dosis altes. La toxicitat aguda mostra una calavera amb dos ossos i avisa d'efectes immediats que poden arribar a la mort. Perillós per aspiració mostra una persona amb el pit danyat i avisa d'efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans. Perillós per al medi aquàtic mostra un arbre i un peix morts i avisa de contaminació de l'aigua.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "imagen": "pictogrames/irritacio.png",
+   "opciones": [
+    {
+     "texto": "Toxicitat aguda",
+     "trampa": "confondre una molèstia amb un enverinament"
+    },
+    {
+     "texto": "Corrosiu",
+     "trampa": "confondre irritar amb destruir de manera irreversible"
+    },
+    {
+     "texto": "Perillós per aspiració",
+     "trampa": "pensar que tot perill per a la salut és a llarg termini"
+    },
+    {
+     "texto": "Irritació cutània"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El senyal d'exclamació és la irritació cutània: en dosis altes irrita ulls, nas, gola i pell. Regla: exclamació és molèstia, calavera és perill de mort."
+  },
+  {
+   "id": "qui-t2-0170",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de salut i medi ambient",
+   "dificultad": 2,
+   "enunciado": "Quins efectes avisa aquest pictograma?",
+   "ayuda_larga": "Els quatre pictogrames de la pàgina 6 avisen del perill per a les persones i per al medi ambient, segons la dosi, quan actuen i com entren al cos. L'irritació cutània té un senyal d'exclamació i indica molèsties en dosis altes. La toxicitat aguda mostra una calavera amb dos ossos i avisa d'efectes immediats que poden arribar a la mort. Perillós per aspiració mostra una persona amb el pit danyat i avisa d'efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans. Perillós per al medi aquàtic mostra un arbre i un peix morts i avisa de contaminació de l'aigua.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "imagen": "pictogrames/toxicitat.png",
+   "opciones": [
+    {
+     "texto": "Irritació d'ulls, nas, gola i pell en dosis altes",
+     "trampa": "confondre una substància verinosa amb una irritant"
+    },
+    {
+     "texto": "Efectes immediats com vòmits, pèrdua de coneixement i fins i tot la mort"
+    },
+    {
+     "texto": "Càncer i canvis a l'ADN després de molt de temps",
+     "trampa": "confondre efectes immediats amb efectes a llarg termini"
+    },
+    {
+     "texto": "Contaminació de l'aigua nociva per a peixos i algues",
+     "trampa": "confondre perill per a la salut amb perill ambiental"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La calavera és la toxicitat aguda: verinosa en petites dosis i amb efectes immediats que poden arribar a la mort. Regla: aguda vol dir immediata."
+  },
+  {
+   "id": "qui-t2-0171",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de salut i medi ambient",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom d'aquest pictograma?",
+   "ayuda_larga": "Els quatre pictogrames de la pàgina 6 avisen del perill per a les persones i per al medi ambient, segons la dosi, quan actuen i com entren al cos. L'irritació cutània té un senyal d'exclamació i indica molèsties en dosis altes. La toxicitat aguda mostra una calavera amb dos ossos i avisa d'efectes immediats que poden arribar a la mort. Perillós per aspiració mostra una persona amb el pit danyat i avisa d'efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans. Perillós per al medi aquàtic mostra un arbre i un peix morts i avisa de contaminació de l'aigua.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "imagen": "pictogrames/aspiracio.png",
+   "opciones": [
+    {
+     "texto": "Perillós per aspiració"
+    },
+    {
+     "texto": "Toxicitat aguda",
+     "trampa": "confondre el cos danyat amb la calavera dels verins"
+    },
+    {
+     "texto": "Irritació cutània",
+     "trampa": "confondre un perill greu amb una simple molèstia"
+    },
+    {
+     "texto": "Perillós per al medi aquàtic",
+     "trampa": "pensar que tot pictograma amb una figura natural és ambiental"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La figura humana amb el pit danyat és el perillós per aspiració, que s'inhala i fa mal a llarg termini. Regla: cos danyat, aspiració; calavera, toxicitat."
+  },
+  {
+   "id": "qui-t2-0172",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de salut i medi ambient",
+   "dificultad": 3,
+   "enunciado": "A qui o a què afecta el perill d'aquest pictograma?",
+   "ayuda_larga": "Els quatre pictogrames de la pàgina 6 avisen del perill per a les persones i per al medi ambient, segons la dosi, quan actuen i com entren al cos. L'irritació cutània té un senyal d'exclamació i indica molèsties en dosis altes. La toxicitat aguda mostra una calavera amb dos ossos i avisa d'efectes immediats que poden arribar a la mort. Perillós per aspiració mostra una persona amb el pit danyat i avisa d'efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans. Perillós per al medi aquàtic mostra un arbre i un peix morts i avisa de contaminació de l'aigua.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "imagen": "pictogrames/medi-aquatic.png",
+   "opciones": [
+    {
+     "texto": "A les persones que inhalen el producte",
+     "trampa": "pensar que tot pictograma avisa del perill per a les persones"
+    },
+    {
+     "texto": "Als peixos, als crustacis i a les algues de l'aigua"
+    },
+    {
+     "texto": "Als metalls i als materials que toca",
+     "trampa": "confondre contaminar amb corroir"
+    },
+    {
+     "texto": "Als recipients que estan sota pressió",
+     "trampa": "confondre medi aquàtic amb gas a pressió"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El perillós per al medi aquàtic protegeix l'ecosistema: la substància contamina l'aigua i és nociva per a peixos, crustacis i algues. Regla: arbre i peix morts, perill ambiental."
+  },
+  {
+   "id": "qui-t2-0173",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de salut i medi ambient",
+   "dificultad": 4,
+   "enunciado": "Quin tipus d'efectes avisa aquest pictograma?",
+   "ayuda_larga": "Els quatre pictogrames de la pàgina 6 avisen del perill per a les persones i per al medi ambient, segons la dosi, quan actuen i com entren al cos. L'irritació cutània té un senyal d'exclamació i indica molèsties en dosis altes. La toxicitat aguda mostra una calavera amb dos ossos i avisa d'efectes immediats que poden arribar a la mort. Perillós per aspiració mostra una persona amb el pit danyat i avisa d'efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans. Perillós per al medi aquàtic mostra un arbre i un peix morts i avisa de contaminació de l'aigua.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "imagen": "pictogrames/aspiracio.png",
+   "opciones": [
+    {
+     "texto": "Efectes immediats com vòmits i pèrdua de coneixement",
+     "trampa": "confondre llarg termini amb efectes immediats"
+    },
+    {
+     "texto": "Danys irreversibles només a la pell i als ulls",
+     "trampa": "confondre els danys a òrgans amb els del corrosiu"
+    },
+    {
+     "texto": "Efectes a llarg termini com càncer, canvis a l'ADN o danys a òrgans"
+    },
+    {
+     "texto": "Molèsties passatgeres a la pell, al nas i a la gola",
+     "trampa": "confondre un perill greu amb la irritació"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Perillós per aspiració avisa que, si s'inhala, apareixen efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys al fetge, als pulmons o al sistema nerviós."
+  },
+  {
+   "id": "qui-t2-0174",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Reconèixer pictogrames de salut i medi ambient",
+   "dificultad": 4,
+   "enunciado": "El pictograma de la imatge avisa d'efectes immediats i greus com els vòmits i la pèrdua de coneixement.",
+   "ayuda_larga": "Els quatre pictogrames de la pàgina 6 avisen del perill per a les persones i per al medi ambient, segons la dosi, quan actuen i com entren al cos. L'irritació cutània té un senyal d'exclamació i indica molèsties en dosis altes. La toxicitat aguda mostra una calavera amb dos ossos i avisa d'efectes immediats que poden arribar a la mort. Perillós per aspiració mostra una persona amb el pit danyat i avisa d'efectes a llarg termini: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans. Perillós per al medi aquàtic mostra un arbre i un peix morts i avisa de contaminació de l'aigua.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "imagen": "pictogrames/aspiracio.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre l'efecte a llarg termini amb l'efecte immediat de la toxicitat aguda"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Aquests efectes immediats corresponen a la toxicitat aguda. Perillós per aspiració avisa d'efectes a llarg termini, com càncer, canvis a l'ADN i danys a òrgans."
+  },
+  {
+   "id": "qui-t2-0175",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 3,
+   "enunciado": "Quina d'aquestes substàncies ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/explosiu.png",
+   "opciones": [
+    {
+     "texto": "Aigua oxigenada concentrada",
+     "trampa": "confondre una substància rica en oxigen amb una explosiva"
+    },
+    {
+     "texto": "Trinitrotoluè (TNT)"
+    },
+    {
+     "texto": "Nitrogen líquid",
+     "trampa": "confondre un gas refrigerat amb un explosiu"
+    },
+    {
+     "texto": "Àcid nítric",
+     "trampa": "pensar que un àcid fort pot explotar com una bomba"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El TNT és un explosiu, igual que la nitroglicerina i la pólvora. Regla: explosius són els que esclaten per xoc, espurna o calor."
+  },
+  {
+   "id": "qui-t2-0176",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 4,
+   "enunciado": "Quina d'aquestes substàncies ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/inflamable.png",
+   "opciones": [
+    {
+     "texto": "Amoníac",
+     "trampa": "confondre una substància irritant amb una que crema"
+    },
+    {
+     "texto": "Permanganat de potassi",
+     "trampa": "confondre avivar el foc amb cremar"
+    },
+    {
+     "texto": "Mercuri",
+     "trampa": "pensar que tota substància perillosa és inflamable"
+    },
+    {
+     "texto": "Alcohol"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'alcohol, el metanol, l'acetona i la gasolina són inflamables: cremen molt fàcilment. Regla: un dissolvent que s'evapora i crema, inflamable."
+  },
+  {
+   "id": "qui-t2-0177",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 5,
+   "enunciado": "Quina d'aquestes substàncies ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/comburent.png",
+   "opciones": [
+    {
+     "texto": "Gasolina",
+     "trampa": "pensar que tot el que provoca un incendi crema per si mateix"
+    },
+    {
+     "texto": "Butà",
+     "trampa": "confondre la bombona de gas amb una substància rica en oxigen"
+    },
+    {
+     "texto": "Nitrat de potassi"
+    },
+    {
+     "texto": "Nitroglicerina",
+     "trampa": "confondre un comburent amb un explosiu"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El nitrat de potassi és ric en oxigen i aviva el foc, com l'oxigen, el permanganat de potassi i l'aigua oxigenada concentrada. Regla: comburent és el que aporta oxigen, no el que crema."
+  },
+  {
+   "id": "qui-t2-0178",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 2,
+   "enunciado": "Quin d'aquests productes ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/gas-pressio.png",
+   "opciones": [
+    {
+     "texto": "Àcid nítric",
+     "trampa": "confondre un recipient a pressió amb un producte corrosiu"
+    },
+    {
+     "texto": "Extintors de CO₂"
+    },
+    {
+     "texto": "Aigua oxigenada concentrada",
+     "trampa": "confondre la bombona amb una substància rica en oxigen"
+    },
+    {
+     "texto": "Trinitrotoluè",
+     "trampa": "confondre un recipient que pot explotar amb un explosiu"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els extintors de CO₂, les bombones de butà i el nitrogen líquid porten el pictograma de gas a pressió. Regla: si el perill és el recipient i la pressió, bombona."
+  },
+  {
+   "id": "qui-t2-0179",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 5,
+   "enunciado": "Quina d'aquestes substàncies ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/toxicitat.png",
+   "opciones": [
+    {
+     "texto": "Detergents",
+     "trampa": "confondre la irritació amb un enverinament"
+    },
+    {
+     "texto": "Sulfat de coure",
+     "trampa": "confondre un perill ambiental amb un de salut"
+    },
+    {
+     "texto": "Raticides"
+    },
+    {
+     "texto": "Hidròxid de sodi",
+     "trampa": "confondre destruir teixits amb enverinar"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Els raticides, el cianur i el triòxid d'arsènic són verinosos en petites dosis i amb efectes immediats. Regla: calavera, poca dosi i perill de mort."
+  },
+  {
+   "id": "qui-t2-0180",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 3,
+   "enunciado": "Quin d'aquests productes ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/irritacio.png",
+   "opciones": [
+    {
+     "texto": "Lleixiu"
+    },
+    {
+     "texto": "Cianur",
+     "trampa": "pensar que un producte de neteja és sempre tòxic"
+    },
+    {
+     "texto": "Nitroglicerina",
+     "trampa": "pensar que un producte perillós és sempre explosiu"
+    },
+    {
+     "texto": "Butà",
+     "trampa": "confondre una molèstia per la pell amb un recipient a pressió"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El lleixiu, l'amoníac, l'acetona i els detergents irriten ulls, nas, gola i pell en dosis altes. Regla: producte de neteja domèstic, exclamació."
+  },
+  {
+   "id": "qui-t2-0181",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Pictogrames de perillositat",
+   "concepto": "Pictogrames i exemples de productes",
+   "dificultad": 4,
+   "enunciado": "Quina d'aquestes substàncies ha de portar aquest pictograma?",
+   "ayuda_larga": "Cada pictograma té una llista d'exemples. Explosiu: nitroglicerina, trinitrotoluè (TNT), pólvora i focs artificials. Inflamable: alcohol, metanol, acetona i gasolina. Comburent: oxigen, nitrat de potassi, aigua oxigenada concentrada i permanganat de potassi. Gas a pressió: ambientadors, insecticides en esprai, bombones de butà, extintors de CO₂ i nitrogen líquid. A la pàgina 6, la irritació cutània porta amoníac, lleixiu i detergents; la toxicitat aguda cianur, raticides i triòxid d'arsènic; el medi aquàtic sulfat de coure, mercuri i pesticides.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "imagen": "pictogrames/medi-aquatic.png",
+   "opciones": [
+    {
+     "texto": "Nitrat de potassi",
+     "trampa": "confondre contaminar l'aigua amb avivar el foc"
+    },
+    {
+     "texto": "Àcid sulfúric",
+     "trampa": "confondre un perill ambiental amb un de corrosiu"
+    },
+    {
+     "texto": "Sulfat de coure"
+    },
+    {
+     "texto": "Detergents",
+     "trampa": "confondre un perill per a les persones amb un d'ambiental"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El sulfat de coure, el mercuri i els pesticides contaminen l'aigua i són nocius per a peixos, crustacis i algues. Regla: si fa mal a l'ecosistema aquàtic, arbre i peix morts."
+  },
+  {
+   "id": "qui-t2-0182",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer material per mesurar volums",
+   "dificultad": 1,
+   "enunciado": "Quin és el nom d'aquest instrument?",
+   "ayuda_larga": "El material per mesurar volums s'ordena del més aproximat al més precís: proveta graduada, pipeta graduada, pipeta aforada, bureta i matràs aforat. La proveta mesura volums de líquids de forma aproximada. La pipeta graduada i la bureta permeten abocar qualsevol volum amb molta precisió, i la bureta ho fa gota a gota amb la clau. La pipeta aforada i el matràs aforat mesuren un volum fix amb molta precisió. La pera de goma serveix per aspirar líquids amb una pipeta, perquè mai s'aspira amb la boca. Exemple: per tenir 25 mL exactes d'una solució agafes una pipeta aforada de 25 mL i l'aspires amb la pera.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/proveta.png",
+   "opciones": [
+    {
+     "texto": "Bureta",
+     "trampa": "Confondre dos tubs de vidre amb escala: la bureta té una clau"
+    },
+    {
+     "texto": "Pipeta graduada",
+     "trampa": "Confondre la proveta, que té peu, amb una pipeta"
+    },
+    {
+     "texto": "Matràs aforat",
+     "trampa": "Pensar que qualsevol vidre llarg és un matràs"
+    },
+    {
+     "texto": "Proveta graduada"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La proveta graduada és el tub de vidre amb escala i peu. Regla: proveta = tub amb peu i escala, volum aproximat."
+  },
+  {
+   "id": "qui-t2-0183",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer material per mesurar volums",
+   "dificultad": 2,
+   "enunciado": "Per a què serveix aquest instrument?",
+   "ayuda_larga": "El material per mesurar volums s'ordena del més aproximat al més precís: proveta graduada, pipeta graduada, pipeta aforada, bureta i matràs aforat. La proveta mesura volums de líquids de forma aproximada. La pipeta graduada i la bureta permeten abocar qualsevol volum amb molta precisió, i la bureta ho fa gota a gota amb la clau. La pipeta aforada i el matràs aforat mesuren un volum fix amb molta precisió. La pera de goma serveix per aspirar líquids amb una pipeta, perquè mai s'aspira amb la boca. Exemple: per tenir 25 mL exactes d'una solució agafes una pipeta aforada de 25 mL i l'aspires amb la pera.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/bureta.png",
+   "opciones": [
+    {
+     "texto": "Mesurar un únic volum fix de líquid amb molta precisió",
+     "trampa": "Confondre la bureta amb la pipeta aforada o el matràs aforat"
+    },
+    {
+     "texto": "Mesurar volums de líquids de manera aproximada",
+     "trampa": "Confondre la bureta amb la proveta"
+    },
+    {
+     "texto": "Aspirar líquids amb una pipeta sense usar la boca",
+     "trampa": "Confondre la bureta amb la pera de goma"
+    },
+    {
+     "texto": "Abocar qualsevol volum de líquid, gota a gota, amb molta precisió"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La bureta és graduada i té una clau que deixa abocar el líquid gota a gota. Regla: bureta = abocar amb molta precisió gràcies a la clau."
+  },
+  {
+   "id": "qui-t2-0184",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer material per mesurar volums",
+   "dificultad": 3,
+   "enunciado": "Quin és l'instrument de la imatge i quina precisió té?",
+   "ayuda_larga": "El material per mesurar volums s'ordena del més aproximat al més precís: proveta graduada, pipeta graduada, pipeta aforada, bureta i matràs aforat. La proveta mesura volums de líquids de forma aproximada. La pipeta graduada i la bureta permeten abocar qualsevol volum amb molta precisió, i la bureta ho fa gota a gota amb la clau. La pipeta aforada i el matràs aforat mesuren un volum fix amb molta precisió. La pera de goma serveix per aspirar líquids amb una pipeta, perquè mai s'aspira amb la boca. Exemple: per tenir 25 mL exactes d'una solució agafes una pipeta aforada de 25 mL i l'aspires amb la pera.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/pipeta-aforada.png",
+   "opciones": [
+    {
+     "texto": "Pipeta graduada, de molta precisió",
+     "trampa": "Confondre aforada amb graduada per l'aspecte de la pipeta"
+    },
+    {
+     "texto": "Pipeta aforada, de molta precisió"
+    },
+    {
+     "texto": "Pipeta aforada, de poca precisió",
+     "trampa": "Pensar que les pipetes són aproximades com la proveta"
+    },
+    {
+     "texto": "Proveta graduada, de poca precisió",
+     "trampa": "Confondre la pipeta aforada amb un instrument aproximat"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La pipeta aforada té una sola marca, l'enràs, i mesura un volum fix amb molta precisió. Regla: una marca = aforada = volum fix."
+  },
+  {
+   "id": "qui-t2-0185",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer material per mesurar volums",
+   "dificultad": 2,
+   "enunciado": "Per a què serveix aquest estri?",
+   "ayuda_larga": "El material per mesurar volums s'ordena del més aproximat al més precís: proveta graduada, pipeta graduada, pipeta aforada, bureta i matràs aforat. La proveta mesura volums de líquids de forma aproximada. La pipeta graduada i la bureta permeten abocar qualsevol volum amb molta precisió, i la bureta ho fa gota a gota amb la clau. La pipeta aforada i el matràs aforat mesuren un volum fix amb molta precisió. La pera de goma serveix per aspirar líquids amb una pipeta, perquè mai s'aspira amb la boca. Exemple: per tenir 25 mL exactes d'una solució agafes una pipeta aforada de 25 mL i l'aspires amb la pera.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/pera-goma.png",
+   "opciones": [
+    {
+     "texto": "Mesurar un volum fix de líquid amb precisió",
+     "trampa": "Confondre l'estri amb el matràs aforat"
+    },
+    {
+     "texto": "Abocar el líquid gota a gota amb una clau",
+     "trampa": "Confondre l'estri amb la bureta"
+    },
+    {
+     "texto": "Aspirar líquids amb una pipeta"
+    },
+    {
+     "texto": "Contenir líquids sense mesurar-ne el volum",
+     "trampa": "Confondre l'estri amb un recipient com el vas de precipitats"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La pera de goma permet aspirar el líquid amb la pipeta sense fer-ho mai amb la boca, que és una norma de seguretat. Regla: pipeta + pera de goma, mai la boca."
+  },
+  {
+   "id": "qui-t2-0186",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer material per mesurar volums",
+   "dificultad": 4,
+   "enunciado": "Quin instrument mesura un volum determinat amb molta precisió i serveix també per preparar dissolucions?",
+   "ayuda_larga": "El material per mesurar volums s'ordena del més aproximat al més precís: proveta graduada, pipeta graduada, pipeta aforada, bureta i matràs aforat. La proveta mesura volums de líquids de forma aproximada. La pipeta graduada i la bureta permeten abocar qualsevol volum amb molta precisió, i la bureta ho fa gota a gota amb la clau. La pipeta aforada i el matràs aforat mesuren un volum fix amb molta precisió. La pera de goma serveix per aspirar líquids amb una pipeta, perquè mai s'aspira amb la boca. Exemple: per tenir 25 mL exactes d'una solució agafes una pipeta aforada de 25 mL i l'aspires amb la pera.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/matras-aforat.png",
+   "opciones": [
+    {
+     "texto": "Matràs Erlenmeyer",
+     "trampa": "Confondre dos matrassos: l'Erlenmeyer només conté líquids"
+    },
+    {
+     "texto": "Pipeta graduada",
+     "trampa": "Pensar que mesurar amb precisió és el mateix que preparar dissolucions"
+    },
+    {
+     "texto": "Matràs aforat"
+    },
+    {
+     "texto": "Proveta graduada",
+     "trampa": "Creure que l'instrument de mesura més comú serveix per fer dissolucions exactes"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El matràs aforat té una sola marca, l'enràs, i mesura un volum fix amb molta precisió, per això serveix per preparar dissolucions. Regla: dissolució de volum exacte = matràs aforat."
+  },
+  {
+   "id": "qui-t2-0187",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Graduat o aforat (imatge)",
+   "dificultad": 3,
+   "enunciado": "L'instrument de la imatge és graduat o aforat, i què significa?",
+   "ayuda_larga": "Un instrument graduat té una escala i pot mesurar qualsevol volum: són graduats la proveta graduada, la pipeta graduada i la bureta. Un instrument aforat té una sola marca, l'enràs, i només mesura un volum fix: són aforats la pipeta aforada i el matràs aforat. Als instruments aforats la marca és l'única referència, i per això són de molta precisió. Exemple: amb una pipeta graduada pots prendre 3,2 mL, però amb una pipeta aforada de 10 mL només pots prendre 10 mL.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/pipeta-graduada.png",
+   "opciones": [
+    {
+     "texto": "Aforat: té una sola marca i mesura un volum fix",
+     "trampa": "Confondre la pipeta graduada amb l'aforada"
+    },
+    {
+     "texto": "Graduat: té una escala i mesura qualsevol volum"
+    },
+    {
+     "texto": "Aforat: té una escala i mesura qualsevol volum",
+     "trampa": "Barrejar el significat d'aforat i de graduat"
+    },
+    {
+     "texto": "Graduat: té una sola marca i mesura un volum fix",
+     "trampa": "Atribuir l'enràs únic als instruments graduats"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La pipeta graduada té escala i mesura qualsevol volum, per això és graduada. Regla: escala = graduat, qualsevol volum."
+  },
+  {
+   "id": "qui-t2-0188",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Graduat o aforat (imatge)",
+   "dificultad": 3,
+   "enunciado": "L'instrument de la imatge és graduat o aforat, i què significa?",
+   "ayuda_larga": "Un instrument graduat té una escala i pot mesurar qualsevol volum: són graduats la proveta graduada, la pipeta graduada i la bureta. Un instrument aforat té una sola marca, l'enràs, i només mesura un volum fix: són aforats la pipeta aforada i el matràs aforat. Als instruments aforats la marca és l'única referència, i per això són de molta precisió. Exemple: amb una pipeta graduada pots prendre 3,2 mL, però amb una pipeta aforada de 10 mL només pots prendre 10 mL.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/matras-aforat.png",
+   "opciones": [
+    {
+     "texto": "Graduat: té una escala i mesura qualsevol volum",
+     "trampa": "Pensar que tots els instruments de vidre tenen escala"
+    },
+    {
+     "texto": "Graduat: té una sola marca i mesura un volum fix",
+     "trampa": "Barrejar el significat de graduat i d'aforat"
+    },
+    {
+     "texto": "Aforat: té una escala i mesura qualsevol volum",
+     "trampa": "Confondre l'enràs amb una escala"
+    },
+    {
+     "texto": "Aforat: té una sola marca, l'enràs, i mesura un volum fix"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El matràs aforat només té la marca de l'enràs i mesura un únic volum. Regla: una marca = aforat = volum fix."
+  },
+  {
+   "id": "qui-t2-0189",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Graduat o aforat (imatge)",
+   "dificultad": 5,
+   "enunciado": "Quin d'aquests instruments és aforat com el de la imatge?",
+   "ayuda_larga": "Un instrument graduat té una escala i pot mesurar qualsevol volum: són graduats la proveta graduada, la pipeta graduada i la bureta. Un instrument aforat té una sola marca, l'enràs, i només mesura un volum fix: són aforats la pipeta aforada i el matràs aforat. Als instruments aforats la marca és l'única referència, i per això són de molta precisió. Exemple: amb una pipeta graduada pots prendre 3,2 mL, però amb una pipeta aforada de 10 mL només pots prendre 10 mL.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/pipeta-aforada.png",
+   "opciones": [
+    {
+     "texto": "Matràs aforat"
+    },
+    {
+     "texto": "Pipeta graduada",
+     "trampa": "Creure que totes les pipetes són aforades"
+    },
+    {
+     "texto": "Bureta",
+     "trampa": "Pensar que l'instrument de més precisió és sempre aforat"
+    },
+    {
+     "texto": "Proveta graduada",
+     "trampa": "Confondre graduada amb aforada"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La pipeta aforada és aforada, com el matràs aforat: tots dos tenen una sola marca. La pipeta graduada, la bureta i la proveta tenen escala."
+  },
+  {
+   "id": "qui-t2-0190",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Graduat o aforat (imatge)",
+   "dificultad": 2,
+   "enunciado": "L'instrument de la imatge només pot mesurar un volum fix.",
+   "ayuda_larga": "Un instrument graduat té una escala i pot mesurar qualsevol volum: són graduats la proveta graduada, la pipeta graduada i la bureta. Un instrument aforat té una sola marca, l'enràs, i només mesura un volum fix: són aforats la pipeta aforada i el matràs aforat. Als instruments aforats la marca és l'única referència, i per això són de molta precisió. Exemple: amb una pipeta graduada pots prendre 3,2 mL, però amb una pipeta aforada de 10 mL només pots prendre 10 mL.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "imagen": "material/pipeta-graduada.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "Pensar que totes les pipetes són aforades."
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "És una pipeta graduada: té escala i mesura qualsevol volum. Només és de volum fix la pipeta aforada."
+  },
+  {
+   "id": "qui-t2-0191",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer recipients",
+   "dificultad": 1,
+   "enunciado": "Quin és el nom d'aquest recipient?",
+   "ayuda_larga": "Alguns recipients només serveixen per contenir líquids, no per mesurar-ne el volum. El vas de precipitats i el matràs Erlenmeyer contenen líquids, i els flascons contenen substàncies. El flascó rentador conté aigua destil·lada i serveix per rentar i per preparar dissolucions. Cap d'ells és un instrument de mesura: per mesurar cal una proveta, una pipeta, una bureta o un matràs aforat. Exemple: pots guardar una dissolució en un flascó, però per mesurar-ne 20 mL has de prendre una proveta.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/vas-precipitats.png",
+   "opciones": [
+    {
+     "texto": "Proveta graduada",
+     "trampa": "Confondre un vas ample amb un tub graduat"
+    },
+    {
+     "texto": "Vas de precipitats"
+    },
+    {
+     "texto": "Matràs Erlenmeyer",
+     "trampa": "Confondre dos recipients de vidre que només contenen"
+    },
+    {
+     "texto": "Flascó rentador",
+     "trampa": "Pensar que qualsevol recipient de vidre guarda aigua destil·lada"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El vas de precipitats és el recipient cilíndric ample que serveix per contenir líquids. Regla: vas = només contenir, no mesurar."
+  },
+  {
+   "id": "qui-t2-0192",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer recipients",
+   "dificultad": 2,
+   "enunciado": "Quina d'aquestes afirmacions és certa sobre el recipient de la imatge?",
+   "ayuda_larga": "Alguns recipients només serveixen per contenir líquids, no per mesurar-ne el volum. El vas de precipitats i el matràs Erlenmeyer contenen líquids, i els flascons contenen substàncies. El flascó rentador conté aigua destil·lada i serveix per rentar i per preparar dissolucions. Cap d'ells és un instrument de mesura: per mesurar cal una proveta, una pipeta, una bureta o un matràs aforat. Exemple: pots guardar una dissolució en un flascó, però per mesurar-ne 20 mL has de prendre una proveta.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/matras-erlenmeyer.png",
+   "opciones": [
+    {
+     "texto": "Mesura volums de líquids amb molta precisió",
+     "trampa": "Confondre l'Erlenmeyer amb un matràs aforat"
+    },
+    {
+     "texto": "Mesura un únic volum fix amb una marca",
+     "trampa": "Atribuir-li l'enràs dels instruments aforats"
+    },
+    {
+     "texto": "Serveix per abocar líquids gota a gota",
+     "trampa": "Confondre l'Erlenmeyer amb la bureta"
+    },
+    {
+     "texto": "Serveix per contenir líquids, però no per mesurar-ne el volum"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El matràs Erlenmeyer només serveix per contenir líquids i no per mesurar-ne el volum. Regla: Erlenmeyer i vas de precipitats no mesuren."
+  },
+  {
+   "id": "qui-t2-0193",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer recipients",
+   "dificultad": 3,
+   "enunciado": "Què conté i per a què serveix aquest recipient?",
+   "ayuda_larga": "Alguns recipients només serveixen per contenir líquids, no per mesurar-ne el volum. El vas de precipitats i el matràs Erlenmeyer contenen líquids, i els flascons contenen substàncies. El flascó rentador conté aigua destil·lada i serveix per rentar i per preparar dissolucions. Cap d'ells és un instrument de mesura: per mesurar cal una proveta, una pipeta, una bureta o un matràs aforat. Exemple: pots guardar una dissolució en un flascó, però per mesurar-ne 20 mL has de prendre una proveta.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/flasco-rentador.png",
+   "opciones": [
+    {
+     "texto": "Conté aigua destil·lada i serveix per rentar i preparar dissolucions"
+    },
+    {
+     "texto": "Conté substàncies i serveix només per guardar-les",
+     "trampa": "Confondre el flascó rentador amb els flascons"
+    },
+    {
+     "texto": "Conté aigua destil·lada i serveix per mesurar volums",
+     "trampa": "Atribuir-li una funció de mesura que no té"
+    },
+    {
+     "texto": "Conté líquids i serveix per aspirar amb una pipeta",
+     "trampa": "Confondre el flascó amb la pera de goma"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El flascó rentador conté aigua destil·lada i s'usa per rentar el material i per preparar dissolucions. Regla: rentador = aigua destil·lada."
+  },
+  {
+   "id": "qui-t2-0194",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer recipients",
+   "dificultad": 2,
+   "enunciado": "Per a què serveixen els recipients de la imatge?",
+   "ayuda_larga": "Alguns recipients només serveixen per contenir líquids, no per mesurar-ne el volum. El vas de precipitats i el matràs Erlenmeyer contenen líquids, i els flascons contenen substàncies. El flascó rentador conté aigua destil·lada i serveix per rentar i per preparar dissolucions. Cap d'ells és un instrument de mesura: per mesurar cal una proveta, una pipeta, una bureta o un matràs aforat. Exemple: pots guardar una dissolució en un flascó, però per mesurar-ne 20 mL has de prendre una proveta.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/flascons.png",
+   "opciones": [
+    {
+     "texto": "Per mesurar substàncies amb molta precisió",
+     "trampa": "Pensar que tot el vidre de laboratori és material de mesura"
+    },
+    {
+     "texto": "Per triturar substàncies sòlides",
+     "trampa": "Confondre els flascons amb el morter"
+    },
+    {
+     "texto": "Per contenir substàncies"
+    },
+    {
+     "texto": "Per pesar substàncies en una balança analítica",
+     "trampa": "Confondre els flascons amb el pesasubstàncies"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Els flascons serveixen per contenir substàncies, no per mesurar-ne el volum. Regla: contenir no és mesurar."
+  },
+  {
+   "id": "qui-t2-0195",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer recipients",
+   "dificultad": 2,
+   "enunciado": "El recipient de la imatge serveix per mesurar un volum amb molta precisió.",
+   "ayuda_larga": "Alguns recipients només serveixen per contenir líquids, no per mesurar-ne el volum. El vas de precipitats i el matràs Erlenmeyer contenen líquids, i els flascons contenen substàncies. El flascó rentador conté aigua destil·lada i serveix per rentar i per preparar dissolucions. Cap d'ells és un instrument de mesura: per mesurar cal una proveta, una pipeta, una bureta o un matràs aforat. Exemple: pots guardar una dissolució en un flascó, però per mesurar-ne 20 mL has de prendre una proveta.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/matras-erlenmeyer.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "Confondre el matràs Erlenmeyer amb el matràs aforat."
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El matràs Erlenmeyer només serveix per contenir líquids; no serveix per mesurar volums. Per mesurar amb precisió cal un matràs aforat, una pipeta o una bureta."
+  },
+  {
+   "id": "qui-t2-0196",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 3,
+   "enunciado": "Quina balança té una sensibilitat de ±0,0001 g?",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/balanca-analitica.png",
+   "opciones": [
+    {
+     "texto": "La balança normal, que dona dos decimals",
+     "trampa": "Confondre les dues balances perquè s'assemblen"
+    },
+    {
+     "texto": "La balança analítica, que dona quatre decimals"
+    },
+    {
+     "texto": "La balança normal, que dona quatre decimals",
+     "trampa": "Pensar que la balança de més decimals és la normal"
+    },
+    {
+     "texto": "La balança analítica, que dona dos decimals",
+     "trampa": "Confondre la sensibilitat amb el nombre de decimals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La balança analítica té una sensibilitat de ±0,0001 g i dona quatre decimals, com 12,3456 g. Regla: més decimals, més sensibilitat i més precisió."
+  },
+  {
+   "id": "qui-t2-0197",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 3,
+   "enunciado": "Una massa llegida en aquesta balança s'expressa, per exemple, com a 12,34 g. Quina és la sensibilitat de la balança?",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/balanca.png",
+   "opciones": [
+    {
+     "texto": "±0,01 g"
+    },
+    {
+     "texto": "±0,0001 g",
+     "trampa": "Confondre-la amb la balança analítica"
+    },
+    {
+     "texto": "±0,1 g",
+     "trampa": "Comptar un sol decimal en lloc de dos"
+    },
+    {
+     "texto": "±1 g",
+     "trampa": "Pensar que la sensibilitat és el nombre de xifres enteres"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La balança normal té una sensibilitat de ±0,01 g i dona dos decimals. Regla: dos decimals = ±0,01 g; quatre decimals = ±0,0001 g."
+  },
+  {
+   "id": "qui-t2-0198",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 2,
+   "enunciado": "Per a què serveixen aquests estris?",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/espatula.png",
+   "opciones": [
+    {
+     "texto": "Per triturar sòlids",
+     "trampa": "Confondre l'espàtula amb el morter"
+    },
+    {
+     "texto": "Per posar-hi reactius sòlids",
+     "trampa": "Confondre l'espàtula amb el vidre de rellotge"
+    },
+    {
+     "texto": "Per agafar substàncies en pols"
+    },
+    {
+     "texto": "Per pesar substàncies en balança analítica",
+     "trampa": "Confondre l'espàtula amb el pesasubstàncies"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Les espàtules serveixen per agafar substàncies en pols. Regla: espàtula = agafar, morter = triturar."
+  },
+  {
+   "id": "qui-t2-0199",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 2,
+   "enunciado": "Per a què s'utilitza l'estri de la imatge?",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/vidre-rellotge.png",
+   "opciones": [
+    {
+     "texto": "Per agafar substàncies en pols",
+     "trampa": "Confondre el vidre de rellotge amb l'espàtula"
+    },
+    {
+     "texto": "Per triturar sòlids",
+     "trampa": "Confondre el vidre de rellotge amb el morter"
+    },
+    {
+     "texto": "Per contenir aigua destil·lada",
+     "trampa": "Confondre el vidre de rellotge amb el flascó rentador"
+    },
+    {
+     "texto": "Per posar-hi reactius sòlids"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El vidre de rellotge serveix per posar-hi reactius sòlids, per exemple per pesar-los. Regla: vidre de rellotge = suport per a sòlids."
+  },
+  {
+   "id": "qui-t2-0200",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom i l'ús de l'estri de la imatge?",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/pesasubstancies.png",
+   "opciones": [
+    {
+     "texto": "Flascons: contenir substàncies sense mesurar-ne el volum",
+     "trampa": "Confondre el pesasubstàncies amb els flascons de vidre"
+    },
+    {
+     "texto": "Pesasubstàncies: pesar substàncies en balança analítica"
+    },
+    {
+     "texto": "Vidre de rellotge: posar-hi reactius sòlids",
+     "trampa": "Confondre dos estris de vidre per a les substàncies"
+    },
+    {
+     "texto": "Morter: triturar sòlids amb força",
+     "trampa": "Confondre un recipient amb tapa amb el morter"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El pesasubstàncies és un petit recipient amb tapa que serveix per pesar substàncies en balança analítica. Regla: pesasubstàncies = balança analítica."
+  },
+  {
+   "id": "qui-t2-0201",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 3,
+   "enunciado": "Quina operació es fa amb l'estri de la imatge?",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/morter.png",
+   "opciones": [
+    {
+     "texto": "Agafar substàncies en pols",
+     "trampa": "Confondre el morter amb l'espàtula"
+    },
+    {
+     "texto": "Posar-hi reactius sòlids",
+     "trampa": "Confondre el morter amb el vidre de rellotge"
+    },
+    {
+     "texto": "Pesar substàncies en balança analítica",
+     "trampa": "Confondre el morter amb el pesasubstàncies"
+    },
+    {
+     "texto": "Triturar sòlids"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El morter serveix per triturar sòlids. Regla: triturar = morter."
+  },
+  {
+   "id": "qui-t2-0202",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Mesurar, contenir i pesar",
+   "concepto": "Reconèixer balances i estris per als sòlids",
+   "dificultad": 3,
+   "enunciado": "L'instrument de la imatge dona una massa amb quatre decimals, per exemple 12,3456 g.",
+   "ayuda_larga": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "imagen": "material/balanca-analitica.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "Pensar que totes les balances donen el mateix nombre de decimals."
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "És la balança analítica, de sensibilitat ±0,0001 g. La balança normal només dona dos decimals."
+  },
+  {
+   "id": "qui-t2-0203",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Escalfar",
+   "dificultad": 1,
+   "enunciado": "Per a què serveix aquest instrument?",
+   "ayuda_larga": "Per escalfar al laboratori es fa servir el bec Bunsen. El recipient, per exemple un baló de fons rodó, es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota. Les pinces subjecten tubs d'assaig, que s'escalfen directament a la flama. L'aro és una anella fixada al suport que aguanta recipients des de sota. La nou uneix la pinça o l'aro al suport.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "imagen": "material/bec-bunsen.png",
+   "opciones": [
+    {
+     "texto": "Per escalfar"
+    },
+    {
+     "texto": "Per subjectar tubs d'assaig",
+     "trampa": "Confondre la font de calor amb les pinces"
+    },
+    {
+     "texto": "Per subjectar diferents aparells",
+     "trampa": "Confondre la font de calor amb el suport"
+    },
+    {
+     "texto": "Per aguantar recipients des de sota",
+     "trampa": "Confondre la font de calor amb l'aro"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El bec Bunsen és la font de calor del muntatge. Regla: suport, nou, pinça i aro subjecten; el bec Bunsen escalfa."
+  },
+  {
+   "id": "qui-t2-0204",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Escalfar",
+   "dificultad": 2,
+   "enunciado": "Un baló de fons rodó està subjectat al suport amb la nou i la pinça. On es col·loca aquest instrument per escalfar-lo?",
+   "ayuda_larga": "Per escalfar al laboratori es fa servir el bec Bunsen. El recipient, per exemple un baló de fons rodó, es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota. Les pinces subjecten tubs d'assaig, que s'escalfen directament a la flama. L'aro és una anella fixada al suport que aguanta recipients des de sota. La nou uneix la pinça o l'aro al suport.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "imagen": "material/bec-bunsen.png",
+   "opciones": [
+    {
+     "texto": "Sota el baló, que l'escalfa des de sota"
+    },
+    {
+     "texto": "Per sobre del baló, que l'escalfa des de dalt",
+     "trampa": "Pensar que la flama ha de caure sobre el recipient"
+    },
+    {
+     "texto": "Dins del baló, en contacte amb el líquid",
+     "trampa": "Confondre l'escalfament amb una immersió"
+    },
+    {
+     "texto": "Penjat de la nou, al costat de la pinça",
+     "trampa": "Confondre la font de calor amb una peça de subjecció"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El bec Bunsen escalfa el recipient des de sota. Regla: la nou i la pinça fixen el baló i la flama va a baix."
+  },
+  {
+   "id": "qui-t2-0205",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Reconèixer material de filtració",
+   "dificultad": 2,
+   "enunciado": "Per a què serveix aquest instrument amb un paper de filtre plegat?",
+   "ayuda_larga": "A la pàgina de filtrar i separar hi ha material per separar un sòlid d'un líquid o dos líquids que no es barregen. L'embut amb un paper de filtre plegat deixa només el pas del líquid, i el sòlid hi queda. L'embut Büchner és de porcellana, té el fons foradat i s'hi posa un paper de filtre. El kitasatos és un matràs amb sortida lateral que filtra més de pressa que l'embut. L'embut de decantació serveix per separar dos líquids no miscibles, com l'aigua i l'oli: el més dens queda a baix i surt primer en obrir la clau.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/embut.png",
+   "opciones": [
+    {
+     "texto": "Per separar dos líquids que no es barregen, com l'aigua i l'oli",
+     "trampa": "Confondre l'embut amb l'embut de decantació"
+    },
+    {
+     "texto": "Per filtrar més de pressa, connectat a una trompa de buit",
+     "trampa": "Confondre l'embut amb el muntatge de filtració al buit"
+    },
+    {
+     "texto": "Per recollir el líquid filtrat en un matràs amb sortida lateral",
+     "trampa": "Confondre l'embut amb el kitasatos"
+    },
+    {
+     "texto": "Per separar un sòlid d'un líquid: el sòlid hi queda i només passa el líquid"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Amb el paper de filtre plegat només passa el líquid i el sòlid queda al paper. Regla: filtrar separa sòlid i líquid; dos líquids no miscibles, decantació."
+  },
+  {
+   "id": "qui-t2-0206",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Reconèixer material de filtració",
+   "dificultad": 3,
+   "enunciado": "Quina descripció correspon a aquest instrument?",
+   "ayuda_larga": "A la pàgina de filtrar i separar hi ha material per separar un sòlid d'un líquid o dos líquids que no es barregen. L'embut amb un paper de filtre plegat deixa només el pas del líquid, i el sòlid hi queda. L'embut Büchner és de porcellana, té el fons foradat i s'hi posa un paper de filtre. El kitasatos és un matràs amb sortida lateral que filtra més de pressa que l'embut. L'embut de decantació serveix per separar dos líquids no miscibles, com l'aigua i l'oli: el més dens queda a baix i surt primer en obrir la clau.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/embut-buchner.png",
+   "opciones": [
+    {
+     "texto": "De porcellana i amb el fons foradat, on es posa un paper de filtre"
+    },
+    {
+     "texto": "Matràs amb sortida lateral que filtra més de pressa",
+     "trampa": "Confondre l'embut amb el kitasatos"
+    },
+    {
+     "texto": "Anella que es fixa al suport per aguantar recipients",
+     "trampa": "Confondre l'embut amb l'aro"
+    },
+    {
+     "texto": "Té una clau i separa dos líquids no miscibles",
+     "trampa": "Confondre l'embut amb l'embut de decantació"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'embut Büchner és de porcellana, amb el fons foradat i un paper de filtre a sobre. Regla: Büchner = porcellana i fons foradat."
+  },
+  {
+   "id": "qui-t2-0207",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Reconèixer material de filtració",
+   "dificultad": 1,
+   "enunciado": "Quin és el nom d'aquest instrument?",
+   "ayuda_larga": "A la pàgina de filtrar i separar hi ha material per separar un sòlid d'un líquid o dos líquids que no es barregen. L'embut amb un paper de filtre plegat deixa només el pas del líquid, i el sòlid hi queda. L'embut Büchner és de porcellana, té el fons foradat i s'hi posa un paper de filtre. El kitasatos és un matràs amb sortida lateral que filtra més de pressa que l'embut. L'embut de decantació serveix per separar dos líquids no miscibles, com l'aigua i l'oli: el més dens queda a baix i surt primer en obrir la clau.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/kitasatos.png",
+   "opciones": [
+    {
+     "texto": "Matràs Erlenmeyer",
+     "trampa": "Confondre un matràs cònic amb el de sortida lateral"
+    },
+    {
+     "texto": "Matràs aforat",
+     "trampa": "Confondre un matràs de mesura amb un de filtració"
+    },
+    {
+     "texto": "Kitasatos"
+    },
+    {
+     "texto": "Baló de reacció",
+     "trampa": "Confondre un matràs de filtració amb un recipient de reacció"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El kitasatos és un matràs amb sortida lateral que recull el líquid de la filtració al buit. Regla: sortida lateral = kitasatos."
+  },
+  {
+   "id": "qui-t2-0208",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Reconèixer material de filtració",
+   "dificultad": 4,
+   "enunciado": "En aquest instrument hi ha dues capes de líquid que no es barregen. Quin líquid surt primer en obrir la clau?",
+   "ayuda_larga": "A la pàgina de filtrar i separar hi ha material per separar un sòlid d'un líquid o dos líquids que no es barregen. L'embut amb un paper de filtre plegat deixa només el pas del líquid, i el sòlid hi queda. L'embut Büchner és de porcellana, té el fons foradat i s'hi posa un paper de filtre. El kitasatos és un matràs amb sortida lateral que filtra més de pressa que l'embut. L'embut de decantació serveix per separar dos líquids no miscibles, com l'aigua i l'oli: el més dens queda a baix i surt primer en obrir la clau.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/embut-decantacio.png",
+   "opciones": [
+    {
+     "texto": "El més lleuger, que queda a dalt",
+     "trampa": "Creure que el líquid de dalt surt primer"
+    },
+    {
+     "texto": "Els dos alhora, a parts iguals",
+     "trampa": "Oblidar que formen dues capes diferenciades"
+    },
+    {
+     "texto": "El més dens, que queda a baix"
+    },
+    {
+     "texto": "El que ocupa més volum, sigui el que sigui",
+     "trampa": "Pensar que només compta la quantitat de líquid"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El més dens queda a baix i surt primer en obrir la clau. Regla: dens a baix, surt primer; es tanca la clau quan ha sortit tot el líquid de baix."
+  },
+  {
+   "id": "qui-t2-0209",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Reconèixer material de filtració",
+   "dificultad": 2,
+   "enunciado": "Aquest instrument permet separar l'aigua i l'oli, que són dos líquids no miscibles.",
+   "ayuda_larga": "A la pàgina de filtrar i separar hi ha material per separar un sòlid d'un líquid o dos líquids que no es barregen. L'embut amb un paper de filtre plegat deixa només el pas del líquid, i el sòlid hi queda. L'embut Büchner és de porcellana, té el fons foradat i s'hi posa un paper de filtre. El kitasatos és un matràs amb sortida lateral que filtra més de pressa que l'embut. L'embut de decantació serveix per separar dos líquids no miscibles, com l'aigua i l'oli: el més dens queda a baix i surt primer en obrir la clau.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/embut-decantacio.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "Pensar que només serveix per separar un sòlid d'un líquid."
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'embut de decantació serveix per separar dos líquids que no es barregen: l'aigua i l'oli formen dues capes."
+  },
+  {
+   "id": "qui-t2-0210",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Muntatge Büchner",
+   "dificultad": 3,
+   "enunciado": "Quin tipus de separació permet fer aquest muntatge?",
+   "ayuda_larga": "El muntatge Büchner serveix per fer una filtració al buit. Consta d'un embut Büchner, un paper de filtre i un kitasatos, connectat a la trompa de buit. El buit xucla el líquid i la filtració és més ràpida que amb un embut normal. El sòlid queda al paper de filtre i el líquid passa al kitasatos.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/muntatge-buchner.png",
+   "opciones": [
+    {
+     "texto": "Separar dos líquids que no es barregen",
+     "trampa": "Confondre la filtració amb la decantació"
+    },
+    {
+     "texto": "Separar un sòlid d'un líquid, filtrant al buit"
+    },
+    {
+     "texto": "Eliminar el dissolvent d'un producte de reacció",
+     "trampa": "Confondre la filtració amb el rotavapor"
+    },
+    {
+     "texto": "Obtenir cristalls d'una solució sobresaturada",
+     "trampa": "Confondre la filtració amb la cristal·lització"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El muntatge Büchner filtra un sòlid d'un líquid amb l'ajuda del buit. Regla: sòlid i líquid, filtració; dos líquids no miscibles, decantació."
+  },
+  {
+   "id": "qui-t2-0211",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Muntatge Büchner",
+   "dificultad": 2,
+   "enunciado": "A què es connecta aquest muntatge perquè la filtració sigui més ràpida?",
+   "ayuda_larga": "El muntatge Büchner serveix per fer una filtració al buit. Consta d'un embut Büchner, un paper de filtre i un kitasatos, connectat a la trompa de buit. El buit xucla el líquid i la filtració és més ràpida que amb un embut normal. El sòlid queda al paper de filtre i el líquid passa al kitasatos.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/muntatge-buchner.png",
+   "opciones": [
+    {
+     "texto": "Al bec Bunsen",
+     "trampa": "Confondre filtrar amb escalfar"
+    },
+    {
+     "texto": "A la trompa de buit"
+    },
+    {
+     "texto": "Al refrigerant",
+     "trampa": "Confondre la filtració amb la condensació de vapors"
+    },
+    {
+     "texto": "Al rotavapor",
+     "trampa": "Confondre la filtració amb l'eliminació del dissolvent"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El kitasatos es connecta a la trompa de buit, que xucla el líquid. Regla: Büchner + kitasatos + trompa de buit."
+  },
+  {
+   "id": "qui-t2-0212",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Muntatge Büchner",
+   "dificultad": 5,
+   "enunciado": "Quines peces formen aquest muntatge, a part de la connexió a la trompa de buit?",
+   "ayuda_larga": "El muntatge Büchner serveix per fer una filtració al buit. Consta d'un embut Büchner, un paper de filtre i un kitasatos, connectat a la trompa de buit. El buit xucla el líquid i la filtració és més ràpida que amb un embut normal. El sòlid queda al paper de filtre i el líquid passa al kitasatos.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/muntatge-buchner.png",
+   "opciones": [
+    {
+     "texto": "Embut de decantació, paper de filtre i kitasatos",
+     "trampa": "Confondre filtrar un sòlid amb separar dos líquids"
+    },
+    {
+     "texto": "Embut Büchner, paper de filtre i kitasatos"
+    },
+    {
+     "texto": "Embut amb paper plegat, baló de reacció i refrigerant",
+     "trampa": "Barrejar peces de la filtració simple i de la reacció"
+    },
+    {
+     "texto": "Embut Büchner, paper de filtre i matràs Erlenmeyer",
+     "trampa": "Confondre el matràs de sortida lateral amb un de cònic"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El muntatge Büchner combina l'embut Büchner amb un paper de filtre a sobre i un kitasatos que recull el líquid. Regla: la sortida lateral del kitasatos és la que va a la trompa."
+  },
+  {
+   "id": "qui-t2-0213",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Muntatge Büchner",
+   "dificultad": 3,
+   "enunciado": "Amb aquest muntatge la filtració és més lenta que amb un embut amb paper de filtre plegat.",
+   "ayuda_larga": "El muntatge Büchner serveix per fer una filtració al buit. Consta d'un embut Büchner, un paper de filtre i un kitasatos, connectat a la trompa de buit. El buit xucla el líquid i la filtració és més ràpida que amb un embut normal. El sòlid queda al paper de filtre i el líquid passa al kitasatos.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "imagen": "material/muntatge-buchner.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "Pensar que afegir un kitasatos retarda el pas del líquid."
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El buit xucla el líquid i la filtració és més ràpida, no més lenta, que amb un embut normal."
+  },
+  {
+   "id": "qui-t2-0214",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "On es fan les reaccions",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom d'aquest instrument?",
+   "ayuda_larga": "Les reaccions es fan en diversos recipients: el baló de reacció, el baló de fons rodó, el baló de tres boques i els tubs d'assaig. Els tubs d'assaig serveixen per fer assajos i es subjecten amb pinces. El baló de fons rodó es fa servir per dur a terme reaccions. El gresol és el recipient per escalfar al forn a temperatura molt alta, per exemple per fondre metalls.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/balo-fons-rodo.png",
+   "opciones": [
+    {
+     "texto": "Baló de tres boques",
+     "trampa": "Confondre el baló d'una boca amb el de tres"
+    },
+    {
+     "texto": "Matràs aforat",
+     "trampa": "Confondre un recipient de reacció amb un de mesura"
+    },
+    {
+     "texto": "Baló de fons rodó"
+    },
+    {
+     "texto": "Kitasatos",
+     "trampa": "Confondre un baló amb un matràs de sortida lateral"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El baló de fons rodó es fa servir per dur a terme reaccions i es subjecta al suport amb la nou i la pinça. Regla: fons rodó, d'una sola boca."
+  },
+  {
+   "id": "qui-t2-0215",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "On es fan les reaccions",
+   "dificultad": 3,
+   "enunciado": "Per a què serveix aquest instrument?",
+   "ayuda_larga": "Les reaccions es fan en diversos recipients: el baló de reacció, el baló de fons rodó, el baló de tres boques i els tubs d'assaig. Els tubs d'assaig serveixen per fer assajos i es subjecten amb pinces. El baló de fons rodó es fa servir per dur a terme reaccions. El gresol és el recipient per escalfar al forn a temperatura molt alta, per exemple per fondre metalls.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/gresol.png",
+   "opciones": [
+    {
+     "texto": "Per escalfar al forn a molt alta temperatura i fondre metalls"
+    },
+    {
+     "texto": "Per fer assajos, subjectat amb pinces",
+     "trampa": "Confondre el gresol amb els tubs d'assaig"
+    },
+    {
+     "texto": "Per condensar el vapor produït",
+     "trampa": "Confondre el gresol amb el refrigerant"
+    },
+    {
+     "texto": "Per eliminar el dissolvent d'un producte de reacció",
+     "trampa": "Confondre el gresol amb el rotavapor"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El gresol resisteix temperatures molt altes al forn i serveix per fondre metalls. Regla: gresol = forn i molt alta temperatura."
+  },
+  {
+   "id": "qui-t2-0216",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "On es fan les reaccions",
+   "dificultad": 4,
+   "enunciado": "Com se subjecten aquests recipients quan s'escalfen?",
+   "ayuda_larga": "Les reaccions es fan en diversos recipients: el baló de reacció, el baló de fons rodó, el baló de tres boques i els tubs d'assaig. Els tubs d'assaig serveixen per fer assajos i es subjecten amb pinces. El baló de fons rodó es fa servir per dur a terme reaccions. El gresol és el recipient per escalfar al forn a temperatura molt alta, per exemple per fondre metalls.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/tubs-assaig.png",
+   "opciones": [
+    {
+     "texto": "Amb pinces, directament a la flama"
+    },
+    {
+     "texto": "Amb un aro fixat al suport, per sota",
+     "trampa": "Confondre les pinces amb l'aro que aguanta des de sota"
+    },
+    {
+     "texto": "Dins d'un forn, sense pinces",
+     "trampa": "Confondre els tubs d'assaig amb el gresol"
+    },
+    {
+     "texto": "Amb una nou sense pinça",
+     "trampa": "Pensar que la nou subjecta el recipient directament"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Els tubs d'assaig serveixen per fer assajos i s'escalfen directament a la flama, subjectats amb pinces. Regla: tubs, pinces i flama."
+  },
+  {
+   "id": "qui-t2-0217",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Obtenir el producte",
+   "dificultad": 2,
+   "enunciado": "Per a què serveix aquest instrument?",
+   "ayuda_larga": "Després d'una reacció, per recuperar el producte, l'ordre habitual de l'equip és: 1 refrigerant per condensar el vapor produït, 2 rotavapor per eliminar el dissolvent d'un producte de reacció, 3 cristal·litzador per obtenir cristalls a partir d'una solució sobresaturada i 4 assecador per deixar-hi les substàncies que s'han d'eixugar. L'assecat és l'últim pas.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/refrigerants.png",
+   "opciones": [
+    {
+     "texto": "Per eliminar el dissolvent d'un producte de reacció",
+     "trampa": "Confondre el refrigerant amb el rotavapor"
+    },
+    {
+     "texto": "Per condensar el vapor produït"
+    },
+    {
+     "texto": "Per obtenir cristalls d'una solució sobresaturada",
+     "trampa": "Confondre el refrigerant amb el cristal·litzador"
+    },
+    {
+     "texto": "Per deixar-hi substàncies que s'han d'eixugar",
+     "trampa": "Confondre el refrigerant amb l'assecador"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els refrigerants condensen el vapor produït i són el primer pas de l'equip. Regla: refrigerant, vapor."
+  },
+  {
+   "id": "qui-t2-0218",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Obtenir el producte",
+   "dificultad": 4,
+   "enunciado": "En quin lloc de l'ordre habitual després d'una reacció s'utilitza aquest instrument?",
+   "ayuda_larga": "Després d'una reacció, per recuperar el producte, l'ordre habitual de l'equip és: 1 refrigerant per condensar el vapor produït, 2 rotavapor per eliminar el dissolvent d'un producte de reacció, 3 cristal·litzador per obtenir cristalls a partir d'una solució sobresaturada i 4 assecador per deixar-hi les substàncies que s'han d'eixugar. L'assecat és l'últim pas.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/rotavapor.png",
+   "opciones": [
+    {
+     "texto": "En primer lloc, per condensar el vapor produït",
+     "trampa": "Confondre el rotavapor amb el refrigerant"
+    },
+    {
+     "texto": "En tercer lloc, per obtenir cristalls",
+     "trampa": "Confondre el rotavapor amb el cristal·litzador"
+    },
+    {
+     "texto": "En quart lloc, per eixugar el producte",
+     "trampa": "Confondre el rotavapor amb l'assecador"
+    },
+    {
+     "texto": "En segon lloc, per eliminar el dissolvent del producte"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'ordre és refrigerant, rotavapor, cristal·litzador i assecador. El rotavapor elimina el dissolvent abans de cristal·litzar."
+  },
+  {
+   "id": "qui-t2-0219",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Obtenir el producte",
+   "dificultad": 3,
+   "enunciado": "Per a què serveix aquest instrument?",
+   "ayuda_larga": "Després d'una reacció, per recuperar el producte, l'ordre habitual de l'equip és: 1 refrigerant per condensar el vapor produït, 2 rotavapor per eliminar el dissolvent d'un producte de reacció, 3 cristal·litzador per obtenir cristalls a partir d'una solució sobresaturada i 4 assecador per deixar-hi les substàncies que s'han d'eixugar. L'assecat és l'últim pas.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/cristal-litzador.png",
+   "opciones": [
+    {
+     "texto": "Per eliminar el dissolvent d'un producte de reacció",
+     "trampa": "Confondre cristal·litzar amb treure el dissolvent"
+    },
+    {
+     "texto": "Per condensar el vapor produït",
+     "trampa": "Confondre la cristal·lització amb la condensació"
+    },
+    {
+     "texto": "Per obtenir cristalls a partir d'una solució sobresaturada"
+    },
+    {
+     "texto": "Per deixar-hi substàncies que s'han d'eixugar",
+     "trampa": "Confondre els cristalls amb el pas d'assecat"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El cristal·litzador serveix per obtenir cristalls d'una solució sobresaturada. Regla: cristal·litzador, cristalls."
+  },
+  {
+   "id": "qui-t2-0220",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Obtenir el producte",
+   "dificultad": 5,
+   "enunciado": "Quin instrument de l'equip habitual es fa servir immediatament abans d'aquest?",
+   "ayuda_larga": "Després d'una reacció, per recuperar el producte, l'ordre habitual de l'equip és: 1 refrigerant per condensar el vapor produït, 2 rotavapor per eliminar el dissolvent d'un producte de reacció, 3 cristal·litzador per obtenir cristalls a partir d'una solució sobresaturada i 4 assecador per deixar-hi les substàncies que s'han d'eixugar. L'assecat és l'últim pas.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/assecador.png",
+   "opciones": [
+    {
+     "texto": "Rotavapor",
+     "trampa": "Saltar-se un pas de l'ordre habitual"
+    },
+    {
+     "texto": "Refrigerants",
+     "trampa": "Pensar que el refrigerant és el pas previ a l'assecat"
+    },
+    {
+     "texto": "Gresol",
+     "trampa": "Confondre l'assecat amb escalfar al forn"
+    },
+    {
+     "texto": "Cristal·litzador"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'ordre és refrigerant, rotavapor, cristal·litzador i assecador, de manera que els cristalls obtinguts s'eixuguen al final."
+  },
+  {
+   "id": "qui-t2-0221",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Escalfar, filtrar i fer reaccions",
+   "concepto": "Obtenir el producte",
+   "dificultad": 3,
+   "enunciado": "Aquest instrument serveix per obtenir cristalls a partir d'una solució sobresaturada.",
+   "ayuda_larga": "Després d'una reacció, per recuperar el producte, l'ordre habitual de l'equip és: 1 refrigerant per condensar el vapor produït, 2 rotavapor per eliminar el dissolvent d'un producte de reacció, 3 cristal·litzador per obtenir cristalls a partir d'una solució sobresaturada i 4 assecador per deixar-hi les substàncies que s'han d'eixugar. L'assecat és l'últim pas.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "imagen": "material/rotavapor.png",
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "Confondre el rotavapor amb el cristal·litzador."
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els cristalls s'obtenen amb el cristal·litzador. El rotavapor serveix per eliminar el dissolvent d'un producte de reacció."
+  },
+  {
+   "id": "qui-t2-0222",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 3,
+   "enunciado": "Calcula el nombre de molècules de CuCl₂. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 2.24e+22,
+   "explicacion": "M(CuCl₂) = 63,5 + 2·35,5 = 134,5 g/mol. Mols: 5/134,5 = 0,0372 mol. Molècules: 0,0372 · 6,022·10²³ = 2,24·10²².",
+   "grupo": "qui-t2-g001",
+   "contexto": "Tenim 5 g de CuCl₂ (M(Cu) = 63,5 g/mol i M(Cl) = 35,5 g/mol; N_A = 6,022·10²³).",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0223",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 3,
+   "enunciado": "Calcula el nombre d'àtoms de clor. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 4.48e+22,
+   "explicacion": "Cada molècula de CuCl₂ té 2 àtoms de Cl: 2 · 2,24·10²² = 4,48·10²².",
+   "grupo": "qui-t2-g001",
+   "contexto": "Tenim 5 g de CuCl₂ (M(Cu) = 63,5 g/mol i M(Cl) = 35,5 g/mol; N_A = 6,022·10²³).",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0224",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 4,
+   "enunciado": "Calcula el nombre total d'àtoms en aquests 5 g. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 6.72e+22,
+   "explicacion": "Cada molècula té 3 àtoms (1 Cu + 2 Cl): 3 · 2,24·10²² = 6,72·10²².",
+   "grupo": "qui-t2-g001",
+   "contexto": "Tenim 5 g de CuCl₂ (M(Cu) = 63,5 g/mol i M(Cl) = 35,5 g/mol; N_A = 6,022·10²³).",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0225",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 2,
+   "enunciado": "Calcula els mols de NH₃. Expressa el resultat en mol.",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 0.5,
+   "explicacion": "M(NH₃) = 14,0 + 3·1,0 = 17,0 g/mol. n = 8,50/17,0 = 0,500 mol.",
+   "grupo": "qui-t2-g002",
+   "contexto": "Tenim 8,50 g d'amoníac, NH₃ (M(N) = 14,0 g/mol i M(H) = 1,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0226",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 3,
+   "enunciado": "Calcula el nombre de molècules de NH₃. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 3.01e+23,
+   "explicacion": "N = n · N_A = 0,500 · 6,022·10²³ = 3,01·10²³ molècules.",
+   "grupo": "qui-t2-g002",
+   "contexto": "Tenim 8,50 g d'amoníac, NH₃ (M(N) = 14,0 g/mol i M(H) = 1,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0227",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 4,
+   "enunciado": "Calcula el nombre d'àtoms d'hidrogen. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 9.03e+23,
+   "explicacion": "Cada molècula té 3 àtoms d'H: 3 · 3,01·10²³ = 9,03·10²³.",
+   "grupo": "qui-t2-g002",
+   "contexto": "Tenim 8,50 g d'amoníac, NH₃ (M(N) = 14,0 g/mol i M(H) = 1,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0228",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 2,
+   "enunciado": "Calcula la massa molar de la glucosa. Expressa el resultat en g/mol.",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 180.0,
+   "explicacion": "M = 6·12,0 + 12·1,0 + 6·16,0 = 72 + 12 + 96 = 180 g/mol.",
+   "grupo": "qui-t2-g003",
+   "contexto": "Tenim 36,0 g de glucosa, C₆H₁₂O₆ (M(C) = 12,0 g/mol, M(H) = 1,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0229",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 3,
+   "enunciado": "Calcula el nombre d'àtoms de carboni de la mostra. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 7.23e+23,
+   "explicacion": "n = 36,0/180 = 0,200 mol de molècules. Molècules: 0,200 · 6,022·10²³ = 1,20·10²³. Cada molècula té 6 àtoms de C: 7,23·10²³.",
+   "grupo": "qui-t2-g003",
+   "contexto": "Tenim 36,0 g de glucosa, C₆H₁₂O₆ (M(C) = 12,0 g/mol, M(H) = 1,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0230",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 4,
+   "enunciado": "Calcula el nombre total d'àtoms de la mostra. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 2.89e+24,
+   "explicacion": "Cada molècula té 6 + 12 + 6 = 24 àtoms. Total: 24 · 1,20·10²³ = 2,89·10²⁴.",
+   "grupo": "qui-t2-g003",
+   "contexto": "Tenim 36,0 g de glucosa, C₆H₁₂O₆ (M(C) = 12,0 g/mol, M(H) = 1,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0231",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 2,
+   "enunciado": "Calcula els mols de H₂SO₄. Expressa el resultat en mol.",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 0.5,
+   "explicacion": "n = N/N_A = 3,011·10²³ / 6,022·10²³ = 0,500 mol.",
+   "grupo": "qui-t2-g004",
+   "contexto": "Tenim 3,011·10²³ molècules d'àcid sulfúric, H₂SO₄ (M(H) = 1,0 g/mol, M(S) = 32,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0232",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 3,
+   "enunciado": "Calcula la massa d'aquesta quantitat de H₂SO₄. Expressa el resultat en g.",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 49.0,
+   "explicacion": "M = 2·1,0 + 32,0 + 4·16,0 = 98,0 g/mol. m = 0,500 · 98,0 = 49,0 g.",
+   "grupo": "qui-t2-g004",
+   "contexto": "Tenim 3,011·10²³ molècules d'àcid sulfúric, H₂SO₄ (M(H) = 1,0 g/mol, M(S) = 32,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0233",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Del gram a les partícules i als àtoms",
+   "dificultad": 4,
+   "enunciado": "Calcula el nombre d'àtoms d'oxigen. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 1.2e+24,
+   "explicacion": "Cada molècula té 4 àtoms d'O: 4 · 3,011·10²³ = 1,20·10²⁴.",
+   "grupo": "qui-t2-g004",
+   "contexto": "Tenim 3,011·10²³ molècules d'àcid sulfúric, H₂SO₄ (M(H) = 1,0 g/mol, M(S) = 32,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0234",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Volum de gas en condicions normals",
+   "dificultad": 2,
+   "enunciado": "Calcula els mols de N₂. Expressa el resultat en mol.",
+   "ayuda_larga": "En condicions normals (0 °C i 1 atm), 1 mol de qualsevol gas ocupa 22,4 L. Per tant, a partir de la massa d'un gas es calculen els mols (n = m/M) i després el volum (V = n·22,4 L). Els mols també permeten conèixer el nombre de molècules. Exemple: 16 g d'O₂ són 0,50 mol i ocupen 11,2 L.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 0.75,
+   "explicacion": "M(N₂) = 28,0 g/mol. n = 21,0/28,0 = 0,750 mol.",
+   "grupo": "qui-t2-g005",
+   "contexto": "Tenim 21,0 g de nitrogen gasós, N₂ (M(N) = 14,0 g/mol; 1 mol de gas ocupa 22,4 L en condicions normals; N_A = 6,022·10²³).",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0235",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Volum de gas en condicions normals",
+   "dificultad": 3,
+   "enunciado": "Calcula el volum que ocupen en condicions normals. Expressa el resultat en L.",
+   "ayuda_larga": "En condicions normals (0 °C i 1 atm), 1 mol de qualsevol gas ocupa 22,4 L. Per tant, a partir de la massa d'un gas es calculen els mols (n = m/M) i després el volum (V = n·22,4 L). Els mols també permeten conèixer el nombre de molècules. Exemple: 16 g d'O₂ són 0,50 mol i ocupen 11,2 L.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 16.8,
+   "explicacion": "V = n · 22,4 = 0,750 · 22,4 = 16,8 L.",
+   "grupo": "qui-t2-g005",
+   "contexto": "Tenim 21,0 g de nitrogen gasós, N₂ (M(N) = 14,0 g/mol; 1 mol de gas ocupa 22,4 L en condicions normals; N_A = 6,022·10²³).",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0236",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Volum de gas en condicions normals",
+   "dificultad": 3,
+   "enunciado": "Calcula el nombre de molècules de N₂. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "En condicions normals (0 °C i 1 atm), 1 mol de qualsevol gas ocupa 22,4 L. Per tant, a partir de la massa d'un gas es calculen els mols (n = m/M) i després el volum (V = n·22,4 L). Els mols també permeten conèixer el nombre de molècules. Exemple: 16 g d'O₂ són 0,50 mol i ocupen 11,2 L.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "problema",
+   "solucion": 4.52e+23,
+   "explicacion": "N = 0,750 · 6,022·10²³ = 4,52·10²³ molècules.",
+   "grupo": "qui-t2-g005",
+   "contexto": "Tenim 21,0 g de nitrogen gasós, N₂ (M(N) = 14,0 g/mol; 1 mol de gas ocupa 22,4 L en condicions normals; N_A = 6,022·10²³).",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0237",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Protons i electrons d'una mostra",
+   "dificultad": 2,
+   "enunciado": "Calcula els mols de CO₂. Expressa el resultat en mol.",
+   "ayuda_larga": "En un àtom neutre, el nombre d'electrons és igual al de protons i coincideix amb el nombre atòmic Z. En una molècula neutra, el nombre d'electrons és la suma dels Z de tots els àtoms. Per conèixer-los en una mostra, primer es calculen les molècules (de grams a mols i a molècules) i després es multipliquen pels electrons de cada molècula. Exemple: l'aigua té 2·1 + 8 = 10 electrons per molècula.",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "problema",
+   "solucion": 0.25,
+   "explicacion": "M(CO₂) = 12,0 + 2·16,0 = 44,0 g/mol. n = 11,0/44,0 = 0,250 mol.",
+   "grupo": "qui-t2-g006",
+   "contexto": "Tenim 11,0 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol; Z(C) = 6 i Z(O) = 8; N_A = 6,022·10²³). Les molècules són neutres.",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0238",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Protons i electrons d'una mostra",
+   "dificultad": 3,
+   "enunciado": "Calcula el nombre de molècules de CO₂. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "En un àtom neutre, el nombre d'electrons és igual al de protons i coincideix amb el nombre atòmic Z. En una molècula neutra, el nombre d'electrons és la suma dels Z de tots els àtoms. Per conèixer-los en una mostra, primer es calculen les molècules (de grams a mols i a molècules) i després es multipliquen pels electrons de cada molècula. Exemple: l'aigua té 2·1 + 8 = 10 electrons per molècula.",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "problema",
+   "solucion": 1.51e+23,
+   "explicacion": "N = 0,250 · 6,022·10²³ = 1,51·10²³ molècules.",
+   "grupo": "qui-t2-g006",
+   "contexto": "Tenim 11,0 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol; Z(C) = 6 i Z(O) = 8; N_A = 6,022·10²³). Les molècules són neutres.",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0239",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estructura de la matèria i el mol",
+   "concepto": "Protons i electrons d'una mostra",
+   "dificultad": 4,
+   "enunciado": "Calcula el nombre total d'electrons de la mostra. Escriu el resultat en notació científica (per exemple 2,5e22).",
+   "ayuda_larga": "En un àtom neutre, el nombre d'electrons és igual al de protons i coincideix amb el nombre atòmic Z. En una molècula neutra, el nombre d'electrons és la suma dels Z de tots els àtoms. Per conèixer-los en una mostra, primer es calculen les molècules (de grams a mols i a molècules) i després es multipliquen pels electrons de cada molècula. Exemple: l'aigua té 2·1 + 8 = 10 electrons per molècula.",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "problema",
+   "solucion": 3.31e+24,
+   "explicacion": "Una molècula té 6 + 2·8 = 22 protons i, com que és neutra, 22 electrons. Total: 22 · 1,51·10²³ = 3,31·10²⁴.",
+   "grupo": "qui-t2-g006",
+   "contexto": "Tenim 11,0 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol; Z(C) = 6 i Z(O) = 8; N_A = 6,022·10²³). Les molècules són neutres.",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0240",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Gas ideal i massa d'un gas",
+   "dificultad": 3,
+   "enunciado": "Calcula els mols d'O₂ del recipient. Expressa el resultat en mol.",
+   "ayuda_larga": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "problema",
+   "solucion": 0.5,
+   "explicacion": "P·V = n·R·T, i T = 27 + 273 = 300 K. n = P·V/(R·T) = 1,50·8,20/(0,082·300) = 0,500 mol.",
+   "grupo": "qui-t2-g007",
+   "contexto": "Un recipient de 8,20 L conté oxigen gasós, O₂ (M(O) = 16,0 g/mol), a 27 °C i 1,50 atm. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0241",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Gas ideal i massa d'un gas",
+   "dificultad": 3,
+   "enunciado": "Calcula la massa d'oxigen del recipient. Expressa el resultat en g.",
+   "ayuda_larga": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "problema",
+   "solucion": 16.0,
+   "explicacion": "M(O₂) = 32,0 g/mol. m = n·M = 0,500 · 32,0 = 16,0 g.",
+   "grupo": "qui-t2-g007",
+   "contexto": "Un recipient de 8,20 L conté oxigen gasós, O₂ (M(O) = 16,0 g/mol), a 27 °C i 1,50 atm. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0242",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Gas ideal i massa d'un gas",
+   "dificultad": 3,
+   "enunciado": "Quin volum ocuparia aquest mateix gas en condicions normals? Expressa el resultat en L.",
+   "ayuda_larga": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "problema",
+   "solucion": 11.2,
+   "explicacion": "V = n · 22,4 = 0,500 · 22,4 = 11,2 L.",
+   "grupo": "qui-t2-g007",
+   "contexto": "Un recipient de 8,20 L conté oxigen gasós, O₂ (M(O) = 16,0 g/mol), a 27 °C i 1,50 atm. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0243",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Gas ideal i massa d'un gas",
+   "dificultad": 2,
+   "enunciado": "Calcula els mols de CO₂. Expressa el resultat en mol.",
+   "ayuda_larga": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "problema",
+   "solucion": 0.2,
+   "explicacion": "M(CO₂) = 44,0 g/mol. n = 8,80/44,0 = 0,200 mol.",
+   "grupo": "qui-t2-g008",
+   "contexto": "Un recipient rígid de 5,00 L conté 8,80 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol) a 27 °C. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0244",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Gas ideal i massa d'un gas",
+   "dificultad": 4,
+   "enunciado": "Calcula la pressió del gas en el recipient. Expressa el resultat en atm.",
+   "ayuda_larga": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "problema",
+   "solucion": 0.984,
+   "explicacion": "P = n·R·T/V = 0,200 · 0,082 · 300 / 5,00 = 0,984 atm.",
+   "grupo": "qui-t2-g008",
+   "contexto": "Un recipient rígid de 5,00 L conté 8,80 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol) a 27 °C. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0245",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Gas ideal i massa d'un gas",
+   "dificultad": 3,
+   "enunciado": "Quin volum ocuparia aquest gas en condicions normals? Expressa el resultat en L.",
+   "ayuda_larga": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "problema",
+   "solucion": 4.48,
+   "explicacion": "V = n · 22,4 = 0,200 · 22,4 = 4,48 L.",
+   "grupo": "qui-t2-g008",
+   "contexto": "Un recipient rígid de 5,00 L conté 8,80 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol) a 27 °C. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0246",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Calor i canvis d'estat en passos",
+   "dificultad": 3,
+   "enunciado": "Quanta calor cal per escalfar l'aigua fins a 100 °C? Expressa el resultat en kJ.",
+   "ayuda_larga": "Quan una substància s'escalfa sense canviar d'estat, la calor és Q = m·Ce·ΔT. Quan canvia d'estat (fusió o vaporització), la temperatura no varia i la calor és Q = m·L. Per anar d'un estat i una temperatura a un altre, es calcula cada pas per separat i se sumen les calors. Exemple: escalfar aigua de 20 a 100 °C és Q = m·Ce·80, i vaporitzar-la després és Q = m·Lv.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "tipo": "problema",
+   "solucion": 134.0,
+   "explicacion": "Q = m·Ce·ΔT = 0,400 · 4 180 · (100 - 20) = 133 760 J, és a dir, 134 kJ.",
+   "grupo": "qui-t2-g009",
+   "contexto": "Tenim 0,400 kg d'aigua líquida a 20 °C. Dades: Ce(aigua líquida) = 4 180 J/(kg·K), Lv = 2,26·10⁶ J/kg; l'aigua bull a 100 °C.",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0247",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Calor i canvis d'estat en passos",
+   "dificultad": 3,
+   "enunciado": "Quanta calor cal després per vaporitzar tota l'aigua que ja és a 100 °C? Expressa el resultat en kJ.",
+   "ayuda_larga": "Quan una substància s'escalfa sense canviar d'estat, la calor és Q = m·Ce·ΔT. Quan canvia d'estat (fusió o vaporització), la temperatura no varia i la calor és Q = m·L. Per anar d'un estat i una temperatura a un altre, es calcula cada pas per separat i se sumen les calors. Exemple: escalfar aigua de 20 a 100 °C és Q = m·Ce·80, i vaporitzar-la després és Q = m·Lv.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "tipo": "problema",
+   "solucion": 904.0,
+   "explicacion": "En el canvi d'estat la temperatura no varia: Q = m·Lv = 0,400 · 2,26·10⁶ = 904 000 J, és a dir, 904 kJ.",
+   "grupo": "qui-t2-g009",
+   "contexto": "Tenim 0,400 kg d'aigua líquida a 20 °C. Dades: Ce(aigua líquida) = 4 180 J/(kg·K), Lv = 2,26·10⁶ J/kg; l'aigua bull a 100 °C.",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0248",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Estats, calor i gasos",
+   "concepto": "Calor i canvis d'estat en passos",
+   "dificultad": 4,
+   "enunciado": "Quanta calor total cal per convertir els 0,400 kg d'aigua a 20 °C en vapor a 100 °C? Expressa el resultat en kJ.",
+   "ayuda_larga": "Quan una substància s'escalfa sense canviar d'estat, la calor és Q = m·Ce·ΔT. Quan canvia d'estat (fusió o vaporització), la temperatura no varia i la calor és Q = m·L. Per anar d'un estat i una temperatura a un altre, es calcula cada pas per separat i se sumen les calors. Exemple: escalfar aigua de 20 a 100 °C és Q = m·Ce·80, i vaporitzar-la després és Q = m·Lv.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "tipo": "problema",
+   "solucion": 1040.0,
+   "explicacion": "Se sumen els dos passos: 133,76 + 904 = 1 037,76 kJ, aproximadament 1 040 kJ.",
+   "grupo": "qui-t2-g009",
+   "contexto": "Tenim 0,400 kg d'aigua líquida a 20 °C. Dades: Ce(aigua líquida) = 4 180 J/(kg·K), Lv = 2,26·10⁶ J/kg; l'aigua bull a 100 °C.",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0249",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Matèria, mescles i dissolucions",
+   "concepto": "Concentració en g/L i massa de solut",
+   "dificultad": 2,
+   "enunciado": "Calcula la concentració de la dissolució. Expressa el resultat en g/L.",
+   "ayuda_larga": "La concentració en g/L és la massa de solut dividida pel volum de dissolució en litres (c = m/V). A partir d'aquesta relació es troba la massa de solut (m = c·V) o el volum (V = m/c). Cal passar els mL a L dividint per 1 000. Exemple: 10 g de sucre en 0,5 L de dissolució donen 20 g/L.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "problema",
+   "solucion": 40.0,
+   "explicacion": "c = massa de solut / volum de dissolució = 12,0 g / 0,300 L = 40,0 g/L.",
+   "grupo": "qui-t2-g010",
+   "contexto": "S'han dissolt 12,0 g de NaCl en aigua fins a obtenir 300 mL de dissolució.",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0250",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Matèria, mescles i dissolucions",
+   "concepto": "Concentració en g/L i massa de solut",
+   "dificultad": 3,
+   "enunciado": "Quants grams de NaCl hi ha en 50 mL d'aquesta dissolució? Expressa el resultat en g.",
+   "ayuda_larga": "La concentració en g/L és la massa de solut dividida pel volum de dissolució en litres (c = m/V). A partir d'aquesta relació es troba la massa de solut (m = c·V) o el volum (V = m/c). Cal passar els mL a L dividint per 1 000. Exemple: 10 g de sucre en 0,5 L de dissolució donen 20 g/L.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "problema",
+   "solucion": 2.0,
+   "explicacion": "m = c·V = 40,0 g/L · 0,050 L = 2,00 g.",
+   "grupo": "qui-t2-g010",
+   "contexto": "S'han dissolt 12,0 g de NaCl en aigua fins a obtenir 300 mL de dissolució.",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0251",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Matèria, mescles i dissolucions",
+   "concepto": "Concentració en g/L i massa de solut",
+   "dificultad": 3,
+   "enunciado": "Quin volum d'aquesta dissolució conté 5,00 g de NaCl? Expressa el resultat en mL.",
+   "ayuda_larga": "La concentració en g/L és la massa de solut dividida pel volum de dissolució en litres (c = m/V). A partir d'aquesta relació es troba la massa de solut (m = c·V) o el volum (V = m/c). Cal passar els mL a L dividint per 1 000. Exemple: 10 g de sucre en 0,5 L de dissolució donen 20 g/L.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "problema",
+   "solucion": 125.0,
+   "explicacion": "V = m/c = 5,00 / 40,0 = 0,125 L, és a dir, 125 mL.",
+   "grupo": "qui-t2-g010",
+   "contexto": "S'han dissolt 12,0 g de NaCl en aigua fins a obtenir 300 mL de dissolució.",
+   "apartado": "c"
+  },
+  {
+   "id": "qui-t2-0252",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Matèria, mescles i dissolucions",
+   "concepto": "Preparar una dissolució i solubilitat",
+   "dificultad": 2,
+   "enunciado": "Quants grams de NaCl s'han de pesar? Expressa el resultat en g.",
+   "ayuda_larga": "Per preparar una dissolució d'un volum i una concentració donats, es pesa la massa de solut m = c·V i es dissol en aigua fins al volum final del matràs aforat. La solubilitat indica la massa màxima de solut que es dissol en 100 g d'aigua a una temperatura. En diluir, la massa de solut no canvia, només el volum. Exemple: 4 g en 500 mL són 8 g/L.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "problema",
+   "solucion": 6.0,
+   "explicacion": "m = c·V = 24 g/L · 0,250 L = 6,0 g.",
+   "grupo": "qui-t2-g011",
+   "contexto": "Es vol preparar 250 mL d'una dissolució de NaCl de concentració 24 g/L. La solubilitat del NaCl a 20 °C és de 36 g per cada 100 g d'aigua.",
+   "apartado": "a"
+  },
+  {
+   "id": "qui-t2-0253",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Matèria, mescles i dissolucions",
+   "concepto": "Preparar una dissolució i solubilitat",
+   "dificultad": 4,
+   "enunciado": "Quants grams d'aigua calen, com a mínim, per dissoldre aquesta massa de NaCl a 20 °C? Expressa el resultat en g.",
+   "ayuda_larga": "Per preparar una dissolució d'un volum i una concentració donats, es pesa la massa de solut m = c·V i es dissol en aigua fins al volum final del matràs aforat. La solubilitat indica la massa màxima de solut que es dissol en 100 g d'aigua a una temperatura. En diluir, la massa de solut no canvia, només el volum. Exemple: 4 g en 500 mL són 8 g/L.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "problema",
+   "solucion": 16.7,
+   "explicacion": "Amb la solubilitat: 36 g de sal per cada 100 g d'aigua. Aigua = 6,0 · 100/36 = 16,7 g.",
+   "grupo": "qui-t2-g011",
+   "contexto": "Es vol preparar 250 mL d'una dissolució de NaCl de concentració 24 g/L. La solubilitat del NaCl a 20 °C és de 36 g per cada 100 g d'aigua.",
+   "apartado": "b"
+  },
+  {
+   "id": "qui-t2-0254",
+   "bloque": "Química",
+   "tema": "T2 Treballar segur i separar la matèria",
+   "subtema": "Matèria, mescles i dissolucions",
+   "concepto": "Preparar una dissolució i solubilitat",
+   "dificultad": 4,
+   "enunciado": "Si s'agafen 50 mL de la dissolució de 24 g/L i s'afegeix aigua fins a 200 mL, quina és la nova concentració? Expressa el resultat en g/L.",
+   "ayuda_larga": "Per preparar una dissolució d'un volum i una concentració donats, es pesa la massa de solut m = c·V i es dissol en aigua fins al volum final del matràs aforat. La solubilitat indica la massa màxima de solut que es dissol en 100 g d'aigua a una temperatura. En diluir, la massa de solut no canvia, només el volum. Exemple: 4 g en 500 mL són 8 g/L.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "problema",
+   "solucion": 6.0,
+   "explicacion": "La massa de solut no canvia: 24 · 0,050 = 1,2 g. Nova concentració: 1,2 / 0,200 = 6,0 g/L.",
+   "grupo": "qui-t2-g011",
+   "contexto": "Es vol preparar 250 mL d'una dissolució de NaCl de concentració 24 g/L. La solubilitat del NaCl a 20 °C és de 36 g per cada 100 g d'aigua.",
+   "apartado": "c"
   }
  ]
 }

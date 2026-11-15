@@ -1,0 +1,79 @@
+{
+ "subtema": "Matèria, mescles i dissolucions",
+ "conceptos": [
+  {
+   "nombre": "Concentració en g/L i massa de solut",
+   "pagina": 19,
+   "cara": 19,
+   "ayuda": "La concentració en g/L és la massa de solut dividida pel volum de dissolució en litres (c = m/V). A partir d'aquesta relació es troba la massa de solut (m = c·V) o el volum (V = m/c). Cal passar els mL a L dividint per 1 000. Exemple: 10 g de sucre en 0,5 L de dissolució donen 20 g/L.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "S'han dissolt 12,0 g de NaCl en aigua fins a obtenir 300 mL de dissolució.",
+     "apartados": [
+      [
+       2,
+       "Calcula la concentració de la dissolució. Expressa el resultat en g/L.",
+       40.0,
+       "c = massa de solut / volum de dissolució = 12,0 g / 0,300 L = 40,0 g/L.",
+       "12.0/0.300"
+      ],
+      [
+       3,
+       "Quants grams de NaCl hi ha en 50 mL d'aquesta dissolució? Expressa el resultat en g.",
+       2.0,
+       "m = c·V = 40,0 g/L · 0,050 L = 2,00 g.",
+       "12.0/0.300*0.050"
+      ],
+      [
+       3,
+       "Quin volum d'aquesta dissolució conté 5,00 g de NaCl? Expressa el resultat en mL.",
+       125.0,
+       "V = m/c = 5,00 / 40,0 = 0,125 L, és a dir, 125 mL.",
+       "5.00/(12.0/0.300)*1000"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Preparar una dissolució i solubilitat",
+   "pagina": 19,
+   "cara": 19,
+   "ayuda": "Per preparar una dissolució d'un volum i una concentració donats, es pesa la massa de solut m = c·V i es dissol en aigua fins al volum final del matràs aforat. La solubilitat indica la massa màxima de solut que es dissol en 100 g d'aigua a una temperatura. En diluir, la massa de solut no canvia, només el volum. Exemple: 4 g en 500 mL són 8 g/L.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Es vol preparar 250 mL d'una dissolució de NaCl de concentració 24 g/L. La solubilitat del NaCl a 20 °C és de 36 g per cada 100 g d'aigua.",
+     "apartados": [
+      [
+       2,
+       "Quants grams de NaCl s'han de pesar? Expressa el resultat en g.",
+       6.0,
+       "m = c·V = 24 g/L · 0,250 L = 6,0 g.",
+       "24*0.250"
+      ],
+      [
+       4,
+       "Quants grams d'aigua calen, com a mínim, per dissoldre aquesta massa de NaCl a 20 °C? Expressa el resultat en g.",
+       16.7,
+       "Amb la solubilitat: 36 g de sal per cada 100 g d'aigua. Aigua = 6,0 · 100/36 = 16,7 g.",
+       "6.0*100/36"
+      ],
+      [
+       4,
+       "Si s'agafen 50 mL de la dissolució de 24 g/L i s'afegeix aigua fins a 200 mL, quina és la nova concentració? Expressa el resultat en g/L.",
+       6.0,
+       "La massa de solut no canvia: 24 · 0,050 = 1,2 g. Nova concentració: 1,2 / 0,200 = 6,0 g/L.",
+       "24*0.050/0.200"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -6,10 +6,10 @@ import { Hexagon } from "../components/Hexagon";
 import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
 
-type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string };
+type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[] };
 
 /** Inicio: solo el panal de la primera asignatura, sin mensajes por días sin usar. */
-export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onNivel?: () => void; onPracticar?: () => void; onPracticarTema?: (id: string) => void }) {
+export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onPracticar?: () => void; onPracticarTipo?: (grupo: "test" | "problemas") => void; onPracticarTema?: (id: string) => void }) {
   const [state, setState] = useState<State>({ kind: "loading" });
   const [panel, setPanel] = useState(false);
 
@@ -19,7 +19,7 @@ export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }:
       const subjects = await api.getSubjects();
       if (!subjects.length) return { kind: "empty" } as const;
       const a = elegirAsignatura(subjects)!;
-      return { kind: "ok", map: await api.getMap(a.id), acento: a.acento } as const;
+      return { kind: "ok", map: await api.getMap(a.id), acento: a.acento, tipos: a.tipos ?? [] } as const;
     })()
       .then((s) => alive && setState(s))
       .catch(() => alive && setState({ kind: "error" }));
@@ -30,7 +30,9 @@ export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }:
   if (state.kind === "error") return <main className="wrap"><p className="lede" role="alert">{t("app.error")}</p></main>;
   if (state.kind === "empty") return <main className="wrap"><p className="lede">{t("panal.sinAsignaturas")}</p></main>;
 
-  const { map, acento } = state;
+  const { map, acento, tipos } = state;
+  // Solo en asignaturas con preguntas de teoría (test y V/F) y también problemas tiene sentido practicar una sola cosa
+  const mezcla = tipos.includes("problema") && tipos.some((x) => x === "test" || x === "vf");
   const temas = new Set(map.hexes.map((h) => h.tema)).size;
   return (
     <main id="main" className="wrap">
@@ -52,10 +54,15 @@ export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }:
                 {t("home.practicar")}
               </button>
             )}
-            {onNivel && (
-              <button type="button" onClick={onNivel} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
-                {t("nivel.boton")}
-              </button>
+            {mezcla && (
+              <>
+                <button type="button" onClick={() => onPracticarTipo?.("test")} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
+                  {t("home.soloTest")}
+                </button>
+                <button type="button" onClick={() => onPracticarTipo?.("problemas")} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
+                  {t("home.soloProblemas")}
+                </button>
+              </>
             )}
           </div>
         </div>

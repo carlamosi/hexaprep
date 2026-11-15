@@ -1,5 +1,4 @@
 import random
-from collections import Counter
 
 import pytest
 from sqlalchemy import select
@@ -8,9 +7,16 @@ from conftest import make_bank
 from hexaprep.events import start_session, submit_answer
 from hexaprep.importer import import_bank
 from hexaprep.models import Asignatura, Concepto, Pregunta, Subtema
-from hexaprep.selector import Filtro, PlacementWarning, next_question, placement_test
+from hexaprep import selector
+from hexaprep.selector import Filtro, next_question
 
 ORDEN = ["a", "b", "c", "d"]
+
+
+@pytest.fixture(autouse=True)
+def sin_sorteo(monkeypatch):
+    """Los tests de orden fijan la variedad a 1 (elige la mejor); el sorteo tiene su propio test."""
+    monkeypatch.setattr(selector, "TOP_K", 1)
 
 
 def setup(session, bank, items):
@@ -28,10 +34,21 @@ def clave(session, q):
     return session.get(Pregunta, q.pregunta_id).clave
 
 
-def test_picks_question_closest_to_75_percent(session, bank):
+def test_starts_hard_because_the_student_already_has_prior_knowledge(session, bank):
     asig, sid = setup(session, bank, [(f"q{d}", f"c{d}", "s", d) for d in range(1, 6)])
     q = next_question(session, sid, Filtro(asig))
-    assert clave(session, q) == "q2"  # theta 0: d2 da 69 %, d1 da 83 %, el objetivo es 75 %
+    assert clave(session, q) == "q4"  # sin datos se supone un dominio previo: d4 acerca al 60 %, d3 sería demasiado fácil
+
+
+def test_next_question_follows_the_measured_level_once_there_is_data(session, bank):
+    items = [(f"q{i}", "c", "s", 5) for i in range(3)] + [(f"e{i}", "c", "s", 1) for i in range(3)]
+    asig, sid = setup(session, bank, items)
+    for _ in range(3):  # tres fallos en el mismo concepto: el nivel medido manda sobre el supuesto
+        p = session.scalar(select(Pregunta).where(Pregunta.clave.like("q%"), ~Pregunta.id.in_(
+            select(__import__("hexaprep.models", fromlist=["Intento"]).Intento.pregunta_id))))
+        submit_answer(session, sid, p.id, ORDEN, "b", None, {})
+    sid2 = start_session(session, "practica", {})
+    assert clave(session, next_question(session, sid2, Filtro(asig))).startswith("e")
 
 
 def test_never_repeats_question_in_session(session, bank):
@@ -65,22 +82,6 @@ def test_options_reshuffled_each_time(session, bank):
     assert not hasattr(q, "correcta") and all(not hasattr(o, "correcta") for o in q.opciones)
 
 
-def test_placement_has_15_spread_across_concepts(session, bank):
-    items = [(f"q{i}", f"c{i}", f"s{i % 4}", 1 + i % 5) for i in range(20)]
-    asig, _ = setup(session, bank, items)
-    qs = placement_test(session, asig)
-    assert len(qs) == 15 and len({q.concepto_id for q in qs}) == 15
-    per_subtema = Counter(q.subtema_id for q in qs)
-    assert len(per_subtema) == 4 and min(per_subtema.values()) >= 3
-
-
-def test_placement_with_fewer_than_15_returns_all_and_warns(session, bank):
-    asig, _ = setup(session, bank, [(f"q{i}", f"c{i}", "s", 3) for i in range(4)])
-    with pytest.warns(PlacementWarning):
-        qs = placement_test(session, asig)
-    assert len(qs) == 4
-
-
 def test_concept_without_questions_is_skipped(session, bank):
     asig, sid = setup(session, bank, [("q1", "c1", "s", 3), ("q2", "c2", "s", 3)])
     session.add(Concepto(subtema_id=session.scalar(select(Subtema.id)), nombre="vacío"))
@@ -88,8 +89,6 @@ def test_concept_without_questions_is_skipped(session, bank):
     excl.excluida = True
     session.commit()
     assert clave(session, next_question(session, sid, Filtro(asig))) == "q1"
-    with pytest.warns(PlacementWarning):
-        assert len(placement_test(session, asig)) == 1
 
 
 def test_subtema_filter_returns_only_that_subtema_without_limit(session, bank):

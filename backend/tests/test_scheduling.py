@@ -58,10 +58,9 @@ def test_suggestions_ordered_by_gain_and_forgetting(session, bank):
     assert len(suggestions(session, now, n=1)) == 1
 
 
-def test_suggestions_with_empty_history_return_placement_hint(session, bank):
+def test_suggestions_with_empty_history_are_empty(session, bank):
     import_bank(session, bank)
-    out = suggestions(session, utcnow())
-    assert len(out) == 1 and out[0].tipo == "placement" and out[0].concepto_id is None
+    assert suggestions(session, utcnow()) == []
 
 
 def test_answer_sets_fsrs_state_and_next_review(session, bank):

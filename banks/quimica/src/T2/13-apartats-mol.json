@@ -1,0 +1,194 @@
+{
+ "subtema": "Estructura de la matèria i el mol",
+ "conceptos": [
+  {
+   "nombre": "Del gram a les partícules i als àtoms",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "Per passar de grams a partícules cal fer-ho en dos passos: primer es divideix la massa per la massa molar per obtenir els mols (n = m/M) i després es multipliquen els mols pel nombre d'Avogadro (N = n·N_A). Per comptar els àtoms d'un element dins d'un compost, es multiplica el nombre de molècules pel subíndex de l'element a la fórmula. Per als àtoms totals, se sumen tots els subíndexs. Exemple: en 18 g d'aigua hi ha 1 mol, és a dir, 6,022·10²³ molècules i 1,204·10²⁴ àtoms d'hidrogen.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Tenim 5 g de CuCl₂ (M(Cu) = 63,5 g/mol i M(Cl) = 35,5 g/mol; N_A = 6,022·10²³).",
+     "apartados": [
+      [
+       3,
+       "Calcula el nombre de molècules de CuCl₂. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       2.24e+22,
+       "M(CuCl₂) = 63,5 + 2·35,5 = 134,5 g/mol. Mols: 5/134,5 = 0,0372 mol. Molècules: 0,0372 · 6,022·10²³ = 2,24·10²².",
+       "5/(63.5+2*35.5)*6.022e23"
+      ],
+      [
+       3,
+       "Calcula el nombre d'àtoms de clor. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       4.48e+22,
+       "Cada molècula de CuCl₂ té 2 àtoms de Cl: 2 · 2,24·10²² = 4,48·10²².",
+       "2*5/(63.5+2*35.5)*6.022e23"
+      ],
+      [
+       4,
+       "Calcula el nombre total d'àtoms en aquests 5 g. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       6.72e+22,
+       "Cada molècula té 3 àtoms (1 Cu + 2 Cl): 3 · 2,24·10²² = 6,72·10²².",
+       "3*5/(63.5+2*35.5)*6.022e23"
+      ]
+     ]
+    },
+    {
+     "contexto": "Tenim 8,50 g d'amoníac, NH₃ (M(N) = 14,0 g/mol i M(H) = 1,0 g/mol; N_A = 6,022·10²³).",
+     "apartados": [
+      [
+       2,
+       "Calcula els mols de NH₃. Expressa el resultat en mol.",
+       0.5,
+       "M(NH₃) = 14,0 + 3·1,0 = 17,0 g/mol. n = 8,50/17,0 = 0,500 mol.",
+       "8.5/(14+3*1.0)"
+      ],
+      [
+       3,
+       "Calcula el nombre de molècules de NH₃. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       3.01e+23,
+       "N = n · N_A = 0,500 · 6,022·10²³ = 3,01·10²³ molècules.",
+       "8.5/(14+3*1.0)*6.022e23"
+      ],
+      [
+       4,
+       "Calcula el nombre d'àtoms d'hidrogen. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       9.03e+23,
+       "Cada molècula té 3 àtoms d'H: 3 · 3,01·10²³ = 9,03·10²³.",
+       "3*8.5/(14+3*1.0)*6.022e23"
+      ]
+     ]
+    },
+    {
+     "contexto": "Tenim 36,0 g de glucosa, C₆H₁₂O₆ (M(C) = 12,0 g/mol, M(H) = 1,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+     "apartados": [
+      [
+       2,
+       "Calcula la massa molar de la glucosa. Expressa el resultat en g/mol.",
+       180.0,
+       "M = 6·12,0 + 12·1,0 + 6·16,0 = 72 + 12 + 96 = 180 g/mol.",
+       "6*12.0+12*1.0+6*16.0"
+      ],
+      [
+       3,
+       "Calcula el nombre d'àtoms de carboni de la mostra. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       7.23e+23,
+       "n = 36,0/180 = 0,200 mol de molècules. Molècules: 0,200 · 6,022·10²³ = 1,20·10²³. Cada molècula té 6 àtoms de C: 7,23·10²³.",
+       "6*36.0/(6*12.0+12*1.0+6*16.0)*6.022e23"
+      ],
+      [
+       4,
+       "Calcula el nombre total d'àtoms de la mostra. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       2.89e+24,
+       "Cada molècula té 6 + 12 + 6 = 24 àtoms. Total: 24 · 1,20·10²³ = 2,89·10²⁴.",
+       "24*36.0/(6*12.0+12*1.0+6*16.0)*6.022e23"
+      ]
+     ]
+    },
+    {
+     "contexto": "Tenim 3,011·10²³ molècules d'àcid sulfúric, H₂SO₄ (M(H) = 1,0 g/mol, M(S) = 32,0 g/mol i M(O) = 16,0 g/mol; N_A = 6,022·10²³).",
+     "apartados": [
+      [
+       2,
+       "Calcula els mols de H₂SO₄. Expressa el resultat en mol.",
+       0.5,
+       "n = N/N_A = 3,011·10²³ / 6,022·10²³ = 0,500 mol.",
+       "3.011e23/6.022e23"
+      ],
+      [
+       3,
+       "Calcula la massa d'aquesta quantitat de H₂SO₄. Expressa el resultat en g.",
+       49.0,
+       "M = 2·1,0 + 32,0 + 4·16,0 = 98,0 g/mol. m = 0,500 · 98,0 = 49,0 g.",
+       "3.011e23/6.022e23*(2*1.0+32.0+4*16.0)"
+      ],
+      [
+       4,
+       "Calcula el nombre d'àtoms d'oxigen. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       1.2e+24,
+       "Cada molècula té 4 àtoms d'O: 4 · 3,011·10²³ = 1,20·10²⁴.",
+       "4*3.011e23"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Volum de gas en condicions normals",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "En condicions normals (0 °C i 1 atm), 1 mol de qualsevol gas ocupa 22,4 L. Per tant, a partir de la massa d'un gas es calculen els mols (n = m/M) i després el volum (V = n·22,4 L). Els mols també permeten conèixer el nombre de molècules. Exemple: 16 g d'O₂ són 0,50 mol i ocupen 11,2 L.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Tenim 21,0 g de nitrogen gasós, N₂ (M(N) = 14,0 g/mol; 1 mol de gas ocupa 22,4 L en condicions normals; N_A = 6,022·10²³).",
+     "apartados": [
+      [
+       2,
+       "Calcula els mols de N₂. Expressa el resultat en mol.",
+       0.75,
+       "M(N₂) = 28,0 g/mol. n = 21,0/28,0 = 0,750 mol.",
+       "21.0/(2*14.0)"
+      ],
+      [
+       3,
+       "Calcula el volum que ocupen en condicions normals. Expressa el resultat en L.",
+       16.8,
+       "V = n · 22,4 = 0,750 · 22,4 = 16,8 L.",
+       "21.0/(2*14.0)*22.4"
+      ],
+      [
+       3,
+       "Calcula el nombre de molècules de N₂. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       4.52e+23,
+       "N = 0,750 · 6,022·10²³ = 4,52·10²³ molècules.",
+       "21.0/(2*14.0)*6.022e23"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Protons i electrons d'una mostra",
+   "pagina": 12,
+   "cara": 12,
+   "ayuda": "En un àtom neutre, el nombre d'electrons és igual al de protons i coincideix amb el nombre atòmic Z. En una molècula neutra, el nombre d'electrons és la suma dels Z de tots els àtoms. Per conèixer-los en una mostra, primer es calculen les molècules (de grams a mols i a molècules) i després es multipliquen pels electrons de cada molècula. Exemple: l'aigua té 2·1 + 8 = 10 electrons per molècula.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Tenim 11,0 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol; Z(C) = 6 i Z(O) = 8; N_A = 6,022·10²³). Les molècules són neutres.",
+     "apartados": [
+      [
+       2,
+       "Calcula els mols de CO₂. Expressa el resultat en mol.",
+       0.25,
+       "M(CO₂) = 12,0 + 2·16,0 = 44,0 g/mol. n = 11,0/44,0 = 0,250 mol.",
+       "11.0/(12.0+2*16.0)"
+      ],
+      [
+       3,
+       "Calcula el nombre de molècules de CO₂. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       1.51e+23,
+       "N = 0,250 · 6,022·10²³ = 1,51·10²³ molècules.",
+       "11.0/(12.0+2*16.0)*6.022e23"
+      ],
+      [
+       4,
+       "Calcula el nombre total d'electrons de la mostra. Escriu el resultat en notació científica (per exemple 2,5e22).",
+       3.31e+24,
+       "Una molècula té 6 + 2·8 = 22 protons i, com que és neutra, 22 electrons. Total: 22 · 1,51·10²³ = 3,31·10²⁴.",
+       "22*11.0/(12.0+2*16.0)*6.022e23"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

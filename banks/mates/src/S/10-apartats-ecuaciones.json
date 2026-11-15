@@ -1,0 +1,105 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Problemas de ecuaciones y sistemas",
+ "conceptos": [
+  {
+   "nombre": "Bicuadrada y producto de sus soluciones",
+   "pagina": 5,
+   "ayuda": "Una ecuación bicuadrada $ax^4+bx^2+c=0$ se resuelve con el cambio $t=x^2$, que da $at^2+bt+c=0$. Se resuelve esa ecuación de segundo grado y para cada $t\\ge0$ se obtienen $x=\\pm\\sqrt{t}$. Ejemplo: $x^4-5x^2+4=0$ da $t=1$ y $t=4$, luego $x=\\pm1$ y $x=\\pm2$. Con las soluciones se pueden calcular sumas o productos.",
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Considera la ecuación $x^4-13x^2+36=0$.",
+     "apartados": [
+      [
+       2,
+       "Resuélvela y escribe sus soluciones positivas separadas por punto y coma.",
+       [
+        2,
+        3
+       ],
+       "Con $t=x^2$: $t^2-13t+36=0$, luego $t=4$ o $t=9$. Entonces $x=\\pm2$ y $x=\\pm3$; las positivas son 2 y 3.",
+       "[x for x in range(1,21) if abs(x**4-13*x**2+36)<1e-9]"
+      ],
+      [
+       3,
+       "Calcula el producto de las cuatro soluciones reales de la ecuación.",
+       36,
+       "Las soluciones son $-3,-2,2,3$. Su producto es $(-3)(-2)(2)(3)=36$.",
+       "math.prod([x for x in range(-20,21) if abs(x**4-13*x**2+36)<1e-9])"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Sistema lineal y cuadrático con cantidad derivada",
+   "pagina": 6,
+   "ayuda": "Cuando un sistema tiene una ecuación lineal y otra cuadrática, se despeja una incógnita de la lineal y se sustituye en la cuadrática, que queda de segundo grado en una sola incógnita. Cada solución de esa ecuación da una solución del sistema. Ejemplo: $x+y=3$, $xy=2$ da $x^2-3x+2=0$, luego $(1,2)$ y $(2,1)$. Después se pueden operar los valores obtenidos.",
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Considera el sistema $x-y=2$, $x^2+y^2=34$.",
+     "apartados": [
+      [
+       3,
+       "Resuelve el sistema y escribe la solución con $x>0$ en el orden $x; y$.",
+       [
+        5,
+        3
+       ],
+       "De la primera, $x=y+2$. Sustituyendo: $(y+2)^2+y^2=34$, es decir $y^2+2y-15=0$, con $y=3$ o $y=-5$. Las soluciones son $(5,3)$ y $(-3,-5)$; la de $x>0$ es $(5,3)$.",
+       "[v for x in range(-20,21) for y in range(-20,21) if x-y==2 and x*x+y*y==34 and x>0 for v in (x,y)]",
+       true
+      ],
+      [
+       3,
+       "Calcula la suma de los valores de $x$ de las dos soluciones del sistema.",
+       2,
+       "Los valores de $x$ son $5$ y $-3$. Su suma es $5+(-3)=2$.",
+       "sum(x for x in range(-20,21) for y in range(-20,21) if x-y==2 and x*x+y*y==34)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Problema de enunciado en tres preguntas encadenadas",
+   "pagina": 7,
+   "ayuda": "En un problema geométrico con perímetro y área conocidos se llaman $l$ y $a$ a los lados y se plantea el sistema $2(l+a)=P$, $l\\cdot a=A$. Se despeja $a$ de la primera, se sustituye en la segunda y se resuelve la ecuación de segundo grado. Ejemplo: perímetro 14 y área 12 da $l=4$, $a=3$. Con los lados se calculan otras cantidades, como la diagonal con Pitágoras.",
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Un rectángulo tiene 34 m de perímetro y 60 m$^2$ de área.",
+     "apartados": [
+      [
+       3,
+       "Calcula sus lados y escribe el largo (el mayor) y el ancho, en metros, en el orden largo; ancho.",
+       [
+        12,
+        5
+       ],
+       "$l+a=17$ y $la=60$. Con $a=17-l$: $l^2-17l+60=0$, luego $l=12$ o $l=5$. El largo es 12 y el ancho 5.",
+       "[v for l in range(1,40) for a in range(1,l+1) if 2*(l+a)==34 and l*a==60 for v in (l,a)]",
+       true
+      ],
+      [
+       3,
+       "Calcula la longitud de la diagonal del rectángulo, en metros.",
+       13,
+       "Por Pitágoras, $d=\\sqrt{12^2+5^2}=\\sqrt{169}=13$ m.",
+       "[math.sqrt(l*l+a*a) for l in range(1,40) for a in range(1,l+1) if 2*(l+a)==34 and l*a==60][0]"
+      ],
+      [
+       2,
+       "Calcula el área, en m$^2$, del cuadrado que tiene el mismo perímetro que el rectángulo.",
+       72.25,
+       "El lado del cuadrado es $34/4=8{,}5$ m. Su área es $8{,}5^2=72{,}25$ m$^2$.",
+       "(34/4)**2"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

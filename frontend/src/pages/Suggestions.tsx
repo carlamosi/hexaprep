@@ -5,11 +5,10 @@ import { t } from "../i18n";
 interface Props {
   client?: Pick<typeof api, "suggestions">;
   onPracticeSubtema: (subtemaId: string) => void;
-  onPlacement: () => void;
 }
 
 /** Qué conviene repasar ahora: conceptos con el motivo. Sin fechas ni cuenta atrás. */
-export function Suggestions({ client = api, onPracticeSubtema, onPlacement }: Props) {
+export function Suggestions({ client = api, onPracticeSubtema }: Props) {
   const [items, setItems] = useState<Suggestion[] | null>(null);
   const [failed, setFailed] = useState(false);
 
@@ -25,17 +24,11 @@ export function Suggestions({ client = api, onPracticeSubtema, onPlacement }: Pr
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-6">
       <h1 className="text-2xl font-semibold">{t("hoy.titulo")}</h1>
+      {items.length === 0 && <p className="mt-6 text-[var(--ink-2)]">{t("hoy.vacio")}</p>}
       <ol className="mt-6 space-y-4">
         {items.map((s, i) => (
-          <li key={s.concepto_id ?? `hint-${i}`} className="rounded-[16px] border border-[var(--rule)] bg-white p-5">
-            {s.tipo === "placement" ? (
-              <>
-                <p>{s.motivo}</p>
-                <button type="button" onClick={onPlacement} className="mt-3 rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
-                  {t("nivel.hacer")}
-                </button>
-              </>
-            ) : (
+          <li key={s.concepto_id ?? `s-${i}`} className="rounded-[16px] border border-[var(--rule)] bg-white p-5">
+            {(
               <>
                 <h2 className="text-lg font-semibold">{s.concepto}</h2>
                 <p className="mt-1 text-[var(--ink-2)]">{s.motivo}</p>

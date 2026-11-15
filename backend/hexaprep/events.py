@@ -14,10 +14,10 @@ from .importer import leer_solucion
 from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
 
 logger = logging.getLogger(__name__)
-MODOS = {"nivel", "practica", "repaso_subtema", "repaso_fallos"}
+MODOS = {"practica", "repaso_subtema", "repaso_fallos"}
 TIPOS = {
     "pregunta_mostrada", "opcion_seleccionada", "confianza", "respuesta_enviada", "explicacion_abierta",
-    "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion", "marcada_correcta",
+    "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion", "marcada_correcta", "pregunta_saltada",
 }
 TOLERANCIA_PROBLEMA = 0.01  # error relativo que cuenta como acierto en un problema
 CONFIANZAS = {"seguro", "dudo", "adivino"}
@@ -102,9 +102,23 @@ def _selection_path(session: Session, sesion_id: str, pregunta_id: str, elegida:
     return path
 
 
+_SUPERINDICES = str.maketrans("\u2070\u00b9\u00b2\u00b3\u2074\u2075\u2076\u2077\u2078\u2079\u207b", "0123456789-")
+_SUPER = re.compile("10([\u2070\u00b9\u00b2\u00b3\u2074-\u2079\u207b]+)")
+_POTENCIA = re.compile(r"(.*?)\s*(?:[\u00b7\u00d7x*]\s*)?10\s*\^\s*\(?\s*([+-]?\d+)\s*\)?", re.I)
+
+
+def _notacion_cientifica(t: str) -> str:
+    """2,24·10^22, 2,24x10^22, 2,24*10^22 y 2,24·10²² pasan a 2,24e22 (10^22 sola es 1e22)."""
+    t = _SUPER.sub(lambda m: "10^" + m.group(1).translate(_SUPERINDICES), t)
+    m = _POTENCIA.fullmatch(t)
+    if not m:
+        return t
+    return f"{m.group(1).strip() or '1'}e{m.group(2)}"
+
+
 def parse_numero(texto: str) -> float:
-    """Un número escrito por la alumna: coma decimal, espacios, exponente (6,022e23), fracción (3/4) y signo menos Unicode."""
-    t = texto.strip().replace(" ", "").replace("−", "-").replace(",", ".")
+    """Un número escrito por la alumna: coma decimal, espacios, exponente (6,022e23 o 6,022·10^23), fracción (3/4) y signo menos Unicode."""
+    t = _notacion_cientifica(texto.strip().replace("\u2212", "-")).replace(" ", "").replace(",", ".")
     try:
         num, barra, den = t.partition("/")
         v = float(num) / float(den) if barra else float(num)
@@ -196,6 +210,15 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
         session.rollback()  # dominio y FSRS son reconstruibles (mastery.rebuild, scheduling.rebuild)
         logger.exception("no se pudo actualizar el dominio tras la respuesta %s", intento_id)
     return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa, solucion=solucion)
+
+
+def skip_question(session: Session, sesion_id: str, pregunta_id: str) -> None:
+    """La alumna salta la pregunta: no es un intento ni cuenta en el dominio; el selector la vuelve a servir más tarde."""
+    if session.get(Pregunta, pregunta_id) is None:
+        raise ValueError(f"pregunta desconocida: {pregunta_id}")
+    if session.scalar(select(Intento.id).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)):
+        raise AlreadyAnswered("pregunta ya respondida en esta sesión")
+    record_event(session, sesion_id, "pregunta_saltada", pregunta_id, {}, datetime.now())
 
 
 def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:

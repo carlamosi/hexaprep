@@ -1,0 +1,456 @@
+{
+ "subtema": "Mesurar, contenir i pesar",
+ "conceptos": [
+  {
+   "nombre": "Reconèixer material per mesurar volums",
+   "pagina": 7,
+   "cara": 7,
+   "ayuda": "El material per mesurar volums s'ordena del més aproximat al més precís: proveta graduada, pipeta graduada, pipeta aforada, bureta i matràs aforat. La proveta mesura volums de líquids de forma aproximada. La pipeta graduada i la bureta permeten abocar qualsevol volum amb molta precisió, i la bureta ho fa gota a gota amb la clau. La pipeta aforada i el matràs aforat mesuren un volum fix amb molta precisió. La pera de goma serveix per aspirar líquids amb una pipeta, perquè mai s'aspira amb la boca. Exemple: per tenir 25 mL exactes d'una solució agafes una pipeta aforada de 25 mL i l'aspires amb la pera.",
+   "test": [
+    [
+     1,
+     "Quin és el nom d'aquest instrument?",
+     "Proveta graduada",
+     [
+      "Bureta",
+      "Confondre dos tubs de vidre amb escala: la bureta té una clau"
+     ],
+     [
+      "Pipeta graduada",
+      "Confondre la proveta, que té peu, amb una pipeta"
+     ],
+     [
+      "Matràs aforat",
+      "Pensar que qualsevol vidre llarg és un matràs"
+     ],
+     "La proveta graduada és el tub de vidre amb escala i peu. Regla: proveta = tub amb peu i escala, volum aproximat.",
+     {
+      "imagen": "material/proveta.png"
+     }
+    ],
+    [
+     2,
+     "Per a què serveix aquest instrument?",
+     "Abocar qualsevol volum de líquid, gota a gota, amb molta precisió",
+     [
+      "Mesurar un únic volum fix de líquid amb molta precisió",
+      "Confondre la bureta amb la pipeta aforada o el matràs aforat"
+     ],
+     [
+      "Mesurar volums de líquids de manera aproximada",
+      "Confondre la bureta amb la proveta"
+     ],
+     [
+      "Aspirar líquids amb una pipeta sense usar la boca",
+      "Confondre la bureta amb la pera de goma"
+     ],
+     "La bureta és graduada i té una clau que deixa abocar el líquid gota a gota. Regla: bureta = abocar amb molta precisió gràcies a la clau.",
+     {
+      "imagen": "material/bureta.png"
+     }
+    ],
+    [
+     3,
+     "Quin és l'instrument de la imatge i quina precisió té?",
+     "Pipeta aforada, de molta precisió",
+     [
+      "Pipeta graduada, de molta precisió",
+      "Confondre aforada amb graduada per l'aspecte de la pipeta"
+     ],
+     [
+      "Pipeta aforada, de poca precisió",
+      "Pensar que les pipetes són aproximades com la proveta"
+     ],
+     [
+      "Proveta graduada, de poca precisió",
+      "Confondre la pipeta aforada amb un instrument aproximat"
+     ],
+     "La pipeta aforada té una sola marca, l'enràs, i mesura un volum fix amb molta precisió. Regla: una marca = aforada = volum fix.",
+     {
+      "imagen": "material/pipeta-aforada.png"
+     }
+    ],
+    [
+     2,
+     "Per a què serveix aquest estri?",
+     "Aspirar líquids amb una pipeta",
+     [
+      "Mesurar un volum fix de líquid amb precisió",
+      "Confondre l'estri amb el matràs aforat"
+     ],
+     [
+      "Abocar el líquid gota a gota amb una clau",
+      "Confondre l'estri amb la bureta"
+     ],
+     [
+      "Contenir líquids sense mesurar-ne el volum",
+      "Confondre l'estri amb un recipient com el vas de precipitats"
+     ],
+     "La pera de goma permet aspirar el líquid amb la pipeta sense fer-ho mai amb la boca, que és una norma de seguretat. Regla: pipeta + pera de goma, mai la boca.",
+     {
+      "imagen": "material/pera-goma.png"
+     }
+    ],
+    [
+     4,
+     "Quin instrument mesura un volum determinat amb molta precisió i serveix també per preparar dissolucions?",
+     "Matràs aforat",
+     [
+      "Matràs Erlenmeyer",
+      "Confondre dos matrassos: l'Erlenmeyer només conté líquids"
+     ],
+     [
+      "Pipeta graduada",
+      "Pensar que mesurar amb precisió és el mateix que preparar dissolucions"
+     ],
+     [
+      "Proveta graduada",
+      "Creure que l'instrument de mesura més comú serveix per fer dissolucions exactes"
+     ],
+     "El matràs aforat té una sola marca, l'enràs, i mesura un volum fix amb molta precisió, per això serveix per preparar dissolucions. Regla: dissolució de volum exacte = matràs aforat.",
+     {
+      "imagen": "material/matras-aforat.png"
+     }
+    ]
+   ],
+   "vf": [],
+   "problemas": []
+  },
+  {
+   "nombre": "Graduat o aforat (imatge)",
+   "pagina": 7,
+   "cara": 7,
+   "ayuda": "Un instrument graduat té una escala i pot mesurar qualsevol volum: són graduats la proveta graduada, la pipeta graduada i la bureta. Un instrument aforat té una sola marca, l'enràs, i només mesura un volum fix: són aforats la pipeta aforada i el matràs aforat. Als instruments aforats la marca és l'única referència, i per això són de molta precisió. Exemple: amb una pipeta graduada pots prendre 3,2 mL, però amb una pipeta aforada de 10 mL només pots prendre 10 mL.",
+   "test": [
+    [
+     3,
+     "L'instrument de la imatge és graduat o aforat, i què significa?",
+     "Graduat: té una escala i mesura qualsevol volum",
+     [
+      "Aforat: té una sola marca i mesura un volum fix",
+      "Confondre la pipeta graduada amb l'aforada"
+     ],
+     [
+      "Aforat: té una escala i mesura qualsevol volum",
+      "Barrejar el significat d'aforat i de graduat"
+     ],
+     [
+      "Graduat: té una sola marca i mesura un volum fix",
+      "Atribuir l'enràs únic als instruments graduats"
+     ],
+     "La pipeta graduada té escala i mesura qualsevol volum, per això és graduada. Regla: escala = graduat, qualsevol volum.",
+     {
+      "imagen": "material/pipeta-graduada.png"
+     }
+    ],
+    [
+     3,
+     "L'instrument de la imatge és graduat o aforat, i què significa?",
+     "Aforat: té una sola marca, l'enràs, i mesura un volum fix",
+     [
+      "Graduat: té una escala i mesura qualsevol volum",
+      "Pensar que tots els instruments de vidre tenen escala"
+     ],
+     [
+      "Graduat: té una sola marca i mesura un volum fix",
+      "Barrejar el significat de graduat i d'aforat"
+     ],
+     [
+      "Aforat: té una escala i mesura qualsevol volum",
+      "Confondre l'enràs amb una escala"
+     ],
+     "El matràs aforat només té la marca de l'enràs i mesura un únic volum. Regla: una marca = aforat = volum fix.",
+     {
+      "imagen": "material/matras-aforat.png"
+     }
+    ],
+    [
+     5,
+     "Quin d'aquests instruments és aforat com el de la imatge?",
+     "Matràs aforat",
+     [
+      "Pipeta graduada",
+      "Creure que totes les pipetes són aforades"
+     ],
+     [
+      "Bureta",
+      "Pensar que l'instrument de més precisió és sempre aforat"
+     ],
+     [
+      "Proveta graduada",
+      "Confondre graduada amb aforada"
+     ],
+     "La pipeta aforada és aforada, com el matràs aforat: tots dos tenen una sola marca. La pipeta graduada, la bureta i la proveta tenen escala.",
+     {
+      "imagen": "material/pipeta-aforada.png"
+     }
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "L'instrument de la imatge només pot mesurar un volum fix.",
+     false,
+     "És una pipeta graduada: té escala i mesura qualsevol volum. Només és de volum fix la pipeta aforada.",
+     "Pensar que totes les pipetes són aforades.",
+     {
+      "imagen": "material/pipeta-graduada.png"
+     }
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Reconèixer recipients",
+   "pagina": 8,
+   "cara": 8,
+   "ayuda": "Alguns recipients només serveixen per contenir líquids, no per mesurar-ne el volum. El vas de precipitats i el matràs Erlenmeyer contenen líquids, i els flascons contenen substàncies. El flascó rentador conté aigua destil·lada i serveix per rentar i per preparar dissolucions. Cap d'ells és un instrument de mesura: per mesurar cal una proveta, una pipeta, una bureta o un matràs aforat. Exemple: pots guardar una dissolució en un flascó, però per mesurar-ne 20 mL has de prendre una proveta.",
+   "test": [
+    [
+     1,
+     "Quin és el nom d'aquest recipient?",
+     "Vas de precipitats",
+     [
+      "Proveta graduada",
+      "Confondre un vas ample amb un tub graduat"
+     ],
+     [
+      "Matràs Erlenmeyer",
+      "Confondre dos recipients de vidre que només contenen"
+     ],
+     [
+      "Flascó rentador",
+      "Pensar que qualsevol recipient de vidre guarda aigua destil·lada"
+     ],
+     "El vas de precipitats és el recipient cilíndric ample que serveix per contenir líquids. Regla: vas = només contenir, no mesurar.",
+     {
+      "imagen": "material/vas-precipitats.png"
+     }
+    ],
+    [
+     2,
+     "Quina d'aquestes afirmacions és certa sobre el recipient de la imatge?",
+     "Serveix per contenir líquids, però no per mesurar-ne el volum",
+     [
+      "Mesura volums de líquids amb molta precisió",
+      "Confondre l'Erlenmeyer amb un matràs aforat"
+     ],
+     [
+      "Mesura un únic volum fix amb una marca",
+      "Atribuir-li l'enràs dels instruments aforats"
+     ],
+     [
+      "Serveix per abocar líquids gota a gota",
+      "Confondre l'Erlenmeyer amb la bureta"
+     ],
+     "El matràs Erlenmeyer només serveix per contenir líquids i no per mesurar-ne el volum. Regla: Erlenmeyer i vas de precipitats no mesuren.",
+     {
+      "imagen": "material/matras-erlenmeyer.png"
+     }
+    ],
+    [
+     3,
+     "Què conté i per a què serveix aquest recipient?",
+     "Conté aigua destil·lada i serveix per rentar i preparar dissolucions",
+     [
+      "Conté substàncies i serveix només per guardar-les",
+      "Confondre el flascó rentador amb els flascons"
+     ],
+     [
+      "Conté aigua destil·lada i serveix per mesurar volums",
+      "Atribuir-li una funció de mesura que no té"
+     ],
+     [
+      "Conté líquids i serveix per aspirar amb una pipeta",
+      "Confondre el flascó amb la pera de goma"
+     ],
+     "El flascó rentador conté aigua destil·lada i s'usa per rentar el material i per preparar dissolucions. Regla: rentador = aigua destil·lada.",
+     {
+      "imagen": "material/flasco-rentador.png"
+     }
+    ],
+    [
+     2,
+     "Per a què serveixen els recipients de la imatge?",
+     "Per contenir substàncies",
+     [
+      "Per mesurar substàncies amb molta precisió",
+      "Pensar que tot el vidre de laboratori és material de mesura"
+     ],
+     [
+      "Per triturar substàncies sòlides",
+      "Confondre els flascons amb el morter"
+     ],
+     [
+      "Per pesar substàncies en una balança analítica",
+      "Confondre els flascons amb el pesasubstàncies"
+     ],
+     "Els flascons serveixen per contenir substàncies, no per mesurar-ne el volum. Regla: contenir no és mesurar.",
+     {
+      "imagen": "material/flascons.png"
+     }
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "El recipient de la imatge serveix per mesurar un volum amb molta precisió.",
+     false,
+     "El matràs Erlenmeyer només serveix per contenir líquids; no serveix per mesurar volums. Per mesurar amb precisió cal un matràs aforat, una pipeta o una bureta.",
+     "Confondre el matràs Erlenmeyer amb el matràs aforat.",
+     {
+      "imagen": "material/matras-erlenmeyer.png"
+     }
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Reconèixer balances i estris per als sòlids",
+   "pagina": 8,
+   "cara": 8,
+   "ayuda": "La balança mesura masses amb una sensibilitat de ±0,01 g, per exemple 12,34 g. La balança analítica mesura masses amb una sensibilitat de ±0,0001 g, dos decimals més, per exemple 12,3456 g. Per treballar amb sòlids hi ha quatre estris: l'espàtula serveix per agafar substàncies en pols, el vidre de rellotge per posar-hi reactius sòlids, el pesasubstàncies per pesar substàncies a la balança analítica i el morter per triturar sòlids. Exemple: per pesar amb precisió una pols fina fas servir una espàtula, un pesasubstàncies i la balança analítica.",
+   "test": [
+    [
+     3,
+     "Quina balança té una sensibilitat de ±0,0001 g?",
+     "La balança analítica, que dona quatre decimals",
+     [
+      "La balança normal, que dona dos decimals",
+      "Confondre les dues balances perquè s'assemblen"
+     ],
+     [
+      "La balança normal, que dona quatre decimals",
+      "Pensar que la balança de més decimals és la normal"
+     ],
+     [
+      "La balança analítica, que dona dos decimals",
+      "Confondre la sensibilitat amb el nombre de decimals"
+     ],
+     "La balança analítica té una sensibilitat de ±0,0001 g i dona quatre decimals, com 12,3456 g. Regla: més decimals, més sensibilitat i més precisió.",
+     {
+      "imagen": "material/balanca-analitica.png"
+     }
+    ],
+    [
+     3,
+     "Una massa llegida en aquesta balança s'expressa, per exemple, com a 12,34 g. Quina és la sensibilitat de la balança?",
+     "±0,01 g",
+     [
+      "±0,0001 g",
+      "Confondre-la amb la balança analítica"
+     ],
+     [
+      "±0,1 g",
+      "Comptar un sol decimal en lloc de dos"
+     ],
+     [
+      "±1 g",
+      "Pensar que la sensibilitat és el nombre de xifres enteres"
+     ],
+     "La balança normal té una sensibilitat de ±0,01 g i dona dos decimals. Regla: dos decimals = ±0,01 g; quatre decimals = ±0,0001 g.",
+     {
+      "imagen": "material/balanca.png"
+     }
+    ],
+    [
+     2,
+     "Per a què serveixen aquests estris?",
+     "Per agafar substàncies en pols",
+     [
+      "Per triturar sòlids",
+      "Confondre l'espàtula amb el morter"
+     ],
+     [
+      "Per posar-hi reactius sòlids",
+      "Confondre l'espàtula amb el vidre de rellotge"
+     ],
+     [
+      "Per pesar substàncies en balança analítica",
+      "Confondre l'espàtula amb el pesasubstàncies"
+     ],
+     "Les espàtules serveixen per agafar substàncies en pols. Regla: espàtula = agafar, morter = triturar.",
+     {
+      "imagen": "material/espatula.png"
+     }
+    ],
+    [
+     2,
+     "Per a què s'utilitza l'estri de la imatge?",
+     "Per posar-hi reactius sòlids",
+     [
+      "Per agafar substàncies en pols",
+      "Confondre el vidre de rellotge amb l'espàtula"
+     ],
+     [
+      "Per triturar sòlids",
+      "Confondre el vidre de rellotge amb el morter"
+     ],
+     [
+      "Per contenir aigua destil·lada",
+      "Confondre el vidre de rellotge amb el flascó rentador"
+     ],
+     "El vidre de rellotge serveix per posar-hi reactius sòlids, per exemple per pesar-los. Regla: vidre de rellotge = suport per a sòlids.",
+     {
+      "imagen": "material/vidre-rellotge.png"
+     }
+    ],
+    [
+     4,
+     "Quin és el nom i l'ús de l'estri de la imatge?",
+     "Pesasubstàncies: pesar substàncies en balança analítica",
+     [
+      "Flascons: contenir substàncies sense mesurar-ne el volum",
+      "Confondre el pesasubstàncies amb els flascons de vidre"
+     ],
+     [
+      "Vidre de rellotge: posar-hi reactius sòlids",
+      "Confondre dos estris de vidre per a les substàncies"
+     ],
+     [
+      "Morter: triturar sòlids amb força",
+      "Confondre un recipient amb tapa amb el morter"
+     ],
+     "El pesasubstàncies és un petit recipient amb tapa que serveix per pesar substàncies en balança analítica. Regla: pesasubstàncies = balança analítica.",
+     {
+      "imagen": "material/pesasubstancies.png"
+     }
+    ],
+    [
+     3,
+     "Quina operació es fa amb l'estri de la imatge?",
+     "Triturar sòlids",
+     [
+      "Agafar substàncies en pols",
+      "Confondre el morter amb l'espàtula"
+     ],
+     [
+      "Posar-hi reactius sòlids",
+      "Confondre el morter amb el vidre de rellotge"
+     ],
+     [
+      "Pesar substàncies en balança analítica",
+      "Confondre el morter amb el pesasubstàncies"
+     ],
+     "El morter serveix per triturar sòlids. Regla: triturar = morter.",
+     {
+      "imagen": "material/morter.png"
+     }
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "L'instrument de la imatge dona una massa amb quatre decimals, per exemple 12,3456 g.",
+     true,
+     "És la balança analítica, de sensibilitat ±0,0001 g. La balança normal només dona dos decimals.",
+     "Pensar que totes les balances donen el mateix nombre de decimals.",
+     {
+      "imagen": "material/balanca-analitica.png"
+     }
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

@@ -24,9 +24,13 @@ def _digest(text: str) -> str:
 
 def question_digest(q: PreguntaIn) -> str:
     # Las preguntas test no incluyen los campos de tipo: así su huella no cambia y no se reimportan como nuevas versiones.
-    # (y `ordenada` mientras valga false: las soluciones escalares anteriores conservan su huella)
-    exclude = {"tipo", "solucion", "ordenada"} if q.tipo == "test" else (None if q.ordenada else {"ordenada"})
-    return _digest(q.model_dump_json(exclude=exclude))
+    # Los campos que no se usan se dejan fuera: las preguntas anteriores a cada ampliación conservan su huella.
+    exclude = {f for f in ("imagen", "grupo", "contexto", "apartado") if getattr(q, f) is None}
+    if q.tipo == "test":
+        exclude |= {"tipo", "solucion", "ordenada"}
+    elif not q.ordenada:
+        exclude.add("ordenada")
+    return _digest(q.model_dump_json(exclude=exclude or None))
 
 
 def guardar_solucion(q: PreguntaIn) -> str:
@@ -64,7 +68,8 @@ def _add_question(session: Session, q: PreguntaIn, concepto: Concepto, version: 
                   digest: str, excluida: bool) -> None:
     p = Pregunta(
         clave=q.id, version=version, es_actual=True, concepto_id=concepto.id, fuente_id=fuente_id,
-        lote_id=lote_id, tipo=q.tipo, enunciado=q.enunciado, ayuda_larga=q.ayuda_larga, dificultad_base=q.dificultad,
+        lote_id=lote_id, tipo=q.tipo, enunciado=q.enunciado, imagen=q.imagen, grupo=q.grupo,
+        contexto=q.contexto, apartado=q.apartado, ayuda_larga=q.ayuda_larga, dificultad_base=q.dificultad,
         fuente_pagina=q.fuente_pagina, fuente_cara=q.fuente_cara, content_hash=digest, excluida=excluida,
     )
     session.add(p)

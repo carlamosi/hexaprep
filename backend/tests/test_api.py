@@ -59,17 +59,6 @@ def test_full_answer_flow_over_http(client, loaded):
     assert hist["dias"] == [datetime.now().date().isoformat()] and hist["evolucion"]
 
 
-def test_placement_session_serves_the_selected_questions_once(client, loaded):
-    r = client.post("/api/sessions", json={"modo": "nivel", "filtro": {"asignatura_id": loaded}}).json()
-    assert r["aviso"]  # solo hay 2 preguntas, no 15
-    sid, seen = r["sesion_id"], []
-    while (q := client.get(f"/api/sessions/{sid}/next").json()) is not None:
-        seen.append(q["pregunta_id"])
-        client.post("/api/answers", json={"sesion_id": sid, "pregunta_id": q["pregunta_id"], "orden_opciones": q["orden"],
-                                          "elegida": "a"})
-    assert len(seen) == 2 and len(set(seen)) == 2
-
-
 def test_booklet_missing_returns_404_with_message(client, loaded, paths):
     assert client.get("/api/sessions/none").status_code == 404  # sesión inexistente: 404 limpio
     sid = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
@@ -143,14 +132,6 @@ def test_serves_built_frontend_when_dist_exists(paths, tmp_path):
         assert c.get("/api/subjects").status_code == 200  # la API sigue por delante de los estáticos
 
 
-def test_reporting_during_placement_does_not_serve_the_same_question_again(client, loaded):
-    sid = client.post("/api/sessions", json={"modo": "nivel", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
-    first = client.get(f"/api/sessions/{sid}/next").json()["pregunta_id"]
-    client.post(f"/api/questions/{first}/report", json={"motivo": "dudosa", "sesion_id": sid})
-    nxt = client.get(f"/api/sessions/{sid}/next").json()
-    assert nxt is not None and nxt["pregunta_id"] != first
-
-
 def test_automatic_weekly_backup_is_registered_and_listed(paths):
     with TestClient(create_app(**paths)) as c:
         row = c.get("/api/backup").json()
@@ -161,3 +142,31 @@ def test_analytics_endpoint_validates_input(client, loaded):
     assert client.get("/api/analytics", params={"asignatura_id": loaded}).json()["resumen"]["respondidas"] == 0
     assert client.get("/api/analytics", params={"asignatura_id": "nope"}).status_code == 404
     assert client.get("/api/analytics", params={"asignatura_id": loaded, "dias": -1}).status_code == 422
+
+
+def test_skip_endpoint_records_the_skip_and_validates(client, loaded):
+    sid = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    q = client.get(f"/api/sessions/{sid}/next").json()
+    assert client.post(f"/api/sessions/{sid}/skip", json={"pregunta_id": q["pregunta_id"]}).json() == {"ok": True}
+    again = client.get(f"/api/sessions/{sid}/next").json()
+    assert again["pregunta_id"] != q["pregunta_id"]  # hay otra: la saltada espera
+    assert client.post("/api/sessions/nada/skip", json={"pregunta_id": q["pregunta_id"]}).status_code == 404
+    assert client.post(f"/api/sessions/{sid}/skip", json={"pregunta_id": "nada"}).status_code == 422
+    client.post("/api/answers", json={"sesion_id": sid, "pregunta_id": again["pregunta_id"], "orden_opciones": again["orden"],
+                                      "elegida": "a"})
+    assert client.post(f"/api/sessions/{sid}/skip", json={"pregunta_id": again["pregunta_id"]}).status_code == 409
+
+
+def test_subjects_list_the_question_types_they_have(client, loaded):
+    assert client.get("/api/subjects").json()[0]["tipos"] == ["test"]
+
+
+def test_images_are_served_from_any_bank_img_folder_and_only_those(client, loaded, paths):
+    img = paths["booklet_dir"] / "quimica" / "img" / "pictogrames"
+    img.mkdir(parents=True)
+    (img / "corrosiu.png").write_bytes(b"\x89PNG-falso")
+    (paths["booklet_dir"] / "quimica" / "secreto.txt").write_text("no", encoding="utf-8")
+    r = client.get("/api/imagen/pictogrames/corrosiu.png")
+    assert r.status_code == 200 and r.content == b"\x89PNG-falso" and "max-age" in r.headers["cache-control"]
+    for malo in ("pictogrames/no-existe.png", "../secreto.txt", "pictogrames/..%2f..%2fsecreto.txt", "x.exe", "%2e%2e/secreto.png"):
+        assert client.get(f"/api/imagen/{malo}").status_code == 404

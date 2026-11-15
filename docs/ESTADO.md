@@ -15,6 +15,11 @@ Las 20 tareas del plan `docs/superpowers/plans/2026-11-14-hexaprep-economia.md` 
 - Matemáticas 1º Bachillerato (castellano): 126 problemas, SIN test ni verdadero/falso (decisión de Carla). 112 del simulacro trimestral II (ecuaciones, sistemas, inecuaciones, problemas, matrices) y 14 de Gauss (sin PDF: no tiene botón de booklet). Reconstruir con `python tools/build_quimica.py banks/mates/src/S banks/mates/S.json` y lo mismo con `src/G` y `G.json`. Formato en `banks/mates/FORMATO.md`. Cada problema trae una `expr` independiente (fuerza bruta o fórmula) que el script compara con la solución. Muestra de 26 revisada por Opus (`docs/verificacion-mates.md`): 0 críticos y 5 menores ya corregidos.
 - Respuestas de problemas: un número, una fracción (3/4) o varios valores separados por `;` (o ` y `). `ordenada: true` si el orden importa (sistemas, matrices fila a fila). Margen del 1 % por valor.
 - Orden del temario: el importador guarda el orden de aparición de temas y subtemas del banco (antes salían por orden alfabético). Al reimportar, los bancos antiguos con todos los subtemas en 0 se reordenan solos: cambió el orden de los subtemas de Economía y Química en el panal.
+- Pulido (2026-11-15, decisiones de Carla): saltar pregunta (vuelve tras 3 respuestas), sin botones de confianza, sin test de nivel, botones «Solo test y V/F» y «Solo problemas» en las asignaturas que tienen ambos, preguntas con imagen en Química (pictogramas y material recortados del booklet con `tools/extract_quimica_img.py` en `banks/quimica/img/`, servidas por `/api/imagen/...`) y problemas con apartados (enunciado común, un apartado por pregunta, se sirven seguidos; en la base: columnas `grupo`, `contexto`, `apartado`, migración 0002).
+- Selección de preguntas con criterios de neuroeducación (`backend/hexaprep/selector.py`, cabecera del módulo): objetivo de acierto del 60 %, conocimiento previo supuesto (empieza difícil), intercalado de conceptos y tipos, repaso espaciado, sorteo entre las 5 mejores. Constantes ajustables arriba del archivo.
+- Respuestas: se acepta notación científica (`2,24e22`, `2,24·10^22`, `2,24x10^22`), fracciones y varios valores con `;`.
+- Química: 254 preguntas (132 test, 50 V/F, 72 problemas, 40 imágenes); Matemáticas: 147 problemas. Muestras revisadas por Opus: `docs/verificacion-quimica.md`, `docs/verificacion-mates.md`, `docs/verificacion-nuevo.md`.
+- Los PDF fuente están en `banks/<asignatura>/fuentes/` con nombres claros; `docs/FUENTES.md` lista el nombre original de cada uno.
 - Límites: el editor de la app no muestra la solución de un problema; el booklet de Química no trata % en masa ni molaridad, así que no hay problemas de eso.
 
 ## Cómo se prueba
@@ -37,7 +42,6 @@ Las 20 tareas del plan `docs/superpowers/plans/2026-11-14-hexaprep-economia.md` 
 - Los fallos del repaso de una sesión reanudada no se reconstruyen (viven en el cliente).
 - La API no valida la cabecera Host (bastaría `TrustedHostMiddleware` con 127.0.0.1 y localhost).
 - `POST /api/sessions` sin `asignatura_id` da 500 (debería ser 422); `PUT /api/questions/{id}` con id desconocido da 422 (debería ser 404).
-- Con menos de 15 preguntas el test de nivel sigue mostrando «n de 15» y el aviso desaparece al terminar; un subtema sin preguntas acaba en «Sin fallos».
 - Si falla la copia semanal al arrancar, impide arrancar la app. `verify_backup` deja `-wal` y `-shm` junto a cada copia.
 - `report_question` recalcula solo el concepto de la versión vigente; un concepto renombrado en el banco deja un hexágono vacío.
 - No medido el contraste AA con herramienta (los colores salen de los mockups). Las 211 trampas reescritas del banco no pasaron una segunda muestra de Opus.

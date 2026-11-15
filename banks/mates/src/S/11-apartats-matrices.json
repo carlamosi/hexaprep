@@ -1,0 +1,84 @@
+{
+ "tema": "T2 Matrices",
+ "subtema": "Problemas con matrices",
+ "conceptos": [
+  {
+   "nombre": "Producto de matrices, traza y determinante",
+   "pagina": 8,
+   "ayuda": "El producto $A\\cdot B$ tiene en la posición $(i,j)$ la suma de multiplicar la fila $i$ de $A$ por la columna $j$ de $B$. La traza es la suma de los elementos de la diagonal principal y el determinante de $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ es $ad-bc$. Ejemplo: con $A=I$ el producto es $B$. Además, $|A\\cdot B|=|A|\\cdot|B|$.",
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Sean $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ y $B=\\begin{pmatrix}1&4\\\\2&-1\\end{pmatrix}$.",
+     "apartados": [
+      [
+       2,
+       "Calcula $A\\cdot B$ y escribe sus elementos fila a fila separados por punto y coma.",
+       [
+        4,
+        7,
+        6,
+        -3
+       ],
+       "Fila 1: $2\\cdot1+1\\cdot2=4$ y $2\\cdot4+1\\cdot(-1)=7$. Fila 2: $0\\cdot1+3\\cdot2=6$ y $0\\cdot4+3\\cdot(-1)=-3$.",
+       "[sum([[2,1],[0,3]][i][k]*[[1,4],[2,-1]][k][j] for k in range(2)) for i in range(2) for j in range(2)]",
+       true
+      ],
+      [
+       2,
+       "Calcula la traza de $A\\cdot B$.",
+       1,
+       "La diagonal de $A\\cdot B$ es $4$ y $-3$, luego la traza es $4+(-3)=1$.",
+       "sum(sum([[2,1],[0,3]][i][k]*[[1,4],[2,-1]][k][i] for k in range(2)) for i in range(2))"
+      ],
+      [
+       3,
+       "Calcula el determinante de $A\\cdot B$.",
+       -54,
+       "$|A|=2\\cdot3-1\\cdot0=6$ y $|B|=1\\cdot(-1)-4\\cdot2=-9$. Entonces $|A\\cdot B|=6\\cdot(-9)=-54$. Comprobación: $4\\cdot(-3)-7\\cdot6=-54$.",
+       "(2*3-1*0)*(1*(-1)-4*2)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Sistema A·X=B y cantidades derivadas",
+   "pagina": 9,
+   "ayuda": "Un sistema lineal se escribe $A\\cdot X=B$. Si $|A|\\neq0$, existe $A^{-1}$ y $X=A^{-1}\\cdot B$. Para $A=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, $A^{-1}=\\frac{1}{|A|}\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$. Ejemplo: $\\begin{pmatrix}1&0\\\\0&1\\end{pmatrix}X=\\begin{pmatrix}3\\\\4\\end{pmatrix}$ da $X=(3,4)$.",
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Considera $A=\\begin{pmatrix}2&1\\\\5&3\\end{pmatrix}$, $X=\\begin{pmatrix}x\\\\y\\end{pmatrix}$ y $B=\\begin{pmatrix}7\\\\18\\end{pmatrix}$, con $A\\cdot X=B$.",
+     "apartados": [
+      [
+       3,
+       "Resuelve $A\\cdot X=B$ y escribe $x; y$.",
+       [
+        3,
+        1
+       ],
+       "$|A|=6-5=1$, luego $A^{-1}=\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}$. Entonces $X=A^{-1}B=(21-18,\\,-35+36)=(3,1)$.",
+       "[v for x in range(-20,21) for y in range(-20,21) if 2*x+y==7 and 5*x+3*y==18 for v in (x,y)]",
+       true
+      ],
+      [
+       2,
+       "Con la solución, calcula $x^2+y^2$.",
+       10,
+       "$3^2+1^2=9+1=10$.",
+       "sum(x*x+y*y for x in range(-20,21) for y in range(-20,21) if 2*x+y==7 and 5*x+3*y==18)"
+      ],
+      [
+       3,
+       "Calcula la suma de los cuatro elementos de $A^{-1}$.",
+       -1,
+       "$A^{-1}=\\begin{pmatrix}3&-1\\\\-5&2\\end{pmatrix}$, y $3-1-5+2=-1$.",
+       "(3-1-5+2)/(2*3-1*5)"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

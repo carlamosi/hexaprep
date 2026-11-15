@@ -4,7 +4,7 @@ import { Hexagon } from "../components/Hexagon";
 import { Actividad } from "../components/historial/Actividad";
 import { Barras, Columnas, type Fila } from "../components/historial/Barras";
 import {
-  DIAS, DIAS_CORTOS, estado, hora, lecturaCalibracion, MIN_N, mejorGrupo, ordenPanal, pct, segundos, semanasDeRango,
+  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, segundos, semanasDeRango,
 } from "../components/historial/datos";
 import { Evolucion } from "../components/historial/Evolucion";
 import { Debiles, Dificiles, Sesiones, Trampas } from "../components/historial/Listas";
@@ -118,7 +118,7 @@ export function History({ asignaturaId, client = api, mes }: {
               {dias !== 0 && <button type="button" className="hp-btn" onClick={() => setDias(0)}>{t("hist.verTodo")}</button>}
               {dias === 0 && (
                 <ul className="hp-preview" aria-label={t("hist.loQueVeras")}>
-                  {["hist.actividad", "hist.evolucion", "hist.confianza", "hist.horas", "hist.trampas", "hist.debiles"].map((k) => <li key={k}>{t(k)}</li>)}
+                  {["hist.actividad", "hist.evolucion", "hist.dificultad", "hist.horas", "hist.trampas", "hist.debiles"].map((k) => <li key={k}>{t(k)}</li>)}
                 </ul>
               )}
             </div>
@@ -167,11 +167,6 @@ export function History({ asignaturaId, client = api, mes }: {
             </Grupo>
 
             <Grupo id="g-acierto" titulo={t("hist.g.acierto")}>
-              <Card id="c-conf" titulo={t("hist.confianza")} sub={t("hist.confianzaSub")}>
-                <Barras titulo={t("hist.confianza")} media={r.aciertos_pct}
-                  filas={filas(data.confianza, (x) => x.confianza, (x) => t(x.confianza === "sin" ? "hist.sinMarcar" : `conf.${x.confianza}`))} />
-                <p className="hp-insight">{lecturaCalibracion(data.confianza)}</p>
-              </Card>
               <Card id="c-dif" titulo={t("hist.dificultad")} sub={t("hist.dificultadSub")}>
                 <Columnas titulo={t("hist.dificultad")} valores media={r.aciertos_pct}
                   filas={filas(data.dificultad, (x) => String(x.dificultad), (x) => `${t("hist.nivel")} ${x.dificultad}`, (x) => String(x.dificultad))} />

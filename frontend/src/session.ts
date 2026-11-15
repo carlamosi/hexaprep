@@ -30,25 +30,24 @@ export function clearSession(key: string): void {
 interface Opened {
   sid: string;
   answered: number;
-  aviso: string | null;
 }
 
 /** Reanuda la sesión guardada si el backend aún la conoce; si no, crea una nueva y la guarda. */
 export async function openSession(
   key: string,
   client: { getSession?: (id: string) => Promise<SessionState> },
-  create: () => Promise<{ sesion_id: string; aviso: string | null }>,
+  create: () => Promise<{ sesion_id: string }>,
 ): Promise<Opened> {
   const saved = savedSession(key);
   if (saved && client.getSession) {
     try {
       const st = await client.getSession(saved);
-      return { sid: saved, answered: st.respondidas.length, aviso: null };
+      return { sid: saved, answered: st.respondidas.length };
     } catch {
       clearSession(key);
     }
   }
   const r = await create();
   saveSession(key, r.sesion_id);
-  return { sid: r.sesion_id, answered: 0, aviso: r.aviso };
+  return { sid: r.sesion_id, answered: 0 };
 }

@@ -1,4 +1,5 @@
 import json
+import re
 from collections import Counter
 from pathlib import Path
 from typing import Literal
@@ -6,6 +7,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 DASHES = ("—", "–")
+RUTA_IMAGEN = re.compile(r"[\w\-]+(/[\w\-]+)*\.(png|jpg|jpeg|webp|svg)")  # relativa, sin «..»
 MAX_VALORES = 6  # valores que puede pedir un problema (y que acepta la respuesta)
 
 
@@ -61,6 +63,11 @@ class PreguntaIn(Strict):
     # solo problemas: el número (o la lista de números) que hay que escribir, sin unidades
     solucion: float | list[float] | None = None
     ordenada: bool = False  # lista: ¿importa el orden en que se escriben los valores?
+    imagen: str | None = None  # ruta relativa a banks/<asignatura>/img/: la imagen forma parte del enunciado
+    # problema con apartados: mismo grupo y contexto en todos; el apartado es la letra
+    grupo: str | None = None
+    contexto: str | None = None
+    apartado: str | None = None
     explicacion: str
     ayuda_larga: str
     fuente_pagina: int = Field(ge=1)
@@ -73,6 +80,16 @@ class PreguntaIn(Strict):
         if bad:
             raise ValueError(f"guion largo en {', '.join(bad)}")
         return data
+
+    @model_validator(mode="after")
+    def _imagen_y_grupo(self):
+        if self.imagen is not None and not RUTA_IMAGEN.fullmatch(self.imagen):
+            raise ValueError(f"ruta de imagen no válida: {self.imagen!r}")
+        if (self.grupo is None) != (self.contexto is None) or (self.grupo is None) != (self.apartado is None):
+            raise ValueError("grupo, contexto y apartado van juntos")
+        if self.grupo is not None and self.tipo != "problema":
+            raise ValueError("solo un problema puede tener apartados")
+        return self
 
     @model_validator(mode="after")
     def _traps(self):

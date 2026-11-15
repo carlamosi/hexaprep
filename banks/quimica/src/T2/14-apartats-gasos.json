@@ -1,0 +1,105 @@
+{
+ "subtema": "Estats, calor i gasos",
+ "conceptos": [
+  {
+   "nombre": "Gas ideal i massa d'un gas",
+   "pagina": 17,
+   "cara": 17,
+   "ayuda": "L'equació del gas ideal, P·V = n·R·T, relaciona la pressió (atm), el volum (L), els mols i la temperatura (en kelvin, °C + 273) amb R = 0,082 atm·L/(mol·K). A partir dels mols es troba la massa (m = n·M) o el volum en condicions normals (V = n·22,4 L). Cal anar pas a pas: primer els mols i després allò que es demana. Exemple: 2,00 mol a 0 °C i 1 atm ocupen 44,8 L.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Un recipient de 8,20 L conté oxigen gasós, O₂ (M(O) = 16,0 g/mol), a 27 °C i 1,50 atm. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+     "apartados": [
+      [
+       3,
+       "Calcula els mols d'O₂ del recipient. Expressa el resultat en mol.",
+       0.5,
+       "P·V = n·R·T, i T = 27 + 273 = 300 K. n = P·V/(R·T) = 1,50·8,20/(0,082·300) = 0,500 mol.",
+       "1.5*8.2/(0.082*300)"
+      ],
+      [
+       3,
+       "Calcula la massa d'oxigen del recipient. Expressa el resultat en g.",
+       16.0,
+       "M(O₂) = 32,0 g/mol. m = n·M = 0,500 · 32,0 = 16,0 g.",
+       "1.5*8.2/(0.082*300)*32.0"
+      ],
+      [
+       3,
+       "Quin volum ocuparia aquest mateix gas en condicions normals? Expressa el resultat en L.",
+       11.2,
+       "V = n · 22,4 = 0,500 · 22,4 = 11,2 L.",
+       "1.5*8.2/(0.082*300)*22.4"
+      ]
+     ]
+    },
+    {
+     "contexto": "Un recipient rígid de 5,00 L conté 8,80 g de CO₂ (M(C) = 12,0 g/mol i M(O) = 16,0 g/mol) a 27 °C. Usa R = 0,082 atm·L/(mol·K), T en kelvin (°C + 273) i 22,4 L/mol en condicions normals.",
+     "apartados": [
+      [
+       2,
+       "Calcula els mols de CO₂. Expressa el resultat en mol.",
+       0.2,
+       "M(CO₂) = 44,0 g/mol. n = 8,80/44,0 = 0,200 mol.",
+       "8.80/(12.0+2*16.0)"
+      ],
+      [
+       4,
+       "Calcula la pressió del gas en el recipient. Expressa el resultat en atm.",
+       0.984,
+       "P = n·R·T/V = 0,200 · 0,082 · 300 / 5,00 = 0,984 atm.",
+       "0.200*0.082*300/5.00"
+      ],
+      [
+       3,
+       "Quin volum ocuparia aquest gas en condicions normals? Expressa el resultat en L.",
+       4.48,
+       "V = n · 22,4 = 0,200 · 22,4 = 4,48 L.",
+       "8.80/(12.0+2*16.0)*22.4"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Calor i canvis d'estat en passos",
+   "pagina": 16,
+   "cara": 16,
+   "ayuda": "Quan una substància s'escalfa sense canviar d'estat, la calor és Q = m·Ce·ΔT. Quan canvia d'estat (fusió o vaporització), la temperatura no varia i la calor és Q = m·L. Per anar d'un estat i una temperatura a un altre, es calcula cada pas per separat i se sumen les calors. Exemple: escalfar aigua de 20 a 100 °C és Q = m·Ce·80, i vaporitzar-la després és Q = m·Lv.",
+   "test": [],
+   "vf": [],
+   "problemas": [],
+   "grupos": [
+    {
+     "contexto": "Tenim 0,400 kg d'aigua líquida a 20 °C. Dades: Ce(aigua líquida) = 4 180 J/(kg·K), Lv = 2,26·10⁶ J/kg; l'aigua bull a 100 °C.",
+     "apartados": [
+      [
+       3,
+       "Quanta calor cal per escalfar l'aigua fins a 100 °C? Expressa el resultat en kJ.",
+       134.0,
+       "Q = m·Ce·ΔT = 0,400 · 4 180 · (100 - 20) = 133 760 J, és a dir, 134 kJ.",
+       "0.400*4180*80/1000"
+      ],
+      [
+       3,
+       "Quanta calor cal després per vaporitzar tota l'aigua que ja és a 100 °C? Expressa el resultat en kJ.",
+       904.0,
+       "En el canvi d'estat la temperatura no varia: Q = m·Lv = 0,400 · 2,26·10⁶ = 904 000 J, és a dir, 904 kJ.",
+       "0.400*2.26e6/1000"
+      ],
+      [
+       4,
+       "Quanta calor total cal per convertir els 0,400 kg d'aigua a 20 °C en vapor a 100 °C? Expressa el resultat en kJ.",
+       1040.0,
+       "Se sumen els dos passos: 133,76 + 904 = 1 037,76 kJ, aproximadament 1 040 kJ.",
+       "(0.400*4180*80+0.400*2.26e6)/1000"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

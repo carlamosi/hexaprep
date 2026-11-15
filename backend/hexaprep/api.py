@@ -1,5 +1,4 @@
 """API HTTP local (FastAPI). Todo cuelga de create_app para poder probarla con rutas temporales."""
-import warnings
 from collections import defaultdict
 from contextlib import asynccontextmanager
 from dataclasses import asdict
@@ -14,7 +13,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import analytics, backup, events, export, mastery, quality, scheduling, selector
-from .bank import load_bank, validate_bank
+from .bank import RUTA_IMAGEN, load_bank, validate_bank
 from .db import check_integrity, get_engine, upgrade
 from .importer import import_bank
 from .models import (
@@ -42,6 +41,10 @@ class AnswerIn(BaseModel):
 
 class CorrectIn(BaseModel):
     sesion_id: str
+    pregunta_id: str
+
+
+class SkipIn(BaseModel):
     pregunta_id: str
 
 
@@ -88,8 +91,16 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     # ---------- catálogo y panal ----------
     @app.get("/api/subjects")
     def subjects(s: Session = Depends(get_session)):
+        def tipos(a: Asignatura) -> list[str]:  # tipos de pregunta que tiene de verdad (para los botones de practicar)
+            return sorted(s.scalars(
+                select(Pregunta.tipo).distinct().join(Concepto, Concepto.id == Pregunta.concepto_id)
+                .join(Subtema, Subtema.id == Concepto.subtema_id).join(Tema, Tema.id == Subtema.tema_id)
+                .join(Bloque, Bloque.id == Tema.bloque_id)
+                .where(Bloque.asignatura_id == a.id, Pregunta.es_actual.is_(True), Pregunta.activa.is_(True),
+                       Pregunta.excluida.is_(False), Pregunta.deleted_at.is_(None))))
+
         return [{"id": a.id, "nombre": a.nombre, "idioma": a.idioma, "color": a.color, "acento": a.acento,
-                 "percent": mastery.percent_of(s, "asignatura", a.id)}
+                 "percent": mastery.percent_of(s, "asignatura", a.id), "tipos": tipos(a)}
                 for a in s.scalars(select(Asignatura).where(Asignatura.deleted_at.is_(None)).order_by(Asignatura.nombre))]
 
     @app.get("/api/map/{asignatura_id}")
@@ -116,18 +127,11 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     @app.post("/api/sessions")
     def create_session(body: SessionIn, s: Session = Depends(get_session)):
         filtro = dict(body.filtro)
-        aviso = None
-        if body.modo == "nivel":
-            with warnings.catch_warnings(record=True) as caught:
-                warnings.simplefilter("always")
-                qs = selector.placement_test(s, filtro["asignatura_id"])
-            filtro["nivel_ids"] = [q.pregunta_id for q in qs]
-            aviso = str(caught[0].message) if caught else None
         try:
             sid = events.start_session(s, body.modo, filtro)
         except ValueError as e:
             raise HTTPException(422, str(e))
-        return {"sesion_id": sid, "aviso": aviso}
+        return {"sesion_id": sid}
 
     @app.get("/api/sessions/{sesion_id}")
     def session_state(sesion_id: str, s: Session = Depends(get_session)):
@@ -142,17 +146,24 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             state = events.resume_session(s, sesion_id)
         except events.UnknownSession:
             raise HTTPException(404, "Sesión desconocida")
-        if state.modo == "nivel":
-            left = [i for i in state.filtro.get("nivel_ids", []) if i not in state.respondidas
-                    and not s.get(Pregunta, i).excluida]  # una reportada no vuelve a salir
-            q = selector.question_out(s, left[0]) if left else None
-        else:
-            q = selector.next_question(s, sesion_id, selector.Filtro(**{
-                k: v for k, v in state.filtro.items() if k in selector.Filtro.__dataclass_fields__}))
+        q = selector.next_question(s, sesion_id, selector.Filtro(**{
+            k: v for k, v in state.filtro.items() if k in selector.Filtro.__dataclass_fields__}))
         if q is None:
             return None
         events.record_event(s, sesion_id, "pregunta_mostrada", q.pregunta_id, {"orden": q.orden}, datetime.now())
         return asdict(q)
+
+    @app.post("/api/sessions/{sesion_id}/skip")
+    def skip(sesion_id: str, body: SkipIn, s: Session = Depends(get_session)):
+        try:
+            events.skip_question(s, sesion_id, body.pregunta_id)
+        except events.UnknownSession:
+            raise HTTPException(404, "Sesión desconocida")
+        except events.AlreadyAnswered as e:
+            raise HTTPException(409, str(e))
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+        return {"ok": True}
 
     # ---------- respuestas y calidad ----------
     @app.post("/api/answers")
@@ -304,6 +315,17 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         if errors:
             raise HTTPException(422, "; ".join(errors[:5]))
         return asdict(import_bank(s, load_bank(path), archivo=path.name))
+
+    # ---------- imágenes de las preguntas ----------
+    @app.get("/api/imagen/{ruta:path}")
+    def imagen(ruta: str):
+        if not RUTA_IMAGEN.fullmatch(ruta):  # solo rutas relativas simples: nada de «..», comodines ni absolutas
+            raise HTTPException(404, "Imagen no encontrada")
+        carpetas = sorted(booklet_dir.iterdir()) if booklet_dir.is_dir() else []
+        found = next((f for d in carpetas if (f := d / "img" / ruta).is_file()), None)
+        if found is None:
+            raise HTTPException(404, "Imagen no encontrada")
+        return FileResponse(found, headers={"Cache-Control": "public, max-age=86400"})
 
     # ---------- booklets ----------
     @app.get("/api/booklet/{fuente_id}")

@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { api, type AnswerResult, type Confianza, type Letra, type Question } from "../api";
+import { api, type AnswerResult, type Letra, type Question } from "../api";
 import { t, tn } from "../i18n";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
-export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect">>;
+export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip">>;
 
 const NUMERO = /^[+\-−]?(\d+([.,]\d*)?|[.,]\d+)(e[+\-]?\d+)?(\/[+\-−]?(\d+([.,]\d*)?|[.,]\d+))?$/i;
 
@@ -16,26 +16,17 @@ export function respuestaValida(texto: string): boolean {
 }
 
 const LETTERS = ["A", "B", "C", "D"];
-const CONFIANZAS: { id: Confianza; key: string }[] = [
-  { id: "seguro", key: "conf.seguro" },
-  { id: "dudo", key: "conf.dudo" },
-  { id: "adivino", key: "conf.adivino" },
-];
 
 interface Props {
   sesionId: string;
   client?: PracticeClient;
   onDone?: () => void;
-  /** Test de nivel: sin feedback entre preguntas, pasa a la siguiente al responder. */
-  sinFeedback?: boolean;
-  /** Si se indica, la cabecera muestra «n de total» en lugar del contador de respondidas. */
-  total?: number;
   /** Respuestas ya dadas si se reanuda una sesión. */
   initialAnswered?: number;
   onAnswered?: (question: Question, result: AnswerResult) => void;
 }
 
-export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedback, total, initialAnswered = 0, onAnswered }: Props) {
+export function Practice({ sesionId, client: clientProp = api, onDone, initialAnswered = 0, onAnswered }: Props) {
   // Los callbacks y el cliente van por ref: un padre que los recree en cada render no debe relanzar la carga.
   const client = useRef(clientProp);
   client.current = clientProp;
@@ -46,7 +37,6 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
   const [question, setQuestion] = useState<Question | null | undefined>(undefined); // undefined = cargando
   const [chosen, setChosen] = useState<Letra | null>(null);
   const [result, setResult] = useState<AnswerResult | null>(null);
-  const [confianza, setConfianza] = useState<Confianza | null>(null);
   const [reported, setReported] = useState(false);
   const [valor, setValor] = useState(""); // problemas: lo que escribe la alumna
   const [numeroMal, setNumeroMal] = useState(false);
@@ -62,7 +52,6 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
     setQuestion(undefined);
     setChosen(null);
     setResult(null);
-    setConfianza(null);
     setReported(false);
     setValor("");
     setNumeroMal(false);
@@ -102,21 +91,16 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
           pregunta_id: question.pregunta_id,
           orden_opciones: question.orden,
           elegida: letra,
-          confianza,
           tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
         });
         onAnsweredRef.current?.(question, res);
         setAnswered((n) => n + 1);
-        if (sinFeedback) {
-          await load();
-          return;
-        }
         setResult(res);
       } catch {
         setFailed(true);
       }
     },
-    [confianza, load, question, sesionId, sinFeedback],
+    [load, question, sesionId],
   );
 
   const submitProblem = useCallback(async () => {
@@ -133,25 +117,34 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
     try {
       const res = await client.current.answer({
         sesion_id: sesionId, pregunta_id: question.pregunta_id, orden_opciones: [], elegida: "a", respuesta: valor.trim(),
-        confianza, tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
+        tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
       });
       onAnsweredRef.current?.(question, res);
       setAnswered((n) => n + 1);
-      if (sinFeedback) {
-        await load();
-        return;
-      }
       setResult(res);
     } catch {
       setFailed(true);
     }
-  }, [confianza, load, question, sesionId, sinFeedback, valor]);
+  }, [load, question, sesionId, valor]);
 
   async function marcarBien() {
     if (!question || !result || !client.current.markCorrect) return;
     const { percent } = await client.current.markCorrect(sesionId, question.pregunta_id);
     setResult({ ...result, correcta: true, trampa: null, percent });
   }
+
+  /** Saltar: la pregunta (o el problema entero) vuelve más tarde en la sesión. No cuenta como respuesta. */
+  const saltar = useCallback(async () => {
+    if (!question || locked.current || !client.current.skip) return;
+    locked.current = true;
+    try {
+      await client.current.skip(sesionId, question.pregunta_id);
+      await load();
+    } catch {
+      locked.current = false;
+      setFailed(true);
+    }
+  }, [load, question, sesionId]);
 
   // Pasa sola a la siguiente: 1 s tras un acierto, 2,5 s tras un fallo. Enter o «Siguiente» saltan la espera.
   useEffect(() => {
@@ -171,12 +164,16 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
         return;
       }
       const k = e.key.toLowerCase();
+      if (k === "s" && !result && !reported) {
+        void saltar();
+        return;
+      }
       const pos = "abcd".indexOf(k) >= 0 && k.length === 1 ? "abcd".indexOf(k) : "1234".indexOf(k);
       if (k.length === 1 && pos >= 0) void choose(pos);
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [choose, load, reported, result]);
+  }, [choose, load, reported, result, saltar]);
 
   async function report(motivo: string) {
     if (!question) return;
@@ -190,14 +187,20 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
 
   return (
     <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-white p-5 sm:p-8">
-      <div className="flex items-start justify-between gap-4">
+      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
         <span className="text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
           {question.tema && question.subtema ? `${question.tema} · ${question.subtema}` : ""}
         </span>
         <span className="text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
-          {total ? `${answered + 1} ${t("practica.de")} ${total}` : tn("practica.respondidas", answered)}
+          {tn("practica.respondidas", answered)}
         </span>
         {!result && !reported && (
+          <div className="flex items-center gap-4">
+            {client.current.skip && (
+              <button type="button" onClick={() => void saltar()} aria-keyshortcuts="S" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">
+                {t("practica.saltar")}
+              </button>
+            )}
           <details className="relative">
             <summary className="cursor-pointer text-sm text-[var(--ink-3)]">{t("practica.reportar")}</summary>
             <div role="group" aria-label={t("practica.reportar")} className="mt-2 space-y-2 rounded-[11px] border border-[var(--rule-2)] bg-white p-3">
@@ -210,12 +213,28 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
               <p className="text-xs text-[var(--ink-3)]">{t("practica.reporte_nota")}</p>
             </div>
           </details>
+          </div>
         )}
       </div>
 
+      {question.contexto && (
+        <div className="mt-4 rounded-[11px] border border-[var(--lila-tint)] bg-[var(--lila-soft)] px-4 py-3 text-[var(--ink-2)]">
+          <span className="text-xs font-semibold tracking-[.14em] text-[var(--lila-ink)] uppercase">{t("practica.enunciadoComun")}</span>
+          <p className="mt-1"><RichText text={question.contexto} /></p>
+        </div>
+      )}
+
       <h1 className="mt-4 text-xl leading-snug font-semibold sm:text-2xl">
+        {question.apartado && <span className="text-[var(--lila-ink)]">{question.apartado})</span>}{" "}
         <RichText text={question.enunciado} />
       </h1>
+
+      {question.imagen && (
+        <img
+          src={`/api/imagen/${question.imagen}`} alt={t("practica.imagenAlt")}
+          className="mx-auto mt-4 max-h-72 w-auto max-w-full rounded-[11px] border border-[var(--rule)] bg-white object-contain p-2"
+        />
+      )}
 
       {reported ? (
         <div className="mt-6 space-y-3">
@@ -226,24 +245,6 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
         </div>
       ) : (
         <>
-          <div role="group" aria-label={t("practica.confianza")} className="mt-5 flex flex-wrap items-center gap-2">
-            <span className="text-sm text-[var(--ink-3)]">{t("practica.confianza")}</span>
-            {CONFIANZAS.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                aria-pressed={confianza === c.id}
-                disabled={chosen !== null}
-                onClick={() => setConfianza(confianza === c.id ? null : c.id)}
-                className={`rounded-full border px-3 py-1 text-sm ${
-                  confianza === c.id ? "border-[var(--lila-ink)] bg-[var(--lila-soft)] text-[var(--lila-ink)]" : "border-[var(--rule-2)]"
-                }`}
-              >
-                {t(c.key)}
-              </button>
-            ))}
-          </div>
-
           {question.tipo === "problema" ? (
             <form
               className="mt-5 flex flex-wrap items-center gap-3"

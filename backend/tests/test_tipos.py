@@ -9,7 +9,8 @@ from hexaprep import selector
 from hexaprep.bank import BankFile, PreguntaIn, load_bank
 from hexaprep.events import mark_correct, parse_numero, parse_respuesta, start_session, submit_answer
 from hexaprep.importer import import_bank, question_digest
-from hexaprep.models import Dominio, Intento, Opcion, Pregunta
+import random
+from hexaprep.models import Concepto, Dominio, Intento, Opcion, Pregunta
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = dict(bloque="Química", tema="T2", subtema="El mol", concepto="Massa molar", dificultad=2,
@@ -57,10 +58,14 @@ def test_bank_rules_per_tipo():
 def test_import_stores_options_and_hides_the_solution(session, ctx):
     _, ps = ctx
     assert len(session.scalars(select(Opcion).where(Opcion.pregunta_id == ps["q-vf"].id)).all()) == 2
-    q = selector.question_out(session, ps["q-pr"].id)
+    def servida(p):
+        sub = session.scalar(select(Concepto.subtema_id).where(Concepto.id == p.concepto_id))
+        return selector._to_out(session, p, sub, random.Random(0))
+
+    q = servida(ps["q-pr"])
     assert q.tipo == "problema" and q.opciones == [] and q.orden == []
     assert "2.0" not in repr(q)
-    assert selector.question_out(session, ps["q-vf"].id).orden != [] and len(selector.question_out(session, ps["q-vf"].id).opciones) == 2
+    assert servida(ps["q-vf"]).orden != [] and len(servida(ps["q-vf"]).opciones) == 2
 
 
 @pytest.mark.parametrize("texto,ok", [("2", True), ("2,0", True), (" 2.01 ", True), ("2,5", False), ("1.9", False)])

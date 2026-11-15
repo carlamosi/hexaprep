@@ -59,6 +59,7 @@ def _to_bank_question(session: Session, p: Pregunta) -> PreguntaIn:
         dificultad=p.dificultad_base, enunciado=p.enunciado, tipo=p.tipo,
         solucion=leer_solucion(ops[0].texto)[0] if problema else None,
         ordenada=leer_solucion(ops[0].texto)[1] if problema else False,
+        imagen=p.imagen, grupo=p.grupo, contexto=p.contexto, apartado=p.apartado,
         opciones=[] if problema else [OpcionIn(texto=o.texto, trampa=o.tipo_trampa) for o in ops],
         correcta=None if problema else next(o.posicion for o in ops if o.correcta), explicacion=expl or "",
         ayuda_larga=p.ayuda_larga or "", fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara)
@@ -72,7 +73,7 @@ def question_content(session: Session, pregunta_id: str) -> dict:
             "opciones": [o.model_dump() for o in q.opciones], "correcta": q.correcta, "explicacion": q.explicacion,
             "ayuda_larga": q.ayuda_larga, "dificultad": q.dificultad, "fuente_pagina": q.fuente_pagina,
             "fuente_cara": q.fuente_cara, "tipo": q.tipo, "solucion": q.solucion,
-            "ordenada": q.ordenada}
+            "ordenada": q.ordenada, "imagen": q.imagen, "contexto": q.contexto, "apartado": q.apartado}
 
 
 def reported_questions(session: Session) -> list[dict]:

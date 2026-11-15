@@ -1,22 +1,37 @@
+"""Qué pregunta toca ahora. Criterios de aprendizaje (neuroeducación), todos medibles y ajustables aquí:
+
+- Dificultad deseable: se busca acertar alrededor del TARGET (60 %), no lo cómodo. El esfuerzo al recuperar fija lo aprendido.
+- Conocimiento previo: sin datos de un concepto se supone un dominio de PRIOR_THETA, así que empieza por preguntas difíciles;
+  pasados PRIOR_ATTEMPTS intentos manda lo medido.
+- Intercalado: nunca el mismo concepto seguido (salvo apartados de un mismo problema), se alternan subtemas y tipos de pregunta.
+- Espaciado y recuperación: un concepto fallado vuelve enseguida con otra pregunta (FAIL_GAP); los conceptos que la repetición
+  espaciada (FSRS) da por olvidados pesan más.
+- Variedad: se sortea entre las TOP_K mejores en vez de elegir siempre la primera, para que no sea predecible.
+- Saltar: una pregunta saltada vuelve después de SKIP_GAP respuestas (antes, solo si no queda otra).
+- Problemas con apartados: se sirven seguidos y en orden; los apartados b, c... no entran por su cuenta.
+"""
 import random
-import warnings
-from collections import defaultdict
 from dataclasses import dataclass
 
 from sqlalchemy import Select, func, select
 from sqlalchemy.orm import Session
 
-from .mastery import SIGMA0, expected_correct
-from .models import Asignatura, Bloque, Concepto, Dominio, Intento, Opcion, Pregunta, Subtema, Tema
+from .mastery import expected_correct
+from .models import Bloque, Concepto, Dominio, Evento, Intento, Opcion, Pregunta, Subtema, Tema, utcnow
 
-TARGET = 0.75
-PLACEMENT_SIZE = 15
+TARGET = 0.6
+PRIOR_THETA = 1.0
+PRIOR_ATTEMPTS = 3
 FAIL_GAP = 2  # respuestas intermedias antes de reintroducir un concepto fallado (siempre dentro de 5)
+SKIP_GAP = 3
 SEEN_PENALTY = 0.15
-
-
-class PlacementWarning(UserWarning):
-    pass
+TOP_K = 5
+SAME_CONCEPT = 1.0
+SAME_SUBTEMA = 0.05
+SAME_TIPO = 0.04  # si la última respuesta fue del mismo tipo (la anterior pesa la mitad)
+DUE_BONUS = 0.08
+SKIPPED_PENALTY = 2.0
+SKIPPED_BONUS = 0.1
 
 
 @dataclass
@@ -25,6 +40,7 @@ class Filtro:
     tema_id: str | None = None
     subtema_id: str | None = None
     solo_fallos: bool = False
+    tipos: list[str] | None = None  # test, vf, problema; None = todos
 
 
 @dataclass
@@ -49,6 +65,10 @@ class QuestionOut:
     tema: str = ""
     subtema: str = ""
     tipo: str = "test"
+    imagen: str | None = None
+    grupo: str | None = None
+    contexto: str | None = None
+    apartado: str | None = None
 
 
 def _candidates(filtro: Filtro) -> Select:
@@ -64,6 +84,8 @@ def _candidates(filtro: Filtro) -> Select:
         q = q.where(Tema.id == filtro.tema_id)
     if filtro.subtema_id:
         q = q.where(Subtema.id == filtro.subtema_id)
+    if filtro.tipos:
+        q = q.where(Pregunta.tipo.in_(filtro.tipos))
     return q
 
 
@@ -78,7 +100,8 @@ def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random) 
         pregunta_id=p.id, concepto_id=p.concepto_id, subtema_id=subtema_id, enunciado=p.enunciado,
         opciones=[OpcionOut(l, textos[l]) for l in orden], orden=orden, dificultad=p.dificultad_base,
         ayuda_larga=p.ayuda_larga, fuente_id=p.fuente_id, fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara,
-        tema=session.get(Tema, sub.tema_id).nombre, subtema=sub.nombre, tipo=p.tipo)
+        tema=session.get(Tema, sub.tema_id).nombre, subtema=sub.nombre, tipo=p.tipo, imagen=p.imagen,
+        grupo=p.grupo, contexto=p.contexto, apartado=p.apartado)
 
 
 def _seen_counts(session: Session) -> dict[str, int]:
@@ -88,9 +111,32 @@ def _seen_counts(session: Session) -> dict[str, int]:
     return dict(rows)
 
 
-def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.Random | None = None
-                  ) -> QuestionOut | None:
+def _theta_efectivo(dom: Dominio | None) -> float:
+    """Habilidad que se supone en un concepto: el conocimiento previo hasta que hay datos suficientes."""
+    if dom is None:
+        return PRIOR_THETA
+    w = min(dom.n_intentos / PRIOR_ATTEMPTS, 1.0)
+    return w * dom.theta + (1 - w) * PRIOR_THETA
+
+
+def _saltadas(session: Session, sesion_id: str) -> dict[str, int]:
+    """Preguntas saltadas en la sesión y cuántas respuestas llevaba entonces (manda el último salto)."""
+    cuenta, out = 0, {}
+    for tipo, pid in session.execute(
+            select(Evento.tipo, Evento.pregunta_id).where(
+                Evento.sesion_id == sesion_id, Evento.tipo.in_(["respuesta_enviada", "pregunta_saltada"]))
+            .order_by(Evento.id)):
+        if tipo == "respuesta_enviada":
+            cuenta += 1
+        else:
+            out[pid] = cuenta
+    return out
+
+
+def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.Random | None = None,
+                  variedad: int | None = None) -> QuestionOut | None:
     rng = rng or random.Random()
+    variedad = TOP_K if variedad is None else variedad
     answered = session.execute(
         select(Intento.pregunta_id, Intento.correcta, Intento.concepto_id).where(Intento.sesion_id == sesion_id)
         .order_by(Intento.id)).all()
@@ -104,6 +150,33 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
     if filtro.solo_fallos:
         failed = set(session.scalars(select(Intento.concepto_id).where(Intento.correcta.is_(False))))
         cands = [(p, s) for p, s in cands if p.concepto_id in failed]
+
+    # grupos de apartados: saltar un apartado salta todo el grupo
+    saltadas = _saltadas(session, sesion_id)
+    grupo_saltado: dict[str, int] = {}
+    for pid, n in saltadas.items():
+        g = session.scalar(select(Pregunta.grupo).where(Pregunta.id == pid))
+        if g:
+            grupo_saltado[g] = n
+
+    def saltada_en(p: Pregunta) -> int | None:
+        return saltadas.get(p.id, grupo_saltado.get(p.grupo) if p.grupo else None)
+
+    # continuación de un problema con apartados: el siguiente apartado va justo después
+    if answered:
+        ultimo = session.get(Pregunta, answered[-1][0])
+        if ultimo.grupo:
+            resto = sorted((c for c in cands if c[0].grupo == ultimo.grupo and saltada_en(c[0]) is None),
+                           key=lambda c: c[0].apartado)
+            if resto:
+                return _to_out(session, resto[0][0], resto[0][1], rng)
+    # los apartados b, c... solo entran como continuación; la entrada es el primer apartado activo del grupo
+    grupos = {p.grupo for p, _ in cands if p.grupo}
+    if grupos:
+        primero = dict(session.execute(select(Pregunta.grupo, func.min(Pregunta.apartado)).where(
+            Pregunta.grupo.in_(grupos), Pregunta.es_actual.is_(True), Pregunta.activa.is_(True),
+            Pregunta.excluida.is_(False), Pregunta.deleted_at.is_(None)).group_by(Pregunta.grupo)).all())
+        cands = [(p, s) for p, s in cands if not p.grupo or p.apartado == primero.get(p.grupo)]
     if not cands:
         return None
 
@@ -121,61 +194,27 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
     dominios = {d.concepto_id: d for d in session.scalars(select(Dominio))}
     seen = _seen_counts(session)
     last_concept = answered[-1][2] if answered else None
-    last_subtema = None
-    if answered:
-        last_subtema = session.scalar(select(Concepto.subtema_id).where(Concepto.id == last_concept))
+    last_subtema = session.scalar(select(Concepto.subtema_id).where(Concepto.id == last_concept)) if answered else None
+    ultimos_tipos = [session.scalar(select(Pregunta.tipo).where(Pregunta.id == a[0])) for a in answered[-2:]]
+    ahora = utcnow()
 
     def score(item: tuple[Pregunta, str]) -> float:
         p, sub = item
-        theta = dominios[p.concepto_id].theta if p.concepto_id in dominios else 0.0
-        s = abs(expected_correct(theta, p.dificultad_base) - TARGET)
+        dom = dominios.get(p.concepto_id)
+        s = abs(expected_correct(_theta_efectivo(dom), p.dificultad_base) - TARGET)
         s += SEEN_PENALTY * min(seen.get(p.clave, 0), 3)
         if p.concepto_id == last_concept:
-            s += 0.05
+            s += SAME_CONCEPT
         if not filtro.subtema_id and sub == last_subtema:
-            s += 0.03
-        return s + rng.random() * 0.001
+            s += SAME_SUBTEMA
+        s += sum(w for t, w in zip(reversed(ultimos_tipos), (SAME_TIPO, SAME_TIPO / 2)) if t == p.tipo)
+        if dom is not None and dom.proximo_repaso is not None and dom.proximo_repaso <= ahora:
+            s -= DUE_BONUS  # el repaso espaciado dice que toca recordarlo
+        salto = saltada_en(p)
+        if salto is not None:
+            s += SKIPPED_PENALTY if len(answered) - salto < SKIP_GAP else -SKIPPED_BONUS
+        return s
 
-    p, sub = min(pool, key=score)
+    ranking = sorted(pool, key=score)[: max(variedad, 1)]
+    p, sub = rng.choices(ranking, weights=[1 / (1 + i) ** 1.5 for i in range(len(ranking))])[0]
     return _to_out(session, p, sub, rng)
-
-
-def placement_test(session: Session, asignatura_id: str, rng: random.Random | None = None) -> list[QuestionOut]:
-    rng = rng or random.Random()
-    cands = session.execute(_candidates(Filtro(asignatura_id))).all()
-    by_concept: dict[str, list[tuple[Pregunta, str]]] = defaultdict(list)
-    for p, sub in cands:
-        by_concept[p.concepto_id].append((p, sub))
-    if len(cands) < PLACEMENT_SIZE:
-        warnings.warn(f"Solo hay {len(cands)} preguntas disponibles (se piden {PLACEMENT_SIZE})", PlacementWarning,
-                      stacklevel=2)
-
-    # un concepto por turno, repartiendo por subtemas; dificultad media primero
-    by_subtema: dict[str, list[list[tuple[Pregunta, str]]]] = defaultdict(list)
-    for items in by_concept.values():
-        rng.shuffle(items)
-        items.sort(key=lambda it: abs(it[0].dificultad_base - 3))
-        by_subtema[items[0][1]].append(items)
-    queues = list(by_subtema.values())
-    for q in queues:
-        rng.shuffle(q)
-    rng.shuffle(queues)
-    chosen: list[tuple[Pregunta, str]] = []
-    leftovers: list[tuple[Pregunta, str]] = []
-    while any(queues) and len(chosen) < PLACEMENT_SIZE:
-        for q in queues:
-            if q and len(chosen) < PLACEMENT_SIZE:
-                items = q.pop()
-                chosen.append(items[0])
-                leftovers.extend(items[1:])
-    rng.shuffle(leftovers)
-    chosen += leftovers[: PLACEMENT_SIZE - len(chosen)]
-    rng.shuffle(chosen)
-    return [_to_out(session, p, sub, rng) for p, sub in chosen]
-
-
-def question_out(session: Session, pregunta_id: str, rng: random.Random | None = None) -> QuestionOut:
-    """La pregunta con las opciones barajadas de nuevo (para el test de nivel, que fija la lista de antemano)."""
-    p = session.get(Pregunta, pregunta_id)
-    sub = session.scalar(select(Concepto.subtema_id).where(Concepto.id == p.concepto_id))
-    return _to_out(session, p, sub, rng or random.Random())

@@ -98,21 +98,6 @@ export function lineas(evo: Analytics["evolucion"], vista: Vista, orden: ReturnT
   }));
 }
 
-// ---------- Calibración de la confianza ----------
-
-/** Una frase que lee la calibración; solo opina cuando los grupos tienen respuestas suficientes. */
-export function lecturaCalibracion(c: Analytics["confianza"]): string {
-  const g = (k: string) => c.find((x) => x.confianza === k);
-  const seguro = g("seguro");
-  const dudas = [g("dudo"), g("adivino")].filter((x) => x && fiable(x.n) && x.aciertos_pct !== null);
-  if (!seguro || !fiable(seguro.n) || seguro.aciertos_pct === null) return t("hist.cal.pocas");
-  const s = seguro.aciertos_pct;
-  const peor = dudas.length ? Math.max(...dudas.map((x) => x!.aciertos_pct!)) : null;
-  if (peor !== null && s <= peor) return t("hist.cal.igual").replace("{p} %", `${s} %`);
-  if (s >= 80) return t("hist.cal.bien").replace("{p} %", `${s} %`);
-  return t("hist.cal.exceso").replace("{p} %", `${s} %`);
-}
-
 /** El grupo con mejor acierto entre los que tienen respuestas suficientes. */
 export function mejorGrupo<T extends { n: number; aciertos_pct: number | null }>(xs: T[]): T | null {
   const ok = xs.filter((x) => fiable(x.n) && x.aciertos_pct !== null);

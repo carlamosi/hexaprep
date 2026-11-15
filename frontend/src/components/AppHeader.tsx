@@ -49,7 +49,7 @@ interface Props {
   onCambiarAsignatura?: (id: string) => void;
   onAbrirSelector?: () => void;
   ruta: string;
-  /** En práctica y test de nivel la navegación se oculta para concentrarse. */
+  /** En la práctica la navegación se oculta para concentrarse. */
   sinNav?: boolean;
 }
 

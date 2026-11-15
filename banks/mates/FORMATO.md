@@ -48,3 +48,19 @@ Para soluciones no enteras: `[k/4 for k in range(-80, 81) if abs(f(k/4)) < 1e-9]
 - `explicacion`: la resolución paso a paso y la regla que se aplica (3 a 6 frases). Si hay solución descartada, di por qué.
 - Importes en euros y datos realistas. Sin enunciados ambiguos.
 - Comprueba que el JSON es válido y, si existe, ejecuta `.venv\Scripts\python tools\build_quimica.py --check <carpeta>` desde la raíz (puede no existir todavía: en ese caso comprueba tú las `expr` con Python).
+
+---
+
+# Ampliación: problemas con apartados (clave `grupos`)
+Un problema con enunciado común y 2 a 5 apartados. Cada apartado es una pregunta propia con su respuesta (número o lista, como siempre), su dificultad y su `expr`. Se sirven seguidos: se muestra el `contexto` común y debajo el enunciado del apartado. Se escribe dentro del concepto, junto a `problemas`:
+```json
+"grupos": [
+  {"contexto": "Considera el sistema $x+y=7$, $x\cdot y=12$.",
+   "apartados": [
+     [3, "Resuelve el sistema y escribe las soluciones $(x, y)$ con $x<y$, en orden: $x; y$.", [3, 4], "Pasos.", "[x for x in range(-20,21) for y in range(-20,21) if x+y==7 and x*y==12 and x<y][0:1] + [4]", true],
+     [3, "Con la solución anterior (la que tiene $x<y$), calcula $x^2+y^2$.", 25, "Pasos.", "3**2+4**2"]]}
+]
+```
+- El contexto trae TODOS los datos. Cada apartado pide una cosa distinta; puede usar el resultado correcto del apartado anterior si el enunciado lo dice. La `expr` de cada apartado se calcula desde los datos del contexto (fuerza bruta o fórmula), nunca copiando el resultado.
+- Tipos de enlace buenos: resolver una ecuación y luego operar con las soluciones; resolver un sistema y luego calcular una cantidad derivada; matriz producto y luego su traza o determinante; resolver un sistema con Gauss y luego sumar o comparar incógnitas; un problema de enunciado en dos preguntas encadenadas.
+- Verifica con `.venv\Scripts\python tools\build_quimica.py --check banks\mates\src\S` (o `src\G`). **No modifiques los archivos existentes**: crea archivos nuevos cuyo nombre empiece por el número que te indique el encargo.

@@ -38,3 +38,34 @@ Un archivo JSON por subtema en `banks/quimica/src/T2/NN-nombre.json` (el nombre 
 - **problemas**: un problema de cálculo con datos completos en el enunciado (incluidas las masas atómicas que se usen, aunque estén en el booklet). La respuesta es UN número, sin unidades en la solución; el enunciado dice en qué unidad se pide («Expressa el resultat en mol»). Redondea la solución a 3 cifras significativas. La expresión de Python debe dar ese valor (diferencia relativa menor del 0,5 %) y usar solo números y operadores, `math` (ya importado) y `**` para potencias; nada de unidades ni símbolos. Para los gases usa $R = 0{,}082$ atm·L/(mol·K), T en kelvin (°C + 273), 1 mol de gas = 22,4 L en condiciones normales, $N_A = 6{,}022\cdot10^{23}$. Comprueba el cálculo antes de entregarlo: un error aquí es el peor fallo posible.
 - Cantidades por subtema: las que diga el encargo (test, vf, problemas en total del archivo).
 - Antes de terminar, comprueba que el JSON es válido y ejecuta `.venv\Scripts\python tools\build_quimica.py --check banks\quimica\src\T2` (cuando exista) o al menos carga el archivo con `python -c "import json;json.load(open(...,encoding='utf-8'))"`.
+
+---
+
+# Ampliación: preguntas con imagen y problemas con apartados
+
+## Preguntas con imagen (test y vf)
+Las imágenes están en `banks/quimica/img/` (recortadas del booklet) y su lista, con el nombre exacto que les da el booklet y su página, en `banks/quimica/img/INDEX.md`. **Míralas** (herramienta Read sobre el PNG) antes de escribir sobre ellas. Una pregunta test o vf lleva imagen añadiendo al final de su lista un diccionario `{"imagen": "pictogrames/corrosiu.png"}` (ruta relativa a `banks/quimica/img/`):
+```json
+[3, "Quin perill indica el pictograma de la imatge?", "Destrueix metalls i causa danys irreversibles a la pell", ["Pot explotar amb una flama", "confon corrosiu amb explosiu"], ["...", "..."], ["...", "..."], "Explicació.", {"imagen": "pictogrames/corrosiu.png"}]
+```
+- La imagen es el enunciado: la pregunta no puede nombrar lo que se ve («Quin pictograma és aquest?», «Quin és el nom d'aquest instrument?», «Per a què serveix aquest instrument?», «Quin producte porta aquest pictograma?», «Quin perill indica?»). Las opciones son nombres o descripciones, nunca imágenes.
+- Los distractores salen de la misma familia que la imagen (otros pictogramas, otros instrumentos del booklet) y la trampa nombra la confusión real (instrumentos o pictogramas que se parecen).
+- Usa SOLO los nombres y las funciones que da el booklet (`INDEX.md` y `texto/t2.md`; para cada instrumento mira su página). El pictograma de salud a largo plazo se llama en el booklet **«Perillós per aspiració»**: usa ese nombre tal cual y en la explicación di que avisa de efectes a llarg termini (càncer, canvis a l'ADN, problemes de reproducció, danys a òrgans). No inventes funciones que el booklet no dé.
+- Varía los ángulos: identificar, función, ejemplo de producto o sustancia (las listas EXEMPLES de las páginas 5 y 6), qué precisión o qué se mide, con qué se combina en un montaje. Usa la misma imagen en más de una pregunta si hay ángulos distintos.
+- `pagina` y `cara` del concepto: la página del booklet donde aparece el instrumento o pictograma (`INDEX.md`). En Química pagina = cara.
+
+## Problemas con apartados (clave `grupos`, junto a `problemas`)
+Un problema con enunciado común y 2 a 5 apartados. Cada apartado es una pregunta con su propia respuesta numérica, su dificultad y su `expr`; se sirven seguidos y se muestra el `contexto` común y debajo el enunciado del apartado:
+```json
+"grupos": [
+  {"contexto": "Tenim 5 g de CuCl₂ (M(Cu) = 63,5 g/mol i M(Cl) = 35,5 g/mol; N_A = 6,022·10²³).",
+   "apartados": [
+     [3, "Calcula el nombre de molècules de CuCl₂. Escriu el resultat en notació científica (per exemple 2,5e22).", 2.24e22, "Explicació.", "5/(63.5+2*35.5)*6.022e23"],
+     [3, "Calcula el nombre d'àtoms de clor.", 4.48e22, "Explicació.", "2*5/(63.5+2*35.5)*6.022e23"],
+     [4, "Calcula el nombre total d'àtoms en aquests 5 g.", 6.72e22, "Explicació.", "3*5/(63.5+2*35.5)*6.022e23"]]}
+]
+```
+- Los datos para todos los apartados van en el `contexto` (incluidas masas atómicas y constantes). Cada apartado se puede resolver por sí solo con el contexto y, si hace falta, el resultado correcto del apartado anterior, que debe decir claramente («utilitza el resultat de l'apartat anterior»); la `expr` de cada apartado se calcula desde los datos del contexto, no desde el apartado anterior. Cada apartado pide UNA cosa distinta. Dificultades crecientes o iguales.
+- Las respuestas muy grandes o pequeñas se piden en **notación científica con e** («escriu el resultat en notació científica, per exemple 2,5e22»): la alumna escribe `2,24e22`, `2,24·10^22` o `2,24x10^22`, y todo se acepta. En `solucion` va el número (2.24e22) y la `expr` da el valor sin redondear; cuida que `solucion` esté redondeada a 3 cifras significativas (diferencia con la `expr` menor del 0,5 %).
+- Pon el nombre de la unidad en el enunciado cuando haga falta, nunca en la respuesta.
+- `grupos` va dentro del concepto (un grupo entero pertenece a un único concepto). Verifica con `.venv\Scripts\python tools\build_quimica.py --check banks\quimica\src\T2`.

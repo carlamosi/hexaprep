@@ -201,3 +201,12 @@ Pegar esto como primer mensaje:
 - Banco ampliable con **exámenes oficiales anteriores** importados por la usuaria, etiquetados por subtema.
 - Todo parte del mismo catálogo jerárquico y del mismo registro de eventos de la sección 5, para que añadir una asignatura sea añadir datos, no reescribir la app.
 - **Marco:** PAU de Cataluña. Las asignaturas y formatos de examen se concretan cuando se elijan; el orden después de Economía está por decidir **[PENDIENTE]**.
+
+## Decisiones posteriores a la v1 (Carla, 2026-11-15)
+Estas decisiones sustituyen a lo anterior donde se contradicen:
+- **Sin test de nivel inicial:** se asume conocimiento previo y se sirven preguntas difíciles desde el principio (objetivo de acierto del 60 %).
+- **Sin botones de confianza** durante la práctica. Se mantiene el campo en la base por si hay datos antiguos.
+- **Tipos de pregunta en uso:** test, verdadero/falso y problema de respuesta numérica (número, fracción o varios valores separados por `;`), con apartados que comparten enunciado, imagen en el enunciado y botón «Lo he hecho bien».
+- **Asignaturas:** Economía, Química (catalán), Matemáticas (solo problemas); selector en la cabecera.
+- **Saltar** una pregunta la vuelve a servir más tarde en la sesión.
+

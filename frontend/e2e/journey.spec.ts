@@ -19,7 +19,7 @@ async function porcentajes(page: Page): Promise<number[]> {
   return labels.map((l) => Number(/(\d+) por ciento/.exec(l)?.[1] ?? "0"));
 }
 
-test("recorrido completo: importar, test de nivel, práctica, reporte, editor, copia y restauración", async ({ page, request }) => {
+test("recorrido completo: importar, práctica libre con saltar, práctica, reporte, editor, copia y restauración", async ({ page, request }) => {
   // 1. Importar el banco (150 preguntas) por la API
   const imp = await request.post("/api/import", { data: { ruta: BANCO } });
   expect(imp.ok()).toBeTruthy();
@@ -31,16 +31,23 @@ test("recorrido completo: importar, test de nivel, práctica, reporte, editor, c
   expect(Math.max(...(await porcentajes(page)))).toBe(0);
   await captura(page, "01-panal-vacio");
 
-  // 3. Test de nivel de 15 preguntas, solo con teclado
-  await page.getByRole("button", { name: "Test de nivel" }).click();
-  for (let i = 1; i <= 15; i++) {
-    await expect(page.getByText(`${i} de 15`)).toBeVisible();
-    if (i === 1) await captura(page, "02-test-de-nivel");
+  // 3. Práctica libre con teclado: saltar una pregunta y responder tres (sin test de nivel previo)
+  await page.getByRole("button", { name: "Practicar", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Saltar" })).toBeVisible();
+  await expect(page.getByText("Confianza")).toHaveCount(0);
+  await captura(page, "02-practica-libre");
+  const saltada = await page.getByRole("heading", { level: 1 }).textContent();
+  await page.keyboard.press("s");
+  await expect(page.getByRole("heading", { level: 1 })).not.toHaveText(saltada!); // la saltada espera: sale otra
+  for (let i = 0; i < 3; i++) {
+    await expect(page.getByRole("button", { name: "Saltar" })).toBeVisible();
     await page.keyboard.press("a");
+    // el contador queda fijo; la explicación solo se ve 1 s tras un acierto (avanza sola)
+    await expect(page.getByText(new RegExp(`^${i + 1} respondidas?$`))).toBeVisible();
   }
-  await expect(page.getByRole("heading", { name: "Tu punto de partida" })).toBeVisible();
-  await captura(page, "03-resultado-nivel");
-  await page.getByRole("button", { name: "Ir al panal" }).click();
+  await page.getByRole("button", { name: "Terminar sesión" }).click();
+  await captura(page, "03-resumen-practica");
+  await page.getByRole("button", { name: "Volver al panal" }).click();
 
   // 4. El panal se ha actualizado
   await expect(page.getByRole("heading", { level: 1, name: "Economía" })).toBeVisible();
@@ -52,7 +59,7 @@ test("recorrido completo: importar, test de nivel, práctica, reporte, editor, c
   await expect(page.getByRole("button", { name: "Practicar este subtema" })).toBeVisible();
   await captura(page, "05-subtema");
   await page.getByRole("button", { name: "Practicar este subtema" }).click();
-  await expect(page.getByText("Confianza (opcional)")).toBeVisible(); // la pregunta ya está cargada
+  await expect(page.getByRole("button", { name: "Saltar" })).toBeVisible(); // la pregunta ya está cargada
   await captura(page, "06-practica");
   await page.keyboard.press("b");
   await page.getByText("Ver explicación").click();
@@ -77,7 +84,7 @@ test("recorrido completo: importar, test de nivel, práctica, reporte, editor, c
   await page.getByRole("link", { name: "Ajustes" }).click();
   await expect(page.getByRole("heading", { name: "Ajustes" })).toBeVisible();
   await page.getByRole("button", { name: "Editar" }).click();
-  await page.getByLabel("Explicación").fill("Explicación revisada en el editor.");
+  await page.getByRole("textbox", { name: "Explicación", exact: true }).fill("Explicación revisada en el editor.");
   await page.getByLabel("Volver a incluirla en las estadísticas").check();
   await page.getByRole("button", { name: "Guardar como versión nueva" }).click();
   await expect(page.getByText("Versión 2 guardada")).toBeVisible();
@@ -102,7 +109,7 @@ test("responsive: el panal y la práctica caben en 375 px sin scroll horizontal"
   await captura(page, "11-panal-movil");
   await page.getByRole("button", { name: /por ciento de dominio/ }).first().click();
   await page.getByRole("button", { name: "Practicar este subtema" }).click();
-  await expect(page.getByText("Confianza (opcional)")).toBeVisible();
+  await expect(page.getByRole("button", { name: "Saltar" })).toBeVisible();
   expect(await overflow()).toBeLessThanOrEqual(0);
   await captura(page, "12-practica-movil");
 });

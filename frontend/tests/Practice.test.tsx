@@ -74,19 +74,13 @@ describe("pantalla de práctica", () => {
     expect(screen.getByText("Explicación de prueba")).toBeVisible();
   });
 
-  it("confidence_buttons_optional: se puede responder sin marcar confianza", async () => {
+  it("there_are_no_confidence_buttons_and_no_confidence_is_sent", async () => {
     const a = setup();
     await a.user.click(await screen.findByRole("button", { name: /Opción A: Texto C/ }));
     await waitFor(() => expect(a.client.answer).toHaveBeenCalledTimes(1));
-    expect(a.client.answer.mock.calls[0][0].confianza ?? null).toBeNull();
-  });
-
-  it("confidence_buttons_optional: la confianza marcada antes se envía con la respuesta", async () => {
-    const a = setup();
-    await a.user.click(await screen.findByRole("button", { name: "Dudo" }));
-    await a.user.click(screen.getByRole("button", { name: /Opción A: Texto C/ }));
-    await waitFor(() => expect(a.client.answer).toHaveBeenCalled());
-    expect(a.client.answer.mock.calls[0][0].confianza).toBe("dudo");
+    expect(screen.queryByText(/Confianza/)).toBeNull();
+    expect(screen.queryByRole("button", { name: "Dudo" })).toBeNull();
+    expect(a.client.answer.mock.calls[0][0].confianza).toBeUndefined();
   });
 
   it("report_button_marks_question", async () => {
@@ -220,5 +214,51 @@ describe("respuesta con fracciones y varios valores", () => {
     await waitFor(() => expect(client.answer.mock.calls[0][0].respuesta).toBe("1/2; 4"));
     expect(await screen.findByText("1; 4", { selector: "strong" })).toBeInTheDocument();
     expect(screen.getByText("Casi. Compara con la solución y revisa tus pasos:")).toBeInTheDocument();
+  });
+});
+
+describe("saltar, imagen y problemas con apartados", () => {
+  function conSkip(q: Question, siguientes: (Question | null)[] = [null]) {
+    const nextQuestion = vi.fn().mockResolvedValueOnce(q);
+    for (const n of siguientes) nextQuestion.mockResolvedValueOnce(n);
+    const client = {
+      nextQuestion, answer: vi.fn().mockResolvedValue(OK), reportQuestion: vi.fn(), skip: vi.fn().mockResolvedValue({ ok: true }),
+    } satisfies PracticeClient;
+    const onDone = vi.fn();
+    render(<Practice sesionId="s1" client={client} onDone={onDone} />);
+    return { client, onDone, user: userEvent.setup() };
+  }
+
+  it("skip_button_and_key_s_skip_without_answering_and_load_the_next_question", async () => {
+    const a = conSkip(Q, [{ ...Q, pregunta_id: "p2", enunciado: "Otra pregunta" }, null]);
+    await a.user.click(await screen.findByRole("button", { name: "Saltar" }));
+    expect(a.client.skip).toHaveBeenCalledWith("s1", "p1");
+    expect(a.client.answer).not.toHaveBeenCalled();
+    expect(await screen.findByText("Otra pregunta")).toBeInTheDocument();
+    await a.user.keyboard("s");
+    await waitFor(() => expect(a.client.skip).toHaveBeenCalledWith("s1", "p2"));
+    await waitFor(() => expect(a.onDone).toHaveBeenCalled());
+  });
+
+  it("skip_is_not_offered_once_the_question_is_answered", async () => {
+    const a = conSkip(Q);
+    await a.user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    await screen.findByText("Ver explicación");
+    expect(screen.queryByRole("button", { name: "Saltar" })).toBeNull();
+    await a.user.keyboard("s");
+    expect(a.client.skip).not.toHaveBeenCalled();
+  });
+
+  it("shows_the_image_with_a_generic_alt_that_does_not_give_the_answer_away", async () => {
+    conSkip({ ...Q, imagen: "pictogrames/corrosiu.png", enunciado: "Quin pictograma és aquest?" });
+    const img = await screen.findByRole("img", { name: "Imagen de la pregunta" });
+    expect(img).toHaveAttribute("src", "/api/imagen/pictogrames/corrosiu.png");
+  });
+
+  it("shows_the_common_statement_and_the_part_letter", async () => {
+    conSkip({ ...Q, tipo: "problema", opciones: [], orden: [], grupo: "g1", apartado: "b", contexto: "Tenim 5 g de CuCl₂", enunciado: "Calcula els àtoms de clor" });
+    expect(await screen.findByText("Enunciado común")).toBeInTheDocument();
+    expect(screen.getByText("Tenim 5 g de CuCl₂")).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("b) Calcula els àtoms de clor");
   });
 });

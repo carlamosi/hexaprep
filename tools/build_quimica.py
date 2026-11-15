@@ -50,31 +50,49 @@ def build(src: Path) -> tuple[dict, list[str]]:
     src = Path(src)
     meta = json.loads((src / "_meta.json").read_text(encoding="utf-8"))
     errores: list[str] = []
-    items = []  # (subtema, concepto dict, tipo, datos)
+    items = []  # (subtema, concepto dict, tipo, datos, archivo, tema, grupo o None)
+    n_grupo = 0
     for f in sorted(p for p in src.glob("*.json") if not p.name.startswith("_")):
         data = json.loads(f.read_text(encoding="utf-8"))
         for c in data["conceptos"]:
             for tipo, clave in (("test", "test"), ("vf", "vf"), ("problema", "problemas")):
                 for q in c.get(clave, []):
-                    items.append((data["subtema"], c, tipo, q, f.name, data.get("tema", meta["tema"])))
+                    items.append((data["subtema"], c, tipo, q, f.name, data.get("tema", meta["tema"]), None))
+            for g in c.get("grupos", []):  # problema con apartados: enunciado común y una respuesta por apartado
+                n_grupo += 1
+                if not 2 <= len(g["apartados"]) <= 5:
+                    errores.append(f"{f.name}: un grupo lleva de 2 a 5 apartados")
+                for i, q in enumerate(g["apartados"]):
+                    items.append((data["subtema"], c, "problema", q, f.name, data.get("tema", meta["tema"]),
+                                  {"grupo": f"{meta['prefijo']}-g{n_grupo:03d}", "contexto": g["contexto"], "apartado": "abcde"[i]}))
     n_test = sum(1 for i in items if i[2] == "test")
-    letras = [LETRAS[i % 4] for i in range(n_test)]
+    # `tests_congelados`: las primeras N preguntas test conservan el reparto de letras que ya tenían (no se reimportan como versiones nuevas)
+    congelados = min(meta.get("tests_congelados", n_test), n_test)
+    letras = [LETRAS[i % 4] for i in range(congelados)]
     random.Random(meta["prefijo"]).shuffle(letras)
-    letras = iter(letras)
+    nuevas = [LETRAS[i % 4] for i in range(n_test - congelados)]
+    random.Random(meta["prefijo"] + "-2").shuffle(nuevas)
+    letras = iter(letras + nuevas)
 
     preguntas = []
-    for n, (subtema, c, tipo, q, archivo, tema) in enumerate(items, start=1):
+    for n, (subtema, c, tipo, q, archivo, tema, grupo) in enumerate(items, start=1):
         base = {"id": f"{meta['prefijo']}-{n:04d}", "bloque": meta["bloque"], "tema": tema, "subtema": subtema,
                 "concepto": c["nombre"], "dificultad": q[0], "enunciado": q[1], "ayuda_larga": c["ayuda"],
                 "fuente_pagina": c["pagina"], "fuente_cara": c.get("cara", c["pagina"])}
         if tipo == "test":
             correcta = next(letras)
+            q = list(q)
+            if isinstance(q[-1], dict):  # extras de la pregunta: {"imagen": "pictogrames/corrosiu.png"}
+                base.update(q.pop())
             dificultad, enunciado, ok, *malas, explicacion = q
             malas = iter(malas)
             base["opciones"] = [{"texto": ok} if LETRAS[i] == correcta else
                                 {"texto": (m := next(malas))[0], "trampa": limpia(m[1])} for i in range(4)]
             base.update(correcta=correcta, explicacion=explicacion)
         elif tipo == "vf":
+            q = list(q)
+            if isinstance(q[-1], dict):
+                base.update(q.pop())
             _, _, verdadero, explicacion, trampa = q
             trampa = limpia(trampa)
             base["tipo"] = "vf"
@@ -92,6 +110,10 @@ def build(src: Path) -> tuple[dict, list[str]]:
                 if not coinciden(real, solucion, ordenada):
                     errores.append(f"{archivo} {base['id']}: la solución {solucion} no coincide con la expresión ({real})")
             base.update(tipo="problema", solucion=solucion, explicacion=explicacion, **({"ordenada": True} if ordenada else {}))
+            if grupo:
+                base.update(grupo)
+        if "imagen" in base and not (src.resolve().parents[1] / "img" / base["imagen"]).is_file():
+            errores.append(f"{archivo} {base['id']}: la imagen {base['imagen']} no existe en banks/<asignatura>/img/")
         preguntas.append(base)
     bank = {"asignatura": meta["asignatura"], **({"fuente": meta["fuente"]} if "fuente" in meta else {}),
             "lote": meta["lote"], "preguntas": preguntas}

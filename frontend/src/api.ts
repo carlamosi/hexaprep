@@ -9,16 +9,18 @@ export class ApiError extends Error {
 
 export type Letra = "a" | "b" | "c" | "d";
 export type Confianza = "seguro" | "dudo" | "adivino";
-export type Modo = "nivel" | "practica" | "repaso_subtema" | "repaso_fallos";
+export type Modo = "practica" | "repaso_subtema" | "repaso_fallos";
 
 export interface Filtro {
   asignatura_id: string;
   tema_id?: string;
   subtema_id?: string;
   solo_fallos?: boolean;
+  /** test, vf, problema; sin indicar, todos. */
+  tipos?: string[];
 }
 
-export interface Subject { id: string; nombre: string; idioma: string; color: string; acento: string; percent: number }
+export interface Subject { id: string; nombre: string; idioma: string; color: string; acento: string; percent: number; tipos?: string[] }
 export interface Hex {
   concepto_id: string; nombre: string; subtema_id: string; subtema: string; tema: string; tema_id: string; color: string; percent: number;
 }
@@ -30,6 +32,8 @@ export interface Question {
   opciones: { letra: Letra; texto: string }[]; orden: Letra[]; dificultad: number;
   ayuda_larga: string | null; fuente_id: string | null; fuente_pagina: number | null; fuente_cara: number | null;
   tema?: string; subtema?: string; tipo?: "test" | "vf" | "problema";
+  /** Imagen del enunciado (ruta relativa a banks/<asignatura>/img/) y datos de un problema con apartados. */
+  imagen?: string | null; grupo?: string | null; contexto?: string | null; apartado?: string | null;
 }
 export interface SessionState { sesion_id: string; modo: Modo; filtro: Record<string, unknown>; respondidas: string[]; pendiente: string | null }
 export interface AnswerBody {
@@ -104,10 +108,12 @@ export const api = {
   getSubjects: () => request<Subject[]>("/api/subjects"),
   getMap: (asignaturaId: string) => request<MapResponse>(`/api/map/${asignaturaId}`),
   createSession: (modo: Modo, filtro: Filtro) =>
-    request<{ sesion_id: string; aviso: string | null }>("/api/sessions", "POST", { modo, filtro }),
+    request<{ sesion_id: string }>("/api/sessions", "POST", { modo, filtro }),
   getSession: (id: string) => request<SessionState>(`/api/sessions/${id}`),
   nextQuestion: (id: string) => request<Question | null>(`/api/sessions/${id}/next`),
   answer: (body: AnswerBody) => request<AnswerResult>("/api/answers", "POST", body),
+  skip: (sesionId: string, preguntaId: string) =>
+    request<{ ok: boolean }>(`/api/sessions/${sesionId}/skip`, "POST", { pregunta_id: preguntaId }),
   markCorrect: (sesionId: string, preguntaId: string) =>
     request<{ percent: number }>("/api/answers/correct", "POST", { sesion_id: sesionId, pregunta_id: preguntaId }),
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>

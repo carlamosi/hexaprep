@@ -1,0 +1,77 @@
+{
+ "subtema": "Escalfar, filtrar i fer reaccions",
+ "conceptos": [
+  {
+   "nombre": "Escalfar",
+   "pagina": 9,
+   "cara": 9,
+   "ayuda": "Per escalfar al laboratori es fa servir el bec Bunsen. El recipient, per exemple un baló de fons rodó, es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota. Les pinces subjecten tubs d'assaig, que s'escalfen directament a la flama. L'aro és una anella fixada al suport que aguanta recipients des de sota. La nou uneix la pinça o l'aro al suport.",
+   "test": [
+    [1, "Per a què serveix aquest instrument?", "Per escalfar", ["Per subjectar tubs d'assaig", "Confondre la font de calor amb les pinces"], ["Per subjectar diferents aparells", "Confondre la font de calor amb el suport"], ["Per aguantar recipients des de sota", "Confondre la font de calor amb l'aro"], "El bec Bunsen és la font de calor del muntatge. Regla: suport, nou, pinça i aro subjecten; el bec Bunsen escalfa.", {"imagen": "material/bec-bunsen.png"}],
+    [2, "Un baló de fons rodó està subjectat al suport amb la nou i la pinça. On es col·loca aquest instrument per escalfar-lo?", "Sota el baló, que l'escalfa des de sota", ["Per sobre del baló, que l'escalfa des de dalt", "Pensar que la flama ha de caure sobre el recipient"], ["Dins del baló, en contacte amb el líquid", "Confondre l'escalfament amb una immersió"], ["Penjat de la nou, al costat de la pinça", "Confondre la font de calor amb una peça de subjecció"], "El bec Bunsen escalfa el recipient des de sota. Regla: la nou i la pinça fixen el baló i la flama va a baix.", {"imagen": "material/bec-bunsen.png"}]
+   ],
+   "vf": [],
+   "problemas": []
+  },
+  {
+   "nombre": "Reconèixer material de filtració",
+   "pagina": 10,
+   "cara": 10,
+   "ayuda": "A la pàgina de filtrar i separar hi ha material per separar un sòlid d'un líquid o dos líquids que no es barregen. L'embut amb un paper de filtre plegat deixa només el pas del líquid, i el sòlid hi queda. L'embut Büchner és de porcellana, té el fons foradat i s'hi posa un paper de filtre. El kitasatos és un matràs amb sortida lateral que filtra més de pressa que l'embut. L'embut de decantació serveix per separar dos líquids no miscibles, com l'aigua i l'oli: el més dens queda a baix i surt primer en obrir la clau.",
+   "test": [
+    [2, "Per a què serveix aquest instrument amb un paper de filtre plegat?", "Per separar un sòlid d'un líquid: el sòlid hi queda i només passa el líquid", ["Per separar dos líquids que no es barregen, com l'aigua i l'oli", "Confondre l'embut amb l'embut de decantació"], ["Per filtrar més de pressa, connectat a una trompa de buit", "Confondre l'embut amb el muntatge de filtració al buit"], ["Per recollir el líquid filtrat en un matràs amb sortida lateral", "Confondre l'embut amb el kitasatos"], "Amb el paper de filtre plegat només passa el líquid i el sòlid queda al paper. Regla: filtrar separa sòlid i líquid; dos líquids no miscibles, decantació.", {"imagen": "material/embut.png"}],
+    [3, "Quina descripció correspon a aquest instrument?", "De porcellana i amb el fons foradat, on es posa un paper de filtre", ["Matràs amb sortida lateral que filtra més de pressa", "Confondre l'embut amb el kitasatos"], ["Anella que es fixa al suport per aguantar recipients", "Confondre l'embut amb l'aro"], ["Té una clau i separa dos líquids no miscibles", "Confondre l'embut amb l'embut de decantació"], "L'embut Büchner és de porcellana, amb el fons foradat i un paper de filtre a sobre. Regla: Büchner = porcellana i fons foradat.", {"imagen": "material/embut-buchner.png"}],
+    [1, "Quin és el nom d'aquest instrument?", "Kitasatos", ["Matràs Erlenmeyer", "Confondre un matràs cònic amb el de sortida lateral"], ["Matràs aforat", "Confondre un matràs de mesura amb un de filtració"], ["Baló de reacció", "Confondre un matràs de filtració amb un recipient de reacció"], "El kitasatos és un matràs amb sortida lateral que recull el líquid de la filtració al buit. Regla: sortida lateral = kitasatos.", {"imagen": "material/kitasatos.png"}],
+    [4, "En aquest instrument hi ha dues capes de líquid que no es barregen. Quin líquid surt primer en obrir la clau?", "El més dens, que queda a baix", ["El més lleuger, que queda a dalt", "Creure que el líquid de dalt surt primer"], ["Els dos alhora, a parts iguals", "Oblidar que formen dues capes diferenciades"], ["El que ocupa més volum, sigui el que sigui", "Pensar que només compta la quantitat de líquid"], "El més dens queda a baix i surt primer en obrir la clau. Regla: dens a baix, surt primer; es tanca la clau quan ha sortit tot el líquid de baix.", {"imagen": "material/embut-decantacio.png"}]
+   ],
+   "vf": [
+    [2, "Aquest instrument permet separar l'aigua i l'oli, que són dos líquids no miscibles.", true, "L'embut de decantació serveix per separar dos líquids que no es barregen: l'aigua i l'oli formen dues capes.", "Pensar que només serveix per separar un sòlid d'un líquid.", {"imagen": "material/embut-decantacio.png"}]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Muntatge Büchner",
+   "pagina": 10,
+   "cara": 10,
+   "ayuda": "El muntatge Büchner serveix per fer una filtració al buit. Consta d'un embut Büchner, un paper de filtre i un kitasatos, connectat a la trompa de buit. El buit xucla el líquid i la filtració és més ràpida que amb un embut normal. El sòlid queda al paper de filtre i el líquid passa al kitasatos.",
+   "test": [
+    [3, "Quin tipus de separació permet fer aquest muntatge?", "Separar un sòlid d'un líquid, filtrant al buit", ["Separar dos líquids que no es barregen", "Confondre la filtració amb la decantació"], ["Eliminar el dissolvent d'un producte de reacció", "Confondre la filtració amb el rotavapor"], ["Obtenir cristalls d'una solució sobresaturada", "Confondre la filtració amb la cristal·lització"], "El muntatge Büchner filtra un sòlid d'un líquid amb l'ajuda del buit. Regla: sòlid i líquid, filtració; dos líquids no miscibles, decantació.", {"imagen": "material/muntatge-buchner.png"}],
+    [2, "A què es connecta aquest muntatge perquè la filtració sigui més ràpida?", "A la trompa de buit", ["Al bec Bunsen", "Confondre filtrar amb escalfar"], ["Al refrigerant", "Confondre la filtració amb la condensació de vapors"], ["Al rotavapor", "Confondre la filtració amb l'eliminació del dissolvent"], "El kitasatos es connecta a la trompa de buit, que xucla el líquid. Regla: Büchner + kitasatos + trompa de buit.", {"imagen": "material/muntatge-buchner.png"}],
+    [5, "Quines peces formen aquest muntatge, a part de la connexió a la trompa de buit?", "Embut Büchner, paper de filtre i kitasatos", ["Embut de decantació, paper de filtre i kitasatos", "Confondre filtrar un sòlid amb separar dos líquids"], ["Embut amb paper plegat, baló de reacció i refrigerant", "Barrejar peces de la filtració simple i de la reacció"], ["Embut Büchner, paper de filtre i matràs Erlenmeyer", "Confondre el matràs de sortida lateral amb un de cònic"], "El muntatge Büchner combina l'embut Büchner amb un paper de filtre a sobre i un kitasatos que recull el líquid. Regla: la sortida lateral del kitasatos és la que va a la trompa.", {"imagen": "material/muntatge-buchner.png"}]
+   ],
+   "vf": [
+    [3, "Amb aquest muntatge la filtració és més lenta que amb un embut amb paper de filtre plegat.", false, "El buit xucla el líquid i la filtració és més ràpida, no més lenta, que amb un embut normal.", "Pensar que afegir un kitasatos retarda el pas del líquid.", {"imagen": "material/muntatge-buchner.png"}]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "On es fan les reaccions",
+   "pagina": 11,
+   "cara": 11,
+   "ayuda": "Les reaccions es fan en diversos recipients: el baló de reacció, el baló de fons rodó, el baló de tres boques i els tubs d'assaig. Els tubs d'assaig serveixen per fer assajos i es subjecten amb pinces. El baló de fons rodó es fa servir per dur a terme reaccions. El gresol és el recipient per escalfar al forn a temperatura molt alta, per exemple per fondre metalls.",
+   "test": [
+    [2, "Quin és el nom d'aquest instrument?", "Baló de fons rodó", ["Baló de tres boques", "Confondre el baló d'una boca amb el de tres"], ["Matràs aforat", "Confondre un recipient de reacció amb un de mesura"], ["Kitasatos", "Confondre un baló amb un matràs de sortida lateral"], "El baló de fons rodó es fa servir per dur a terme reaccions i es subjecta al suport amb la nou i la pinça. Regla: fons rodó, d'una sola boca.", {"imagen": "material/balo-fons-rodo.png"}],
+    [3, "Per a què serveix aquest instrument?", "Per escalfar al forn a molt alta temperatura i fondre metalls", ["Per fer assajos, subjectat amb pinces", "Confondre el gresol amb els tubs d'assaig"], ["Per condensar el vapor produït", "Confondre el gresol amb el refrigerant"], ["Per eliminar el dissolvent d'un producte de reacció", "Confondre el gresol amb el rotavapor"], "El gresol resisteix temperatures molt altes al forn i serveix per fondre metalls. Regla: gresol = forn i molt alta temperatura.", {"imagen": "material/gresol.png"}],
+    [4, "Com se subjecten aquests recipients quan s'escalfen?", "Amb pinces, directament a la flama", ["Amb un aro fixat al suport, per sota", "Confondre les pinces amb l'aro que aguanta des de sota"], ["Dins d'un forn, sense pinces", "Confondre els tubs d'assaig amb el gresol"], ["Amb una nou sense pinça", "Pensar que la nou subjecta el recipient directament"], "Els tubs d'assaig serveixen per fer assajos i s'escalfen directament a la flama, subjectats amb pinces. Regla: tubs, pinces i flama.", {"imagen": "material/tubs-assaig.png"}]
+   ],
+   "vf": [],
+   "problemas": []
+  },
+  {
+   "nombre": "Obtenir el producte",
+   "pagina": 11,
+   "cara": 11,
+   "ayuda": "Després d'una reacció, per recuperar el producte, l'ordre habitual de l'equip és: 1 refrigerant per condensar el vapor produït, 2 rotavapor per eliminar el dissolvent d'un producte de reacció, 3 cristal·litzador per obtenir cristalls a partir d'una solució sobresaturada i 4 assecador per deixar-hi les substàncies que s'han d'eixugar. L'assecat és l'últim pas.",
+   "test": [
+    [2, "Per a què serveix aquest instrument?", "Per condensar el vapor produït", ["Per eliminar el dissolvent d'un producte de reacció", "Confondre el refrigerant amb el rotavapor"], ["Per obtenir cristalls d'una solució sobresaturada", "Confondre el refrigerant amb el cristal·litzador"], ["Per deixar-hi substàncies que s'han d'eixugar", "Confondre el refrigerant amb l'assecador"], "Els refrigerants condensen el vapor produït i són el primer pas de l'equip. Regla: refrigerant, vapor.", {"imagen": "material/refrigerants.png"}],
+    [4, "En quin lloc de l'ordre habitual després d'una reacció s'utilitza aquest instrument?", "En segon lloc, per eliminar el dissolvent del producte", ["En primer lloc, per condensar el vapor produït", "Confondre el rotavapor amb el refrigerant"], ["En tercer lloc, per obtenir cristalls", "Confondre el rotavapor amb el cristal·litzador"], ["En quart lloc, per eixugar el producte", "Confondre el rotavapor amb l'assecador"], "L'ordre és refrigerant, rotavapor, cristal·litzador i assecador. El rotavapor elimina el dissolvent abans de cristal·litzar.", {"imagen": "material/rotavapor.png"}],
+    [3, "Per a què serveix aquest instrument?", "Per obtenir cristalls a partir d'una solució sobresaturada", ["Per eliminar el dissolvent d'un producte de reacció", "Confondre cristal·litzar amb treure el dissolvent"], ["Per condensar el vapor produït", "Confondre la cristal·lització amb la condensació"], ["Per deixar-hi substàncies que s'han d'eixugar", "Confondre els cristalls amb el pas d'assecat"], "El cristal·litzador serveix per obtenir cristalls d'una solució sobresaturada. Regla: cristal·litzador, cristalls.", {"imagen": "material/cristal-litzador.png"}],
+    [5, "Quin instrument de l'equip habitual es fa servir immediatament abans d'aquest?", "Cristal·litzador", ["Rotavapor", "Saltar-se un pas de l'ordre habitual"], ["Refrigerants", "Pensar que el refrigerant és el pas previ a l'assecat"], ["Gresol", "Confondre l'assecat amb escalfar al forn"], "L'ordre és refrigerant, rotavapor, cristal·litzador i assecador, de manera que els cristalls obtinguts s'eixuguen al final.", {"imagen": "material/assecador.png"}]
+   ],
+   "vf": [
+    [3, "Aquest instrument serveix per obtenir cristalls a partir d'una solució sobresaturada.", false, "Els cristalls s'obtenen amb el cristal·litzador. El rotavapor serveix per eliminar el dissolvent d'un producte de reacció.", "Confondre el rotavapor amb el cristal·litzador.", {"imagen": "material/rotavapor.png"}]
+   ],
+   "problemas": []
+  }
+ ]
+}

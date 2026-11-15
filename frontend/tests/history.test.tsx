@@ -3,7 +3,7 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import type { Analytics, BackupRow, Hex, MapResponse, QuestionContent } from "../src/api";
 import { Columnas } from "../src/components/historial/Barras";
-import { estado, lecturaCalibracion, lineas, mejorGrupo, ordenPanal, semanasActividad } from "../src/components/historial/datos";
+import { estado, lineas, mejorGrupo, ordenPanal, semanasActividad } from "../src/components/historial/datos";
 import { Editor } from "../src/components/Editor";
 import { History } from "../src/pages/History";
 import { Settings } from "../src/pages/Settings";
@@ -86,14 +86,7 @@ describe("historial: agregados de presentación", () => {
     expect(subs[1].trazo).toBeDefined(); // y un trazo distinto: no depende solo del color
   });
 
-  it("calibration_reading_only_judges_groups_with_enough_answers", () => {
-    const c = (seguro: [number, number | null], dudo: [number, number | null]): Analytics["confianza"] => [
-      { confianza: "seguro", n: seguro[0], aciertos_pct: seguro[1] }, { confianza: "dudo", n: dudo[0], aciertos_pct: dudo[1] },
-    ];
-    expect(lecturaCalibracion(c([3, 100], [10, 50]))).toMatch(/pocas respuestas/);
-    expect(lecturaCalibracion(c([20, 40], [10, 55]))).toMatch(/no más que cuando dudas/);
-    expect(lecturaCalibracion(c([20, 90], [10, 50]))).toMatch(/buena señal/);
-    expect(lecturaCalibracion(c([20, 70], [10, 50]))).toMatch(/algo menos/);
+  it("best_group_ignores_groups_with_too_few_answers", () => {
     expect(mejorGrupo([{ n: 2, aciertos_pct: 100 }, { n: 10, aciertos_pct: 60 }])).toEqual({ n: 10, aciertos_pct: 60 });
   });
 });
@@ -108,13 +101,13 @@ describe("historial: pantalla", () => {
     expect(within(resumen).getByText("120")).toBeInTheDocument();
     expect(within(resumen).getByText("20:00")).toBeInTheDocument();
     expect(within(resumen).getByText(/\+6 puntos/)).toBeInTheDocument();
-    for (const h of ["Actividad", "Evolución del dominio", "Calibración de la confianza", "Acierto por hora del día", "Acierto por día de la semana",
+    for (const h of ["Actividad", "Evolución del dominio", "Acierto por hora del día", "Acierto por día de la semana",
       "Fatiga dentro de la sesión", "Velocidad y acierto", "Acierto por dificultad", "Trampas en las que más caes", "Conceptos más débiles",
       "Preguntas que más fallas", "Sesiones recientes"]) {
       expect(screen.getByRole("heading", { name: h })).toBeInTheDocument();
     }
     expect(screen.getByRole("img", { name: /^Actividad: .*2 días con práctica, 25 respuestas/ })).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: /Calibración de la confianza\. Segura: 70\s%, 60 respuestas/ })).toBeInTheDocument();
+    expect(screen.queryByRole("heading", { name: "Calibración de la confianza" })).toBeNull(); // ya no se marca confianza
     expect(screen.getByText("confunde escasez con pobreza")).toBeInTheDocument();
     expect(screen.queryByText(/racha/i)).toBeNull();
     expect(screen.queryByRole("note")).toBeNull();
@@ -123,9 +116,9 @@ describe("historial: pantalla", () => {
   it("marks_groups_with_few_answers_without_relying_on_color", async () => {
     const { container } = render(<History asignaturaId="a1" client={client()} mes="2026-11-12" />);
     await screen.findByRole("heading", { name: "Velocidad y acierto" });
-    // «Adivino» tiene 3 respuestas y «menos de 5 s», 4: rayadas y con aviso escrito
-    expect(container.querySelectorAll(".hp-bar.is-low")).toHaveLength(2);
-    expect(screen.getAllByText(/n 3 · pocos datos/).length).toBeGreaterThan(0);
+    // «menos de 5 s» tiene 4 respuestas: rayada y con aviso escrito
+    expect(container.querySelectorAll(".hp-bar.is-low")).toHaveLength(1);
+    expect(screen.getAllByText(/n 4 · pocos datos/).length).toBeGreaterThan(0);
   });
 
   it("range_filter_refetches_and_view_selector_switches_series", async () => {
@@ -155,7 +148,7 @@ describe("historial: pantalla", () => {
     expect(nota).toHaveTextContent("6 respuestas.");
     expect(nota).toHaveTextContent(/menos de 5 respuestas/);
     expect(screen.getByText("Aún no")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Calibración de la confianza" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Acierto por dificultad" })).toBeInTheDocument();
   });
 
   it("empty_state_without_answers_and_shortcut_to_full_history", async () => {

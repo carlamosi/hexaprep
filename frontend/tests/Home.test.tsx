@@ -31,4 +31,33 @@ describe("Home", () => {
     render(<Home />);
     expect(await screen.findByRole("alert")).toHaveTextContent("No se ha podido cargar");
   });
+
+  const MAPA = {
+    asignatura: "Química", percent: 10, subtemas: [{ id: "s1", nombre: "El mol", percent: 10 }],
+    hexes: [{ concepto_id: "c1", nombre: "Massa molar", subtema_id: "s1", subtema: "El mol", tema: "T2", tema_id: "t1", color: "#1B998B", percent: 10 }],
+  };
+  const asignatura = (tipos: string[]) => ({ id: "q", nombre: "Química", idioma: "ca", color: "#1B998B", acento: "#1B998B", percent: 10, tipos });
+
+  it("offers_test_only_and_problems_only_when_the_subject_has_both", async () => {
+    vi.spyOn(api, "getSubjects").mockResolvedValue([asignatura(["problema", "test", "vf"])]);
+    vi.spyOn(api, "getMap").mockResolvedValue(MAPA);
+    const onTipo = vi.fn();
+    const onPracticar = vi.fn();
+    render(<Home onPracticar={onPracticar} onPracticarTipo={onTipo} />);
+    await userEvent.click(await screen.findByRole("button", { name: "Solo test y V/F" }));
+    await userEvent.click(screen.getByRole("button", { name: "Solo problemas" }));
+    await userEvent.click(screen.getByRole("button", { name: "Practicar" }));
+    expect(onTipo.mock.calls).toEqual([["test"], ["problemas"]]);
+    expect(onPracticar).toHaveBeenCalledTimes(1);
+    expect(screen.queryByRole("button", { name: "Test de nivel" })).toBeNull();
+  });
+
+  it.each([[["test"]], [["problema"]], [["test", "vf"]], [[]]])("hides_the_type_buttons_when_the_subject_has_only_%j", async (tipos) => {
+    vi.spyOn(api, "getSubjects").mockResolvedValue([asignatura(tipos)]);
+    vi.spyOn(api, "getMap").mockResolvedValue(MAPA);
+    render(<Home onPracticar={vi.fn()} />);
+    await screen.findByRole("button", { name: "Practicar" });
+    expect(screen.queryByRole("button", { name: "Solo problemas" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "Solo test y V/F" })).toBeNull();
+  });
 });
