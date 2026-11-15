@@ -46,7 +46,7 @@ def main(argv: list[str] | None = None) -> int:
             n = perfiles.clonar_esquema(c, "public", esquema, "todo")
             print(f"Perfil de {a.email.lower()} creado en {esquema} con {n} filas.")
         else:
-            for (s,) in c.execute(text("SELECT schema_name FROM information_schema.schemata WHERE schema_name LIKE 'u\_%' ORDER BY 1")):
+            for (s,) in c.execute(text("SELECT schema_name FROM information_schema.schemata WHERE schema_name LIKE 'u!_%' ESCAPE '!' ORDER BY 1")):
                 print(s)
     return 0
 
