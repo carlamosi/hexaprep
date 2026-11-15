@@ -32,7 +32,7 @@ def database_url() -> str | None:
 
 def get_engine_online(url: str) -> Engine:
     # NullPool: en funciones serverless cada invocación abre y cierra su conexión (Neon ya hace el pooling).
-    return create_engine(url, poolclass=NullPool)
+    return create_engine(url, poolclass=NullPool, connect_args={"prepare_threshold": None})  # el pooler de Neon no admite sentencias preparadas del servidor
 
 
 def get_engine(path: Path) -> Engine:
