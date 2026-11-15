@@ -1,0 +1,4 @@
+{"tema": "T2 Treballar segur i separar la matèria", "prefijo": "qui-t2", "bloque": "Química",
+ "asignatura": {"nombre": "Química", "idioma": "ca", "color": "#1B998B", "acento": "#1B998B"},
+ "fuente": {"nombre": "Química T2 Laboratori", "archivo": "Quimica_T2_Laboratori.pdf"},
+ "lote": {"modelo": "claude-sonnet-5-5", "version_prompt": "q1"}}

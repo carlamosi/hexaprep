@@ -1,0 +1,61 @@
+{
+ "subtema": "Pictogrames de perillositat",
+ "conceptos": [
+  {
+   "nombre": "Explosiu, inflamable i comburent",
+   "pagina": 5,
+   "cara": 5,
+   "ayuda": "Un pictograma és un rombe de vora vermella que avisa d'un perill. Els tres primers són els que poden explotar, cremar o avivar el foc. L'explosiu indica una substància que pot explotar amb una flama, una espurna, la calor, un xoc o la fricció, com la nitroglicerina o la pólvora. L'inflamable crema molt fàcilment, fins i tot per sota de 0 °C, com l'alcohol o la gasolina. El comburent és ric en oxigen: aviva el foc i pot provocar o agreujar un incendi, com l'aigua oxigenada concentrada.",
+   "test": [
+    [2, "Quin pictograma indica una substància que pot explotar amb una flama, una espurna, la calor, un xoc o la fricció?", "Explosiu", ["Inflamable", "trampa: confondre cremar fàcilment amb explotar"], ["Comburent", "trampa: confondre avivar el foc amb explotar"], ["Gas a pressió", "trampa: pensar que només explota el que és un gas"], "L'explosiu avisa de substàncies que poden explotar amb flama, espurna, calor, xoc o fricció. Regla: explosiu és explotar, inflamable és cremar."],
+    [4, "Quina característica distingeix un comburent d'un inflamable?", "El comburent és ric en oxigen i aviva el foc; l'inflamable crema molt fàcilment", ["El comburent crema molt fàcilment; l'inflamable és ric en oxigen", "trampa: intercanviar les definicions dels dos pictogrames"], ["El comburent explota amb un xoc; l'inflamable explota amb la calor", "trampa: confondre tots dos amb el pictograma d'explosiu"], ["El comburent destrueix metalls; l'inflamable danya la pell", "trampa: confondre tots dos amb el pictograma de corrosiu"], "El comburent aporta oxigen i fa que un foc sigui més fort, mentre que l'inflamable és el material que crema. Regla: el comburent aviva, l'inflamable crema."]
+   ],
+   "vf": [
+    [3, "L'aigua oxigenada concentrada i el permanganat de potassi són exemples de substàncies comburents.", true, "Són substàncies riques en oxigen que poden avivar o agreujar un incendi, i per això porten el pictograma de comburent.", "trampa: creure que només les substàncies que cremen, com l'alcohol, tenen pictograma de perill d'incendi"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Gas a pressió i corrosiu",
+   "pagina": 5,
+   "cara": 5,
+   "ayuda": "El pictograma de gas a pressió avisa que el recipient pot explotar amb la calor. Si el gas està refrigerat, com el nitrogen líquid, també causa cremades per fred. Exemples: bombones de butà, extintors de CO₂, insecticides en esprai i ambientadors. El corrosiu destrueix metalls i causa danys irreversibles a la pell i als ulls. Exemples: àcid clorhídric, àcid sulfúric, hidròxid de sodi, àcid nítric i desembussadors de canonades.",
+   "test": [
+    [3, "Quin perill indica el pictograma de gas a pressió?", "Pot explotar amb la calor i, si és refrigerat, causa cremades per fred", ["Destrueix metalls i causa danys irreversibles als ulls", "trampa: confondre el gas a pressió amb el corrosiu"], ["Verinós en petites dosis amb efectes immediats", "trampa: pensar que un gas és sempre tòxic"], ["Crema molt fàcilment, fins i tot per sota de 0 °C", "trampa: confondre el recipient a pressió amb una substància inflamable"], "El gas a pressió és perillós pel recipient: amb calor pot explotar, i si és refrigerat, com el nitrogen líquid, crema per fred. Regla: pressió i temperatura són el perill."],
+    [2, "Una substància destrueix metalls i causa danys irreversibles a la pell i als ulls. Quin pictograma li correspon?", "Corrosiu", ["Irritació cutània", "trampa: confondre dany irreversible amb irritació"], ["Toxicitat aguda", "trampa: confondre dany local amb enverinament"], ["Comburent", "trampa: confondre destruir materials amb avivar el foc"], "El corrosiu és el pictograma dels àcids i bases fortes, com l'àcid clorhídric i l'hidròxid de sodi. Regla: corrosiu és dany irreversible a metalls i teixits."]
+   ],
+   "vf": [
+    [4, "Els desembussadors de canonades porten el pictograma de gas a pressió.", false, "Són productes corrosius: destrueixen materials i causen danys irreversibles a la pell i als ulls. El gas a pressió correspon a bombones, extintors o ambientadors.", "trampa: associar qualsevol producte de neteja de la llar amb un recipient a pressió"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Irritació cutània i toxicitat aguda",
+   "pagina": 6,
+   "cara": 6,
+   "ayuda": "Els pictogrames de salut avisen del perill per a les persones segons la dosi, quan actuen i com entren al cos. La irritació cutània indica que, en dosis altes, irrita ulls, nas, gola i pell, i pot causar al·lèrgies, somnolència o vertigen; exemples: amoníac, lleixiu, acetona i detergents. La toxicitat aguda indica substàncies verinoses en petites dosis i amb efectes immediats, com vòmits, pèrdua de coneixement i fins i tot la mort; exemples: cianur, metanol i monòxid de carboni. La diferència és la gravetat i la rapidesa dels efectes.",
+   "test": [
+    [3, "Quina diferència hi ha entre el pictograma d'irritació i el de toxicitat aguda?", "Irritació: dosis altes que irriten pell i ulls; toxicitat: verinós en dosis petites", ["Irritació: verinós en dosis petites; toxicitat: irrita pell i ulls", "trampa: intercanviar la gravetat dels dos pictogrames"], ["Irritació: destrueix la pell per sempre; toxicitat: contamina l'aigua", "trampa: barrejar corrosiu i medi aquàtic amb aquests dos"], ["Irritació: afecta només els pulmons; toxicitat: només la pell", "trampa: assignar un òrgan fix a cada pictograma"], "La irritació necessita dosis altes i produeix molèsties, mentre que la toxicitat aguda actua amb dosis petites i amb efectes greus i immediats. Regla: irritar és molèstia, toxicitat és perill de mort."],
+    [4, "El cianur i el monòxid de carboni porten el pictograma de toxicitat aguda. Quin efecte indica?", "Efectes immediats com vòmits, pèrdua de coneixement i fins i tot la mort", ["Danys irreversibles localitzats a la pell i als ulls", "trampa: confondre la toxicitat amb el pictograma de corrosiu"], ["Càncer i canvis a l'ADN després de molt de temps", "trampa: confondre efectes immediats amb efectes a llarg termini"], ["Contaminació de l'aigua nociva per a peixos i algues", "trampa: confondre el perill per a la salut amb el del medi ambient"], "La toxicitat aguda és el perill d'efectes ràpids i greus, que poden arribar a la mort, amb dosis petites. Regla: aguda vol dir immediata."]
+   ],
+   "vf": [
+    [2, "Un pictograma de toxicitat aguda avisa de substàncies verinoses en petites dosis i amb efectes immediats.", true, "Aquesta és exactament la definició del pictograma: dosis petites i efectes ràpids, que poden anar des dels vòmits fins a la mort.", "trampa: creure que la toxicitat aguda només cal tenir-la en compte amb dosis altes"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Perill per aspiració i medi aquàtic",
+   "pagina": 6,
+   "cara": 6,
+   "ayuda": "Dos pictogrames més completen la llista. Perillós per aspiració avisa d'efectes a llarg termini quan la substància s'inhala: càncer, canvis a l'ADN, problemes de reproducció i danys a òrgans com el fetge, els pulmons o el sistema nerviós; exemples: benzè, gasolina, metanol i formaldehid. Perillós per al medi aquàtic indica que la substància contamina l'aigua i és nociva per a peixos, crustacis i algues; exemples: sulfat de coure, mercuri, pesticides i cianur de potassi. Un afecta les persones amb el temps, l'altre afecta els ecosistemes.",
+   "test": [
+    [4, "Quin pictograma avisa d'efectes a llarg termini com càncer, canvis a l'ADN o danys al fetge i als pulmons?", "Perillós per aspiració", ["Toxicitat aguda", "trampa: confondre efectes a llarg termini amb efectes immediats"], ["Irritació cutània", "trampa: pensar que tot perill per inhalació és només una irritació"], ["Perillós per al medi aquàtic", "trampa: confondre el perill per a la salut amb el perill ambiental"], "Aquest pictograma agrupa els danys greus que apareixen amb el temps, com càncer i canvis a l'ADN. Regla: llarg termini i òrgans, aspiració; immediat i mort, toxicitat aguda."],
+    [3, "Què indica el pictograma de perillós per al medi aquàtic?", "Contamina l'aigua i és nociu per a peixos, crustacis i algues", ["Fa malbé les canonades i els metalls que hi toquen", "trampa: confondre el perill ambiental amb el de corrosiu"], ["Provoca vòmits i pèrdua de coneixement a les persones", "trampa: pensar que tot perill es refereix només a les persones"], ["Fa pujar la temperatura de l'aigua i evapora el dissolvent", "trampa: confondre contaminar amb escalfar l'aigua"], "El pictograma de medi aquàtic protegeix l'ecosistema: avisa que la substància contamina l'aigua i fa mal a la vida aquàtica. Regla: aquàtic és perill per al medi, no per a les persones."]
+   ],
+   "vf": [
+    [3, "El pictograma de perillós per al medi aquàtic avisa que la substància causa càncer a llarg termini.", false, "El medi aquàtic avisa de contaminació de l'aigua i danys a peixos, crustacis i algues. El càncer a llarg termini correspon al pictograma de perillós per aspiració.", "trampa: confondre l'efecte sobre el medi ambient amb l'efecte sobre la salut humana"]
+   ],
+   "problemas": []
+  }
+ ]
+}

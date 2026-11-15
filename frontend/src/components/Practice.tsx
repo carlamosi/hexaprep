@@ -4,7 +4,9 @@ import { t, tn } from "../i18n";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
-export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion">;
+export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect">>;
+
+const NUMERO = /^[+-]?(\d+([.,]\d*)?|[.,]\d+)(e[+-]?\d+)?$/i;
 
 const LETTERS = ["A", "B", "C", "D"];
 const CONFIANZAS: { id: Confianza; key: string }[] = [
@@ -39,6 +41,8 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
   const [result, setResult] = useState<AnswerResult | null>(null);
   const [confianza, setConfianza] = useState<Confianza | null>(null);
   const [reported, setReported] = useState(false);
+  const [valor, setValor] = useState(""); // problemas: lo que escribe la alumna
+  const [numeroMal, setNumeroMal] = useState(false);
   const [answered, setAnswered] = useState(initialAnswered);
   const [failed, setFailed] = useState(false);
   const locked = useRef(false); // respuesta firme: el primer clic cuenta, aunque la respuesta tarde
@@ -53,6 +57,8 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
     setResult(null);
     setConfianza(null);
     setReported(false);
+    setValor("");
+    setNumeroMal(false);
     setFailed(false);
     locked.current = false;
     firstClickAt.current = null;
@@ -106,12 +112,46 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
     [confianza, load, question, sesionId, sinFeedback],
   );
 
+  const submitProblem = useCallback(async () => {
+    if (!question || locked.current) return;
+    if (!NUMERO.test(valor.trim())) {
+      setNumeroMal(true);
+      return;
+    }
+    setNumeroMal(false);
+    locked.current = true;
+    const now = performance.now();
+    firstClickAt.current = now;
+    setChosen("a");
+    try {
+      const res = await client.current.answer({
+        sesion_id: sesionId, pregunta_id: question.pregunta_id, orden_opciones: [], elegida: "a", respuesta: valor.trim(),
+        confianza, tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
+      });
+      onAnsweredRef.current?.(question, res);
+      setAnswered((n) => n + 1);
+      if (sinFeedback) {
+        await load();
+        return;
+      }
+      setResult(res);
+    } catch {
+      setFailed(true);
+    }
+  }, [confianza, load, question, sesionId, sinFeedback, valor]);
+
+  async function marcarBien() {
+    if (!question || !result || !client.current.markCorrect) return;
+    const { percent } = await client.current.markCorrect(sesionId, question.pregunta_id);
+    setResult({ ...result, correcta: true, trampa: null, percent });
+  }
+
   // Pasa sola a la siguiente: 1 s tras un acierto, 2,5 s tras un fallo. Enter o «Siguiente» saltan la espera.
   useEffect(() => {
-    if (!result) return;
+    if (!result || (question?.tipo === "problema" && !result.correcta)) return;
     const id = setTimeout(() => void load(), result.correcta ? 1000 : 2500);
     return () => clearTimeout(id);
-  }, [load, result]);
+  }, [load, question, result]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -197,38 +237,56 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
             ))}
           </div>
 
-          <ul aria-label={t("practica.opciones")} className="mt-5 space-y-3">
-            {question.opciones.map((o, i) => {
-              const done = result !== null;
-              const isCorrect = done && o.letra === result.opcion_correcta;
-              const isWrongPick = done && !result.correcta && o.letra === chosen;
-              return (
-                <li key={o.letra}>
-                  <button
-                    type="button"
-                    aria-keyshortcuts={`${LETTERS[i]} ${i + 1}`}
-                    aria-label={`${t("practica.opcion")} ${LETTERS[i]}: ${o.texto}`}
-                    aria-disabled={chosen !== null}
-                    onClick={() => void choose(i)}
-                    className={`flex w-full items-start gap-3 rounded-[11px] border px-4 py-3 text-left transition-colors ${
-                      isCorrect
-                        ? "border-[var(--ok)] bg-[var(--ok-soft)]"
-                        : isWrongPick
-                          ? "border-[var(--ko)] bg-[var(--ko-soft)]"
-                          : done
-                            ? "border-[var(--rule)] opacity-60"
-                            : "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]"
-                    }`}
-                  >
-                    <span aria-hidden="true" className="flex h-[30px] w-[34px] shrink-0 items-center justify-center bg-[var(--lila-soft)] text-sm font-semibold text-[var(--lila-ink)] [clip-path:var(--hex-flat)]">{LETTERS[i]}</span>
-                    <span><RichText text={o.texto} /></span>
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
+          {question.tipo === "problema" ? (
+            <form
+              className="mt-5 flex flex-wrap items-center gap-3"
+              onSubmit={(e) => { e.preventDefault(); void submitProblem(); }}
+            >
+              <label htmlFor="respuesta" className="sr-only">{t("practica.tuRespuesta")}</label>
+              <input
+                id="respuesta" autoFocus inputMode="decimal" autoComplete="off" value={valor} disabled={chosen !== null}
+                onChange={(e) => setValor(e.target.value)} placeholder={t("practica.tuRespuesta")}
+                className="w-64 rounded-[11px] border border-[var(--rule-2)] px-4 py-3 text-lg tabular-nums focus-visible:border-[var(--lila)]"
+              />
+              <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
+                {t("practica.comprobar")}
+              </button>
+              {numeroMal && <p role="alert" className="w-full text-sm text-[var(--ko)]">{t("practica.numeroNoValido")}</p>}
+            </form>
+          ) : (
+            <ul aria-label={t("practica.opciones")} className="mt-5 space-y-3">
+              {question.opciones.map((o, i) => {
+                const done = result !== null;
+                const isCorrect = done && o.letra === result.opcion_correcta;
+                const isWrongPick = done && !result.correcta && o.letra === chosen;
+                return (
+                  <li key={o.letra}>
+                    <button
+                      type="button"
+                      aria-keyshortcuts={`${LETTERS[i]} ${i + 1}`}
+                      aria-label={`${t("practica.opcion")} ${LETTERS[i]}: ${o.texto}`}
+                      aria-disabled={chosen !== null}
+                      onClick={() => void choose(i)}
+                      className={`flex w-full items-start gap-3 rounded-[11px] border px-4 py-3 text-left transition-colors ${
+                        isCorrect
+                          ? "border-[var(--ok)] bg-[var(--ok-soft)]"
+                          : isWrongPick
+                            ? "border-[var(--ko)] bg-[var(--ko-soft)]"
+                            : done
+                              ? "border-[var(--rule)] opacity-60"
+                              : "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]"
+                      }`}
+                    >
+                      <span aria-hidden="true" className="flex h-[30px] w-[34px] shrink-0 items-center justify-center bg-[var(--lila-soft)] text-sm font-semibold text-[var(--lila-ink)] [clip-path:var(--hex-flat)]">{LETTERS[i]}</span>
+                      <span><RichText text={o.texto} /></span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
 
-          {result && <Explanation result={result} onNext={() => void load()} />}
+          {result && <Explanation result={result} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
 
           {question.ayuda_larga && (
             <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3">

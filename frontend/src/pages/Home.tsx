@@ -3,6 +3,7 @@ import { api, type MapResponse } from "../api";
 import { HexMap } from "../components/HexMap";
 import { PanelAsignatura } from "../components/PanelAsignatura";
 import { Hexagon } from "../components/Hexagon";
+import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
 
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string };
@@ -17,7 +18,8 @@ export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }:
     (async () => {
       const subjects = await api.getSubjects();
       if (!subjects.length) return { kind: "empty" } as const;
-      return { kind: "ok", map: await api.getMap(subjects[0].id), acento: subjects[0].acento } as const;
+      const a = elegirAsignatura(subjects)!;
+      return { kind: "ok", map: await api.getMap(a.id), acento: a.acento } as const;
     })()
       .then((s) => alive && setState(s))
       .catch(() => alive && setState({ kind: "error" }));

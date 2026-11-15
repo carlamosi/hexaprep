@@ -1,0 +1,78 @@
+{
+ "subtema": "Separació de mescles",
+ "conceptos": [
+  {
+   "nombre": "Mètodes per a mescles heterogènies",
+   "pagina": 23,
+   "cara": 6,
+   "ayuda": "En una mescla heterogènia es veuen les fases, per això se separa per mida de partícula o per densitat. La filtració separa un sòlid d'un líquid: el filtre reté el sòlid i deixa passar el líquid (el filtrat), com amb aigua i sorra; amb l'embut Büchner es filtra al buit. La decantació separa dos líquids no miscibles amb un embut de decantació: el més dens queda a baix i surt primer en obrir l'aixeta, com oli i aigua. La sedimentació deixa reposar la mescla perquè el sòlid caigui al fons, com l'aigua de riu amb fang. La centrifugació gira la mostra molt de pressa i la força centrífuga porta el component més dens al fons, com en la sang.",
+   "test": [
+    [1, "Quina propietat permet separar oli i aigua amb un embut de decantació?", "La diferència de densitat: el líquid més dens queda a baix", ["La diferència de punt d'ebullició entre els dos líquids", "Trampa: confondre la decantació amb la destil·lació"], ["La mida de les partícules, que queden retingudes en un paper", "Trampa: confondre la decantació amb la filtració"], ["La solubilitat de l'oli en aigua a diferents temperatures", "Trampa: confondre la decantació amb la cristal·lització"], "Oli i aigua no es barregen i formen dues capes ordenades per densitat. En obrir l'aixeta surt primer el líquid de baix. Regla: decantació és igual a densitat."],
+    [2, "Una mostra d'aigua de riu amb fang es deixa reposar en un vas de precipitats fins que el fang cau al fons. Quina tècnica s'ha aplicat?", "Sedimentació, perquè el sòlid cau pel seu propi pes", ["Filtració, perquè el fang queda separat de l'aigua", "Trampa: pensar que tota separació sòlid-líquid és filtració"], ["Decantació, perquè hi ha una capa de líquid a dalt", "Trampa: confondre la decantació, que separa dos líquids, amb la sedimentació"], ["Centrifugació, perquè el fang acaba al fons del recipient", "Trampa: oblidar que la centrifugació necessita girar la mostra molt de pressa"], "A la sedimentació només cal esperar: el sòlid més dens es diposita al fons. Si accelerem el procés girant la mostra, parlem de centrifugació."],
+    [3, "Quin d'aquests muntatges serveix per fer una filtració al buit?", "Embut Büchner, kitasatos i trompa de buit", ["Embut de decantació i suport amb nou i pinça", "Trampa: confondre separar sòlids de líquids amb separar dos líquids"], ["Baló de destil·lació, refrigerant i col·lector", "Trampa: confondre el buit amb l'escalfament de la destil·lació"], ["Matràs aforat, pipeta graduada i pera de goma", "Trampa: confondre material de mesura de volums amb material de separació"], "El buit xucla el líquid a través del paper de filtre posat a l'embut Büchner, i el kitasatos el recull. Regla: Büchner més kitasatos més trompa de buit és filtració ràpida."],
+    [3, "Per què una mostra de sang se separa en components quan es posa en una centrífuga?", "La força centrífuga porta els components més densos cap al fons", ["Els components es dissolen de manera diferent en el dissolvent que puja", "Trampa: confondre la centrifugació amb la cromatografia"], ["El filtre només deixa passar el component líquid", "Trampa: confondre la centrifugació amb la filtració"], ["El component més volàtil s'evapora i deixa els altres al fons", "Trampa: confondre la centrifugació amb l'evaporació"], "La centrífuga gira a gran velocitat i empeny cap al fons el que és més dens. Així se separen la sang o la llet descremada de la mantega."],
+    [4, "S'obre l'aixeta d'un embut de decantació amb oli i aigua i es recull el primer líquid que surt. Quin líquid és i per què?", "L'aigua, perquè és més densa i queda a baix", ["L'oli, perquè és més volàtil i surt abans", "Trampa: confondre densitat amb volatilitat"], ["L'oli, perquè està a dalt i és el primer que arriba a l'aixeta", "Trampa: creure que el líquid de dalt surt primer"], ["Una barreja dels dos, perquè no es poden separar del tot", "Trampa: creure que dos líquids no miscibles formen una mescla homogènia"], "Surt primer el líquid de la capa inferior, que és el més dens. Per això, a l'embut de decantació, el més dens va primer i el menys dens es recull després."]
+   ],
+   "vf": [
+    [1, "La sedimentació separa un sòlid d'un líquid deixant reposar la mescla fins que el sòlid cau al fons.", true, "Aquesta és la definició de sedimentació: el sòlid més dens es diposita pel seu propi pes, sense filtre ni aparell.", "Trampa: creure que cal una màquina o un filtre per separar un sòlid d'un líquid"],
+    [3, "Amb un embut de decantació, el líquid menys dens és el primer que surt en obrir l'aixeta.", false, "Surt primer el líquid més dens, perquè queda a la part inferior, just sobre l'aixeta. El menys dens es recull després.", "Trampa: pensar que el líquid de dalt és el primer que surt"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Destil·lació simple",
+   "pagina": 25,
+   "cara": 4,
+   "ayuda": "La destil·lació simple separa els líquids d'una mescla homogènia segons el punt d'ebullició, com l'etanol (78 °C) i l'aigua (100 °C). La mescla es posa al baló amb trossets de porcellana perquè bulli sense esquitxar, i s'escalfa amb manta, placa o bec Bunsen. Bull primer el component més volàtil i el seu vapor passa pel refrigerant, on l'aigua freda entra per baix i surt per dalt, i es condensa. El termòmetre té el bulb a l'altura de la sortida del vapor i marca una temperatura constant mentre destil·la una substància. Quan la temperatura puja cap a 100 °C, ja destil·la l'aigua i cal canviar el recipient.",
+   "test": [
+    [2, "Per què s'afegeixen trossets de porcellana al baló de destil·lació?", "Perquè la mescla bulli de manera regular sense esquitxar", ["Perquè augmenten el punt d'ebullició de l'etanol", "Trampa: creure que la porcellana canvia una propietat de la substància"], ["Perquè retenen l'aigua i només deixen passar l'etanol", "Trampa: confondre la porcellana amb un filtre"], ["Perquè condensen el vapor abans que surti del baló", "Trampa: confondre el baló amb el refrigerant"], "Els trossets de porcellana reparteixen l'ebullició i eviten esquitxades. No separen res: la separació la fa la diferència de punt d'ebullició."],
+    [3, "Com circula l'aigua pel refrigerant d'un destil·lador?", "Entra freda per baix i surt per dalt, en contracorrent amb el vapor", ["Entra freda per dalt i surt per baix, seguint la gravetat", "Trampa: creure que l'aigua ha de caure"], ["Entra per baix però calenta, perquè ajudi el vapor a avançar", "Trampa: pensar que el refrigerant ha d'escalfar"], ["No hi circula aigua: només s'omple amb el destil·lat", "Trampa: confondre l'aigua del refrigerant amb el líquid destil·lat"], "L'aigua freda que entra per baix omple tot el refrigerant i refreda bé el vapor, que així condensa. Regla: l'aigua entra per baix i surt per dalt."],
+    [4, "En la gràfica de temperatura del vapor d'una destil·lació d'etanol i aigua apareixen dos trams plans. Què indiquen?", "Que en cada tram destil·la una substància diferent: primer l'etanol a 78 °C i després l'aigua a 100 °C", ["Que durant aquests trams la mescla ha deixat de rebre calor", "Trampa: confondre temperatura constant amb calor aturada"], ["Que etanol i aigua destil·len alhora a una temperatura mitjana de 89 °C", "Trampa: creure que una mescla té un punt d'ebullició intermedi"], ["Que la mescla està sobresaturada i comença a cristal·litzar", "Trampa: confondre la destil·lació amb la cristal·lització"], "Mentre destil·la una substància, el vapor es manté a la seva temperatura d'ebullició: és el tram pla. Quan puja la temperatura, canvia el component que destil·la."]
+   ],
+   "vf": [
+    [2, "En una destil·lació simple, el primer component que destil·la és el més volàtil, el de punt d'ebullició més baix.", true, "El component amb el punt d'ebullició més baix bull abans i el seu vapor és el primer que arriba al refrigerant. En una mescla d'etanol i aigua, destil·la primer l'etanol.", "Trampa: creure que destil·la primer el component que n'hi ha més"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Destil·lació fraccionada",
+   "pagina": 26,
+   "cara": 3,
+   "ayuda": "La destil·lació fraccionada serveix per separar líquids amb punts d'ebullició propers, com els components del petroli cru. S'utilitza una columna de rectificació amb un escalfador a la part baixa. El vapor puja i, com més amunt, més fred fa. Cada fracció condensa al pis on la temperatura és la del seu punt d'ebullició. El líquid que condensa baixa i el vapor continua pujant. Els gasos (metà, età) surten per dalt; la gasolina i el gasoil, pels costats; els residus més pesats, com l'alquitrà, per baix.",
+   "test": [
+    [5, "En una columna de rectificació, per què cada fracció del petroli condensa en un pis diferent?", "Perquè cada pis és a una temperatura i la fracció condensa on la temperatura és la del seu punt d'ebullició", ["Perquè cada pis té un filtre amb porus de mida diferent", "Trampa: confondre la columna amb una successió de filtres"], ["Perquè les fraccions pesades es dissolen en les lleugeres a cada pis", "Trampa: confondre la condensació amb la dissolució"], ["Perquè els pisos de dalt són més calents i atrauen el vapor", "Trampa: creure que la temperatura augmenta amb l'alçada"], "La columna és més freda com més amunt. Cada compost condensa al pis on la T baixa fins al seu punt d'ebullició. Regla: els més lleugers, a dalt; els més pesats, a baix."]
+   ],
+   "vf": [
+    [3, "La destil·lació fraccionada s'utilitza per separar líquids amb punts d'ebullició molt allunyats.", false, "S'utilitza per a líquids amb punts d'ebullició propers: la columna repeteix moltes condensacions i evaporacions i millora la separació. Si els punts són molt diferents, n'hi ha prou amb una destil·lació simple.", "Trampa: confondre la fraccionada amb la simple"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Extracció, cristal·lització i evaporació",
+   "pagina": 24,
+   "cara": 5,
+   "ayuda": "Les mescles homogènies no mostren fases i es separen amb mètodes específics. L'extracció afegeix un líquid per treure'n un altre, com oli i petroli (líquid-líquid), o per treure un sòlid, com l'oli de llavors mòltes amb l'aparell Soxhlet. La cristal·lització obté cristalls d'una dissolució, com sucre o sulfat de coure, amb un cristal·litzador i fred. L'evaporació escalfa la dissolució per eliminar l'aigua i queda el solut, com la sal a les salines. Aquests mètodes no serveixen per a mescles heterogènies, que se separen per mida o densitat.",
+   "test": [
+    [3, "Quina tècnica serveix per obtenir sal de l'aigua salada, com es fa a les salines?", "Evaporació: l'aigua s'evapora i la sal queda al recipient", ["Filtració: el paper de filtre retén la sal dissolta", "Trampa: creure que una sal dissolta queda retinguda en un filtre"], ["Decantació: la sal queda a baix i es buida l'aigua", "Trampa: confondre dissolució amb dues fases líquides"], ["Centrifugació: la sal es separa en girar la mostra", "Trampa: aplicar un mètode de mescles heterogènies a una homogènia"], "L'aigua salada és una mescla homogènia i no se separa per mida ni densitat. En evaporar l'aigua, el solut queda al fons. Regla: evaporar per quedar-se amb el solut."],
+    [4, "En què es basa l'extracció líquid-líquid?", "En afegir un líquid que dissol un dels components i l'extreu de la mescla", ["En escalfar fins que bull el component més volàtil", "Trampa: confondre l'extracció amb la destil·lació"], ["En deixar reposar fins que el component més dens cau al fons", "Trampa: confondre l'extracció amb la sedimentació"], ["En refredar fins que un dels components forma cristalls", "Trampa: confondre l'extracció amb la cristal·lització"], "A l'extracció s'afegeix un líquid per extreure'n un altre, com en una mescla d'oli i petroli. No cal escalfar ni refredar: es juga amb la capacitat de dissoldre."]
+   ],
+   "vf": [
+    [2, "L'evaporació permet recuperar el solut d'una dissolució, com la sal de l'aigua de mar, però no recupera el dissolvent.", true, "En evaporar l'aigua, la sal queda al recipient i el vapor d'aigua se'n va a l'aire. Si volem recuperar també el dissolvent, cal la destil·lació.", "Trampa: creure que l'evaporació recupera tant el solut com el dissolvent"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Cromatografia",
+   "pagina": 27,
+   "cara": 2,
+   "ayuda": "La cromatografia separa substàncies presents en quantitats molt petites, per exemple els colors d'una tinta. Té dues fases: la fase mòbil (líquid o gas), el dissolvent que es mou i arrossega la mescla, i la fase estacionària (paper, gel de sílice o una columna plena d'un sòlid), que no es mou i reté les substàncies. Cada substància queda més o menys retinguda, i la menys retinguda avança més de pressa. Per això la mescla se separa en bandes. En paper, es fa una línia amb llapis, s'hi posa una gota de tinta i el dissolvent puja pel paper; s'ha de treure el paper abans que el dissolvent arribi dalt.",
+   "test": [
+    [5, "En una cromatografia en paper, una tinta se separa en tres bandes. Per què la banda de dalt és la que ha avançat més?", "Perquè és la menys retinguda pel paper i l'arrossega més el dissolvent", ["Perquè és la més densa i el dissolvent la fa pujar", "Trampa: confondre la cromatografia amb la separació per densitat"], ["Perquè té el punt d'ebullició més baix i s'evapora cap amunt", "Trampa: confondre la cromatografia amb la destil·lació"], ["Perquè reacciona més amb el paper i el travessa més de pressa", "Trampa: confondre retenció amb reacció química"], "La separació depèn de la retenció a la fase estacionària: la substància menys retinguda avança més. Regla: menys retinguda és igual a més lluny."]
+   ],
+   "vf": [
+    [3, "En una cromatografia en paper, la línia d'origen es traça amb bolígraf perquè la tinta fa un senyal més visible.", false, "La línia d'origen es fa amb llapis: el grafit no s'arrossega amb el dissolvent, mentre que la tinta del bolígraf sí que podria separar-se i enganyar el resultat.", "Trampa: creure que qualsevol instrument d'escriptura serveix per a la línia d'origen"]
+   ],
+   "problemas": []
+  }
+ ]
+}

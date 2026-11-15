@@ -1,0 +1,59 @@
+{
+ "subtema": "Escalfar, filtrar i fer reaccions",
+ "conceptos": [
+  {
+   "nombre": "Muntatge per escalfar",
+   "pagina": 9,
+   "cara": 9,
+   "ayuda": "Els suports aguanten el material i el bec Bunsen l'escalfa des de sota. El suport es completa amb una nou, que uneix la pinça o l'aro al suport. La pinça subjecta recipients com els tubs d'assaig, i l'aro és una anella que aguanta recipients des de sota. Un baló de fons rodó es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota. Els tubs d'assaig s'escalfen directament a la flama, subjectats amb les pinces.",
+   "test": [
+    [1, "Quina peça del muntatge uneix la pinça (o l'aro) al suport?", "Nou", ["Bec Bunsen", "Confondre la font de calor amb la peça de subjecció"], ["Baló de fons rodó", "Pensar que el recipient fa de nexe"], ["Tub d'assaig", "Confondre els recipients amb els suports"], "La nou és la peça que fixa la pinça o l'aro al suport. Regla: suport + nou + pinça aguanten el material; el bec Bunsen escalfa."],
+    [3, "Com s'escalfa un tub d'assaig?", "Directament a la flama, subjectat amb pinces", ["Posat sobre un aro i escalfat des de dalt", "Confondre l'aro, que aguanta recipients des de sota, amb l'escalfament per dalt"], ["Fixat amb la nou al suport, sense pinces", "Creure que la nou subjecta els tubs directament"], ["Dins d'un embut Büchner sobre el bec Bunsen", "Confondre el material de filtrar amb el d'escalfar"], "Els tubs d'assaig s'escalfen directament a la flama i es subjecten amb pinces. El baló de fons rodó, en canvi, es posa al suport i s'escalfa des de sota."]
+   ],
+   "vf": [
+    [1, "El bec Bunsen escalfa el recipient des de sota.", true, "El recipient es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota.", "Pensar que el bec s'ha de col·locar per sobre del recipient."]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Filtració al buit",
+   "pagina": 10,
+   "cara": 10,
+   "ayuda": "La filtració serveix per separar un sòlid d'un líquid. Amb un embut i un paper de filtre plegat, el sòlid queda al paper i només passa el líquid. A la filtració al buit es fa servir un embut Büchner, que és de porcellana i té el fons foradat, amb un paper de filtre a sobre. L'embut es posa al kitasatos, un matràs amb sortida lateral, connectat a la trompa de buit. El buit xucla el líquid i la filtració és més ràpida.",
+   "test": [
+    [2, "Quin embut es fa servir a la filtració al buit?", "Embut Büchner", ["Embut de decantació", "Confondre filtrar un sòlid amb separar dos líquids"], ["Embut amb paper de filtre plegat", "Barrejar la filtració simple amb la filtració al buit"], ["Kitasatos", "Confondre el matràs que recull el líquid amb l'embut"], "L'embut Büchner, de porcellana i amb el fons foradat, és el de la filtració al buit. Regla: Büchner + kitasatos + trompa de buit."],
+    [3, "Per què la filtració al buit és més ràpida que la filtració amb un embut normal?", "Perquè el buit xucla el líquid a través del paper de filtre", ["Perquè l'embut Büchner escalfa el líquid", "Pensar que l'escalfament accelera el pas pel paper"], ["Perquè el paper de filtre deixa passar també el sòlid", "Creure que un filtre menys selectiu va més de pressa"], ["Perquè el kitasatos és més gran que un matràs normal", "Atribuir la rapidesa a la mida del recipient"], "El buit que crea la trompa xucla el líquid i accelera la filtració. El sòlid continua quedant-se al paper de filtre."]
+   ],
+   "vf": [
+    [3, "A la filtració al buit, el sòlid passa a través del paper de filtre i el líquid queda a l'embut.", false, "Passa al revés: el sòlid queda al paper de filtre i només passa el líquid, que cau al kitasatos.", "Confondre quina fase retén el paper de filtre."]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Embut de decantació",
+   "pagina": 10,
+   "cara": 10,
+   "ayuda": "L'embut de decantació serveix per separar dos líquids que no es barregen, és a dir, no miscibles, com l'aigua i l'oli. Els dos líquids formen dues capes: el més dens queda a baix. Quan s'obre la clau, surt primer el líquid de baix, i quan ja ha sortit tot es tanca la clau. Així el líquid de dalt queda a l'embut. Exemple: en una mescla d'oli i aigua, l'aigua és més densa i surt primer.",
+   "test": [
+    [3, "Un embut de decantació conté oli i aigua. Què passa en obrir la clau?", "Surt primer l'aigua, perquè és el líquid més dens i queda a baix", ["Surt primer l'oli, perquè sura i és el més lleuger", "Creure que el líquid de dalt és el primer a sortir"], ["Surten tots dos mesclats, perquè s'han barrejat", "Oblidar que no són miscibles i formen capes"], ["Surt l'aigua evaporada, perquè la clau escalfa la mescla", "Confondre la decantació amb una destil·lació"], "Els dos líquids no es barregen i el més dens queda a baix. En obrir la clau surt primer el de baix. Regla: més dens, a baix i surt primer."]
+   ],
+   "vf": [
+    [2, "L'embut de decantació serveix per separar dos líquids que es barregen bé entre si.", false, "Només serveix per a líquids no miscibles, com l'aigua i l'oli, que formen dues capes.", "Pensar que el mateix embut separa qualsevol parell de líquids."]
+   ],
+   "problemas": [
+    [2, "Un embut de decantació conté 350 mL d'una mescla d'oli i aigua. L'oli ocupa el 40 % del volum i l'aigua és més densa que l'oli. S'obre la clau fins que surt tota la capa inferior. Quin volum, en mL, ha sortit?", 210, "La capa inferior és la del líquid més dens, l'aigua. L'oli ocupa el 40 %, així que l'aigua ocupa el 60 %. V = 0,60 · 350 mL = 210 mL.", "0.60*350"]
+   ]
+  },
+  {
+   "nombre": "Fer reaccions i obtenir el producte",
+   "pagina": 11,
+   "cara": 11,
+   "ayuda": "Les reaccions es fan en recipients com el baló de reacció, el baló de fons rodó, el baló de tres boques o els tubs d'assaig. El gresol serveix per escalfar al forn a temperatures molt altes i fondre metalls. Després de la reacció, per recuperar el producte, l'ordre habitual és: refrigerant per condensar el vapor, rotavapor per eliminar el dissolvent, cristal·litzador per obtenir cristalls d'una solució sobresaturada i assecador per eixugar les substàncies.",
+   "test": [
+    [4, "Quin és l'ordre habitual de l'equip per recuperar un producte després d'una reacció?", "Refrigerant, rotavapor, cristal·litzador i assecador", ["Assecador, cristal·litzador, rotavapor i refrigerant", "Invertir tot l'ordre, començant per eixugar"], ["Rotavapor, refrigerant, assecador i cristal·litzador", "Posar l'assecat abans de cristal·litzar"], ["Cristal·litzador, refrigerant, assecador i rotavapor", "Cristal·litzar abans d'eliminar el dissolvent"], "Primer es condensa el vapor, després s'elimina el dissolvent amb el rotavapor, s'obtenen cristalls i, per acabar, s'eixuga el producte. Regla: l'assecat és l'últim pas."]
+   ],
+   "vf": [],
+   "problemas": []
+  }
+ ]
+}

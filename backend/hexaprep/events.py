@@ -1,4 +1,5 @@
 import logging
+import math
 import time
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
@@ -13,8 +14,9 @@ logger = logging.getLogger(__name__)
 MODOS = {"nivel", "practica", "repaso_subtema", "repaso_fallos"}
 TIPOS = {
     "pregunta_mostrada", "opcion_seleccionada", "confianza", "respuesta_enviada", "explicacion_abierta",
-    "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion",
+    "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion", "marcada_correcta",
 }
+TOLERANCIA_PROBLEMA = 0.01  # error relativo que cuenta como acierto en un problema
 CONFIANZAS = {"seguro", "dudo", "adivino"}
 LETRAS = ["a", "b", "c", "d"]
 VERSION_APP = "0.1.0"
@@ -33,6 +35,7 @@ class AnswerResult:
     correcta: bool
     opcion_correcta: str
     trampa: str | None
+    solucion: float | None = None  # solo problemas
 
 
 @dataclass
@@ -96,14 +99,33 @@ def _selection_path(session: Session, sesion_id: str, pregunta_id: str, elegida:
     return path
 
 
+def parse_numero(texto: str) -> float:
+    """Número escrito por la alumna: admite coma decimal, espacios y exponente (6,022e23)."""
+    try:
+        v = float(texto.strip().replace(" ", "").replace(",", "."))
+    except ValueError:
+        raise ValueError(f"respuesta no numérica: {texto!r}") from None
+    if not math.isfinite(v):
+        raise ValueError(f"respuesta no numérica: {texto!r}")
+    return v
+
+
 def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opciones: list[str], elegida: str,
-                  confianza: str | None, tiempos: dict) -> AnswerResult:
+                  confianza: str | None, tiempos: dict, respuesta: str | None = None) -> AnswerResult:
     _require_session(session, sesion_id)
     pregunta = session.get(Pregunta, pregunta_id)
     if pregunta is None:
         raise ValueError(f"pregunta desconocida: {pregunta_id}")
-    if elegida not in LETRAS or sorted(orden_opciones) != LETRAS:
-        raise ValueError("opción elegida u orden de opciones no válidos")
+    problema = pregunta.tipo == "problema"
+    if problema:
+        if respuesta is None:
+            raise ValueError("un problema se responde con un número")
+        valor = parse_numero(respuesta)
+        elegida, orden_opciones = "a", []
+    else:
+        letras = LETRAS[:2] if pregunta.tipo == "vf" else LETRAS
+        if elegida not in letras or sorted(orden_opciones) != letras:
+            raise ValueError("opción elegida u orden de opciones no válidos")
     if confianza is not None and confianza not in CONFIANZAS:
         raise ValueError(f"confianza no válida: {confianza}")
     if session.scalar(select(Intento.id).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)):
@@ -111,17 +133,22 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
 
     opciones = {o.posicion: o for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == pregunta_id))}
     correcta_letra = next(l for l, o in opciones.items() if o.correcta)
-    es_correcta = elegida == correcta_letra
-    trampa = None if es_correcta else opciones[elegida].tipo_trampa
+    solucion = float(opciones["a"].texto) if problema else None
+    if problema:
+        es_correcta = math.isclose(valor, solucion, rel_tol=TOLERANCIA_PROBLEMA, abs_tol=1e-9)
+    else:
+        es_correcta = elegida == correcta_letra
+    trampa = None if es_correcta or problema else opciones[elegida].tipo_trampa
 
-    path = _selection_path(session, sesion_id, pregunta_id, elegida)
+    path = ["a"] if problema else _selection_path(session, sesion_id, pregunta_id, elegida)
     previos = session.scalars(
         select(Intento).where(Intento.concepto_id == pregunta.concepto_id).order_by(Intento.id.desc())).all()
     ahora, ahora_utc = datetime.now(), utcnow()
 
     ev = Evento(sesion_id=sesion_id, tipo="respuesta_enviada", pregunta_id=pregunta_id, t_cliente=ahora_utc,
                 payload={"elegida": elegida, "orden_opciones": orden_opciones, "confianza": confianza,
-                         "tiempos": tiempos, "correcta": es_correcta})
+                         "tiempos": tiempos, "correcta": es_correcta,
+                         **({"respuesta": respuesta} if problema else {})})
     session.add(ev)
     session.flush()
     intento = Intento(
@@ -147,7 +174,25 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     except Exception:
         session.rollback()  # dominio y FSRS son reconstruibles (mastery.rebuild, scheduling.rebuild)
         logger.exception("no se pudo actualizar el dominio tras la respuesta %s", intento_id)
-    return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa)
+    return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa, solucion=solucion)
+
+
+def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:
+    """«Lo he hecho bien»: da por acertado un problema que el margen automático rechazó, y recalcula el dominio."""
+    pregunta = session.get(Pregunta, pregunta_id)
+    if pregunta is None or pregunta.tipo != "problema":
+        raise ValueError("solo se puede marcar como correcto un problema")
+    intento = session.scalar(select(Intento).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id))
+    if intento is None:
+        raise ValueError("el problema no se ha respondido en esta sesión")
+    if intento.correcta:
+        return
+    intento.correcta = True
+    session.flush()
+    record_event(session, sesion_id, "marcada_correcta", pregunta_id, {}, datetime.now())
+    mastery.rebuild(session, intento.concepto_id)
+    scheduling.rebuild(session, intento.concepto_id)
+    _commit(session)
 
 
 def resume_session(session: Session, sesion_id: str) -> SessionState:

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AppHeader } from "./components/AppHeader";
-import { useAsignatura } from "./hooks";
+import { guardarAsignatura, useAsignatura } from "./hooks";
 import { t } from "./i18n";
 import { FreePractice } from "./pages/FreePractice";
 import { History } from "./pages/History";
@@ -22,7 +22,7 @@ function useHash(): [string, (h: string) => void] {
 
 export default function App() {
   const [hash, go] = useHash();
-  const { id: asignaturaId, nombre, failed } = useAsignatura();
+  const { id: asignaturaId, nombre, failed, subjects } = useAsignatura();
   const [route, arg] = hash.split("/");
 
   let page = null;
@@ -38,7 +38,7 @@ export default function App() {
   const sinNav = route === "nivel" || route === "practica";
   return (
     <div className="min-h-screen pb-20 font-sans sm:pb-0">
-      <AppHeader asignatura={nombre} ruta={route} sinNav={sinNav} />
+      <AppHeader asignatura={nombre} asignaturaId={asignaturaId} asignaturas={subjects} onCambiarAsignatura={guardarAsignatura} ruta={route} sinNav={sinNav} />
       {page}
     </div>
   );

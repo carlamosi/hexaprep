@@ -54,8 +54,10 @@ class PreguntaIn(Strict):
     concepto: str
     dificultad: int = Field(ge=1, le=5)
     enunciado: str = Field(min_length=1)
-    opciones: list[OpcionIn] = Field(min_length=4, max_length=4)
-    correcta: Literal["a", "b", "c", "d"]
+    opciones: list[OpcionIn] = []
+    correcta: Literal["a", "b", "c", "d"] | None = None
+    tipo: Literal["test", "vf", "problema"] = "test"
+    solucion: float | None = None  # solo problemas: el número que hay que escribir, sin unidades
     explicacion: str
     ayuda_larga: str
     fuente_pagina: int = Field(ge=1)
@@ -71,6 +73,15 @@ class PreguntaIn(Strict):
 
     @model_validator(mode="after")
     def _traps(self):
+        if self.tipo == "problema":
+            if self.solucion is None or self.opciones or self.correcta is not None:
+                raise ValueError("un problema lleva solucion y no lleva opciones ni correcta")
+            return self
+        n = 4 if self.tipo == "test" else 2
+        if len(self.opciones) != n or self.solucion is not None:
+            raise ValueError(f"una pregunta {self.tipo} lleva exactamente {n} opciones y no lleva solucion")
+        if self.correcta is None or "abcd".index(self.correcta) >= n:
+            raise ValueError("falta la opción correcta o no existe")
         for i, o in enumerate(self.opciones):
             es_correcta = "abcd"[i] == self.correcta
             if es_correcta and o.trampa:

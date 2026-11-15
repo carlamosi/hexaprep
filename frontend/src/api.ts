@@ -29,17 +29,21 @@ export interface Question {
   pregunta_id: string; concepto_id: string; subtema_id: string; enunciado: string;
   opciones: { letra: Letra; texto: string }[]; orden: Letra[]; dificultad: number;
   ayuda_larga: string | null; fuente_id: string | null; fuente_pagina: number | null; fuente_cara: number | null;
-  tema?: string; subtema?: string;
+  tema?: string; subtema?: string; tipo?: "test" | "vf" | "problema";
 }
 export interface SessionState { sesion_id: string; modo: Modo; filtro: Record<string, unknown>; respondidas: string[]; pendiente: string | null }
 export interface AnswerBody {
   sesion_id: string; pregunta_id: string; orden_opciones: Letra[]; elegida: Letra;
   confianza?: Confianza | null; tiempos?: Record<string, number>;
+  /** Solo problemas: el número escrito, sin unidades. */
+  respuesta?: string;
 }
 export interface AnswerResult {
   correcta: boolean; opcion_correcta: Letra; trampa: string | null; explicacion: string | null;
   trampas: Partial<Record<Letra, string>>; fuente_id: string | null; fuente_pagina: number | null;
   fuente_cara: number | null; percent: number;
+  /** Solo problemas: la solución numérica. */
+  solucion?: number | null;
 }
 export interface Suggestion {
   tipo: "concepto" | "placement"; concepto_id: string | null; concepto: string | null; subtema_id: string | null;
@@ -80,6 +84,8 @@ export const api = {
   getSession: (id: string) => request<SessionState>(`/api/sessions/${id}`),
   nextQuestion: (id: string) => request<Question | null>(`/api/sessions/${id}/next`),
   answer: (body: AnswerBody) => request<AnswerResult>("/api/answers", "POST", body),
+  markCorrect: (sesionId: string, preguntaId: string) =>
+    request<{ percent: number }>("/api/answers/correct", "POST", { sesion_id: sesionId, pregunta_id: preguntaId }),
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>
     request<{ ok: boolean }>(`/api/questions/${id}/report`, "POST", { motivo, sesion_id: sesionId ?? null }),
   editQuestion: (id: string, cambios: Record<string, unknown>) =>

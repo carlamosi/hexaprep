@@ -4,7 +4,7 @@ import { BookletButton } from "./BookletButton";
 import { RichText } from "./RichText";
 
 /** Feedback breve tipo entrenador, explicación plegada y enlace al booklet. */
-export function Explanation({ result, onNext }: { result: AnswerResult; onNext: () => void }) {
+export function Explanation({ result, onNext, onMarcarBien }: { result: AnswerResult; onNext: () => void; onMarcarBien?: () => void }) {
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
       <div
@@ -14,6 +14,7 @@ export function Explanation({ result, onNext }: { result: AnswerResult; onNext: 
       >
         <p className="font-semibold">{result.correcta ? t("practica.acierto") : t("practica.fallo")}</p>
         {!result.correcta && result.trampa && <p className="mt-1">{result.trampa}</p>}
+        {result.solucion != null && <p className="mt-1">{t("practica.solucion")}: <strong>{String(result.solucion).replace(".", ",")}</strong></p>}
       </div>
 
       {result.explicacion && (
@@ -32,6 +33,11 @@ export function Explanation({ result, onNext }: { result: AnswerResult; onNext: 
       <div className="flex flex-wrap items-center gap-3">
         {result.fuente_id && result.fuente_pagina && (
           <BookletButton fuenteId={result.fuente_id} cara={result.fuente_cara} pagina={result.fuente_pagina} />
+        )}
+        {onMarcarBien && !result.correcta && (
+          <button type="button" onClick={onMarcarBien} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2 font-medium">
+            {t("practica.loHeHechoBien")}
+          </button>
         )}
         <button
           type="button"

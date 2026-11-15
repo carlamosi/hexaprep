@@ -37,6 +37,12 @@ class AnswerIn(BaseModel):
     elegida: str
     confianza: str | None = None
     tiempos: dict = {}
+    respuesta: str | None = None  # solo problemas
+
+
+class CorrectIn(BaseModel):
+    sesion_id: str
+    pregunta_id: str
 
 
 class ReportIn(BaseModel):
@@ -61,7 +67,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
                static_dir: Path | None = None) -> FastAPI:
     data_dir = Path(data_dir or ROOT / "data")
     db_path = Path(db_path or data_dir / "hexaprep.db")
-    booklet_dir = Path(booklet_dir or ROOT / "banks" / "economia" / "fuentes")
+    booklet_dir = Path(booklet_dir or ROOT / "banks")  # rglob: cada asignatura guarda sus PDF en banks/<asignatura>/fuentes
     static_dir = Path(static_dir or ROOT / "frontend" / "dist")
 
     @asynccontextmanager
@@ -153,7 +159,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     def answer(body: AnswerIn, s: Session = Depends(get_session)):
         try:
             res = events.submit_answer(s, body.sesion_id, body.pregunta_id, body.orden_opciones, body.elegida,
-                                       body.confianza, body.tiempos)
+                                       body.confianza, body.tiempos, body.respuesta)
         except events.UnknownSession:
             raise HTTPException(404, "Sesión desconocida")
         except events.AlreadyAnswered as e:
@@ -171,6 +177,18 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             "fuente_id": p.fuente_id, "fuente_pagina": p.fuente_pagina, "fuente_cara": p.fuente_cara,
             "percent": mastery.percent(dom.theta) if dom and dom.n_intentos else 0,
         }
+
+    @app.post("/api/answers/correct")
+    def answer_correct(body: CorrectIn, s: Session = Depends(get_session)):
+        try:
+            events.mark_correct(s, body.sesion_id, body.pregunta_id)
+        except ValueError as e:
+            s.rollback()
+            raise HTTPException(422, str(e))
+        p = s.get(Pregunta, body.pregunta_id)
+        mastery.snapshot_daily(s, date.today())
+        dom = s.scalar(select(Dominio).where(Dominio.concepto_id == p.concepto_id))
+        return {"percent": mastery.percent(dom.theta) if dom and dom.n_intentos else 0}
 
     @app.get("/api/questions/reported")
     def reported(s: Session = Depends(get_session)):

@@ -1,0 +1,421 @@
+{
+ "subtema": "Estructura de la matèria i el mol",
+ "conceptos": [
+  {
+   "nombre": "Partícules de l'àtom i nombres Z i A",
+   "pagina": 12,
+   "cara": 12,
+   "ayuda": "L'àtom té un nucli, amb protons (càrrega +1) i neutrons (sense càrrega), i una escorça amb electrons (càrrega -1). El nombre atòmic Z és el nombre de protons i identifica l'element: no canvia mai. El nombre màssic A és la suma de protons i neutrons, i per això els neutrons són A - Z. En un àtom neutre hi ha tants electrons com protons. Gairebé tota la massa de l'àtom és al nucli, que és unes 100 000 vegades més petit que l'àtom. Exemple: el sodi té Z = 11 i A = 23, per tant 11 protons, 12 neutrons i 11 electrons.",
+   "test": [
+    [
+     1,
+     "Quina partícula de l'àtom té càrrega negativa i es troba a l'escorça?",
+     "Electró",
+     [
+      "Protó",
+      "Trampa: el protó és positiu i és al nucli"
+     ],
+     [
+      "Neutró",
+      "Trampa: el neutró és al nucli i no té càrrega"
+     ],
+     [
+      "Nucli",
+      "Trampa: el nucli és un conjunt de partícules, no una partícula amb càrrega negativa"
+     ],
+     "Els electrons són els únics amb càrrega negativa i són a l'escorça. Regla: protó +, neutró 0, electró -."
+    ],
+    [
+     2,
+     "Què indica el nombre atòmic Z d'un element?",
+     "El nombre de protons de l'àtom",
+     [
+      "El nombre de neutrons de l'àtom",
+      "Trampa: els neutrons es calculen amb A - Z"
+     ],
+     [
+      "La suma de protons i neutrons",
+      "Trampa: això és el nombre màssic A"
+     ],
+     [
+      "El nombre d'electrons de l'ió",
+      "Trampa: els electrons d'un ió depenen també de la càrrega"
+     ],
+     "Z compta els protons i identifica l'element; no canvia mai, ni en els ions. Regla: Z és el número de baix, i són protons."
+    ],
+    [
+     3,
+     "Un àtom té nombre màssic A = 23 i nombre atòmic Z = 11. Quants neutrons té?",
+     "12",
+     [
+      "11",
+      "Trampa: confon els neutrons amb Z, que són els protons"
+     ],
+     [
+      "23",
+      "Trampa: confon els neutrons amb A, que inclou protons"
+     ],
+     [
+      "34",
+      "Trampa: suma A i Z en lloc de restar-los"
+     ],
+     "Els neutrons són A - Z = 23 - 11 = 12. Regla: nombre de dalt menys nombre de baix."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "El nucli ocupa la major part del volum de l'àtom.",
+     false,
+     "El nucli és unes 100 000 vegades més petit que l'àtom, tot i que conté gairebé tota la massa. El volum l'ocupa l'escorça amb els electrons.",
+     "Trampa: confondre massa amb volum, perquè el nucli concentra la massa."
+    ]
+   ],
+   "problemas": [
+    [
+     1,
+     "Un àtom de ferro té Z = 26 i A = 56. Quants neutrons té?",
+     30.0,
+     "Neutrons = A - Z = 56 - 26 = 30.",
+     "56-26"
+    ],
+    [
+     2,
+     "Un àtom neutre té nombre màssic A = 40 i 20 neutrons. Quants electrons té?",
+     20.0,
+     "Protons = A - neutrons = 40 - 20 = 20. En un àtom neutre electrons = protons, per tant 20.",
+     "40-20"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ions i isòtops",
+   "pagina": 12,
+   "cara": 12,
+   "ayuda": "Un ió és un àtom amb càrrega perquè ha guanyat o perdut electrons; els protons no canvien mai. Un catió ha perdut electrons i té càrrega positiva (Na⁺ té 11 protons i 10 electrons). Un anió ha guanyat electrons i té càrrega negativa (Cl⁻ té 17 protons i 18 electrons). Per als electrons d'un ió: e⁻ = Z - càrrega. Els isòtops tenen el mateix Z però diferent A, és a dir diferent nombre de neutrons (¹H, ²H, ³H). La massa atòmica mitjana d'un element es calcula amb la mitjana ponderada dels seus isòtops.",
+   "test": [
+    [
+     2,
+     "Què tenen en comú dos isòtops del mateix element?",
+     "El nombre de protons, però no el de neutrons",
+     [
+      "El nombre de neutrons, però no el de protons",
+      "Trampa: els isòtops difereixen precisament en els neutrons"
+     ],
+     [
+      "El nombre màssic, però no el de protons",
+      "Trampa: si tinguessin el mateix A i Z serien idèntics"
+     ],
+     [
+      "El nombre d'electrons, però no el de protons",
+      "Trampa: el nombre d'electrons no defineix l'element"
+     ],
+     "Isòtops: mateix Z, diferent A, per tant diferent nombre de neutrons. Regla: mateix element, diferent massa."
+    ],
+    [
+     3,
+     "Quants electrons té l'ió Ca²⁺ (Z = 20)?",
+     "18",
+     [
+      "22",
+      "Trampa: suma la càrrega en lloc de restar-la"
+     ],
+     [
+      "20",
+      "Trampa: oblida que el catió ha perdut electrons"
+     ],
+     [
+      "2",
+      "Trampa: confon la càrrega amb el nombre d'electrons"
+     ],
+     "Un catió ha perdut electrons: 20 - 2 = 18. Regla: e⁻ = Z - càrrega; càrrega + resta i càrrega - suma."
+    ],
+    [
+     4,
+     "L'anió S²⁻ té Z = 16 i A = 32. Quin és el seu nombre de protons, neutrons i electrons?",
+     "16 protons, 16 neutrons i 18 electrons",
+     [
+      "16 protons, 16 neutrons i 14 electrons",
+      "Trampa: resta la càrrega en un anió en lloc de sumar-la"
+     ],
+     [
+      "18 protons, 14 neutrons i 18 electrons",
+      "Trampa: modifica els protons, que no canvien en un ió"
+     ],
+     [
+      "16 protons, 18 neutrons i 16 electrons",
+      "Trampa: atribueix la càrrega als neutrons"
+     ],
+     "Protons = Z = 16; neutrons = A - Z = 16; electrons = 16 + 2 = 18 perquè l'anió n'ha guanyat 2. Els protons no canvien mai."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Quan un àtom es converteix en catió ha perdut electrons i el seu nombre de protons no ha canviat.",
+     true,
+     "Només els electrons es poden guanyar o perdre en els processos habituals; els protons defineixen l'element. El catió té càrrega positiva perquè té més protons que electrons.",
+     "Trampa: creure que la càrrega positiva ve d'haver guanyat protons."
+    ]
+   ],
+   "problemas": [
+    [
+     2,
+     "L'ió Al³⁺ té Z = 13 i A = 27. Quants electrons té?",
+     10.0,
+     "Un catió amb càrrega +3 ha perdut 3 electrons: e⁻ = Z - càrrega = 13 - 3 = 10.",
+     "13-3"
+    ],
+    [
+     3,
+     "L'anió S²⁻ té Z = 16 i A = 32. Quantes partícules subatòmiques (protons, neutrons i electrons) té en total?",
+     50.0,
+     "Protons = 16; neutrons = 32 - 16 = 16; electrons = 16 + 2 = 18. Total = 16 + 16 + 18 = 50.",
+     "16+(32-16)+(16+2)"
+    ],
+    [
+     4,
+     "El clor natural és una barreja de dos isòtops: el ³⁵Cl (75,8 %) i el ³⁷Cl (24,2 %). Calcula la massa atòmica mitjana del clor, en u.",
+     35.5,
+     "Mitjana ponderada: 0,758 · 35 + 0,242 · 37 = 26,53 + 8,95 = 35,5 u.",
+     "0.758*35+0.242*37"
+    ]
+   ]
+  },
+  {
+   "nombre": "Massa molar",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "La massa molecular és la suma de les masses atòmiques de tots els àtoms de la fórmula, multiplicant cada massa pel seu subíndex. La massa molar M és la massa d'1 mol i té el mateix valor numèric que la massa molecular, però en g/mol. Exemple: M(H₂O) = 2 · 1,0 + 16,0 = 18,0 g/mol. Amb la massa molar es passa de grams a mols amb n = m / M, i de mols a grams amb m = n · M. Masses atòmiques del booklet: H = 1, C = 12, N = 14, O = 16, Na = 23.",
+   "test": [
+    [
+     2,
+     "Quina és la massa molar de l'aigua, H₂O? (H = 1,0; O = 16,0)",
+     "18,0 g/mol",
+     [
+      "17,0 g/mol",
+      "Trampa: compta un sol àtom d'hidrogen"
+     ],
+     [
+      "34,0 g/mol",
+      "Trampa: multiplica l'oxigen pel subíndex de l'hidrogen"
+     ],
+     [
+      "9,0 g/mol",
+      "Trampa: divideix la suma entre els dos hidrògens"
+     ],
+     "Es multiplica cada massa atòmica pel seu subíndex: 2 · 1,0 + 16,0 = 18,0. Regla: sumar tots els àtoms de la fórmula, sense deixar-ne cap."
+    ],
+    [
+     3,
+     "Quina expressió permet calcular el nombre de mols a partir de la massa en grams?",
+     "n = m / M",
+     [
+      "n = m · M",
+      "Trampa: multiplicar dóna una massa, no els mols"
+     ],
+     [
+      "n = M / m",
+      "Trampa: inverteix la divisió"
+     ],
+     [
+      "n = m / 6,022·10²³",
+      "Trampa: el nombre d'Avogadro serveix per a partícules, no per a la massa"
+     ],
+     "Els mols són la massa dividida entre la massa molar: n = m / M. Comprova les unitats: g dividit entre g/mol dóna mol."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "La massa molar de l'amoníac, NH₃, és 18,0 g/mol (N = 14; H = 1).",
+     false,
+     "M(NH₃) = 14 + 3 · 1 = 17,0 g/mol. El valor de 18,0 g/mol és el de l'aigua.",
+     "Trampa: confondre NH₃ amb H₂O o comptar quatre àtoms d'hidrogen."
+    ]
+   ],
+   "problemas": [
+    [
+     2,
+     "Quants mols hi ha en 90,0 g d'aigua? (H = 1,0; O = 16,0). Expressa el resultat en mol.",
+     5.0,
+     "M(H₂O) = 2 · 1,0 + 16,0 = 18,0 g/mol. n = m / M = 90,0 / 18,0 = 5,00 mol.",
+     "90.0/(2*1.0+16.0)"
+    ],
+    [
+     3,
+     "Calcula la massa molar del carbonat de sodi, Na₂CO₃ (Na = 23; C = 12; O = 16). Expressa el resultat en g/mol.",
+     106.0,
+     "M = 2 · 23 + 12 + 3 · 16 = 46 + 12 + 48 = 106 g/mol.",
+     "2*23+12+3*16"
+    ],
+    [
+     3,
+     "Quina massa tenen 0,750 mol de CO₂? (C = 12,0; O = 16,0). Expressa el resultat en g.",
+     33.0,
+     "M(CO₂) = 12,0 + 2 · 16,0 = 44,0 g/mol. m = n · M = 0,750 · 44,0 = 33,0 g.",
+     "0.750*(12.0+2*16.0)"
+    ]
+   ]
+  },
+  {
+   "nombre": "El mol i el nombre d'Avogadro",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "Un mol és la quantitat de substància que conté 6,022·10²³ partícules (àtoms, molècules o ions); aquest és el nombre d'Avogadro, N_A. Com una dotzena són 12, un mol són 6,022·10²³. El nombre de partícules es calcula amb N = n · 6,022·10²³ i els mols amb n = N / 6,022·10²³. Un mol de qualsevol substància conté el mateix nombre de partícules, però no la mateixa massa. Compte amb què es compta: en 1 mol de H₂O hi ha 6,022·10²³ molècules, però el triple d'àtoms. Camí de conversions: grams, mols i partícules, passant sempre pels mols.",
+   "test": [
+    [
+     1,
+     "Quantes partícules hi ha en 1 mol de qualsevol substància?",
+     "6,022·10²³",
+     [
+      "22,4",
+      "Trampa: és el volum molar en litres, no un nombre de partícules"
+     ],
+     [
+      "6,022·10⁻²³",
+      "Trampa: canvia el signe de l'exponent"
+     ],
+     [
+      "1,66·10⁻²⁷",
+      "Trampa: és la unitat de massa atòmica en kg"
+     ],
+     "Un mol conté 6,022·10²³ partícules, el nombre d'Avogadro. Regla: com una dotzena són 12, un mol són 6,022·10²³."
+    ],
+    [
+     4,
+     "Quina mostra conté més molècules: 18 g d'H₂O o 44 g de CO₂? (H = 1; C = 12; O = 16)",
+     "El mateix nombre: cadascuna és 1 mol",
+     [
+      "Les 44 g de CO₂, perquè pesen més",
+      "Trampa: confon més massa amb més partícules"
+     ],
+     [
+      "Els 18 g d'H₂O, perquè la molècula és més petita",
+      "Trampa: la mida no determina el nombre de molècules"
+     ],
+     [
+      "No es pot saber sense conèixer el volum",
+      "Trampa: el nombre de partícules surt de la massa i M"
+     ],
+     "M(H₂O) = 18 g/mol i M(CO₂) = 44 g/mol, així que cada mostra és 1 mol. Regla: passa sempre a mols abans de comparar."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "Un mol de qualsevol substància conté el mateix nombre de partícules, tot i que la seva massa pot ser diferent.",
+     true,
+     "Un mol són sempre 6,022·10²³ partícules; la massa depèn de la massa molar, que és diferent per a cada substància.",
+     "Trampa: pensar que el mateix nombre de partícules implica la mateixa massa."
+    ],
+    [
+     3,
+     "En 1 mol d'aigua hi ha 6,022·10²³ àtoms.",
+     false,
+     "Hi ha 6,022·10²³ molècules d'H₂O, i cadascuna té 3 àtoms, per tant 3 · 6,022·10²³ àtoms.",
+     "Trampa: confondre molècules amb àtoms."
+    ]
+   ],
+   "problemas": [
+    [
+     2,
+     "Quants mols són 1,806·10²⁴ molècules d'O₂? (N_A = 6,022·10²³). Expressa el resultat en mol.",
+     3.0,
+     "n = N / N_A = 1,806·10²⁴ / 6,022·10²³ = 3,00 mol.",
+     "1.806e24/6.022e23"
+    ],
+    [
+     3,
+     "Quants àtoms d'hidrogen hi ha en 0,500 mol d'H₂O? (N_A = 6,022·10²³). Expressa el resultat en unitats de 10²³ àtoms.",
+     6.02,
+     "Molècules: N = 0,500 · 6,022·10²³ = 3,01·10²³. Cada molècula té 2 àtoms d'H: 2 · 3,01·10²³ = 6,02·10²³ àtoms, és a dir 6,02 en unitats de 10²³.",
+     "0.500*2*6.022"
+    ],
+    [
+     4,
+     "Quina massa tenen 1,204·10²⁴ molècules de CO₂? (C = 12,0; O = 16,0; N_A = 6,022·10²³). Expressa el resultat en g.",
+     88.0,
+     "n = 1,204·10²⁴ / 6,022·10²³ = 2,00 mol. M(CO₂) = 44,0 g/mol. m = n · M = 2,00 · 44,0 = 88,0 g.",
+     "1.204e24/6.022e23*44.0"
+    ],
+    [
+     5,
+     "Calcula la massa d'una sola molècula d'aigua (H = 1,0; O = 16,0; N_A = 6,022·10²³). Expressa el resultat en unitats de 10⁻²³ g.",
+     2.99,
+     "M(H₂O) = 18,0 g/mol i 1 mol són 6,022·10²³ molècules. Massa d'una molècula = 18,0 / 6,022·10²³ = 2,99·10⁻²³ g, és a dir 2,99 en unitats de 10⁻²³ g.",
+     "18.0/6.022"
+    ]
+   ]
+  },
+  {
+   "nombre": "Volum molar dels gasos",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "Segons Avogadro, a la mateixa pressió i temperatura, el mateix nombre de mols de qualsevol gas ocupa el mateix volum. En condicions normals (0 °C i 1 atm) 1 mol de gas ocupa 22,4 L: és el volum molar. Per això V = n · 22,4 L i, al revés, n = V / 22,4. Això només val en condicions normals. Exemple: 11,2 L d'O₂ en c.n. són 11,2 / 22,4 = 0,50 mol, que pesen 0,50 · 32,0 = 16 g.",
+   "test": [
+    [
+     2,
+     "Quin volum ocupa 1 mol de qualsevol gas en condicions normals (0 °C, 1 atm)?",
+     "22,4 L",
+     [
+      "24,5 L",
+      "Trampa: és el volum a 25 °C, no a 0 °C"
+     ],
+     [
+      "22,4 g",
+      "Trampa: confon el volum amb una massa"
+     ],
+     [
+      "1,00 L",
+      "Trampa: un mol no equival a un litre"
+     ],
+     "En c.n. 1 mol de gas ocupa 22,4 L, sigui quin sigui el gas. Regla: volum molar = 22,4 L/mol."
+    ],
+    [
+     4,
+     "Quin volum ocupen 2,0 mol de gas en condicions normals?",
+     "44,8 L",
+     [
+      "11,2 L",
+      "Trampa: divideix 22,4 entre els mols en lloc de multiplicar"
+     ],
+     [
+      "22,4 L",
+      "Trampa: oblida multiplicar pel nombre de mols"
+     ],
+     [
+      "0,089 L",
+      "Trampa: calcula 2,0 / 22,4 en lloc de 2,0 · 22,4"
+     ],
+     "V = n · 22,4 = 2,0 · 22,4 = 44,8 L. Regla: mols a litres es multiplica per 22,4; litres a mols es divideix."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Dos gasos diferents, a la mateixa pressió i temperatura, ocupen el mateix volum si tenen el mateix nombre de mols.",
+     true,
+     "És la llei d'Avogadro: a igual P i T, igual nombre de mols ocupa igual volum, independentment del gas.",
+     "Trampa: pensar que el volum depèn de la massa o de la naturalesa del gas."
+    ]
+   ],
+   "problemas": [
+    [
+     2,
+     "Quants mols de gas hi ha en 67,2 L en condicions normals? Expressa el resultat en mol.",
+     3.0,
+     "n = V / 22,4 = 67,2 / 22,4 = 3,00 mol.",
+     "67.2/22.4"
+    ],
+    [
+     4,
+     "Quina massa tenen 5,60 L de CO₂ en condicions normals? (C = 12,0; O = 16,0). Expressa el resultat en g.",
+     11.0,
+     "n = 5,60 / 22,4 = 0,250 mol. M(CO₂) = 44,0 g/mol. m = n · M = 0,250 · 44,0 = 11,0 g.",
+     "5.60/22.4*(12.0+2*16.0)"
+    ]
+   ]
+  }
+ ]
+}

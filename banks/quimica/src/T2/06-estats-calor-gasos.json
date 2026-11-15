@@ -1,0 +1,456 @@
+{
+ "subtema": "Estats, calor i gasos",
+ "conceptos": [
+  {
+   "nombre": "Estats de la matèria i model cinètic",
+   "pagina": 14,
+   "cara": 14,
+   "ayuda": "Segons el model cinètic, tota la matèria està feta de partícules molt petites que es mouen contínuament, amb espai buit entre elles. L'estat depèn de com d'unides estan: en un sòlid estan molt juntes i només vibren en posicions fixes, en un líquid estan juntes però llisquen, i en un gas estan molt separades i es mouen en totes direccions. Per això el sòlid té forma i volum propis, el líquid té volum propi però pren la forma del recipient, i el gas ocupa tot el recipient i es comprimeix molt. La temperatura mesura l'energia cinètica mitjana de les partícules. En un gas, la pressió és el resultat dels xocs de les partícules contra les parets. Exemple: una xeringa tapada amb aire es pot comprimir, però si és plena d'aigua, no.",
+   "test": [
+    [
+     1,
+     "Quina afirmació descriu correctament un gas segons el model cinètic?",
+     "Ocupa tot el recipient perquè les partícules estan molt separades",
+     [
+      "Té volum propi perquè les partícules vibren en posicions fixes",
+      "trampa: confon el gas amb el sòlid"
+     ],
+     [
+      "Té forma pròpia perquè les partícules estan molt ordenades",
+      "trampa: atribueix al gas l'ordre d'un cristall"
+     ],
+     [
+      "Es manté en un sol lloc perquè les forces són molt fortes",
+      "trampa: confon forces entre partícules fortes amb les d'un gas"
+     ],
+     "En un gas les forces entre partícules són gairebé nul·les i la distància, enorme. Per això el gas s'escampa pel recipient sencer. Regla: més distància entre partícules vol dir menys forma i volum propis."
+    ],
+    [
+     2,
+     "Per què un gas es pot comprimir molt i un líquid gairebé gens?",
+     "Perquè al gas hi ha molt d'espai buit entre partícules i al líquid estan juntes",
+     [
+      "Perquè les partícules del gas són més petites que les del líquid",
+      "trampa: creu que canvia la mida de les partícules"
+     ],
+     [
+      "Perquè al gas les forces entre partícules són molt més fortes",
+      "trampa: inverteix la relació entre forces i estat"
+     ],
+     [
+      "Perquè les partícules del líquid es mouen més ràpid que les del gas",
+      "trampa: confon velocitat amb compressibilitat"
+     ],
+     "Comprimir és reduir l'espai buit entre partícules. Al gas n'hi ha molt i al líquid gairebé gens. Regla: compressibilitat igual a espai buit disponible."
+    ],
+    [
+     3,
+     "Segons el model cinètic, què provoca la pressió d'un gas sobre les parets del recipient?",
+     "Els xocs de les partícules contra les parets",
+     [
+      "El pes de les partícules sobre el fons del recipient",
+      "trampa: confon la pressió del gas amb la hidrostàtica d'un líquid"
+     ],
+     [
+      "L'atracció entre partícules, que les empeny cap a fora",
+      "trampa: atribueix la pressió a forces entre partícules"
+     ],
+     [
+      "La temperatura de les parets, que escalfen el gas",
+      "trampa: creu que la pressió ve de les parets i no de les partícules"
+     ],
+     "La pressió d'un gas és el resultat dels xocs de les partícules contra les parets, i actua en totes direccions. Si la temperatura puja, xoquen més fort i més sovint. Regla: pressió de gas igual a xocs."
+    ]
+   ],
+   "vf": [
+    [
+     1,
+     "En un sòlid cristal·lí les partícules estan ordenades formant una xarxa.",
+     true,
+     "Els sòlids cristal·lins, com la sal o el gel, tenen les partícules ordenades en xarxa. Els amorfs, com el vidre, les tenen desordenades.",
+     "trampa: creure que tots els sòlids són desordenats"
+    ],
+    [
+     2,
+     "Com a sòlid, el gel és més dens que l'aigua líquida i per això s'enfonsa.",
+     false,
+     "El gel és l'excepció: és menys dens que l'aigua líquida i per això sura. En general el sòlid és més dens que el líquid, però l'aigua no ho compleix.",
+     "trampa: generalitzar que el sòlid sempre és més dens que el líquid"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Canvis d'estat",
+   "pagina": 15,
+   "cara": 14,
+   "ayuda": "Un canvi d'estat és un canvi físic: la substància no canvia de naturalesa. En escalfar, la substància absorbeix calor i passa de sòlid a líquid (fusió), de líquid a gas (vaporització) o de sòlid a gas (sublimació). En refredar, desprèn calor i passa de gas a líquid (condensació), de líquid a sòlid (solidificació) o de gas a sòlid (sublimació inversa). Durant el canvi d'estat la temperatura és constant: la calor trenca unions entre partícules en lloc d'escalfar. L'aigua pura a 1 atm fon a 0 °C i bull a 100 °C. L'evaporació passa només a la superfície i a qualsevol temperatura, mentre que l'ebullició passa a tot el líquid i a la temperatura d'ebullició.",
+   "test": [
+    [
+     2,
+     "Escalfem aigua pura a 1 atm i bull. Què passa amb la temperatura mentre bull?",
+     "Es manté a 100 °C mentre l'aigua es transforma en vapor",
+     [
+      "Continua pujant per sobre de 100 °C mentre absorbeix calor",
+      "trampa: oblida que la calor trenca unions i no escalfa"
+     ],
+     [
+      "Baixa lleugerament perquè l'aigua perd partícules",
+      "trampa: confon pèrdua de massa amb pèrdua de temperatura"
+     ],
+     [
+      "Puja cada cop més a poc a poc fins arribar a 100 °C",
+      "trampa: confon la fase d'escalfament amb el tram pla"
+     ],
+     "Durant l'ebullició el tram de la gràfica és pla: la calor s'usa per trencar unions entre partícules. Regla: en un canvi d'estat de substància pura, T constant."
+    ],
+    [
+     3,
+     "Quina és la diferència correcta entre evaporació i ebullició?",
+     "L'evaporació passa només a la superfície i a qualsevol temperatura",
+     [
+      "L'evaporació passa a tot el líquid i forma bombolles",
+      "trampa: intercanvia les característiques dels dos processos"
+     ],
+     [
+      "L'ebullició passa només a la superfície a 100 °C",
+      "trampa: atribueix a l'ebullició la localització de l'evaporació"
+     ],
+     [
+      "L'evaporació només passa quan la pressió de vapor iguala l'exterior",
+      "trampa: confon amb la condició d'ebullició"
+     ],
+     "L'evaporació és lenta, superficial i a qualsevol T, com la roba estesa que s'asseca. L'ebullició és a tot el líquid i quan la pressió de vapor iguala l'exterior."
+    ],
+    [
+     3,
+     "La gebrada que es forma sobre els vidres en una nit freda és el pas de vapor d'aigua a gel directament. Com s'anomena aquest canvi?",
+     "Sublimació inversa",
+     [
+      "Solidificació",
+      "trampa: oblida que no passa pel líquid"
+     ],
+     [
+      "Condensació",
+      "trampa: confon el pas a líquid amb el pas a sòlid"
+     ],
+     [
+      "Sublimació",
+      "trampa: pren el sentit contrari del canvi"
+     ],
+     "Quan un gas passa directament a sòlid, és sublimació inversa i desprèn calor. La sublimació és el pas contrari, com el gel sec."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "Quan un gas condensa, absorbeix calor del medi.",
+     false,
+     "En condensar, el gas desprèn calor. Absorbeixen calor els canvis en què s'escalfa: fusió, vaporització i sublimació.",
+     "trampa: confondre condensació amb vaporització"
+    ],
+    [
+     3,
+     "A la gràfica d'escalfament d'una mescla, els trams del canvi d'estat són inclinats i no plans.",
+     true,
+     "Una substància pura té temperatures de fusió i ebullició fixes, i per això els trams són plans. En una mescla, la temperatura va variant durant el canvi.",
+     "trampa: creure que tots els canvis d'estat tenen trams plans"
+    ]
+   ],
+   "problemas": [
+    [
+     5,
+     "Calcula la calor total necessària per convertir 100 g de gel a 0 °C en vapor d'aigua a 100 °C. Dades: Lf = 3,34·10⁵ J/kg, Ce(aigua líquida) = 4 180 J/(kg·K), Lv = 2,26·10⁶ J/kg. Expressa el resultat en kJ.",
+     301.0,
+     "m = 0,100 kg. Q₁ = m·Lf = 0,100·3,34·10⁵ = 33 400 J (fondre). Q₂ = m·Ce·ΔT = 0,100·4 180·100 = 41 800 J (escalfar l'aigua de 0 a 100 °C). Q₃ = m·Lv = 0,100·2,26·10⁶ = 226 000 J (vaporitzar). Total = 301 200 J ≈ 301 kJ.",
+     "(0.100*3.34e5+0.100*4180*100+0.100*2.26e6)/1000"
+    ]
+   ]
+  },
+  {
+   "nombre": "Calor i canvis de temperatura",
+   "pagina": 16,
+   "cara": 13,
+   "ayuda": "La calor és energia que passa d'un cos a un altre. Si no hi ha canvi d'estat, la calor que absorbeix un cos és Q = m·Ce·ΔT, on Ce és la calor específica en J/(kg·K) i ΔT = T final − T inicial. ΔT val igual en °C que en K. Durant un canvi d'estat la temperatura no varia, així que s'usa Q = m·Lf per fondre i Q = m·Lv per vaporitzar, amb L en J/kg. La massa sempre va en kg: si te la donen en grams, divideix per 1 000. Exemple: per escalfar 1 kg d'aigua 10 K calen 4 180·10 = 41 800 J. Si hi ha diversos trams, es calcula cada tram i se sumen les calors.",
+   "test": [
+    [
+     1,
+     "A Q = m·Lf no apareix ΔT. Per què?",
+     "Perquè durant el canvi d'estat la temperatura no varia",
+     [
+      "Perquè Lf ja inclou la variació de temperatura",
+      "trampa: creu que la constant absorbeix ΔT"
+     ],
+     [
+      "Perquè la massa canvia i compensa la variació de T",
+      "trampa: pensa que m compensa ΔT"
+     ],
+     [
+      "Perquè ΔT sempre val 1 K en una fusió",
+      "trampa: inventa un valor fix de ΔT"
+     ],
+     "Durant una fusió o una vaporització la T és constant, ΔT val 0 i no hi ha terme de temperatura. Regla: canvi d'estat s'usa L; sense canvi d'estat, Ce i ΔT."
+    ],
+    [
+     3,
+     "Per a l'aigua, Lf = 3,34·10⁵ J/kg i Lv = 2,26·10⁶ J/kg. Què es pot concloure?",
+     "Vaporitzar 1 kg costa unes 7 vegades més calor que fondre 1 kg",
+     [
+      "Fondre 1 kg costa unes 7 vegades més calor que vaporitzar-lo",
+      "trampa: inverteix la comparació entre Lf i Lv"
+     ],
+     [
+      "Fondre i vaporitzar 1 kg costen aproximadament la mateixa calor",
+      "trampa: creu que tots els canvis d'estat costen igual"
+     ],
+     [
+      "Vaporitzar 1 kg costa unes 70 vegades més calor que fondre",
+      "trampa: s'equivoca d'ordre de magnitud en dividir"
+     ],
+     "Es compara 2,26·10⁶ / 3,34·10⁵, que dona unes 6,8 vegades. Per això el tram d'ebullició de la gràfica és més llarg que el de fusió."
+    ],
+    [
+     2,
+     "Per aplicar Q = m·Ce·ΔT amb Ce en J/(kg·K), quin valor de m cal usar per a 300 g d'aigua?",
+     "0,300 kg",
+     [
+      "300 kg",
+      "trampa: oblida passar de grams a quilograms"
+     ],
+     [
+      "0,030 kg",
+      "trampa: divideix per 10 000 en lloc de per 1 000"
+     ],
+     [
+      "3,00 kg",
+      "trampa: divideix per 100 en lloc de per 1 000"
+     ],
+     "1 kg són 1 000 g, així que 300 g són 0,300 kg. Regla: Ce i L van per kg, per tant sempre cal passar les masses a kg."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Una variació de temperatura de 10 °C equival a ΔT = 283 K a la fórmula Q = m·Ce·ΔT.",
+     false,
+     "La diferència és la mateixa en °C que en K: 10 °C de variació són 10 K. Només s'afegeix 273 quan es converteix una temperatura, no una diferència.",
+     "trampa: sumar 273 a una diferència de temperatura"
+    ]
+   ],
+   "problemas": [
+    [
+     2,
+     "Quanta calor cal subministrar a 2,00 kg d'aigua líquida per escalfar-la de 20 °C a 80 °C? Dada: Ce = 4 180 J/(kg·K). Expressa el resultat en kJ.",
+     502.0,
+     "ΔT = 80 − 20 = 60 K. Q = m·Ce·ΔT = 2,00·4 180·60 = 501 600 J ≈ 502 kJ.",
+     "2.00*4180*(80-20)/1000"
+    ],
+    [
+     2,
+     "Quanta calor cal per fondre 0,250 kg de gel que ja és a 0 °C? Dada: Lf = 3,34·10⁵ J/kg. Expressa el resultat en kJ.",
+     83.5,
+     "Q = m·Lf = 0,250·3,34·10⁵ = 83 500 J = 83,5 kJ.",
+     "0.250*3.34e5/1000"
+    ],
+    [
+     3,
+     "Quanta calor cal per vaporitzar 300 g d'aigua que ja és a 100 °C? Dada: Lv = 2,26·10⁶ J/kg. Expressa el resultat en kJ.",
+     678.0,
+     "m = 300 g = 0,300 kg. Q = m·Lv = 0,300·2,26·10⁶ = 678 000 J = 678 kJ.",
+     "0.300*2.26e6/1000"
+    ],
+    [
+     4,
+     "Calcula la calor total necessària per convertir 0,200 kg de gel a −10 °C en aigua líquida a 25 °C. Dades: Ce(gel) = 2 090 J/(kg·K), Lf = 3,34·10⁵ J/kg, Ce(aigua líquida) = 4 180 J/(kg·K). Expressa el resultat en kJ.",
+     91.9,
+     "Tres trams. Q₁ = 0,200·2 090·10 = 4 180 J (gel de −10 a 0 °C). Q₂ = 0,200·3,34·10⁵ = 66 800 J (fusió). Q₃ = 0,200·4 180·25 = 20 900 J (aigua de 0 a 25 °C). Total = 91 880 J ≈ 91,9 kJ.",
+     "(0.200*2090*10+0.200*3.34e5+0.200*4180*25)/1000"
+    ],
+    [
+     3,
+     "1,50 kg d'aigua líquida a 15 °C absorbeixen 62 700 J sense canviar d'estat. Quina és la temperatura final, en °C? Dada: Ce = 4 180 J/(kg·K).",
+     25.0,
+     "ΔT = Q/(m·Ce) = 62 700/(1,50·4 180) = 10 K. T final = 15 + 10 = 25 °C.",
+     "15+62700/(1.50*4180)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Lleis dels gasos",
+   "pagina": 17,
+   "cara": 12,
+   "ayuda": "Pressió, volum i temperatura d'un gas estan lligats, i la temperatura s'expressa sempre en kelvin: T(K) = T(°C) + 273. La llei de Boyle (isotèrmic, T constant) diu que P·V és constant, per això P₁·V₁ = P₂·V₂. La llei de Charles (isobàric, P constant) diu que V/T és constant: V₁/T₁ = V₂/T₂. La llei de Gay-Lussac (isocor, V constant) diu que P/T és constant: P₁/T₁ = P₂/T₂. La llei combinada ajunta les tres: P₁·V₁/T₁ = P₂·V₂/T₂. Exemple: un globus al congelador s'encongeix perquè baixa la T amb P constant.",
+   "test": [
+    [
+     2,
+     "Un gas a temperatura constant redueix el seu volum a la meitat. Què passa amb la pressió?",
+     "Es duplica",
+     [
+      "Es redueix a la meitat",
+      "trampa: aplica proporcionalitat directa en comptes d'inversa"
+     ],
+     [
+      "No canvia",
+      "trampa: creu que només varia amb la temperatura"
+     ],
+     [
+      "Es quadruplica",
+      "trampa: eleva al quadrat sense base"
+     ],
+     "A T constant, P·V és constant (Boyle). Si V es divideix per 2, P es multiplica per 2. Regla: P i V a T constant van en sentit invers."
+    ],
+    [
+     3,
+     "Per aplicar la llei de Charles V₁/T₁ = V₂/T₂, quines condicions calen?",
+     "Pressió constant i temperatura en kelvin",
+     [
+      "Pressió constant i temperatura en °C",
+      "trampa: usa graus Celsius en comptes de kelvin"
+     ],
+     [
+      "Volum constant i temperatura en kelvin",
+      "trampa: confon Charles amb Gay-Lussac"
+     ],
+     [
+      "Temperatura constant i pressió en atmosferes",
+      "trampa: confon Charles amb Boyle"
+     ],
+     "La llei de Charles és la isobàrica: P constant, V proporcional a T en K. Una T en °C no és proporcional al volum perquè el zero no és el zero absolut."
+    ],
+    [
+     5,
+     "Un esprai és a 20 °C i el deixem a 40 °C, sempre al mateix recipient. Quin raonament sobre la pressió és correcte?",
+     "No es duplica: T passa de 293 K a 313 K, un 7 % més",
+     [
+      "Es duplica: 40 °C és el doble de 20 °C",
+      "trampa: tracta la temperatura en °C com a proporcional"
+     ],
+     [
+      "No canvia: el volum del recipient és constant",
+      "trampa: oblida que a V constant la P varia amb T"
+     ],
+     [
+      "Baixa: en escalfar es redueix la pressió",
+      "trampa: inverteix la relació entre P i T a volum constant"
+     ],
+     "A volum constant P/T és constant (Gay-Lussac) i T va en kelvin: 313/293 ≈ 1,07. Regla: mai comparis dobles amb °C, passa sempre a K."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "A pressió constant, si es duplica la temperatura en kelvin d'un gas, el seu volum es duplica.",
+     true,
+     "Per la llei de Charles V/T és constant a P constant: si T en K es multiplica per 2, V es multiplica per 2.",
+     "trampa: creure que la proporcionalitat falla en kelvin"
+    ],
+    [
+     4,
+     "A volum constant, un gas que passa de 27 °C a 54 °C duplica la seva pressió.",
+     false,
+     "Cal passar a kelvin: 300 K a 327 K. La pressió es multiplica per 327/300 ≈ 1,09, no per 2.",
+     "trampa: duplicar la temperatura en °C sense passar a K"
+    ]
+   ],
+   "problemas": [
+    [
+     2,
+     "Un gas ocupa 5,00 L a 3,00 atm. Si la temperatura es manté constant i el volum passa a 12,0 L, quina és la pressió final? Expressa el resultat en atm.",
+     1.25,
+     "Llei de Boyle: P₁·V₁ = P₂·V₂. P₂ = 3,00·5,00/12,0 = 1,25 atm.",
+     "3.00*5.00/12.0"
+    ],
+    [
+     3,
+     "Un gas ocupa 2,50 L a 27 °C. Si s'escalfa fins a 87 °C a pressió constant, quin és el volum final? Expressa el resultat en L.",
+     3.0,
+     "Llei de Charles amb T en K: T₁ = 300 K, T₂ = 360 K. V₂ = V₁·T₂/T₁ = 2,50·360/300 = 3,00 L.",
+     "2.50*(87+273)/(27+273)"
+    ],
+    [
+     3,
+     "Un gas a 1,80 atm i 20 °C és en un recipient rígid. Si s'escalfa fins a 100 °C, quina és la pressió final? Expressa el resultat en atm.",
+     2.29,
+     "Llei de Gay-Lussac amb T en K: T₁ = 293 K, T₂ = 373 K. P₂ = P₁·T₂/T₁ = 1,80·373/293 ≈ 2,29 atm.",
+     "1.80*(100+273)/(20+273)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Gas ideal i hipòtesi d'Avogadro",
+   "pagina": 17,
+   "cara": 12,
+   "ayuda": "Un gas ideal té partícules sense volum propi ni forces entre elles; els gasos reals s'hi assemblen a pressió baixa i temperatura alta. La seva equació és P·V = n·R·T, amb n en mol i T en kelvin. Amb P en atm i V en L, R = 0,082 atm·L/(mol·K). Al Sistema Internacional, P en Pa i V en m³, i R = 8,31 J/(mol·K). No s'han de barrejar unitats. La hipòtesi d'Avogadro diu que gasos diferents a la mateixa P i T, i amb el mateix volum, tenen el mateix nombre de molècules. En condicions normals (0 °C, 1 atm) 1 mol de qualsevol gas ocupa 22,4 L. Exemple: 2 mol d'un gas, a 273 K i 1 atm, ocupen 44,8 L.",
+   "test": [
+    [
+     2,
+     "Un recipient de 5 L conté H₂ i un altre de 5 L conté CO₂, tots dos a la mateixa P i T. Què es compleix?",
+     "Tenen el mateix nombre de molècules",
+     [
+      "Tenen la mateixa massa de gas",
+      "trampa: confon nombre de molècules amb massa"
+     ],
+     [
+      "Tenen la mateixa densitat",
+      "trampa: creu que volum igual implica massa per litre igual"
+     ],
+     [
+      "Tenen el mateix nombre d'àtoms",
+      "trampa: confon molècules amb àtoms"
+     ],
+     "La hipòtesi d'Avogadro diu que mateixa P, T i V vol dir mateix nombre de molècules. Com que H₂ i CO₂ tenen molècules diferents, la massa i el nombre d'àtoms no són iguals."
+    ],
+    [
+     4,
+     "Quina combinació d'unitats és coherent per usar R = 8,31 J/(mol·K) a P·V = n·R·T?",
+     "P en Pa, V en m³ i T en K",
+     [
+      "P en atm, V en L i T en K",
+      "trampa: barreja la constant del SI amb unitats pràctiques"
+     ],
+     [
+      "P en Pa, V en L i T en K",
+      "trampa: barreja un volum en L amb Pa"
+     ],
+     [
+      "P en atm, V en m³ i T en °C",
+      "trampa: barreja unitats i usa °C"
+     ],
+     "Amb R = 8,31 J/(mol·K), P ha d'anar en Pa, V en m³ i T en K. Amb atm i L, R val 0,082. Regla: la R tria les unitats i no es barregen."
+    ]
+   ],
+   "vf": [
+    [
+     4,
+     "Un gas real es comporta més com un gas ideal a pressió baixa i temperatura alta.",
+     true,
+     "A pressió baixa i T alta, les partícules estan molt separades i les forces entre elles són menyspreables. Això és el model del gas ideal.",
+     "trampa: creure que a pressió alta les partícules es comporten millor com a ideals"
+    ]
+   ],
+   "problemas": [
+    [
+     3,
+     "Quants mols de gas hi ha en un recipient de 10,0 L a 2,00 atm i 27 °C? Usa R = 0,082 atm·L/(mol·K). Expressa el resultat en mol.",
+     0.813,
+     "T = 27 + 273 = 300 K. n = P·V/(R·T) = 2,00·10,0/(0,082·300) ≈ 0,813 mol.",
+     "2.00*10.0/(0.082*(27+273))"
+    ],
+    [
+     4,
+     "Quin volum ocupen 0,500 mol d'un gas ideal a 127 °C i 2,00 atm? Usa R = 0,082 atm·L/(mol·K). Expressa el resultat en L.",
+     8.2,
+     "T = 127 + 273 = 400 K. V = n·R·T/P = 0,500·0,082·400/2,00 = 8,20 L.",
+     "0.500*0.082*(127+273)/2.00"
+    ],
+    [
+     4,
+     "Quina pressió exerceixen 2,00 mol d'un gas ideal en un recipient de 10,0 L a 25 °C? Usa R = 0,082 atm·L/(mol·K). Expressa el resultat en atm.",
+     4.89,
+     "T = 25 + 273 = 298 K. P = n·R·T/V = 2,00·0,082·298/10,0 ≈ 4,89 atm.",
+     "2.00*0.082*(25+273)/10.0"
+    ]
+   ]
+  }
+ ]
+}

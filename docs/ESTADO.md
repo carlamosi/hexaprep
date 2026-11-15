@@ -5,6 +5,13 @@ Las 20 tareas del plan `docs/superpowers/plans/2026-11-14-hexaprep-economia.md` 
 
 Última verificación: `pytest backend` 99 en verde, `vitest` 49 en verde, `tsc` y `vite build` limpios, `playwright test` 2 en verde (recorrido completo y responsive a 375 px). Los bancos de Economía validan con 0 errores: T1 149, T2 154 y T3 145 preguntas.
 
+## Novedades tras la v1 (2026-11-15)
+- Practicar por tema (botón en cada tema del panal), avance automático (1 s acierto, 2,5 s fallo) y panel de asignatura en pantalla completa al pulsar el hexágono grande.
+- Tipos de pregunta nuevos: `vf` (2 opciones) y `problema` (número sin unidades, margen del 1 %, botón «Lo he hecho bien» que corrige el intento y recalcula el dominio). Selector de asignatura en la cabecera.
+- Química T2 (catalán): 161 preguntas (80 test, 42 vf, 39 problemas) en `banks/quimica/` (fuentes en `src/T2/`, formato en `FORMATO.md`). Reconstruir con `python tools/build_quimica.py banks/quimica/src/T2 banks/quimica/T2.json`; el script recalcula cada problema con su expresión. Importar con `tools/import_bank.py banks/quimica/T2.json`.
+- Verificación: muestra de 20 revisada por Opus (`docs/verificacion-quimica.md`), 2 fallos: uno corregido (trampa de qui-t2-0078), otro menor sin corregir (qui-t2-0150 cita la página 23 y la frase está en la 10). El resto del banco no tiene revisión humana ni de modelo.
+- Límites: el editor de la app no muestra la solución de un problema; el booklet de Química no trata % en masa ni molaridad, así que no hay problemas de eso.
+
 ## Cómo se prueba
 - Atajo: `.venv\Scripts\python tools\import_bank.py banks\economia\T1.json banks\economia\T2.json banks\economia\T3.json` y luego `.venv\Scripts\python -m hexaprep`; se abre http://127.0.0.1:8000.
 - Un solo comando: `powershell -ExecutionPolicy Bypass -File .\run.ps1` (solo comprobado de sintaxis, no de punta a punta).

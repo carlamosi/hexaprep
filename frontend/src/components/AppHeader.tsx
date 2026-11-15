@@ -41,28 +41,38 @@ const ICONOS: Record<Ruta, ReactNode> = {
 
 interface Props {
   asignatura?: string | null;
+  asignaturaId?: string | null;
+  /** Con más de una asignatura el nombre pasa a ser un selector. */
+  asignaturas?: { id: string; nombre: string }[];
+  onCambiarAsignatura?: (id: string) => void;
   ruta: string;
   /** En práctica y test de nivel la navegación se oculta para concentrarse. */
   sinNav?: boolean;
 }
 
-export function AppHeader({ asignatura, ruta, sinNav }: Props) {
+export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, ruta, sinNav }: Props) {
   return (
     <header className="sticky top-0 z-10 border-b border-[var(--rule)] bg-[var(--paper)]/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-4 py-3">
+        <div className="flex items-center gap-3">
         <a href="#panal" className="flex items-center gap-3 text-[var(--ink)] no-underline">
           <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
             <g transform="translate(1.6 1.6)"><path d={HEX} fill="var(--lila-tint)" /></g>
             <path d={HEX} fill="var(--lila-soft)" stroke="var(--ink)" strokeWidth="1.6" strokeLinejoin="round" />
           </svg>
           <span className="font-semibold">{t("app.nombre")}</span>
+        </a>
           {asignatura && (
             <span className="hidden items-center gap-2 rounded-full border border-[var(--lila-tint)] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)] sm:inline-flex">
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[var(--lila)]" />
-              {asignatura}
+              {asignaturas.length > 1 ? (
+                <select aria-label={t("nav.asignatura")} value={asignaturaId ?? ""} onChange={(e) => onCambiarAsignatura?.(e.target.value)} className="cursor-pointer bg-transparent font-medium">
+                  {asignaturas.map((a) => <option key={a.id} value={a.id}>{a.nombre}</option>)}
+                </select>
+              ) : asignatura}
             </span>
           )}
-        </a>
+        </div>
         {!sinNav && (
           <nav aria-label={t("nav.principal")} className="flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[var(--paper)] max-sm:p-2">
             {NAV.map((k) => (

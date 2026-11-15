@@ -1,0 +1,475 @@
+[
+ {
+  "id": "qui-t2-0078",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estructura de la matèria i el mol",
+  "concepto": "Volum molar dels gasos",
+  "dificultad": 4,
+  "enunciado": "Quin volum ocupen 2,0 mol de gas en condicions normals?",
+  "ayuda_larga": "Segons Avogadro, a la mateixa pressió i temperatura, el mateix nombre de mols de qualsevol gas ocupa el mateix volum. En condicions normals (0 °C i 1 atm) 1 mol de gas ocupa 22,4 L: és el volum molar. Per això V = n · 22,4 L i, al revés, n = V / 22,4. Això només val en condicions normals. Exemple: 11,2 L d'O₂ en c.n. són 11,2 / 22,4 = 0,50 mol, que pesen 0,50 · 32,0 = 16 g.",
+  "fuente_pagina": 13,
+  "fuente_cara": 13,
+  "opciones": [
+   {
+    "texto": "44,8 L"
+   },
+   {
+    "texto": "11,2 L",
+    "trampa": "Trampa: divideix els mols entre 22,4 en lloc de multiplicar"
+   },
+   {
+    "texto": "22,4 L",
+    "trampa": "Trampa: oblida multiplicar pel nombre de mols"
+   },
+   {
+    "texto": "0,089 L",
+    "trampa": "Trampa: calcula 2,0 / 22,4 en lloc de 2,0 · 22,4"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "V = n · 22,4 = 2,0 · 22,4 = 44,8 L. Regla: mols a litres es multiplica per 22,4; litres a mols es divideix."
+ },
+ {
+  "id": "qui-t2-0029",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Mesurar, contenir i pesar",
+  "concepto": "Graduat o aforat",
+  "dificultad": 3,
+  "enunciado": "Un instrument de vidre té una sola marca, l'enràs, i no té escala. Què en pots dir?",
+  "ayuda_larga": "Un instrument graduat té una escala i pot mesurar qualsevol volum: són graduats la proveta, la pipeta graduada i la bureta. Un instrument aforat només té una marca, l'enràs, i mesura un únic volum fix: són aforats la pipeta aforada i el matràs aforat. Per això, el matràs aforat serveix per preparar dissolucions amb un volum exacte. Exemple: per preparar 250 mL de dissolució agafes un matràs aforat de 250 mL, hi poses el solut i hi afegeixes aigua fins a l'enràs.",
+  "fuente_pagina": 7,
+  "fuente_cara": 7,
+  "opciones": [
+   {
+    "texto": "És aforat i només mesura un volum fix"
+   },
+   {
+    "texto": "És graduat i mesura qualsevol volum",
+    "trampa": "Creure que tots els instruments de mesura tenen escala"
+   },
+   {
+    "texto": "És aforat però pot mesurar qualsevol volum",
+    "trampa": "Barrejar el significat d'aforat i de graduat"
+   },
+   {
+    "texto": "És una proveta, perquè la proveta només té una marca",
+    "trampa": "Atribuir a la proveta l'enràs únic"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Una sola marca vol dir volum fix: és aforat, com la pipeta aforada o el matràs aforat. Regla: escala = graduat, qualsevol volum; una marca = aforat, volum fix."
+ },
+ {
+  "id": "qui-t2-0095",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estats, calor i gasos",
+  "concepto": "Calor i canvis de temperatura",
+  "dificultad": 2,
+  "enunciado": "Per aplicar Q = m·Ce·ΔT amb Ce en J/(kg·K), quin valor de m cal usar per a 300 g d'aigua?",
+  "ayuda_larga": "La calor és energia que passa d'un cos a un altre. Si no hi ha canvi d'estat, la calor que absorbeix un cos és Q = m·Ce·ΔT, on Ce és la calor específica en J/(kg·K) i ΔT = T final − T inicial. ΔT val igual en °C que en K. Durant un canvi d'estat la temperatura no varia, així que s'usa Q = m·Lf per fondre i Q = m·Lv per vaporitzar, amb L en J/kg. La massa sempre va en kg: si te la donen en grams, divideix per 1 000. Exemple: per escalfar 1 kg d'aigua 10 K calen 4 180·10 = 41 800 J. Si hi ha diversos trams, es calcula cada tram i se sumen les calors.",
+  "fuente_pagina": 16,
+  "fuente_cara": 13,
+  "opciones": [
+   {
+    "texto": "0,300 kg"
+   },
+   {
+    "texto": "300 kg",
+    "trampa": "trampa: oblida passar de grams a quilograms"
+   },
+   {
+    "texto": "0,030 kg",
+    "trampa": "trampa: divideix per 10 000 en lloc de per 1 000"
+   },
+   {
+    "texto": "3,00 kg",
+    "trampa": "trampa: divideix per 100 en lloc de per 1 000"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "1 kg són 1 000 g, així que 300 g són 0,300 kg. Regla: Ce i L van per kg, per tant sempre cal passar les masses a kg."
+ },
+ {
+  "id": "qui-t2-0010",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Normes del laboratori",
+  "concepto": "En acabar i incidències",
+  "dificultad": 3,
+  "enunciado": "Què has de fer amb els residus de la pràctica?",
+  "ayuda_larga": "En acabar has de llençar els residus on t'indiqui la professora, deixar el laboratori recollit amb les taules i les piques netes i els tamborets al seu lloc. Si es trenca algun material, s'ha d'apuntar al full d'incidències perquè es pugui reposar i es controli el risc. Les 15 normes són obligatòries: l'incompliment d'alguna comporta la pèrdua del dret a fer pràctiques. Exemple: si trenques una proveta, no la llences amb els residus, l'apuntes al full.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "Abocar-los a la pica si són líquids",
+    "trampa": "trampa: pensar que la pica és el destí de tots els líquids"
+   },
+   {
+    "texto": "Deixar-los al pot d'origen per reutilitzar-los",
+    "trampa": "trampa: confondre un residu amb un producte reutilitzable"
+   },
+   {
+    "texto": "Llençar-los on t'indiqui la professora"
+   },
+   {
+    "texto": "Llençar-los a la paperera més propera",
+    "trampa": "trampa: creure que tots els residus són iguals"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "La norma 12 diu que els residus es llencen on indiqui la professora, perquè no tots es poden tractar igual. Regla: sense indicació, no es llença res pel teu compte."
+ },
+ {
+  "id": "qui-t2-0014",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Pictogrames de perillositat",
+  "concepto": "Explosiu, inflamable i comburent",
+  "dificultad": 4,
+  "enunciado": "Quina característica distingeix un comburent d'un inflamable?",
+  "ayuda_larga": "Un pictograma és un rombe de vora vermella que avisa d'un perill. Els tres primers són els que poden explotar, cremar o avivar el foc. L'explosiu indica una substància que pot explotar amb una flama, una espurna, la calor, un xoc o la fricció, com la nitroglicerina o la pólvora. L'inflamable crema molt fàcilment, fins i tot per sota de 0 °C, com l'alcohol o la gasolina. El comburent és ric en oxigen: aviva el foc i pot provocar o agreujar un incendi, com l'aigua oxigenada concentrada.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "opciones": [
+   {
+    "texto": "El comburent crema molt fàcilment; l'inflamable és ric en oxigen",
+    "trampa": "trampa: intercanviar les definicions dels dos pictogrames"
+   },
+   {
+    "texto": "El comburent explota amb un xoc; l'inflamable explota amb la calor",
+    "trampa": "trampa: confondre tots dos amb el pictograma d'explosiu"
+   },
+   {
+    "texto": "El comburent destrueix metalls; l'inflamable danya la pell",
+    "trampa": "trampa: confondre tots dos amb el pictograma de corrosiu"
+   },
+   {
+    "texto": "El comburent és ric en oxigen i aviva el foc; l'inflamable crema molt fàcilment"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "El comburent aporta oxigen i fa que un foc sigui més fort, mentre que l'inflamable és el material que crema. Regla: el comburent aviva, l'inflamable crema."
+ },
+ {
+  "id": "qui-t2-0144",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Separació de mescles",
+  "concepto": "Mètodes per a mescles heterogènies",
+  "dificultad": 1,
+  "enunciado": "Quina propietat permet separar oli i aigua amb un embut de decantació?",
+  "ayuda_larga": "En una mescla heterogènia es veuen les fases, per això se separa per mida de partícula o per densitat. La filtració separa un sòlid d'un líquid: el filtre reté el sòlid i deixa passar el líquid (el filtrat), com amb aigua i sorra; amb l'embut Büchner es filtra al buit. La decantació separa dos líquids no miscibles amb un embut de decantació: el més dens queda a baix i surt primer en obrir l'aixeta, com oli i aigua. La sedimentació deixa reposar la mescla perquè el sòlid caigui al fons, com l'aigua de riu amb fang. La centrifugació gira la mostra molt de pressa i la força centrífuga porta el component més dens al fons, com en la sang.",
+  "fuente_pagina": 23,
+  "fuente_cara": 6,
+  "opciones": [
+   {
+    "texto": "La diferència de densitat: el líquid més dens queda a baix"
+   },
+   {
+    "texto": "La diferència de punt d'ebullició entre els dos líquids",
+    "trampa": "Trampa: confondre la decantació amb la destil·lació"
+   },
+   {
+    "texto": "La mida de les partícules, que queden retingudes en un paper",
+    "trampa": "Trampa: confondre la decantació amb la filtració"
+   },
+   {
+    "texto": "La solubilitat de l'oli en aigua a diferents temperatures",
+    "trampa": "Trampa: confondre la decantació amb la cristal·lització"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Oli i aigua no es barregen i formen dues capes ordenades per densitat. En obrir l'aixeta surt primer el líquid de baix. Regla: decantació és igual a densitat."
+ },
+ {
+  "id": "qui-t2-0019",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Pictogrames de perillositat",
+  "concepto": "Irritació cutània i toxicitat aguda",
+  "dificultad": 3,
+  "enunciado": "Quina diferència hi ha entre el pictograma d'irritació i el de toxicitat aguda?",
+  "ayuda_larga": "Els pictogrames de salut avisen del perill per a les persones segons la dosi, quan actuen i com entren al cos. La irritació cutània indica que, en dosis altes, irrita ulls, nas, gola i pell, i pot causar al·lèrgies, somnolència o vertigen; exemples: amoníac, lleixiu, acetona i detergents. La toxicitat aguda indica substàncies verinoses en petites dosis i amb efectes immediats, com vòmits, pèrdua de coneixement i fins i tot la mort; exemples: cianur, metanol i monòxid de carboni. La diferència és la gravetat i la rapidesa dels efectes.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "opciones": [
+   {
+    "texto": "Irritació: verinós en dosis petites; toxicitat: irrita pell i ulls",
+    "trampa": "trampa: intercanviar la gravetat dels dos pictogrames"
+   },
+   {
+    "texto": "Irritació: destrueix la pell per sempre; toxicitat: contamina l'aigua",
+    "trampa": "trampa: barrejar corrosiu i medi aquàtic amb aquests dos"
+   },
+   {
+    "texto": "Irritació: dosis altes que irriten pell i ulls; toxicitat: verinós en dosis petites"
+   },
+   {
+    "texto": "Irritació: afecta només els pulmons; toxicitat: només la pell",
+    "trampa": "trampa: assignar un òrgan fix a cada pictograma"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "La irritació necessita dosis altes i produeix molèsties, mentre que la toxicitat aguda actua amb dosis petites i amb efectes greus i immediats. Regla: irritar és molèstia, toxicitat és perill de mort."
+ },
+ {
+  "id": "qui-t2-0088",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estats, calor i gasos",
+  "concepto": "Canvis d'estat",
+  "dificultad": 3,
+  "enunciado": "Quina és la diferència correcta entre evaporació i ebullició?",
+  "ayuda_larga": "Un canvi d'estat és un canvi físic: la substància no canvia de naturalesa. En escalfar, la substància absorbeix calor i passa de sòlid a líquid (fusió), de líquid a gas (vaporització) o de sòlid a gas (sublimació). En refredar, desprèn calor i passa de gas a líquid (condensació), de líquid a sòlid (solidificació) o de gas a sòlid (sublimació inversa). Durant el canvi d'estat la temperatura és constant: la calor trenca unions entre partícules en lloc d'escalfar. L'aigua pura a 1 atm fon a 0 °C i bull a 100 °C. L'evaporació passa només a la superfície i a qualsevol temperatura, mentre que l'ebullició passa a tot el líquid i a la temperatura d'ebullició.",
+  "fuente_pagina": 15,
+  "fuente_cara": 14,
+  "opciones": [
+   {
+    "texto": "L'evaporació passa a tot el líquid i forma bombolles",
+    "trampa": "trampa: intercanvia les característiques dels dos processos"
+   },
+   {
+    "texto": "L'evaporació passa només a la superfície i a qualsevol temperatura"
+   },
+   {
+    "texto": "L'ebullició passa només a la superfície a 100 °C",
+    "trampa": "trampa: atribueix a l'ebullició la localització de l'evaporació"
+   },
+   {
+    "texto": "L'evaporació només passa quan la pressió de vapor iguala l'exterior",
+    "trampa": "trampa: confon amb la condició d'ebullició"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "L'evaporació és lenta, superficial i a qualsevol T, com la roba estesa que s'asseca. L'ebullició és a tot el líquid i quan la pressió de vapor iguala l'exterior."
+ },
+ {
+  "id": "qui-t2-0150",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Separació de mescles",
+  "concepto": "Mètodes per a mescles heterogènies",
+  "dificultad": 3,
+  "enunciado": "Amb un embut de decantació, el líquid menys dens és el primer que surt en obrir l'aixeta.",
+  "ayuda_larga": "En una mescla heterogènia es veuen les fases, per això se separa per mida de partícula o per densitat. La filtració separa un sòlid d'un líquid: el filtre reté el sòlid i deixa passar el líquid (el filtrat), com amb aigua i sorra; amb l'embut Büchner es filtra al buit. La decantació separa dos líquids no miscibles amb un embut de decantació: el més dens queda a baix i surt primer en obrir l'aixeta, com oli i aigua. La sedimentació deixa reposar la mescla perquè el sòlid caigui al fons, com l'aigua de riu amb fang. La centrifugació gira la mostra molt de pressa i la força centrífuga porta el component més dens al fons, com en la sang.",
+  "fuente_pagina": 23,
+  "fuente_cara": 6,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "Trampa: pensar que el líquid de dalt és el primer que surt"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Surt primer el líquid més dens, perquè queda a la part inferior, just sobre l'aixeta. El menys dens es recull després."
+ },
+ {
+  "id": "qui-t2-0012",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Normes del laboratori",
+  "concepto": "En acabar i incidències",
+  "dificultad": 4,
+  "enunciado": "L'incompliment d'alguna de les normes pot comportar la pèrdua del dret a fer pràctiques.",
+  "ayuda_larga": "En acabar has de llençar els residus on t'indiqui la professora, deixar el laboratori recollit amb les taules i les piques netes i els tamborets al seu lloc. Si es trenca algun material, s'ha d'apuntar al full d'incidències perquè es pugui reposar i es controli el risc. Les 15 normes són obligatòries: l'incompliment d'alguna comporta la pèrdua del dret a fer pràctiques. Exemple: si trenques una proveta, no la llences amb els residus, l'apuntes al full.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "trampa: creure que les normes són recomanacions sense conseqüències"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "La norma 15 ho diu explícitament: les normes són obligatòries i incomplir-ne alguna té com a conseqüència perdre el dret a fer pràctiques."
+ },
+ {
+  "id": "qui-t2-0125",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Matèria, mescles i dissolucions",
+  "concepto": "Solut, dissolvent i tipus de dissolucions",
+  "dificultad": 3,
+  "enunciado": "En una dissolució, el solut és el component que hi és en més quantitat.",
+  "ayuda_larga": "Una dissolució és una mescla homogènia formada per un solut i un dissolvent. El dissolvent és el component que hi ha en més quantitat (normalment l'aigua) i el solut és el que hi ha en menys quantitat, per exemple la sal. Hi pot haver dissolucions amb solut i dissolvent en qualsevol estat: sòlid en líquid (sucre en aigua), líquid en líquid (alcohol en aigua), gas en líquid (oxigen en aigua, que respiren els peixos) o sòlid en sòlid (l'acer inoxidable o el bronze, aliatges homogenis).",
+  "fuente_pagina": 22,
+  "fuente_cara": 7,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "pensar que el solut, com que és el protagonista de la dissolució, ha de ser el més abundant."
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "El solut és el component que hi és en menys quantitat; el dissolvent és el majoritari, normalment l'aigua."
+ },
+ {
+  "id": "qui-t2-0042",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Escalfar, filtrar i fer reaccions",
+  "concepto": "Muntatge per escalfar",
+  "dificultad": 1,
+  "enunciado": "El bec Bunsen escalfa el recipient des de sota.",
+  "ayuda_larga": "Els suports aguanten el material i el bec Bunsen l'escalfa des de sota. El suport es completa amb una nou, que uneix la pinça o l'aro al suport. La pinça subjecta recipients com els tubs d'assaig, i l'aro és una anella que aguanta recipients des de sota. Un baló de fons rodó es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota. Els tubs d'assaig s'escalfen directament a la flama, subjectats amb les pinces.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "Pensar que el bec s'ha de col·locar per sobre del recipient."
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "El recipient es subjecta al suport amb la nou i la pinça, i el bec Bunsen l'escalfa des de sota."
+ },
+ {
+  "id": "qui-t2-0009",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Normes del laboratori",
+  "concepto": "Productes i material",
+  "dificultad": 4,
+  "enunciado": "Si no coneixes un producte del laboratori, el pots ensumar amb cura per identificar-lo.",
+  "ayuda_larga": "Els productes no s'han de tocar, ensumar ni tastar, i no has de fer servir cap producte desconegut. Per agafar una substància d'un pot s'ha d'utilitzar material net, així no contamines tot el recipient. Mai no has de tornar al pot les restes d'un producte, pel mateix motiu: podries contaminar-ne tota la resta. També has de tenir cura del material i del mobiliari, i els utensilis es renten i es guarden en acabar. Exemple: si agafes sal amb una espàtula bruta, tot el pot de sal queda contaminat.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "trampa: creure que ensumar amb cura és segur si es fa de lluny"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "La norma 6 prohibeix tocar, ensumar i tastar els productes i fer servir qualsevol producte desconegut. Ensumar, encara que sigui de lluny, no és una manera segura d'identificar-lo."
+ },
+ {
+  "id": "qui-t2-0060",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estructura de la matèria i el mol",
+  "concepto": "Ions i isòtops",
+  "dificultad": 2,
+  "enunciado": "L'ió Al³⁺ té Z = 13 i A = 27. Quants electrons té?",
+  "ayuda_larga": "Un ió és un àtom amb càrrega perquè ha guanyat o perdut electrons; els protons no canvien mai. Un catió ha perdut electrons i té càrrega positiva (Na⁺ té 11 protons i 10 electrons). Un anió ha guanyat electrons i té càrrega negativa (Cl⁻ té 17 protons i 18 electrons). Per als electrons d'un ió: e⁻ = Z - càrrega. Els isòtops tenen el mateix Z però diferent A, és a dir diferent nombre de neutrons (¹H, ²H, ³H). La massa atòmica mitjana d'un element es calcula amb la mitjana ponderada dels seus isòtops.",
+  "fuente_pagina": 12,
+  "fuente_cara": 12,
+  "tipo": "problema",
+  "solucion": 10.0,
+  "explicacion": "Un catió amb càrrega +3 ha perdut 3 electrons: e⁻ = Z - càrrega = 13 - 3 = 10."
+ },
+ {
+  "id": "qui-t2-0114",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estats, calor i gasos",
+  "concepto": "Gas ideal i hipòtesi d'Avogadro",
+  "dificultad": 4,
+  "enunciado": "Quin volum ocupen 0,500 mol d'un gas ideal a 127 °C i 2,00 atm? Usa R = 0,082 atm·L/(mol·K). Expressa el resultat en L.",
+  "ayuda_larga": "Un gas ideal té partícules sense volum propi ni forces entre elles; els gasos reals s'hi assemblen a pressió baixa i temperatura alta. La seva equació és P·V = n·R·T, amb n en mol i T en kelvin. Amb P en atm i V en L, R = 0,082 atm·L/(mol·K). Al Sistema Internacional, P en Pa i V en m³, i R = 8,31 J/(mol·K). No s'han de barrejar unitats. La hipòtesi d'Avogadro diu que gasos diferents a la mateixa P i T, i amb el mateix volum, tenen el mateix nombre de molècules. En condicions normals (0 °C, 1 atm) 1 mol de qualsevol gas ocupa 22,4 L. Exemple: 2 mol d'un gas, a 273 K i 1 atm, ocupen 44,8 L.",
+  "fuente_pagina": 17,
+  "fuente_cara": 12,
+  "tipo": "problema",
+  "solucion": 8.2,
+  "explicacion": "T = 127 + 273 = 400 K. V = n·R·T/P = 0,500·0,082·400/2,00 = 8,20 L."
+ },
+ {
+  "id": "qui-t2-0113",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estats, calor i gasos",
+  "concepto": "Gas ideal i hipòtesi d'Avogadro",
+  "dificultad": 3,
+  "enunciado": "Quants mols de gas hi ha en un recipient de 10,0 L a 2,00 atm i 27 °C? Usa R = 0,082 atm·L/(mol·K). Expressa el resultat en mol.",
+  "ayuda_larga": "Un gas ideal té partícules sense volum propi ni forces entre elles; els gasos reals s'hi assemblen a pressió baixa i temperatura alta. La seva equació és P·V = n·R·T, amb n en mol i T en kelvin. Amb P en atm i V en L, R = 0,082 atm·L/(mol·K). Al Sistema Internacional, P en Pa i V en m³, i R = 8,31 J/(mol·K). No s'han de barrejar unitats. La hipòtesi d'Avogadro diu que gasos diferents a la mateixa P i T, i amb el mateix volum, tenen el mateix nombre de molècules. En condicions normals (0 °C, 1 atm) 1 mol de qualsevol gas ocupa 22,4 L. Exemple: 2 mol d'un gas, a 273 K i 1 atm, ocupen 44,8 L.",
+  "fuente_pagina": 17,
+  "fuente_cara": 12,
+  "tipo": "problema",
+  "solucion": 0.813,
+  "explicacion": "T = 27 + 273 = 300 K. n = P·V/(R·T) = 2,00·10,0/(0,082·300) ≈ 0,813 mol."
+ },
+ {
+  "id": "qui-t2-0055",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estructura de la matèria i el mol",
+  "concepto": "Partícules de l'àtom i nombres Z i A",
+  "dificultad": 2,
+  "enunciado": "Un àtom neutre té nombre màssic A = 40 i 20 neutrons. Quants electrons té?",
+  "ayuda_larga": "L'àtom té un nucli, amb protons (càrrega +1) i neutrons (sense càrrega), i una escorça amb electrons (càrrega -1). El nombre atòmic Z és el nombre de protons i identifica l'element: no canvia mai. El nombre màssic A és la suma de protons i neutrons, i per això els neutrons són A - Z. En un àtom neutre hi ha tants electrons com protons. Gairebé tota la massa de l'àtom és al nucli, que és unes 100 000 vegades més petit que l'àtom. Exemple: el sodi té Z = 11 i A = 23, per tant 11 protons, 12 neutrons i 11 electrons.",
+  "fuente_pagina": 12,
+  "fuente_cara": 12,
+  "tipo": "problema",
+  "solucion": 20.0,
+  "explicacion": "Protons = A - neutrons = 40 - 20 = 20. En un àtom neutre electrons = protons, per tant 20."
+ },
+ {
+  "id": "qui-t2-0080",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Estructura de la matèria i el mol",
+  "concepto": "Volum molar dels gasos",
+  "dificultad": 2,
+  "enunciado": "Quants mols de gas hi ha en 67,2 L en condicions normals? Expressa el resultat en mol.",
+  "ayuda_larga": "Segons Avogadro, a la mateixa pressió i temperatura, el mateix nombre de mols de qualsevol gas ocupa el mateix volum. En condicions normals (0 °C i 1 atm) 1 mol de gas ocupa 22,4 L: és el volum molar. Per això V = n · 22,4 L i, al revés, n = V / 22,4. Això només val en condicions normals. Exemple: 11,2 L d'O₂ en c.n. són 11,2 / 22,4 = 0,50 mol, que pesen 0,50 · 32,0 = 16 g.",
+  "fuente_pagina": 13,
+  "fuente_cara": 13,
+  "tipo": "problema",
+  "solucion": 3.0,
+  "explicacion": "n = V / 22,4 = 67,2 / 22,4 = 3,00 mol."
+ },
+ {
+  "id": "qui-t2-0143",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Matèria, mescles i dissolucions",
+  "concepto": "Preparar una dissolució i concentració en g/L",
+  "dificultad": 4,
+  "enunciado": "Es barregen 250 mL d'una dissolució de 20 g/L amb 150 mL d'una altra de 40 g/L del mateix solut. Suposa que els volums se sumen. Quina és la concentració de la dissolució final? Expressa el resultat en g/L.",
+  "ayuda_larga": "La concentració d'una dissolució en g/L és la massa de solut que hi ha en cada litre de dissolució: c = m/V. Per preparar-ne una, primer calcules la massa (m = c · V), després la peses amb una balança, la dissols amb una mica d'aigua destil·lada en un vas de precipitats, la passes al matràs aforat (rentant el vas), enrases fins a la marca amb el fons del menisc tocant-la i homogeneïtzes. Per exemple, per fer 100 mL de NaCl a 20 g/L cal 20 g/L · 0,100 L = 2,00 g de NaCl. Es fa servir un matràs aforat perquè mesura un volum fix amb molta precisió, a diferència de la proveta.",
+  "fuente_pagina": 19,
+  "fuente_cara": 10,
+  "tipo": "problema",
+  "solucion": 27.5,
+  "explicacion": "Massa de la primera: 20 · 0,250 = 5,0 g. Massa de la segona: 40 · 0,150 = 6,0 g. Total 11,0 g en 0,400 L: c = 11,0 / 0,400 = 27,5 g/L."
+ },
+ {
+  "id": "qui-t2-0142",
+  "bloque": "Química",
+  "tema": "T2 Treballar segur i separar la matèria",
+  "subtema": "Matèria, mescles i dissolucions",
+  "concepto": "Preparar una dissolució i concentració en g/L",
+  "dificultad": 3,
+  "enunciado": "Un flascó conté una dissolució de concentració 35 g/L. Quants grams de solut hi ha en 60 mL d'aquesta dissolució? Expressa el resultat en g.",
+  "ayuda_larga": "La concentració d'una dissolució en g/L és la massa de solut que hi ha en cada litre de dissolució: c = m/V. Per preparar-ne una, primer calcules la massa (m = c · V), després la peses amb una balança, la dissols amb una mica d'aigua destil·lada en un vas de precipitats, la passes al matràs aforat (rentant el vas), enrases fins a la marca amb el fons del menisc tocant-la i homogeneïtzes. Per exemple, per fer 100 mL de NaCl a 20 g/L cal 20 g/L · 0,100 L = 2,00 g de NaCl. Es fa servir un matràs aforat perquè mesura un volum fix amb molta precisió, a diferència de la proveta.",
+  "fuente_pagina": 19,
+  "fuente_cara": 10,
+  "tipo": "problema",
+  "solucion": 2.1,
+  "explicacion": "Primer passem el volum a litres: 60 mL = 0,060 L. Després m = c · V = 35 g/L · 0,060 L = 2,10 g."
+ }
+]

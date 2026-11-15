@@ -1,0 +1,61 @@
+{
+ "subtema": "Normes del laboratori",
+ "conceptos": [
+  {
+   "nombre": "Equipament i higiene a l'entrada",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "Abans de tocar res al laboratori t'has d'equipar: bata posada, cabell recollit i ulleres si és necessari. Això protegeix la roba, la pell i els ulls de salpicades i de flames. Treballaràs sol o en grups de dos o tres, sempre amb els mateixos companys i al mateix lloc, però la llibreta de laboratori-informe és individual. També t'has de rentar les mans en entrar i en sortir, perquè no portis productes a fora ni brutícia a dins. Exemple: si tens el cabell llarg i el deixes solt, pot caure sobre un bec Bunsen.",
+   "test": [
+    [1, "Quin equipament cal dur en treballar al laboratori?", "Bata posada, cabell recollit i ulleres si cal", ["Bata posada, cabell solt i ulleres si cal", "trampa: pensar que el cabell lliure no és un perill"], ["Bata només si fas servir productes corrosius", "trampa: creure que la bata és opcional segons el producte"], ["Només ulleres, sense bata ni cabell recollit", "trampa: reduir l'equipament a un sol element"], "La norma 1 demana tres coses: bata posada, cabell recollit i ulleres si són necessàries. Cada peça protegeix una part diferent. Regla: equipa't abans d'entrar, no després d'un ensurt."],
+    [2, "Quan cal rentar-se les mans segons les normes del laboratori?", "En entrar al laboratori i en sortir-ne", ["Només en acabar la pràctica, abans de marxar", "trampa: oblidar que també cal rentar-se en entrar"], ["Només si les mans s'han embrutat de producte", "trampa: rentar-se només quan es veu la brutícia"], ["Només abans de tocar productes corrosius", "trampa: lligar la higiene a un sol tipus de perill"], "La norma 3 diu que les mans es renten quan s'entra i quan se surt. Així no portes brutícia a dins ni productes a fora. Regla: mans netes a l'entrada i a la sortida."]
+   ],
+   "vf": [
+    [2, "Al laboratori es treballa en grups de dos o tres, però la llibreta de laboratori-informe és individual.", true, "La norma 2 estableix grups petits i fixos, sempre amb els mateixos companys i al mateix lloc, però cadascú ha de fer el seu informe.", "trampa: creure que treballar en grup vol dir lliurar un sol informe compartit"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Conducta durant el treball",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "Mentre treballes no pots menjar, beure ni mastegar xiclet al laboratori, perquè un producte et podria arribar a la boca. Sobre la taula només hi ha de ser el material necessari: la llibreta de laboratori i el bolígraf, així no hi ha motxilles que es contaminin ni obstacles. Només es fan els experiments que indica la professora, no els que et passin pel cap. Exemple: un company t'ofereix un xiclet mentre esperes una reacció; la resposta és sempre que no.",
+   "test": [
+    [2, "Quin material pot haver-hi damunt la taula durant la pràctica?", "Només el necessari: llibreta de laboratori i bolígraf", ["Llibreta, bolígraf i la motxilla amb els apunts", "trampa: confondre el material de treball amb les pertinences personals"], ["Llibreta, bolígraf i una ampolla d'aigua per beure", "trampa: oblidar que no es pot beure al laboratori"], ["Tot el que vulguis si està net i ordenat", "trampa: pensar que la neteja justifica qualsevol objecte"], "La norma 5 limita la taula al material necessari, que són la llibreta i el bolígraf. Menys objectes vol dir menys riscos i menys coses que es puguin contaminar. Regla: a la taula, només el que fas servir."],
+    [4, "Un company t'ofereix un xiclet mentre fas l'experiment. Què diu la norma?", "No es pot menjar, beure ni mastegar xiclet al laboratori", ["Es pot mastegar, perquè un xiclet no s'empassa", "trampa: considerar que el xiclet no compta com a menjar"], ["Es pot, si tens les mans rentades i la bata posada", "trampa: creure que la higiene permet menjar al laboratori"], ["Es pot, només si no hi ha productes oberts a la taula", "trampa: fer dependre la prohibició dels productes que hi hagi"], "La norma 4 prohibeix menjar, beure i mastegar xiclet sempre, estiguin o no oberts els productes. És una regla absoluta perquè la boca és una via d'entrada de substàncies. Regla: al laboratori no entra res a la boca."]
+   ],
+   "vf": [
+    [3, "Si domines una pràctica, pots fer un experiment que se't passi pel cap sempre que utilitzis productes coneguts.", false, "La norma 7 diu que només es fan els experiments que indica la professora. Conèixer un producte no autoritza a improvisar, perquè una barreja nova pot ser perillosa.", "trampa: pensar que la prohibició només afecta els productes desconeguts"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Productes i material",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "Els productes no s'han de tocar, ensumar ni tastar, i no has de fer servir cap producte desconegut. Per agafar una substància d'un pot s'ha d'utilitzar material net, així no contamines tot el recipient. Mai no has de tornar al pot les restes d'un producte, pel mateix motiu: podries contaminar-ne tota la resta. També has de tenir cura del material i del mobiliari, i els utensilis es renten i es guarden en acabar. Exemple: si agafes sal amb una espàtula bruta, tot el pot de sal queda contaminat.",
+   "test": [
+    [2, "Per què no s'ha de tornar mai al pot les restes d'un producte?", "Perquè es podria contaminar tot el producte del pot", ["Perquè la resta s'evaporaria i el pot quedaria buit", "trampa: confondre la contaminació amb una pèrdua per evaporació"], ["Perquè la resta reacciona sempre amb el vidre del pot", "trampa: inventar una reacció entre el producte i el recipient"], ["Perquè les restes falsejarien la pesada de la propera vegada", "trampa: pensar que només és un error de mesura"], "La norma 9 prohibeix tornar restes al pot perquè una sola impuresa pot estendre's a tot el contingut. El producte del pot ha de quedar com estava. Regla: el que surt del pot no hi torna."],
+    [3, "Com s'ha d'agafar una substància d'un pot per no contaminar-lo?", "Amb material net, perquè no s'embruti tot el recipient", ["Amb les mans netes, perquè tocar-la no fa mal si estan netes", "trampa: oblidar que els productes no s'han de tocar"], ["Amb el material de l'últim experiment, si és compatible", "trampa: creure que reutilitzar material brut és acceptable"], ["Agafant-ne de la part de dalt del pot, que és la més neta", "trampa: pensar que la contaminació depèn de la zona del pot"], "La norma 8 exigeix material net per agafar una substància d'un pot. Així el producte que queda al pot no es contamina. Regla: utensili net cada vegada."]
+   ],
+   "vf": [
+    [4, "Si no coneixes un producte del laboratori, el pots ensumar amb cura per identificar-lo.", false, "La norma 6 prohibeix tocar, ensumar i tastar els productes i fer servir qualsevol producte desconegut. Ensumar, encara que sigui de lluny, no és una manera segura d'identificar-lo.", "trampa: creure que ensumar amb cura és segur si es fa de lluny"]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "En acabar i incidències",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "En acabar has de llençar els residus on t'indiqui la professora, deixar el laboratori recollit amb les taules i les piques netes i els tamborets al seu lloc. Si es trenca algun material, s'ha d'apuntar al full d'incidències perquè es pugui reposar i es controli el risc. Les 15 normes són obligatòries: l'incompliment d'alguna comporta la pèrdua del dret a fer pràctiques. Exemple: si trenques una proveta, no la llences amb els residus, l'apuntes al full.",
+   "test": [
+    [3, "Què has de fer amb els residus de la pràctica?", "Llençar-los on t'indiqui la professora", ["Abocar-los a la pica si són líquids", "trampa: pensar que la pica és el destí de tots els líquids"], ["Deixar-los al pot d'origen per reutilitzar-los", "trampa: confondre un residu amb un producte reutilitzable"], ["Llençar-los a la paperera més propera", "trampa: creure que tots els residus són iguals"], "La norma 12 diu que els residus es llencen on indiqui la professora, perquè no tots es poden tractar igual. Regla: sense indicació, no es llença res pel teu compte."],
+    [4, "Durant la pràctica se't trenca un tub d'assaig. Què diu la norma?", "Apuntar-ho al full d'incidències del laboratori", ["Llençar-ho amb els residus i seguir treballant", "trampa: tractar un trencament com un residu normal"], ["Substituir-lo amb el d'un altre grup sense avisar", "trampa: amagar el trencament per evitar problemes"], ["Comentar-ho de paraula a l'inici de la propera sessió", "trampa: pensar que n'hi ha prou amb avisar oralment"], "La norma 14 demana apuntar els trencaments al full d'incidències. Així queda constància i el material es pot reposar. Regla: si es trenca, s'escriu."]
+   ],
+   "vf": [
+    [4, "L'incompliment d'alguna de les normes pot comportar la pèrdua del dret a fer pràctiques.", true, "La norma 15 ho diu explícitament: les normes són obligatòries i incomplir-ne alguna té com a conseqüència perdre el dret a fer pràctiques.", "trampa: creure que les normes són recomanacions sense conseqüències"]
+   ],
+   "problemas": []
+  }
+ ]
+}

@@ -48,6 +48,7 @@ class QuestionOut:
     fuente_cara: int | None
     tema: str = ""
     subtema: str = ""
+    tipo: str = "test"
 
 
 def _candidates(filtro: Filtro) -> Select:
@@ -69,13 +70,15 @@ def _candidates(filtro: Filtro) -> Select:
 def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random) -> QuestionOut:
     sub = session.get(Subtema, subtema_id)
     textos = {o.posicion: o.texto for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == p.id))}
+    if p.tipo == "problema":
+        textos = {}  # la solución no sale del servidor hasta que se responde
     orden = sorted(textos)
     rng.shuffle(orden)
     return QuestionOut(
         pregunta_id=p.id, concepto_id=p.concepto_id, subtema_id=subtema_id, enunciado=p.enunciado,
         opciones=[OpcionOut(l, textos[l]) for l in orden], orden=orden, dificultad=p.dificultad_base,
         ayuda_larga=p.ayuda_larga, fuente_id=p.fuente_id, fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara,
-        tema=session.get(Tema, sub.tema_id).nombre, subtema=sub.nombre)
+        tema=session.get(Tema, sub.tema_id).nombre, subtema=sub.nombre, tipo=p.tipo)
 
 
 def _seen_counts(session: Session) -> dict[str, int]:

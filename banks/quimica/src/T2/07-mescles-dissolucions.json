@@ -1,0 +1,90 @@
+{
+ "subtema": "Matèria, mescles i dissolucions",
+ "conceptos": [
+  {
+   "nombre": "Classificació de la matèria",
+   "pagina": 20,
+   "cara": 9,
+   "ayuda": "La matèria es divideix en substàncies pures i mescles. Una substància pura és un element (un sol tipus d'àtoms, com el Fe) o un compost (àtoms de diversos elements en proporció fixa, com l'H₂O). Una mescla és homogènia si els components no es distingeixen i tota la mostra té la mateixa composició (sal dissolta en aigua), i heterogènia si es veuen les fases (sorra i aigua). Un compost només es pot separar per mètodes químics i no conserva les propietats dels elements; una mescla es separa per mètodes físics i conserva les propietats dels components.",
+   "test": [
+    [1, "Què distingeix una mescla homogènia d'una mescla heterogènia?", "En l'homogènia els components no es distingeixen i la composició és igual a tot arreu", ["En l'homogènia hi ha un sol component i en l'heterogènia n'hi ha dos", "confondre mescla homogènia amb substància pura."], ["L'homogènia no es pot separar per cap mètode, ni físic ni químic", "pensar que homogènia vol dir impossible de separar."], ["L'heterogènia només es pot formar amb components que són sòlids", "limitar les mescles heterogènies a un estat de la matèria."], "En una mescla homogènia hi ha una sola fase i la composició és uniforme; en l'heterogènia es veuen les fases. Recorda: homogènia = una sola fase, encara que tingui més d'un component."],
+    [2, "Quina d'aquestes substàncies és un compost?", "L'H₂O, formada per àtoms d'hidrogen i d'oxigen en proporció fixa", ["El Fe, un metall format per un sol tipus d'àtoms", "confondre un element amb un compost."], ["L'O₂, una molècula formada per dos àtoms", "pensar que tota molècula de dos àtoms és un compost."], ["L'aigua salada, formada per aigua i sal dissolta", "confondre una mescla homogènia amb un compost."], "Un compost té àtoms de dos o més elements diferents en proporció definida. L'O₂ és un element, encara que tingui dos àtoms, perquè tots dos són d'oxigen."],
+    [4, "Quina afirmació sobre compostos i mescles és correcta?", "Un compost té composició definida i només se separa per mètodes químics", ["En un compost es conserven les propietats de les substàncies d'origen", "atribuir al compost el que és propi de la mescla."], ["Una mescla té una composició definida i invariable com la fórmula", "confondre composició variable amb composició fixa."], ["Una mescla se separa només per mètodes químics, com l'electròlisi", "invertir els mètodes de separació de mescles i compostos."], "El compost té composició fixa, no conserva les propietats dels elements i es descompon amb mètodes químics. La mescla és el contrari: composició variable i separació per mètodes físics."]
+   ],
+   "vf": [
+    [2, "L'aigua amb sal dissolta és una mescla homogènia.", true, "La sal es dissol del tot i no es distingeix a simple vista ni amb el microscopi convencional; hi ha una sola fase i la composició és igual a tot arreu.", "creure que, com que hi ha dos components, la mescla ha de ser heterogènia."]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Propietats físiques i químiques",
+   "pagina": 21,
+   "cara": 8,
+   "ayuda": "Les propietats físiques depenen de cada substància i no en canvien la naturalesa: temperatura d'ebullició i de fusió, duresa i solubilitat (l'aigua bull a 100 °C i l'etanol a 78 °C). Les propietats químiques descriuen com reacciona la substància: acidesa o basicitat i oxidació (el ferro rovella amb humitat). En un canvi físic la substància continua sent la mateixa (fondre gel, bullir aigua, dissoldre sucre). En un canvi químic es formen substàncies noves (cremar paper, rovellar ferro, l'electròlisi de l'aigua).",
+   "test": [
+    [2, "Quina de les propietats següents és una propietat química?", "L'oxidació del ferro, que forma òxid de ferro en presència d'humitat", ["La temperatura d'ebullició de l'etanol, que és de 78 °C", "considerar química una constant que es mesura sense reacció."], ["La duresa del diamant, que és molt dur", "confondre duresa amb reactivitat."], ["La solubilitat de la sal en aigua", "creure que dissoldre una substància és reaccionar."], "Una propietat química només es veu quan la substància reacciona i en forma d'altres de noves. Ebullició, duresa i solubilitat són físiques."],
+    [3, "Quin d'aquests processos és un canvi químic?", "Cremar paper, que deixa cendres i gasos", ["Bullir aigua fins que passa a vapor", "pensar que bullir transforma l'aigua en una altra substància."], ["Fondre gel a temperatura ambient", "confondre canvi d'estat amb reacció."], ["Dissoldre sucre en aigua i recuperar-lo en evaporar-la", "creure que, si desapareix a la vista, s'ha transformat."], "En un canvi químic apareixen substàncies noves. Si la substància es pot recuperar tal qual, com el sucre o l'aigua, el canvi és físic."]
+   ],
+   "vf": [
+    [3, "Fondre gel és un canvi químic perquè canvia l'aspecte de l'aigua.", false, "Quan el gel es fon, l'aigua continua sent H₂O i només canvia d'estat. Per això és un canvi físic.", "pensar que qualsevol canvi d'aspecte vol dir que s'ha format una substància nova."]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Solut, dissolvent i tipus de dissolucions",
+   "pagina": 22,
+   "cara": 7,
+   "ayuda": "Una dissolució és una mescla homogènia formada per un solut i un dissolvent. El dissolvent és el component que hi ha en més quantitat (normalment l'aigua) i el solut és el que hi ha en menys quantitat, per exemple la sal. Hi pot haver dissolucions amb solut i dissolvent en qualsevol estat: sòlid en líquid (sucre en aigua), líquid en líquid (alcohol en aigua), gas en líquid (oxigen en aigua, que respiren els peixos) o sòlid en sòlid (l'acer inoxidable o el bronze, aliatges homogenis).",
+   "test": [
+    [2, "En una dissolució de sal en aigua, quin és el dissolvent?", "L'aigua, perquè és el component que hi ha en més quantitat", ["La sal, perquè és el component que es dissol", "confondre dissolvent amb el que es dissol."], ["Cap, perquè la mescla és homogènia i no es distingeixen", "creure que en una mescla homogènia no hi ha rols."], ["Tots dos, perquè formen una sola fase uniforme", "confondre fase única amb components idèntics."], "El dissolvent és el component majoritari i el solut el minoritari. Mnemotècnic: el solut és el que es dissol, el dissolvent és el que dissol."],
+    [4, "L'oxigen que respiren els peixos a l'aigua, quin tipus de dissolució representa?", "Un solut gasós en un dissolvent líquid", ["Un solut líquid en un dissolvent gasós", "invertir els papers de solut i dissolvent."], ["Un solut gasós en un dissolvent sòlid", "confondre l'estat de l'aigua."], ["Un solut sòlid en un dissolvent líquid", "pensar que el solut sempre és sòlid."], "L'oxigen és un gas i l'aigua és el líquid on es dissol. Per identificar el tipus, mira l'estat del solut primer i el del dissolvent després."]
+   ],
+   "vf": [
+    [3, "En una dissolució, el solut és el component que hi és en més quantitat.", false, "El solut és el component que hi és en menys quantitat; el dissolvent és el majoritari, normalment l'aigua.", "pensar que el solut, com que és el protagonista de la dissolució, ha de ser el més abundant."]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Solubilitat i corbes de solubilitat",
+   "pagina": 18,
+   "cara": 11,
+   "ayuda": "La solubilitat és la massa màxima de solut que es dissol en 100 g d'aigua a una temperatura determinada (g/100 g). Una dissolució insaturada admet més solut, una de saturada té justament el màxim i una de sobresaturada en té més del màxim, és inestable i el solut sobrant cristal·litza. La majoria de sòlids es dissolen més en calent: si refredem una dissolució saturada, l'excés cristal·litza. La sal comuna (NaCl) gairebé no canvia amb la temperatura. Els gasos com l'O₂ i el CO₂ són menys solubles en aigua calenta.",
+   "test": [
+    [1, "Què és la solubilitat d'un solut?", "La massa màxima de solut que es dissol en 100 g d'aigua a una temperatura", ["La massa de solut que hi ha en 1 L de dissolució", "confondre solubilitat amb concentració en g/L."], ["La massa mínima de solut que cal per formar una dissolució", "pensar que hi ha un mínim en lloc d'un màxim."], ["El volum d'aigua necessari per dissoldre 1 g de solut", "invertir la relació entre solut i dissolvent."], "La solubilitat és un límit: la màxima quantitat de solut que admet 100 g d'aigua a una T concreta. Recorda: g de solut per 100 g d'aigua."],
+    [3, "Si refredem una dissolució saturada de KNO₃, per què es formen cristalls?", "Perquè la solubilitat baixa en refredar i l'excés de solut no es pot mantenir dissolt", ["Perquè l'aigua s'evapora quan la dissolució es refreda", "relacionar refredar amb evaporar."], ["Perquè el KNO₃ reacciona amb l'aigua i forma un compost nou", "confondre cristal·litzar amb una reacció química."], ["Perquè la concentració de la dissolució augmenta en refredar-se", "pensar que la massa de solut canvia amb la temperatura."], "Per sota de la corba la dissolució és insaturada; en baixar la T, la solubilitat baixa i el solut sobrant surt com a cristalls. Aquesta és la base de la cristal·lització."],
+    [5, "Què indica el fet que els peixos tinguin menys oxigen dissolt a l'estiu?", "La solubilitat dels gasos en aigua disminueix en augmentar la temperatura", ["La solubilitat dels gasos en aigua augmenta en augmentar la temperatura", "aplicar als gasos la tendència de la majoria de sòlids."], ["La solubilitat dels gasos en aigua no depèn de la temperatura, com la del NaCl", "generalitzar el cas del NaCl a qualsevol solut."], ["L'oxigen dissolt es consumeix en reaccionar amb l'aigua escalfada", "atribuir la pèrdua d'oxigen a una reacció i no a la solubilitat."], "Als gasos passa el contrari que als sòlids: en calent se'n dissolen menys. Per això un refresc calent perd el gas i a l'estiu hi ha menys oxigen a l'aigua."]
+   ],
+   "vf": [
+    [2, "Una dissolució saturada conté la quantitat màxima de solut que es pot dissoldre a aquella temperatura.", true, "Saturada vol dir que està just en el límit de solubilitat: si hi afegim més solut, ja no es dissol.", "confondre saturada amb sobresaturada, que té més del màxim."],
+    [4, "Una dissolució sobresaturada és estable i el solut sobrant es manté dissolt indefinidament.", false, "Una dissolució sobresaturada té més solut del màxim permès; és inestable i l'excés cristal·litza.", "pensar que més solut dissolt vol dir una dissolució més estable."]
+   ],
+   "problemas": [
+    [2, "La solubilitat de la sal comuna a 20 °C és de 36 g per cada 100 g d'aigua. Quina és la massa màxima de sal, en g, que es pot dissoldre en 250 g d'aigua a 20 °C?", 90.0, "La solubilitat és proporcional a la massa d'aigua: m = 36 g/100 g · 250 g = 90,0 g.", "36.0*250.0/100.0"],
+    [3, "A 40 °C la solubilitat del KNO₃ és de 64 g per cada 100 g d'aigua. Quants grams d'aigua calen, com a mínim, per dissoldre 160 g de KNO₃ a 40 °C? Expressa el resultat en g.", 250, "Si 64 g de solut necessiten 100 g d'aigua, 160 g en necessiten 160/64 · 100 = 250 g d'aigua.", "160.0/64.0*100.0"],
+    [3, "Una substància té una solubilitat de 45 g per cada 100 g d'aigua a 50 °C. Es barregen 120 g d'aquesta substància amb 200 g d'aigua a 50 °C i s'agita bé. Quants grams de solut queden sense dissoldre? Expressa el resultat en g.", 30.0, "En 200 g d'aigua es dissolen com a màxim 45 · 200/100 = 90 g. Queden sense dissoldre 120 − 90 = 30,0 g.", "120.0-45.0*200.0/100.0"],
+    [4, "La solubilitat del KNO₃ és de 110 g/100 g d'aigua a 60 °C i de 32 g/100 g d'aigua a 20 °C. Es refreden de 60 °C a 20 °C 300 g d'aigua saturada de KNO₃ a 60 °C. Quants grams de KNO₃ cristal·litzen? Expressa el resultat en g.", 234, "Per cada 100 g d'aigua cristal·litzen 110 − 32 = 78 g. Amb 300 g d'aigua és 3 vegades més: 78 · 3 = 234 g.", "(110.0-32.0)*300.0/100.0"]
+   ]
+  },
+  {
+   "nombre": "Preparar una dissolució i concentració en g/L",
+   "pagina": 19,
+   "cara": 10,
+   "ayuda": "La concentració d'una dissolució en g/L és la massa de solut que hi ha en cada litre de dissolució: c = m/V. Per preparar-ne una, primer calcules la massa (m = c · V), després la peses amb una balança, la dissols amb una mica d'aigua destil·lada en un vas de precipitats, la passes al matràs aforat (rentant el vas), enrases fins a la marca amb el fons del menisc tocant-la i homogeneïtzes. Per exemple, per fer 100 mL de NaCl a 20 g/L cal 20 g/L · 0,100 L = 2,00 g de NaCl. Es fa servir un matràs aforat perquè mesura un volum fix amb molta precisió, a diferència de la proveta.",
+   "test": [
+    [2, "Per preparar 100 mL de dissolució amb un volum molt precís, quin instrument s'ha d'utilitzar?", "Un matràs aforat de 100 mL, que mesura un volum fix amb molta precisió", ["Una proveta de 100 mL, perquè té una escala graduada de volums", "pensar que tot recipient amb escala és igual de precís."], ["Un vas de precipitats de 100 mL, que té una escala impresa", "usar un recipient de contenir per mesurar volums."], ["Un matràs Erlenmeyer de 100 mL, que també és de vidre", "creure que qualsevol matràs serveix per mesurar volums."], "La proveta és aproximada i el vas i l'Erlenmeyer només contenen líquids. El matràs aforat té una sola marca i és l'instrument adequat per preparar dissolucions."],
+    [4, "Quin és l'ordre correcte per preparar una dissolució a partir d'un solut sòlid?", "Calcular la massa, pesar-la, dissoldre al vas, passar al matràs aforat i enrasar", ["Calcular la massa, dissoldre-la al matràs aforat i pesar el sòlid en acabar", "invertir els passos de pesar i dissoldre."], ["Pesar el sòlid, enrasar el matràs amb aigua i afegir-hi després el sòlid", "enrasar abans d'afegir el solut i alterar el volum final."], ["Pesar el sòlid, afegir-hi 100 mL d'aigua de la proveta i guardar-ho tal qual", "no enrasar al matràs i obviar la precisió del volum."], "Primer es calcula i es pesa la massa, després es dissol, es transvasa al matràs i, per acabar, s'enrasa perquè el volum final sigui exacte. Recorda: calcula, pesa, dissol, transvasa, enrasa."]
+   ],
+   "vf": [
+    [2, "Per preparar una dissolució precisa s'enrasa el matràs aforat fins que la base del menisc toca la marca.", true, "L'enràs és la marca única del matràs aforat; quan la base del menisc la toca, el volum és el que indica el matràs. Les últimes gotes s'afegeixen amb pipeta.", "creure que el volum es mesura per sobre o per sota de la marca."]
+   ],
+   "problemas": [
+    [1, "Cal preparar 250 mL d'una dissolució de NaCl de concentració 15 g/L. Quants grams de NaCl s'han de pesar? Expressa el resultat en g.", 3.75, "m = c · V = 15 g/L · 0,250 L = 3,75 g de NaCl.", "15.0*0.250"],
+    [2, "S'han dissolt 12,0 g de sucre en aigua fins a obtenir 400 mL de dissolució. Quina és la concentració de la dissolució? Expressa el resultat en g/L.", 30.0, "c = m/V = 12,0 g / 0,400 L = 30,0 g/L.", "12.0/0.400"],
+    [1, "Una dissolució s'ha preparat dissolent 2,50 g de solut en un matràs aforat de 500 mL. Quina és la concentració de la dissolució? Expressa el resultat en g/L.", 5.00, "c = m/V = 2,50 g / 0,500 L = 5,00 g/L.", "2.50/0.500"],
+    [3, "Es disposa de 5,0 g de solut i es vol preparar una dissolució de 25 g/L. Quin volum de dissolució es pot preparar com a màxim? Expressa el resultat en mL.", 200, "V = m/c = 5,0 g / 25 g/L = 0,20 L = 200 mL.", "5.0/25.0*1000.0"],
+    [3, "Un flascó conté una dissolució de concentració 35 g/L. Quants grams de solut hi ha en 60 mL d'aquesta dissolució? Expressa el resultat en g.", 2.10, "Primer passem el volum a litres: 60 mL = 0,060 L. Després m = c · V = 35 g/L · 0,060 L = 2,10 g.", "35.0*0.060"],
+    [4, "Es barregen 250 mL d'una dissolució de 20 g/L amb 150 mL d'una altra de 40 g/L del mateix solut. Suposa que els volums se sumen. Quina és la concentració de la dissolució final? Expressa el resultat en g/L.", 27.5, "Massa de la primera: 20 · 0,250 = 5,0 g. Massa de la segona: 40 · 0,150 = 6,0 g. Total 11,0 g en 0,400 L: c = 11,0 / 0,400 = 27,5 g/L.", "(20.0*0.250+40.0*0.150)/0.400"]
+   ]
+  }
+ ]
+}

@@ -22,7 +22,8 @@ def _digest(text: str) -> str:
 
 
 def question_digest(q: PreguntaIn) -> str:
-    return _digest(q.model_dump_json())
+    # Las preguntas test no incluyen los campos de tipo: así su huella no cambia y no se reimportan como nuevas versiones.
+    return _digest(q.model_dump_json(exclude={"tipo", "solucion"} if q.tipo == "test" else None))
 
 
 def _get_or_create(session: Session, model, **keys):
@@ -45,11 +46,13 @@ def _add_question(session: Session, q: PreguntaIn, concepto: Concepto, version: 
                   digest: str, excluida: bool) -> None:
     p = Pregunta(
         clave=q.id, version=version, es_actual=True, concepto_id=concepto.id, fuente_id=fuente_id,
-        lote_id=lote_id, enunciado=q.enunciado, ayuda_larga=q.ayuda_larga, dificultad_base=q.dificultad,
+        lote_id=lote_id, tipo=q.tipo, enunciado=q.enunciado, ayuda_larga=q.ayuda_larga, dificultad_base=q.dificultad,
         fuente_pagina=q.fuente_pagina, fuente_cara=q.fuente_cara, content_hash=digest, excluida=excluida,
     )
     session.add(p)
     session.flush()
+    if q.tipo == "problema":  # una sola opción «a» guarda la solución; el selector no la envía al cliente
+        session.add(Opcion(pregunta_id=p.id, posicion="a", texto=repr(q.solucion), correcta=True))
     for i, o in enumerate(q.opciones):
         letra = "abcd"[i]
         session.add(Opcion(pregunta_id=p.id, posicion=letra, texto=o.texto, correcta=letra == q.correcta,

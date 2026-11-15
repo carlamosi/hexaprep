@@ -149,3 +149,57 @@ describe("pantalla de práctica", () => {
     expect(a.client.nextQuestion).toHaveBeenCalledTimes(2);
   });
 });
+
+describe("problemas numéricos y verdadero/falso", () => {
+  const PR: Question = { ...Q, pregunta_id: "p9", tipo: "problema", opciones: [], orden: [], enunciado: "Quants mols són 36 g d'aigua?" };
+  const RES_KO: AnswerResult = { ...KO, trampa: null, solucion: 2, opcion_correcta: "a" };
+  function setupProblem(result: AnswerResult) {
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(PR).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue(result),
+      reportQuestion: vi.fn(),
+      markCorrect: vi.fn().mockResolvedValue({ percent: 70 }),
+    } satisfies PracticeClient;
+    render(<Practice sesionId="s1" client={client} onDone={vi.fn()} />);
+    return { client, user: userEvent.setup() };
+  }
+
+  it("problem_sends_the_typed_number_and_shows_no_options", async () => {
+    const a = setupProblem(OK);
+    const input = await screen.findByLabelText(/Tu respuesta/);
+    expect(screen.queryByRole("list", { name: "Opciones de respuesta" })).toBeNull();
+    await a.user.type(input, "2,0");
+    await a.user.click(screen.getByRole("button", { name: "Comprobar" }));
+    await waitFor(() => expect(a.client.answer).toHaveBeenCalledTimes(1));
+    expect(a.client.answer.mock.calls[0][0]).toMatchObject({ pregunta_id: "p9", respuesta: "2,0", orden_opciones: [] });
+  });
+
+  it("problem_rejects_text_without_calling_the_server", async () => {
+    const a = setupProblem(OK);
+    await a.user.type(await screen.findByLabelText(/Tu respuesta/), "dos mols{Enter}");
+    expect(await screen.findByRole("alert")).toHaveTextContent("solo un número");
+    expect(a.client.answer).not.toHaveBeenCalled();
+  });
+
+  it("wrong_problem_waits_and_lo_he_hecho_bien_marks_it_correct", async () => {
+    const a = setupProblem(RES_KO);
+    await a.user.type(await screen.findByLabelText(/Tu respuesta/), "5{Enter}");
+    expect(await screen.findByText("2", { selector: "strong" })).toBeInTheDocument();
+    await new Promise((r) => setTimeout(r, 2700)); // más que el avance automático de un fallo
+    expect(a.client.nextQuestion).toHaveBeenCalledTimes(1);
+    await a.user.click(screen.getByRole("button", { name: "Lo he hecho bien" }));
+    await waitFor(() => expect(a.client.markCorrect).toHaveBeenCalledWith("s1", "p9"));
+    expect(await screen.findByText("Bien. Lo tienes.")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Lo he hecho bien" })).toBeNull();
+  }, 10000);
+
+  it("vf_with_two_options_answers_with_key_2", async () => {
+    const VF: Question = { ...Q, pregunta_id: "p8", tipo: "vf", opciones: [{ letra: "b", texto: "Fals" }, { letra: "a", texto: "Vertader" }], orden: ["b", "a"] };
+    const client = { nextQuestion: vi.fn().mockResolvedValueOnce(VF).mockResolvedValue(null), answer: vi.fn().mockResolvedValue(OK), reportQuestion: vi.fn() };
+    render(<Practice sesionId="s1" client={client} />);
+    await screen.findByText(/Vertader/);
+    await userEvent.keyboard("2");
+    await waitFor(() => expect(client.answer).toHaveBeenCalled());
+    expect(client.answer.mock.calls[0][0]).toMatchObject({ elegida: "a", orden_opciones: ["b", "a"] });
+  });
+});
