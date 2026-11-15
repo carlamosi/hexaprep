@@ -1,0 +1,282 @@
+{
+ "subtema": "Hidrocarburs cíclics i aromàtics",
+ "conceptos": [
+  {
+   "nombre": "Cicloalcans",
+   "pagina": 14,
+   "cara": 14,
+   "ayuda": "Els cicloalcans s'anomenen com l'alcà del mateix nombre de carbonis amb el prefix ciclo-: ciclobutà, ciclopentà, ciclohexà. Si hi ha substituents es numeren perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament. Amb un sol radical no cal localitzador: metilciclopropà. Exemple: 1-etil-2-metilciclohexà.",
+   "test": [
+    [
+     1,
+     "Com s'anomena l'hidrocarbur cíclic saturat de 4 carbonis?",
+     "Ciclobutà",
+     [
+      "Butà",
+      "trampa: oblidar que és un cicle"
+     ],
+     [
+      "Ciclobutè",
+      "trampa: usar la terminació dels alquens en un cicle saturat"
+     ],
+     [
+      "Ciclopropà",
+      "trampa: comptar un carboni de menys"
+     ],
+     "Quatre carbonis donen el prefix but- i el cicle afegeix ciclo-. Com que és saturat acaba en -à. Regla: ciclo- + nom de l'alcà."
+    ],
+    [
+     3,
+     "Quin és el nom d'un cicle saturat de 5 carbonis amb un sol grup metil?",
+     "Metilciclopentà",
+     [
+      "1-metilciclopentà",
+      "trampa: afegir un localitzador que no cal"
+     ],
+     [
+      "Ciclometilpentà",
+      "trampa: posar el prefix ciclo- enmig del nom"
+     ],
+     [
+      "Metilpentà",
+      "trampa: oblidar que és un cicle"
+     ],
+     "Amb un sol radical el seu carboni és sempre el 1, per això no cal indicar-ho. El nom és el radical seguit de ciclopentà."
+    ],
+    [
+     4,
+     "Un ciclohexà té un etil i un metil en dos carbonis veïns. Quin és el seu nom?",
+     "1-etil-2-metilciclohexà",
+     [
+      "1-metil-2-etilciclohexà",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     [
+      "2-etil-1-metilciclohexà",
+      "trampa: ordenar bé però numerar al revés"
+     ],
+     [
+      "1-etil-6-metilciclohexà",
+      "trampa: numerar cap al sentit que dona localitzadors més alts"
+     ],
+     "Els localitzadors més baixos són 1 i 2 i, com que hi ha empat, el 1 va per al radical primer a l'alfabet: l'etil. Així el nom és 1-etil-2-metilciclohexà."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "En un cicloalcà amb un sol radical no cal indicar-ne el localitzador.",
+     true,
+     "El carboni on penja l'únic radical és sempre el 1, així que s'escriu metilciclopropà i no 1-metilciclopropà.",
+     "trampa: creure que sempre cal posar el localitzador 1"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Cicloalquens i cicloalquins",
+   "pagina": 15,
+   "cara": 15,
+   "ayuda": "Quan un cicle té insaturacions, els carbonis es numeren perquè aquests enllaços tinguin els localitzadors més baixos possibles (1 i 2), i després els radicals tenen els números més baixos. Els cicloalquens acaben en -è i els cicloalquins en -í. Un cicle també pot ser un radical d'una cadena oberta, amb el sufix -il: ciclohexil, ciclopentil. Exemple: 4-metilciclopentè.",
+   "test": [
+    [
+     2,
+     "En un cicle amb un doble enllaç, quin criteri s'aplica en numerar els carbonis?",
+     "El doble enllaç ha de tenir els localitzadors més baixos possibles",
+     [
+      "El radical ha de tenir el localitzador més baix, sense mirar el doble enllaç",
+      "trampa: donar prioritat als radicals"
+     ],
+     [
+      "Es comença pel carboni amb més hidrògens",
+      "trampa: inventar un criteri que no existeix"
+     ],
+     [
+      "Es numera sempre en sentit horari",
+      "trampa: pensar que el sentit el decideix el dibuix"
+     ],
+     "En els cicles amb insaturacions, el doble o el triple enllaç és el que s'ha de situar entre els carbonis 1 i 2. Només després es miren els radicals."
+    ],
+    [
+     4,
+     "Un cicle de 5 carbonis té un doble enllaç entre els carbonis 1 i 2 i un grup metil al carboni 4. Quin és el seu nom?",
+     "4-metilciclopentè",
+     [
+      "3-metilciclopentè",
+      "trampa: comptar malament la posició del radical"
+     ],
+     [
+      "4-metilciclopentà",
+      "trampa: oblidar el doble enllaç"
+     ],
+     [
+      "1-metilciclopentè",
+      "trampa: posar el radical on hi ha el doble enllaç"
+     ],
+     "El doble enllaç ocupa els carbonis 1 i 2 i el metil està al 4. El nom és el radical amb el seu localitzador seguit de ciclopentè."
+    ],
+    [
+     5,
+     "Un cicle de 6 carbonis té un triple enllaç entre els carbonis 1 i 2 i dos metils als carbonis 3 i 5. Quin és el seu nom?",
+     "3,5-dimetilciclohexí",
+     [
+      "4,6-dimetilciclohexí",
+      "trampa: numerar en el sentit contrari, amb localitzadors més alts"
+     ],
+     [
+      "3,5-dimetilciclohexè",
+      "trampa: usar la terminació d'alquè en un triple enllaç"
+     ],
+     [
+      "3,5-dimetilciclohexà",
+      "trampa: oblidar el triple enllaç"
+     ],
+     "Es numera perquè el triple enllaç sigui el 1-2, i després els metils han de tenir els localitzadors més baixos: 3 i 5 en un sentit, 4 i 6 en l'altre. El nom acaba en -í: 3,5-dimetilciclohexí."
+    ]
+   ],
+   "vf": [
+    [
+     4,
+     "Un cicle de 5 carbonis amb un doble enllaç i un metil es numera perquè el metil tingui el localitzador 1.",
+     false,
+     "Quan hi ha un doble enllaç, són els carbonis del doble enllaç els que tenen els números 1 i 2, i el radical queda amb el localitzador que sigui.",
+     "trampa: pensar que el radical mana sobre la insaturació"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Hidrocarburs aromàtics: benzè",
+   "pagina": 16,
+   "cara": 16,
+   "ayuda": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "test": [
+    [
+     1,
+     "Quina és la fórmula molecular del benzè?",
+     "C₆H₆",
+     [
+      "C₆H₁₂",
+      "trampa: confondre el benzè amb el ciclohexà"
+     ],
+     [
+      "C₆H₁₄",
+      "trampa: confondre el benzè amb el hexà"
+     ],
+     [
+      "C₆H₁₀",
+      "trampa: confondre el benzè amb el ciclohexè"
+     ],
+     "El benzè és el hidrocarbur aromàtic de fórmula C₆H₆: sis carbonis i sis hidrògens. Els altres són hidrocarburs saturats o amb un sol doble enllaç."
+    ],
+    [
+     2,
+     "Com s'anomena el benzè amb un sol grup metil?",
+     "Metilbenzè (toluè)",
+     [
+      "1-metilbenzè",
+      "trampa: afegir un localitzador que no cal"
+     ],
+     [
+      "Metilciclohexà",
+      "trampa: confondre el benzè amb el ciclohexà"
+     ],
+     [
+      "Benzoat de metil",
+      "trampa: confondre un aromàtic amb un èster"
+     ],
+     "Amb un sol radical s'escriu el radical i després benzè, sense localitzador. També es diu toluè."
+    ],
+    [
+     4,
+     "Com s'anomena amb prefix el benzè amb un etil i un propil en les posicions 1 i 4?",
+     "p-etilpropilbenzè",
+     [
+      "o-etilpropilbenzè",
+      "trampa: confondre les posicions 1,4 amb 1,2"
+     ],
+     [
+      "m-etilpropilbenzè",
+      "trampa: confondre les posicions 1,4 amb 1,3"
+     ],
+     [
+      "p-propiletilbenzè",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     "Les posicions 1,4 corresponen al prefix para (p). Els radicals s'ordenen alfabèticament: etil abans que propil."
+    ],
+    [
+     4,
+     "Com s'anomena el benzè amb un etil i un metil en les posicions 1 i 3?",
+     "1-etil-3-metilbenzè",
+     [
+      "1-metil-3-etilbenzè",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     [
+      "1-etil-5-metilbenzè",
+      "trampa: no triar els localitzadors més baixos"
+     ],
+     [
+      "3-etil-1-metilbenzè",
+      "trampa: començar a numerar pel radical equivocat"
+     ],
+     "Els localitzadors més baixos són 1 i 3. Com que hi ha empat, el 1 és per al radical primer a l'alfabet, l'etil. El nom és 1-etil-3-metilbenzè."
+    ],
+    [
+     5,
+     "Un benzè té dos etils als carbonis 1 i 3 i un metil al carboni 5. Quin és el seu nom?",
+     "1,3-dietil-5-metilbenzè",
+     [
+      "1,5-dietil-3-metilbenzè",
+      "trampa: no donar els números més baixos als radicals primers a l'alfabet"
+     ],
+     [
+      "3,5-dietil-1-metilbenzè",
+      "trampa: començar a numerar pel metil"
+     ],
+     [
+      "1,3-dietilmetilbenzè",
+      "trampa: oblidar el localitzador del metil"
+     ],
+     "Els tres radicals ocupen 1, 3 i 5 en qualsevol sentit. El 1 i el 3 es reserven per als etils, que són els primers a l'alfabet, i el 5 queda per al metil."
+    ],
+    [
+     3,
+     "Quants carbonis té en total el 4-etil-2-metil-1-propilbenzè?",
+     "12",
+     [
+      "6",
+      "trampa: comptar només el cicle"
+     ],
+     [
+      "9",
+      "trampa: comptar un sol carboni per radical"
+     ],
+     [
+      "11",
+      "trampa: comptar el propil amb dos carbonis"
+     ],
+     "Sumem 6 del cicle, 2 de l'etil, 1 del metil i 3 del propil: 6 + 2 + 1 + 3 = 12. Regla: compta cada radical pel seu nombre de carbonis."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Els prefixos orto, meta i para corresponen a les posicions 1,2, 1,3 i 1,4 del benzè.",
+     true,
+     "Orto és 1,2, meta és 1,3 i para és 1,4. Se solen abreujar o-, m- i p-.",
+     "trampa: intercanviar l'ordre dels prefixos"
+    ],
+    [
+     3,
+     "El nom 1-metilbenzè és el correcte per al toluè.",
+     false,
+     "Amb un sol radical no cal localitzador: el nom correcte és metilbenzè (o toluè).",
+     "trampa: creure que cal indicar sempre la posició 1"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

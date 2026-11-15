@@ -1,0 +1,72 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones logarítmicas",
+ "conceptos": [
+  {
+   "nombre": "Logaritmo igualado a una constante",
+   "pagina": 26,
+   "ayuda": "Se juntan los logaritmos con $\\log a+\\log b=\\log(ab)$ y $\\log a-\\log b=\\log\\frac ab$. Después se escribe la constante como un logaritmo, por ejemplo $2=\\log100$, y se igualan los argumentos. Ejemplo: $\\log x+\\log5=1$ da $\\log(5x)=\\log10$, así que $x=2$. Si no se indica la base, es 10.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $\\log x+\\log5=2$. Escribe la solución.",
+     20,
+     "$\\log(5x)=2=\\log100$, luego $5x=100$ y $x=20$.",
+     "[x for x in range(1, 200) if abs(math.log10(x) + math.log10(5) - 2) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $\\log(12x+4)-\\log(x+1)=1$. Escribe la solución.",
+     3,
+     "$\\log\\frac{12x+4}{x+1}=\\log10$, luego $12x+4=10x+10$ y $x=3$. Es válida: los argumentos $40$ y $4$ son positivos.",
+     "[x for x in range(1, 200) if abs(math.log10(12*x+4) - math.log10(x+1) - 1) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Igualar logaritmos y descartar soluciones",
+   "pagina": 26,
+   "ayuda": "Se reduce la ecuación a $\\log A=\\log B$ y se iguala $A=B$. Después se resuelve y se comprueba cada solución en la ecuación original: los argumentos de los logaritmos deben ser positivos y las que no cumplen se descartan. Ejemplo: $2\\log x=\\log(x+2)$ da $x^2=x+2$, con $x=2$ y $x=-1$; $x=-1$ no vale porque $\\log(-1)$ no existe.",
+   "problemas": [
+    [
+     2,
+     "Resuelve $2\\log x=\\log(x+12)$. Escribe la solución.",
+     4,
+     "$\\log x^2=\\log(x+12)$, luego $x^2=x+12$, $x^2-x-12=0$, con $x=4$ y $x=-3$. Se descarta $x=-3$ porque $\\log(-3)$ no existe. La solución es $x=4$.",
+     "[x for x in range(1, 200) if abs(2*math.log10(x) - math.log10(x+12)) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $2\\log x-\\log(x+3)=\\log4$. Escribe la solución.",
+     6,
+     "$\\log\\frac{x^2}{x+3}=\\log4$, luego $x^2=4x+12$, $x^2-4x-12=0$, con $x=6$ y $x=-2$. Se descarta $x=-2$ porque $\\log(-2)$ no existe. La solución es $x=6$.",
+     "[x for x in range(1, 200) if abs(2*math.log10(x) - math.log10(x+3) - math.log10(4)) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $\\log_2(x+2)+\\log_2(x-1)=2$. Escribe la solución.",
+     2,
+     "$\\log_2[(x+2)(x-1)]=\\log_24$, luego $x^2+x-2=4$, $x^2+x-6=0$, con $x=2$ y $x=-3$. Se descarta $x=-3$ porque $\\log_2(-1)$ no existe. La solución es $x=2$.",
+     "[x for x in range(2, 200) if abs(math.log2(x+2) + math.log2(x-1) - 2) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Logaritmo con cambio de variable",
+   "pagina": 26,
+   "ayuda": "Si la ecuación tiene $\\log x$ elevado al cuadrado, se usa $\\log x^n=n\\log x$ y se hace el cambio $t=\\log x$. Queda una ecuación de segundo grado en $t$ y se deshace el cambio con $x=10^t$. Ejemplo: $(\\log x)^2-3\\log x+2=0$ da $t=1$ y $t=2$, es decir $x=10$ y $x=100$.",
+   "problemas": [
+    [
+     5,
+     "Resuelve $(\\log x)^2-\\log x^3+2=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      10,
+      100
+     ],
+     "Como $\\log x^3=3\\log x$, con $t=\\log x$ queda $t^2-3t+2=0$, con $t=1$ y $t=2$. Entonces $x=10$ y $x=100$, y ambas valen.",
+     "[x for x in range(1, 1000) if abs(math.log10(x)**2 - 3*math.log10(x) + 2) < 1e-9]"
+    ]
+   ]
+  }
+ ]
+}

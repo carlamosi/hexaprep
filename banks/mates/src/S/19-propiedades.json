@@ -1,0 +1,118 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Potencias, radicales y logaritmos",
+ "conceptos": [
+  {
+   "nombre": "Propiedades de las potencias",
+   "pagina": 1,
+   "ayuda": "Para multiplicar potencias de la misma base se suman los exponentes: $x^n\\cdot x^m=x^{n+m}$. Para dividir se restan: $\\frac{x^n}{x^m}=x^{n-m}$. Una potencia de potencia multiplica los exponentes: $(x^n)^m=x^{nm}$. Además $x^0=1$ y $x^{-n}=\\frac{1}{x^n}$. Lo primero es escribir todo con la misma base. Ejemplo: $\\frac{2^4\\cdot 4}{2^3}=\\frac{2^4\\cdot2^2}{2^3}=2^{4+2-3}=2^3=8$.",
+   "problemas": [
+    [
+     1,
+     "Calcula $\\frac{2^5\\cdot 2^3}{2^6}$. Escribe el valor.",
+     4,
+     "Se suman los exponentes del numerador: $2^5\\cdot2^3=2^8$. Se restan los del denominador: $\\frac{2^8}{2^6}=2^2=4$.",
+     "2**5*2**3/2**6"
+    ],
+    [
+     2,
+     "Calcula $\\frac{3^7\\cdot 9^2}{27^3}$. Escribe el valor.",
+     9,
+     "Se escribe todo en base 3: $9^2=(3^2)^2=3^4$ y $27^3=(3^3)^3=3^9$. Queda $\\frac{3^7\\cdot3^4}{3^9}=3^{11-9}=3^2=9$.",
+     "3**7*9**2/27**3"
+    ],
+    [
+     3,
+     "Calcula $\\frac{4^3\\cdot 8^{-2}}{2^{-3}}$. Escribe el valor.",
+     8,
+     "En base 2: $4^3=2^6$ y $8^{-2}=2^{-6}$. El numerador es $2^6\\cdot2^{-6}=2^0=1$. Dividir entre $2^{-3}$ es multiplicar por $2^3$, así que el resultado es $8$.",
+     "4**3*8**-2/2**-3"
+    ]
+   ]
+  },
+  {
+   "nombre": "Radicales y exponentes fraccionarios",
+   "pagina": 1,
+   "ayuda": "Una raíz es una potencia de exponente fraccionario: $\\sqrt[n]{x^m}=x^{m/n}$. Así $\\sqrt[3]{x}=x^{1/3}$. Para multiplicar o dividir raíces de distinto índice se pasan a exponente fraccionario y se suman o restan los exponentes de la misma base. Ejemplo: $\\sqrt{2}\\cdot\\sqrt[3]{2}=2^{1/2}\\cdot2^{1/3}=2^{5/6}$. Se calcula la raíz primero si el número es una potencia exacta: $8^{2/3}=(\\sqrt[3]{8})^2=4$.",
+   "problemas": [
+    [
+     2,
+     "Calcula $\\sqrt[3]{54}\\cdot\\sqrt[3]{4}$. Escribe el valor.",
+     6,
+     "Raíces del mismo índice se multiplican dentro: $\\sqrt[3]{54\\cdot4}=\\sqrt[3]{216}=6$, porque $6^3=216$.",
+     "(54*4)**(1/3)"
+    ],
+    [
+     3,
+     "Calcula $8^{2/3}+16^{3/4}-81^{1/4}$. Escribe el valor.",
+     9,
+     "$8^{2/3}=(\\sqrt[3]{8})^2=2^2=4$. $16^{3/4}=(\\sqrt[4]{16})^3=2^3=8$. $81^{1/4}=\\sqrt[4]{81}=3$. Resultado: $4+8-3=9$.",
+     "8**(2/3)+16**(3/4)-81**(1/4)"
+    ],
+    [
+     4,
+     "Calcula $\\frac{\\sqrt{8}\\cdot\\sqrt[3]{4}}{\\sqrt[6]{2}}$. Escribe el valor.",
+     4,
+     "En base 2 con exponentes fraccionarios: $\\sqrt8=2^{3/2}$, $\\sqrt[3]{4}=2^{2/3}$, $\\sqrt[6]{2}=2^{1/6}$. El exponente final es $\\frac32+\\frac23-\\frac16=\\frac{9+4-1}{6}=2$, luego el valor es $2^2=4$.",
+     "8**(1/2)*4**(1/3)/2**(1/6)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Racionalización de denominadores",
+   "pagina": 1,
+   "ayuda": "Racionalizar es quitar las raíces del denominador. Si el denominador es $\\sqrt{a}$, se multiplica numerador y denominador por $\\sqrt{a}$. Si es $\\sqrt{a}-\\sqrt{b}$, se multiplica por su conjugado $\\sqrt{a}+\\sqrt{b}$, porque $(\\sqrt a-\\sqrt b)(\\sqrt a+\\sqrt b)=a-b$. Ejemplo: $\\frac{2}{\\sqrt{3}}=\\frac{2\\sqrt3}{3}\\approx1{,}155$. El valor numérico no cambia al racionalizar.",
+   "problemas": [
+    [
+     2,
+     "Racionaliza $\\frac{15}{\\sqrt5}$ y escribe su valor redondeado a 3 decimales.",
+     6.708,
+     "Se multiplica arriba y abajo por $\\sqrt5$: $\\frac{15\\sqrt5}{5}=3\\sqrt5\\approx3\\cdot2{,}2361=6{,}708$.",
+     "15/math.sqrt(5)"
+    ],
+    [
+     4,
+     "Racionaliza $\\frac{4}{\\sqrt7-\\sqrt3}$ y escribe su valor redondeado a 3 decimales.",
+     4.378,
+     "Se multiplica por el conjugado: $\\frac{4(\\sqrt7+\\sqrt3)}{7-3}=\\sqrt7+\\sqrt3\\approx2{,}6458+1{,}7321=4{,}378$.",
+     "4/(math.sqrt(7)-math.sqrt(3))"
+    ],
+    [
+     5,
+     "Calcula $\\frac{1}{\\sqrt5-2}-\\frac{1}{\\sqrt5+2}$. Escribe el valor.",
+     4,
+     "Se racionaliza cada fracción: $\\frac{1}{\\sqrt5-2}=\\frac{\\sqrt5+2}{5-4}=\\sqrt5+2$ y $\\frac{1}{\\sqrt5+2}=\\frac{\\sqrt5-2}{5-4}=\\sqrt5-2$. La resta es $(\\sqrt5+2)-(\\sqrt5-2)=4$.",
+     "1/(math.sqrt(5)-2)-1/(math.sqrt(5)+2)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Propiedades de los logaritmos",
+   "pagina": 1,
+   "ayuda": "Propiedades: $\\log_a(xy)=\\log_a x+\\log_a y$, $\\log_a\\frac{x}{y}=\\log_a x-\\log_a y$, $\\log_a x^n=n\\log_a x$, $\\log_a a=1$ y $\\log_a 1=0$. Cambio de base: $\\log_a b=\\frac{\\log b}{\\log a}$. Muchas veces conviene escribir los números como potencias de la base. Ejemplo: $\\log_2 16-\\log_2 4=4-2=2$, que también es $\\log_2\\frac{16}{4}=\\log_2 4=2$.",
+   "problemas": [
+    [
+     1,
+     "Calcula $\\log_2 8+\\log_2 4$. Escribe el valor.",
+     5,
+     "$\\log_2 8=3$ y $\\log_2 4=2$. También $\\log_2(8\\cdot4)=\\log_2 32=5$.",
+     "math.log(8,2)+math.log(4,2)"
+    ],
+    [
+     3,
+     "Calcula $\\log_3 81-\\log_3 27+\\log_3\\sqrt3$. Escribe el valor.",
+     1.5,
+     "$\\log_3 81=4$ y $\\log_3 27=3$. Además $\\log_3\\sqrt3=\\log_3 3^{1/2}=\\frac12$. Resultado: $4-3+\\frac12=1{,}5$.",
+     "math.log(81,3)-math.log(27,3)+math.log(math.sqrt(3),3)"
+    ],
+    [
+     4,
+     "Calcula con cambio de base $\\log_8 32+\\log_{25}125$. Escribe el valor redondeado a 3 decimales.",
+     3.167,
+     "$\\log_8 32=\\frac{\\log_2 32}{\\log_2 8}=\\frac53$ y $\\log_{25}125=\\frac{\\log_5 125}{\\log_5 25}=\\frac32$. La suma es $\\frac53+\\frac32=\\frac{19}{6}\\approx3{,}167$.",
+     "math.log(32,8)+math.log(125,25)"
+    ]
+   ]
+  }
+ ]
+}

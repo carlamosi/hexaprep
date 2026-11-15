@@ -1,0 +1,152 @@
+{
+ "subtema": "El microentorno y las 5 fuerzas",
+ "conceptos": [
+  {
+   "nombre": "Rivalidad y barreras de entrada",
+   "pagina": 3,
+   "ayuda": "La rivalidad entre competidores es alta cuando hay muchas empresas de tamaño similar, el sector no crece y los productos son muy parecidos. La amenaza de nuevos competidores se frena con barreras de entrada: marca y fidelidad, elevadas inversiones o economías de escala, patentes y licencias, y acceso a canales de distribución. Barreras bajas significan que entrar es fácil.",
+   "test": [
+    [
+     4,
+     "Un sector no crece. ¿Qué implica esto para la rivalidad entre las empresas que ya operan en él?",
+     "Que la única forma de vender más es quitarle clientes a la competencia",
+     [
+      "Que las empresas dejan de competir entre sí",
+      "cree que sin crecimiento no hay competencia"
+     ],
+     [
+      "Que los clientes pierden poder de negociación",
+      "mezcla rivalidad con poder de los clientes"
+     ],
+     [
+      "Que aumenta la amenaza de productos sustitutivos",
+      "mezcla rivalidad con sustitutivos"
+     ],
+     "Cuando el sector no crece, vender más exige arrebatar clientes a los rivales, y la rivalidad es alta. Regla: sin crecimiento, la guerra es por los clientes del otro."
+    ],
+    [
+     3,
+     "Una empresa nueva necesita mucho capital para empezar o producir a costes muy bajos. ¿Qué barrera de entrada refleja?",
+     "Las elevadas inversiones iniciales y las economías de escala",
+     [
+      "La imagen de marca y la fidelidad de los clientes",
+      "confunde capital necesario con la fidelidad de los clientes"
+     ],
+     [
+      "Las patentes y licencias legales",
+      "confunde coste de entrada con protección legal"
+     ],
+     [
+      "El acceso a los canales de distribución",
+      "confunde coste de entrada con espacio en tiendas"
+     ],
+     "Necesitar mucho capital o producir a costes muy bajos es la barrera de elevadas inversiones y economías de escala. Regla: dinero y tamaño, inversión y escala."
+    ],
+    [
+     2,
+     "Una persona quiere abrir una tienda online de camisetas. ¿Cómo son las barreras de entrada de ese sector, según el tema?",
+     "Muy bajas, por lo que pueden entrar nuevos competidores con facilidad",
+     [
+      "Muy altas, porque hay mucha competencia en internet",
+      "confunde mucha rivalidad con barreras altas"
+     ],
+     [
+      "Muy altas, por las patentes de las camisetas",
+      "inventa una patente que no existe en este sector"
+     ],
+     [
+      "Nulas, porque no hay ninguna empresa que ya venda camisetas",
+      "cree que no hay competidores en el sector"
+     ],
+     "El tema cita la tienda online de camisetas, como la frutería, como un sector con barreras de entrada muy bajas. Entrar es fácil y la amenaza de nuevos competidores es alta. Regla: barreras bajas, amenaza alta."
+    ]
+   ]
+  },
+  {
+   "nombre": "Poder de los proveedores y sustitutivos",
+   "pagina": 4,
+   "ayuda": "Los proveedores tienen mucho poder si hay muy pocos de un recurso clave, si su producto es único o sin sustitutos fáciles y si a la empresa le cuesta mucho dinero o tiempo cambiar de proveedor. La amenaza de productos sustitutivos es alta si ofrecen mejor precio o calidad y si el consumidor se acostumbra fácilmente al cambio.",
+   "test": [
+    [
+     3,
+     "A una empresa le cuesta mucho dinero y tiempo cambiar de proveedor. ¿Qué efecto tiene esta situación?",
+     "Aumenta el poder de negociación de los proveedores",
+     [
+      "Aumenta el poder de negociación de los clientes",
+      "confunde proveedores con clientes"
+     ],
+     [
+      "Reduce el poder de los proveedores, porque la empresa tarda en elegir",
+      "lee al revés la relación"
+     ],
+     [
+      "Aumenta la rivalidad entre los competidores",
+      "mezcla la fuerza de proveedores con la de rivalidad"
+     ],
+     "Si cambiar de proveedor es caro o lento, la empresa depende de él y el proveedor puede imponer precios y condiciones. Regla: dependencia, poder del proveedor."
+    ],
+    [
+     4,
+     "Los consumidores de un sector se acostumbran con facilidad a un producto alternativo de otro formato. ¿Qué fuerza de Porter aumenta?",
+     "La amenaza de productos sustitutivos",
+     [
+      "El poder de negociación de los proveedores",
+      "confunde sustitutos con proveedores"
+     ],
+     [
+      "La rivalidad entre competidores actuales",
+      "confunde sustitutos con competidores directos"
+     ],
+     [
+      "La amenaza de nuevos competidores",
+      "confunde sustitutos con empresas nuevas del mismo producto"
+     ],
+     "Que el consumidor se acostumbre fácilmente al cambio hacia otro producto que satisface la misma necesidad aumenta la amenaza de sustitutivos. Regla: otra forma de cubrir la misma necesidad, sustitutivo."
+    ]
+   ]
+  },
+  {
+   "nombre": "Diagnosticar un sector con varias fuerzas",
+   "pagina": 2,
+   "ayuda": "Para analizar un sector se miden las cinco fuerzas a la vez. Cuanto más intensas son, más difícil es obtener beneficios en ese mercado. Una fuerza baja no compensa a las altas: una barrera de entrada alta protege de nuevos competidores, pero no frena la rivalidad entre los que ya están dentro.",
+   "test": [
+    [
+     4,
+     "Una empresa produce componentes y depende de dos únicos fabricantes de pantallas en el mundo, con mucho tiempo y coste para cambiar de proveedor. Además, unos pocos clientes enormes le compran casi toda la producción. ¿Qué fuerzas son altas?",
+     "El poder de los proveedores y el poder de los clientes",
+     [
+      "La rivalidad y la amenaza de sustitutivos",
+      "no relaciona los datos con proveedores y clientes"
+     ],
+     [
+      "Los nuevos entrantes y los sustitutivos",
+      "no relaciona los datos con proveedores y clientes"
+     ],
+     [
+      "Solo el poder de los proveedores, porque los clientes grandes no cuentan",
+      "ignora que pocos clientes con grandes volúmenes tienen mucho poder"
+     ],
+     "Pocos proveedores y con alto coste de cambio dan mucho poder al proveedor. Pocos clientes con grandes volúmenes dan mucho poder al cliente. Regla: pocos y grandes, mucho poder."
+    ],
+    [
+     5,
+     "Un sector tiene barreras de entrada altas por patentes y marcas, pero sus productos son casi idénticos, no crece y hay muchas empresas de tamaño similar. ¿Cómo valora Porter su atractivo?",
+     "Es poco atractivo, porque la alta rivalidad dificulta obtener beneficios aunque nadie entre fácilmente",
+     [
+      "Es muy atractivo, porque las barreras de entrada anulan las demás fuerzas",
+      "cree que una fuerza baja compensa a las demás"
+     ],
+     [
+      "Es muy atractivo, porque las patentes eliminan la rivalidad",
+      "cree que las patentes eliminan la competencia entre las empresas actuales"
+     ],
+     [
+      "No es atractivo, porque las barreras de entrada reducen la rentabilidad",
+      "cree que las barreras altas perjudican a las empresas del sector"
+     ],
+     "Cuanto más intensas son las fuerzas, más difícil es obtener beneficios. Aunque la entrada esté frenada, la rivalidad es alta por los productos idénticos, el sector sin crecimiento y la igualdad de tamaño. Regla: una fuerza alta basta para dañar la rentabilidad."
+    ]
+   ]
+  }
+ ]
+}

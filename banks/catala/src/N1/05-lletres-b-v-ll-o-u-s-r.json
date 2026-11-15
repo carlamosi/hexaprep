@@ -1,0 +1,350 @@
+{
+ "subtema": "B/V, ela geminada, O/U, essa i erra",
+ "conceptos": [
+  {
+   "nombre": "La b i la v",
+   "pagina": 8,
+   "cara": 8,
+   "ayuda": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta de l'imperfet d'«acabar»?",
+     "acabava",
+     [
+      "acababa",
+      "calca la terminació castellana -aba"
+     ],
+     [
+      "acavava",
+      "escriu v també a l'arrel"
+     ],
+     [
+      "àcabava",
+      "accentua una paraula plana"
+     ],
+     "L'imperfet d'indicatiu acaba sempre en -ava: acabava, cantava. Regla: imperfet, v."
+    ],
+    [
+     3,
+     "Quina paraula s'escriu amb b encara que en castellà porta v?",
+     "corb",
+     [
+      "avi",
+      "confon la llista amb la contrària: en català porta v"
+     ],
+     [
+      "llavi",
+      "confon la llista amb la contrària: en català porta v"
+     ],
+     [
+      "cavall",
+      "confon la llista amb la contrària: en català porta v"
+     ],
+     "«Corb» (castellà «cuervo») porta b. Avi, llavi i cavall porten v en català i b en castellà."
+    ],
+    [
+     4,
+     "Quina paraula s'escriu amb v encara que en castellà porta b?",
+     "cavall",
+     [
+      "corb",
+      "confon la llista amb la contrària: en català porta b"
+     ],
+     [
+      "baró",
+      "confon la llista amb la contrària: en català porta b"
+     ],
+     [
+      "biga",
+      "confon la llista amb la contrària: en català porta b"
+     ],
+     "«Cavall» (castellà «caballo») porta v. Corb, baró i biga porten b en català i v en castellà."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "El governador va gravar el discurs a Havana.",
+     [
+      "El gobernador va gravar el discurs a Havana.",
+      "escriu b com en el castellà «gobernar»"
+     ],
+     [
+      "El governador va grabar el discurs a Havana.",
+      "escriu b com en el castellà «grabar»"
+     ],
+     [
+      "El governador va gravar el discurs a Habana.",
+      "escriu b com en el castellà «Habana»"
+     ],
+     "Governar, gravar i Havana s'escriuen amb v en català i amb b en castellà."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Calb» s'escriu amb b, tot i que en castellà és «calvo».",
+     true,
+     "«Calb» és de la llista de paraules amb b en català i v en castellà.",
+     "trampa: creure que la v castellana es manté sempre en català"
+    ]
+   ]
+  },
+  {
+   "nombre": "L'ela geminada (l·l)",
+   "pagina": 9,
+   "cara": 9,
+   "ayuda": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta?",
+     "novel·la",
+     [
+      "novela",
+      "oblida la ela geminada de la terminació -el·la"
+     ],
+     [
+      "novel.la",
+      "escriu un punt baix en lloc del punt volat"
+     ],
+     [
+      "novella",
+      "escriu ll en lloc de l·l"
+     ],
+     "Les paraules acabades en -el·la porten l·l: novel·la, aquarel·la."
+    ],
+    [
+     3,
+     "Quina d'aquestes paraules NO s'escriu amb ela geminada?",
+     "alemany",
+     [
+      "al·lèrgia",
+      "creu que al·lèrgia no segueix la regla d'al·l"
+     ],
+     [
+      "al·ludir",
+      "creu que al·ludir no segueix la regla d'al·l"
+     ],
+     [
+      "al·leluia",
+      "creu que al·leluia no segueix la regla d'al·l"
+     ],
+     "«Alemany» és una excepció (com alarma, alegre, aliança). Al·lèrgia, al·ludir i al·leluia porten l·l."
+    ],
+    [
+     4,
+     "Quina és la forma correcta?",
+     "intel·ligent",
+     [
+      "intel.ligent",
+      "escriu un punt baix en lloc del punt volat"
+     ],
+     [
+      "inteligent",
+      "simplifica la ela geminada com en castellà"
+     ],
+     [
+      "intelligent",
+      "escriu ll en lloc de l·l"
+     ],
+     "«Intel·ligent» porta l·l (en castellà «inteligente»). Cal el punt volat entre les dues eles."
+    ],
+    [
+     4,
+     "Quina paraula acabada en -il·lar NO porta ela geminada?",
+     "mutilar",
+     [
+      "capil·lar",
+      "aplica la regla -il·lar a l'excepció"
+     ],
+     [
+      "destil·lar",
+      "aplica la regla -il·lar a l'excepció"
+     ],
+     [
+      "vacil·lar",
+      "aplica la regla -il·lar a l'excepció"
+     ],
+     "Capil·lar, destil·lar i vacil·lar porten l·l. L'excepció és «mutilar»."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Milió» s'escriu sense ela geminada perquè és una excepció de les paraules que comencen per mil·l.",
+     true,
+     "Milió, milè, milenar i miler són excepcions; mil·límetre i mil·lenni porten l·l.",
+     "trampa: aplicar la regla general de mil·l a una excepció"
+    ]
+   ]
+  },
+  {
+   "nombre": "La o i la u",
+   "pagina": 10,
+   "cara": 10,
+   "ayuda": "Per saber si una vocal àtona s'escriu amb o o amb u, cerquem el mot primitiu (forner prové de forn), escrivim igual que en castellà (ordenador) o mirem la llista d'excepcions. Hi ha paraules que porten o en català i u en castellà (cobrir, complir, botifarra) i d'altres que porten u en català i o en castellà (muntanya, museu, riu). En els verbs collir, cosir, escopir, poder, sortir, tossir i voler s'escriu o si la vocal no és forta, i el que sona si és forta (cullo, colliré).",
+   "test": [
+    [
+     2,
+     "Quina paraula s'escriu amb o encara que en castellà porta u?",
+     "cobrir",
+     [
+      "museu",
+      "confon la llista amb la contrària: en català porta u"
+     ],
+     [
+      "riu",
+      "confon la llista amb la contrària: en català porta u"
+     ],
+     [
+      "muntanya",
+      "confon la llista amb la contrària: en català porta u"
+     ],
+     "«Cobrir» (castellà «cubrir») porta o. Museu, riu i muntanya porten u en català i o en castellà."
+    ],
+    [
+     3,
+     "Per què «forner» s'escriu amb o?",
+     "Perquè prové del mot primitiu «forn»",
+     [
+      "Perquè totes les o àtones s'escriuen amb u",
+      "inventa una regla general contrària"
+     ],
+     [
+      "Perquè és una excepció de la llista",
+      "creu que forner és de la llista"
+     ],
+     [
+      "Perquè en català la u és més freqüent que la o",
+      "inventa una regla sobre la freqüència"
+     ],
+     "Cerquem el mot primitiu: forner prové de forn, i per això porta o."
+    ],
+    [
+     4,
+     "Quina paraula s'escriu amb u encara que en castellà porta o?",
+     "muntanya",
+     [
+      "cobrir",
+      "confon la llista amb la contrària: en català porta o"
+     ],
+     [
+      "complir",
+      "confon la llista amb la contrària: en català porta o"
+     ],
+     [
+      "botifarra",
+      "confon la llista amb la contrària: en català porta o"
+     ],
+     "«Muntanya» (castellà «montaña») porta u. Cobrir, complir i botifarra porten o en català i u en castellà."
+    ],
+    [
+     5,
+     "Quina és la forma correcta del futur de «collir» (jo...)?",
+     "colliré",
+     [
+      "culliré",
+      "escriu u en una vocal àtona"
+     ],
+     [
+      "collire",
+      "oblida l'accent d'una aguda acabada en vocal"
+     ],
+     [
+      "coliré",
+      "simplifica la ela doble"
+     ],
+     "En «colliré» la o és àtona i s'escriu amb o. Només quan és forta s'escriu el que sona (cullo)."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Cullo» s'escriu amb u perquè la vocal és forta i s'escriu el que sona.",
+     true,
+     "En els verbs com collir, si la vocal és forta s'escriu el que sona: cullo. Si és àtona, s'escriu o: colliré, collia.",
+     "trampa: aplicar l'o dels verbs a una vocal tònica"
+    ]
+   ]
+  },
+  {
+   "nombre": "La essa i la doble erra",
+   "pagina": 10,
+   "cara": 10,
+   "ayuda": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+   "test": [
+    [
+     3,
+     "Quina és la forma correcta?",
+     "possible",
+     [
+      "posible",
+      "no dobla la essa entre vocals"
+     ],
+     [
+      "pocible",
+      "escriu c en lloc de ss"
+     ],
+     [
+      "poçible",
+      "escriu ç en lloc de ss"
+     ],
+     "Entre dues vocals, si en castellà és s («posible»), s'escriu ss en català."
+    ],
+    [
+     4,
+     "Quina paraula NO dobla la erra?",
+     "antireligiós",
+     [
+      "arrítmia",
+      "aplica la regla general a una excepció"
+     ],
+     [
+      "correferent",
+      "aplica la regla general a una excepció"
+     ],
+     [
+      "corresponsable",
+      "aplica la regla general a una excepció"
+     ],
+     "«Antireligiós» és una excepció (com contrareforma i preromànic). Arrítmia, correferent i corresponsable dupliquen la erra."
+    ],
+    [
+     5,
+     "Quina és la forma correcta?",
+     "tassa",
+     [
+      "taça",
+      "aplica la regla de ç a una excepció"
+     ],
+     [
+      "taza",
+      "escriu z com en castellà"
+     ],
+     [
+      "tasa",
+      "simplifica la essa"
+     ],
+     "«Tassa» (castellà «taza») és una excepció: s'escriu ss tot i que en castellà porta z."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "«Caça» s'escriu «cassa» perquè la ç del castellà «caza» passa a ss.",
+     false,
+     "Si en castellà s'escriu amb z, en català s'escriu ç: caça (caza).",
+     "trampa: confondre la z castellana amb la s"
+    ],
+    [
+     3,
+     "«Asimetria» s'escriu amb una sola essa perquè a- és un prefix.",
+     true,
+     "En els prefixos no es duplica la essa: asimetria.",
+     "trampa: aplicar la regla de ss entre vocals a un prefix"
+    ]
+   ]
+  }
+ ]
+}

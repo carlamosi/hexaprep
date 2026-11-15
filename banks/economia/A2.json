@@ -1,0 +1,762 @@
+{
+ "asignatura": {
+  "nombre": "Economía",
+  "idioma": "es",
+  "color": "#B05A8F",
+  "acento": "#B05A8F"
+ },
+ "fuente": {
+  "nombre": "Economía T2 Apuntes",
+  "archivo": "Economia_T2_Apuntes.pdf"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "a1"
+ },
+ "preguntas": [
+  {
+   "id": "eco-a2-0001",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Qué es y evolución histórica",
+   "concepto": "Etapas y cronología de los sistemas",
+   "dificultad": 2,
+   "enunciado": "Según el cuadro de la evolución histórica, ¿qué sistema se desarrolló en el siglo XX con los medios de producción en manos del Estado y planificación central?",
+   "ayuda_larga": "Los sistemas económicos han cambiado a lo largo de la historia. El feudalismo se sitúa entre los siglos X y XV, el mercantilismo entre los siglos XVI y XVIII, la economía de mercado entre los siglos XIX y XXI y la economía planificada en el siglo XX. Cada etapa se reconoce por quién tiene el poder económico y qué papel tiene el Estado.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "El mercantilismo",
+     "trampa": "confunde el control estatal del comercio con la planificación central"
+    },
+    {
+     "texto": "El feudalismo",
+     "trampa": "confunde la tierra como recurso con la propiedad estatal"
+    },
+    {
+     "texto": "La economía planificada"
+    },
+    {
+     "texto": "La economía de mercado",
+     "trampa": "confunde un sistema de decisiones libres con uno de decisiones centrales"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La economía planificada es la del siglo XX, con medios de producción del Estado y planificación central. El mercantilismo fue anterior (siglos XVI a XVIII). Regla: planificación central igual a siglo XX."
+  },
+  {
+   "id": "eco-a2-0002",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Qué es y evolución histórica",
+   "concepto": "Etapas y cronología de los sistemas",
+   "dificultad": 1,
+   "enunciado": "¿Qué siglos abarca el mercantilismo, según el tema?",
+   "ayuda_larga": "Los sistemas económicos han cambiado a lo largo de la historia. El feudalismo se sitúa entre los siglos X y XV, el mercantilismo entre los siglos XVI y XVIII, la economía de mercado entre los siglos XIX y XXI y la economía planificada en el siglo XX. Cada etapa se reconoce por quién tiene el poder económico y qué papel tiene el Estado.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "Del siglo XVI al siglo XVIII"
+    },
+    {
+     "texto": "Del siglo X al siglo XV",
+     "trampa": "confunde mercantilismo con feudalismo"
+    },
+    {
+     "texto": "Del siglo XIX al siglo XXI",
+     "trampa": "confunde mercantilismo con economía de mercado"
+    },
+    {
+     "texto": "El siglo XX",
+     "trampa": "confunde mercantilismo con economía planificada"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El cuadro sitúa el mercantilismo entre los siglos XVI y XVIII, tras el feudalismo (X a XV). Regla: feudalismo, luego mercantilismo, después mercado."
+  },
+  {
+   "id": "eco-a2-0003",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Qué es y evolución histórica",
+   "concepto": "Intervención del Estado a lo largo de la historia",
+   "dificultad": 4,
+   "enunciado": "Compara el papel del Estado en el mercantilismo, la economía planificada y la economía de mercado. ¿Qué serie de intensidad de intervención es correcta?",
+   "ayuda_larga": "El papel del Estado cambia según el sistema. En el mercantilismo la intervención es elevada, porque regula el comercio y protege la producción nacional con aranceles. En la economía planificada es muy elevada, porque decide qué, cómo y para quién producir. En la economía de mercado es limitada: establece las reglas y puede corregir problemas.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Elevada, muy elevada y limitada"
+    },
+    {
+     "texto": "Muy elevada, elevada y nula",
+     "trampa": "cree que en el mercado el Estado no interviene nada"
+    },
+    {
+     "texto": "Limitada, muy elevada y elevada",
+     "trampa": "invierte mercantilismo y mercado"
+    },
+    {
+     "texto": "Elevada, limitada y muy elevada",
+     "trampa": "invierte planificada y mercado"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El Estado mercantilista regula el comercio (elevada), el planificador decide todo (muy elevada) y en el mercado pone las reglas y corrige (limitada, no nula). Regla: planificada es el máximo, mercado es el mínimo pero no cero."
+  },
+  {
+   "id": "eco-a2-0004",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Qué es y evolución histórica",
+   "concepto": "Diversidad de modelos económicos",
+   "dificultad": 3,
+   "enunciado": "¿Por qué dice el tema que no existe una única forma de organizar una economía?",
+   "ayuda_larga": "A lo largo de la historia han existido distintos modelos, así que no hay una única forma de organizar una economía. En la actualidad predominan las economías mixtas, que combinan elementos del mercado con la intervención del Estado. El modelo cambia, no es único ni eterno.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Porque todas las economías actuales son de mercado sin intervención",
+     "trampa": "ignora la importancia de las economías mixtas"
+    },
+    {
+     "texto": "Porque cada país solo puede elegir entre mercado puro y planificación pura",
+     "trampa": "reduce las opciones a dos extremos"
+    },
+    {
+     "texto": "Porque feudalismo y mercantilismo siguen vigentes en la actualidad",
+     "trampa": "cree que las etapas antiguas siguen en uso"
+    },
+    {
+     "texto": "Porque han existido distintos modelos y hoy predominan los mixtos"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Los sistemas han cambiado con la historia y hoy predominan los mixtos, que mezclan mercado e intervención del Estado. Regla: ni un modelo único ni solo dos extremos."
+  },
+  {
+   "id": "eco-a2-0005",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía de mercado",
+   "concepto": "Decisiones de empresas y consumidores",
+   "dificultad": 3,
+   "enunciado": "En una economía de mercado, ¿qué guía las decisiones de empresas y consumidores?",
+   "ayuda_larga": "En una economía de mercado las empresas producen bienes y servicios para satisfacer necesidades y obtener beneficios. Los consumidores deciden qué comprar según sus necesidades, preferencias y capacidad económica. La competencia entre empresas puede favorecer que ofrezcan mejores productos, precios o servicios.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Las empresas buscan beneficios; los consumidores siguen las asignaciones del Estado",
+     "trampa": "mezcla mercado con planificación"
+    },
+    {
+     "texto": "Los consumidores buscan beneficios; las empresas atienden a sus preferencias",
+     "trampa": "invierte los papeles de empresas y consumidores"
+    },
+    {
+     "texto": "Las empresas buscan beneficios; los consumidores atienden a sus necesidades, preferencias y capacidad económica"
+    },
+    {
+     "texto": "Ambos siguen un plan central que fija lo que se produce y compra",
+     "trampa": "confunde mercado con planificación"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Las empresas producen para satisfacer necesidades y obtener beneficios, y los consumidores deciden según necesidades, preferencias y capacidad económica. Regla: empresas, beneficio; consumidores, necesidad y bolsillo."
+  },
+  {
+   "id": "eco-a2-0006",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía de mercado",
+   "concepto": "Decisiones de empresas y consumidores",
+   "dificultad": 1,
+   "enunciado": "¿Qué puede favorecer la competencia entre empresas, según el tema?",
+   "ayuda_larga": "En una economía de mercado las empresas producen bienes y servicios para satisfacer necesidades y obtener beneficios. Los consumidores deciden qué comprar según sus necesidades, preferencias y capacidad económica. La competencia entre empresas puede favorecer que ofrezcan mejores productos, precios o servicios.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Que el Estado fije los precios de todos los productos",
+     "trampa": "confunde competencia con control estatal de precios"
+    },
+    {
+     "texto": "Que ofrezcan mejores productos, precios o servicios"
+    },
+    {
+     "texto": "Que las empresas dejen de buscar beneficios",
+     "trampa": "confunde competencia con ausencia de ánimo de lucro"
+    },
+    {
+     "texto": "Que todas produzcan los mismos bienes en las mismas cantidades",
+     "trampa": "confunde competencia con uniformidad impuesta"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Para atraer a los consumidores, las empresas compiten ofreciendo mejores productos, precios o servicios. Regla: la competencia mueve a mejorar."
+  },
+  {
+   "id": "eco-a2-0007",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía de mercado",
+   "concepto": "La obra de Adam Smith",
+   "dificultad": 2,
+   "enunciado": "¿Cuál es la obra más conocida de Adam Smith y en qué año se publicó?",
+   "ayuda_larga": "Adam Smith (1723-1790) fue un economista y filósofo escocés, uno de los principales autores del pensamiento económico clásico. Su obra más conocida es La riqueza de las naciones, publicada en 1776. En ella defendía que, al buscar su propio interés, las personas pueden contribuir al bienestar de la sociedad.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "El Capital, en 1776",
+     "trampa": "confunde la obra de Smith con la de Marx"
+    },
+    {
+     "texto": "La riqueza de las naciones, en 1723",
+     "trampa": "confunde el año de publicación con el de nacimiento"
+    },
+    {
+     "texto": "La riqueza de las naciones, en 1790",
+     "trampa": "confunde el año de publicación con el de la muerte"
+    },
+    {
+     "texto": "La riqueza de las naciones, en 1776"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Smith publicó La riqueza de las naciones en 1776. El Capital es la obra de Marx. Los años 1723 y 1790 son su nacimiento y su muerte. Regla: Smith, 1776, La riqueza de las naciones."
+  },
+  {
+   "id": "eco-a2-0008",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía de mercado",
+   "concepto": "El Estado y el marco jurídico",
+   "dificultad": 4,
+   "enunciado": "¿Cuál de estos conjuntos de normas es un ejemplo del marco jurídico que establece el Estado en una economía de mercado?",
+   "ayuda_larga": "Aunque en el mercado deciden sobre todo consumidores y empresas, el Estado establece el marco jurídico y hace cumplir las leyes que regulan la actividad económica. Estas leyes protegen los derechos de consumidores y empresas, como las del SMI, la libre competencia o la protección del consumidor. El Estado no desaparece, tiene un papel limitado.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "Las que fijan el precio de cada producto de la economía",
+     "trampa": "confunde marco jurídico con control de precios"
+    },
+    {
+     "texto": "Las que reparten la producción según un plan central",
+     "trampa": "confunde marco jurídico con planificación"
+    },
+    {
+     "texto": "Las que obligan a las empresas a producir bienes no rentables",
+     "trampa": "confunde marco jurídico con provisión de bienes públicos"
+    },
+    {
+     "texto": "Las leyes del SMI, de la libre competencia y de protección del consumidor"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El marco jurídico lo forman leyes como las del SMI, la libre competencia y la protección del consumidor, que protegen derechos de consumidores y empresas. Fijar precios o repartir producción es de la economía planificada. Regla: el Estado pone reglas, no sustituye al mercado."
+  },
+  {
+   "id": "eco-a2-0009",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía de mercado",
+   "concepto": "Externalidades y precio",
+   "dificultad": 4,
+   "enunciado": "Una fábrica contamina un río y perjudica a los vecinos, pero ese daño no aparece en el precio de sus productos. ¿Por qué se considera un fallo del mercado?",
+   "ayuda_larga": "Una externalidad se produce cuando la actividad de una persona o empresa afecta a otras que no participan en ella y ese efecto no queda reflejado adecuadamente en el precio. Puede ser negativa, como la contaminación de un río, o positiva, como vacunarse y reducir el contagio. Es uno de los fallos del mercado.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "Porque la fábrica obtiene beneficios con su actividad",
+     "trampa": "confunde fallo del mercado con obtener beneficios"
+    },
+    {
+     "texto": "Porque el efecto sobre terceros no queda reflejado adecuadamente en el precio"
+    },
+    {
+     "texto": "Porque los vecinos participan directamente en la actividad de la fábrica",
+     "trampa": "olvida que en una externalidad los afectados no participan"
+    },
+    {
+     "texto": "Porque en una economía de mercado el Estado no puede intervenir",
+     "trampa": "ignora que los fallos justifican la intervención del Estado"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Hay externalidad cuando los efectos sobre quienes no participan en la actividad no están en el precio. Por eso el mercado no asigna bien los recursos. Regla: lo que afecta a terceros y no se paga es externalidad."
+  },
+  {
+   "id": "eco-a2-0010",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía planificada",
+   "concepto": "Países que aplicaron la planificación",
+   "dificultad": 1,
+   "enunciado": "Además de la Unión Soviética, ¿en qué países se aplicó la economía planificada, con diferentes características, durante determinadas etapas?",
+   "ayuda_larga": "El ejemplo histórico de economía planificada es la Unión Soviética, sobre todo durante buena parte del siglo XX. También se aplicó, con diferentes características, en otros países como Cuba o China durante determinadas etapas. Son experiencias distintas, no un mismo modelo idéntico.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Estados Unidos y Reino Unido",
+     "trampa": "confunde planificación con economías de mercado"
+    },
+    {
+     "texto": "España y Francia",
+     "trampa": "confunde economías mixtas con planificadas"
+    },
+    {
+     "texto": "Cuba y China"
+    },
+    {
+     "texto": "Alemania y Japón",
+     "trampa": "asocia planificación con países europeos o asiáticos desarrollados sin base en el tema"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El tema cita Cuba y China como otros países que aplicaron la planificación, con características diferentes y en determinadas etapas, junto con la URSS. Regla: URSS, Cuba y China."
+  },
+  {
+   "id": "eco-a2-0011",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía planificada",
+   "concepto": "El objetivo de igualdad económica",
+   "dificultad": 2,
+   "enunciado": "En la economía planificada, ¿qué persigue el objetivo de una mayor igualdad económica?",
+   "ayuda_larga": "Uno de los principios de la economía planificada es el objetivo de una mayor igualdad económica. Se pretende reducir las diferencias de renta y garantizar a toda la población el acceso a determinados bienes y servicios básicos. Es un objetivo social, que el sistema perseguía con el control estatal de recursos y precios.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Aumentar los beneficios de las empresas privadas",
+     "trampa": "confunde igualdad con beneficio privado"
+    },
+    {
+     "texto": "Dejar que la oferta y la demanda fijen los precios",
+     "trampa": "confunde igualdad con mercado"
+    },
+    {
+     "texto": "Eliminar la propiedad pública de los recursos",
+     "trampa": "confunde la igualdad con la privatización"
+    },
+    {
+     "texto": "Reducir las diferencias de renta y garantizar el acceso a ciertos bienes y servicios básicos"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El objetivo de igualdad busca reducir diferencias de renta y asegurar el acceso a bienes y servicios básicos. Por eso el Estado controla los recursos. Regla: planificada igual a igualdad como meta."
+  },
+  {
+   "id": "eco-a2-0012",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía planificada",
+   "concepto": "Falta de competencia y fracaso",
+   "dificultad": 3,
+   "enunciado": "¿Qué reducía la ausencia o escasez de competencia entre empresas en la economía planificada?",
+   "ayuda_larga": "Entre las causas del fracaso de la economía planificada está la falta de competencia entre empresas. Sin competencia, había menos incentivos para mejorar la calidad, reducir costes o innovar. A esto se sumaban la falta de incentivos, los errores de información y el exceso de burocracia.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "opciones": [
+    {
+     "texto": "Los incentivos para mejorar la calidad, reducir costes e innovar"
+    },
+    {
+     "texto": "La necesidad de una estructura administrativa grande",
+     "trampa": "confunde la falta de competencia con el exceso de burocracia"
+    },
+    {
+     "texto": "Los problemas de información del organismo central",
+     "trampa": "confunde la falta de competencia con los errores de previsión"
+    },
+    {
+     "texto": "La propiedad pública de los medios de producción",
+     "trampa": "confunde una causa con un principio de la planificación"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Sin competencia, las empresas tenían menos incentivos para mejorar la calidad, reducir costes e innovar. La burocracia y la información son otras causas distintas. Regla: sin rival, menos innovación."
+  },
+  {
+   "id": "eco-a2-0013",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "La economía planificada",
+   "concepto": "Planificación y problemas de información",
+   "dificultad": 5,
+   "enunciado": "El Estado fija desde el centro el precio y la cantidad de miles de productos distintos. ¿Qué problemas de los señalados por el tema se agravan con esa situación?",
+   "ayuda_larga": "Para un organismo central es muy difícil conocer las necesidades y preferencias de millones de consumidores y decidir qué producir y en qué cantidades. Por eso la planificación podía producir bienes poco demandados mientras escaseaban otros. Además, gestionar tantas decisiones exigía una burocracia muy grande y compleja.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "opciones": [
+    {
+     "texto": "Solo la falta de competencia entre empresas",
+     "trampa": "ignora que fijar miles de cantidades requiere información y administración"
+    },
+    {
+     "texto": "Solo la falta de incentivos de los trabajadores",
+     "trampa": "se queda en un único problema que no es el central"
+    },
+    {
+     "texto": "Los de información y errores de previsión, y el exceso de burocracia"
+    },
+    {
+     "texto": "Ninguno, porque la planificación elimina los errores de previsión",
+     "trampa": "cree que planificar elimina los errores en vez de crearlos"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Decidir desde un centro miles de precios y cantidades requiere conocer necesidades de millones de personas, lo que provoca errores de previsión, y una gran estructura administrativa. Regla: más decisiones centrales, más información necesaria y más burocracia."
+  },
+  {
+   "id": "eco-a2-0014",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Economía mixta y Estado del Bienestar",
+   "concepto": "Marco legal y bienes de interés social",
+   "dificultad": 2,
+   "enunciado": "¿Qué garantiza el Estado al establecer el marco legal en una economía mixta?",
+   "ayuda_larga": "En una economía mixta, el Estado establece el marco legal que garantiza el funcionamiento de los mercados, los derechos de propiedad y los contratos. También proporciona bienes y servicios públicos: a los no rentables y estratégicos se añaden los de interés para toda la sociedad, sobre todo la educación y la sanidad.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "El precio y la cantidad producida por cada empresa",
+     "trampa": "confunde marco legal con planificación de la producción"
+    },
+    {
+     "texto": "El funcionamiento de los mercados, los derechos de propiedad y los contratos"
+    },
+    {
+     "texto": "El pleno empleo para toda la población",
+     "trampa": "atribuye al marco legal un objetivo de estabilización"
+    },
+    {
+     "texto": "La igualdad exacta de la renta de todos los ciudadanos",
+     "trampa": "confunde marco legal con redistribución total"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El marco legal establece las normas que deben cumplir empresas y consumidores y garantiza mercados, derechos de propiedad y contratos. Regla: el marco legal es el reglamento del juego."
+  },
+  {
+   "id": "eco-a2-0015",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Economía mixta y Estado del Bienestar",
+   "concepto": "Marco legal y bienes de interés social",
+   "dificultad": 3,
+   "enunciado": "En la economía mixta, ¿qué se añade a los bienes no rentables y estratégicos que provee el Estado?",
+   "ayuda_larga": "En una economía mixta, el Estado establece el marco legal que garantiza el funcionamiento de los mercados, los derechos de propiedad y los contratos. También proporciona bienes y servicios públicos: a los no rentables y estratégicos se añaden los de interés para toda la sociedad, sobre todo la educación y la sanidad.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "Los bienes y servicios de interés para toda la sociedad, sobre todo educación y sanidad"
+    },
+    {
+     "texto": "Los bienes que más beneficio dan a las empresas privadas",
+     "trampa": "confunde interés social con rentabilidad privada"
+    },
+    {
+     "texto": "Los bienes que garantizan el funcionamiento de la democracia, como el ejército",
+     "trampa": "repite los estratégicos y no añade nada nuevo"
+    },
+    {
+     "texto": "Los bienes que fija el plan central para cada empresa",
+     "trampa": "confunde economía mixta con planificada"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "A los bienes no rentables y estratégicos, la economía mixta suma los de interés para toda la sociedad, principalmente la educación y la sanidad. Regla: no rentables, estratégicos y de interés social."
+  },
+  {
+   "id": "eco-a2-0016",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Economía mixta y Estado del Bienestar",
+   "concepto": "Estabilizar y combinar funciones",
+   "dificultad": 4,
+   "enunciado": "¿Qué problemas busca reducir el Estado cuando aplica políticas para estabilizar la economía?",
+   "ayuda_larga": "Entre las funciones del Estado en la economía mixta, estabilizar busca reducir problemas como el desempleo, las crisis económicas o una elevada inflación. Redistribuir actúa sobre las desigualdades. Corregir fallos actúa sobre problemas como la contaminación. Saber qué problema ataca cada función permite identificarlas en ejemplos.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "Las desigualdades de renta y la pobreza",
+     "trampa": "confunde estabilizar con redistribuir"
+    },
+    {
+     "texto": "La contaminación y otras externalidades negativas",
+     "trampa": "confunde estabilizar con corregir fallos del mercado"
+    },
+    {
+     "texto": "El desempleo, las crisis económicas y la inflación elevada"
+    },
+    {
+     "texto": "La falta de infraestructuras, educación e investigación",
+     "trampa": "confunde estabilizar con favorecer el crecimiento"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Estabilizar es reducir el desempleo, las crisis y la inflación alta. Redistribuir actúa sobre la desigualdad, corregir fallos sobre la contaminación y favorecer el crecimiento sobre infraestructuras e investigación. Regla: estabilizar es suavizar los altibajos."
+  },
+  {
+   "id": "eco-a2-0017",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Economía mixta y Estado del Bienestar",
+   "concepto": "Estabilizar y combinar funciones",
+   "dificultad": 5,
+   "enunciado": "Tres medidas: A) una ley que obliga a cumplir los contratos; B) impuestos más altos a las rentas altas para financiar ayudas; C) un límite a las emisiones de las fábricas. ¿A qué funciones del Estado corresponden, en ese orden?",
+   "ayuda_larga": "Entre las funciones del Estado en la economía mixta, estabilizar busca reducir problemas como el desempleo, las crisis económicas o una elevada inflación. Redistribuir actúa sobre las desigualdades. Corregir fallos actúa sobre problemas como la contaminación. Saber qué problema ataca cada función permite identificarlas en ejemplos.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "Redistribuir la renta, marco legal y corregir los fallos del mercado",
+     "trampa": "intercambia las dos primeras funciones"
+    },
+    {
+     "texto": "Marco legal, redistribuir la renta y corregir los fallos del mercado"
+    },
+    {
+     "texto": "Marco legal, corregir los fallos del mercado y redistribuir la renta",
+     "trampa": "intercambia las dos últimas funciones"
+    },
+    {
+     "texto": "Estabilizar la economía, redistribuir la renta y marco legal",
+     "trampa": "no identifica ni los contratos ni la contaminación"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Cumplir los contratos es marco legal, gravar más a las rentas altas para financiar ayudas es redistribuir y limitar las emisiones es corregir un fallo del mercado, la externalidad. Regla: busca el problema que ataca cada medida."
+  },
+  {
+   "id": "eco-a2-0018",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Economía mixta y Estado del Bienestar",
+   "concepto": "Elementos del Estado del Bienestar",
+   "dificultad": 2,
+   "enunciado": "¿Cuál de los siguientes elementos no forma parte del Estado del Bienestar según el tema?",
+   "ayuda_larga": "El Estado del Bienestar es el conjunto de políticas con las que el Estado garantiza a toda la población un nivel de bienestar y protección social, sobre todo en situaciones de necesidad. Sus elementos principales son la educación pública, la sanidad pública, las pensiones, las prestaciones por desempleo, las ayudas y servicios sociales y otras políticas de protección social.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "La planificación central de la producción de las empresas"
+    },
+    {
+     "texto": "Las pensiones",
+     "trampa": "no recuerda que las pensiones son un elemento del bienestar"
+    },
+    {
+     "texto": "Las prestaciones por desempleo",
+     "trampa": "no recuerda que el paro protege económicamente"
+    },
+    {
+     "texto": "La educación pública",
+     "trampa": "no recuerda que la educación es un elemento del bienestar"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Las pensiones, el desempleo y la educación pública son elementos del Estado del Bienestar. La planificación central de la producción es característica de la economía planificada. Regla: bienestar es protección social, no plan de producción."
+  },
+  {
+   "id": "eco-a2-0019",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Indicadores e impuestos",
+   "concepto": "PIB y empleo",
+   "dificultad": 3,
+   "enunciado": "¿Qué incluye correctamente la definición de PIB?",
+   "ayuda_larga": "El PIB es el valor de todos los bienes y servicios finales producidos dentro de un país durante un período, normalmente un año. La tasa de paro es el porcentaje de personas desempleadas que buscan trabajo activamente respecto al conjunto de la población activa. Dos detalles importan: el PIB cuenta solo bienes finales y la tasa de paro se calcula sobre la población activa, no sobre toda la población.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "El valor de los bienes y servicios finales producidos en un país en un año"
+    },
+    {
+     "texto": "El valor de los bienes intermedios y finales de todas las empresas del mundo",
+     "trampa": "confunde el ámbito del país y mezcla bienes intermedios"
+    },
+    {
+     "texto": "El dinero que circula dentro del país durante un año",
+     "trampa": "confunde producción con cantidad de dinero"
+    },
+    {
+     "texto": "El valor de los bienes finales producidos en un solo día",
+     "trampa": "ignora que el período habitual es un año"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El PIB mide bienes y servicios finales producidos dentro de un país en un período, normalmente un año. Regla: final, dentro del país, en un período."
+  },
+  {
+   "id": "eco-a2-0020",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Indicadores e impuestos",
+   "concepto": "PIB y empleo",
+   "dificultad": 3,
+   "enunciado": "¿Respecto a qué conjunto se calcula la tasa de paro?",
+   "ayuda_larga": "El PIB es el valor de todos los bienes y servicios finales producidos dentro de un país durante un período, normalmente un año. La tasa de paro es el porcentaje de personas desempleadas que buscan trabajo activamente respecto al conjunto de la población activa. Dos detalles importan: el PIB cuenta solo bienes finales y la tasa de paro se calcula sobre la población activa, no sobre toda la población.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "La población total del país",
+     "trampa": "cree que el denominador es toda la población"
+    },
+    {
+     "texto": "Todas las personas sin trabajo, incluidas las que no buscan empleo",
+     "trampa": "no exige buscar trabajo activamente"
+    },
+    {
+     "texto": "El número de empresas del país",
+     "trampa": "confunde empleo de personas con el número de empresas"
+    },
+    {
+     "texto": "La población activa"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La tasa de paro es el porcentaje de desempleados que buscan trabajo activamente respecto a la población activa. Regla: paro igual a desempleados que buscan, dividido entre la población activa."
+  },
+  {
+   "id": "eco-a2-0021",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Indicadores e impuestos",
+   "concepto": "Precios, inflación y lectura conjunta",
+   "dificultad": 2,
+   "enunciado": "¿Qué conjunto de precios refleja el IPC?",
+   "ayuda_larga": "El IPC refleja cómo evolucionan los precios de un conjunto de bienes y servicios que consumen habitualmente los hogares, y permite medir la inflación. Si la inflación está controlada, los precios suben de forma moderada y estable. Los indicadores se leen juntos: producción, empleo, precios y tipos de interés dan una imagen de la economía.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "Los de todos los bienes intermedios que usan las empresas",
+     "trampa": "confunde la cesta de los hogares con costes de las empresas"
+    },
+    {
+     "texto": "Los de los bienes de lujo que compran pocas personas",
+     "trampa": "cree que mide bienes poco habituales"
+    },
+    {
+     "texto": "Los de las acciones y los valores que cotizan en bolsa",
+     "trampa": "confunde precios de consumo con activos financieros"
+    },
+    {
+     "texto": "Los de bienes y servicios que consumen habitualmente los hogares"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El IPC sigue los precios de bienes y servicios que consumen habitualmente los hogares y sirve para medir la inflación. Regla: el IPC es la cesta de la compra de las familias."
+  },
+  {
+   "id": "eco-a2-0022",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Indicadores e impuestos",
+   "concepto": "Precios, inflación y lectura conjunta",
+   "dificultad": 5,
+   "enunciado": "Un país registra más producción, una tasa de paro a la baja, precios que suben de forma moderada y tipos de interés en descenso. ¿Cómo se interpreta en conjunto?",
+   "ayuda_larga": "El IPC refleja cómo evolucionan los precios de un conjunto de bienes y servicios que consumen habitualmente los hogares, y permite medir la inflación. Si la inflación está controlada, los precios suben de forma moderada y estable. Los indicadores se leen juntos: producción, empleo, precios y tipos de interés dan una imagen de la economía.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "Crece la actividad y el empleo, pero con precios inestables y préstamos más caros",
+     "trampa": "no relaciona la bajada de tipos con préstamos más baratos"
+    },
+    {
+     "texto": "Crece la actividad y el empleo, con precios estables y préstamos más baratos que pueden favorecer el consumo y la inversión"
+    },
+    {
+     "texto": "Cae la actividad, sube el empleo y se encarecen los préstamos",
+     "trampa": "lee al revés el PIB y el tipo de interés"
+    },
+    {
+     "texto": "Crece la actividad pero se destruye empleo y bajan los precios con rapidez",
+     "trampa": "lee al revés la tasa de paro y confunde inflación moderada con deflación"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Más producción es crecimiento, menos paro es más empleo, precios moderados es inflación controlada y tipos a la baja abaratan préstamos, lo que puede estimular el consumo y la inversión. Regla: lee cada indicador por separado y luego junta."
+  },
+  {
+   "id": "eco-a2-0023",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Indicadores e impuestos",
+   "concepto": "Clasificar los impuestos",
+   "dificultad": 4,
+   "enunciado": "¿Cómo se clasifican, en este orden, el Impuesto sobre Sociedades, los Impuestos Especiales y el Impuesto sobre el Patrimonio?",
+   "ayuda_larga": "Los impuestos directos gravan directamente la renta o la riqueza: IRPF, Impuesto sobre Sociedades e Impuesto sobre el Patrimonio. Los indirectos gravan el consumo o determinadas operaciones: IVA, Impuestos Especiales e ITPAJD. Un truco: lo que grava lo que ganas o tienes es directo; lo que grava lo que compras o transmites es indirecto.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "Indirecto, indirecto y directo",
+     "trampa": "clasifica Sociedades como indirecto aunque grava el beneficio"
+    },
+    {
+     "texto": "Directo, indirecto y directo"
+    },
+    {
+     "texto": "Directo, directo e indirecto",
+     "trampa": "clasifica el Patrimonio como indirecto"
+    },
+    {
+     "texto": "Indirecto, directo e indirecto",
+     "trampa": "invierte los tres tipos"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Sociedades grava el beneficio de las empresas y Patrimonio los bienes y derechos de una persona: ambos directos. Los Impuestos Especiales gravan el consumo de alcohol, tabaco o hidrocarburos: indirectos. Regla: ganar o tener, directo; consumir, indirecto."
+  },
+  {
+   "id": "eco-a2-0024",
+   "bloque": "Economía",
+   "tema": "T2 Sistemas",
+   "subtema": "Indicadores e impuestos",
+   "concepto": "Clasificar los impuestos",
+   "dificultad": 4,
+   "enunciado": "Una persona compra una vivienda de segunda mano. ¿Qué impuesto grava esa transmisión y cómo se clasifica?",
+   "ayuda_larga": "Los impuestos directos gravan directamente la renta o la riqueza: IRPF, Impuesto sobre Sociedades e Impuesto sobre el Patrimonio. Los indirectos gravan el consumo o determinadas operaciones: IVA, Impuestos Especiales e ITPAJD. Un truco: lo que grava lo que ganas o tienes es directo; lo que grava lo que compras o transmites es indirecto.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "El IRPF, un impuesto directo",
+     "trampa": "confunde transmisión de bienes con renta"
+    },
+    {
+     "texto": "El Impuesto sobre el Patrimonio, un impuesto directo",
+     "trampa": "confunde transmisión de un bien con la riqueza que se posee"
+    },
+    {
+     "texto": "El ITPAJD, un impuesto indirecto"
+    },
+    {
+     "texto": "El Impuesto sobre Sociedades, un impuesto directo",
+     "trampa": "confunde operación entre personas con beneficios de empresas"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El ITPAJD grava determinadas transmisiones de bienes y actos jurídicos, como comprar una vivienda de segunda mano, y es indirecto. Regla: transmitir un bien, ITPAJD."
+  }
+ ]
+}

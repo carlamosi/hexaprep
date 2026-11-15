@@ -1,0 +1,80 @@
+{
+ "subtema": "Áreas de estudio",
+ "conceptos": [
+  {
+   "nombre": "Magnitudes agregadas y macroeconomía",
+   "pagina": 5,
+   "ayuda": "La macroeconomía estudia el comportamiento global de la economía mediante magnitudes agregadas a nivel nacional o internacional, como el PIB, la tasa de desempleo, la inflación o la deuda pública. La microeconomía estudia a los agentes individuales y cómo interactúan en mercados concretos. La clave es la escala: lo individual es micro y lo global es macro.",
+   "test": [
+    [
+     3,
+     "El PIB, la inflación y la deuda pública, ¿con qué escala de análisis se estudian y por qué?",
+     "Con la macroeconomía, porque son magnitudes agregadas de un país o del conjunto de países",
+     [
+      "Con la microeconomía, porque miden el comportamiento de cada agente",
+      "confunde magnitud agregada con comportamiento individual"
+     ],
+     [
+      "Con la microeconomía, porque son hechos que se pueden contrastar",
+      "confunde escala micro con análisis positivo"
+     ],
+     [
+      "Con la economía normativa, porque indican cómo debería ser la economía",
+      "confunde escala de análisis con tipo de análisis"
+     ],
+     "El PIB, la inflación o la deuda pública son magnitudes agregadas, propias de la macroeconomía. La microeconomía mira a familias y empresas concretas. Regla: global y agregado es macro."
+    ]
+   ]
+  },
+  {
+   "nombre": "Microeconomía: agentes y mercados concretos",
+   "pagina": 5,
+   "ayuda": "La microeconomía estudia el comportamiento individual de familias, consumidores y empresas y cómo interactúan en mercados específicos. Si el análisis se centra en un producto, un sector o un tipo de agente, es micro. Si se centra en el país entero, es macro.",
+   "test": [
+    [
+     2,
+     "Un estudio analiza cómo interactúan consumidores y empresas en el mercado de las bicicletas eléctricas. ¿A qué rama pertenece?",
+     "A la microeconomía, porque estudia agentes y un mercado específico",
+     [
+      "A la macroeconomía, porque se centra en un producto muy conocido",
+      "cree que un mercado popular es un tema global"
+     ],
+     [
+      "A la macroeconomía, porque trata de comprar y vender",
+      "confunde intercambio con magnitud agregada"
+     ],
+     [
+      "A la economía normativa, porque habla de consumidores",
+      "confunde rama con tipo de análisis"
+     ],
+     "Estudiar cómo interactúan consumidores y empresas en un mercado concreto es microeconomía. La macroeconomía analizaría magnitudes del conjunto del país. Regla: un mercado concreto es micro."
+    ]
+   ]
+  },
+  {
+   "nombre": "Mezcla de hechos y valoraciones",
+   "pagina": 5,
+   "ayuda": "La economía positiva describe la realidad tal como es, con hechos contrastables y sin juicios de valor. La economía normativa plantea cómo debería ser, a partir de opiniones, valores o ideologías. Una frase puede combinar ambas: un dato y una recomendación.",
+   "test": [
+    [
+     5,
+     "«El desempleo juvenil es del 25 %, por lo que el Gobierno debería subvencionar la contratación.» ¿Cómo se clasifica esta frase?",
+     "Combina una parte positiva, el dato, y una parte normativa, lo que debería hacerse",
+     [
+      "Es positiva, porque incluye un dato que se puede contrastar",
+      "no ve que «debería» introduce un juicio de valor"
+     ],
+     [
+      "Es normativa por completo, porque el dato no se puede contrastar",
+      "cree que un dato no es contrastable"
+     ],
+     [
+      "Es positiva, porque habla de la actuación del Gobierno",
+      "confunde nombrar al Estado con describir hechos"
+     ],
+     "El 25 % es un hecho contrastable (positivo) y «debería subvencionar» es una opinión sobre cómo actuar (normativo). Regla: separa el dato de la recomendación."
+    ]
+   ]
+  }
+ ]
+}

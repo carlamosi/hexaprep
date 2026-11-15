@@ -1,0 +1,123 @@
+{
+ "subtema": "La economía de mercado",
+ "conceptos": [
+  {
+   "nombre": "Decisiones de empresas y consumidores",
+   "pagina": 2,
+   "ayuda": "En una economía de mercado las empresas producen bienes y servicios para satisfacer necesidades y obtener beneficios. Los consumidores deciden qué comprar según sus necesidades, preferencias y capacidad económica. La competencia entre empresas puede favorecer que ofrezcan mejores productos, precios o servicios.",
+   "test": [
+    [
+     3,
+     "En una economía de mercado, ¿qué guía las decisiones de empresas y consumidores?",
+     "Las empresas buscan beneficios; los consumidores atienden a sus necesidades, preferencias y capacidad económica",
+     [
+      "Las empresas buscan beneficios; los consumidores siguen las asignaciones del Estado",
+      "mezcla mercado con planificación"
+     ],
+     [
+      "Los consumidores buscan beneficios; las empresas atienden a sus preferencias",
+      "invierte los papeles de empresas y consumidores"
+     ],
+     [
+      "Ambos siguen un plan central que fija lo que se produce y compra",
+      "confunde mercado con planificación"
+     ],
+     "Las empresas producen para satisfacer necesidades y obtener beneficios, y los consumidores deciden según necesidades, preferencias y capacidad económica. Regla: empresas, beneficio; consumidores, necesidad y bolsillo."
+    ],
+    [
+     1,
+     "¿Qué puede favorecer la competencia entre empresas, según el tema?",
+     "Que ofrezcan mejores productos, precios o servicios",
+     [
+      "Que el Estado fije los precios de todos los productos",
+      "confunde competencia con control estatal de precios"
+     ],
+     [
+      "Que las empresas dejen de buscar beneficios",
+      "confunde competencia con ausencia de ánimo de lucro"
+     ],
+     [
+      "Que todas produzcan los mismos bienes en las mismas cantidades",
+      "confunde competencia con uniformidad impuesta"
+     ],
+     "Para atraer a los consumidores, las empresas compiten ofreciendo mejores productos, precios o servicios. Regla: la competencia mueve a mejorar."
+    ]
+   ]
+  },
+  {
+   "nombre": "La obra de Adam Smith",
+   "pagina": 3,
+   "ayuda": "Adam Smith (1723-1790) fue un economista y filósofo escocés, uno de los principales autores del pensamiento económico clásico. Su obra más conocida es La riqueza de las naciones, publicada en 1776. En ella defendía que, al buscar su propio interés, las personas pueden contribuir al bienestar de la sociedad.",
+   "test": [
+    [
+     2,
+     "¿Cuál es la obra más conocida de Adam Smith y en qué año se publicó?",
+     "La riqueza de las naciones, en 1776",
+     [
+      "El Capital, en 1776",
+      "confunde la obra de Smith con la de Marx"
+     ],
+     [
+      "La riqueza de las naciones, en 1723",
+      "confunde el año de publicación con el de nacimiento"
+     ],
+     [
+      "La riqueza de las naciones, en 1790",
+      "confunde el año de publicación con el de la muerte"
+     ],
+     "Smith publicó La riqueza de las naciones en 1776. El Capital es la obra de Marx. Los años 1723 y 1790 son su nacimiento y su muerte. Regla: Smith, 1776, La riqueza de las naciones."
+    ]
+   ]
+  },
+  {
+   "nombre": "El Estado y el marco jurídico",
+   "pagina": 4,
+   "ayuda": "Aunque en el mercado deciden sobre todo consumidores y empresas, el Estado establece el marco jurídico y hace cumplir las leyes que regulan la actividad económica. Estas leyes protegen los derechos de consumidores y empresas, como las del SMI, la libre competencia o la protección del consumidor. El Estado no desaparece, tiene un papel limitado.",
+   "test": [
+    [
+     4,
+     "¿Cuál de estos conjuntos de normas es un ejemplo del marco jurídico que establece el Estado en una economía de mercado?",
+     "Las leyes del SMI, de la libre competencia y de protección del consumidor",
+     [
+      "Las que fijan el precio de cada producto de la economía",
+      "confunde marco jurídico con control de precios"
+     ],
+     [
+      "Las que reparten la producción según un plan central",
+      "confunde marco jurídico con planificación"
+     ],
+     [
+      "Las que obligan a las empresas a producir bienes no rentables",
+      "confunde marco jurídico con provisión de bienes públicos"
+     ],
+     "El marco jurídico lo forman leyes como las del SMI, la libre competencia y la protección del consumidor, que protegen derechos de consumidores y empresas. Fijar precios o repartir producción es de la economía planificada. Regla: el Estado pone reglas, no sustituye al mercado."
+    ]
+   ]
+  },
+  {
+   "nombre": "Externalidades y precio",
+   "pagina": 5,
+   "ayuda": "Una externalidad se produce cuando la actividad de una persona o empresa afecta a otras que no participan en ella y ese efecto no queda reflejado adecuadamente en el precio. Puede ser negativa, como la contaminación de un río, o positiva, como vacunarse y reducir el contagio. Es uno de los fallos del mercado.",
+   "test": [
+    [
+     4,
+     "Una fábrica contamina un río y perjudica a los vecinos, pero ese daño no aparece en el precio de sus productos. ¿Por qué se considera un fallo del mercado?",
+     "Porque el efecto sobre terceros no queda reflejado adecuadamente en el precio",
+     [
+      "Porque la fábrica obtiene beneficios con su actividad",
+      "confunde fallo del mercado con obtener beneficios"
+     ],
+     [
+      "Porque los vecinos participan directamente en la actividad de la fábrica",
+      "olvida que en una externalidad los afectados no participan"
+     ],
+     [
+      "Porque en una economía de mercado el Estado no puede intervenir",
+      "ignora que los fallos justifican la intervención del Estado"
+     ],
+     "Hay externalidad cuando los efectos sobre quienes no participan en la actividad no están en el precio. Por eso el mercado no asigna bien los recursos. Regla: lo que afecta a terceros y no se paga es externalidad."
+    ]
+   ]
+  }
+ ]
+}

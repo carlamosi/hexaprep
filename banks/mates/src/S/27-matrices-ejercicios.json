@@ -1,0 +1,216 @@
+{
+ "tema": "T2 Matrices",
+ "subtema": "Operaciones y ecuaciones con matrices",
+ "conceptos": [
+  {
+   "nombre": "Matrices definidas por una fórmula",
+   "pagina": 1,
+   "ayuda": "En una matriz $A=(a_{ij})$, $i$ es la fila y $j$ la columna. Si el enunciado da una fórmula, se sustituyen $i$ y $j$ en cada posición. La traza de una matriz cuadrada es la suma de los elementos de la diagonal, que son los que cumplen $i=j$. Si la fórmula depende de una condición (por ejemplo $i\\ge j$), se mira cada posición para elegir la rama. Ejemplo: con $a_{ij}=i+j$ y orden $2\\times2$, resulta $A=\\begin{pmatrix}2&3\\\\3&4\\end{pmatrix}$ y su traza es $6$.",
+   "problemas": [
+    [
+     1,
+     "Escribe la matriz $A$ de orden $2\\times3$ cuyos elementos son $a_{ij}=2i-j$. Escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      1,
+      0,
+      -1,
+      3,
+      2,
+      1
+     ],
+     "Se sustituye en cada posición. Fila 1 ($i=1$): $2-1=1$, $2-2=0$, $2-3=-1$. Fila 2 ($i=2$): $4-1=3$, $4-2=2$, $4-3=1$. Queda $A=\\begin{pmatrix}1&0&-1\\\\3&2&1\\end{pmatrix}$.",
+     "[2*i-j for i in range(1,3) for j in range(1,4)]",
+     true
+    ],
+    [
+     3,
+     "Sea $A$ la matriz cuadrada de orden 4 con elementos $a_{ij}=2i^2-j$. Calcula su traza. Escribe solo el número.",
+     50,
+     "La traza suma los elementos con $i=j$, que valen $2i^2-i$: $1$, $6$, $15$ y $28$. Su suma es $1+6+15+28=50$.",
+     "sum(2*i**2-j for i in range(1,5) for j in range(1,5) if i==j)"
+    ],
+    [
+     3,
+     "Sea $A$ la matriz de orden $3\\times3$ con $a_{ij}=i-j$ si $i\\ge j$ y $a_{ij}=i\\cdot j$ si $i<j$. Calcula la suma de todos sus elementos. Escribe solo el número.",
+     15,
+     "Con $i\\ge j$ (diagonal y debajo): $0,\\,1,\\,0,\\,2,\\,1,\\,0$, que suman 4. Con $i<j$ (encima): $a_{12}=2$, $a_{13}=3$, $a_{23}=6$, que suman 11. La matriz es $\\begin{pmatrix}0&2&3\\\\1&0&6\\\\2&1&0\\end{pmatrix}$ y la suma total es $4+11=15$.",
+     "sum((i-j) if i>=j else (i*j) for i in range(1,4) for j in range(1,4))"
+    ]
+   ]
+  },
+  {
+   "nombre": "Parámetros para que se cumpla una igualdad",
+   "pagina": 1,
+   "ayuda": "Se calcula cada miembro de la igualdad, se igualan los elementos que ocupan la misma posición y se resuelve el sistema de ecuaciones que sale. Hay que comprobar que todas las posiciones se cumplen a la vez. Si aparece una potencia como $A^2=A\\cdot A$ o una identidad $I$, se desarrolla antes de igualar. Ejemplo: $\\begin{pmatrix}x&1\\\\0&2\\end{pmatrix}+\\begin{pmatrix}1&y\\\\0&1\\end{pmatrix}=\\begin{pmatrix}4&3\\\\0&3\\end{pmatrix}$ da $x+1=4$ y $1+y=3$, es decir $x=3$, $y=2$.",
+   "problemas": [
+    [
+     2,
+     "Halla $a$ y $b$ para que $\\begin{pmatrix}a&2\\\\3&b\\end{pmatrix}+\\begin{pmatrix}1&b\\\\a&4\\end{pmatrix}=\\begin{pmatrix}4&7\\\\6&9\\end{pmatrix}$. Escribe $a;b$ en ese orden.",
+     [
+      3,
+      5
+     ],
+     "Se suma elemento a elemento: $a+1=4$, $2+b=7$, $3+a=6$ y $b+4=9$. Las ecuaciones dan $a=3$ y $b=5$, y las cuatro se cumplen.",
+     "[v for a in range(-10,11) for b in range(-10,11) if a+1==4 and 2+b==7 and 3+a==6 and b+4==9 for v in (a,b)]",
+     true
+    ],
+    [
+     3,
+     "Halla $m$ para que $\\begin{pmatrix}1&m\\\\2&1\\end{pmatrix}\\cdot\\begin{pmatrix}2&0\\\\1&3\\end{pmatrix}=\\begin{pmatrix}5&9\\\\5&3\\end{pmatrix}$. Escribe solo el valor de $m$.",
+     3,
+     "El producto es $\\begin{pmatrix}2+m&3m\\\\5&3\\end{pmatrix}$. Igualando: $2+m=5$ da $m=3$, y $3m=9$ da $m=3$. Las posiciones de la segunda fila (5 y 3) se cumplen siempre. Solución $m=3$.",
+     "[m for m in range(-10,11) if all(sum([[1,m],[2,1]][i][k]*[[2,0],[1,3]][k][j] for k in range(2))==[[5,9],[5,3]][i][j] for i in range(2) for j in range(2))][0]"
+    ],
+    [
+     4,
+     "Halla $a$ y $b$ para que $\\begin{pmatrix}a&1\\\\2&b\\end{pmatrix}\\cdot\\begin{pmatrix}1&2\\\\3&1\\end{pmatrix}=\\begin{pmatrix}5&5\\\\11&7\\end{pmatrix}$. Escribe $a;b$ en ese orden.",
+     [
+      2,
+      3
+     ],
+     "El producto es $\\begin{pmatrix}a+3&2a+1\\\\2+3b&4+b\\end{pmatrix}$. Igualando: $a+3=5$ da $a=2$ y $2a+1=5$ lo confirma; $2+3b=11$ da $b=3$ y $4+b=7$ lo confirma. Solución $a=2$, $b=3$.",
+     "[v for a in range(-10,11) for b in range(-10,11) if all(sum([[a,1],[2,b]][i][k]*[[1,2],[3,1]][k][j] for k in range(2))==[[5,5],[11,7]][i][j] for i in range(2) for j in range(2)) for v in (a,b)]",
+     true
+    ],
+    [
+     5,
+     "Sea $A=\\begin{pmatrix}a&1\\\\0&b\\end{pmatrix}$ con $a<b$. Halla $a$ y $b$ para que $A^2-3A+2I=0$, donde $I$ es la identidad y $0$ la matriz nula. Escribe $a;b$ en ese orden.",
+     [
+      1,
+      2
+     ],
+     "$A^2=\\begin{pmatrix}a^2&a+b\\\\0&b^2\\end{pmatrix}$. Entonces $A^2-3A+2I=\\begin{pmatrix}a^2-3a+2&a+b-3\\\\0&b^2-3b+2\\end{pmatrix}$. Las raíces de $t^2-3t+2=0$ son 1 y 2, y además $a+b=3$. Con $a<b$ resulta $a=1$, $b=2$.",
+     "[v for a in range(-10,11) for b in range(-10,11) if a<b and all(sum([[a,1],[0,b]][i][k]*[[a,1],[0,b]][k][j] for k in range(2))-3*[[a,1],[0,b]][i][j]+2*(1 if i==j else 0)==0 for i in range(2) for j in range(2)) for v in (a,b)]",
+     true
+    ]
+   ],
+   "grupos": [
+    {
+     "contexto": "Sea $A=\\begin{pmatrix}1&2\\\\m&1\\end{pmatrix}$, donde $m$ es un número, y se sabe que $A\\cdot A=\\begin{pmatrix}7&4\\\\6&7\\end{pmatrix}$.",
+     "apartados": [
+      [
+       3,
+       "Halla el valor de $m$. Escribe solo el número.",
+       3,
+       "$A\\cdot A=\\begin{pmatrix}1+2m&4\\\\2m&1+2m\\end{pmatrix}$. Igualando con la matriz dada: $2m=6$ da $m=3$, y $1+2m=7$ lo confirma.",
+       "[m for m in range(-10,11) if all(sum([[1,2],[m,1]][i][k]*[[1,2],[m,1]][k][j] for k in range(2))==[[7,4],[6,7]][i][j] for i in range(2) for j in range(2))][0]"
+      ],
+      [
+       4,
+       "Con el valor de $m$ del apartado anterior, calcula $A^3$ y escribe sus elementos fila a fila separados por punto y coma.",
+       [
+        19,
+        18,
+        27,
+        19
+       ],
+       "Con $m=3$, $A=\\begin{pmatrix}1&2\\\\3&1\\end{pmatrix}$ y $A^2=\\begin{pmatrix}7&4\\\\6&7\\end{pmatrix}$. Entonces $A^3=A^2\\cdot A=\\begin{pmatrix}19&18\\\\27&19\\end{pmatrix}$: por ejemplo, $7\\cdot1+4\\cdot3=19$.",
+       "[sum([[1,2],[m,1]][i][k]*[[1,2],[m,1]][k][l]*[[1,2],[m,1]][l][j] for k in range(2) for l in range(2)) for m in [m0 for m0 in range(-10,11) if all(sum([[1,2],[m0,1]][i][k]*[[1,2],[m0,1]][k][j] for k in range(2))==[[7,4],[6,7]][i][j] for i in range(2) for j in range(2))] for i in range(2) for j in range(2)]",
+       true
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Producto, potencias y problemas con matrices",
+   "pagina": 2,
+   "ayuda": "Para multiplicar $A\\cdot B$ el número de columnas de $A$ debe ser el de filas de $B$, y cada elemento es la fila de $A$ por la columna de $B$. Un problema de stock se resuelve multiplicando la matriz de cantidades por la matriz de lo que se necesita de cada pieza. Las potencias de una matriz suelen repetirse con un periodo: si $A^2=-I$, entonces $A^4=I$ y basta ver el resto del exponente entre 4. Ejemplo: si $A^2=I$, entonces $A^{101}=A$.",
+   "problemas": [
+    [
+     3,
+     "Un almacén tiene en stock (en centenas de unidades) $\\begin{pmatrix}2&1\\\\3&2\\end{pmatrix}$: la fila 1 son los coches utilitarios y la fila 2 las berlinas, y la columna 1 son los neumáticos y la columna 2 las llantas. Un neumático necesita 0,2 kg de acero y una llanta 4 kg. ¿Cuántos kilos de acero hay en total en el almacén? Escribe solo el número de kilos.",
+     1300,
+     "Se multiplica la matriz de stock por la columna de acero $\\begin{pmatrix}0{,}2\\\\4\\end{pmatrix}$: utilitarios $2\\cdot0{,}2+1\\cdot4=4{,}4$ y berlinas $3\\cdot0{,}2+2\\cdot4=8{,}6$. En total $13$ centenas de kilos, es decir $1300$ kg.",
+     "sum(sum([[2,1],[3,2]][i][k]*[0.2,4][k] for k in range(2)) for i in range(2))*100"
+    ],
+    [
+     4,
+     "Sea $A=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}$. Calcula $A^{50}$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      -1,
+      0,
+      0,
+      -1
+     ],
+     "$A^2=\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}=-I$, luego $A^4=I$. Como $50=4\\cdot12+2$, $A^{50}=(A^4)^{12}\\cdot A^2=A^2=-I$. Los elementos son $-1;0;0;-1$.",
+     "[round(math.cos(50*math.pi/2)), round(-math.sin(50*math.pi/2)), round(math.sin(50*math.pi/2)), round(math.cos(50*math.pi/2))]",
+     true
+    ]
+   ],
+   "grupos": [
+    {
+     "contexto": "Sean $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ y $B=\\begin{pmatrix}1&-1\\\\2&0\\end{pmatrix}$.",
+     "apartados": [
+      [
+       2,
+       "Calcula $A\\cdot B$ y escribe sus elementos fila a fila separados por punto y coma.",
+       [
+        4,
+        -2,
+        6,
+        0
+       ],
+       "Cada elemento es una fila de $A$ por una columna de $B$: $A\\cdot B=\\begin{pmatrix}4&-2\\\\6&0\\end{pmatrix}$.",
+       "[sum([[2,1],[0,3]][i][k]*[[1,-1],[2,0]][k][j] for k in range(2)) for i in range(2) for j in range(2)]",
+       true
+      ],
+      [
+       3,
+       "Calcula la traza de $B\\cdot A$ (suma de los elementos de la diagonal). Escribe solo el número.",
+       4,
+       "$B\\cdot A=\\begin{pmatrix}2&-2\\\\4&2\\end{pmatrix}$ y su traza es $2+2=4$.",
+       "sum(sum([[1,-1],[2,0]][i][k]*[[2,1],[0,3]][k][j] for k in range(2)) for i in range(2) for j in range(2) if i==j)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "nombre": "Ecuaciones matriciales con la incógnita $X$",
+   "pagina": 4,
+   "ayuda": "Se aísla $X$ agrupando los términos con $X$ y sacando $X$ como factor común del lado correcto, porque el producto de matrices no es conmutativo: $AX$ no es $XA$. Si $A$ es invertible, de $AX=B$ sale $X=A^{-1}B$. Para una matriz $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ de determinante $D\\ne0$, la inversa es $\\frac1D\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$. Ejemplo: de $AX+B=2X$ sale $(2I-A)X=B$ y $X=(2I-A)^{-1}B$. Se comprueba sustituyendo en la ecuación original.",
+   "problemas": [
+    [
+     4,
+     "Resuelve la ecuación $AX+B=X$ con $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ y $B=\\begin{pmatrix}-4&-2\\\\-6&0\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+     [
+      1,
+      2,
+      3,
+      0
+     ],
+     "Se agrupa: $(I-A)X=B$, con $I-A=\\begin{pmatrix}-1&-1\\\\0&-2\\end{pmatrix}$ de determinante 2 e inversa $\\frac12\\begin{pmatrix}-2&1\\\\0&-1\\end{pmatrix}$. Entonces $X=\\frac12\\begin{pmatrix}-2&1\\\\0&-1\\end{pmatrix}\\begin{pmatrix}-4&-2\\\\-6&0\\end{pmatrix}=\\begin{pmatrix}1&2\\\\3&0\\end{pmatrix}$. Comprobación: $AX=\\begin{pmatrix}5&4\\\\9&0\\end{pmatrix}$ y $AX+B=X$.",
+     "[v for a in range(-6,7) for b in range(-6,7) for c in range(-6,7) for d in range(-6,7) if all(sum([[2,1],[0,3]][i][k]*[[a,b],[c,d]][k][j] for k in range(2))+[[-4,-2],[-6,0]][i][j]==[[a,b],[c,d]][i][j] for i in range(2) for j in range(2)) for v in (a,b,c,d)]",
+     true
+    ],
+    [
+     4,
+     "Resuelve la ecuación $3A-A\\cdot X=I$ con $A=\\begin{pmatrix}1&1\\\\0&1\\end{pmatrix}$, donde $I$ es la identidad. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+     [
+      2,
+      1,
+      0,
+      2
+     ],
+     "Se pasa: $A\\cdot X=3A-I=\\begin{pmatrix}2&3\\\\0&2\\end{pmatrix}$. Como $A^{-1}=\\begin{pmatrix}1&-1\\\\0&1\\end{pmatrix}$, $X=A^{-1}(3A-I)=\\begin{pmatrix}2&0\\\\0&2\\end{pmatrix}+\\begin{pmatrix}0&1\\\\0&0\\end{pmatrix}=\\begin{pmatrix}2&1\\\\0&2\\end{pmatrix}$. Comprobación: $A\\cdot X=\\begin{pmatrix}2&3\\\\0&2\\end{pmatrix}$.",
+     "[v for a in range(-6,7) for b in range(-6,7) for c in range(-6,7) for d in range(-6,7) if all(3*[[1,1],[0,1]][i][j]-sum([[1,1],[0,1]][i][k]*[[a,b],[c,d]][k][j] for k in range(2))==(1 if i==j else 0) for i in range(2) for j in range(2)) for v in (a,b,c,d)]",
+     true
+    ],
+    [
+     5,
+     "Resuelve la ecuación $AX=B+CX$ con $A=\\begin{pmatrix}3&1\\\\2&2\\end{pmatrix}$, $B=\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}$ y $C=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+     [
+      1,
+      2,
+      0,
+      -1
+     ],
+     "Se agrupa: $(A-C)X=B$, con $A-C=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$ de determinante 1 e inversa $\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}$. Entonces $X=\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}=\\begin{pmatrix}1&2\\\\0&-1\\end{pmatrix}$. Comprobación: $AX=\\begin{pmatrix}3&5\\\\2&2\\end{pmatrix}$ y $B+CX=\\begin{pmatrix}3&5\\\\2&2\\end{pmatrix}$.",
+     "[v for a in range(-6,7) for b in range(-6,7) for c in range(-6,7) for d in range(-6,7) if all(sum([[3,1],[2,2]][i][k]*[[a,b],[c,d]][k][j] for k in range(2))==[[2,3],[1,1]][i][j]+sum([[1,0],[1,1]][i][k]*[[a,b],[c,d]][k][j] for k in range(2)) for i in range(2) for j in range(2)) for v in (a,b,c,d)]",
+     true
+    ]
+   ]
+  }
+ ]
+}

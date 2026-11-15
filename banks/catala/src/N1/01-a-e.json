@@ -1,0 +1,350 @@
+{
+ "subtema": "A/E àtones",
+ "conceptos": [
+  {
+   "nombre": "Penúltima lletra àtona",
+   "pagina": 1,
+   "cara": 1,
+   "ayuda": "La penúltima lletra d'un mot, si és àtona (no hi recau l'accent), és sempre una e. Per això escrivim dones, homes, nenes i alegres. També passa amb els verbs: tu cantes, ells canten. Si la vocal és tònica, s'escriu el que sona: ells cantaran porta a perquè la a és forta. Truc: si en dubtes, pregunta't si l'accent de la paraula cau just en aquesta vocal.",
+   "test": [
+    [
+     1,
+     "Quina és la forma correcta?",
+     "nenes",
+     [
+      "nenas",
+      "escriu la terminació castellana -as de «niñas»"
+     ],
+     [
+      "nenis",
+      "confon la vocal àtona amb una i"
+     ],
+     [
+      "nénes",
+      "posa accent a una síl·laba àtona"
+     ],
+     "La penúltima lletra àtona és sempre una e: nenes, dones. Regla: àtona, e."
+    ],
+    [
+     2,
+     "Quina és la forma verbal correcta?",
+     "ells canten",
+     [
+      "ells cantan",
+      "calca la terminació -an del castellà"
+     ],
+     [
+      "ells canton",
+      "confon la e àtona amb una o"
+     ],
+     [
+      "ells cantèn",
+      "accentua una paraula plana"
+     ],
+     "En «canten» la vocal penúltima és àtona, per tant s'escriu e. Regla: àtona, e."
+    ],
+    [
+     4,
+     "Per què «cantaran» s'escriu amb a?",
+     "Perquè la a d'aquesta forma és tònica",
+     [
+      "Perquè la penúltima lletra àtona sempre és a",
+      "inverteix la regla i diu que l'àtona porta a"
+     ],
+     [
+      "Perquè els verbs en futur sempre porten a",
+      "creu que el temps verbal decideix la vocal"
+     ],
+     [
+      "Perquè en català les formes en -n prefereixen la a",
+      "inventa una regla sobre la terminació -n"
+     ],
+     "La regla de la e només val per a vocals àtones. A «cantaran» l'accent cau en la a, per això s'escriu el que sona. Regla: tònica, el que sona."
+    ],
+    [
+     5,
+     "Quina frase conté un error?",
+     "Elles canten una cançó molt alegra.",
+     [
+      "Ells canten una cançó molt alegre.",
+      "pensa que «canten» s'ha d'escriure amb a"
+     ],
+     [
+      "Elles cantaran una cançó molt alegre.",
+      "creu que «cantaran» hauria de portar e"
+     ],
+     [
+      "Les nenes canten una cançó molt alegre.",
+      "pensa que «nenes» s'ha d'escriure amb a"
+     ],
+     "L'error és «alegra»: els adjectius com «alegre» són invariables (en castellà «alegre» també). Les altres frases tenen la e àtona i la a tònica ben escrites."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Cantaran» s'escriu amb a perquè en aquesta forma verbal la a és una vocal tònica.",
+     true,
+     "L'accent d'«ells cantaran» cau en la penúltima síl·laba, de manera que la a és tònica i s'escriu el que sona.",
+     "trampa: creure que la regla de la e àtona també s'aplica a les vocals tòniques"
+    ]
+   ]
+  },
+  {
+   "nombre": "Substantius masculins i femenins",
+   "pagina": 1,
+   "cara": 1,
+   "ayuda": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+   "test": [
+    [
+     1,
+     "Quina és la forma correcta?",
+     "pare",
+     [
+      "para",
+      "escriu una a final com en un femení"
+     ],
+     [
+      "pari",
+      "confon la e final amb una i"
+     ],
+     [
+      "paré",
+      "tracta el mot com una aguda"
+     ],
+     "Els masculins acostumen a acabar en -e: pare, home. Regla: masculí, normalment -e."
+    ],
+    [
+     2,
+     "Quin d'aquests substantius masculins NO és una excepció i acaba en -e?",
+     "home",
+     [
+      "artista",
+      "creu que tots els masculins acaben en -e"
+     ],
+     [
+      "drama",
+      "creu que tots els masculins acaben en -e"
+     ],
+     [
+      "planeta",
+      "creu que tots els masculins acaben en -e"
+     ],
+     "«Home» segueix la regla general. En canvi artista (-ista), drama (-ma) i planeta (-ta) són excepcions que acaben en -a, com en castellà."
+    ],
+    [
+     4,
+     "Quin grup només conté substantius masculins acabats en -a?",
+     "drama, problema, planeta",
+     [
+      "pare, home, artista",
+      "inclou pare i home, que acaben en -e"
+     ],
+     [
+      "artista, mare, drama",
+      "inclou mare, que és femení"
+     ],
+     [
+      "dona, planeta, problema",
+      "inclou dona, que és femení"
+     ],
+     "Drama (-ma), problema (-ma) i planeta (-ta) són masculins amb -a final. Mare i dona són femenins; pare i home acaben en -e."
+    ],
+    [
+     5,
+     "Quina frase conté un error?",
+     "Va mirar la imatga amb molta atenció.",
+     [
+      "El pare va veure aquell drama.",
+      "creu que «drama» ha d'acabar en -e"
+     ],
+     [
+      "L'artista va dibuixar un planeta.",
+      "creu que «artista» i «planeta» han d'acabar en -e"
+     ],
+     [
+      "La febre i la torre eren altes.",
+      "creu que «febre» i «torre» han d'acabar en -a"
+     ],
+     "«Imatge» és una excepció femenina: acaba en -e com en castellà «imagen». Les altres frases mostren les excepcions ben escrites."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Fase» s'escriu «fasa» perquè és un substantiu femení.",
+     false,
+     "Fase és una de les excepcions femenines que acaben en -e (com mare, febre, torre, imatge, verge i classe).",
+     "trampa: aplicar la regla general del femení en -a sense recordar l'excepció"
+    ]
+   ]
+  },
+  {
+   "nombre": "Adjectius invariables i variables",
+   "pagina": 1,
+   "cara": 1,
+   "ayuda": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+   "test": [
+    [
+     1,
+     "Quin d'aquests adjectius és invariable en singular?",
+     "alegre",
+     [
+      "ample",
+      "confon un adjectiu de dues terminacions amb un d'invariable"
+     ],
+     [
+      "culte",
+      "confon un adjectiu de dues terminacions amb un d'invariable"
+     ],
+     [
+      "pobre",
+      "creu que pobre és invariable com en castellà"
+     ],
+     "«Alegre» és invariable perquè en castellà també ho és. Ample/a, culte/a i pobre/a tenen femení en -a."
+    ],
+    [
+     2,
+     "Quina és la forma correcta del femení singular?",
+     "una noia intel·ligent",
+     [
+      "una noia intel·ligenta",
+      "afegeix -a perquè és femení"
+     ],
+     [
+      "una noia intel·ligente",
+      "calca la terminació castellana «inteligente»"
+     ],
+     [
+      "una noia inteligent",
+      "oblida la ela geminada"
+     ],
+     "En castellà «inteligente» és invariable, per tant en català diem «una noia intel·ligent» i no pas amb -a. Regla: invariable en castellà, invariable en català."
+    ],
+    [
+     4,
+     "Per què diem «una noia capaç» i no «una noia capaça»?",
+     "Perquè en castellà «capaz» és invariable",
+     [
+      "Perquè els adjectius acabats en -ç no tenen femení",
+      "inventa una regla sobre la lletra final"
+     ],
+     [
+      "Perquè «noia» demana l'adjectiu en masculí",
+      "creu que l'adjectiu no concorda amb el gènere"
+     ],
+     [
+      "Perquè el femení de «capaç» s'escriu amb e final",
+      "creu que tots els femenins s'escriuen amb e"
+     ],
+     "Regla: l'adjectiu és invariable en català perquè en castellà («capaz») també ho és."
+    ],
+    [
+     5,
+     "Quin adjectiu és variable en català encara que en castellà és invariable?",
+     "pobre (pobra)",
+     [
+      "rude",
+      "aplica l'excepció contrària: rude és invariable en català"
+     ],
+     [
+      "xerraire",
+      "aplica l'excepció contrària: xerraire és invariable en català"
+     ],
+     [
+      "alegre",
+      "tracta un adjectiu normal com una excepció"
+     ],
+     "Pobre/a és una excepció: en castellà «pobre» és invariable però en català fa pobra. Rude i xerraire són les excepcions contràries."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "El femení singular de «fidel» és «fidela».",
+     false,
+     "En castellà «fiel» és invariable, de manera que en català diem «una noia fidel».",
+     "trampa: creure que tot adjectiu femení ha d'acabar en -a"
+    ]
+   ]
+  },
+  {
+   "nombre": "Interior de mot i llista d'excepcions",
+   "pagina": 2,
+   "cara": 2,
+   "ayuda": "Si la a o la e àtona és a l'interior del mot, cerquem el mot primitiu o escrivim com en castellà. Hi ha una llista d'excepcions: en català a i en castellà e (davant, xocolata, ramat) o en català e i en castellà a (assemblea, treball, sergent, monestir). En els verbs jeure, néixer i treure, la e canvia a a si no és forta: naixeran. Si és forta, s'escriu el que sona: neixo.",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta?",
+     "davant",
+     [
+      "devant",
+      "calca la e del castellà «delante»"
+     ],
+     [
+      "devent",
+      "escriu e en totes dues síl·labes"
+     ],
+     [
+      "davànt",
+      "accentua una paraula plana acabada en consonant"
+     ],
+     "«Davant» és una excepció de la llista: en català porta a i en castellà «delante» porta e."
+    ],
+    [
+     4,
+     "Quina paraula s'escriu amb e en català, encara que en castellà porta a?",
+     "assemblea",
+     [
+      "afaitar",
+      "confon la llista amb la contrària: en català porta a"
+     ],
+     [
+      "ramat",
+      "confon la llista amb la contrària: en català porta a"
+     ],
+     [
+      "xocolata",
+      "confon la llista amb la contrària: en català porta a"
+     ],
+     "«Assemblea» (castellà «asamblea») és de la llista de català e. Afaitar, ramat i xocolata porten a en català i e en castellà."
+    ],
+    [
+     5,
+     "Quina forma del verb «néixer» és correcta?",
+     "naixeran",
+     [
+      "neixeran",
+      "no aplica el canvi de e a a a la vocal àtona"
+     ],
+     [
+      "naixaran",
+      "aplica a a la e àtona de la terminació"
+     ],
+     [
+      "naixerán",
+      "calca l'accent castellà"
+     ],
+     "La e canvia a a si no és forta: en «naixeran» la vocal de la primera síl·laba és àtona, per això porta a. En «neixo» és forta, per això porta e."
+    ]
+   ],
+   "vf": [
+    [
+     1,
+     "«Treball» s'escriu amb e, tot i que en castellà és «trabajo».",
+     true,
+     "«Treball» és una excepció de la llista: en català porta e i en castellà porta a.",
+     "trampa: aplicar la regla de copiar el castellà sense recordar l'excepció"
+    ],
+    [
+     3,
+     "A «naixeran» la primera vocal és forta, per això s'escriu amb a.",
+     false,
+     "A «naixeran» l'accent cau en la penúltima síl·laba (-ran), de manera que la a de «nai-» és àtona. Només en les formes amb vocal forta, com «neixo», s'escriu el que sona.",
+     "trampa: confondre una vocal àtona amb una de tònica"
+    ]
+   ]
+  }
+ ]
+}

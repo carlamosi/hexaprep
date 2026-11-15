@@ -1,0 +1,3270 @@
+{
+ "asignatura": {
+  "nombre": "Química",
+  "idioma": "ca",
+  "color": "#1B998B",
+  "acento": "#1B998B"
+ },
+ "fuente": {
+  "nombre": "Química T3 Formulació orgànica",
+  "archivo": "Quimica_T3_Formulacio_organica.pdf"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "a1"
+ },
+ "preguntas": [
+  {
+   "id": "qui-t3-0001",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Alcans: fórmula general i cadena lineal",
+   "dificultad": 1,
+   "enunciado": "Quin és el nom de l'alcà lineal CH₃-CH₂-CH₂-CH₃?",
+   "ayuda_larga": "Els alcans són hidrocarburs acíclics i saturats: només tenen C i H i tots els enllaços C-C són senzills. La fórmula general és CₙH₂ₙ₊₂. Una cadena lineal s'anomena amb el prefix del nombre de carbonis (met-, et-, prop-, but-, pent-, hex-, hept-, oct-, non-, dec-) i la terminació -à. Exemple: CH₃-CH₂-CH₃ té 3 carbonis i és el propà, C₃H₈.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "Propà",
+     "trampa": "comptar només tres carbonis"
+    },
+    {
+     "texto": "Butà"
+    },
+    {
+     "texto": "Pentà",
+     "trampa": "comptar un carboni de més"
+    },
+    {
+     "texto": "Butè",
+     "trampa": "confondre la terminació -à dels alcans amb la -è dels alquens"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena té 4 carbonis, que és el prefix but-, i com que només hi ha enllaços senzills acaba en -à. Regla: compta els carbonis i afegeix -à."
+  },
+  {
+   "id": "qui-t3-0002",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Alcans: fórmula general i cadena lineal",
+   "dificultad": 2,
+   "enunciado": "Quina és la fórmula molecular d'un alcà de 6 carbonis?",
+   "ayuda_larga": "Els alcans són hidrocarburs acíclics i saturats: només tenen C i H i tots els enllaços C-C són senzills. La fórmula general és CₙH₂ₙ₊₂. Una cadena lineal s'anomena amb el prefix del nombre de carbonis (met-, et-, prop-, but-, pent-, hex-, hept-, oct-, non-, dec-) i la terminació -à. Exemple: CH₃-CH₂-CH₃ té 3 carbonis i és el propà, C₃H₈.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "C₆H₁₄"
+    },
+    {
+     "texto": "C₆H₁₂",
+     "trampa": "usar la fórmula dels alquens, CₙH₂ₙ"
+    },
+    {
+     "texto": "C₆H₁₀",
+     "trampa": "usar la fórmula dels alquins, CₙH₂ₙ₋₂"
+    },
+    {
+     "texto": "C₆H₁₆",
+     "trampa": "sumar 4 en lloc de 2"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La fórmula dels alcans és CₙH₂ₙ₊₂, i amb n = 6 dona 2·6 + 2 = 14 hidrògens. Regla: dos hidrògens per carboni i dos més."
+  },
+  {
+   "id": "qui-t3-0003",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Alcans: fórmula general i cadena lineal",
+   "dificultad": 4,
+   "enunciado": "Un alcà acíclic té 38 àtoms d'hidrogen. Quants carbonis té?",
+   "ayuda_larga": "Els alcans són hidrocarburs acíclics i saturats: només tenen C i H i tots els enllaços C-C són senzills. La fórmula general és CₙH₂ₙ₊₂. Una cadena lineal s'anomena amb el prefix del nombre de carbonis (met-, et-, prop-, but-, pent-, hex-, hept-, oct-, non-, dec-) i la terminació -à. Exemple: CH₃-CH₂-CH₃ té 3 carbonis i és el propà, C₃H₈.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "19",
+     "trampa": "dividir 38 entre 2 sense restar el 2"
+    },
+    {
+     "texto": "20",
+     "trampa": "sumar 2 en lloc de restar-lo"
+    },
+    {
+     "texto": "18"
+    },
+    {
+     "texto": "36",
+     "trampa": "restar 2 però oblidar dividir entre 2"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Cal resoldre 2n + 2 = 38. Restem 2 i queda 2n = 36, per tant n = 18. Regla: primer treu el +2 i després divideix entre 2."
+  },
+  {
+   "id": "qui-t3-0004",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Alcans: fórmula general i cadena lineal",
+   "dificultad": 2,
+   "enunciado": "Els alcans són hidrocarburs saturats perquè tots els enllaços C-C són senzills.",
+   "ayuda_larga": "Els alcans són hidrocarburs acíclics i saturats: només tenen C i H i tots els enllaços C-C són senzills. La fórmula general és CₙH₂ₙ₊₂. Una cadena lineal s'anomena amb el prefix del nombre de carbonis (met-, et-, prop-, but-, pent-, hex-, hept-, oct-, non-, dec-) i la terminació -à. Exemple: CH₃-CH₂-CH₃ té 3 carbonis i és el propà, C₃H₈.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que «saturat» vol dir que hi ha algun enllaç múltiple"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Un alcà només té enllaços senzills i per això porta el màxim nombre d'hidrògens possible, és a dir, és saturat."
+  },
+  {
+   "id": "qui-t3-0005",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Radicals",
+   "dificultad": 1,
+   "enunciado": "Com s'anomena el radical CH₃-CH₂-?",
+   "ayuda_larga": "Un radical és una ramificació que penja de la cadena principal. S'anomena com l'alcà del mateix nombre de carbonis però canviant la terminació -à per -il: CH₃- és metil, CH₃-CH₂- és etil i CH₃-CH₂-CH₂- és propil. Alguns radicals tenen noms especials: isopropil, secbutil, isobutil i tercbutil.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Metil",
+     "trampa": "comptar només un carboni"
+    },
+    {
+     "texto": "Età",
+     "trampa": "mantenir la terminació -à de l'alcà"
+    },
+    {
+     "texto": "Etil"
+    },
+    {
+     "texto": "Propil",
+     "trampa": "comptar un carboni de més"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El radical té 2 carbonis, per tant ve de l'età. Com que és un radical, la terminació -à canvia per -il: etil."
+  },
+  {
+   "id": "qui-t3-0006",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Radicals",
+   "dificultad": 2,
+   "enunciado": "Com es passa del nom d'un alcà al del radical corresponent?",
+   "ayuda_larga": "Un radical és una ramificació que penja de la cadena principal. S'anomena com l'alcà del mateix nombre de carbonis però canviant la terminació -à per -il: CH₃- és metil, CH₃-CH₂- és etil i CH₃-CH₂-CH₂- és propil. Alguns radicals tenen noms especials: isopropil, secbutil, isobutil i tercbutil.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Canviant la terminació -à per -è",
+     "trampa": "confondre els radicals amb els alquens"
+    },
+    {
+     "texto": "Canviant la terminació -à per -il"
+    },
+    {
+     "texto": "Afegint el prefix ciclo- al nom",
+     "trampa": "confondre els radicals amb els cicles"
+    },
+    {
+     "texto": "Afegint la terminació -oxi al nom",
+     "trampa": "confondre els radicals amb els èters"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Per als radicals, la -à de l'alcà es converteix en -il: metà, metil; età, etil; propà, propil. Regla: radical = alcà amb -il."
+  },
+  {
+   "id": "qui-t3-0007",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Radicals",
+   "dificultad": 2,
+   "enunciado": "El radical CH₃-CH₂-CH₂- s'anomena etil.",
+   "ayuda_larga": "Un radical és una ramificació que penja de la cadena principal. S'anomena com l'alcà del mateix nombre de carbonis però canviant la terminació -à per -il: CH₃- és metil, CH₃-CH₂- és etil i CH₃-CH₂-CH₂- és propil. Alguns radicals tenen noms especials: isopropil, secbutil, isobutil i tercbutil.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "comptar només els carbonis CH₂ i oblidar el CH₃ de l'extrem"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Té tres carbonis, per tant és el radical propil. L'etil només en té dos: CH₃-CH₂-."
+  },
+  {
+   "id": "qui-t3-0008",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Cadena principal i numeració",
+   "dificultad": 2,
+   "enunciado": "Com es tria la cadena principal d'un alcà ramificat?",
+   "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "opciones": [
+    {
+     "texto": "La que té més ramificacions, encara que sigui més curta",
+     "trampa": "aplicar el criteri d'empat com si fos el criteri principal"
+    },
+    {
+     "texto": "La que es dibuixa en horitzontal",
+     "trampa": "pensar que depèn de com està dibuixada la molècula"
+    },
+    {
+     "texto": "La seqüència més llarga d'àtoms de carboni"
+    },
+    {
+     "texto": "La que acaba en el radical amb el nom més llarg",
+     "trampa": "deixar-se portar pel nom dels radicals"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La cadena principal és la més llarga. Les ramificacions només decideixen quan dues cadenes tenen la mateixa longitud. Regla: primer longitud, després ramificacions."
+  },
+  {
+   "id": "qui-t3-0009",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Cadena principal i numeració",
+   "dificultad": 3,
+   "enunciado": "Dues cadenes d'un alcà tenen la mateixa longitud. Quina s'escull com a cadena principal?",
+   "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "opciones": [
+    {
+     "texto": "La que té més ramificacions"
+    },
+    {
+     "texto": "La que en té menys, per simplificar el nom",
+     "trampa": "invertir el criteri d'empat"
+    },
+    {
+     "texto": "La primera que es troba de dalt a baix",
+     "trampa": "no aplicar cap criteri"
+    },
+    {
+     "texto": "La que té els radicals més llargs",
+     "trampa": "inventar un criteri que no existeix"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Quan hi ha empat de longitud, s'escull la cadena que deixa més radicals. Regla: igual de llarga, més ramificada."
+  },
+  {
+   "id": "qui-t3-0010",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Cadena principal i numeració",
+   "dificultad": 3,
+   "enunciado": "Un alcà de 7 carbonis té dos radicals que, numerant d'esquerra a dreta, queden als carbonis 2 i 5. Quins localitzadors s'han d'usar?",
+   "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "opciones": [
+    {
+     "texto": "2,5"
+    },
+    {
+     "texto": "3,6",
+     "trampa": "triar la numeració que dona els localitzadors més alts"
+    },
+    {
+     "texto": "2,6",
+     "trampa": "barrejar els dos sentits de numeració"
+    },
+    {
+     "texto": "3,5",
+     "trampa": "barrejar els dos sentits de numeració"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "En una cadena de 7, el carboni 2 és el 6 des de l'altre extrem i el 5 és el 3. Les dues numeracions donen 2,5 i 3,6, i guanya la que té els números més baixos: 2,5."
+  },
+  {
+   "id": "qui-t3-0011",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Cadena principal i numeració",
+   "dificultad": 5,
+   "enunciado": "Un heptà té un etil i un metil. Numerant des de qualsevol extrem, els radicals queden als carbonis 3 i 5. Per on s'ha de començar a numerar?",
+   "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "opciones": [
+    {
+     "texto": "Pel costat que dona el 3 al metil, el radical més curt",
+     "trampa": "triar el radical més curt en lloc de l'alfabètic"
+    },
+    {
+     "texto": "Per qualsevol extrem, perquè el nom resultant és el mateix",
+     "trampa": "creure que l'empat no afecta el nom"
+    },
+    {
+     "texto": "Pel costat que dona el 3 a l'etil, primer a l'alfabet"
+    },
+    {
+     "texto": "Pel costat que dona el 5 a l'etil, per fer-lo últim",
+     "trampa": "invertir el criteri alfabètic"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Quan els localitzadors són iguals pels dos costats, el número més baix va al radical que s'anomena primer per ordre alfabètic. Etil va abans que metil, per tant el 3 és per a l'etil: 3-etil-5-metilheptà."
+  },
+  {
+   "id": "qui-t3-0012",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Cadena principal i numeració",
+   "dificultad": 3,
+   "enunciado": "Per numerar un alcà ramificat, sempre es comença per l'extrem esquerre del dibuix.",
+   "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+   "fuente_pagina": 7,
+   "fuente_cara": 7,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "pensar que el sentit de lectura marca la numeració"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La numeració es tria perquè els radicals tinguin els localitzadors més baixos possibles, i pot començar per qualsevol dels dos extrems."
+  },
+  {
+   "id": "qui-t3-0013",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Nom dels alcans ramificats",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom de CH₃-CH₂-CH(CH₃)-CH₂-CH₃?",
+   "ayuda_larga": "Per anomenar el compost s'escriuen els radicals per ordre alfabètic, cadascun amb el seu localitzador i un guionet, i al final el nom de l'alcà de la cadena principal. Si un radical es repeteix s'usen els prefixos di-, tri-, tetra-, que no compten per a l'ordre alfabètic. Exemple: 3-etil-2,4-dimetilpentà és una cadena de 5 carbonis amb un etil al carboni 3 i dos metils als carbonis 2 i 4.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "3-metilpentà"
+    },
+    {
+     "texto": "2-metilpentà",
+     "trampa": "posar el localitzador a l'extrem i no al carboni on penja el radical"
+    },
+    {
+     "texto": "2-etilbutà",
+     "trampa": "triar una cadena de 4 carbonis en lloc de la de 5"
+    },
+    {
+     "texto": "3-metilhexà",
+     "trampa": "comptar el metil com a part de la cadena"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La cadena més llarga té 5 carbonis i el metil penja del carboni central, el 3. Així és 3-metilpentà. Regla: cadena més llarga, i el localitzador és el carboni on penja el radical."
+  },
+  {
+   "id": "qui-t3-0014",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Nom dels alcans ramificats",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de CH₃-CH₂-CH(CH₂-CH₃)-CH₂-CH₂-CH₃?",
+   "ayuda_larga": "Per anomenar el compost s'escriuen els radicals per ordre alfabètic, cadascun amb el seu localitzador i un guionet, i al final el nom de l'alcà de la cadena principal. Si un radical es repeteix s'usen els prefixos di-, tri-, tetra-, que no compten per a l'ordre alfabètic. Exemple: 3-etil-2,4-dimetilpentà és una cadena de 5 carbonis amb un etil al carboni 3 i dos metils als carbonis 2 i 4.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "4-etilhexà",
+     "trampa": "numerar des de l'extrem equivocat"
+    },
+    {
+     "texto": "3-etilhexà"
+    },
+    {
+     "texto": "3-propilpentà",
+     "trampa": "escollir una cadena de 5 carbonis en lloc de la de 6"
+    },
+    {
+     "texto": "3-etilheptà",
+     "trampa": "comptar un carboni de més a la cadena"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena més llarga passa per un etil, el carboni central i el propil: té 6 carbonis. L'etil que penja queda al carboni 3 començant per l'extrem més proper. Regla: busca primer la cadena més llarga, encara que estigui dibuixada torta."
+  },
+  {
+   "id": "qui-t3-0015",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Nom dels alcans ramificats",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de CH₃-CH(CH₃)-CH(CH₂-CH₃)-CH₂-CH₃?",
+   "ayuda_larga": "Per anomenar el compost s'escriuen els radicals per ordre alfabètic, cadascun amb el seu localitzador i un guionet, i al final el nom de l'alcà de la cadena principal. Si un radical es repeteix s'usen els prefixos di-, tri-, tetra-, que no compten per a l'ordre alfabètic. Exemple: 3-etil-2,4-dimetilpentà és una cadena de 5 carbonis amb un etil al carboni 3 i dos metils als carbonis 2 i 4.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "2-metil-3-etilpentà",
+     "trampa": "no ordenar els radicals alfabèticament"
+    },
+    {
+     "texto": "3-etil-4-metilpentà",
+     "trampa": "numerar per l'extrem que dona localitzadors més alts"
+    },
+    {
+     "texto": "3-etil-2-metilpentà"
+    },
+    {
+     "texto": "3-etil-2-metilhexà",
+     "trampa": "comptar un carboni de més a la cadena principal"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La cadena és de 5 carbonis. Numerant des de l'esquerra els radicals queden al 2 (metil) i al 3 (etil), que són més baixos que 3 i 4. L'etil s'escriu abans que el metil per ordre alfabètic."
+  },
+  {
+   "id": "qui-t3-0016",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Nom dels alcans ramificats",
+   "dificultad": 5,
+   "enunciado": "Quina és la fórmula de 2,3-dimetilpentà?",
+   "ayuda_larga": "Per anomenar el compost s'escriuen els radicals per ordre alfabètic, cadascun amb el seu localitzador i un guionet, i al final el nom de l'alcà de la cadena principal. Si un radical es repeteix s'usen els prefixos di-, tri-, tetra-, que no compten per a l'ordre alfabètic. Exemple: 3-etil-2,4-dimetilpentà és una cadena de 5 carbonis amb un etil al carboni 3 i dos metils als carbonis 2 i 4.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "CH₃-C(CH₃)₂-CH₂-CH₂-CH₃",
+     "trampa": "posar els dos metils al mateix carboni (2,2-dimetilpentà)"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH₂-CH(CH₃)-CH₃",
+     "trampa": "separar els metils: és el 2,4-dimetilpentà"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH₂-CH₃",
+     "trampa": "fer la cadena d'un carboni de més: és el 2,3-dimetilhexà"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH₃"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Pentà vol dir cadena de 5 carbonis, i els dos metils pengen dels carbonis contigus 2 i 3. Les altres opcions tenen els metils al 2 i al 2, o al 2 i al 4, o una cadena de 6. Regla: dibuixa la cadena, numera i col·loca cada radical."
+  },
+  {
+   "id": "qui-t3-0017",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alcans",
+   "concepto": "Nom dels alcans ramificats",
+   "dificultad": 4,
+   "enunciado": "En el nom 3-etil-2,4-dimetilpentà l'etil va abans que els metils perquè el prefix di- no compta per a l'ordre alfabètic.",
+   "ayuda_larga": "Per anomenar el compost s'escriuen els radicals per ordre alfabètic, cadascun amb el seu localitzador i un guionet, i al final el nom de l'alcà de la cadena principal. Si un radical es repeteix s'usen els prefixos di-, tri-, tetra-, que no compten per a l'ordre alfabètic. Exemple: 3-etil-2,4-dimetilpentà és una cadena de 5 carbonis amb un etil al carboni 3 i dos metils als carbonis 2 i 4.",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "ordenar per «dimetil» i posar-lo abans que «etil»"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'ordre alfabètic es fa amb el nom del radical (etil, metil) i els prefixos di-, tri- s'ignoren. Per això etil va primer, tot i que «dimetil» comença per d."
+  },
+  {
+   "id": "qui-t3-0018",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquens: fórmula i cadena principal",
+   "dificultad": 1,
+   "enunciado": "Quina és la fórmula general dels alquens amb un sol doble enllaç?",
+   "ayuda_larga": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "CₙH₂ₙ₊₂",
+     "trampa": "usar la fórmula dels alcans"
+    },
+    {
+     "texto": "CₙH₂ₙ₋₂",
+     "trampa": "usar la fórmula dels alquins"
+    },
+    {
+     "texto": "CₙH₂ₙ"
+    },
+    {
+     "texto": "CₙHₙ",
+     "trampa": "creure que hi ha un hidrogen per carboni"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Un doble enllaç treu dos hidrògens a l'alcà CₙH₂ₙ₊₂, i queda CₙH₂ₙ. Regla: alcans +2, alquens 0, alquins -2."
+  },
+  {
+   "id": "qui-t3-0019",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquens: fórmula i cadena principal",
+   "dificultad": 4,
+   "enunciado": "Un hidrocarbur té una cadena de 5 carbonis que només inclou un dels seus dos dobles enllaços i una altra de 4 carbonis que els inclou tots dos. Quina és la cadena principal?",
+   "ayuda_larga": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "La de 5 carbonis, perquè és la més llarga",
+     "trampa": "aplicar només el criteri de longitud dels alcans"
+    },
+    {
+     "texto": "La de 4 carbonis, perquè conté tots els dobles enllaços"
+    },
+    {
+     "texto": "Qualsevol de les dues, perquè totes dues tenen algun doble enllaç",
+     "trampa": "no exigir que hi siguin tots"
+    },
+    {
+     "texto": "La de 5 carbonis, perquè s'escull la més ramificada",
+     "trampa": "confondre el criteri d'empat amb el principal"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En un alquè la cadena principal ha de contenir tots els dobles enllaços, encara que sigui més curta. Regla: primer els dobles enllaços, després la longitud."
+  },
+  {
+   "id": "qui-t3-0020",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquens: fórmula i cadena principal",
+   "dificultad": 2,
+   "enunciado": "Per cada doble enllaç s'eliminen dos hidrògens de l'alcà corresponent.",
+   "ayuda_larga": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "pensar que s'eliminen quatre hidrògens, com en els alquins"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Passar d'un enllaç senzill a un doble treu dos hidrògens, per això la fórmula dels alquens és CₙH₂ₙ."
+  },
+  {
+   "id": "qui-t3-0021",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquens: fórmula i cadena principal",
+   "dificultad": 3,
+   "enunciado": "La cadena principal d'un alquè és sempre la més llarga, encara que deixi un doble enllaç fora.",
+   "ayuda_larga": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "aplicar la regla dels alcans, que només mira la longitud"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En un alquè la cadena principal és la més llarga que contingui tots els dobles enllaços. Si la més llarga en deixa algun fora, no serveix."
+  },
+  {
+   "id": "qui-t3-0022",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Nom dels alquens",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom de CH₂=CH-CH₂-CH₃?",
+   "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "opciones": [
+    {
+     "texto": "1-butè"
+    },
+    {
+     "texto": "2-butè",
+     "trampa": "col·locar el doble enllaç al localitzador equivocat"
+    },
+    {
+     "texto": "3-butè",
+     "trampa": "numerar per l'extrem que dona el localitzador més alt"
+    },
+    {
+     "texto": "1-butà",
+     "trampa": "confondre la terminació -è dels alquens amb la -à dels alcans"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El doble enllaç és entre els carbonis 1 i 2, i s'indica amb el 1 davant del nom de la cadena de 4 carbonis acabat en -è. Regla: numera perquè el doble enllaç tingui el número més baix."
+  },
+  {
+   "id": "qui-t3-0023",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Nom dels alquens",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₂=C(CH₃)-CH₂-CH₃?",
+   "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "opciones": [
+    {
+     "texto": "2-metil-3-butè",
+     "trampa": "numerar pel radical i no pel doble enllaç"
+    },
+    {
+     "texto": "3-metil-1-butè",
+     "trampa": "col·locar el metil al carboni equivocat"
+    },
+    {
+     "texto": "2-metil-1-butè"
+    },
+    {
+     "texto": "2-etilpropè",
+     "trampa": "escollir una cadena de 3 carbonis en lloc de la de 4"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La cadena principal és de 4 carbonis i conté el doble enllaç (1), mentre que el metil penja del carboni 2. Regla: el doble enllaç té prioritat en la numeració i després els radicals."
+  },
+  {
+   "id": "qui-t3-0024",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Nom dels alquens",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₂=CH-CH=CH-CH₃?",
+   "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "opciones": [
+    {
+     "texto": "1,3-pentadiè"
+    },
+    {
+     "texto": "2,4-pentadiè",
+     "trampa": "numerar per l'extrem que dona localitzadors més alts"
+    },
+    {
+     "texto": "1,3-pentè",
+     "trampa": "oblidar el prefix di- amb dos dobles enllaços"
+    },
+    {
+     "texto": "1,4-pentadiè",
+     "trampa": "situar malament el segon doble enllaç"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Hi ha dos dobles enllaços en una cadena de 5 carbonis, que comencen als carbonis 1 i 3. Per això porta el prefix di- i s'acaba en -diè. Regla: tants localitzadors com dobles enllaços."
+  },
+  {
+   "id": "qui-t3-0025",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Nom dels alquens",
+   "dificultad": 4,
+   "enunciado": "En un alquè els dobles enllaços tenen el mateix localitzador numerant des de qualsevol extrem. Quin criteri decideix el sentit de la numeració?",
+   "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "opciones": [
+    {
+     "texto": "Es comença per l'extrem esquerre del dibuix",
+     "trampa": "pensar que el sentit de lectura marca la numeració"
+    },
+    {
+     "texto": "Els radicals reben els localitzadors més alts",
+     "trampa": "invertir el criteri dels radicals"
+    },
+    {
+     "texto": "Els radicals reben els localitzadors més baixos"
+    },
+    {
+     "texto": "Es comença pel carboni amb més hidrògens",
+     "trampa": "inventar un criteri que no existeix"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Primer es dona el número més baix als dobles enllaços. Si hi ha empat, passen a decidir els radicals, que han de tenir els localitzadors més baixos possibles."
+  },
+  {
+   "id": "qui-t3-0026",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Nom dels alquens",
+   "dificultad": 5,
+   "enunciado": "Quina és la fórmula del 2-etil-1-pentè?",
+   "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "opciones": [
+    {
+     "texto": "CH₂=C(CH₂-CH₃)-CH₂-CH₂-CH₃"
+    },
+    {
+     "texto": "CH₃-C(CH₂-CH₃)=CH-CH₂-CH₃",
+     "trampa": "situar el doble enllaç entre els carbonis 2 i 3"
+    },
+    {
+     "texto": "CH₂=CH-CH(CH₂-CH₃)-CH₂-CH₃",
+     "trampa": "posar l'etil al carboni 3"
+    },
+    {
+     "texto": "CH₂=C(CH₂-CH₃)-CH₂-CH₃",
+     "trampa": "fer la cadena un carboni més curta: és el 2-etil-1-butè"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La cadena és de 5 carbonis amb el doble enllaç entre els carbonis 1 i 2, i un etil al carboni 2. Les altres opcions canvien el doble enllaç, l'etil o la longitud de la cadena."
+  },
+  {
+   "id": "qui-t3-0027",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Nom dels alquens",
+   "dificultad": 3,
+   "enunciado": "El nom 2-metil-1,3-butadiè indica dos dobles enllaços, situats als carbonis 1 i 3.",
+   "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "fuente_pagina": 11,
+   "fuente_cara": 11,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que 1,3 són les posicions dels radicals"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El prefix di- i els localitzadors 1,3 diuen que hi ha dos dobles enllaços, un al carboni 1 i l'altre al 3. A més hi ha un metil al carboni 2."
+  },
+  {
+   "id": "qui-t3-0028",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquins",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom de CH₃-C≡C-CH₂-CH₃?",
+   "ayuda_larga": "Els alquins tenen triples enllaços C≡C i la fórmula general CₙH₂ₙ₋₂ (amb un sol triple enllaç): per cada triple enllaç s'eliminen quatre hidrògens de l'alcà. S'anomenen igual que els alquens però amb la terminació -í en lloc de -è. Exemple: CH≡C-CH₂-CH₃ és l'1-butí.",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "3-pentí",
+     "trampa": "numerar per l'extrem que dona el localitzador més alt"
+    },
+    {
+     "texto": "2-pentí"
+    },
+    {
+     "texto": "2-pentè",
+     "trampa": "usar la terminació -è dels alquens"
+    },
+    {
+     "texto": "2-butí",
+     "trampa": "comptar un carboni de menys"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena té 5 carbonis i el triple enllaç està entre els carbonis 2 i 3. Es numera per l'extrem que dona el 2. Regla: terminació -í i localitzador més baix."
+  },
+  {
+   "id": "qui-t3-0029",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquins",
+   "dificultad": 3,
+   "enunciado": "Quants hidrògens té un alquí de 4 carbonis amb un sol triple enllaç?",
+   "ayuda_larga": "Els alquins tenen triples enllaços C≡C i la fórmula general CₙH₂ₙ₋₂ (amb un sol triple enllaç): per cada triple enllaç s'eliminen quatre hidrògens de l'alcà. S'anomenen igual que els alquens però amb la terminació -í en lloc de -è. Exemple: CH≡C-CH₂-CH₃ és l'1-butí.",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "6"
+    },
+    {
+     "texto": "8",
+     "trampa": "usar la fórmula dels alquens"
+    },
+    {
+     "texto": "10",
+     "trampa": "usar la fórmula dels alcans"
+    },
+    {
+     "texto": "4",
+     "trampa": "creure que hi ha un hidrogen per carboni"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La fórmula dels alquins és CₙH₂ₙ₋₂ i amb n = 4 dona 2·4 - 2 = 6. Respecte al butà (10 hidrògens) falten quatre hidrògens."
+  },
+  {
+   "id": "qui-t3-0030",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Alquins",
+   "dificultad": 3,
+   "enunciado": "Per cada enllaç triple s'eliminen quatre hidrògens de l'alcà corresponent.",
+   "ayuda_larga": "Els alquins tenen triples enllaços C≡C i la fórmula general CₙH₂ₙ₋₂ (amb un sol triple enllaç): per cada triple enllaç s'eliminen quatre hidrògens de l'alcà. S'anomenen igual que els alquens però amb la terminació -í en lloc de -è. Exemple: CH≡C-CH₂-CH₃ és l'1-butí.",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "pensar que només se n'eliminen dos, com en un doble enllaç"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Un triple enllaç equival a treure quatre hidrògens a l'alcà, per això la fórmula és CₙH₂ₙ₋₂ en lloc de CₙH₂ₙ₊₂."
+  },
+  {
+   "id": "qui-t3-0031",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Dobles i triples enllaços junts",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₂=CH-C≡CH?",
+   "ayuda_larga": "Quan una molècula té dobles i triples enllaços, la cadena principal és la que té més insaturacions (de qualsevol tipus), amb localitzadors com més baixos millor. En igualtat de condicions, el doble enllaç té prioritat sobre el triple per rebre el número més baix. El nom cita primer els dobles (-en-) i després els triples (-í). Exemple: CH₂=CH-C≡CH és l'1-buten-3-í.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "3-buten-1-í",
+     "trampa": "donar el número més baix al triple enllaç"
+    },
+    {
+     "texto": "1-buten-3-í"
+    },
+    {
+     "texto": "1-butin-3-è",
+     "trampa": "intercanviar les terminacions"
+    },
+    {
+     "texto": "1,3-butadiè",
+     "trampa": "oblidar el triple enllaç"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena és de 4 carbonis amb el doble enllaç al 1 i el triple al 3 (o a l'inrevés des de l'altre extrem). Si hi ha empat, el doble enllaç rep el número més baix. El nom cita -en- abans que -í."
+  },
+  {
+   "id": "qui-t3-0032",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Dobles i triples enllaços junts",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de CH₂=CH-C≡C-CH=CH₂?",
+   "ayuda_larga": "Quan una molècula té dobles i triples enllaços, la cadena principal és la que té més insaturacions (de qualsevol tipus), amb localitzadors com més baixos millor. En igualtat de condicions, el doble enllaç té prioritat sobre el triple per rebre el número més baix. El nom cita primer els dobles (-en-) i després els triples (-í). Exemple: CH₂=CH-C≡CH és l'1-buten-3-í.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "3-hexin-1,5-diè",
+     "trampa": "escriure el triple enllaç abans que els dobles"
+    },
+    {
+     "texto": "1,5-hexadien-3-í"
+    },
+    {
+     "texto": "1,5-hexadiè",
+     "trampa": "oblidar el triple enllaç"
+    },
+    {
+     "texto": "1,3,5-hexatriè",
+     "trampa": "tractar tots els enllaços múltiples com a dobles"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena té 6 carbonis amb dobles enllaços als carbonis 1 i 5 i un triple al 3. El nom cita primer els dobles (1,5-hexadien) i acaba amb el triple (3-í)."
+  },
+  {
+   "id": "qui-t3-0033",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Dobles i triples enllaços junts",
+   "dificultad": 5,
+   "enunciado": "Quina és la fórmula del 3-propil-1-hexen-4-í?",
+   "ayuda_larga": "Quan una molècula té dobles i triples enllaços, la cadena principal és la que té més insaturacions (de qualsevol tipus), amb localitzadors com més baixos millor. En igualtat de condicions, el doble enllaç té prioritat sobre el triple per rebre el número més baix. El nom cita primer els dobles (-en-) i després els triples (-í). Exemple: CH₂=CH-C≡CH és l'1-buten-3-í.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "CH₂=CH-CH(CH₂-CH₂-CH₃)-CH₂-C≡CH",
+     "trampa": "col·locar el triple enllaç al carboni 5"
+    },
+    {
+     "texto": "CH₂=CH-CH(CH₂-CH₂-CH₃)-C≡C-CH₂-CH₃",
+     "trampa": "fer la cadena un carboni més llarga: és un 1-heptè"
+    },
+    {
+     "texto": "CH₂=CH-CH(CH₂-CH₂-CH₃)-C≡C-CH₃"
+    },
+    {
+     "texto": "CH≡C-CH(CH₂-CH₂-CH₃)-CH=CH-CH₃",
+     "trampa": "numerar pel triple enllaç i intercanviar les posicions"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Hexè-í vol dir cadena de 6 carbonis, amb el doble enllaç entre els carbonis 1 i 2 i el triple entre el 4 i el 5. El propil penja del carboni 3."
+  },
+  {
+   "id": "qui-t3-0034",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Alquens i alquins",
+   "concepto": "Dobles i triples enllaços junts",
+   "dificultad": 3,
+   "enunciado": "En un compost amb un doble i un triple enllaç, el triple sempre rep el localitzador més baix.",
+   "ayuda_larga": "Quan una molècula té dobles i triples enllaços, la cadena principal és la que té més insaturacions (de qualsevol tipus), amb localitzadors com més baixos millor. En igualtat de condicions, el doble enllaç té prioritat sobre el triple per rebre el número més baix. El nom cita primer els dobles (-en-) i després els triples (-í). Exemple: CH₂=CH-C≡CH és l'1-buten-3-í.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "pensar que l'enllaç més fort va primer"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En igualtat de condicions, el número més baix és per al doble enllaç. Per això CH₂=CH-C≡CH és l'1-buten-3-í i no el 3-buten-1-í."
+  },
+  {
+   "id": "qui-t3-0035",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalcans",
+   "dificultad": 1,
+   "enunciado": "Com s'anomena l'hidrocarbur cíclic saturat de 4 carbonis?",
+   "ayuda_larga": "Els cicloalcans s'anomenen com l'alcà del mateix nombre de carbonis amb el prefix ciclo-: ciclobutà, ciclopentà, ciclohexà. Si hi ha substituents es numeren perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament. Amb un sol radical no cal localitzador: metilciclopropà. Exemple: 1-etil-2-metilciclohexà.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "Butà",
+     "trampa": "oblidar que és un cicle"
+    },
+    {
+     "texto": "Ciclobutè",
+     "trampa": "usar la terminació dels alquens en un cicle saturat"
+    },
+    {
+     "texto": "Ciclobutà"
+    },
+    {
+     "texto": "Ciclopropà",
+     "trampa": "comptar un carboni de menys"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Quatre carbonis donen el prefix but- i el cicle afegeix ciclo-. Com que és saturat acaba en -à. Regla: ciclo- + nom de l'alcà."
+  },
+  {
+   "id": "qui-t3-0036",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalcans",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom d'un cicle saturat de 5 carbonis amb un sol grup metil?",
+   "ayuda_larga": "Els cicloalcans s'anomenen com l'alcà del mateix nombre de carbonis amb el prefix ciclo-: ciclobutà, ciclopentà, ciclohexà. Si hi ha substituents es numeren perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament. Amb un sol radical no cal localitzador: metilciclopropà. Exemple: 1-etil-2-metilciclohexà.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "Metilciclopentà"
+    },
+    {
+     "texto": "1-metilciclopentà",
+     "trampa": "afegir un localitzador que no cal"
+    },
+    {
+     "texto": "Ciclometilpentà",
+     "trampa": "posar el prefix ciclo- enmig del nom"
+    },
+    {
+     "texto": "Metilpentà",
+     "trampa": "oblidar que és un cicle"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Amb un sol radical el seu carboni és sempre el 1, per això no cal indicar-ho. El nom és el radical seguit de ciclopentà."
+  },
+  {
+   "id": "qui-t3-0037",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalcans",
+   "dificultad": 4,
+   "enunciado": "Un ciclohexà té un etil i un metil en dos carbonis veïns. Quin és el seu nom?",
+   "ayuda_larga": "Els cicloalcans s'anomenen com l'alcà del mateix nombre de carbonis amb el prefix ciclo-: ciclobutà, ciclopentà, ciclohexà. Si hi ha substituents es numeren perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament. Amb un sol radical no cal localitzador: metilciclopropà. Exemple: 1-etil-2-metilciclohexà.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "1-metil-2-etilciclohexà",
+     "trampa": "no ordenar els radicals alfabèticament"
+    },
+    {
+     "texto": "2-etil-1-metilciclohexà",
+     "trampa": "ordenar bé però numerar al revés"
+    },
+    {
+     "texto": "1-etil-6-metilciclohexà",
+     "trampa": "numerar cap al sentit que dona localitzadors més alts"
+    },
+    {
+     "texto": "1-etil-2-metilciclohexà"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Els localitzadors més baixos són 1 i 2 i, com que hi ha empat, el 1 va per al radical primer a l'alfabet: l'etil. Així el nom és 1-etil-2-metilciclohexà."
+  },
+  {
+   "id": "qui-t3-0038",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalcans",
+   "dificultad": 3,
+   "enunciado": "En un cicloalcà amb un sol radical no cal indicar-ne el localitzador.",
+   "ayuda_larga": "Els cicloalcans s'anomenen com l'alcà del mateix nombre de carbonis amb el prefix ciclo-: ciclobutà, ciclopentà, ciclohexà. Si hi ha substituents es numeren perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament. Amb un sol radical no cal localitzador: metilciclopropà. Exemple: 1-etil-2-metilciclohexà.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que sempre cal posar el localitzador 1"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El carboni on penja l'únic radical és sempre el 1, així que s'escriu metilciclopropà i no 1-metilciclopropà."
+  },
+  {
+   "id": "qui-t3-0039",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalquens i cicloalquins",
+   "dificultad": 2,
+   "enunciado": "En un cicle amb un doble enllaç, quin criteri s'aplica en numerar els carbonis?",
+   "ayuda_larga": "Quan un cicle té insaturacions, els carbonis es numeren perquè aquests enllaços tinguin els localitzadors més baixos possibles (1 i 2), i després els radicals tenen els números més baixos. Els cicloalquens acaben en -è i els cicloalquins en -í. Un cicle també pot ser un radical d'una cadena oberta, amb el sufix -il: ciclohexil, ciclopentil. Exemple: 4-metilciclopentè.",
+   "fuente_pagina": 15,
+   "fuente_cara": 15,
+   "opciones": [
+    {
+     "texto": "El radical ha de tenir el localitzador més baix, sense mirar el doble enllaç",
+     "trampa": "donar prioritat als radicals"
+    },
+    {
+     "texto": "El doble enllaç ha de tenir els localitzadors més baixos possibles"
+    },
+    {
+     "texto": "Es comença pel carboni amb més hidrògens",
+     "trampa": "inventar un criteri que no existeix"
+    },
+    {
+     "texto": "Es numera sempre en sentit horari",
+     "trampa": "pensar que el sentit el decideix el dibuix"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En els cicles amb insaturacions, el doble o el triple enllaç és el que s'ha de situar entre els carbonis 1 i 2. Només després es miren els radicals."
+  },
+  {
+   "id": "qui-t3-0040",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalquens i cicloalquins",
+   "dificultad": 4,
+   "enunciado": "Un cicle de 5 carbonis té un doble enllaç entre els carbonis 1 i 2 i un grup metil al carboni 4. Quin és el seu nom?",
+   "ayuda_larga": "Quan un cicle té insaturacions, els carbonis es numeren perquè aquests enllaços tinguin els localitzadors més baixos possibles (1 i 2), i després els radicals tenen els números més baixos. Els cicloalquens acaben en -è i els cicloalquins en -í. Un cicle també pot ser un radical d'una cadena oberta, amb el sufix -il: ciclohexil, ciclopentil. Exemple: 4-metilciclopentè.",
+   "fuente_pagina": 15,
+   "fuente_cara": 15,
+   "opciones": [
+    {
+     "texto": "3-metilciclopentè",
+     "trampa": "comptar malament la posició del radical"
+    },
+    {
+     "texto": "4-metilciclopentà",
+     "trampa": "oblidar el doble enllaç"
+    },
+    {
+     "texto": "4-metilciclopentè"
+    },
+    {
+     "texto": "1-metilciclopentè",
+     "trampa": "posar el radical on hi ha el doble enllaç"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El doble enllaç ocupa els carbonis 1 i 2 i el metil està al 4. El nom és el radical amb el seu localitzador seguit de ciclopentè."
+  },
+  {
+   "id": "qui-t3-0041",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalquens i cicloalquins",
+   "dificultad": 5,
+   "enunciado": "Un cicle de 6 carbonis té un triple enllaç entre els carbonis 1 i 2 i dos metils als carbonis 3 i 5. Quin és el seu nom?",
+   "ayuda_larga": "Quan un cicle té insaturacions, els carbonis es numeren perquè aquests enllaços tinguin els localitzadors més baixos possibles (1 i 2), i després els radicals tenen els números més baixos. Els cicloalquens acaben en -è i els cicloalquins en -í. Un cicle també pot ser un radical d'una cadena oberta, amb el sufix -il: ciclohexil, ciclopentil. Exemple: 4-metilciclopentè.",
+   "fuente_pagina": 15,
+   "fuente_cara": 15,
+   "opciones": [
+    {
+     "texto": "4,6-dimetilciclohexí",
+     "trampa": "numerar en el sentit contrari, amb localitzadors més alts"
+    },
+    {
+     "texto": "3,5-dimetilciclohexè",
+     "trampa": "usar la terminació d'alquè en un triple enllaç"
+    },
+    {
+     "texto": "3,5-dimetilciclohexí"
+    },
+    {
+     "texto": "3,5-dimetilciclohexà",
+     "trampa": "oblidar el triple enllaç"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Es numera perquè el triple enllaç sigui el 1-2, i després els metils han de tenir els localitzadors més baixos: 3 i 5 en un sentit, 4 i 6 en l'altre. El nom acaba en -í: 3,5-dimetilciclohexí."
+  },
+  {
+   "id": "qui-t3-0042",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Cicloalquens i cicloalquins",
+   "dificultad": 4,
+   "enunciado": "Un cicle de 5 carbonis amb un doble enllaç i un metil es numera perquè el metil tingui el localitzador 1.",
+   "ayuda_larga": "Quan un cicle té insaturacions, els carbonis es numeren perquè aquests enllaços tinguin els localitzadors més baixos possibles (1 i 2), i després els radicals tenen els números més baixos. Els cicloalquens acaben en -è i els cicloalquins en -í. Un cicle també pot ser un radical d'una cadena oberta, amb el sufix -il: ciclohexil, ciclopentil. Exemple: 4-metilciclopentè.",
+   "fuente_pagina": 15,
+   "fuente_cara": 15,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "pensar que el radical mana sobre la insaturació"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Quan hi ha un doble enllaç, són els carbonis del doble enllaç els que tenen els números 1 i 2, i el radical queda amb el localitzador que sigui."
+  },
+  {
+   "id": "qui-t3-0043",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 1,
+   "enunciado": "Quina és la fórmula molecular del benzè?",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "opciones": [
+    {
+     "texto": "C₆H₁₂",
+     "trampa": "confondre el benzè amb el ciclohexà"
+    },
+    {
+     "texto": "C₆H₁₄",
+     "trampa": "confondre el benzè amb el hexà"
+    },
+    {
+     "texto": "C₆H₁₀",
+     "trampa": "confondre el benzè amb el ciclohexè"
+    },
+    {
+     "texto": "C₆H₆"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El benzè és el hidrocarbur aromàtic de fórmula C₆H₆: sis carbonis i sis hidrògens. Els altres són hidrocarburs saturats o amb un sol doble enllaç."
+  },
+  {
+   "id": "qui-t3-0044",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 2,
+   "enunciado": "Com s'anomena el benzè amb un sol grup metil?",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "opciones": [
+    {
+     "texto": "Metilbenzè (toluè)"
+    },
+    {
+     "texto": "1-metilbenzè",
+     "trampa": "afegir un localitzador que no cal"
+    },
+    {
+     "texto": "Metilciclohexà",
+     "trampa": "confondre el benzè amb el ciclohexà"
+    },
+    {
+     "texto": "Benzoat de metil",
+     "trampa": "confondre un aromàtic amb un èster"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Amb un sol radical s'escriu el radical i després benzè, sense localitzador. També es diu toluè."
+  },
+  {
+   "id": "qui-t3-0045",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 4,
+   "enunciado": "Com s'anomena amb prefix el benzè amb un etil i un propil en les posicions 1 i 4?",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "opciones": [
+    {
+     "texto": "p-etilpropilbenzè"
+    },
+    {
+     "texto": "o-etilpropilbenzè",
+     "trampa": "confondre les posicions 1,4 amb 1,2"
+    },
+    {
+     "texto": "m-etilpropilbenzè",
+     "trampa": "confondre les posicions 1,4 amb 1,3"
+    },
+    {
+     "texto": "p-propiletilbenzè",
+     "trampa": "no ordenar els radicals alfabèticament"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les posicions 1,4 corresponen al prefix para (p). Els radicals s'ordenen alfabèticament: etil abans que propil."
+  },
+  {
+   "id": "qui-t3-0046",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 4,
+   "enunciado": "Com s'anomena el benzè amb un etil i un metil en les posicions 1 i 3?",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "opciones": [
+    {
+     "texto": "1-metil-3-etilbenzè",
+     "trampa": "no ordenar els radicals alfabèticament"
+    },
+    {
+     "texto": "1-etil-3-metilbenzè"
+    },
+    {
+     "texto": "1-etil-5-metilbenzè",
+     "trampa": "no triar els localitzadors més baixos"
+    },
+    {
+     "texto": "3-etil-1-metilbenzè",
+     "trampa": "començar a numerar pel radical equivocat"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els localitzadors més baixos són 1 i 3. Com que hi ha empat, el 1 és per al radical primer a l'alfabet, l'etil. El nom és 1-etil-3-metilbenzè."
+  },
+  {
+   "id": "qui-t3-0047",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 5,
+   "enunciado": "Un benzè té dos etils als carbonis 1 i 3 i un metil al carboni 5. Quin és el seu nom?",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "opciones": [
+    {
+     "texto": "1,3-dietil-5-metilbenzè"
+    },
+    {
+     "texto": "1,5-dietil-3-metilbenzè",
+     "trampa": "no donar els números més baixos als radicals primers a l'alfabet"
+    },
+    {
+     "texto": "3,5-dietil-1-metilbenzè",
+     "trampa": "començar a numerar pel metil"
+    },
+    {
+     "texto": "1,3-dietilmetilbenzè",
+     "trampa": "oblidar el localitzador del metil"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Els tres radicals ocupen 1, 3 i 5 en qualsevol sentit. El 1 i el 3 es reserven per als etils, que són els primers a l'alfabet, i el 5 queda per al metil."
+  },
+  {
+   "id": "qui-t3-0048",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 3,
+   "enunciado": "Quants carbonis té en total el 4-etil-2-metil-1-propilbenzè?",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "opciones": [
+    {
+     "texto": "6",
+     "trampa": "comptar només el cicle"
+    },
+    {
+     "texto": "9",
+     "trampa": "comptar un sol carboni per radical"
+    },
+    {
+     "texto": "11",
+     "trampa": "comptar el propil amb dos carbonis"
+    },
+    {
+     "texto": "12"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Sumem 6 del cicle, 2 de l'etil, 1 del metil i 3 del propil: 6 + 2 + 1 + 3 = 12. Regla: compta cada radical pel seu nombre de carbonis."
+  },
+  {
+   "id": "qui-t3-0049",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 3,
+   "enunciado": "Els prefixos orto, meta i para corresponen a les posicions 1,2, 1,3 i 1,4 del benzè.",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "intercanviar l'ordre dels prefixos"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Orto és 1,2, meta és 1,3 i para és 1,4. Se solen abreujar o-, m- i p-."
+  },
+  {
+   "id": "qui-t3-0050",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Hidrocarburs cíclics i aromàtics",
+   "concepto": "Hidrocarburs aromàtics: benzè",
+   "dificultad": 3,
+   "enunciado": "El nom 1-metilbenzè és el correcte per al toluè.",
+   "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+   "fuente_pagina": 16,
+   "fuente_cara": 16,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que cal indicar sempre la posició 1"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Amb un sol radical no cal localitzador: el nom correcte és metilbenzè (o toluè)."
+  },
+  {
+   "id": "qui-t3-0051",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Derivats halogenats",
+   "dificultad": 1,
+   "enunciado": "Quins prefixos s'utilitzen per anomenar els halògens com a radicals?",
+   "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "opciones": [
+    {
+     "texto": "Fluor-, clor-, brom- i iod-",
+     "trampa": "oblidar la -o final del prefix"
+    },
+    {
+     "texto": "Fluoril-, cloril-, bromil- i iodil-",
+     "trampa": "usar la terminació -il dels radicals alquil"
+    },
+    {
+     "texto": "Fluoro-, cloro-, bromo- i iodo-"
+    },
+    {
+     "texto": "Fluoroxi-, cloroxi-, bromoxi- i iodoxi-",
+     "trampa": "confondre els halògens amb els grups -oxi"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Els halògens s'anomenen amb els prefixos fluoro-, cloro-, bromo- i iodo-, sempre amb la -o final. Regla: halogen = prefix en -o."
+  },
+  {
+   "id": "qui-t3-0052",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Derivats halogenats",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom de CH₃-CHCl-CH₂-CH₃?",
+   "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "opciones": [
+    {
+     "texto": "2-clorobutà"
+    },
+    {
+     "texto": "3-clorobutà",
+     "trampa": "numerar per l'extrem que dona el localitzador més alt"
+    },
+    {
+     "texto": "2-cloropropà",
+     "trampa": "comptar un carboni de menys a la cadena"
+    },
+    {
+     "texto": "1-clorobutà",
+     "trampa": "posar el clor a l'extrem de la cadena"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La cadena té 4 carbonis i el clor penja del segon. Numerant per l'extrem més proper queda el localitzador 2, i el nom és 2-clorobutà."
+  },
+  {
+   "id": "qui-t3-0053",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Derivats halogenats",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₂Br-CH₂-CH₂-CHI-CH₃?",
+   "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "opciones": [
+    {
+     "texto": "4-bromo-1-iodopentà",
+     "trampa": "intercanviar els halògens"
+    },
+    {
+     "texto": "2-iodo-5-bromopentà",
+     "trampa": "numerar per l'altre extrem i no ordenar alfabèticament"
+    },
+    {
+     "texto": "1-bromo-4-iodobutà",
+     "trampa": "comptar un carboni de menys"
+    },
+    {
+     "texto": "1-bromo-4-iodopentà"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La cadena és de 5 carbonis. Numerant des de l'extrem del brom els radicals queden al 1 i al 4, que són més baixos que el 2 i el 5. S'escriuen per ordre alfabètic: bromo abans que iodo."
+  },
+  {
+   "id": "qui-t3-0054",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Derivats halogenats",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-CF(CH₃)-CH₃?",
+   "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "opciones": [
+    {
+     "texto": "2-metil-2-fluoropropà",
+     "trampa": "no ordenar els radicals alfabèticament"
+    },
+    {
+     "texto": "2-fluoro-2-metilpropà"
+    },
+    {
+     "texto": "2-fluorobutà",
+     "trampa": "comptar una cadena de 4 carbonis que no existeix"
+    },
+    {
+     "texto": "1-fluoro-2-metilpropà",
+     "trampa": "col·locar el fluor a l'extrem"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena més llarga és de 3 carbonis i del carboni central pengen el fluor i un metil. S'escriuen per ordre alfabètic: fluoro abans que metil."
+  },
+  {
+   "id": "qui-t3-0055",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Derivats halogenats",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₂=CH-CHBr-CH₃?",
+   "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "opciones": [
+    {
+     "texto": "2-bromo-3-butè",
+     "trampa": "numerar pel halogen i no pel doble enllaç"
+    },
+    {
+     "texto": "3-bromo-1-butè"
+    },
+    {
+     "texto": "3-bromobutà",
+     "trampa": "oblidar el doble enllaç"
+    },
+    {
+     "texto": "4-bromo-1-butè",
+     "trampa": "col·locar el brom al carboni equivocat"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El doble enllaç té prioritat en la numeració, per tant s'inicia pel carboni 1 del CH₂=. El brom queda al carboni 3: 3-bromo-1-butè."
+  },
+  {
+   "id": "qui-t3-0056",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Derivats halogenats",
+   "dificultad": 2,
+   "enunciado": "En un cicle amb un sol halogen, com el bromociclobutà, no cal indicar el localitzador del brom.",
+   "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "fuente_pagina": 17,
+   "fuente_cara": 17,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que sempre cal posar el localitzador 1"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El carboni on penja l'únic halogen és sempre el 1, i per això no s'escriu."
+  },
+  {
+   "id": "qui-t3-0057",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Alcohols: cadena i numeració",
+   "dificultad": 1,
+   "enunciado": "Quin és el grup funcional dels alcohols?",
+   "ayuda_larga": "Els alcohols tenen el grup hidroxil -OH (R-OH). La cadena principal és la més llarga que conté el carboni unit al grup -OH, encara que n'hi hagi una altra de més llarga. Es numera perquè el carboni de l'-OH tingui el número més baix possible, encara que hi hagi dobles enllaços o més radicals. Exemple: en CH₃-CH₂-CH₂-CH₂-OH es numera des del CH₂OH, que és el carboni 1.",
+   "fuente_pagina": 18,
+   "fuente_cara": 18,
+   "opciones": [
+    {
+     "texto": "-CHO (aldehid)",
+     "trampa": "confondre l'alcohol amb l'aldehid"
+    },
+    {
+     "texto": "-COOH (carboxil)",
+     "trampa": "confondre l'alcohol amb l'àcid"
+    },
+    {
+     "texto": "-O- (oxigen entre dos carbonis)",
+     "trampa": "confondre l'alcohol amb l'èter"
+    },
+    {
+     "texto": "-OH (hidroxil)"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Els alcohols tenen el grup hidroxil, -OH, unit a un carboni. Quan l'oxigen va entre dos carbonis és un èter."
+  },
+  {
+   "id": "qui-t3-0058",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Alcohols: cadena i numeració",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom de CH₃-CH(OH)-CH₂-CH₃?",
+   "ayuda_larga": "Els alcohols tenen el grup hidroxil -OH (R-OH). La cadena principal és la més llarga que conté el carboni unit al grup -OH, encara que n'hi hagi una altra de més llarga. Es numera perquè el carboni de l'-OH tingui el número més baix possible, encara que hi hagi dobles enllaços o més radicals. Exemple: en CH₃-CH₂-CH₂-CH₂-OH es numera des del CH₂OH, que és el carboni 1.",
+   "fuente_pagina": 18,
+   "fuente_cara": 18,
+   "opciones": [
+    {
+     "texto": "3-butanol",
+     "trampa": "numerar per l'extrem que dona el localitzador més alt"
+    },
+    {
+     "texto": "2-butanol"
+    },
+    {
+     "texto": "2-butanal",
+     "trampa": "confondre el sufix -ol amb el d'aldehid"
+    },
+    {
+     "texto": "2-propanol",
+     "trampa": "comptar un carboni de menys"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena és de 4 carbonis i l'OH penja del segon començant per l'esquerra, que és el número més baix. El nom és 2-butanol."
+  },
+  {
+   "id": "qui-t3-0059",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Alcohols: cadena i numeració",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom de CH₂=CH-CH₂-OH?",
+   "ayuda_larga": "Els alcohols tenen el grup hidroxil -OH (R-OH). La cadena principal és la més llarga que conté el carboni unit al grup -OH, encara que n'hi hagi una altra de més llarga. Es numera perquè el carboni de l'-OH tingui el número més baix possible, encara que hi hagi dobles enllaços o més radicals. Exemple: en CH₃-CH₂-CH₂-CH₂-OH es numera des del CH₂OH, que és el carboni 1.",
+   "fuente_pagina": 18,
+   "fuente_cara": 18,
+   "opciones": [
+    {
+     "texto": "2-propen-1-ol"
+    },
+    {
+     "texto": "1-propen-3-ol",
+     "trampa": "numerar pel doble enllaç i no pel grup OH"
+    },
+    {
+     "texto": "1-propanol",
+     "trampa": "oblidar el doble enllaç"
+    },
+    {
+     "texto": "2-propenal",
+     "trampa": "confondre l'alcohol amb l'aldehid"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'alcohol és el grup preferent, així que el carboni de l'OH és l'1 i el doble enllaç queda al 2. El nom cita primer el doble enllaç i després l'-ol: 2-propen-1-ol."
+  },
+  {
+   "id": "qui-t3-0060",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Alcohols: cadena i numeració",
+   "dificultad": 3,
+   "enunciado": "En un alcohol amb un doble enllaç, es numera perquè el doble enllaç tingui el localitzador més baix.",
+   "ayuda_larga": "Els alcohols tenen el grup hidroxil -OH (R-OH). La cadena principal és la més llarga que conté el carboni unit al grup -OH, encara que n'hi hagi una altra de més llarga. Es numera perquè el carboni de l'-OH tingui el número més baix possible, encara que hi hagi dobles enllaços o més radicals. Exemple: en CH₃-CH₂-CH₂-CH₂-OH es numera des del CH₂OH, que és el carboni 1.",
+   "fuente_pagina": 18,
+   "fuente_cara": 18,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "aplicar la regla dels alquens, on el doble enllaç mana"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En un alcohol, el localitzador més baix és per al carboni del grup -OH, encara que hi hagi dobles o triples enllaços."
+  },
+  {
+   "id": "qui-t3-0061",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Nom dels alcohols",
+   "dificultad": 2,
+   "enunciado": "Com s'anomena CH₃-CH₂-OH?",
+   "ayuda_larga": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "opciones": [
+    {
+     "texto": "1-etanol",
+     "trampa": "afegir un localitzador que no cal"
+    },
+    {
+     "texto": "Etanol"
+    },
+    {
+     "texto": "Etanal",
+     "trampa": "confondre l'alcohol amb l'aldehid"
+    },
+    {
+     "texto": "Metanol",
+     "trampa": "comptar un carboni de menys"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Té 2 carbonis i un -OH, per tant és l'etanol. El localitzador no cal perquè l'OH sempre estaria al carboni 1."
+  },
+  {
+   "id": "qui-t3-0062",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Nom dels alcohols",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de HO-CH₂-CH₂-CH(OH)-CH₃?",
+   "ayuda_larga": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "opciones": [
+    {
+     "texto": "1,3-butandiol"
+    },
+    {
+     "texto": "2,4-butandiol",
+     "trampa": "numerar per l'extrem que dona localitzadors més alts"
+    },
+    {
+     "texto": "1,3-butanol",
+     "trampa": "oblidar el prefix di- amb dos grups OH"
+    },
+    {
+     "texto": "1,3-butandial",
+     "trampa": "confondre el sufix -ol amb el d'aldehid"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Hi ha dos grups OH en una cadena de 4 carbonis. Numerant des de l'esquerra queden al 1 i al 3 (des de l'altre costat serien 2 i 4). Dos OH porten di-: 1,3-butandiol."
+  },
+  {
+   "id": "qui-t3-0063",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Nom dels alcohols",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de CH₃-CH(OH)-CH(Br)-CH₃?",
+   "ayuda_larga": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "opciones": [
+    {
+     "texto": "2-bromo-3-butanol",
+     "trampa": "numerar pel radical i no pel grup OH"
+    },
+    {
+     "texto": "2-bromo-3-hidroxibutà",
+     "trampa": "indicar l'OH com a prefix en lloc de sufix"
+    },
+    {
+     "texto": "3-bromo-1-butanol",
+     "trampa": "col·locar l'OH a l'extrem de la cadena"
+    },
+    {
+     "texto": "3-bromo-2-butanol"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'OH és la funció principal i ha de tenir el número més baix: queda al 2 i el brom al 3. El nom és 3-bromo-2-butanol."
+  },
+  {
+   "id": "qui-t3-0064",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Nom dels alcohols",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de CH₃-CH(CH₃)-CH₂-CH₂-OH?",
+   "ayuda_larga": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "opciones": [
+    {
+     "texto": "3-metil-1-butanol"
+    },
+    {
+     "texto": "2-metil-4-butanol",
+     "trampa": "numerar pel radical i no pel grup OH"
+    },
+    {
+     "texto": "3-metilbutanol",
+     "trampa": "oblidar el localitzador de l'OH"
+    },
+    {
+     "texto": "2-metil-1-butanol",
+     "trampa": "col·locar el metil al carboni equivocat"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La cadena és de 4 carbonis, l'OH va al carboni 1 i el metil penja del carboni 3. Regla: primer numera perquè l'OH tingui el número més baix."
+  },
+  {
+   "id": "qui-t3-0065",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Derivats halogenats i alcohols",
+   "concepto": "Nom dels alcohols",
+   "dificultad": 2,
+   "enunciado": "L'alcohol derivat del benzè s'anomena benzaldehid.",
+   "ayuda_larga": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+   "fuente_pagina": 19,
+   "fuente_cara": 19,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre el sufix -ol amb el d'aldehid"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "L'alcohol derivat del benzè és el fenol. El benzaldehid és l'aldehid derivat del benzè."
+  },
+  {
+   "id": "qui-t3-0066",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura radicofuncional",
+   "dificultad": 1,
+   "enunciado": "Quina és la fórmula general dels èters?",
+   "ayuda_larga": "Els èters tenen la fórmula general R-O-R'. En la nomenclatura radicofuncional s'anomena cada radical unit a l'oxigen per ordre alfabètic i després la paraula èter; si els dos radicals són iguals s'usa di-. Exemple: CH₃-O-CH₂-CH₃ és l'etil metil èter i CH₃-CH₂-O-CH₂-CH₃ és el dietil èter.",
+   "fuente_pagina": 20,
+   "fuente_cara": 20,
+   "opciones": [
+    {
+     "texto": "R-OH",
+     "trampa": "confondre l'èter amb l'alcohol"
+    },
+    {
+     "texto": "R-CO-R'",
+     "trampa": "confondre l'èter amb la cetona"
+    },
+    {
+     "texto": "R-COO-R'",
+     "trampa": "confondre l'èter amb l'èster"
+    },
+    {
+     "texto": "R-O-R'"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Un èter té un oxigen entre dos radicals: R-O-R'. Si l'oxigen porta un H és un alcohol, i si hi ha un carbonil és una cetona o un èster."
+  },
+  {
+   "id": "qui-t3-0067",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura radicofuncional",
+   "dificultad": 3,
+   "enunciado": "Com s'anomena CH₃-O-CH₂-CH₃ en nomenclatura radicofuncional?",
+   "ayuda_larga": "Els èters tenen la fórmula general R-O-R'. En la nomenclatura radicofuncional s'anomena cada radical unit a l'oxigen per ordre alfabètic i després la paraula èter; si els dos radicals són iguals s'usa di-. Exemple: CH₃-O-CH₂-CH₃ és l'etil metil èter i CH₃-CH₂-O-CH₂-CH₃ és el dietil èter.",
+   "fuente_pagina": 20,
+   "fuente_cara": 20,
+   "opciones": [
+    {
+     "texto": "Metil etil èter",
+     "trampa": "no ordenar els radicals alfabèticament"
+    },
+    {
+     "texto": "Etil metil cetona",
+     "trampa": "confondre l'èter amb la cetona"
+    },
+    {
+     "texto": "Dietil èter",
+     "trampa": "repetir un radical que no hi és"
+    },
+    {
+     "texto": "Etil metil èter"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Els radicals units a l'oxigen són el metil i l'etil. S'anomenen per ordre alfabètic i s'acaba amb la paraula èter: etil metil èter."
+  },
+  {
+   "id": "qui-t3-0068",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura radicofuncional",
+   "dificultad": 3,
+   "enunciado": "L'èter CH₃-CH₂-O-CH₂-CH₃ s'anomena dimetil èter.",
+   "ayuda_larga": "Els èters tenen la fórmula general R-O-R'. En la nomenclatura radicofuncional s'anomena cada radical unit a l'oxigen per ordre alfabètic i després la paraula èter; si els dos radicals són iguals s'usa di-. Exemple: CH₃-O-CH₂-CH₃ és l'etil metil èter i CH₃-CH₂-O-CH₂-CH₃ és el dietil èter.",
+   "fuente_pagina": 20,
+   "fuente_cara": 20,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre el nombre de carbonis de cada radical"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els dos radicals són etil, per tant és el dietil èter. El dimetil èter seria CH₃-O-CH₃."
+  },
+  {
+   "id": "qui-t3-0069",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura per substitució",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom per substitució de CH₃-CH(O-CH₃)-CH₃?",
+   "ayuda_larga": "En la nomenclatura per substitució s'escull la cadena principal (la més llarga) i el grup -O-R' es tracta com un radical: metoxi, etoxi, propoxi... S'escriuen els radicals amb localitzador i per ordre alfabètic, i al final el nom de la cadena. Quan el localitzador sempre seria 1, no s'escriu: CH₃-O-CH₂-CH₃ és el metoxietà. Exemple: CH₃-CH(O-CH₃)-CH₃ és el 2-metoxipropà.",
+   "fuente_pagina": 21,
+   "fuente_cara": 21,
+   "opciones": [
+    {
+     "texto": "1-metoxipropà",
+     "trampa": "col·locar el metoxi a l'extrem de la cadena"
+    },
+    {
+     "texto": "2-metoxibutà",
+     "trampa": "comptar un carboni de més a la cadena"
+    },
+    {
+     "texto": "2-metoxipropà"
+    },
+    {
+     "texto": "2-metilpropoxi",
+     "trampa": "invertir cadena i radical"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La cadena principal és el propà (3 carbonis) i l'oxigen penja del carboni central. El grup O-CH₃ és el radical metoxi, així que és 2-metoxipropà."
+  },
+  {
+   "id": "qui-t3-0070",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura per substitució",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom per substitució de CH₃-CH₂-O-CH=CH₂?",
+   "ayuda_larga": "En la nomenclatura per substitució s'escull la cadena principal (la més llarga) i el grup -O-R' es tracta com un radical: metoxi, etoxi, propoxi... S'escriuen els radicals amb localitzador i per ordre alfabètic, i al final el nom de la cadena. Quan el localitzador sempre seria 1, no s'escriu: CH₃-O-CH₂-CH₃ és el metoxietà. Exemple: CH₃-CH(O-CH₃)-CH₃ és el 2-metoxipropà.",
+   "fuente_pagina": 21,
+   "fuente_cara": 21,
+   "opciones": [
+    {
+     "texto": "Etoxietè"
+    },
+    {
+     "texto": "1-etoxi-1-etè",
+     "trampa": "afegir localitzadors que no cal"
+    },
+    {
+     "texto": "Etoxietà",
+     "trampa": "oblidar el doble enllaç"
+    },
+    {
+     "texto": "Etiloxietè",
+     "trampa": "usar etil en lloc de etoxi"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La cadena principal és l'etè i el grup O-CH₂-CH₃ és el radical etoxi. Els localitzadors serien tots 1 i per això no s'escriuen."
+  },
+  {
+   "id": "qui-t3-0071",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura per substitució",
+   "dificultad": 5,
+   "enunciado": "Quina és la fórmula del 5-etoxi-2,3-dimetilheptà?",
+   "ayuda_larga": "En la nomenclatura per substitució s'escull la cadena principal (la més llarga) i el grup -O-R' es tracta com un radical: metoxi, etoxi, propoxi... S'escriuen els radicals amb localitzador i per ordre alfabètic, i al final el nom de la cadena. Quan el localitzador sempre seria 1, no s'escriu: CH₃-O-CH₂-CH₃ és el metoxietà. Exemple: CH₃-CH(O-CH₃)-CH₃ és el 2-metoxipropà.",
+   "fuente_pagina": 21,
+   "fuente_cara": 21,
+   "opciones": [
+    {
+     "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH(O-CH₂-CH₃)-CH₂-CH₂-CH₃",
+     "trampa": "col·locar l'etoxi al carboni 4"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(O-CH₂-CH₃)-CH₂-CH₃"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(CH₂-CH₃)-CH₂-CH₃",
+     "trampa": "oblidar l'oxigen: és un etil"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(O-CH₃)-CH₂-CH₂-CH₃",
+     "trampa": "usar metoxi en lloc d'etoxi i allargar la cadena"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La cadena és de 7 carbonis amb metils als carbonis 2 i 3 i el grup etoxi (O-CH₂-CH₃) al carboni 5. Cal vigilar que l'oxigen hi sigui i que l'etoxi quedi on toca."
+  },
+  {
+   "id": "qui-t3-0072",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Èters: nomenclatura per substitució",
+   "dificultad": 3,
+   "enunciado": "En CH₃-O-CH₂-CH₃ la cadena principal és de 2 carbonis i el grup O-CH₃ passa a ser el radical metoxi.",
+   "ayuda_larga": "En la nomenclatura per substitució s'escull la cadena principal (la més llarga) i el grup -O-R' es tracta com un radical: metoxi, etoxi, propoxi... S'escriuen els radicals amb localitzador i per ordre alfabètic, i al final el nom de la cadena. Quan el localitzador sempre seria 1, no s'escriu: CH₃-O-CH₂-CH₃ és el metoxietà. Exemple: CH₃-CH(O-CH₃)-CH₃ és el 2-metoxipropà.",
+   "fuente_pagina": 21,
+   "fuente_cara": 21,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "pensar que l'oxigen forma part de la cadena"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Per substitució s'escull la cadena més llarga (età) i l'altre costat de l'oxigen, O-CH₃, es converteix en el radical metoxi: metoxietà."
+  },
+  {
+   "id": "qui-t3-0073",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Aldehids",
+   "dificultad": 1,
+   "enunciado": "Quina terminació indica un aldehid?",
+   "ayuda_larga": "Els aldehids tenen el grup -CHO (R-CHO), que sempre és a l'extrem de la cadena. La cadena es numera començant pel carboni del -CHO i la terminació és -al. Amb dos grups -CHO s'usa di-. Exemple: CH₃-CH₂-CHO és el propanal, de 3 carbonis; l'aldehid del benzè és el benzaldehid.",
+   "fuente_pagina": 22,
+   "fuente_cara": 22,
+   "opciones": [
+    {
+     "texto": "-ol",
+     "trampa": "confondre l'aldehid amb l'alcohol"
+    },
+    {
+     "texto": "-ona",
+     "trampa": "confondre l'aldehid amb la cetona"
+    },
+    {
+     "texto": "-oic",
+     "trampa": "confondre l'aldehid amb l'àcid carboxílic"
+    },
+    {
+     "texto": "-al"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El grup -CHO dona la terminació -al: etanal, propanal, butanal. Regla: -al aldehid, -ol alcohol, -ona cetona, -oic àcid."
+  },
+  {
+   "id": "qui-t3-0074",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Aldehids",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom de CH₂=CH-CH₂-CHO?",
+   "ayuda_larga": "Els aldehids tenen el grup -CHO (R-CHO), que sempre és a l'extrem de la cadena. La cadena es numera començant pel carboni del -CHO i la terminació és -al. Amb dos grups -CHO s'usa di-. Exemple: CH₃-CH₂-CHO és el propanal, de 3 carbonis; l'aldehid del benzè és el benzaldehid.",
+   "fuente_pagina": 22,
+   "fuente_cara": 22,
+   "opciones": [
+    {
+     "texto": "1-butenal",
+     "trampa": "numerar pel doble enllaç i no pel grup CHO"
+    },
+    {
+     "texto": "3-butenal"
+    },
+    {
+     "texto": "2-butenal",
+     "trampa": "situar malament el doble enllaç"
+    },
+    {
+     "texto": "3-butenol",
+     "trampa": "confondre l'aldehid amb l'alcohol"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La numeració comença pel carboni del -CHO. El doble enllaç queda entre els carbonis 3 i 4, i el nom és 3-butenal."
+  },
+  {
+   "id": "qui-t3-0075",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Aldehids",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-CH(CH₃)-CH₂-CHO?",
+   "ayuda_larga": "Els aldehids tenen el grup -CHO (R-CHO), que sempre és a l'extrem de la cadena. La cadena es numera començant pel carboni del -CHO i la terminació és -al. Amb dos grups -CHO s'usa di-. Exemple: CH₃-CH₂-CHO és el propanal, de 3 carbonis; l'aldehid del benzè és el benzaldehid.",
+   "fuente_pagina": 22,
+   "fuente_cara": 22,
+   "opciones": [
+    {
+     "texto": "2-metilbutanal",
+     "trampa": "situar malament el radical"
+    },
+    {
+     "texto": "3-metilbutanal"
+    },
+    {
+     "texto": "3-metilpentanal",
+     "trampa": "comptar un carboni de més"
+    },
+    {
+     "texto": "3-metilbutanol",
+     "trampa": "confondre l'aldehid amb l'alcohol"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Es numera des del -CHO: aquest és el carboni 1, el 2 és el CH₂ i el metil penja del carboni 3. La cadena és de 4 carbonis, per tant 3-metilbutanal."
+  },
+  {
+   "id": "qui-t3-0076",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Aldehids",
+   "dificultad": 2,
+   "enunciado": "Per anomenar un aldehid, la cadena principal es numera començant pel carboni del grup -CHO.",
+   "ayuda_larga": "Els aldehids tenen el grup -CHO (R-CHO), que sempre és a l'extrem de la cadena. La cadena es numera començant pel carboni del -CHO i la terminació és -al. Amb dos grups -CHO s'usa di-. Exemple: CH₃-CH₂-CHO és el propanal, de 3 carbonis; l'aldehid del benzè és el benzaldehid.",
+   "fuente_pagina": 22,
+   "fuente_cara": 22,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que s'ha de començar pel radical més proper"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El grup -CHO és sempre a l'extrem de la cadena i el seu carboni és l'1."
+  },
+  {
+   "id": "qui-t3-0077",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Cetones",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom per substitució de CH₃-CO-CH₂-CH₃?",
+   "ayuda_larga": "Les cetones tenen el grup carbonil -CO- entre dos carbonis. En la nomenclatura radicofuncional es citen els radicals per ordre alfabètic i la paraula cetona; en la nomenclatura per substitució s'escull la cadena que conté el -CO-, es numera perquè tingui el localitzador més baix i s'acaba en -ona. Si el -CO- és secundari s'usa el prefix oxo-. Exemple: CH₃-CO-CH₂-CH₃ és la butanona (el localitzador 2 no cal).",
+   "fuente_pagina": 23,
+   "fuente_cara": 23,
+   "opciones": [
+    {
+     "texto": "2-butanona",
+     "trampa": "afegir un localitzador que no cal"
+    },
+    {
+     "texto": "Butanal",
+     "trampa": "confondre la cetona amb l'aldehid"
+    },
+    {
+     "texto": "Propanona",
+     "trampa": "comptar un carboni de menys"
+    },
+    {
+     "texto": "Butanona"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La cadena té 4 carbonis i el carbonil és al segon, però en la butanona el -CO- sempre seria el 2 i no s'escriu. La terminació és -ona."
+  },
+  {
+   "id": "qui-t3-0078",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Cetones",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₂=CH-CO-CH₃?",
+   "ayuda_larga": "Les cetones tenen el grup carbonil -CO- entre dos carbonis. En la nomenclatura radicofuncional es citen els radicals per ordre alfabètic i la paraula cetona; en la nomenclatura per substitució s'escull la cadena que conté el -CO-, es numera perquè tingui el localitzador més baix i s'acaba en -ona. Si el -CO- és secundari s'usa el prefix oxo-. Exemple: CH₃-CO-CH₂-CH₃ és la butanona (el localitzador 2 no cal).",
+   "fuente_pagina": 23,
+   "fuente_cara": 23,
+   "opciones": [
+    {
+     "texto": "1-buten-3-ona",
+     "trampa": "numerar pel doble enllaç i no pel carbonil"
+    },
+    {
+     "texto": "3-butenal",
+     "trampa": "confondre la cetona amb l'aldehid"
+    },
+    {
+     "texto": "3-buten-2-ol",
+     "trampa": "confondre la cetona amb l'alcohol"
+    },
+    {
+     "texto": "3-buten-2-ona"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El carbonil és el grup principal i ha de tenir el número més baix: el 2. El doble enllaç queda al 3, i el nom és 3-buten-2-ona."
+  },
+  {
+   "id": "qui-t3-0079",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Cetones",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de CH₃-CO-CH₂-CHO?",
+   "ayuda_larga": "Les cetones tenen el grup carbonil -CO- entre dos carbonis. En la nomenclatura radicofuncional es citen els radicals per ordre alfabètic i la paraula cetona; en la nomenclatura per substitució s'escull la cadena que conté el -CO-, es numera perquè tingui el localitzador més baix i s'acaba en -ona. Si el -CO- és secundari s'usa el prefix oxo-. Exemple: CH₃-CO-CH₂-CH₃ és la butanona (el localitzador 2 no cal).",
+   "fuente_pagina": 23,
+   "fuente_cara": 23,
+   "opciones": [
+    {
+     "texto": "1,3-butandiona",
+     "trampa": "tractar l'aldehid com si fos una cetona"
+    },
+    {
+     "texto": "3-butanonal",
+     "trampa": "posar dos sufixos"
+    },
+    {
+     "texto": "2-oxobutanal",
+     "trampa": "situar malament el carbonil"
+    },
+    {
+     "texto": "3-oxobutanal"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'aldehid té preferència, per tant la cadena es numera des del -CHO i el -CO- passa a ser secundari. S'indica amb el prefix oxo- al carboni 3: 3-oxobutanal."
+  },
+  {
+   "id": "qui-t3-0080",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Cetones",
+   "dificultad": 5,
+   "enunciado": "Quina és la fórmula del 3-isopropil-2,4-pentadiona?",
+   "ayuda_larga": "Les cetones tenen el grup carbonil -CO- entre dos carbonis. En la nomenclatura radicofuncional es citen els radicals per ordre alfabètic i la paraula cetona; en la nomenclatura per substitució s'escull la cadena que conté el -CO-, es numera perquè tingui el localitzador més baix i s'acaba en -ona. Si el -CO- és secundari s'usa el prefix oxo-. Exemple: CH₃-CO-CH₂-CH₃ és la butanona (el localitzador 2 no cal).",
+   "fuente_pagina": 23,
+   "fuente_cara": 23,
+   "opciones": [
+    {
+     "texto": "CH₃-CO-CH[CH₂-CH₂-CH₃]-CO-CH₃",
+     "trampa": "confondre l'isopropil amb el propil"
+    },
+    {
+     "texto": "CH₃-CO-CH₂-CO-CH(CH₃)₂",
+     "trampa": "posar l'isopropil al final de la cadena"
+    },
+    {
+     "texto": "CH₃-CO-CH[CH(CH₃)₂]-CO-CH₃"
+    },
+    {
+     "texto": "CH₃-CO-CH[CH(CH₃)₂]-CHO",
+     "trampa": "confondre una cetona amb un aldehid"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La cadena és de 5 carbonis amb grups carbonil als carbonis 2 i 4 i un isopropil, CH(CH₃)₂, al carboni central. Isopropil és ramificat, no és el propil lineal."
+  },
+  {
+   "id": "qui-t3-0081",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Èters, aldehids i cetones",
+   "concepto": "Cetones",
+   "dificultad": 3,
+   "enunciado": "Quan el grup -CO- no és la funció principal, s'indica amb el prefix hidroxi-.",
+   "ayuda_larga": "Les cetones tenen el grup carbonil -CO- entre dos carbonis. En la nomenclatura radicofuncional es citen els radicals per ordre alfabètic i la paraula cetona; en la nomenclatura per substitució s'escull la cadena que conté el -CO-, es numera perquè tingui el localitzador més baix i s'acaba en -ona. Si el -CO- és secundari s'usa el prefix oxo-. Exemple: CH₃-CO-CH₂-CH₃ és la butanona (el localitzador 2 no cal).",
+   "fuente_pagina": 23,
+   "fuente_cara": 23,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre els prefixos oxo- i hidroxi-"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El grup -CO- secundari s'indica amb el prefix oxo-. El prefix hidroxi- és per al grup -OH."
+  },
+  {
+   "id": "qui-t3-0082",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids carboxílics",
+   "dificultad": 1,
+   "enunciado": "Quin és el grup funcional dels àcids carboxílics?",
+   "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+   "fuente_pagina": 24,
+   "fuente_cara": 24,
+   "opciones": [
+    {
+     "texto": "-CHO",
+     "trampa": "confondre l'àcid amb l'aldehid"
+    },
+    {
+     "texto": "-CO-",
+     "trampa": "confondre l'àcid amb la cetona"
+    },
+    {
+     "texto": "-OH",
+     "trampa": "confondre l'àcid amb l'alcohol"
+    },
+    {
+     "texto": "-COOH"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El grup carboxil, -COOH, combina un carbonil i un hidroxil en el mateix carboni. Per això el seu carboni sempre és a l'extrem de la cadena."
+  },
+  {
+   "id": "qui-t3-0083",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids carboxílics",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom de CH₃-COOH?",
+   "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+   "fuente_pagina": 24,
+   "fuente_cara": 24,
+   "opciones": [
+    {
+     "texto": "Àcid metanoic",
+     "trampa": "no comptar el carboni del grup COOH"
+    },
+    {
+     "texto": "Etanal",
+     "trampa": "confondre l'àcid amb l'aldehid"
+    },
+    {
+     "texto": "Etanol",
+     "trampa": "confondre l'àcid amb l'alcohol"
+    },
+    {
+     "texto": "Àcid etanoic"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La cadena té 2 carbonis, comptant el del -COOH, i la terminació dels àcids és -oic. És l'àcid etanoic, conegut com àcid acètic."
+  },
+  {
+   "id": "qui-t3-0084",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids carboxílics",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom de CH₃-CH=CH-COOH?",
+   "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+   "fuente_pagina": 24,
+   "fuente_cara": 24,
+   "opciones": [
+    {
+     "texto": "Àcid 2-butenoic"
+    },
+    {
+     "texto": "Àcid 3-butenoic",
+     "trampa": "numerar per l'extrem equivocat"
+    },
+    {
+     "texto": "Àcid 2-butanoic",
+     "trampa": "usar la terminació -à d'alcà amb un doble enllaç"
+    },
+    {
+     "texto": "2-butenoic",
+     "trampa": "oblidar la paraula àcid"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La numeració comença pel carboni del -COOH, i el doble enllaç queda entre els carbonis 2 i 3. El nom comença per la paraula àcid i acaba en -oic."
+  },
+  {
+   "id": "qui-t3-0085",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids carboxílics",
+   "dificultad": 2,
+   "enunciado": "L'àcid etanoic també es coneix com a àcid acètic.",
+   "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+   "fuente_pagina": 24,
+   "fuente_cara": 24,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que l'àcid acètic és un compost diferent"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'àcid acètic és el nom habitual de CH₃-COOH, que sistemàticament és l'àcid etanoic."
+  },
+  {
+   "id": "qui-t3-0086",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids carboxílics",
+   "dificultad": 3,
+   "enunciado": "Un àcid carboxílic es numera començant per l'extrem més proper als radicals.",
+   "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+   "fuente_pagina": 24,
+   "fuente_cara": 24,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "aplicar la regla dels alcans en lloc de la dels àcids"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La numeració d'un àcid comença sempre pel carboni del grup -COOH, que és el carboni 1."
+  },
+  {
+   "id": "qui-t3-0087",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids dicarboxílics i cíclics",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de HOOC-CH₂-COOH?",
+   "ayuda_larga": "Si hi ha dos grups -COOH s'usa el prefix di-: àcid propandioic. Quan el localitzador d'un radical només pot ser un (per exemple el 2 en una cadena de tres carbonis), no s'escriu: àcid metilpropanoic i àcid metilpropandioic. Quan el -COOH està unit a un cicle s'usa el sufix -carboxílic: àcid ciclobutancarboxílic. L'àcid del benzè és l'àcid benzoic.",
+   "fuente_pagina": 25,
+   "fuente_cara": 25,
+   "opciones": [
+    {
+     "texto": "Àcid etandioic",
+     "trampa": "comptar només els carbonis dels grups COOH"
+    },
+    {
+     "texto": "Àcid propanoic",
+     "trampa": "oblidar un dels dos grups carboxil"
+    },
+    {
+     "texto": "Àcid propandioic"
+    },
+    {
+     "texto": "Àcid dipropanoic",
+     "trampa": "confondre di- amb duplicar la cadena"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Hi ha tres carbonis, comptant els dos dels grups -COOH, i dos grups àcid. Per això és l'àcid propandioic."
+  },
+  {
+   "id": "qui-t3-0088",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids dicarboxílics i cíclics",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de HOOC-CH(CH₃)-COOH?",
+   "ayuda_larga": "Si hi ha dos grups -COOH s'usa el prefix di-: àcid propandioic. Quan el localitzador d'un radical només pot ser un (per exemple el 2 en una cadena de tres carbonis), no s'escriu: àcid metilpropanoic i àcid metilpropandioic. Quan el -COOH està unit a un cicle s'usa el sufix -carboxílic: àcid ciclobutancarboxílic. L'àcid del benzè és l'àcid benzoic.",
+   "fuente_pagina": 25,
+   "fuente_cara": 25,
+   "opciones": [
+    {
+     "texto": "Àcid 2-metilpropandioic",
+     "trampa": "afegir un localitzador que no cal"
+    },
+    {
+     "texto": "Àcid metilpropanoic",
+     "trampa": "oblidar un dels dos grups carboxil"
+    },
+    {
+     "texto": "Àcid metilbutandioic",
+     "trampa": "comptar un carboni de més a la cadena"
+    },
+    {
+     "texto": "Àcid metilpropandioic"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La cadena és de 3 carbonis amb dos grups àcid i el metil només pot estar al carboni 2. Com en l'àcid metilpropanoic, aquest localitzador no s'escriu."
+  },
+  {
+   "id": "qui-t3-0089",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Àcids dicarboxílics i cíclics",
+   "dificultad": 4,
+   "enunciado": "Com s'anomena un cicle de 4 carbonis que porta un grup -COOH?",
+   "ayuda_larga": "Si hi ha dos grups -COOH s'usa el prefix di-: àcid propandioic. Quan el localitzador d'un radical només pot ser un (per exemple el 2 en una cadena de tres carbonis), no s'escriu: àcid metilpropanoic i àcid metilpropandioic. Quan el -COOH està unit a un cicle s'usa el sufix -carboxílic: àcid ciclobutancarboxílic. L'àcid del benzè és l'àcid benzoic.",
+   "fuente_pagina": 25,
+   "fuente_cara": 25,
+   "opciones": [
+    {
+     "texto": "Àcid ciclobutanoic",
+     "trampa": "tractar el cicle com a cadena amb el sufix -oic"
+    },
+    {
+     "texto": "Carboxiciclobutà",
+     "trampa": "usar el prefix carboxi- quan el -COOH és la funció principal"
+    },
+    {
+     "texto": "Àcid ciclobutancarboxílic"
+    },
+    {
+     "texto": "Àcid ciclobutandioic",
+     "trampa": "confondre el sufix -carboxílic amb di-"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Quan el -COOH penja d'un cicle s'usa el sufix -carboxílic: àcid ciclobutancarboxílic. El prefix carboxi- només s'usa quan el grup és secundari."
+  },
+  {
+   "id": "qui-t3-0090",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 1,
+   "enunciado": "Quin sufix prenen els èsters, que deriven d'un àcid en -oic?",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "opciones": [
+    {
+     "texto": "-oic, igual que l'àcid",
+     "trampa": "creure que l'èster no canvia de sufix"
+    },
+    {
+     "texto": "-amida, seguit del radical",
+     "trampa": "confondre l'èster amb l'amida"
+    },
+    {
+     "texto": "-al, seguit del radical",
+     "trampa": "confondre l'èster amb l'aldehid"
+    },
+    {
+     "texto": "-oat, seguit de «de» i el radical"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El sufix -oic de l'àcid canvia per -oat i s'afegeix «de» i el radical. Exemple: àcid etanoic, etanoat d'etil."
+  },
+  {
+   "id": "qui-t3-0091",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 3,
+   "enunciado": "Quin és el nom de CH₃-COO-CH₂-CH₃?",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "opciones": [
+    {
+     "texto": "Propanoat de metil",
+     "trampa": "intercanviar la part de l'àcid i la del radical"
+    },
+    {
+     "texto": "Etanoat de metil",
+     "trampa": "confondre el radical etil amb metil"
+    },
+    {
+     "texto": "Etanoic d'etil",
+     "trampa": "mantenir el sufix -oic de l'àcid"
+    },
+    {
+     "texto": "Etanoat d'etil"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La part de l'àcid té 2 carbonis, és l'etanoat, i el radical és l'etil. El nom és etanoat d'etil, també dit acetat d'etil."
+  },
+  {
+   "id": "qui-t3-0092",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-CH₂-COO-CH(CH₃)-CH₃?",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "opciones": [
+    {
+     "texto": "Etanoat d'isopropil",
+     "trampa": "comptar un carboni de menys a la part de l'àcid"
+    },
+    {
+     "texto": "Propanoat d'isopropil"
+    },
+    {
+     "texto": "Propanoat de propil",
+     "trampa": "confondre l'isopropil amb el propil lineal"
+    },
+    {
+     "texto": "Isopropanoat de propil",
+     "trampa": "intercanviar la part de l'àcid i la del radical"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La part de l'àcid és CH₃-CH₂-COO, de 3 carbonis: propanoat. El radical ramificat CH(CH₃)₂ és l'isopropil. El nom és propanoat d'isopropil."
+  },
+  {
+   "id": "qui-t3-0093",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-CH(CH₃)-COO-CH₃?",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "opciones": [
+    {
+     "texto": "Metilpropanoat d'etil",
+     "trampa": "comptar el radical amb dos carbonis"
+    },
+    {
+     "texto": "Metilbutanoat de metil",
+     "trampa": "comptar un carboni de més a la part de l'àcid"
+    },
+    {
+     "texto": "Metilpropanoat de metil"
+    },
+    {
+     "texto": "Metilpropanoic de metil",
+     "trampa": "mantenir el sufix -oic de l'àcid"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "L'àcid és el metilpropanoic i el radical que substitueix l'hidrogen és el metil. Es canvia -oic per -oat: metilpropanoat de metil."
+  },
+  {
+   "id": "qui-t3-0094",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 4,
+   "enunciado": "Quina és la fórmula del benzoat de fenil?",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "opciones": [
+    {
+     "texto": "C₆H₅-COO-CH₃",
+     "trampa": "usar un metil en lloc d'un fenil"
+    },
+    {
+     "texto": "C₆H₅-COO-C₆H₅"
+    },
+    {
+     "texto": "C₆H₅-O-C₆H₅",
+     "trampa": "confondre l'èster amb l'èter"
+    },
+    {
+     "texto": "C₆H₅-CO-C₆H₅",
+     "trampa": "confondre l'èster amb la cetona"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El benzoat ve de l'àcid benzoic, C₆H₅-COOH, i el radical fenil, C₆H₅-, substitueix l'hidrogen del -COOH. Resultat: C₆H₅-COO-C₆H₅."
+  },
+  {
+   "id": "qui-t3-0095",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 3,
+   "enunciado": "El compost CH₃-COO-CH₃ s'anomena etanoat de metil.",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "confondre la part de l'àcid amb la del radical"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Ve de l'àcid etanoic i el radical que substitueix l'hidrogen és el metil: etanoat de metil."
+  },
+  {
+   "id": "qui-t3-0096",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Àcids carboxílics i èsters",
+   "concepto": "Ésters",
+   "dificultad": 2,
+   "enunciado": "En els èsters s'escriu la paraula àcid davant del nom, igual que en els àcids carboxílics.",
+   "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "fuente_pagina": 26,
+   "fuente_cara": 26,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "copiar el format dels àcids en els èsters"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els èsters s'anomenen amb el sufix -oat i «de» més el radical, sense la paraula àcid. Només els àcids la porten."
+  },
+  {
+   "id": "qui-t3-0097",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amines",
+   "dificultad": 1,
+   "enunciado": "De quina molècula deriven les amines?",
+   "ayuda_larga": "Les amines deriven de l'amoníac, NH₃, en substituir hidrògens per radicals. Són primàries (1 radical), secundàries (2) o terciàries (3). S'anomenen citant els radicals units al nitrogen per ordre alfabètic seguits del sufix -amina, amb di- o tri- si es repeteixen. Exemple: CH₃-NH-CH₂-CH₃ és l'etilmetilamina; l'amina del benzè és la fenilamina (anilina).",
+   "fuente_pagina": 27,
+   "fuente_cara": 27,
+   "opciones": [
+    {
+     "texto": "De l'aigua, H₂O",
+     "trampa": "confondre les amines amb els alcohols"
+    },
+    {
+     "texto": "Del metà, CH₄",
+     "trampa": "confondre les amines amb els hidrocarburs"
+    },
+    {
+     "texto": "De l'amoníac, NH₃"
+    },
+    {
+     "texto": "De l'àcid carboxílic, R-COOH",
+     "trampa": "confondre les amines amb les amides"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Una amina és un amoníac en què un, dos o tres hidrògens han estat substituïts per radicals. Regla: amina = NH₃ amb radicals."
+  },
+  {
+   "id": "qui-t3-0098",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amines",
+   "dificultad": 2,
+   "enunciado": "Com es classifica l'amina CH₃-N(CH₃)-CH₂-CH₃?",
+   "ayuda_larga": "Les amines deriven de l'amoníac, NH₃, en substituir hidrògens per radicals. Són primàries (1 radical), secundàries (2) o terciàries (3). S'anomenen citant els radicals units al nitrogen per ordre alfabètic seguits del sufix -amina, amb di- o tri- si es repeteixen. Exemple: CH₃-NH-CH₂-CH₃ és l'etilmetilamina; l'amina del benzè és la fenilamina (anilina).",
+   "fuente_pagina": 27,
+   "fuente_cara": 27,
+   "opciones": [
+    {
+     "texto": "Primària",
+     "trampa": "oblidar els radicals metil"
+    },
+    {
+     "texto": "Secundària",
+     "trampa": "comptar només dos radicals diferents"
+    },
+    {
+     "texto": "Amida",
+     "trampa": "confondre l'amina amb l'amida"
+    },
+    {
+     "texto": "Terciària"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "El nitrogen porta tres radicals: dos metils i un etil. Amb tres radicals és una amina terciària."
+  },
+  {
+   "id": "qui-t3-0099",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amines",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-NH-CH₂-CH₃?",
+   "ayuda_larga": "Les amines deriven de l'amoníac, NH₃, en substituir hidrògens per radicals. Són primàries (1 radical), secundàries (2) o terciàries (3). S'anomenen citant els radicals units al nitrogen per ordre alfabètic seguits del sufix -amina, amb di- o tri- si es repeteixen. Exemple: CH₃-NH-CH₂-CH₃ és l'etilmetilamina; l'amina del benzè és la fenilamina (anilina).",
+   "fuente_pagina": 27,
+   "fuente_cara": 27,
+   "opciones": [
+    {
+     "texto": "Etilmetilamina"
+    },
+    {
+     "texto": "Metiletilamina",
+     "trampa": "no ordenar els radicals alfabèticament"
+    },
+    {
+     "texto": "Dimetilamina",
+     "trampa": "comptar dos radicals iguals"
+    },
+    {
+     "texto": "Etilamina",
+     "trampa": "oblidar el metil"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Els radicals units al nitrogen són etil i metil. S'ordenen alfabèticament i s'afegeix el sufix -amina: etilmetilamina."
+  },
+  {
+   "id": "qui-t3-0100",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amines",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-N(CH₃)-CH₂-CH₃?",
+   "ayuda_larga": "Les amines deriven de l'amoníac, NH₃, en substituir hidrògens per radicals. Són primàries (1 radical), secundàries (2) o terciàries (3). S'anomenen citant els radicals units al nitrogen per ordre alfabètic seguits del sufix -amina, amb di- o tri- si es repeteixen. Exemple: CH₃-NH-CH₂-CH₃ és l'etilmetilamina; l'amina del benzè és la fenilamina (anilina).",
+   "fuente_pagina": 27,
+   "fuente_cara": 27,
+   "opciones": [
+    {
+     "texto": "Dimetiletilamina",
+     "trampa": "ordenar pel prefix di- i no pel nom del radical"
+    },
+    {
+     "texto": "Trimetilamina",
+     "trampa": "creure que tots els radicals són metil"
+    },
+    {
+     "texto": "Etildimetilamina"
+    },
+    {
+     "texto": "Etilmetilamina",
+     "trampa": "oblidar un dels dos metils"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Hi ha un etil i dos metils. L'etil va primer per ordre alfabètic i els dos metils porten di-: etildimetilamina."
+  },
+  {
+   "id": "qui-t3-0101",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amines",
+   "dificultad": 3,
+   "enunciado": "Una amina terciària té el nitrogen unit a tres radicals.",
+   "ayuda_larga": "Les amines deriven de l'amoníac, NH₃, en substituir hidrògens per radicals. Són primàries (1 radical), secundàries (2) o terciàries (3). S'anomenen citant els radicals units al nitrogen per ordre alfabètic seguits del sufix -amina, amb di- o tri- si es repeteixen. Exemple: CH₃-NH-CH₂-CH₃ és l'etilmetilamina; l'amina del benzè és la fenilamina (anilina).",
+   "fuente_pagina": 27,
+   "fuente_cara": 27,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que només n'hi ha dos de radicals"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les amines es classifiquen pel nombre de radicals units al nitrogen: 1 primària, 2 secundària i 3 terciària."
+  },
+  {
+   "id": "qui-t3-0102",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amides",
+   "dificultad": 2,
+   "enunciado": "Quin canvi converteix un àcid carboxílic en una amida?",
+   "ayuda_larga": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+   "fuente_pagina": 28,
+   "fuente_cara": 28,
+   "opciones": [
+    {
+     "texto": "Substituir l'hidrogen del -COOH per un radical",
+     "trampa": "confondre l'amida amb l'èster"
+    },
+    {
+     "texto": "Substituir el grup -COOH per -CHO",
+     "trampa": "confondre l'amida amb l'aldehid"
+    },
+    {
+     "texto": "Afegir un radical al nitrogen de l'amoníac",
+     "trampa": "confondre l'amida amb l'amina"
+    },
+    {
+     "texto": "Substituir el grup -OH pel grup -NH₂"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'amida es forma quan el -OH de l'àcid es canvia per -NH₂, i per això es diu -amida. Si es canvia l'hidrogen es forma un èster."
+  },
+  {
+   "id": "qui-t3-0103",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amides",
+   "dificultad": 2,
+   "enunciado": "Quin és el nom de CH₃-CO-NH₂?",
+   "ayuda_larga": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+   "fuente_pagina": 28,
+   "fuente_cara": 28,
+   "opciones": [
+    {
+     "texto": "Etanamina",
+     "trampa": "confondre el sufix -amida amb -amina"
+    },
+    {
+     "texto": "Etanamida"
+    },
+    {
+     "texto": "Àcid etanamida",
+     "trampa": "mantenir la paraula àcid"
+    },
+    {
+     "texto": "Metanamida",
+     "trampa": "no comptar el carboni del grup carbonil"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Deriva de l'àcid etanoic, de 2 carbonis, i -oic es canvia per -amida sense la paraula àcid. Resultat: etanamida."
+  },
+  {
+   "id": "qui-t3-0104",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amides",
+   "dificultad": 4,
+   "enunciado": "Quin és el nom de CH₃-CO-NH-CH₃?",
+   "ayuda_larga": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+   "fuente_pagina": 28,
+   "fuente_cara": 28,
+   "opciones": [
+    {
+     "texto": "N-metiletanamida"
+    },
+    {
+     "texto": "Metiletanamida",
+     "trampa": "oblidar la N- del radical del nitrogen"
+    },
+    {
+     "texto": "N-etilmetanamida",
+     "trampa": "intercanviar la cadena de l'àcid i el radical del nitrogen"
+    },
+    {
+     "texto": "N-metilpropanamida",
+     "trampa": "comptar el radical del nitrogen dins la cadena"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'amida deriva de l'etanoic (2 carbonis) i el nitrogen porta un metil, que s'indica amb N- davant: N-metiletanamida."
+  },
+  {
+   "id": "qui-t3-0105",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amides",
+   "dificultad": 5,
+   "enunciado": "Quina és la fórmula de la N,N,3-trimetilbutanamida?",
+   "ayuda_larga": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+   "fuente_pagina": 28,
+   "fuente_cara": 28,
+   "opciones": [
+    {
+     "texto": "CH₃-CH(CH₃)-CH₂-CO-NH-CH₃",
+     "trampa": "posar només un metil al nitrogen"
+    },
+    {
+     "texto": "CH₃-CH₂-CH(CH₃)-CO-N(CH₃)₂",
+     "trampa": "posar el metil de la cadena al carboni 2"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH₂-CO-N(CH₃)₂"
+    },
+    {
+     "texto": "CH₃-CH(CH₃)-CH₂-CH₂-N(CH₃)₂",
+     "trampa": "confondre l'amida amb una amina"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Butanamida és una cadena de 4 carbonis amb el -CO-NH₂ al carboni 1. Els dos N indiquen dos metils al nitrogen i el 3 un metil al carboni 3 de la cadena."
+  },
+  {
+   "id": "qui-t3-0106",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Amides",
+   "dificultad": 2,
+   "enunciado": "Les amides s'anomenen amb la paraula àcid davant, com els àcids carboxílics.",
+   "ayuda_larga": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+   "fuente_pagina": 28,
+   "fuente_cara": 28,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "copiar el format dels àcids en les amides"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Les amides s'anomenen canviant -oic per -amida, sense la paraula àcid. Només els àcids la porten."
+  },
+  {
+   "id": "qui-t3-0107",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Nitrils",
+   "dificultad": 3,
+   "enunciado": "Com s'anomena CH₃-CH₂-C≡N en nomenclatura funcional?",
+   "ayuda_larga": "Els nitrils tenen el grup ciano -C≡N (R-CN), amb un nitrogen unit al carboni per un triple enllaç. En casos senzills s'usa la nomenclatura funcional: la paraula cianur, la partícula «de» i el nom del radical unit al grup. Exemple: CH₃-CH₂-C≡N és el cianur d'etil. Recorda que el carboni del -CN no forma part del radical.",
+   "fuente_pagina": 29,
+   "fuente_cara": 29,
+   "opciones": [
+    {
+     "texto": "Cianur d'etil"
+    },
+    {
+     "texto": "Cianur de propil",
+     "trampa": "comptar el carboni del grup CN dins del radical"
+    },
+    {
+     "texto": "Cianur de metil",
+     "trampa": "oblidar un carboni del radical"
+    },
+    {
+     "texto": "Etanoat d'etil",
+     "trampa": "confondre el nitril amb l'èster"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "El grup -C≡N s'anomena cianur i el radical unit és CH₃-CH₂-, l'etil. Per tant és el cianur d'etil. El carboni del -CN no compta en el radical."
+  },
+  {
+   "id": "qui-t3-0108",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Ordre de preferència dels grups",
+   "dificultad": 2,
+   "enunciado": "Quin prefix s'utilitza per al grup -OH quan no és la funció principal?",
+   "ayuda_larga": "Quan hi ha més d'un grup funcional, la cadena principal és la que conté la funció preferent i les altres s'anomenen com a substituents amb prefix. L'ordre és: àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina, èter, doble enllaç, triple enllaç i enllaç senzill. Prefixos com a substituent: carboxi-, oxicarbonil-, carbamoïl-, ciano-, formil-, oxo-, hidroxi-, amino-. Exemple: en OHC-CH₂-CH₂-OH l'aldehid mana i l'alcohol és hidroxi-: 3-hidroxipropanal.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "Oxo-",
+     "trampa": "confondre amb el prefix de la cetona"
+    },
+    {
+     "texto": "Hidroxi-"
+    },
+    {
+     "texto": "Amino-",
+     "trampa": "confondre amb el prefix del grup -NH₂"
+    },
+    {
+     "texto": "Formil-",
+     "trampa": "confondre amb el prefix de l'aldehid"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Quan una altra funció té preferència, l'alcohol s'indica amb el prefix hidroxi-. Oxo- és per al carbonil, amino- per a l'amina i formil- per a l'aldehid."
+  },
+  {
+   "id": "qui-t3-0109",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Ordre de preferència dels grups",
+   "dificultad": 3,
+   "enunciado": "Quina d'aquestes seqüències ordena els grups de més a menys preferència?",
+   "ayuda_larga": "Quan hi ha més d'un grup funcional, la cadena principal és la que conté la funció preferent i les altres s'anomenen com a substituents amb prefix. L'ordre és: àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina, èter, doble enllaç, triple enllaç i enllaç senzill. Prefixos com a substituent: carboxi-, oxicarbonil-, carbamoïl-, ciano-, formil-, oxo-, hidroxi-, amino-. Exemple: en OHC-CH₂-CH₂-OH l'aldehid mana i l'alcohol és hidroxi-: 3-hidroxipropanal.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "Àcid carboxílic, cetona, aldehid, alcohol",
+     "trampa": "intercanviar l'aldehid i la cetona"
+    },
+    {
+     "texto": "Alcohol, cetona, aldehid, àcid carboxílic",
+     "trampa": "invertir tot l'ordre"
+    },
+    {
+     "texto": "Amina, alcohol, cetona, aldehid",
+     "trampa": "invertir tot l'ordre i barrejar"
+    },
+    {
+     "texto": "Àcid carboxílic, aldehid, alcohol, amina"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "L'ordre és àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina. L'aldehid va abans que la cetona i que l'alcohol, i l'amina va després."
+  },
+  {
+   "id": "qui-t3-0110",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Ordre de preferència dels grups",
+   "dificultad": 5,
+   "enunciado": "Quin és el nom de HO-CH₂-CH₂-CHO?",
+   "ayuda_larga": "Quan hi ha més d'un grup funcional, la cadena principal és la que conté la funció preferent i les altres s'anomenen com a substituents amb prefix. L'ordre és: àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina, èter, doble enllaç, triple enllaç i enllaç senzill. Prefixos com a substituent: carboxi-, oxicarbonil-, carbamoïl-, ciano-, formil-, oxo-, hidroxi-, amino-. Exemple: en OHC-CH₂-CH₂-OH l'aldehid mana i l'alcohol és hidroxi-: 3-hidroxipropanal.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "3-oxo-1-propanol",
+     "trampa": "triar l'alcohol com a funció principal"
+    },
+    {
+     "texto": "3-hidroxipropanal"
+    },
+    {
+     "texto": "3-propanolal",
+     "trampa": "posar dos sufixos"
+    },
+    {
+     "texto": "1,3-propandiol",
+     "trampa": "tractar l'aldehid com a alcohol"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "L'aldehid té preferència sobre l'alcohol, per tant la cadena es numera des del -CHO i l'-OH s'indica amb el prefix hidroxi- al carboni 3. El nom és 3-hidroxipropanal."
+  },
+  {
+   "id": "qui-t3-0111",
+   "bloque": "Química",
+   "tema": "T3 Formulació orgànica",
+   "subtema": "Amines, amides, nitrils i ordre de preferència",
+   "concepto": "Ordre de preferència dels grups",
+   "dificultad": 3,
+   "enunciado": "En l'ordre de preferència, l'àcid carboxílic va abans que l'èster i que l'amida.",
+   "ayuda_larga": "Quan hi ha més d'un grup funcional, la cadena principal és la que conté la funció preferent i les altres s'anomenen com a substituents amb prefix. L'ordre és: àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina, èter, doble enllaç, triple enllaç i enllaç senzill. Prefixos com a substituent: carboxi-, oxicarbonil-, carbamoïl-, ciano-, formil-, oxo-, hidroxi-, amino-. Exemple: en OHC-CH₂-CH₂-OH l'aldehid mana i l'alcohol és hidroxi-: 3-hidroxipropanal.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "pensar que una funció més simple va abans"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'ordre comença amb l'àcid carboxílic, seguit de l'èster i de l'amida."
+  }
+ ]
+}

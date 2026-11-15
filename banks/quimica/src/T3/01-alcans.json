@@ -1,0 +1,311 @@
+{
+ "subtema": "Alcans",
+ "conceptos": [
+  {
+   "nombre": "Alcans: fórmula general i cadena lineal",
+   "pagina": 5,
+   "cara": 5,
+   "ayuda": "Els alcans són hidrocarburs acíclics i saturats: només tenen C i H i tots els enllaços C-C són senzills. La fórmula general és CₙH₂ₙ₊₂. Una cadena lineal s'anomena amb el prefix del nombre de carbonis (met-, et-, prop-, but-, pent-, hex-, hept-, oct-, non-, dec-) i la terminació -à. Exemple: CH₃-CH₂-CH₃ té 3 carbonis i és el propà, C₃H₈.",
+   "test": [
+    [
+     1,
+     "Quin és el nom de l'alcà lineal CH₃-CH₂-CH₂-CH₃?",
+     "Butà",
+     [
+      "Propà",
+      "trampa: comptar només tres carbonis"
+     ],
+     [
+      "Pentà",
+      "trampa: comptar un carboni de més"
+     ],
+     [
+      "Butè",
+      "trampa: confondre la terminació -à dels alcans amb la -è dels alquens"
+     ],
+     "La cadena té 4 carbonis, que és el prefix but-, i com que només hi ha enllaços senzills acaba en -à. Regla: compta els carbonis i afegeix -à."
+    ],
+    [
+     2,
+     "Quina és la fórmula molecular d'un alcà de 6 carbonis?",
+     "C₆H₁₄",
+     [
+      "C₆H₁₂",
+      "trampa: usar la fórmula dels alquens, CₙH₂ₙ"
+     ],
+     [
+      "C₆H₁₀",
+      "trampa: usar la fórmula dels alquins, CₙH₂ₙ₋₂"
+     ],
+     [
+      "C₆H₁₆",
+      "trampa: sumar 4 en lloc de 2"
+     ],
+     "La fórmula dels alcans és CₙH₂ₙ₊₂, i amb n = 6 dona 2·6 + 2 = 14 hidrògens. Regla: dos hidrògens per carboni i dos més."
+    ],
+    [
+     4,
+     "Un alcà acíclic té 38 àtoms d'hidrogen. Quants carbonis té?",
+     "18",
+     [
+      "19",
+      "trampa: dividir 38 entre 2 sense restar el 2"
+     ],
+     [
+      "20",
+      "trampa: sumar 2 en lloc de restar-lo"
+     ],
+     [
+      "36",
+      "trampa: restar 2 però oblidar dividir entre 2"
+     ],
+     "Cal resoldre 2n + 2 = 38. Restem 2 i queda 2n = 36, per tant n = 18. Regla: primer treu el +2 i després divideix entre 2."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "Els alcans són hidrocarburs saturats perquè tots els enllaços C-C són senzills.",
+     true,
+     "Un alcà només té enllaços senzills i per això porta el màxim nombre d'hidrògens possible, és a dir, és saturat.",
+     "trampa: creure que «saturat» vol dir que hi ha algun enllaç múltiple"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Radicals",
+   "pagina": 6,
+   "cara": 6,
+   "ayuda": "Un radical és una ramificació que penja de la cadena principal. S'anomena com l'alcà del mateix nombre de carbonis però canviant la terminació -à per -il: CH₃- és metil, CH₃-CH₂- és etil i CH₃-CH₂-CH₂- és propil. Alguns radicals tenen noms especials: isopropil, secbutil, isobutil i tercbutil.",
+   "test": [
+    [
+     1,
+     "Com s'anomena el radical CH₃-CH₂-?",
+     "Etil",
+     [
+      "Metil",
+      "trampa: comptar només un carboni"
+     ],
+     [
+      "Età",
+      "trampa: mantenir la terminació -à de l'alcà"
+     ],
+     [
+      "Propil",
+      "trampa: comptar un carboni de més"
+     ],
+     "El radical té 2 carbonis, per tant ve de l'età. Com que és un radical, la terminació -à canvia per -il: etil."
+    ],
+    [
+     2,
+     "Com es passa del nom d'un alcà al del radical corresponent?",
+     "Canviant la terminació -à per -il",
+     [
+      "Canviant la terminació -à per -è",
+      "trampa: confondre els radicals amb els alquens"
+     ],
+     [
+      "Afegint el prefix ciclo- al nom",
+      "trampa: confondre els radicals amb els cicles"
+     ],
+     [
+      "Afegint la terminació -oxi al nom",
+      "trampa: confondre els radicals amb els èters"
+     ],
+     "Per als radicals, la -à de l'alcà es converteix en -il: metà, metil; età, etil; propà, propil. Regla: radical = alcà amb -il."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "El radical CH₃-CH₂-CH₂- s'anomena etil.",
+     false,
+     "Té tres carbonis, per tant és el radical propil. L'etil només en té dos: CH₃-CH₂-.",
+     "trampa: comptar només els carbonis CH₂ i oblidar el CH₃ de l'extrem"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Cadena principal i numeració",
+   "pagina": 7,
+   "cara": 7,
+   "ayuda": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+   "test": [
+    [
+     2,
+     "Com es tria la cadena principal d'un alcà ramificat?",
+     "La seqüència més llarga d'àtoms de carboni",
+     [
+      "La que té més ramificacions, encara que sigui més curta",
+      "trampa: aplicar el criteri d'empat com si fos el criteri principal"
+     ],
+     [
+      "La que es dibuixa en horitzontal",
+      "trampa: pensar que depèn de com està dibuixada la molècula"
+     ],
+     [
+      "La que acaba en el radical amb el nom més llarg",
+      "trampa: deixar-se portar pel nom dels radicals"
+     ],
+     "La cadena principal és la més llarga. Les ramificacions només decideixen quan dues cadenes tenen la mateixa longitud. Regla: primer longitud, després ramificacions."
+    ],
+    [
+     3,
+     "Dues cadenes d'un alcà tenen la mateixa longitud. Quina s'escull com a cadena principal?",
+     "La que té més ramificacions",
+     [
+      "La que en té menys, per simplificar el nom",
+      "trampa: invertir el criteri d'empat"
+     ],
+     [
+      "La primera que es troba de dalt a baix",
+      "trampa: no aplicar cap criteri"
+     ],
+     [
+      "La que té els radicals més llargs",
+      "trampa: inventar un criteri que no existeix"
+     ],
+     "Quan hi ha empat de longitud, s'escull la cadena que deixa més radicals. Regla: igual de llarga, més ramificada."
+    ],
+    [
+     3,
+     "Un alcà de 7 carbonis té dos radicals que, numerant d'esquerra a dreta, queden als carbonis 2 i 5. Quins localitzadors s'han d'usar?",
+     "2,5",
+     [
+      "3,6",
+      "trampa: triar la numeració que dona els localitzadors més alts"
+     ],
+     [
+      "2,6",
+      "trampa: barrejar els dos sentits de numeració"
+     ],
+     [
+      "3,5",
+      "trampa: barrejar els dos sentits de numeració"
+     ],
+     "En una cadena de 7, el carboni 2 és el 6 des de l'altre extrem i el 5 és el 3. Les dues numeracions donen 2,5 i 3,6, i guanya la que té els números més baixos: 2,5."
+    ],
+    [
+     5,
+     "Un heptà té un etil i un metil. Numerant des de qualsevol extrem, els radicals queden als carbonis 3 i 5. Per on s'ha de començar a numerar?",
+     "Pel costat que dona el 3 a l'etil, primer a l'alfabet",
+     [
+      "Pel costat que dona el 3 al metil, el radical més curt",
+      "trampa: triar el radical més curt en lloc de l'alfabètic"
+     ],
+     [
+      "Per qualsevol extrem, perquè el nom resultant és el mateix",
+      "trampa: creure que l'empat no afecta el nom"
+     ],
+     [
+      "Pel costat que dona el 5 a l'etil, per fer-lo últim",
+      "trampa: invertir el criteri alfabètic"
+     ],
+     "Quan els localitzadors són iguals pels dos costats, el número més baix va al radical que s'anomena primer per ordre alfabètic. Etil va abans que metil, per tant el 3 és per a l'etil: 3-etil-5-metilheptà."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Per numerar un alcà ramificat, sempre es comença per l'extrem esquerre del dibuix.",
+     false,
+     "La numeració es tria perquè els radicals tinguin els localitzadors més baixos possibles, i pot començar per qualsevol dels dos extrems.",
+     "trampa: pensar que el sentit de lectura marca la numeració"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Nom dels alcans ramificats",
+   "pagina": 8,
+   "cara": 8,
+   "ayuda": "Per anomenar el compost s'escriuen els radicals per ordre alfabètic, cadascun amb el seu localitzador i un guionet, i al final el nom de l'alcà de la cadena principal. Si un radical es repeteix s'usen els prefixos di-, tri-, tetra-, que no compten per a l'ordre alfabètic. Exemple: 3-etil-2,4-dimetilpentà és una cadena de 5 carbonis amb un etil al carboni 3 i dos metils als carbonis 2 i 4.",
+   "test": [
+    [
+     2,
+     "Quin és el nom de CH₃-CH₂-CH(CH₃)-CH₂-CH₃?",
+     "3-metilpentà",
+     [
+      "2-metilpentà",
+      "trampa: posar el localitzador a l'extrem i no al carboni on penja el radical"
+     ],
+     [
+      "2-etilbutà",
+      "trampa: triar una cadena de 4 carbonis en lloc de la de 5"
+     ],
+     [
+      "3-metilhexà",
+      "trampa: comptar el metil com a part de la cadena"
+     ],
+     "La cadena més llarga té 5 carbonis i el metil penja del carboni central, el 3. Així és 3-metilpentà. Regla: cadena més llarga, i el localitzador és el carboni on penja el radical."
+    ],
+    [
+     5,
+     "Quin és el nom de CH₃-CH₂-CH(CH₂-CH₃)-CH₂-CH₂-CH₃?",
+     "3-etilhexà",
+     [
+      "4-etilhexà",
+      "trampa: numerar des de l'extrem equivocat"
+     ],
+     [
+      "3-propilpentà",
+      "trampa: escollir una cadena de 5 carbonis en lloc de la de 6"
+     ],
+     [
+      "3-etilheptà",
+      "trampa: comptar un carboni de més a la cadena"
+     ],
+     "La cadena més llarga passa per un etil, el carboni central i el propil: té 6 carbonis. L'etil que penja queda al carboni 3 començant per l'extrem més proper. Regla: busca primer la cadena més llarga, encara que estigui dibuixada torta."
+    ],
+    [
+     5,
+     "Quin és el nom de CH₃-CH(CH₃)-CH(CH₂-CH₃)-CH₂-CH₃?",
+     "3-etil-2-metilpentà",
+     [
+      "2-metil-3-etilpentà",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     [
+      "3-etil-4-metilpentà",
+      "trampa: numerar per l'extrem que dona localitzadors més alts"
+     ],
+     [
+      "3-etil-2-metilhexà",
+      "trampa: comptar un carboni de més a la cadena principal"
+     ],
+     "La cadena és de 5 carbonis. Numerant des de l'esquerra els radicals queden al 2 (metil) i al 3 (etil), que són més baixos que 3 i 4. L'etil s'escriu abans que el metil per ordre alfabètic."
+    ],
+    [
+     5,
+     "Quina és la fórmula de 2,3-dimetilpentà?",
+     "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH₃",
+     [
+      "CH₃-C(CH₃)₂-CH₂-CH₂-CH₃",
+      "trampa: posar els dos metils al mateix carboni (2,2-dimetilpentà)"
+     ],
+     [
+      "CH₃-CH(CH₃)-CH₂-CH(CH₃)-CH₃",
+      "trampa: separar els metils: és el 2,4-dimetilpentà"
+     ],
+     [
+      "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH₂-CH₃",
+      "trampa: fer la cadena d'un carboni de més: és el 2,3-dimetilhexà"
+     ],
+     "Pentà vol dir cadena de 5 carbonis, i els dos metils pengen dels carbonis contigus 2 i 3. Les altres opcions tenen els metils al 2 i al 2, o al 2 i al 4, o una cadena de 6. Regla: dibuixa la cadena, numera i col·loca cada radical."
+    ]
+   ],
+   "vf": [
+    [
+     4,
+     "En el nom 3-etil-2,4-dimetilpentà l'etil va abans que els metils perquè el prefix di- no compta per a l'ordre alfabètic.",
+     true,
+     "L'ordre alfabètic es fa amb el nom del radical (etil, metil) i els prefixos di-, tri- s'ignoren. Per això etil va primer, tot i que «dimetil» comença per d.",
+     "trampa: ordenar per «dimetil» i posar-lo abans que «etil»"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

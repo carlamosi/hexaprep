@@ -1,0 +1,84 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones bicuadradas y polinómicas",
+ "conceptos": [
+  {
+   "nombre": "Bicuadradas con soluciones reales",
+   "pagina": 3,
+   "ayuda": "Una ecuación bicuadrada es $ax^4+bx^2+c=0$. Se hace $t=x^2$ y queda $at^2+bt+c=0$. Se resuelve para $t$ y, para cada valor de $t$ positivo, se tiene $x=\\pm\\sqrt{t}$. Si $t$ sale negativo no da soluciones reales. Ejemplo: $x^4-5x^2+4=0$ da $t=1$ y $t=4$, luego $x=\\pm1$ y $x=\\pm2$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $x^4-17x^2+16=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -4,
+      -1,
+      1,
+      4
+     ],
+     "Con $t=x^2$: $t^2-17t+16=0$, con $t=1$ y $t=16$. Entonces $x=\\pm1$ y $x=\\pm4$.",
+     "[x for x in range(-20,21) if abs(x**4-17*x**2+16)<1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $4x^4-37x^2+9=0$. Escribe las soluciones reales separadas por punto y coma (puedes usar decimales).",
+     [
+      -3,
+      -0.5,
+      0.5,
+      3
+     ],
+     "Con $t=x^2$: $4t^2-37t+9=0$, y $t=\\frac{37\\pm35}{8}$, es decir $t=9$ y $t=\\frac14$. Entonces $x=\\pm3$ y $x=\\pm\\frac12$.",
+     "[k/2 for k in range(-20,21) if abs(4*(k/2)**4-37*(k/2)**2+9)<1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $x^4+5x^2-36=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      2
+     ],
+     "Con $t=x^2$: $t^2+5t-36=0$, con $t=4$ y $t=-9$. El valor $t=-9$ no da soluciones reales porque un cuadrado no puede ser negativo. Con $t=4$: $x=\\pm2$.",
+     "[x for x in range(-20,21) if abs(x**4+5*x**2-36)<1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Cambio de variable y ecuaciones reducibles",
+   "pagina": 3,
+   "ayuda": "Cuando aparece una potencia que se repite ($x^3$ en una ecuación de grado 6, o $x^2$ en una ecuación con fracciones) se hace un cambio de variable. En $ax^6+bx^3+c=0$ se pone $t=x^3$; se resuelve en $t$ y se deshace con $x=\\sqrt[3]{t}$ (la raíz cúbica existe también para números negativos). En ecuaciones con fracciones se multiplica antes por el denominador. Ejemplo: $x^6-9x^3+8=0$ da $t=1$ y $t=8$, luego $x=1$ y $x=2$.",
+   "problemas": [
+    [
+     3,
+     "Resuelve $x^6-9x^3+8=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      1,
+      2
+     ],
+     "Con $t=x^3$ queda $t^2-9t+8=0$, que da $t=1$ y $t=8$. Entonces $x=1$ y $x=2$. Las dos son reales y valen.",
+     "[x for x in range(-20, 21) if abs(x**6 - 9*x**3 + 8) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $x^6-19x^3-216=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      3
+     ],
+     "Con $t=x^3$: $t^2-19t-216=0$, y $t=\\frac{19\\pm35}{2}$, es decir $t=27$ y $t=-8$. Entonces $x=\\sqrt[3]{27}=3$ y $x=\\sqrt[3]{-8}=-2$.",
+     "[x for x in range(-20,21) if abs(x**6-19*x**3-216)<1e-9]"
+    ],
+    [
+     5,
+     "Resuelve $x^2=\\frac{12}{x^2-1}$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      2
+     ],
+     "Se multiplica por $x^2-1$ (que no puede ser 0): $x^2(x^2-1)=12$, es decir $x^4-x^2-12=0$. Con $t=x^2$: $t^2-t-12=0$, con $t=4$ y $t=-3$. El valor $t=-3$ no da soluciones reales. Con $t=4$: $x=\\pm2$, que no anulan el denominador.",
+     "[x for x in range(-20,21) if x not in (1,-1) and abs(x**2-12/(x**2-1))<1e-9]"
+    ]
+   ]
+  }
+ ]
+}

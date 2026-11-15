@@ -1,0 +1,3528 @@
+{
+ "asignatura": {
+  "nombre": "Català",
+  "idioma": "ca",
+  "color": "#D9822B",
+  "acento": "#D9822B"
+ },
+ "fuente": {
+  "nombre": "Català Normativa general",
+  "archivo": "Catala_Normativa_general.pdf"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "a1"
+ },
+ "preguntas": [
+  {
+   "id": "cat-n1-0001",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Penúltima lletra àtona",
+   "dificultad": 1,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La penúltima lletra d'un mot, si és àtona (no hi recau l'accent), és sempre una e. Per això escrivim dones, homes, nenes i alegres. També passa amb els verbs: tu cantes, ells canten. Si la vocal és tònica, s'escriu el que sona: ells cantaran porta a perquè la a és forta. Truc: si en dubtes, pregunta't si l'accent de la paraula cau just en aquesta vocal.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "nenes"
+    },
+    {
+     "texto": "nenas",
+     "trampa": "escriu la terminació castellana -as de «niñas»"
+    },
+    {
+     "texto": "nenis",
+     "trampa": "confon la vocal àtona amb una i"
+    },
+    {
+     "texto": "nénes",
+     "trampa": "posa accent a una síl·laba àtona"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La penúltima lletra àtona és sempre una e: nenes, dones. Regla: àtona, e."
+  },
+  {
+   "id": "cat-n1-0002",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Penúltima lletra àtona",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma verbal correcta?",
+   "ayuda_larga": "La penúltima lletra d'un mot, si és àtona (no hi recau l'accent), és sempre una e. Per això escrivim dones, homes, nenes i alegres. També passa amb els verbs: tu cantes, ells canten. Si la vocal és tònica, s'escriu el que sona: ells cantaran porta a perquè la a és forta. Truc: si en dubtes, pregunta't si l'accent de la paraula cau just en aquesta vocal.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "ells cantan",
+     "trampa": "calca la terminació -an del castellà"
+    },
+    {
+     "texto": "ells canton",
+     "trampa": "confon la e àtona amb una o"
+    },
+    {
+     "texto": "ells cantèn",
+     "trampa": "accentua una paraula plana"
+    },
+    {
+     "texto": "ells canten"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "En «canten» la vocal penúltima és àtona, per tant s'escriu e. Regla: àtona, e."
+  },
+  {
+   "id": "cat-n1-0003",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Penúltima lletra àtona",
+   "dificultad": 4,
+   "enunciado": "Per què «cantaran» s'escriu amb a?",
+   "ayuda_larga": "La penúltima lletra d'un mot, si és àtona (no hi recau l'accent), és sempre una e. Per això escrivim dones, homes, nenes i alegres. També passa amb els verbs: tu cantes, ells canten. Si la vocal és tònica, s'escriu el que sona: ells cantaran porta a perquè la a és forta. Truc: si en dubtes, pregunta't si l'accent de la paraula cau just en aquesta vocal.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "Perquè la penúltima lletra àtona sempre és a",
+     "trampa": "inverteix la regla i diu que l'àtona porta a"
+    },
+    {
+     "texto": "Perquè els verbs en futur sempre porten a",
+     "trampa": "creu que el temps verbal decideix la vocal"
+    },
+    {
+     "texto": "Perquè en català les formes en -n prefereixen la a",
+     "trampa": "inventa una regla sobre la terminació -n"
+    },
+    {
+     "texto": "Perquè la a d'aquesta forma és tònica"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La regla de la e només val per a vocals àtones. A «cantaran» l'accent cau en la a, per això s'escriu el que sona. Regla: tònica, el que sona."
+  },
+  {
+   "id": "cat-n1-0004",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Penúltima lletra àtona",
+   "dificultad": 5,
+   "enunciado": "Quina frase conté un error?",
+   "ayuda_larga": "La penúltima lletra d'un mot, si és àtona (no hi recau l'accent), és sempre una e. Per això escrivim dones, homes, nenes i alegres. També passa amb els verbs: tu cantes, ells canten. Si la vocal és tònica, s'escriu el que sona: ells cantaran porta a perquè la a és forta. Truc: si en dubtes, pregunta't si l'accent de la paraula cau just en aquesta vocal.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "Elles canten una cançó molt alegra."
+    },
+    {
+     "texto": "Ells canten una cançó molt alegre.",
+     "trampa": "pensa que «canten» s'ha d'escriure amb a"
+    },
+    {
+     "texto": "Elles cantaran una cançó molt alegre.",
+     "trampa": "creu que «cantaran» hauria de portar e"
+    },
+    {
+     "texto": "Les nenes canten una cançó molt alegre.",
+     "trampa": "pensa que «nenes» s'ha d'escriure amb a"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'error és «alegra»: els adjectius com «alegre» són invariables (en castellà «alegre» també). Les altres frases tenen la e àtona i la a tònica ben escrites."
+  },
+  {
+   "id": "cat-n1-0005",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Penúltima lletra àtona",
+   "dificultad": 3,
+   "enunciado": "«Cantaran» s'escriu amb a perquè en aquesta forma verbal la a és una vocal tònica.",
+   "ayuda_larga": "La penúltima lletra d'un mot, si és àtona (no hi recau l'accent), és sempre una e. Per això escrivim dones, homes, nenes i alegres. També passa amb els verbs: tu cantes, ells canten. Si la vocal és tònica, s'escriu el que sona: ells cantaran porta a perquè la a és forta. Truc: si en dubtes, pregunta't si l'accent de la paraula cau just en aquesta vocal.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que la regla de la e àtona també s'aplica a les vocals tòniques"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'accent d'«ells cantaran» cau en la penúltima síl·laba, de manera que la a és tònica i s'escriu el que sona."
+  },
+  {
+   "id": "cat-n1-0006",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Substantius masculins i femenins",
+   "dificultad": 1,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "para",
+     "trampa": "escriu una a final com en un femení"
+    },
+    {
+     "texto": "pari",
+     "trampa": "confon la e final amb una i"
+    },
+    {
+     "texto": "pare"
+    },
+    {
+     "texto": "paré",
+     "trampa": "tracta el mot com una aguda"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Els masculins acostumen a acabar en -e: pare, home. Regla: masculí, normalment -e."
+  },
+  {
+   "id": "cat-n1-0007",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Substantius masculins i femenins",
+   "dificultad": 2,
+   "enunciado": "Quin d'aquests substantius masculins NO és una excepció i acaba en -e?",
+   "ayuda_larga": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "artista",
+     "trampa": "creu que tots els masculins acaben en -e"
+    },
+    {
+     "texto": "drama",
+     "trampa": "creu que tots els masculins acaben en -e"
+    },
+    {
+     "texto": "home"
+    },
+    {
+     "texto": "planeta",
+     "trampa": "creu que tots els masculins acaben en -e"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Home» segueix la regla general. En canvi artista (-ista), drama (-ma) i planeta (-ta) són excepcions que acaben en -a, com en castellà."
+  },
+  {
+   "id": "cat-n1-0008",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Substantius masculins i femenins",
+   "dificultad": 4,
+   "enunciado": "Quin grup només conté substantius masculins acabats en -a?",
+   "ayuda_larga": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "drama, problema, planeta"
+    },
+    {
+     "texto": "pare, home, artista",
+     "trampa": "inclou pare i home, que acaben en -e"
+    },
+    {
+     "texto": "artista, mare, drama",
+     "trampa": "inclou mare, que és femení"
+    },
+    {
+     "texto": "dona, planeta, problema",
+     "trampa": "inclou dona, que és femení"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Drama (-ma), problema (-ma) i planeta (-ta) són masculins amb -a final. Mare i dona són femenins; pare i home acaben en -e."
+  },
+  {
+   "id": "cat-n1-0009",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Substantius masculins i femenins",
+   "dificultad": 5,
+   "enunciado": "Quina frase conté un error?",
+   "ayuda_larga": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "El pare va veure aquell drama.",
+     "trampa": "creu que «drama» ha d'acabar en -e"
+    },
+    {
+     "texto": "L'artista va dibuixar un planeta.",
+     "trampa": "creu que «artista» i «planeta» han d'acabar en -e"
+    },
+    {
+     "texto": "La febre i la torre eren altes.",
+     "trampa": "creu que «febre» i «torre» han d'acabar en -a"
+    },
+    {
+     "texto": "Va mirar la imatga amb molta atenció."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Imatge» és una excepció femenina: acaba en -e com en castellà «imagen». Les altres frases mostren les excepcions ben escrites."
+  },
+  {
+   "id": "cat-n1-0010",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Substantius masculins i femenins",
+   "dificultad": 3,
+   "enunciado": "«Fase» s'escriu «fasa» perquè és un substantiu femení.",
+   "ayuda_larga": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "aplicar la regla general del femení en -a sense recordar l'excepció"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Fase és una de les excepcions femenines que acaben en -e (com mare, febre, torre, imatge, verge i classe)."
+  },
+  {
+   "id": "cat-n1-0011",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Adjectius invariables i variables",
+   "dificultad": 1,
+   "enunciado": "Quin d'aquests adjectius és invariable en singular?",
+   "ayuda_larga": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "ample",
+     "trampa": "confon un adjectiu de dues terminacions amb un d'invariable"
+    },
+    {
+     "texto": "alegre"
+    },
+    {
+     "texto": "culte",
+     "trampa": "confon un adjectiu de dues terminacions amb un d'invariable"
+    },
+    {
+     "texto": "pobre",
+     "trampa": "creu que pobre és invariable com en castellà"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Alegre» és invariable perquè en castellà també ho és. Ample/a, culte/a i pobre/a tenen femení en -a."
+  },
+  {
+   "id": "cat-n1-0012",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Adjectius invariables i variables",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta del femení singular?",
+   "ayuda_larga": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "una noia intel·ligenta",
+     "trampa": "afegeix -a perquè és femení"
+    },
+    {
+     "texto": "una noia intel·ligent"
+    },
+    {
+     "texto": "una noia intel·ligente",
+     "trampa": "calca la terminació castellana «inteligente»"
+    },
+    {
+     "texto": "una noia inteligent",
+     "trampa": "oblida la ela geminada"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En castellà «inteligente» és invariable, per tant en català diem «una noia intel·ligent» i no pas amb -a. Regla: invariable en castellà, invariable en català."
+  },
+  {
+   "id": "cat-n1-0013",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Adjectius invariables i variables",
+   "dificultad": 4,
+   "enunciado": "Per què diem «una noia capaç» i no «una noia capaça»?",
+   "ayuda_larga": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "Perquè en castellà «capaz» és invariable"
+    },
+    {
+     "texto": "Perquè els adjectius acabats en -ç no tenen femení",
+     "trampa": "inventa una regla sobre la lletra final"
+    },
+    {
+     "texto": "Perquè «noia» demana l'adjectiu en masculí",
+     "trampa": "creu que l'adjectiu no concorda amb el gènere"
+    },
+    {
+     "texto": "Perquè el femení de «capaç» s'escriu amb e final",
+     "trampa": "creu que tots els femenins s'escriuen amb e"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Regla: l'adjectiu és invariable en català perquè en castellà («capaz») també ho és."
+  },
+  {
+   "id": "cat-n1-0014",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Adjectius invariables i variables",
+   "dificultad": 5,
+   "enunciado": "Quin adjectiu és variable en català encara que en castellà és invariable?",
+   "ayuda_larga": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "opciones": [
+    {
+     "texto": "pobre (pobra)"
+    },
+    {
+     "texto": "rude",
+     "trampa": "aplica l'excepció contrària: rude és invariable en català"
+    },
+    {
+     "texto": "xerraire",
+     "trampa": "aplica l'excepció contrària: xerraire és invariable en català"
+    },
+    {
+     "texto": "alegre",
+     "trampa": "tracta un adjectiu normal com una excepció"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Pobre/a és una excepció: en castellà «pobre» és invariable però en català fa pobra. Rude i xerraire són les excepcions contràries."
+  },
+  {
+   "id": "cat-n1-0015",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Adjectius invariables i variables",
+   "dificultad": 3,
+   "enunciado": "El femení singular de «fidel» és «fidela».",
+   "ayuda_larga": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que tot adjectiu femení ha d'acabar en -a"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En castellà «fiel» és invariable, de manera que en català diem «una noia fidel»."
+  },
+  {
+   "id": "cat-n1-0016",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Interior de mot i llista d'excepcions",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Si la a o la e àtona és a l'interior del mot, cerquem el mot primitiu o escrivim com en castellà. Hi ha una llista d'excepcions: en català a i en castellà e (davant, xocolata, ramat) o en català e i en castellà a (assemblea, treball, sergent, monestir). En els verbs jeure, néixer i treure, la e canvia a a si no és forta: naixeran. Si és forta, s'escriu el que sona: neixo.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "devant",
+     "trampa": "calca la e del castellà «delante»"
+    },
+    {
+     "texto": "devent",
+     "trampa": "escriu e en totes dues síl·labes"
+    },
+    {
+     "texto": "davant"
+    },
+    {
+     "texto": "davànt",
+     "trampa": "accentua una paraula plana acabada en consonant"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Davant» és una excepció de la llista: en català porta a i en castellà «delante» porta e."
+  },
+  {
+   "id": "cat-n1-0017",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Interior de mot i llista d'excepcions",
+   "dificultad": 4,
+   "enunciado": "Quina paraula s'escriu amb e en català, encara que en castellà porta a?",
+   "ayuda_larga": "Si la a o la e àtona és a l'interior del mot, cerquem el mot primitiu o escrivim com en castellà. Hi ha una llista d'excepcions: en català a i en castellà e (davant, xocolata, ramat) o en català e i en castellà a (assemblea, treball, sergent, monestir). En els verbs jeure, néixer i treure, la e canvia a a si no és forta: naixeran. Si és forta, s'escriu el que sona: neixo.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "afaitar",
+     "trampa": "confon la llista amb la contrària: en català porta a"
+    },
+    {
+     "texto": "assemblea"
+    },
+    {
+     "texto": "ramat",
+     "trampa": "confon la llista amb la contrària: en català porta a"
+    },
+    {
+     "texto": "xocolata",
+     "trampa": "confon la llista amb la contrària: en català porta a"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Assemblea» (castellà «asamblea») és de la llista de català e. Afaitar, ramat i xocolata porten a en català i e en castellà."
+  },
+  {
+   "id": "cat-n1-0018",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Interior de mot i llista d'excepcions",
+   "dificultad": 5,
+   "enunciado": "Quina forma del verb «néixer» és correcta?",
+   "ayuda_larga": "Si la a o la e àtona és a l'interior del mot, cerquem el mot primitiu o escrivim com en castellà. Hi ha una llista d'excepcions: en català a i en castellà e (davant, xocolata, ramat) o en català e i en castellà a (assemblea, treball, sergent, monestir). En els verbs jeure, néixer i treure, la e canvia a a si no és forta: naixeran. Si és forta, s'escriu el que sona: neixo.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "neixeran",
+     "trampa": "no aplica el canvi de e a a a la vocal àtona"
+    },
+    {
+     "texto": "naixaran",
+     "trampa": "aplica a a la e àtona de la terminació"
+    },
+    {
+     "texto": "naixeran"
+    },
+    {
+     "texto": "naixerán",
+     "trampa": "calca l'accent castellà"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La e canvia a a si no és forta: en «naixeran» la vocal de la primera síl·laba és àtona, per això porta a. En «neixo» és forta, per això porta e."
+  },
+  {
+   "id": "cat-n1-0019",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Interior de mot i llista d'excepcions",
+   "dificultad": 1,
+   "enunciado": "«Treball» s'escriu amb e, tot i que en castellà és «trabajo».",
+   "ayuda_larga": "Si la a o la e àtona és a l'interior del mot, cerquem el mot primitiu o escrivim com en castellà. Hi ha una llista d'excepcions: en català a i en castellà e (davant, xocolata, ramat) o en català e i en castellà a (assemblea, treball, sergent, monestir). En els verbs jeure, néixer i treure, la e canvia a a si no és forta: naixeran. Si és forta, s'escriu el que sona: neixo.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "aplicar la regla de copiar el castellà sense recordar l'excepció"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "«Treball» és una excepció de la llista: en català porta e i en castellà porta a."
+  },
+  {
+   "id": "cat-n1-0020",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "A/E àtones",
+   "concepto": "Interior de mot i llista d'excepcions",
+   "dificultad": 3,
+   "enunciado": "A «naixeran» la primera vocal és forta, per això s'escriu amb a.",
+   "ayuda_larga": "Si la a o la e àtona és a l'interior del mot, cerquem el mot primitiu o escrivim com en castellà. Hi ha una llista d'excepcions: en català a i en castellà e (davant, xocolata, ramat) o en català e i en castellà a (assemblea, treball, sergent, monestir). En els verbs jeure, néixer i treure, la e canvia a a si no és forta: naixeran. Si és forta, s'escriu el que sona: neixo.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre una vocal àtona amb una de tònica"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "A «naixeran» l'accent cau en la penúltima síl·laba (-ran), de manera que la a de «nai-» és àtona. Només en les formes amb vocal forta, com «neixo», s'escriu el que sona."
+  },
+  {
+   "id": "cat-n1-0021",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules agudes",
+   "dificultad": 1,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "cafe",
+     "trampa": "oblida l'accent d'una aguda acabada en vocal"
+    },
+    {
+     "texto": "cafè"
+    },
+    {
+     "texto": "càfe",
+     "trampa": "accentua la síl·laba equivocada"
+    },
+    {
+     "texto": "café",
+     "trampa": "posa accent tancat on el so és obert"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Cafè» és aguda i acaba en vocal, per tant porta accent. La e sona diferent en castellà (café), per això l'accent és obert."
+  },
+  {
+   "id": "cat-n1-0022",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules agudes",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "menu",
+     "trampa": "oblida l'accent d'una aguda acabada en u"
+    },
+    {
+     "texto": "ménu",
+     "trampa": "accentua la síl·laba equivocada"
+    },
+    {
+     "texto": "menù",
+     "trampa": "posa accent obert a una u, que sempre és tancat"
+    },
+    {
+     "texto": "menú"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Menú» és aguda acabada en vocal: porta accent. Les vocals i i u, quan porten accent, el porten tancat."
+  },
+  {
+   "id": "cat-n1-0023",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules agudes",
+   "dificultad": 4,
+   "enunciado": "Per què «depèn» porta accent?",
+   "ayuda_larga": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Perquè és plana i acaba en consonant",
+     "trampa": "confon aguda amb plana"
+    },
+    {
+     "texto": "Perquè és esdrúixola",
+     "trampa": "confon aguda amb esdrúixola"
+    },
+    {
+     "texto": "Perquè és un accent diacrític",
+     "trampa": "confon l'accent diacrític amb el general"
+    },
+    {
+     "texto": "Perquè és aguda i acaba en -en"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Les agudes acabades en -en porten accent: depèn, com Berlín (-in). Regla: aguda + en/in = accent."
+  },
+  {
+   "id": "cat-n1-0024",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules agudes",
+   "dificultad": 5,
+   "enunciado": "Quina frase conté un error d'accent?",
+   "ayuda_larga": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Va viatjar a Berlín en tren.",
+     "trampa": "creu que «Berlín» no porta accent"
+    },
+    {
+     "texto": "Va demanar un cafe i un tros de pastís."
+    },
+    {
+     "texto": "El procés va ser molt llarg.",
+     "trampa": "creu que «procés» no porta accent"
+    },
+    {
+     "texto": "Aquest menú inclou pastís.",
+     "trampa": "creu que «menú» no porta accent"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Cafe» hauria de portar accent: és aguda acabada en vocal. Berlín (-in), procés (-es), menú (-u) i pastís (-is) ja estan ben accentuats."
+  },
+  {
+   "id": "cat-n1-0025",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules agudes",
+   "dificultad": 3,
+   "enunciado": "Una paraula aguda acabada en vocal, com «germà», porta accent.",
+   "ayuda_larga": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "confondre una aguda amb una plana i creure que no s'accentua"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les agudes acabades en a, e, i, o, u porten accent: germà, cafè, menú."
+  },
+  {
+   "id": "cat-n1-0026",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules planes i esdrúixoles",
+   "dificultad": 1,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "exàmen",
+     "trampa": "accentua una plana acabada en -en"
+    },
+    {
+     "texto": "examen"
+    },
+    {
+     "texto": "examén",
+     "trampa": "tracta la paraula com una aguda"
+    },
+    {
+     "texto": "éxamen",
+     "trampa": "accentua l'antepenúltima síl·laba"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Examen» és plana i acaba en -en: no porta accent. Només s'accentuen les agudes acabades en -en."
+  },
+  {
+   "id": "cat-n1-0027",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules planes i esdrúixoles",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "examens",
+     "trampa": "oblida l'accent d'una plana acabada en -ns"
+    },
+    {
+     "texto": "exàmens"
+    },
+    {
+     "texto": "examéns",
+     "trampa": "tracta la paraula com una aguda"
+    },
+    {
+     "texto": "éxamens",
+     "trampa": "accentua l'antepenúltima síl·laba"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Exàmens» és plana i no acaba com les agudes (-ns), per tant porta accent."
+  },
+  {
+   "id": "cat-n1-0028",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules planes i esdrúixoles",
+   "dificultad": 4,
+   "enunciado": "Per què «família» porta accent?",
+   "ayuda_larga": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "Perquè és aguda i acaba en vocal",
+     "trampa": "confon esdrúixola amb aguda"
+    },
+    {
+     "texto": "Perquè és un accent diacrític",
+     "trampa": "confon l'accent diacrític amb el general"
+    },
+    {
+     "texto": "Perquè la síl·laba tònica és l'antepenúltima"
+    },
+    {
+     "texto": "Perquè la penúltima és tònica i acaba en -a",
+     "trampa": "creu que les planes acabades en vocal s'accentuen"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Família» es pronuncia fa-mí-li-a: la tònica és l'antepenúltima síl·laba. Les esdrúixoles sempre porten accent."
+  },
+  {
+   "id": "cat-n1-0029",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules planes i esdrúixoles",
+   "dificultad": 5,
+   "enunciado": "Quin conjunt de paraules està ben accentuat?",
+   "ayuda_larga": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "opciones": [
+    {
+     "texto": "exàmens, examen, família"
+    },
+    {
+     "texto": "examens, examen, família",
+     "trampa": "oblida l'accent d'una plana acabada en -ns"
+    },
+    {
+     "texto": "exàmens, exàmen, família",
+     "trampa": "accentua una plana acabada en -en"
+    },
+    {
+     "texto": "exàmens, examen, familia",
+     "trampa": "oblida l'accent d'una esdrúixola"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Exàmens porta accent (plana acabada en -ns), examen no (plana acabada en -en) i família sí (esdrúixola)."
+  },
+  {
+   "id": "cat-n1-0030",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Paraules planes i esdrúixoles",
+   "dificultad": 3,
+   "enunciado": "«Dia» s'escriu «día» perquè la i és tònica.",
+   "ayuda_larga": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+   "fuente_pagina": 2,
+   "fuente_cara": 2,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que el hiat sempre s'accentua, com en castellà «día»"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En català «dia» no s'accentua: es pronuncia di-a, és plana i acaba en vocal."
+  },
+  {
+   "id": "cat-n1-0031",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents diacrítics",
+   "dificultad": 1,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "Aquest més tinc més feina.",
+     "trampa": "confon el mes de l'any amb més"
+    },
+    {
+     "texto": "Aquest mes tinc mes feina.",
+     "trampa": "oblida l'accent de més"
+    },
+    {
+     "texto": "Aquest més tinc mes feina.",
+     "trampa": "inverteix les dues paraules"
+    },
+    {
+     "texto": "Aquest mes tinc més feina."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Mes» és la part de l'any (sense accent) i «més» és quantitat (amb accent)."
+  },
+  {
+   "id": "cat-n1-0032",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents diacrítics",
+   "dificultad": 2,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "Ella te té amb llet.",
+     "trampa": "inverteix el verb i la infusió"
+    },
+    {
+     "texto": "Ella té té amb llet.",
+     "trampa": "posa accent a les dues paraules"
+    },
+    {
+     "texto": "Ella te te amb llet.",
+     "trampa": "oblida l'accent del verb"
+    },
+    {
+     "texto": "Ella té te amb llet."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Té» és el verb tenir (amb accent) i «te» és la infusió (sense accent)."
+  },
+  {
+   "id": "cat-n1-0033",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents diacrítics",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "El sòl escalfa el sol.",
+     "trampa": "inverteix l'astre i la terra"
+    },
+    {
+     "texto": "El sol escalfa el sol.",
+     "trampa": "oblida l'accent de la terra"
+    },
+    {
+     "texto": "El sòl escalfa el sòl.",
+     "trampa": "posa l'accent a l'astre"
+    },
+    {
+     "texto": "El sol escalfa el sòl."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Sol» és l'astre (sense accent) i «sòl» és la terra (amb accent)."
+  },
+  {
+   "id": "cat-n1-0034",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents diacrítics",
+   "dificultad": 5,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "Tinc déu euros i crec en Déu.",
+     "trampa": "posa accent al numeral"
+    },
+    {
+     "texto": "Tinc deu euros i crec en Déu."
+    },
+    {
+     "texto": "Tinc deu euros i crec en Deu.",
+     "trampa": "oblida l'accent de la divinitat"
+    },
+    {
+     "texto": "Tinc déu euros i crec en Deu.",
+     "trampa": "inverteix el numeral i la divinitat"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Deu» (10) no porta accent. «Déu» amb majúscula, referit a la divinitat, sí."
+  },
+  {
+   "id": "cat-n1-0035",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents diacrítics",
+   "dificultad": 3,
+   "enunciado": "«Sí» amb accent s'escriu per afirmar, i «si» sense accent per expressar una condició.",
+   "ayuda_larga": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "confondre l'afirmació amb la condició"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Sí és l'afirmació i si és la condició: «Ha dit que sí» i «Si et sembla bé»."
+  },
+  {
+   "id": "cat-n1-0036",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents oberts i tancats",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "demá",
+     "trampa": "posa accent tancat a la a"
+    },
+    {
+     "texto": "demà"
+    },
+    {
+     "texto": "dema",
+     "trampa": "oblida l'accent d'una aguda acabada en a"
+    },
+    {
+     "texto": "dèmà",
+     "trampa": "accentua dues vocals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La a sempre s'accentua oberta: demà."
+  },
+  {
+   "id": "cat-n1-0037",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents oberts i tancats",
+   "dificultad": 4,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "arrós",
+     "trampa": "posa accent tancat tot i que la o sona diferent del castellà «arroz»"
+    },
+    {
+     "texto": "arros",
+     "trampa": "oblida l'accent d'una aguda acabada en -os"
+    },
+    {
+     "texto": "arròs"
+    },
+    {
+     "texto": "àrros",
+     "trampa": "accentua la síl·laba equivocada"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "La o és oberta perquè en castellà «arroz» sona diferent. Les agudes acabades en -os porten accent."
+  },
+  {
+   "id": "cat-n1-0038",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents oberts i tancats",
+   "dificultad": 5,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "opciones": [
+    {
+     "texto": "cançò",
+     "trampa": "posa accent obert tot i que sona igual que en castellà «canción»"
+    },
+    {
+     "texto": "cancó",
+     "trampa": "escriu c en lloc de ç"
+    },
+    {
+     "texto": "cansó",
+     "trampa": "escriu s en lloc de ç"
+    },
+    {
+     "texto": "cançó"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "La o és tancada perquè sona igual que en castellà («canción»). Davant d'una o s'escriu ç, no c ni s."
+  },
+  {
+   "id": "cat-n1-0039",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents oberts i tancats",
+   "dificultad": 1,
+   "enunciado": "«Església» porta accent tancat perquè la e sona igual que en castellà.",
+   "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que totes les e accentuades són obertes"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Quan la e o la o sonen igual que en castellà, s'accentuen tancades: església, avió, cançó."
+  },
+  {
+   "id": "cat-n1-0040",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Accentuació",
+   "concepto": "Accents oberts i tancats",
+   "dificultad": 3,
+   "enunciado": "«Pollí» porta accent obert perquè la i pot portar accent obert o tancat.",
+   "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+   "fuente_pagina": 3,
+   "fuente_cara": 3,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que la i es comporta com la e i la o"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La i i la u sempre porten accent tancat, igual que en castellà: pollí, Berlín, menú."
+  },
+  {
+   "id": "cat-n1-0041",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "La dièresi: què és i quan s'usa",
+   "dificultad": 1,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "veina",
+     "trampa": "oblida trencar el diftong i sona «vei-na»"
+    },
+    {
+     "texto": "vèina",
+     "trampa": "posa accent en lloc de dièresi"
+    },
+    {
+     "texto": "veïna"
+    },
+    {
+     "texto": "veïnà",
+     "trampa": "accentua l'última síl·laba"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Veïna» porta dièresi perquè no es pot accentuar la i sense canviar la tònica. Regla: si no es pot accentuar, dièresi."
+  },
+  {
+   "id": "cat-n1-0042",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "La dièresi: què és i quan s'usa",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "paisos",
+     "trampa": "oblida la dièresi: sonaria «pai-sos»"
+    },
+    {
+     "texto": "paìsos",
+     "trampa": "accent greu en lloc de dièresi"
+    },
+    {
+     "texto": "països"
+    },
+    {
+     "texto": "païssos",
+     "trampa": "dobla la essa sense motiu"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Països» porta dièresi per trencar el diftong. En canvi, el singular és «país» perquè s'hi pot posar accent."
+  },
+  {
+   "id": "cat-n1-0043",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "La dièresi: què és i quan s'usa",
+   "dificultad": 4,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "agraïa"
+    },
+    {
+     "texto": "agraía",
+     "trampa": "posa accent en lloc de dièresi"
+    },
+    {
+     "texto": "agraia",
+     "trampa": "oblida trencar el diftong"
+    },
+    {
+     "texto": "agraïem",
+     "trampa": "posa dièresi en una forma que es pot accentuar"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "«Agraïa» porta dièresi, però «agraíem» porta accent perquè la i és tònica i es pot accentuar."
+  },
+  {
+   "id": "cat-n1-0044",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "La dièresi: què és i quan s'usa",
+   "dificultad": 5,
+   "enunciado": "Per què escrivim «Lluïsa» amb dièresi i «Lluís» amb accent?",
+   "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "Perquè «Lluïsa» és femení i els femenins porten dièresi",
+     "trampa": "creu que el gènere decideix la dièresi"
+    },
+    {
+     "texto": "Perquè «Lluís» acaba en -s",
+     "trampa": "creu que la -s final decideix la dièresi"
+    },
+    {
+     "texto": "Perquè l'accent només s'usa en noms de persona masculins",
+     "trampa": "inventa una regla sobre el gènere"
+    },
+    {
+     "texto": "Perquè «Lluís» es pot accentuar i «Lluïsa» no"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "A «Lluís» la tònica cau en la i final, de manera que s'hi pot posar accent. A «Lluïsa» no, i cal la dièresi."
+  },
+  {
+   "id": "cat-n1-0045",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "La dièresi: què és i quan s'usa",
+   "dificultad": 3,
+   "enunciado": "La dièresi s'usa per trencar un diftong quan no es pot accentuar la paraula.",
+   "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que la dièresi és un tipus d'accent"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Aquesta és la funció de la dièresi: si no hi ha accent possible, trenca el diftong: veïna, països."
+  },
+  {
+   "id": "cat-n1-0046",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Casos especials de dièresi",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "agraiment",
+     "trampa": "oblida la dièresi d'un derivat d'«agrair»"
+    },
+    {
+     "texto": "agraíment",
+     "trampa": "posa accent en lloc de dièresi"
+    },
+    {
+     "texto": "agraïment"
+    },
+    {
+     "texto": "agrairment",
+     "trampa": "manté la -r de l'infinitiu"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Els derivats d'infinitius porten dièresi: agraïment, de l'infinitiu agrair."
+  },
+  {
+   "id": "cat-n1-0047",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Casos especials de dièresi",
+   "dificultad": 3,
+   "enunciado": "Quina paraula acabada en vocal + itat és correcta?",
+   "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "ingenuïtat"
+    },
+    {
+     "texto": "ingenuitat",
+     "trampa": "oblida la dièresi"
+    },
+    {
+     "texto": "ingenuítat",
+     "trampa": "posa accent en lloc de dièresi"
+    },
+    {
+     "texto": "ingenüitat",
+     "trampa": "posa la dièresi a la u"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les paraules acabades en vocal + itat porten dièresi a la i: ingenuïtat, continuïtat. L'única excepció és meitat."
+  },
+  {
+   "id": "cat-n1-0048",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Casos especials de dièresi",
+   "dificultad": 4,
+   "enunciado": "Quina és la forma correcta del futur d'«agrair»?",
+   "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "agrairé"
+    },
+    {
+     "texto": "agraïré",
+     "trampa": "posa dièresi a la terminació d'un futur"
+    },
+    {
+     "texto": "agrairè",
+     "trampa": "posa accent obert quan sona tancat"
+    },
+    {
+     "texto": "agraire",
+     "trampa": "oblida l'accent d'una aguda acabada en vocal"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Els futurs no porten mai dièresi a la terminació, i com que és aguda acabada en vocal porta accent: agrairé."
+  },
+  {
+   "id": "cat-n1-0049",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Casos especials de dièresi",
+   "dificultad": 5,
+   "enunciado": "Quina d'aquestes paraules s'escriu correctament amb dièresi?",
+   "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "heroïna"
+    },
+    {
+     "texto": "egoïsta",
+     "trampa": "afegeix dièresi a una paraula acabada en -ista"
+    },
+    {
+     "texto": "heroïsme",
+     "trampa": "afegeix dièresi a una paraula acabada en -isme"
+    },
+    {
+     "texto": "harmònïum",
+     "trampa": "afegeix dièresi a una paraula acabada en -um"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "«Heroïna» porta dièresi encara que «heroi» no. Les paraules acabades en -ista, -isme, -us i -um no en porten: egoista, heroisme, harmònium."
+  },
+  {
+   "id": "cat-n1-0050",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Casos especials de dièresi",
+   "dificultad": 1,
+   "enunciado": "L'infinitiu «agrair» s'escriu «agraïr» perquè la dièresi trenca el diftong.",
+   "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "aplicar la dièresi a la terminació d'un infinitiu"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Els infinitius no porten mai dièresi a la terminació: s'escriu agrair."
+  },
+  {
+   "id": "cat-n1-0051",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Casos especials de dièresi",
+   "dificultad": 3,
+   "enunciado": "La i de les terminacions -ista, -isme, -us i -um no porta dièresi (egoista, heroisme, Màrius, harmònium).",
+   "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "confondre aquest cas amb el de «veïna» i creure que sempre porten dièresi"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Exemples: egoista, egoisme, heroisme, Màrius, harmònium."
+  },
+  {
+   "id": "cat-n1-0052",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Dièresi amb gu, qu i cultismes en -al",
+   "dificultad": 1,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Quan «ue» o «ui» van precedits de g o q i volem que soni la u, s'escriu dièresi: aigües (però aigua), adeqüi (però adequar), ambigüitat, pingüí. Si no hi ha dièresi, la u no sona (guerra, aquella). D'acord amb la normativa del 2016, els cultismes acabats en -al ja no porten dièresi: fluidal, laical, trapezoidal.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "aigues",
+     "trampa": "oblida la dièresi: la u no sonaria"
+    },
+    {
+     "texto": "aigües"
+    },
+    {
+     "texto": "àigües",
+     "trampa": "accentua la síl·laba equivocada"
+    },
+    {
+     "texto": "aigúes",
+     "trampa": "posa accent en lloc de dièresi"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Aigües» porta dièresi perquè la u ha de sonar. El singular és «aigua»."
+  },
+  {
+   "id": "cat-n1-0053",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Dièresi amb gu, qu i cultismes en -al",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Quan «ue» o «ui» van precedits de g o q i volem que soni la u, s'escriu dièresi: aigües (però aigua), adeqüi (però adequar), ambigüitat, pingüí. Si no hi ha dièresi, la u no sona (guerra, aquella). D'acord amb la normativa del 2016, els cultismes acabats en -al ja no porten dièresi: fluidal, laical, trapezoidal.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "pingui",
+     "trampa": "oblida l'accent i la dièresi"
+    },
+    {
+     "texto": "pinguí",
+     "trampa": "oblida la dièresi: la u no sonaria"
+    },
+    {
+     "texto": "pingüí"
+    },
+    {
+     "texto": "pingüi",
+     "trampa": "posa dièresi però oblida l'accent d'una aguda"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Pingüí» necessita dièresi perquè la u ha de sonar i accent perquè és aguda acabada en vocal."
+  },
+  {
+   "id": "cat-n1-0054",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Dièresi amb gu, qu i cultismes en -al",
+   "dificultad": 4,
+   "enunciado": "Quina és la forma correcta de «adequar» en subjuntiu (que ell...)?",
+   "ayuda_larga": "Quan «ue» o «ui» van precedits de g o q i volem que soni la u, s'escriu dièresi: aigües (però aigua), adeqüi (però adequar), ambigüitat, pingüí. Si no hi ha dièresi, la u no sona (guerra, aquella). D'acord amb la normativa del 2016, els cultismes acabats en -al ja no porten dièresi: fluidal, laical, trapezoidal.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "adequi",
+     "trampa": "oblida la dièresi: la u no sonaria"
+    },
+    {
+     "texto": "adeqüi"
+    },
+    {
+     "texto": "adequí",
+     "trampa": "posa accent en lloc de dièresi"
+    },
+    {
+     "texto": "adecui",
+     "trampa": "escriu c en lloc de qu"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Davant de «i» i amb la u sonora, la q porta dièresi: adeqüi (però adequar)."
+  },
+  {
+   "id": "cat-n1-0055",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Dièresi amb gu, qu i cultismes en -al",
+   "dificultad": 5,
+   "enunciado": "Com s'escriu l'adjectiu de «fluid» acabat en -al?",
+   "ayuda_larga": "Quan «ue» o «ui» van precedits de g o q i volem que soni la u, s'escriu dièresi: aigües (però aigua), adeqüi (però adequar), ambigüitat, pingüí. Si no hi ha dièresi, la u no sona (guerra, aquella). D'acord amb la normativa del 2016, els cultismes acabats en -al ja no porten dièresi: fluidal, laical, trapezoidal.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "opciones": [
+    {
+     "texto": "fluïdal",
+     "trampa": "manté la dièresi malgrat la normativa del 2016"
+    },
+    {
+     "texto": "fluidal"
+    },
+    {
+     "texto": "fluídal",
+     "trampa": "posa accent en lloc de dièresi"
+    },
+    {
+     "texto": "fluidall",
+     "trampa": "escriu doble ela final"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "La normativa vigent des del 2016 suprimeix la dièresi dels cultismes acabats en -al: fluidal, laical, trapezoidal."
+  },
+  {
+   "id": "cat-n1-0056",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Dièresi amb gu, qu i cultismes en -al",
+   "dificultad": 3,
+   "enunciado": "«Ambigüitat» porta dièresi perquè la u de «gui» ha de sonar.",
+   "ayuda_larga": "Quan «ue» o «ui» van precedits de g o q i volem que soni la u, s'escriu dièresi: aigües (però aigua), adeqüi (però adequar), ambigüitat, pingüí. Si no hi ha dièresi, la u no sona (guerra, aquella). D'acord amb la normativa del 2016, els cultismes acabats en -al ja no porten dièresi: fluidal, laical, trapezoidal.",
+   "fuente_pagina": 4,
+   "fuente_cara": 4,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que la u de «gui» sempre sona"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La g seguida de u i i demana dièresi quan la u es pronuncia: ambigüitat, pingüí."
+  },
+  {
+   "id": "cat-n1-0057",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Diftongs",
+   "dificultad": 2,
+   "enunciado": "Quin d'aquests mots porta un diftong decreixent?",
+   "ayuda_larga": "Un diftong és la unió de dues vocals en una mateixa síl·laba. Els diftongs decreixents tenen i/u darrere d'una vocal: mai, pau, rei, peu. Els creixents són gu/qu més vocal quan la u sona (guant, pingüí) o i/u àtones a principi de paraula seguides de vocal (iogurt, hiena). No formen diftong gu/qu si la u no sona (guerra, aquella), vocal + ix/ig (caixa, goig) ni ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q (dia, família).",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "dia",
+     "trampa": "confon el diftong amb un hiat (consonant + ia)"
+    },
+    {
+     "texto": "mai"
+    },
+    {
+     "texto": "guerra",
+     "trampa": "creu que la u de «gue» forma diftong"
+    },
+    {
+     "texto": "caixa",
+     "trampa": "creu que vocal + ix forma diftong"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Mai» té una i darrere d'una vocal (ai): diftong decreixent."
+  },
+  {
+   "id": "cat-n1-0058",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Diftongs",
+   "dificultad": 3,
+   "enunciado": "Quin d'aquests mots NO forma diftong?",
+   "ayuda_larga": "Un diftong és la unió de dues vocals en una mateixa síl·laba. Els diftongs decreixents tenen i/u darrere d'una vocal: mai, pau, rei, peu. Els creixents són gu/qu més vocal quan la u sona (guant, pingüí) o i/u àtones a principi de paraula seguides de vocal (iogurt, hiena). No formen diftong gu/qu si la u no sona (guerra, aquella), vocal + ix/ig (caixa, goig) ni ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q (dia, família).",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "guerra"
+    },
+    {
+     "texto": "guant",
+     "trampa": "creu que la u no forma diftong quan sona"
+    },
+    {
+     "texto": "pau",
+     "trampa": "no reconeix el diftong decreixent a + u"
+    },
+    {
+     "texto": "hiena",
+     "trampa": "no reconeix la i àtona a principi de paraula + vocal"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "A «guerra» la u no sona, per tant no hi ha diftong. Guant (u sonora), pau (a + u) i hiena (i + e àtones) sí que en formen."
+  },
+  {
+   "id": "cat-n1-0059",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Diftongs",
+   "dificultad": 5,
+   "enunciado": "Per què «caixa» no forma diftong?",
+   "ayuda_larga": "Un diftong és la unió de dues vocals en una mateixa síl·laba. Els diftongs decreixents tenen i/u darrere d'una vocal: mai, pau, rei, peu. Els creixents són gu/qu més vocal quan la u sona (guant, pingüí) o i/u àtones a principi de paraula seguides de vocal (iogurt, hiena). No formen diftong gu/qu si la u no sona (guerra, aquella), vocal + ix/ig (caixa, goig) ni ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q (dia, família).",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "Perquè vocal + ix no forma diftong"
+    },
+    {
+     "texto": "Perquè la u no sona",
+     "trampa": "confon amb el cas de gu/qu"
+    },
+    {
+     "texto": "Perquè «ia» sempre és un hiat",
+     "trampa": "confon vocal + ix amb ia"
+    },
+    {
+     "texto": "Perquè la i és tònica",
+     "trampa": "inventa una causa d'accentuació"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les seqüències vocal + ix (caixa, eixugar) o vocal + ig (goig, maig) no formen diftong."
+  },
+  {
+   "id": "cat-n1-0060",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
+   "concepto": "Diftongs",
+   "dificultad": 4,
+   "enunciado": "«Dia» no forma diftong perquè «ia» precedit d'una consonant que no és g ni q no forma diftong.",
+   "ayuda_larga": "Un diftong és la unió de dues vocals en una mateixa síl·laba. Els diftongs decreixents tenen i/u darrere d'una vocal: mai, pau, rei, peu. Els creixents són gu/qu més vocal quan la u sona (guant, pingüí) o i/u àtones a principi de paraula seguides de vocal (iogurt, hiena). No formen diftong gu/qu si la u no sona (guerra, aquella), vocal + ix/ig (caixa, goig) ni ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q (dia, família).",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que qualsevol combinació de dues vocals forma sempre diftong"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Segons els apunts, ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q no formen diftong: dia, família, cacatua."
+  },
+  {
+   "id": "cat-n1-0061",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article masculí",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "l'home"
+    },
+    {
+     "texto": "el home",
+     "trampa": "no apostrofa davant d'una hac muda"
+    },
+    {
+     "texto": "l'hobby",
+     "trampa": "apostrofa davant d'una hac aspirada"
+    },
+    {
+     "texto": "la home",
+     "trampa": "confon el gènere de l'article"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "La hac d'«home» és muda i el so inicial és de vocal: l'home. A «hobby» la hac és aspirada i no s'apostrofa."
+  },
+  {
+   "id": "cat-n1-0062",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article masculí",
+   "dificultad": 3,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "el 11 de setembre",
+     "trampa": "no té en compte que «onze» comença per so de vocal"
+    },
+    {
+     "texto": "lo 11 de setembre",
+     "trampa": "utilitza «lo» com a article"
+    },
+    {
+     "texto": "l'11 de setembre"
+    },
+    {
+     "texto": "l'11 d'setembre",
+     "trampa": "apostrofa també la preposició davant de consonant"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Onze» comença per so de vocal, per tant l'article s'apostrofa: l'11 de setembre."
+  },
+  {
+   "id": "cat-n1-0063",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article masculí",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "L'ONU i l'FBI són organitzacions."
+    },
+    {
+     "texto": "El ONU i l'FBI són organitzacions.",
+     "trampa": "no apostrofa davant d'una sigla que comença per so de vocal"
+    },
+    {
+     "texto": "L'ONU i el FBI són organitzacions.",
+     "trampa": "no apostrofa «FBI» tot i que s'hi diu «efe»"
+    },
+    {
+     "texto": "La ONU i la FBI són organitzacions.",
+     "trampa": "calca el femení castellà «la ONU»"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les sigles s'apostrofen si comencen per so de vocal: l'ONU, l'FBI (es llegeix «efe»)."
+  },
+  {
+   "id": "cat-n1-0064",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article masculí",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "Vull el iogurt i l'hoquei."
+    },
+    {
+     "texto": "Vull l'iogurt i l'hoquei.",
+     "trampa": "apostrofa davant de «iogurt», que comença per so de consonant"
+    },
+    {
+     "texto": "Vull el iogurt i el hoquei.",
+     "trampa": "no apostrofa davant d'una hac muda"
+    },
+    {
+     "texto": "Vull l'iogurt i el hoquei.",
+     "trampa": "inverteix les dues regles"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "«Iogurt» comença amb so de i seguit de vocal i no s'apostrofa, mentre que la hac d'«hoquei» és muda i s'apostrofa."
+  },
+  {
+   "id": "cat-n1-0065",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article masculí",
+   "dificultad": 3,
+   "enunciado": "S'escriu «l'iogurt» perquè la i inicial sona com una vocal.",
+   "ayuda_larga": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que s'apostrofa davant de qualsevol lletra vocal"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Davant de paraules que comencen amb so de i seguit d'una altra vocal no s'apostrofa: el iogurt."
+  },
+  {
+   "id": "cat-n1-0066",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article femení",
+   "dificultad": 2,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "La església és gran.",
+     "trampa": "no apostrofa davant d'una e àtona"
+    },
+    {
+     "texto": "L'església és gran."
+    },
+    {
+     "texto": "El església és gran.",
+     "trampa": "confon el gènere de l'article"
+    },
+    {
+     "texto": "L'esglèsia és gran.",
+     "trampa": "canvia l'accent de la paraula"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Església» és femení i comença per vocal àtona: l'església."
+  },
+  {
+   "id": "cat-n1-0067",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article femení",
+   "dificultad": 3,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "l'imatge",
+     "trampa": "apostrofa una i àtona"
+    },
+    {
+     "texto": "la imàtge",
+     "trampa": "accentua una plana"
+    },
+    {
+     "texto": "la imatge"
+    },
+    {
+     "texto": "la imaje",
+     "trampa": "escriu j davant d'una e"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Els mots femenins que comencen per i àtona no s'apostrofen: la imatge."
+  },
+  {
+   "id": "cat-n1-0068",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article femení",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "L'essa i l'ela són lletres.",
+     "trampa": "apostrofa el nom de les lletres"
+    },
+    {
+     "texto": "La essa i la ela són lletres."
+    },
+    {
+     "texto": "La essa i l'ela són lletres.",
+     "trampa": "apostrofa només una de les dues"
+    },
+    {
+     "texto": "Lo essa i la ela són lletres.",
+     "trampa": "utilitza «lo» com a article"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "El nom de les lletres és una excepció: la essa, la ela."
+  },
+  {
+   "id": "cat-n1-0069",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article femení",
+   "dificultad": 4,
+   "enunciado": "Quina parella és correcta?",
+   "ayuda_larga": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "opciones": [
+    {
+     "texto": "n'Immaculada i na Imma",
+     "trampa": "inverteix la i àtona i la i forta"
+    },
+    {
+     "texto": "na Immaculada i na Imma",
+     "trampa": "no apostrofa la i forta"
+    },
+    {
+     "texto": "n'Immaculada i n'Imma",
+     "trampa": "apostrofa també la i àtona"
+    },
+    {
+     "texto": "na Immaculada i n'Imma"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "A «Immaculada» la i és àtona i no s'apostrofa; a «Imma» la i és forta i sí que s'apostrofa."
+  },
+  {
+   "id": "cat-n1-0070",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Apòstrof de l'article femení",
+   "dificultad": 3,
+   "enunciado": "Es diu «la ira» i no «l'ira» per no confondre aquesta paraula amb «lira».",
+   "ayuda_larga": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+   "fuente_pagina": 5,
+   "fuente_cara": 5,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que sempre s'apostrofa davant de i"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "És una excepció per evitar confusions: l'ira podria ser «la lira»."
+  },
+  {
+   "id": "cat-n1-0071",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Contracció de les preposicions amb l'article",
+   "dificultad": 2,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Parlo del meu pare."
+    },
+    {
+     "texto": "Parlo de el meu pare.",
+     "trampa": "no contrau de + el"
+    },
+    {
+     "texto": "Parlo dels meu pare.",
+     "trampa": "usa la contracció del plural amb un nom singular"
+    },
+    {
+     "texto": "Parlo del'meu pare.",
+     "trampa": "mescla contracció i apòstrof"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "De + el es contrau en «del»: parlo del meu pare."
+  },
+  {
+   "id": "cat-n1-0072",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Contracció de les preposicions amb l'article",
+   "dificultad": 3,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Fes-ho p'el teu pare.",
+     "trampa": "apostrofa la preposició"
+    },
+    {
+     "texto": "Fes-ho per al teu pare.",
+     "trampa": "confon «per» amb «per a»"
+    },
+    {
+     "texto": "Fes-ho pels teu pare.",
+     "trampa": "usa el plural amb un nom singular"
+    },
+    {
+     "texto": "Fes-ho pel teu pare."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Per + el = pel."
+  },
+  {
+   "id": "cat-n1-0073",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Contracció de les preposicions amb l'article",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Aquestes joguines són pels nens.",
+     "trampa": "confon per a + els amb per + els"
+    },
+    {
+     "texto": "Aquestes joguines són per a els nens.",
+     "trampa": "no contrau per a + els"
+    },
+    {
+     "texto": "Aquestes joguines són per als nens."
+    },
+    {
+     "texto": "Aquestes joguines són per als nen.",
+     "trampa": "oblida el plural del nom"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Per a + els = per als («para los»). Pels és per + els («por los»)."
+  },
+  {
+   "id": "cat-n1-0074",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Contracció de les preposicions amb l'article",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "Parlo del home.",
+     "trampa": "contrau davant d'una paraula que s'apostrofa"
+    },
+    {
+     "texto": "Parlo de lo home.",
+     "trampa": "utilitza «lo» com a article"
+    },
+    {
+     "texto": "Parlo de l'home."
+    },
+    {
+     "texto": "Parlo d'el home.",
+     "trampa": "apostrofa la preposició en lloc de l'article"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Davant d'«home» l'article s'apostrofa (l'home), per tant no hi ha contracció."
+  },
+  {
+   "id": "cat-n1-0075",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Contracció de les preposicions amb l'article",
+   "dificultad": 3,
+   "enunciado": "«Per a + els» es contrau en «pels».",
+   "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre per + els amb per a + els"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Per a + els = per als. «Pels» és per + els."
+  },
+  {
+   "id": "cat-n1-0076",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Canvis ortogràfics dels plurals",
+   "dificultad": 3,
+   "enunciado": "Quin és el plural de «taronja»?",
+   "ayuda_larga": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "taronges"
+    },
+    {
+     "texto": "taronjes",
+     "trampa": "conserva la j davant d'una e"
+    },
+    {
+     "texto": "taronjas",
+     "trampa": "calca la terminació castellana -as"
+    },
+    {
+     "texto": "taronyes",
+     "trampa": "confon la j amb el so ny"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Davant d'una e no s'escriu j: ja - ges, taronja - taronges."
+  },
+  {
+   "id": "cat-n1-0077",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Canvis ortogràfics dels plurals",
+   "dificultad": 4,
+   "enunciado": "Quin és el plural de «llengua»?",
+   "ayuda_larga": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "llengues",
+     "trampa": "oblida la dièresi de gua - gües"
+    },
+    {
+     "texto": "llenguas",
+     "trampa": "calca la terminació castellana -as"
+    },
+    {
+     "texto": "llengües"
+    },
+    {
+     "texto": "llenges",
+     "trampa": "treu la u i escriu g davant d'una e"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "El plural de gua és gües: llengua - llengües. La dièresi fa sonar la u."
+  },
+  {
+   "id": "cat-n1-0078",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Canvis ortogràfics dels plurals",
+   "dificultad": 4,
+   "enunciado": "Quin és el plural de «text»?",
+   "ayuda_larga": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "opciones": [
+    {
+     "texto": "textos"
+    },
+    {
+     "texto": "textes",
+     "trampa": "afegeix -es a un masculí acabat en dues consonants"
+    },
+    {
+     "texto": "texts",
+     "trampa": "afegeix només una -s"
+    },
+    {
+     "texto": "textus",
+     "trampa": "confon la terminació amb -us"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Un mot masculí acabat en dues consonants fa el plural amb -os: text, textos (textes és incorrecte)."
+  },
+  {
+   "id": "cat-n1-0079",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Canvis ortogràfics dels plurals",
+   "dificultad": 2,
+   "enunciado": "El plural de «plaça» és «plaçes», perquè la ç es manté.",
+   "ayuda_larga": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que la ç es manté davant d'una e"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Davant d'una e mai no s'escriu ç: plaça - places."
+  },
+  {
+   "id": "cat-n1-0080",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Apòstrof, contracció i plurals",
+   "concepto": "Canvis ortogràfics dels plurals",
+   "dificultad": 3,
+   "enunciado": "El plural de «complex» és «complexos» i no «complexes».",
+   "ayuda_larga": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+   "fuente_pagina": 6,
+   "fuente_cara": 6,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "afegir -es al plural d'un masculí acabat en x"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Els mots masculins acabats en -x no afegeixen -es sinó -os: complex, complexos."
+  },
+  {
+   "id": "cat-n1-0081",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La b i la v",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta de l'imperfet d'«acabar»?",
+   "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "acabava"
+    },
+    {
+     "texto": "acababa",
+     "trampa": "calca la terminació castellana -aba"
+    },
+    {
+     "texto": "acavava",
+     "trampa": "escriu v també a l'arrel"
+    },
+    {
+     "texto": "àcabava",
+     "trampa": "accentua una paraula plana"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "L'imperfet d'indicatiu acaba sempre en -ava: acabava, cantava. Regla: imperfet, v."
+  },
+  {
+   "id": "cat-n1-0082",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La b i la v",
+   "dificultad": 3,
+   "enunciado": "Quina paraula s'escriu amb b encara que en castellà porta v?",
+   "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "avi",
+     "trampa": "confon la llista amb la contrària: en català porta v"
+    },
+    {
+     "texto": "llavi",
+     "trampa": "confon la llista amb la contrària: en català porta v"
+    },
+    {
+     "texto": "cavall",
+     "trampa": "confon la llista amb la contrària: en català porta v"
+    },
+    {
+     "texto": "corb"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Corb» (castellà «cuervo») porta b. Avi, llavi i cavall porten v en català i b en castellà."
+  },
+  {
+   "id": "cat-n1-0083",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La b i la v",
+   "dificultad": 4,
+   "enunciado": "Quina paraula s'escriu amb v encara que en castellà porta b?",
+   "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "corb",
+     "trampa": "confon la llista amb la contrària: en català porta b"
+    },
+    {
+     "texto": "cavall"
+    },
+    {
+     "texto": "baró",
+     "trampa": "confon la llista amb la contrària: en català porta b"
+    },
+    {
+     "texto": "biga",
+     "trampa": "confon la llista amb la contrària: en català porta b"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Cavall» (castellà «caballo») porta v. Corb, baró i biga porten b en català i v en castellà."
+  },
+  {
+   "id": "cat-n1-0084",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La b i la v",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "opciones": [
+    {
+     "texto": "El gobernador va gravar el discurs a Havana.",
+     "trampa": "escriu b com en el castellà «gobernar»"
+    },
+    {
+     "texto": "El governador va grabar el discurs a Havana.",
+     "trampa": "escriu b com en el castellà «grabar»"
+    },
+    {
+     "texto": "El governador va gravar el discurs a Havana."
+    },
+    {
+     "texto": "El governador va gravar el discurs a Habana.",
+     "trampa": "escriu b com en el castellà «Habana»"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Governar, gravar i Havana s'escriuen amb v en català i amb b en castellà."
+  },
+  {
+   "id": "cat-n1-0085",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La b i la v",
+   "dificultad": 3,
+   "enunciado": "«Calb» s'escriu amb b, tot i que en castellà és «calvo».",
+   "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+   "fuente_pagina": 8,
+   "fuente_cara": 8,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "creure que la v castellana es manté sempre en català"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "«Calb» és de la llista de paraules amb b en català i v en castellà."
+  },
+  {
+   "id": "cat-n1-0086",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "L'ela geminada (l·l)",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "novela",
+     "trampa": "oblida la ela geminada de la terminació -el·la"
+    },
+    {
+     "texto": "novel.la",
+     "trampa": "escriu un punt baix en lloc del punt volat"
+    },
+    {
+     "texto": "novel·la"
+    },
+    {
+     "texto": "novella",
+     "trampa": "escriu ll en lloc de l·l"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "Les paraules acabades en -el·la porten l·l: novel·la, aquarel·la."
+  },
+  {
+   "id": "cat-n1-0087",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "L'ela geminada (l·l)",
+   "dificultad": 3,
+   "enunciado": "Quina d'aquestes paraules NO s'escriu amb ela geminada?",
+   "ayuda_larga": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "al·lèrgia",
+     "trampa": "creu que al·lèrgia no segueix la regla d'al·l"
+    },
+    {
+     "texto": "al·ludir",
+     "trampa": "creu que al·ludir no segueix la regla d'al·l"
+    },
+    {
+     "texto": "al·leluia",
+     "trampa": "creu que al·leluia no segueix la regla d'al·l"
+    },
+    {
+     "texto": "alemany"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Alemany» és una excepció (com alarma, alegre, aliança). Al·lèrgia, al·ludir i al·leluia porten l·l."
+  },
+  {
+   "id": "cat-n1-0088",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "L'ela geminada (l·l)",
+   "dificultad": 4,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "intel·ligent"
+    },
+    {
+     "texto": "intel.ligent",
+     "trampa": "escriu un punt baix en lloc del punt volat"
+    },
+    {
+     "texto": "inteligent",
+     "trampa": "simplifica la ela geminada com en castellà"
+    },
+    {
+     "texto": "intelligent",
+     "trampa": "escriu ll en lloc de l·l"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "«Intel·ligent» porta l·l (en castellà «inteligente»). Cal el punt volat entre les dues eles."
+  },
+  {
+   "id": "cat-n1-0089",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "L'ela geminada (l·l)",
+   "dificultad": 4,
+   "enunciado": "Quina paraula acabada en -il·lar NO porta ela geminada?",
+   "ayuda_larga": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "opciones": [
+    {
+     "texto": "capil·lar",
+     "trampa": "aplica la regla -il·lar a l'excepció"
+    },
+    {
+     "texto": "destil·lar",
+     "trampa": "aplica la regla -il·lar a l'excepció"
+    },
+    {
+     "texto": "vacil·lar",
+     "trampa": "aplica la regla -il·lar a l'excepció"
+    },
+    {
+     "texto": "mutilar"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Capil·lar, destil·lar i vacil·lar porten l·l. L'excepció és «mutilar»."
+  },
+  {
+   "id": "cat-n1-0090",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "L'ela geminada (l·l)",
+   "dificultad": 3,
+   "enunciado": "«Milió» s'escriu sense ela geminada perquè és una excepció de les paraules que comencen per mil·l.",
+   "ayuda_larga": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+   "fuente_pagina": 9,
+   "fuente_cara": 9,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "aplicar la regla general de mil·l a una excepció"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Milió, milè, milenar i miler són excepcions; mil·límetre i mil·lenni porten l·l."
+  },
+  {
+   "id": "cat-n1-0091",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La o i la u",
+   "dificultad": 2,
+   "enunciado": "Quina paraula s'escriu amb o encara que en castellà porta u?",
+   "ayuda_larga": "Per saber si una vocal àtona s'escriu amb o o amb u, cerquem el mot primitiu (forner prové de forn), escrivim igual que en castellà (ordenador) o mirem la llista d'excepcions. Hi ha paraules que porten o en català i u en castellà (cobrir, complir, botifarra) i d'altres que porten u en català i o en castellà (muntanya, museu, riu). En els verbs collir, cosir, escopir, poder, sortir, tossir i voler s'escriu o si la vocal no és forta, i el que sona si és forta (cullo, colliré).",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "museu",
+     "trampa": "confon la llista amb la contrària: en català porta u"
+    },
+    {
+     "texto": "riu",
+     "trampa": "confon la llista amb la contrària: en català porta u"
+    },
+    {
+     "texto": "cobrir"
+    },
+    {
+     "texto": "muntanya",
+     "trampa": "confon la llista amb la contrària: en català porta u"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Cobrir» (castellà «cubrir») porta o. Museu, riu i muntanya porten u en català i o en castellà."
+  },
+  {
+   "id": "cat-n1-0092",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La o i la u",
+   "dificultad": 3,
+   "enunciado": "Per què «forner» s'escriu amb o?",
+   "ayuda_larga": "Per saber si una vocal àtona s'escriu amb o o amb u, cerquem el mot primitiu (forner prové de forn), escrivim igual que en castellà (ordenador) o mirem la llista d'excepcions. Hi ha paraules que porten o en català i u en castellà (cobrir, complir, botifarra) i d'altres que porten u en català i o en castellà (muntanya, museu, riu). En els verbs collir, cosir, escopir, poder, sortir, tossir i voler s'escriu o si la vocal no és forta, i el que sona si és forta (cullo, colliré).",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "Perquè prové del mot primitiu «forn»"
+    },
+    {
+     "texto": "Perquè totes les o àtones s'escriuen amb u",
+     "trampa": "inventa una regla general contrària"
+    },
+    {
+     "texto": "Perquè és una excepció de la llista",
+     "trampa": "creu que forner és de la llista"
+    },
+    {
+     "texto": "Perquè en català la u és més freqüent que la o",
+     "trampa": "inventa una regla sobre la freqüència"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Cerquem el mot primitiu: forner prové de forn, i per això porta o."
+  },
+  {
+   "id": "cat-n1-0093",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La o i la u",
+   "dificultad": 4,
+   "enunciado": "Quina paraula s'escriu amb u encara que en castellà porta o?",
+   "ayuda_larga": "Per saber si una vocal àtona s'escriu amb o o amb u, cerquem el mot primitiu (forner prové de forn), escrivim igual que en castellà (ordenador) o mirem la llista d'excepcions. Hi ha paraules que porten o en català i u en castellà (cobrir, complir, botifarra) i d'altres que porten u en català i o en castellà (muntanya, museu, riu). En els verbs collir, cosir, escopir, poder, sortir, tossir i voler s'escriu o si la vocal no és forta, i el que sona si és forta (cullo, colliré).",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "cobrir",
+     "trampa": "confon la llista amb la contrària: en català porta o"
+    },
+    {
+     "texto": "complir",
+     "trampa": "confon la llista amb la contrària: en català porta o"
+    },
+    {
+     "texto": "botifarra",
+     "trampa": "confon la llista amb la contrària: en català porta o"
+    },
+    {
+     "texto": "muntanya"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Muntanya» (castellà «montaña») porta u. Cobrir, complir i botifarra porten o en català i u en castellà."
+  },
+  {
+   "id": "cat-n1-0094",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La o i la u",
+   "dificultad": 5,
+   "enunciado": "Quina és la forma correcta del futur de «collir» (jo...)?",
+   "ayuda_larga": "Per saber si una vocal àtona s'escriu amb o o amb u, cerquem el mot primitiu (forner prové de forn), escrivim igual que en castellà (ordenador) o mirem la llista d'excepcions. Hi ha paraules que porten o en català i u en castellà (cobrir, complir, botifarra) i d'altres que porten u en català i o en castellà (muntanya, museu, riu). En els verbs collir, cosir, escopir, poder, sortir, tossir i voler s'escriu o si la vocal no és forta, i el que sona si és forta (cullo, colliré).",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "culliré",
+     "trampa": "escriu u en una vocal àtona"
+    },
+    {
+     "texto": "collire",
+     "trampa": "oblida l'accent d'una aguda acabada en vocal"
+    },
+    {
+     "texto": "coliré",
+     "trampa": "simplifica la ela doble"
+    },
+    {
+     "texto": "colliré"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "En «colliré» la o és àtona i s'escriu amb o. Només quan és forta s'escriu el que sona (cullo)."
+  },
+  {
+   "id": "cat-n1-0095",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La o i la u",
+   "dificultad": 3,
+   "enunciado": "«Cullo» s'escriu amb u perquè la vocal és forta i s'escriu el que sona.",
+   "ayuda_larga": "Per saber si una vocal àtona s'escriu amb o o amb u, cerquem el mot primitiu (forner prové de forn), escrivim igual que en castellà (ordenador) o mirem la llista d'excepcions. Hi ha paraules que porten o en català i u en castellà (cobrir, complir, botifarra) i d'altres que porten u en català i o en castellà (muntanya, museu, riu). En els verbs collir, cosir, escopir, poder, sortir, tossir i voler s'escriu o si la vocal no és forta, i el que sona si és forta (cullo, colliré).",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "aplicar l'o dels verbs a una vocal tònica"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "En els verbs com collir, si la vocal és forta s'escriu el que sona: cullo. Si és àtona, s'escriu o: colliré, collia."
+  },
+  {
+   "id": "cat-n1-0096",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La essa i la doble erra",
+   "dificultad": 3,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "posible",
+     "trampa": "no dobla la essa entre vocals"
+    },
+    {
+     "texto": "possible"
+    },
+    {
+     "texto": "pocible",
+     "trampa": "escriu c en lloc de ss"
+    },
+    {
+     "texto": "poçible",
+     "trampa": "escriu ç en lloc de ss"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Entre dues vocals, si en castellà és s («posible»), s'escriu ss en català."
+  },
+  {
+   "id": "cat-n1-0097",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La essa i la doble erra",
+   "dificultad": 4,
+   "enunciado": "Quina paraula NO dobla la erra?",
+   "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "arrítmia",
+     "trampa": "aplica la regla general a una excepció"
+    },
+    {
+     "texto": "correferent",
+     "trampa": "aplica la regla general a una excepció"
+    },
+    {
+     "texto": "corresponsable",
+     "trampa": "aplica la regla general a una excepció"
+    },
+    {
+     "texto": "antireligiós"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Antireligiós» és una excepció (com contrareforma i preromànic). Arrítmia, correferent i corresponsable dupliquen la erra."
+  },
+  {
+   "id": "cat-n1-0098",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La essa i la doble erra",
+   "dificultad": 5,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "opciones": [
+    {
+     "texto": "taça",
+     "trampa": "aplica la regla de ç a una excepció"
+    },
+    {
+     "texto": "tassa"
+    },
+    {
+     "texto": "taza",
+     "trampa": "escriu z com en castellà"
+    },
+    {
+     "texto": "tasa",
+     "trampa": "simplifica la essa"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Tassa» (castellà «taza») és una excepció: s'escriu ss tot i que en castellà porta z."
+  },
+  {
+   "id": "cat-n1-0099",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La essa i la doble erra",
+   "dificultad": 2,
+   "enunciado": "«Caça» s'escriu «cassa» perquè la ç del castellà «caza» passa a ss.",
+   "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "confondre la z castellana amb la s"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Si en castellà s'escriu amb z, en català s'escriu ç: caça (caza)."
+  },
+  {
+   "id": "cat-n1-0100",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "B/V, ela geminada, O/U, essa i erra",
+   "concepto": "La essa i la doble erra",
+   "dificultad": 3,
+   "enunciado": "«Asimetria» s'escriu amb una sola essa perquè a- és un prefix.",
+   "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+   "fuente_pagina": 10,
+   "fuente_cara": 10,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "aplicar la regla de ss entre vocals a un prefix"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "En els prefixos no es duplica la essa: asimetria."
+  },
+  {
+   "id": "cat-n1-0101",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "a/ha, em/hem, tan/tant, quan/quant",
+   "dificultad": 2,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "A pintat un quadre per a la seva germana.",
+     "trampa": "confon el verb haver amb la preposició"
+    },
+    {
+     "texto": "Ha pintat un quadre per a la seva germana."
+    },
+    {
+     "texto": "Ha pintat un quadre per ha la seva germana.",
+     "trampa": "confon la preposició amb el verb"
+    },
+    {
+     "texto": "A pintat un quadre per ha la seva germana.",
+     "trampa": "confon les dues paraules"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«Ha» és el verb haver (ha pintat) i «a» és la preposició (per a la seva germana)."
+  },
+  {
+   "id": "cat-n1-0102",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "a/ha, em/hem, tan/tant, quan/quant",
+   "dificultad": 3,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "L'aigua està tant freda que no em puc banyar.",
+     "trampa": "confon tan (castellà «tan») amb tant (castellà «tanto»)"
+    },
+    {
+     "texto": "L'aigua està tam freda que no em puc banyar.",
+     "trampa": "escriu m en lloc de n"
+    },
+    {
+     "texto": "L'aigua està tans freda que no em puc banyar.",
+     "trampa": "afegeix una -s de plural"
+    },
+    {
+     "texto": "L'aigua està tan freda que no em puc banyar."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Davant d'un adjectiu (freda) s'escriu tan (castellà «tan»). Tant correspon a «tanto»."
+  },
+  {
+   "id": "cat-n1-0103",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "a/ha, em/hem, tan/tant, quan/quant",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "No sé quant arribarà.",
+     "trampa": "confon quan (castellà «cuando») amb quant (castellà «cuanto»)"
+    },
+    {
+     "texto": "No sé cuan arribarà.",
+     "trampa": "escriu cu en lloc de qu"
+    },
+    {
+     "texto": "No sé quan arribarà."
+    },
+    {
+     "texto": "No sé quan arribara.",
+     "trampa": "oblida l'accent d'una aguda acabada en vocal"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Quan» és «cuando»; «quant» és «cuanto»."
+  },
+  {
+   "id": "cat-n1-0104",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "a/ha, em/hem, tan/tant, quan/quant",
+   "dificultad": 5,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "Quan t'ha costat aquest vestit?",
+     "trampa": "confon quan (castellà «cuando») amb quant (castellà «cuanto»)"
+    },
+    {
+     "texto": "Quant t'a costat aquest vestit?",
+     "trampa": "confon el verb haver amb la preposició"
+    },
+    {
+     "texto": "Cuant t'ha costat aquest vestit?",
+     "trampa": "escriu cu en lloc de qu"
+    },
+    {
+     "texto": "Quant t'ha costat aquest vestit?"
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "Aquí es pregunta la quantitat («cuánto»), per tant quant. A més, «ha» és el verb haver."
+  },
+  {
+   "id": "cat-n1-0105",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "a/ha, em/hem, tan/tant, quan/quant",
+   "dificultad": 3,
+   "enunciado": "A «Em va dir que hem de llegir molt», el primer «em» és un pronom i «hem» és el verb haver.",
+   "ayuda_larga": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "escriure sempre em o sempre hem sense distingir pronom i verb"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Em (a mi) és pronom i hem (de haver) és el verb: hem de llegir."
+  },
+  {
+   "id": "cat-n1-0106",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "perquè, per què, sinó, si no, sí, si",
+   "dificultad": 2,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Perquè (junt) és la resposta o la finalitat: «Dona-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "Perquè ho dius?",
+     "trampa": "usa la conjunció en una pregunta"
+    },
+    {
+     "texto": "Per què ho dius?"
+    },
+    {
+     "texto": "Per que ho dius?",
+     "trampa": "oblida l'accent del que interrogatiu"
+    },
+    {
+     "texto": "Perque ho dius?",
+     "trampa": "oblida l'accent i junta les paraules"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "A les preguntes s'escriu per què, separat i amb accent."
+  },
+  {
+   "id": "cat-n1-0107",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "perquè, per què, sinó, si no, sí, si",
+   "dificultad": 3,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Perquè (junt) és la resposta o la finalitat: «Dona-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "Dóna-li aquest regal perquè l'emboliqui."
+    },
+    {
+     "texto": "Dóna-li aquest regal per què l'emboliqui.",
+     "trampa": "separa perquè en una frase de finalitat"
+    },
+    {
+     "texto": "Dóna-li aquest regal per que l'emboliqui.",
+     "trampa": "separa i oblida l'accent"
+    },
+    {
+     "texto": "Dóna-li aquest regal perque l'emboliqui.",
+     "trampa": "oblida l'accent de perquè"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Perquè (junt i amb accent) introdueix la finalitat o la causa."
+  },
+  {
+   "id": "cat-n1-0108",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "perquè, per què, sinó, si no, sí, si",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Perquè (junt) és la resposta o la finalitat: «Dona-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "No ha dit això si no això altre.",
+     "trampa": "separa sinó quan expressa oposició"
+    },
+    {
+     "texto": "No ha dit això sinó això altre."
+    },
+    {
+     "texto": "No ha dit això sino això altre.",
+     "trampa": "oblida l'accent de sinó"
+    },
+    {
+     "texto": "No ha dit això si nò això altre.",
+     "trampa": "posa l'accent a la negació"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Sinó (junt, amb accent) expressa oposició: no això sinó allò."
+  },
+  {
+   "id": "cat-n1-0109",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "perquè, per què, sinó, si no, sí, si",
+   "dificultad": 5,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "Perquè (junt) és la resposta o la finalitat: «Dona-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "opciones": [
+    {
+     "texto": "Sinó plou, entrarem en fase de sequera.",
+     "trampa": "uneix si no quan és condició més negació"
+    },
+    {
+     "texto": "Si no plou, entrarem en fase de sequera."
+    },
+    {
+     "texto": "Sí no plou, entrarem en fase de sequera.",
+     "trampa": "posa accent a la conjunció condicional"
+    },
+    {
+     "texto": "Si nó plou, entrarem en fase de sequera.",
+     "trampa": "posa l'accent a la negació"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Aquí hi ha condició més negació (si + no), i la condició s'escriu si sense accent."
+  },
+  {
+   "id": "cat-n1-0110",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "perquè, per què, sinó, si no, sí, si",
+   "dificultad": 3,
+   "enunciado": "La frase «Sinó plou, sortirem» és correcta.",
+   "ayuda_larga": "Perquè (junt) és la resposta o la finalitat: «Dona-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+   "fuente_pagina": 13,
+   "fuente_cara": 13,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que sinó i si no són intercanviables"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Hi ha condició més negació: cal escriure «Si no plou, sortirem». Sinó expressa oposició."
+  },
+  {
+   "id": "cat-n1-0111",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Barbarismes i interferències del castellà",
+   "dificultad": 2,
+   "enunciado": "Quina és la forma correcta?",
+   "ayuda_larga": "Un barbarisme és una paraula o expressió calcada del castellà. Els apunts en fan una llista amb la forma correcta i la incorrecta: esdeveniment (no aconteixement), per força (no a la força), a terminis (no a plaços), potser (no a la millor), donar suport (no apoiar), estalviar (no ahorrar), esgotar (no agotar), entrepà (no bocadillo), augment (no aument), ajornar (no aplaçar). Davant del dubte, pensa si la paraula és només un calc.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "aconteixement",
+     "trampa": "calca el castellà «acontecimiento»"
+    },
+    {
+     "texto": "aconteciment",
+     "trampa": "adapta el castellà «acontecimiento»"
+    },
+    {
+     "texto": "esdeveniment"
+    },
+    {
+     "texto": "esdevenement",
+     "trampa": "simplifica el mot"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "«Esdeveniment» és la forma correcta; «aconteixement» és un barbarisme."
+  },
+  {
+   "id": "cat-n1-0112",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Barbarismes i interferències del castellà",
+   "dificultad": 3,
+   "enunciado": "Quina és l'expressió correcta?",
+   "ayuda_larga": "Un barbarisme és una paraula o expressió calcada del castellà. Els apunts en fan una llista amb la forma correcta i la incorrecta: esdeveniment (no aconteixement), per força (no a la força), a terminis (no a plaços), potser (no a la millor), donar suport (no apoiar), estalviar (no ahorrar), esgotar (no agotar), entrepà (no bocadillo), augment (no aument), ajornar (no aplaçar). Davant del dubte, pensa si la paraula és només un calc.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "a plaços",
+     "trampa": "calca el castellà «a plazos»"
+    },
+    {
+     "texto": "a terminos",
+     "trampa": "calca el castellà amb o"
+    },
+    {
+     "texto": "a terminis"
+    },
+    {
+     "texto": "a términis",
+     "trampa": "posa accent a una plana acabada en -is"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "En català es paga «a terminis»; «a plaços» és un barbarisme."
+  },
+  {
+   "id": "cat-n1-0113",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Barbarismes i interferències del castellà",
+   "dificultad": 4,
+   "enunciado": "Quina frase no té cap barbarisme?",
+   "ayuda_larga": "Un barbarisme és una paraula o expressió calcada del castellà. Els apunts en fan una llista amb la forma correcta i la incorrecta: esdeveniment (no aconteixement), per força (no a la força), a terminis (no a plaços), potser (no a la millor), donar suport (no apoiar), estalviar (no ahorrar), esgotar (no agotar), entrepà (no bocadillo), augment (no aument), ajornar (no aplaçar). Davant del dubte, pensa si la paraula és només un calc.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "Han de donar suport al projecte i estalviar diners."
+    },
+    {
+     "texto": "Han d'apoiar el projecte i estalviar diners.",
+     "trampa": "calca el castellà «apoyar»"
+    },
+    {
+     "texto": "Han de donar suport al projecte i ahorrar diners.",
+     "trampa": "calca el castellà «ahorrar»"
+    },
+    {
+     "texto": "Han de donar suport al projecte i agotar els diners.",
+     "trampa": "calca el castellà «agotar»"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Les formes correctes són donar suport i estalviar (no apoiar, ahorrar, agotar)."
+  },
+  {
+   "id": "cat-n1-0114",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Barbarismes i interferències del castellà",
+   "dificultad": 5,
+   "enunciado": "Quina frase no té cap barbarisme?",
+   "ayuda_larga": "Un barbarisme és una paraula o expressió calcada del castellà. Els apunts en fan una llista amb la forma correcta i la incorrecta: esdeveniment (no aconteixement), per força (no a la força), a terminis (no a plaços), potser (no a la millor), donar suport (no apoiar), estalviar (no ahorrar), esgotar (no agotar), entrepà (no bocadillo), augment (no aument), ajornar (no aplaçar). Davant del dubte, pensa si la paraula és només un calc.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "opciones": [
+    {
+     "texto": "Va comprar un bocadillo i un abonament de bus.",
+     "trampa": "calca el castellà «bocadillo»"
+    },
+    {
+     "texto": "Va comprar un entrepà i un abonament de bus."
+    },
+    {
+     "texto": "Va comprar un entrepà i un abono de bus.",
+     "trampa": "calca el castellà «abono»"
+    },
+    {
+     "texto": "Va comprar un bocadillo i un abono de bus.",
+     "trampa": "calca el castellà dues vegades"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "Entrepà i abonament són les formes correctes; bocadillo i abono són barbarismes."
+  },
+  {
+   "id": "cat-n1-0115",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Barbarismes i interferències del castellà",
+   "dificultad": 3,
+   "enunciado": "«A la millor» és una expressió correcta en català per dir «potser».",
+   "ayuda_larga": "Un barbarisme és una paraula o expressió calcada del castellà. Els apunts en fan una llista amb la forma correcta i la incorrecta: esdeveniment (no aconteixement), per força (no a la força), a terminis (no a plaços), potser (no a la millor), donar suport (no apoiar), estalviar (no ahorrar), esgotar (no agotar), entrepà (no bocadillo), augment (no aument), ajornar (no aplaçar). Davant del dubte, pensa si la paraula és només un calc.",
+   "fuente_pagina": 14,
+   "fuente_cara": 14,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "creure que una expressió que s'assembla al castellà ja és correcta"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "«A la millor» és un barbarisme (de «a lo mejor»); la forma correcta és «potser»."
+  },
+  {
+   "id": "cat-n1-0116",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Pronoms febles, haver-hi i obligació",
+   "dificultad": 3,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "Lis vaig dir que hi anessin ràpidament.",
+     "trampa": "usa «lis», que no existeix en català"
+    },
+    {
+     "texto": "Els hi vaig dir que hi anessin ràpidament.",
+     "trampa": "usa «els hi» amb un sol complement"
+    },
+    {
+     "texto": "Les vaig dir que hi anessin ràpidament.",
+     "trampa": "canvia el pronom pel femení"
+    },
+    {
+     "texto": "Els vaig dir que hi anessin ràpidament."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Lis» no existeix. «Els hi» només és correcte si hi ha dos complements."
+  },
+  {
+   "id": "cat-n1-0117",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Pronoms febles, haver-hi i obligació",
+   "dificultad": 4,
+   "enunciado": "Quina frase és correcta?",
+   "ayuda_larga": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "Avui hi han molts cotxes al carrer.",
+     "trampa": "fa concordar haver-hi amb el plural"
+    },
+    {
+     "texto": "Avui els hi ha molts cotxes al carrer.",
+     "trampa": "afegeix un pronom innecessari"
+    },
+    {
+     "texto": "Avui hi ha de molts cotxes al carrer.",
+     "trampa": "afegeix una preposició de més"
+    },
+    {
+     "texto": "Avui hi ha molts cotxes al carrer."
+    }
+   ],
+   "correcta": "d",
+   "explicacion": "«Hi ha» és invariable, com el castellà «hay»: hi ha molts cotxes."
+  },
+  {
+   "id": "cat-n1-0118",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Pronoms febles, haver-hi i obligació",
+   "dificultad": 5,
+   "enunciado": "Quina frase expressa correctament l'obligació?",
+   "ayuda_larga": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "opciones": [
+    {
+     "texto": "Tenim que anar d'excursió a la muntanya.",
+     "trampa": "calca el castellà «tenemos que»"
+    },
+    {
+     "texto": "Hi ha que anar d'excursió a la muntanya.",
+     "trampa": "calca el castellà «hay que»"
+    },
+    {
+     "texto": "Hem d'anar d'excursió a la muntanya."
+    },
+    {
+     "texto": "Tenim de anar d'excursió a la muntanya.",
+     "trampa": "usa tenir de"
+    }
+   ],
+   "correcta": "c",
+   "explicacion": "L'obligació s'expressa amb «haver de» o «caldre»; «tenir que», «tenir de» i «hi ha que» són incorrectes."
+  },
+  {
+   "id": "cat-n1-0119",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Pronoms febles, haver-hi i obligació",
+   "dificultad": 2,
+   "enunciado": "L'infinitiu «sapiguer» no existeix en català: la forma correcta és «saber».",
+   "ayuda_larga": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader"
+    },
+    {
+     "texto": "Fals",
+     "trampa": "formar l'infinitiu a partir del subjuntiu «sàpiga»"
+    }
+   ],
+   "correcta": "a",
+   "explicacion": "Tots els infinitius acabats en -guer són incorrectes: saber, poder, tenir, voler."
+  },
+  {
+   "id": "cat-n1-0120",
+   "bloque": "Català",
+   "tema": "T1 Normativa general",
+   "subtema": "Aspectes varis, barbarismes i pronoms",
+   "concepto": "Pronoms febles, haver-hi i obligació",
+   "dificultad": 3,
+   "enunciado": "La frase «He saludat al teu germà» és correcta perquè el complement directe s'introdueix amb a.",
+   "ayuda_larga": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+   "fuente_pagina": 12,
+   "fuente_cara": 12,
+   "tipo": "vf",
+   "opciones": [
+    {
+     "texto": "Vertader",
+     "trampa": "calcar l'a personal del castellà"
+    },
+    {
+     "texto": "Fals"
+    }
+   ],
+   "correcta": "b",
+   "explicacion": "En català el complement directe no s'introdueix amb a: «He saludat el teu germà»."
+  }
+ ]
+}

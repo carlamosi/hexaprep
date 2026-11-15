@@ -1,0 +1,19 @@
+{
+ "tema": "T2 Sistemas",
+ "prefijo": "eco-a2",
+ "bloque": "Economía",
+ "asignatura": {
+  "nombre": "Economía",
+  "idioma": "es",
+  "color": "#B05A8F",
+  "acento": "#B05A8F"
+ },
+ "fuente": {
+  "nombre": "Economía T2 Apuntes",
+  "archivo": "Economia_T2_Apuntes.pdf"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "a1"
+ }
+}

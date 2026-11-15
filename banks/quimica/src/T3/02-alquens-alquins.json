@@ -1,0 +1,300 @@
+{
+ "subtema": "Alquens i alquins",
+ "conceptos": [
+  {
+   "nombre": "Alquens: fórmula i cadena principal",
+   "pagina": 9,
+   "cara": 9,
+   "ayuda": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+   "test": [
+    [
+     1,
+     "Quina és la fórmula general dels alquens amb un sol doble enllaç?",
+     "CₙH₂ₙ",
+     [
+      "CₙH₂ₙ₊₂",
+      "trampa: usar la fórmula dels alcans"
+     ],
+     [
+      "CₙH₂ₙ₋₂",
+      "trampa: usar la fórmula dels alquins"
+     ],
+     [
+      "CₙHₙ",
+      "trampa: creure que hi ha un hidrogen per carboni"
+     ],
+     "Un doble enllaç treu dos hidrògens a l'alcà CₙH₂ₙ₊₂, i queda CₙH₂ₙ. Regla: alcans +2, alquens 0, alquins -2."
+    ],
+    [
+     4,
+     "Un hidrocarbur té una cadena de 5 carbonis que només inclou un dels seus dos dobles enllaços i una altra de 4 carbonis que els inclou tots dos. Quina és la cadena principal?",
+     "La de 4 carbonis, perquè conté tots els dobles enllaços",
+     [
+      "La de 5 carbonis, perquè és la més llarga",
+      "trampa: aplicar només el criteri de longitud dels alcans"
+     ],
+     [
+      "Qualsevol de les dues, perquè totes dues tenen algun doble enllaç",
+      "trampa: no exigir que hi siguin tots"
+     ],
+     [
+      "La de 5 carbonis, perquè s'escull la més ramificada",
+      "trampa: confondre el criteri d'empat amb el principal"
+     ],
+     "En un alquè la cadena principal ha de contenir tots els dobles enllaços, encara que sigui més curta. Regla: primer els dobles enllaços, després la longitud."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "Per cada doble enllaç s'eliminen dos hidrògens de l'alcà corresponent.",
+     true,
+     "Passar d'un enllaç senzill a un doble treu dos hidrògens, per això la fórmula dels alquens és CₙH₂ₙ.",
+     "trampa: pensar que s'eliminen quatre hidrògens, com en els alquins"
+    ],
+    [
+     3,
+     "La cadena principal d'un alquè és sempre la més llarga, encara que deixi un doble enllaç fora.",
+     false,
+     "En un alquè la cadena principal és la més llarga que contingui tots els dobles enllaços. Si la més llarga en deixa algun fora, no serveix.",
+     "trampa: aplicar la regla dels alcans, que només mira la longitud"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Nom dels alquens",
+   "pagina": 11,
+   "cara": 11,
+   "ayuda": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+   "test": [
+    [
+     2,
+     "Quin és el nom de CH₂=CH-CH₂-CH₃?",
+     "1-butè",
+     [
+      "2-butè",
+      "trampa: col·locar el doble enllaç al localitzador equivocat"
+     ],
+     [
+      "3-butè",
+      "trampa: numerar per l'extrem que dona el localitzador més alt"
+     ],
+     [
+      "1-butà",
+      "trampa: confondre la terminació -è dels alquens amb la -à dels alcans"
+     ],
+     "El doble enllaç és entre els carbonis 1 i 2, i s'indica amb el 1 davant del nom de la cadena de 4 carbonis acabat en -è. Regla: numera perquè el doble enllaç tingui el número més baix."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₂=C(CH₃)-CH₂-CH₃?",
+     "2-metil-1-butè",
+     [
+      "2-metil-3-butè",
+      "trampa: numerar pel radical i no pel doble enllaç"
+     ],
+     [
+      "3-metil-1-butè",
+      "trampa: col·locar el metil al carboni equivocat"
+     ],
+     [
+      "2-etilpropè",
+      "trampa: escollir una cadena de 3 carbonis en lloc de la de 4"
+     ],
+     "La cadena principal és de 4 carbonis i conté el doble enllaç (1), mentre que el metil penja del carboni 2. Regla: el doble enllaç té prioritat en la numeració i després els radicals."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₂=CH-CH=CH-CH₃?",
+     "1,3-pentadiè",
+     [
+      "2,4-pentadiè",
+      "trampa: numerar per l'extrem que dona localitzadors més alts"
+     ],
+     [
+      "1,3-pentè",
+      "trampa: oblidar el prefix di- amb dos dobles enllaços"
+     ],
+     [
+      "1,4-pentadiè",
+      "trampa: situar malament el segon doble enllaç"
+     ],
+     "Hi ha dos dobles enllaços en una cadena de 5 carbonis, que comencen als carbonis 1 i 3. Per això porta el prefix di- i s'acaba en -diè. Regla: tants localitzadors com dobles enllaços."
+    ],
+    [
+     4,
+     "En un alquè els dobles enllaços tenen el mateix localitzador numerant des de qualsevol extrem. Quin criteri decideix el sentit de la numeració?",
+     "Els radicals reben els localitzadors més baixos",
+     [
+      "Es comença per l'extrem esquerre del dibuix",
+      "trampa: pensar que el sentit de lectura marca la numeració"
+     ],
+     [
+      "Els radicals reben els localitzadors més alts",
+      "trampa: invertir el criteri dels radicals"
+     ],
+     [
+      "Es comença pel carboni amb més hidrògens",
+      "trampa: inventar un criteri que no existeix"
+     ],
+     "Primer es dona el número més baix als dobles enllaços. Si hi ha empat, passen a decidir els radicals, que han de tenir els localitzadors més baixos possibles."
+    ],
+    [
+     5,
+     "Quina és la fórmula del 2-etil-1-pentè?",
+     "CH₂=C(CH₂-CH₃)-CH₂-CH₂-CH₃",
+     [
+      "CH₃-C(CH₂-CH₃)=CH-CH₂-CH₃",
+      "trampa: situar el doble enllaç entre els carbonis 2 i 3"
+     ],
+     [
+      "CH₂=CH-CH(CH₂-CH₃)-CH₂-CH₃",
+      "trampa: posar l'etil al carboni 3"
+     ],
+     [
+      "CH₂=C(CH₂-CH₃)-CH₂-CH₃",
+      "trampa: fer la cadena un carboni més curta: és el 2-etil-1-butè"
+     ],
+     "La cadena és de 5 carbonis amb el doble enllaç entre els carbonis 1 i 2, i un etil al carboni 2. Les altres opcions canvien el doble enllaç, l'etil o la longitud de la cadena."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "El nom 2-metil-1,3-butadiè indica dos dobles enllaços, situats als carbonis 1 i 3.",
+     true,
+     "El prefix di- i els localitzadors 1,3 diuen que hi ha dos dobles enllaços, un al carboni 1 i l'altre al 3. A més hi ha un metil al carboni 2.",
+     "trampa: creure que 1,3 són les posicions dels radicals"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Alquins",
+   "pagina": 12,
+   "cara": 12,
+   "ayuda": "Els alquins tenen triples enllaços C≡C i la fórmula general CₙH₂ₙ₋₂ (amb un sol triple enllaç): per cada triple enllaç s'eliminen quatre hidrògens de l'alcà. S'anomenen igual que els alquens però amb la terminació -í en lloc de -è. Exemple: CH≡C-CH₂-CH₃ és l'1-butí.",
+   "test": [
+    [
+     3,
+     "Quin és el nom de CH₃-C≡C-CH₂-CH₃?",
+     "2-pentí",
+     [
+      "3-pentí",
+      "trampa: numerar per l'extrem que dona el localitzador més alt"
+     ],
+     [
+      "2-pentè",
+      "trampa: usar la terminació -è dels alquens"
+     ],
+     [
+      "2-butí",
+      "trampa: comptar un carboni de menys"
+     ],
+     "La cadena té 5 carbonis i el triple enllaç està entre els carbonis 2 i 3. Es numera per l'extrem que dona el 2. Regla: terminació -í i localitzador més baix."
+    ],
+    [
+     3,
+     "Quants hidrògens té un alquí de 4 carbonis amb un sol triple enllaç?",
+     "6",
+     [
+      "8",
+      "trampa: usar la fórmula dels alquens"
+     ],
+     [
+      "10",
+      "trampa: usar la fórmula dels alcans"
+     ],
+     [
+      "4",
+      "trampa: creure que hi ha un hidrogen per carboni"
+     ],
+     "La fórmula dels alquins és CₙH₂ₙ₋₂ i amb n = 4 dona 2·4 - 2 = 6. Respecte al butà (10 hidrògens) falten quatre hidrògens."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Per cada enllaç triple s'eliminen quatre hidrògens de l'alcà corresponent.",
+     true,
+     "Un triple enllaç equival a treure quatre hidrògens a l'alcà, per això la fórmula és CₙH₂ₙ₋₂ en lloc de CₙH₂ₙ₊₂.",
+     "trampa: pensar que només se n'eliminen dos, com en un doble enllaç"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Dobles i triples enllaços junts",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "Quan una molècula té dobles i triples enllaços, la cadena principal és la que té més insaturacions (de qualsevol tipus), amb localitzadors com més baixos millor. En igualtat de condicions, el doble enllaç té prioritat sobre el triple per rebre el número més baix. El nom cita primer els dobles (-en-) i després els triples (-í). Exemple: CH₂=CH-C≡CH és l'1-buten-3-í.",
+   "test": [
+    [
+     4,
+     "Quin és el nom de CH₂=CH-C≡CH?",
+     "1-buten-3-í",
+     [
+      "3-buten-1-í",
+      "trampa: donar el número més baix al triple enllaç"
+     ],
+     [
+      "1-butin-3-è",
+      "trampa: intercanviar les terminacions"
+     ],
+     [
+      "1,3-butadiè",
+      "trampa: oblidar el triple enllaç"
+     ],
+     "La cadena és de 4 carbonis amb el doble enllaç al 1 i el triple al 3 (o a l'inrevés des de l'altre extrem). Si hi ha empat, el doble enllaç rep el número més baix. El nom cita -en- abans que -í."
+    ],
+    [
+     5,
+     "Quin és el nom de CH₂=CH-C≡C-CH=CH₂?",
+     "1,5-hexadien-3-í",
+     [
+      "3-hexin-1,5-diè",
+      "trampa: escriure el triple enllaç abans que els dobles"
+     ],
+     [
+      "1,5-hexadiè",
+      "trampa: oblidar el triple enllaç"
+     ],
+     [
+      "1,3,5-hexatriè",
+      "trampa: tractar tots els enllaços múltiples com a dobles"
+     ],
+     "La cadena té 6 carbonis amb dobles enllaços als carbonis 1 i 5 i un triple al 3. El nom cita primer els dobles (1,5-hexadien) i acaba amb el triple (3-í)."
+    ],
+    [
+     5,
+     "Quina és la fórmula del 3-propil-1-hexen-4-í?",
+     "CH₂=CH-CH(CH₂-CH₂-CH₃)-C≡C-CH₃",
+     [
+      "CH₂=CH-CH(CH₂-CH₂-CH₃)-CH₂-C≡CH",
+      "trampa: col·locar el triple enllaç al carboni 5"
+     ],
+     [
+      "CH₂=CH-CH(CH₂-CH₂-CH₃)-C≡C-CH₂-CH₃",
+      "trampa: fer la cadena un carboni més llarga: és un 1-heptè"
+     ],
+     [
+      "CH≡C-CH(CH₂-CH₂-CH₃)-CH=CH-CH₃",
+      "trampa: numerar pel triple enllaç i intercanviar les posicions"
+     ],
+     "Hexè-í vol dir cadena de 6 carbonis, amb el doble enllaç entre els carbonis 1 i 2 i el triple entre el 4 i el 5. El propil penja del carboni 3."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "En un compost amb un doble i un triple enllaç, el triple sempre rep el localitzador més baix.",
+     false,
+     "En igualtat de condicions, el número més baix és per al doble enllaç. Per això CH₂=CH-C≡CH és l'1-buten-3-í i no el 3-buten-1-í.",
+     "trampa: pensar que l'enllaç més fort va primer"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

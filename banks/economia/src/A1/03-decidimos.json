@@ -1,0 +1,123 @@
+{
+ "subtema": "Cómo decidimos",
+ "conceptos": [
+  {
+   "nombre": "Calcular el coste de oportunidad",
+   "pagina": 3,
+   "ayuda": "El coste de oportunidad es el valor de la mejor alternativa a la que se renuncia al tomar una decisión. Cuenta solo la mejor opción descartada, no la suma de todas. Elegir siempre implica descartar otra cosa, aunque no se pague dinero.",
+   "test": [
+    [
+     3,
+     "Marta tiene una tarde libre y dos opciones: ir al gimnasio, que valora en 6 puntos, o quedar con sus amigas, que valora en 8 puntos. Elige el gimnasio. ¿Cuál es su coste de oportunidad?",
+     "Quedar con sus amigas, la mejor alternativa a la que renuncia",
+     [
+      "Ir al gimnasio, la opción que ha elegido",
+      "confunde la opción elegida con la descartada"
+     ],
+     [
+      "La suma de las dos opciones, 14 puntos",
+      "suma las alternativas en lugar de tomar la mejor descartada"
+     ],
+     [
+      "Ninguno, porque no ha pagado dinero por elegir",
+      "identifica coste con gasto monetario"
+     ],
+     "El coste de oportunidad es el valor de la mejor alternativa a la que se renuncia, aquí quedar con las amigas. No se suma lo elegido ni se mira solo el dinero. Regla: lo que dejas, no lo que eliges."
+    ]
+   ]
+  },
+  {
+   "nombre": "Por qué se ignoran los costes irrecuperables",
+   "pagina": 3,
+   "ayuda": "Los costes irrecuperables o hundidos son gastos del pasado que no se pueden recuperar decidas lo que decidas. Un agente racional no debe tenerlos en cuenta al evaluar decisiones futuras. Para decidir solo importan los costes y beneficios que todavía dependen de lo que hagas ahora.",
+   "test": [
+    [
+     2,
+     "¿Por qué un agente económico racional no debe considerar los costes irrecuperables al decidir?",
+     "Porque son gastos del pasado que no cambian con la decisión actual",
+     [
+      "Porque son costes que todavía no se han producido",
+      "confunde coste hundido con coste futuro"
+     ],
+     [
+      "Porque siempre son de pequeño importe",
+      "cree que lo hundido es lo poco importante"
+     ],
+     [
+      "Porque solo afectan a las empresas y no a las personas",
+      "limita los costes hundidos a las empresas"
+     ],
+     "Un coste hundido ya se pagó y no se recupera decidas lo que decidas, así que no debe pesar en el futuro. Su tamaño no importa. Regla: lo pasado ya no se decide."
+    ],
+    [
+     5,
+     "Una empresa pagó 20.000 euros, que no recuperará, por una máquina. Usarla un año más supone un coste extra de 4.000 euros y aporta un beneficio extra de 3.000 euros. ¿Qué debería hacer según el tema?",
+     "No usarla más, porque el beneficio marginal es menor que el coste marginal y los 20.000 euros son un coste hundido",
+     [
+      "Usarla, para no perder los 20.000 euros que ya pagó",
+      "deja que el coste hundido condicione la decisión"
+     ],
+     [
+      "Usarla, porque 20.000 euros superan a los 4.000 euros de coste extra",
+      "compara el coste hundido con el coste marginal"
+     ],
+     [
+      "Usarla, porque el beneficio extra es positivo aunque sea menor que el coste",
+      "olvida que el beneficio marginal debe igualar o superar al coste marginal"
+     ],
+     "Se compara solo lo que cambia: beneficio marginal de 3.000 euros frente a coste marginal de 4.000 euros, que no compensa. Los 20.000 euros son un coste hundido y no entran. Regla: decide con lo marginal y olvida lo hundido."
+    ]
+   ]
+  },
+  {
+   "nombre": "La regla del análisis marginal",
+   "pagina": 3,
+   "ayuda": "Muchas decisiones no son todo o nada, sino ajustes en el margen. El coste marginal es el coste extra de una unidad adicional y el beneficio marginal es el beneficio extra de esa unidad. Según la regla clave, la decisión es racional si el beneficio marginal es igual o mayor que el coste marginal.",
+   "test": [
+    [
+     4,
+     "Según la regla clave del tema, una persona valora una unidad adicional con un beneficio marginal de 4 euros y un coste marginal de 4 euros. ¿Qué indica la regla?",
+     "Es racional realizarla, porque el beneficio marginal es igual al coste marginal",
+     [
+      "No es racional, porque no hay beneficio extra que compense",
+      "exige que el beneficio supere siempre al coste"
+     ],
+     [
+      "Es irracional, porque el beneficio marginal no supera al coste marginal",
+      "confunde igual con menor"
+     ],
+     [
+      "No se puede decidir sin conocer los costes irrecuperables",
+      "cree que los costes hundidos son necesarios para decidir"
+     ],
+     "La regla clave dice que la decisión es racional si el beneficio marginal es igual o mayor que el coste marginal. Aquí son iguales, así que se realiza. Regla: BM mayor o igual que CM, adelante."
+    ]
+   ]
+  },
+  {
+   "nombre": "Clasificar los incentivos",
+   "pagina": 4,
+   "ayuda": "Un incentivo es un estímulo que cambia la conducta modificando los costes o los beneficios de las opciones. Puede ser una recompensa, como una bonificación o una subvención, o un castigo, como una multa. Todos funcionan porque hacen más atractiva o más cara una conducta.",
+   "test": [
+    [
+     2,
+     "Una subvención, una bonificación y una multa son incentivos. ¿Cómo se clasifican?",
+     "La subvención y la bonificación son recompensas; la multa es un castigo",
+     [
+      "Las tres son castigos, porque modifican los costes",
+      "cree que modificar costes es siempre castigar"
+     ],
+     [
+      "La subvención y la multa son recompensas; la bonificación es un castigo",
+      "mezcla recompensas y castigos"
+     ],
+     [
+      "La bonificación y la multa son recompensas; la subvención es un castigo",
+      "mezcla recompensas y castigos"
+     ],
+     "Un incentivo es una recompensa o un castigo que cambia la conducta. Subvenciones y bonificaciones premian; las multas castigan. Regla: lo que premia es recompensa, lo que penaliza es castigo."
+    ]
+   ]
+  }
+ ]
+}

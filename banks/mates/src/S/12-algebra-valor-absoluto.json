@@ -1,0 +1,129 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones con valor absoluto",
+ "conceptos": [
+  {
+   "nombre": "Valor absoluto igual a un número",
+   "pagina": 25,
+   "ayuda": "Si $a>0$, la ecuación $|f(x)|=a$ equivale a dos ecuaciones: $f(x)=a$ y $f(x)=-a$. Se resuelven las dos y se juntan las soluciones. Si $a<0$ no hay solución y si $a=0$ solo vale $f(x)=0$. Se comprueba cada solución en la ecuación original. Ejemplo: $|x-1|=4$ da $x-1=4$, es decir $x=5$, y $x-1=-4$, es decir $x=-3$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $|x-3|=5$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      8
+     ],
+     "Se separa en $x-3=5$, que da $x=8$, y $x-3=-5$, que da $x=-2$. Ambas valen al sustituir.",
+     "[x for x in range(-30, 31) if abs(abs(x-3) - 5) < 1e-9]"
+    ],
+    [
+     2,
+     "Resuelve $|2x+1|=7$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -4,
+      3
+     ],
+     "Casos: $2x+1=7$ da $x=3$ y $2x+1=-7$ da $x=-4$. Se comprueba: $|7|=7$ y $|-7|=7$.",
+     "[x for x in range(-30, 31) if abs(abs(2*x+1) - 7) < 1e-9]"
+    ],
+    [
+     2,
+     "Resuelve $|x^2-5|=4$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -3,
+      -1,
+      1,
+      3
+     ],
+     "Casos: $x^2-5=4$ da $x^2=9$, luego $x=\\pm3$; y $x^2-5=-4$ da $x^2=1$, luego $x=\\pm1$. Las cuatro soluciones valen.",
+     "[x for x in range(-30, 31) if abs(abs(x**2 - 5) - 4) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $|x^2-2x|=3$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -1,
+      3
+     ],
+     "Caso $x^2-2x=3$: $x^2-2x-3=0$ da $x=3$ y $x=-1$. Caso $x^2-2x=-3$: $x^2-2x+3=0$ tiene discriminante $4-12<0$, sin soluciones reales. Las soluciones son $-1$ y $3$.",
+     "[x for x in range(-30, 31) if abs(abs(x**2 - 2*x) - 3) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $|x^2-6x+4|=4$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      0,
+      2,
+      4,
+      6
+     ],
+     "Caso $x^2-6x+4=4$: $x^2-6x=0$ da $x=0$ y $x=6$. Caso $x^2-6x+4=-4$: $x^2-6x+8=0$ da $x=2$ y $x=4$. Las cuatro valen.",
+     "[x for x in range(-30, 31) if abs(abs(x**2 - 6*x + 4) - 4) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Valor absoluto igual a una expresión",
+   "pagina": 25,
+   "ayuda": "En $|f(x)|=g(x)$ el segundo miembro debe ser $g(x)\\ge0$. Se resuelven los dos casos $f(x)=g(x)$ y $f(x)=-g(x)$ y después se comprueba cada solución en la ecuación original, descartando las que dan $g(x)<0$. Ejemplo: $|x|=2x-3$ da $x=3$ (vale, $2\\cdot3-3=3$) y $x=1$ (no vale, $2\\cdot1-3=-1<0$).",
+   "problemas": [
+    [
+     3,
+     "Resuelve $|x+1|=2x-4$. Escribe las soluciones reales separadas por punto y coma.",
+     5,
+     "Caso $x+1=2x-4$: $x=5$ y $2\\cdot5-4=6\\ge0$, vale. Caso $x+1=-(2x-4)$: $3x=3$, $x=1$, pero $2\\cdot1-4=-2<0$, no vale. La única solución es $x=5$.",
+     "[x for x in range(-30, 31) if abs(abs(x+1) - (2*x-4)) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $|x^2-4|=3x$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      1,
+      4
+     ],
+     "Como $3x\\ge0$ hace falta $x\\ge0$. Caso $x^2-4=3x$: $x^2-3x-4=0$ da $x=4$ y $x=-1$ (este no vale). Caso $x^2-4=-3x$: $x^2+3x-4=0$ da $x=1$ y $x=-4$ (este no vale). Las soluciones son $1$ y $4$.",
+     "[x for x in range(-30, 31) if abs(abs(x**2 - 4) - 3*x) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $|x^2-x-2|=x+1$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -1,
+      1,
+      3
+     ],
+     "Hace falta $x+1\\ge0$. Caso $x^2-x-2=x+1$: $x^2-2x-3=0$ da $x=3$ y $x=-1$, ambas valen. Caso $x^2-x-2=-x-1$: $x^2=1$ da $x=\\pm1$ y ambas valen. Las soluciones distintas son $-1$, $1$ y $3$.",
+     "[x for x in range(-30, 31) if abs(abs(x**2 - x - 2) - (x+1)) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones con dos valores absolutos",
+   "pagina": 25,
+   "ayuda": "Si $|f(x)|=|g(x)|$, entonces $f(x)=g(x)$ o $f(x)=-g(x)$. Se resuelven los dos casos y no hace falta descartar nada, porque los dos miembros son siempre positivos. Si aparece además una suma con otro valor absoluto, se estudian los intervalos donde cambia el signo de cada expresión. Ejemplo: $|x|=|x-4|$ da $x=x-4$ (imposible) y $x=-(x-4)$, es decir $x=2$.",
+   "problemas": [
+    [
+     4,
+     "Resuelve $|4x-1|=|x+5|$. Escribe las soluciones separadas por punto y coma (con decimales si hace falta).",
+     [
+      -0.8,
+      2
+     ],
+     "Caso $4x-1=x+5$: $3x=6$, $x=2$. Caso $4x-1=-(x+5)$: $5x=-4$, $x=-0,8$. Ambas valen.",
+     "[k/5 for k in range(-100, 101) if abs(abs(4*(k/5) - 1) - abs(k/5 + 5)) < 1e-9]"
+    ],
+    [
+     5,
+     "Resuelve $|x+6|=|2x|+3$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -1,
+      3
+     ],
+     "Se estudian los tramos. Si $x<-6$: $-x-6=-2x+3$ da $x=9$, que no está en el tramo. Si $-6\\le x<0$: $x+6=-2x+3$ da $x=-1$, que vale. Si $x\\ge0$: $x+6=2x+3$ da $x=3$, que vale. Las soluciones son $-1$ y $3$.",
+     "[x for x in range(-30, 31) if abs(abs(x+6) - (abs(2*x) + 3)) < 1e-9]"
+    ]
+   ]
+  }
+ ]
+}

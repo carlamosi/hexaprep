@@ -1,0 +1,19 @@
+{
+ "tema": "T1 Normativa general",
+ "prefijo": "cat-n1",
+ "bloque": "Català",
+ "asignatura": {
+  "nombre": "Català",
+  "idioma": "ca",
+  "color": "#D9822B",
+  "acento": "#D9822B"
+ },
+ "fuente": {
+  "nombre": "Català Normativa general",
+  "archivo": "Catala_Normativa_general.pdf"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "a1"
+ }
+}

@@ -1,0 +1,350 @@
+{
+ "subtema": "Aspectes varis, barbarismes i pronoms",
+ "conceptos": [
+  {
+   "nombre": "a/ha, em/hem, tan/tant, quan/quant",
+   "pagina": 12,
+   "cara": 12,
+   "ayuda": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+   "test": [
+    [
+     2,
+     "Quina frase és correcta?",
+     "Ha pintat un quadre per a la seva germana.",
+     [
+      "A pintat un quadre per a la seva germana.",
+      "confon el verb haver amb la preposició"
+     ],
+     [
+      "Ha pintat un quadre per ha la seva germana.",
+      "confon la preposició amb el verb"
+     ],
+     [
+      "A pintat un quadre per ha la seva germana.",
+      "confon les dues paraules"
+     ],
+     "«Ha» és el verb haver (ha pintat) i «a» és la preposició (per a la seva germana)."
+    ],
+    [
+     3,
+     "Quina frase és correcta?",
+     "L'aigua està tan freda que no em puc banyar.",
+     [
+      "L'aigua està tant freda que no em puc banyar.",
+      "confon tan (castellà «tan») amb tant (castellà «tanto»)"
+     ],
+     [
+      "L'aigua està tam freda que no em puc banyar.",
+      "escriu m en lloc de n"
+     ],
+     [
+      "L'aigua està tans freda que no em puc banyar.",
+      "afegeix una -s de plural"
+     ],
+     "Davant d'un adjectiu (freda) s'escriu tan (castellà «tan»). Tant correspon a «tanto»."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "No sé quan arribarà.",
+     [
+      "No sé quant arribarà.",
+      "confon quan (castellà «cuando») amb quant (castellà «cuanto»)"
+     ],
+     [
+      "No sé cuan arribarà.",
+      "escriu cu en lloc de qu"
+     ],
+     [
+      "No sé quan arribara.",
+      "oblida l'accent d'una aguda acabada en vocal"
+     ],
+     "«Quan» és «cuando»; «quant» és «cuanto»."
+    ],
+    [
+     5,
+     "Quina frase és correcta?",
+     "Quant t'ha costat aquest vestit?",
+     [
+      "Quan t'ha costat aquest vestit?",
+      "confon quan (castellà «cuando») amb quant (castellà «cuanto»)"
+     ],
+     [
+      "Quant t'a costat aquest vestit?",
+      "confon el verb haver amb la preposició"
+     ],
+     [
+      "Cuant t'ha costat aquest vestit?",
+      "escriu cu en lloc de qu"
+     ],
+     "Aquí es pregunta la quantitat («cuánto»), per tant quant. A més, «ha» és el verb haver."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "A «Em va dir que hem de llegir molt», el primer «em» és un pronom i «hem» és el verb haver.",
+     true,
+     "Em (a mi) és pronom i hem (de haver) és el verb: hem de llegir.",
+     "trampa: escriure sempre em o sempre hem sense distingir pronom i verb"
+    ]
+   ]
+  },
+  {
+   "nombre": "perquè, per què, sinó, si no, sí, si",
+   "pagina": 13,
+   "cara": 13,
+   "ayuda": "Perquè (junt) és la resposta o la finalitat: «Dona-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+   "test": [
+    [
+     2,
+     "Quina frase és correcta?",
+     "Per què ho dius?",
+     [
+      "Perquè ho dius?",
+      "usa la conjunció en una pregunta"
+     ],
+     [
+      "Per que ho dius?",
+      "oblida l'accent del que interrogatiu"
+     ],
+     [
+      "Perque ho dius?",
+      "oblida l'accent i junta les paraules"
+     ],
+     "A les preguntes s'escriu per què, separat i amb accent."
+    ],
+    [
+     3,
+     "Quina frase és correcta?",
+     "Dóna-li aquest regal perquè l'emboliqui.",
+     [
+      "Dóna-li aquest regal per què l'emboliqui.",
+      "separa perquè en una frase de finalitat"
+     ],
+     [
+      "Dóna-li aquest regal per que l'emboliqui.",
+      "separa i oblida l'accent"
+     ],
+     [
+      "Dóna-li aquest regal perque l'emboliqui.",
+      "oblida l'accent de perquè"
+     ],
+     "Perquè (junt i amb accent) introdueix la finalitat o la causa."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "No ha dit això sinó això altre.",
+     [
+      "No ha dit això si no això altre.",
+      "separa sinó quan expressa oposició"
+     ],
+     [
+      "No ha dit això sino això altre.",
+      "oblida l'accent de sinó"
+     ],
+     [
+      "No ha dit això si nò això altre.",
+      "posa l'accent a la negació"
+     ],
+     "Sinó (junt, amb accent) expressa oposició: no això sinó allò."
+    ],
+    [
+     5,
+     "Quina frase és correcta?",
+     "Si no plou, entrarem en fase de sequera.",
+     [
+      "Sinó plou, entrarem en fase de sequera.",
+      "uneix si no quan és condició més negació"
+     ],
+     [
+      "Sí no plou, entrarem en fase de sequera.",
+      "posa accent a la conjunció condicional"
+     ],
+     [
+      "Si nó plou, entrarem en fase de sequera.",
+      "posa l'accent a la negació"
+     ],
+     "Aquí hi ha condició més negació (si + no), i la condició s'escriu si sense accent."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "La frase «Sinó plou, sortirem» és correcta.",
+     false,
+     "Hi ha condició més negació: cal escriure «Si no plou, sortirem». Sinó expressa oposició.",
+     "trampa: creure que sinó i si no són intercanviables"
+    ]
+   ]
+  },
+  {
+   "nombre": "Barbarismes i interferències del castellà",
+   "pagina": 14,
+   "cara": 14,
+   "ayuda": "Un barbarisme és una paraula o expressió calcada del castellà. Els apunts en fan una llista amb la forma correcta i la incorrecta: esdeveniment (no aconteixement), per força (no a la força), a terminis (no a plaços), potser (no a la millor), donar suport (no apoiar), estalviar (no ahorrar), esgotar (no agotar), entrepà (no bocadillo), augment (no aument), ajornar (no aplaçar). Davant del dubte, pensa si la paraula és només un calc.",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta?",
+     "esdeveniment",
+     [
+      "aconteixement",
+      "calca el castellà «acontecimiento»"
+     ],
+     [
+      "aconteciment",
+      "adapta el castellà «acontecimiento»"
+     ],
+     [
+      "esdevenement",
+      "simplifica el mot"
+     ],
+     "«Esdeveniment» és la forma correcta; «aconteixement» és un barbarisme."
+    ],
+    [
+     3,
+     "Quina és l'expressió correcta?",
+     "a terminis",
+     [
+      "a plaços",
+      "calca el castellà «a plazos»"
+     ],
+     [
+      "a terminos",
+      "calca el castellà amb o"
+     ],
+     [
+      "a términis",
+      "posa accent a una plana acabada en -is"
+     ],
+     "En català es paga «a terminis»; «a plaços» és un barbarisme."
+    ],
+    [
+     4,
+     "Quina frase no té cap barbarisme?",
+     "Han de donar suport al projecte i estalviar diners.",
+     [
+      "Han d'apoiar el projecte i estalviar diners.",
+      "calca el castellà «apoyar»"
+     ],
+     [
+      "Han de donar suport al projecte i ahorrar diners.",
+      "calca el castellà «ahorrar»"
+     ],
+     [
+      "Han de donar suport al projecte i agotar els diners.",
+      "calca el castellà «agotar»"
+     ],
+     "Les formes correctes són donar suport i estalviar (no apoiar, ahorrar, agotar)."
+    ],
+    [
+     5,
+     "Quina frase no té cap barbarisme?",
+     "Va comprar un entrepà i un abonament de bus.",
+     [
+      "Va comprar un bocadillo i un abonament de bus.",
+      "calca el castellà «bocadillo»"
+     ],
+     [
+      "Va comprar un entrepà i un abono de bus.",
+      "calca el castellà «abono»"
+     ],
+     [
+      "Va comprar un bocadillo i un abono de bus.",
+      "calca el castellà dues vegades"
+     ],
+     "Entrepà i abonament són les formes correctes; bocadillo i abono són barbarismes."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«A la millor» és una expressió correcta en català per dir «potser».",
+     false,
+     "«A la millor» és un barbarisme (de «a lo mejor»); la forma correcta és «potser».",
+     "trampa: creure que una expressió que s'assembla al castellà ja és correcta"
+    ]
+   ]
+  },
+  {
+   "nombre": "Pronoms febles, haver-hi i obligació",
+   "pagina": 12,
+   "cara": 12,
+   "ayuda": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+   "test": [
+    [
+     3,
+     "Quina frase és correcta?",
+     "Els vaig dir que hi anessin ràpidament.",
+     [
+      "Lis vaig dir que hi anessin ràpidament.",
+      "usa «lis», que no existeix en català"
+     ],
+     [
+      "Els hi vaig dir que hi anessin ràpidament.",
+      "usa «els hi» amb un sol complement"
+     ],
+     [
+      "Les vaig dir que hi anessin ràpidament.",
+      "canvia el pronom pel femení"
+     ],
+     "«Lis» no existeix. «Els hi» només és correcte si hi ha dos complements."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "Avui hi ha molts cotxes al carrer.",
+     [
+      "Avui hi han molts cotxes al carrer.",
+      "fa concordar haver-hi amb el plural"
+     ],
+     [
+      "Avui els hi ha molts cotxes al carrer.",
+      "afegeix un pronom innecessari"
+     ],
+     [
+      "Avui hi ha de molts cotxes al carrer.",
+      "afegeix una preposició de més"
+     ],
+     "«Hi ha» és invariable, com el castellà «hay»: hi ha molts cotxes."
+    ],
+    [
+     5,
+     "Quina frase expressa correctament l'obligació?",
+     "Hem d'anar d'excursió a la muntanya.",
+     [
+      "Tenim que anar d'excursió a la muntanya.",
+      "calca el castellà «tenemos que»"
+     ],
+     [
+      "Hi ha que anar d'excursió a la muntanya.",
+      "calca el castellà «hay que»"
+     ],
+     [
+      "Tenim de anar d'excursió a la muntanya.",
+      "usa tenir de"
+     ],
+     "L'obligació s'expressa amb «haver de» o «caldre»; «tenir que», «tenir de» i «hi ha que» són incorrectes."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "L'infinitiu «sapiguer» no existeix en català: la forma correcta és «saber».",
+     true,
+     "Tots els infinitius acabats en -guer són incorrectes: saber, poder, tenir, voler.",
+     "trampa: formar l'infinitiu a partir del subjuntiu «sàpiga»"
+    ],
+    [
+     3,
+     "La frase «He saludat al teu germà» és correcta perquè el complement directe s'introdueix amb a.",
+     false,
+     "En català el complement directe no s'introdueix amb a: «He saludat el teu germà».",
+     "trampa: calcar l'a personal del castellà"
+    ]
+   ]
+  }
+ ]
+}

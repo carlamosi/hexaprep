@@ -69,3 +69,8 @@ Un problema con enunciado común y 2 a 5 apartados. Cada apartado es una pregunt
 - Las respuestas muy grandes o pequeñas se piden en **notación científica con e** («escriu el resultat en notació científica, per exemple 2,5e22»): la alumna escribe `2,24e22`, `2,24·10^22` o `2,24x10^22`, y todo se acepta. En `solucion` va el número (2.24e22) y la `expr` da el valor sin redondear; cuida que `solucion` esté redondeada a 3 cifras significativas (diferencia con la `expr` menor del 0,5 %).
 - Pon el nombre de la unidad en el enunciado cuando haga falta, nunca en la respuesta.
 - `grupos` va dentro del concepto (un grupo entero pertenece a un único concepto). Verifica con `.venv\Scripts\python tools\build_quimica.py --check banks\quimica\src\T2`.
+
+---
+
+# Formulació orgànica (banks/quimica/src/T3)
+Tema nuevo de Química (apuntes `banks/quimica/texto/t3_formulacio_organica.md`, 32 páginas A4; `pagina` = `cara`). Mismo formato de fragmentos y las mismas reglas (catalán, sin guion largo). Cuidado: las fórmulas y los enlaces se escriben con el guion normal `-`, nunca con «–» ni «—» (están prohibidos): CH₃-CH₂-OH, CH₃-CH=CH₂, HC≡C-CH₃. Usa subíndices Unicode (₀₁₂₃₄₅₆₇₈₉) y no uses imágenes. Verifica con `.venv\Scripts\python tools\build_quimica.py --check banks\quimica\src\T3`.

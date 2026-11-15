@@ -1,0 +1,293 @@
+{
+ "subtema": "Èters, aldehids i cetones",
+ "conceptos": [
+  {
+   "nombre": "Èters: nomenclatura radicofuncional",
+   "pagina": 20,
+   "cara": 20,
+   "ayuda": "Els èters tenen la fórmula general R-O-R'. En la nomenclatura radicofuncional s'anomena cada radical unit a l'oxigen per ordre alfabètic i després la paraula èter; si els dos radicals són iguals s'usa di-. Exemple: CH₃-O-CH₂-CH₃ és l'etil metil èter i CH₃-CH₂-O-CH₂-CH₃ és el dietil èter.",
+   "test": [
+    [
+     1,
+     "Quina és la fórmula general dels èters?",
+     "R-O-R'",
+     [
+      "R-OH",
+      "trampa: confondre l'èter amb l'alcohol"
+     ],
+     [
+      "R-CO-R'",
+      "trampa: confondre l'èter amb la cetona"
+     ],
+     [
+      "R-COO-R'",
+      "trampa: confondre l'èter amb l'èster"
+     ],
+     "Un èter té un oxigen entre dos radicals: R-O-R'. Si l'oxigen porta un H és un alcohol, i si hi ha un carbonil és una cetona o un èster."
+    ],
+    [
+     3,
+     "Com s'anomena CH₃-O-CH₂-CH₃ en nomenclatura radicofuncional?",
+     "Etil metil èter",
+     [
+      "Metil etil èter",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     [
+      "Etil metil cetona",
+      "trampa: confondre l'èter amb la cetona"
+     ],
+     [
+      "Dietil èter",
+      "trampa: repetir un radical que no hi és"
+     ],
+     "Els radicals units a l'oxigen són el metil i l'etil. S'anomenen per ordre alfabètic i s'acaba amb la paraula èter: etil metil èter."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "L'èter CH₃-CH₂-O-CH₂-CH₃ s'anomena dimetil èter.",
+     false,
+     "Els dos radicals són etil, per tant és el dietil èter. El dimetil èter seria CH₃-O-CH₃.",
+     "trampa: confondre el nombre de carbonis de cada radical"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Èters: nomenclatura per substitució",
+   "pagina": 21,
+   "cara": 21,
+   "ayuda": "En la nomenclatura per substitució s'escull la cadena principal (la més llarga) i el grup -O-R' es tracta com un radical: metoxi, etoxi, propoxi... S'escriuen els radicals amb localitzador i per ordre alfabètic, i al final el nom de la cadena. Quan el localitzador sempre seria 1, no s'escriu: CH₃-O-CH₂-CH₃ és el metoxietà. Exemple: CH₃-CH(O-CH₃)-CH₃ és el 2-metoxipropà.",
+   "test": [
+    [
+     4,
+     "Quin és el nom per substitució de CH₃-CH(O-CH₃)-CH₃?",
+     "2-metoxipropà",
+     [
+      "1-metoxipropà",
+      "trampa: col·locar el metoxi a l'extrem de la cadena"
+     ],
+     [
+      "2-metoxibutà",
+      "trampa: comptar un carboni de més a la cadena"
+     ],
+     [
+      "2-metilpropoxi",
+      "trampa: invertir cadena i radical"
+     ],
+     "La cadena principal és el propà (3 carbonis) i l'oxigen penja del carboni central. El grup O-CH₃ és el radical metoxi, així que és 2-metoxipropà."
+    ],
+    [
+     4,
+     "Quin és el nom per substitució de CH₃-CH₂-O-CH=CH₂?",
+     "Etoxietè",
+     [
+      "1-etoxi-1-etè",
+      "trampa: afegir localitzadors que no cal"
+     ],
+     [
+      "Etoxietà",
+      "trampa: oblidar el doble enllaç"
+     ],
+     [
+      "Etiloxietè",
+      "trampa: usar etil en lloc de etoxi"
+     ],
+     "La cadena principal és l'etè i el grup O-CH₂-CH₃ és el radical etoxi. Els localitzadors serien tots 1 i per això no s'escriuen."
+    ],
+    [
+     5,
+     "Quina és la fórmula del 5-etoxi-2,3-dimetilheptà?",
+     "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(O-CH₂-CH₃)-CH₂-CH₃",
+     [
+      "CH₃-CH(CH₃)-CH(CH₃)-CH(O-CH₂-CH₃)-CH₂-CH₂-CH₃",
+      "trampa: col·locar l'etoxi al carboni 4"
+     ],
+     [
+      "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(CH₂-CH₃)-CH₂-CH₃",
+      "trampa: oblidar l'oxigen: és un etil"
+     ],
+     [
+      "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(O-CH₃)-CH₂-CH₂-CH₃",
+      "trampa: usar metoxi en lloc d'etoxi i allargar la cadena"
+     ],
+     "La cadena és de 7 carbonis amb metils als carbonis 2 i 3 i el grup etoxi (O-CH₂-CH₃) al carboni 5. Cal vigilar que l'oxigen hi sigui i que l'etoxi quedi on toca."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "En CH₃-O-CH₂-CH₃ la cadena principal és de 2 carbonis i el grup O-CH₃ passa a ser el radical metoxi.",
+     true,
+     "Per substitució s'escull la cadena més llarga (età) i l'altre costat de l'oxigen, O-CH₃, es converteix en el radical metoxi: metoxietà.",
+     "trampa: pensar que l'oxigen forma part de la cadena"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Aldehids",
+   "pagina": 22,
+   "cara": 22,
+   "ayuda": "Els aldehids tenen el grup -CHO (R-CHO), que sempre és a l'extrem de la cadena. La cadena es numera començant pel carboni del -CHO i la terminació és -al. Amb dos grups -CHO s'usa di-. Exemple: CH₃-CH₂-CHO és el propanal, de 3 carbonis; l'aldehid del benzè és el benzaldehid.",
+   "test": [
+    [
+     1,
+     "Quina terminació indica un aldehid?",
+     "-al",
+     [
+      "-ol",
+      "trampa: confondre l'aldehid amb l'alcohol"
+     ],
+     [
+      "-ona",
+      "trampa: confondre l'aldehid amb la cetona"
+     ],
+     [
+      "-oic",
+      "trampa: confondre l'aldehid amb l'àcid carboxílic"
+     ],
+     "El grup -CHO dona la terminació -al: etanal, propanal, butanal. Regla: -al aldehid, -ol alcohol, -ona cetona, -oic àcid."
+    ],
+    [
+     3,
+     "Quin és el nom de CH₂=CH-CH₂-CHO?",
+     "3-butenal",
+     [
+      "1-butenal",
+      "trampa: numerar pel doble enllaç i no pel grup CHO"
+     ],
+     [
+      "2-butenal",
+      "trampa: situar malament el doble enllaç"
+     ],
+     [
+      "3-butenol",
+      "trampa: confondre l'aldehid amb l'alcohol"
+     ],
+     "La numeració comença pel carboni del -CHO. El doble enllaç queda entre els carbonis 3 i 4, i el nom és 3-butenal."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-CH(CH₃)-CH₂-CHO?",
+     "3-metilbutanal",
+     [
+      "2-metilbutanal",
+      "trampa: situar malament el radical"
+     ],
+     [
+      "3-metilpentanal",
+      "trampa: comptar un carboni de més"
+     ],
+     [
+      "3-metilbutanol",
+      "trampa: confondre l'aldehid amb l'alcohol"
+     ],
+     "Es numera des del -CHO: aquest és el carboni 1, el 2 és el CH₂ i el metil penja del carboni 3. La cadena és de 4 carbonis, per tant 3-metilbutanal."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "Per anomenar un aldehid, la cadena principal es numera començant pel carboni del grup -CHO.",
+     true,
+     "El grup -CHO és sempre a l'extrem de la cadena i el seu carboni és l'1.",
+     "trampa: creure que s'ha de començar pel radical més proper"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Cetones",
+   "pagina": 23,
+   "cara": 23,
+   "ayuda": "Les cetones tenen el grup carbonil -CO- entre dos carbonis. En la nomenclatura radicofuncional es citen els radicals per ordre alfabètic i la paraula cetona; en la nomenclatura per substitució s'escull la cadena que conté el -CO-, es numera perquè tingui el localitzador més baix i s'acaba en -ona. Si el -CO- és secundari s'usa el prefix oxo-. Exemple: CH₃-CO-CH₂-CH₃ és la butanona (el localitzador 2 no cal).",
+   "test": [
+    [
+     3,
+     "Quin és el nom per substitució de CH₃-CO-CH₂-CH₃?",
+     "Butanona",
+     [
+      "2-butanona",
+      "trampa: afegir un localitzador que no cal"
+     ],
+     [
+      "Butanal",
+      "trampa: confondre la cetona amb l'aldehid"
+     ],
+     [
+      "Propanona",
+      "trampa: comptar un carboni de menys"
+     ],
+     "La cadena té 4 carbonis i el carbonil és al segon, però en la butanona el -CO- sempre seria el 2 i no s'escriu. La terminació és -ona."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₂=CH-CO-CH₃?",
+     "3-buten-2-ona",
+     [
+      "1-buten-3-ona",
+      "trampa: numerar pel doble enllaç i no pel carbonil"
+     ],
+     [
+      "3-butenal",
+      "trampa: confondre la cetona amb l'aldehid"
+     ],
+     [
+      "3-buten-2-ol",
+      "trampa: confondre la cetona amb l'alcohol"
+     ],
+     "El carbonil és el grup principal i ha de tenir el número més baix: el 2. El doble enllaç queda al 3, i el nom és 3-buten-2-ona."
+    ],
+    [
+     5,
+     "Quin és el nom de CH₃-CO-CH₂-CHO?",
+     "3-oxobutanal",
+     [
+      "1,3-butandiona",
+      "trampa: tractar l'aldehid com si fos una cetona"
+     ],
+     [
+      "3-butanonal",
+      "trampa: posar dos sufixos"
+     ],
+     [
+      "2-oxobutanal",
+      "trampa: situar malament el carbonil"
+     ],
+     "L'aldehid té preferència, per tant la cadena es numera des del -CHO i el -CO- passa a ser secundari. S'indica amb el prefix oxo- al carboni 3: 3-oxobutanal."
+    ],
+    [
+     5,
+     "Quina és la fórmula del 3-isopropil-2,4-pentadiona?",
+     "CH₃-CO-CH[CH(CH₃)₂]-CO-CH₃",
+     [
+      "CH₃-CO-CH[CH₂-CH₂-CH₃]-CO-CH₃",
+      "trampa: confondre l'isopropil amb el propil"
+     ],
+     [
+      "CH₃-CO-CH₂-CO-CH(CH₃)₂",
+      "trampa: posar l'isopropil al final de la cadena"
+     ],
+     [
+      "CH₃-CO-CH[CH(CH₃)₂]-CHO",
+      "trampa: confondre una cetona amb un aldehid"
+     ],
+     "La cadena és de 5 carbonis amb grups carbonil als carbonis 2 i 4 i un isopropil, CH(CH₃)₂, al carboni central. Isopropil és ramificat, no és el propil lineal."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Quan el grup -CO- no és la funció principal, s'indica amb el prefix hidroxi-.",
+     false,
+     "El grup -CO- secundari s'indica amb el prefix oxo-. El prefix hidroxi- és per al grup -OH.",
+     "trampa: confondre els prefixos oxo- i hidroxi-"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

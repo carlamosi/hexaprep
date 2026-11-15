@@ -1,0 +1,350 @@
+{
+ "subtema": "Dièresi i diftongs",
+ "conceptos": [
+  {
+   "nombre": "La dièresi: què és i quan s'usa",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+   "test": [
+    [
+     1,
+     "Quina és la forma correcta?",
+     "veïna",
+     [
+      "veina",
+      "oblida trencar el diftong i sona «vei-na»"
+     ],
+     [
+      "vèina",
+      "posa accent en lloc de dièresi"
+     ],
+     [
+      "veïnà",
+      "accentua l'última síl·laba"
+     ],
+     "«Veïna» porta dièresi perquè no es pot accentuar la i sense canviar la tònica. Regla: si no es pot accentuar, dièresi."
+    ],
+    [
+     2,
+     "Quina és la forma correcta?",
+     "països",
+     [
+      "paisos",
+      "oblida la dièresi: sonaria «pai-sos»"
+     ],
+     [
+      "paìsos",
+      "accent greu en lloc de dièresi"
+     ],
+     [
+      "païssos",
+      "dobla la essa sense motiu"
+     ],
+     "«Països» porta dièresi per trencar el diftong. En canvi, el singular és «país» perquè s'hi pot posar accent."
+    ],
+    [
+     4,
+     "Quina és la forma correcta?",
+     "agraïa",
+     [
+      "agraía",
+      "posa accent en lloc de dièresi"
+     ],
+     [
+      "agraia",
+      "oblida trencar el diftong"
+     ],
+     [
+      "agraïem",
+      "posa dièresi en una forma que es pot accentuar"
+     ],
+     "«Agraïa» porta dièresi, però «agraíem» porta accent perquè la i és tònica i es pot accentuar."
+    ],
+    [
+     5,
+     "Per què escrivim «Lluïsa» amb dièresi i «Lluís» amb accent?",
+     "Perquè «Lluís» es pot accentuar i «Lluïsa» no",
+     [
+      "Perquè «Lluïsa» és femení i els femenins porten dièresi",
+      "creu que el gènere decideix la dièresi"
+     ],
+     [
+      "Perquè «Lluís» acaba en -s",
+      "creu que la -s final decideix la dièresi"
+     ],
+     [
+      "Perquè l'accent només s'usa en noms de persona masculins",
+      "inventa una regla sobre el gènere"
+     ],
+     "A «Lluís» la tònica cau en la i final, de manera que s'hi pot posar accent. A «Lluïsa» no, i cal la dièresi."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "La dièresi s'usa per trencar un diftong quan no es pot accentuar la paraula.",
+     true,
+     "Aquesta és la funció de la dièresi: si no hi ha accent possible, trenca el diftong: veïna, països.",
+     "trampa: creure que la dièresi és un tipus d'accent"
+    ]
+   ]
+  },
+  {
+   "nombre": "Casos especials de dièresi",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta?",
+     "agraïment",
+     [
+      "agraiment",
+      "oblida la dièresi d'un derivat d'«agrair»"
+     ],
+     [
+      "agraíment",
+      "posa accent en lloc de dièresi"
+     ],
+     [
+      "agrairment",
+      "manté la -r de l'infinitiu"
+     ],
+     "Els derivats d'infinitius porten dièresi: agraïment, de l'infinitiu agrair."
+    ],
+    [
+     3,
+     "Quina paraula acabada en vocal + itat és correcta?",
+     "ingenuïtat",
+     [
+      "ingenuitat",
+      "oblida la dièresi"
+     ],
+     [
+      "ingenuítat",
+      "posa accent en lloc de dièresi"
+     ],
+     [
+      "ingenüitat",
+      "posa la dièresi a la u"
+     ],
+     "Les paraules acabades en vocal + itat porten dièresi a la i: ingenuïtat, continuïtat. L'única excepció és meitat."
+    ],
+    [
+     4,
+     "Quina és la forma correcta del futur d'«agrair»?",
+     "agrairé",
+     [
+      "agraïré",
+      "posa dièresi a la terminació d'un futur"
+     ],
+     [
+      "agrairè",
+      "posa accent obert quan sona tancat"
+     ],
+     [
+      "agraire",
+      "oblida l'accent d'una aguda acabada en vocal"
+     ],
+     "Els futurs no porten mai dièresi a la terminació, i com que és aguda acabada en vocal porta accent: agrairé."
+    ],
+    [
+     5,
+     "Quina d'aquestes paraules s'escriu correctament amb dièresi?",
+     "heroïna",
+     [
+      "egoïsta",
+      "afegeix dièresi a una paraula acabada en -ista"
+     ],
+     [
+      "heroïsme",
+      "afegeix dièresi a una paraula acabada en -isme"
+     ],
+     [
+      "harmònïum",
+      "afegeix dièresi a una paraula acabada en -um"
+     ],
+     "«Heroïna» porta dièresi encara que «heroi» no. Les paraules acabades en -ista, -isme, -us i -um no en porten: egoista, heroisme, harmònium."
+    ]
+   ],
+   "vf": [
+    [
+     1,
+     "L'infinitiu «agrair» s'escriu «agraïr» perquè la dièresi trenca el diftong.",
+     false,
+     "Els infinitius no porten mai dièresi a la terminació: s'escriu agrair.",
+     "trampa: aplicar la dièresi a la terminació d'un infinitiu"
+    ],
+    [
+     3,
+     "La i de les terminacions -ista, -isme, -us i -um no porta dièresi (egoista, heroisme, Màrius, harmònium).",
+     true,
+     "Exemples: egoista, egoisme, heroisme, Màrius, harmònium.",
+     "trampa: confondre aquest cas amb el de «veïna» i creure que sempre porten dièresi"
+    ]
+   ]
+  },
+  {
+   "nombre": "Dièresi amb gu, qu i cultismes en -al",
+   "pagina": 4,
+   "cara": 4,
+   "ayuda": "Quan «ue» o «ui» van precedits de g o q i volem que soni la u, s'escriu dièresi: aigües (però aigua), adeqüi (però adequar), ambigüitat, pingüí. Si no hi ha dièresi, la u no sona (guerra, aquella). D'acord amb la normativa del 2016, els cultismes acabats en -al ja no porten dièresi: fluidal, laical, trapezoidal.",
+   "test": [
+    [
+     1,
+     "Quina és la forma correcta?",
+     "aigües",
+     [
+      "aigues",
+      "oblida la dièresi: la u no sonaria"
+     ],
+     [
+      "àigües",
+      "accentua la síl·laba equivocada"
+     ],
+     [
+      "aigúes",
+      "posa accent en lloc de dièresi"
+     ],
+     "«Aigües» porta dièresi perquè la u ha de sonar. El singular és «aigua»."
+    ],
+    [
+     2,
+     "Quina és la forma correcta?",
+     "pingüí",
+     [
+      "pingui",
+      "oblida l'accent i la dièresi"
+     ],
+     [
+      "pinguí",
+      "oblida la dièresi: la u no sonaria"
+     ],
+     [
+      "pingüi",
+      "posa dièresi però oblida l'accent d'una aguda"
+     ],
+     "«Pingüí» necessita dièresi perquè la u ha de sonar i accent perquè és aguda acabada en vocal."
+    ],
+    [
+     4,
+     "Quina és la forma correcta de «adequar» en subjuntiu (que ell...)?",
+     "adeqüi",
+     [
+      "adequi",
+      "oblida la dièresi: la u no sonaria"
+     ],
+     [
+      "adequí",
+      "posa accent en lloc de dièresi"
+     ],
+     [
+      "adecui",
+      "escriu c en lloc de qu"
+     ],
+     "Davant de «i» i amb la u sonora, la q porta dièresi: adeqüi (però adequar)."
+    ],
+    [
+     5,
+     "Com s'escriu l'adjectiu de «fluid» acabat en -al?",
+     "fluidal",
+     [
+      "fluïdal",
+      "manté la dièresi malgrat la normativa del 2016"
+     ],
+     [
+      "fluídal",
+      "posa accent en lloc de dièresi"
+     ],
+     [
+      "fluidall",
+      "escriu doble ela final"
+     ],
+     "La normativa vigent des del 2016 suprimeix la dièresi dels cultismes acabats en -al: fluidal, laical, trapezoidal."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Ambigüitat» porta dièresi perquè la u de «gui» ha de sonar.",
+     true,
+     "La g seguida de u i i demana dièresi quan la u es pronuncia: ambigüitat, pingüí.",
+     "trampa: creure que la u de «gui» sempre sona"
+    ]
+   ]
+  },
+  {
+   "nombre": "Diftongs",
+   "pagina": 5,
+   "cara": 5,
+   "ayuda": "Un diftong és la unió de dues vocals en una mateixa síl·laba. Els diftongs decreixents tenen i/u darrere d'una vocal: mai, pau, rei, peu. Els creixents són gu/qu més vocal quan la u sona (guant, pingüí) o i/u àtones a principi de paraula seguides de vocal (iogurt, hiena). No formen diftong gu/qu si la u no sona (guerra, aquella), vocal + ix/ig (caixa, goig) ni ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q (dia, família).",
+   "test": [
+    [
+     2,
+     "Quin d'aquests mots porta un diftong decreixent?",
+     "mai",
+     [
+      "dia",
+      "confon el diftong amb un hiat (consonant + ia)"
+     ],
+     [
+      "guerra",
+      "creu que la u de «gue» forma diftong"
+     ],
+     [
+      "caixa",
+      "creu que vocal + ix forma diftong"
+     ],
+     "«Mai» té una i darrere d'una vocal (ai): diftong decreixent."
+    ],
+    [
+     3,
+     "Quin d'aquests mots NO forma diftong?",
+     "guerra",
+     [
+      "guant",
+      "creu que la u no forma diftong quan sona"
+     ],
+     [
+      "pau",
+      "no reconeix el diftong decreixent a + u"
+     ],
+     [
+      "hiena",
+      "no reconeix la i àtona a principi de paraula + vocal"
+     ],
+     "A «guerra» la u no sona, per tant no hi ha diftong. Guant (u sonora), pau (a + u) i hiena (i + e àtones) sí que en formen."
+    ],
+    [
+     5,
+     "Per què «caixa» no forma diftong?",
+     "Perquè vocal + ix no forma diftong",
+     [
+      "Perquè la u no sona",
+      "confon amb el cas de gu/qu"
+     ],
+     [
+      "Perquè «ia» sempre és un hiat",
+      "confon vocal + ix amb ia"
+     ],
+     [
+      "Perquè la i és tònica",
+      "inventa una causa d'accentuació"
+     ],
+     "Les seqüències vocal + ix (caixa, eixugar) o vocal + ig (goig, maig) no formen diftong."
+    ]
+   ],
+   "vf": [
+    [
+     4,
+     "«Dia» no forma diftong perquè «ia» precedit d'una consonant que no és g ni q no forma diftong.",
+     true,
+     "Segons els apunts, ua, ue, uo, ia, ie, io precedits d'una consonant que no sigui g/q no formen diftong: dia, família, cacatua.",
+     "trampa: creure que qualsevol combinació de dues vocals forma sempre diftong"
+    ]
+   ]
+  }
+ ]
+}

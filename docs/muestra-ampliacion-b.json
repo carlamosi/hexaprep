@@ -1,0 +1,1454 @@
+[
+ {
+  "id": "qui-t3-0075",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Èters, aldehids i cetones",
+  "concepto": "Aldehids",
+  "dificultad": 4,
+  "enunciado": "Quin és el nom de CH₃-CH(CH₃)-CH₂-CHO?",
+  "ayuda_larga": "Els aldehids tenen el grup -CHO (R-CHO), que sempre és a l'extrem de la cadena. La cadena es numera començant pel carboni del -CHO i la terminació és -al. Amb dos grups -CHO s'usa di-. Exemple: CH₃-CH₂-CHO és el propanal, de 3 carbonis; l'aldehid del benzè és el benzaldehid.",
+  "fuente_pagina": 22,
+  "fuente_cara": 22,
+  "opciones": [
+   {
+    "texto": "2-metilbutanal",
+    "trampa": "situar malament el radical"
+   },
+   {
+    "texto": "3-metilbutanal"
+   },
+   {
+    "texto": "3-metilpentanal",
+    "trampa": "comptar un carboni de més"
+   },
+   {
+    "texto": "3-metilbutanol",
+    "trampa": "confondre l'aldehid amb l'alcohol"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Es numera des del -CHO: aquest és el carboni 1, el 2 és el CH₂ i el metil penja del carboni 3. La cadena és de 4 carbonis, per tant 3-metilbutanal."
+ },
+ {
+  "id": "qui-t3-0085",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Àcids carboxílics i èsters",
+  "concepto": "Àcids carboxílics",
+  "dificultad": 2,
+  "enunciado": "L'àcid etanoic també es coneix com a àcid acètic.",
+  "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+  "fuente_pagina": 24,
+  "fuente_cara": 24,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "creure que l'àcid acètic és un compost diferent"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "L'àcid acètic és el nom habitual de CH₃-COOH, que sistemàticament és l'àcid etanoic."
+ },
+ {
+  "id": "qui-t3-0071",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Èters, aldehids i cetones",
+  "concepto": "Èters: nomenclatura per substitució",
+  "dificultad": 5,
+  "enunciado": "Quina és la fórmula del 5-etoxi-2,3-dimetilheptà?",
+  "ayuda_larga": "En la nomenclatura per substitució s'escull la cadena principal (la més llarga) i el grup -O-R' es tracta com un radical: metoxi, etoxi, propoxi... S'escriuen els radicals amb localitzador i per ordre alfabètic, i al final el nom de la cadena. Quan el localitzador sempre seria 1, no s'escriu: CH₃-O-CH₂-CH₃ és el metoxietà. Exemple: CH₃-CH(O-CH₃)-CH₃ és el 2-metoxipropà.",
+  "fuente_pagina": 21,
+  "fuente_cara": 21,
+  "opciones": [
+   {
+    "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH(O-CH₂-CH₃)-CH₂-CH₂-CH₃",
+    "trampa": "col·locar l'etoxi al carboni 4"
+   },
+   {
+    "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(O-CH₂-CH₃)-CH₂-CH₃"
+   },
+   {
+    "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(CH₂-CH₃)-CH₂-CH₃",
+    "trampa": "oblidar l'oxigen: és un etil"
+   },
+   {
+    "texto": "CH₃-CH(CH₃)-CH(CH₃)-CH₂-CH(O-CH₃)-CH₂-CH₂-CH₃",
+    "trampa": "usar metoxi en lloc d'etoxi i allargar la cadena"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "La cadena és de 7 carbonis amb metils als carbonis 2 i 3 i el grup etoxi (O-CH₂-CH₃) al carboni 5. Cal vigilar que l'oxigen hi sigui i que l'etoxi quedi on toca."
+ },
+ {
+  "id": "qui-t3-0008",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alcans",
+  "concepto": "Cadena principal i numeració",
+  "dificultad": 2,
+  "enunciado": "Com es tria la cadena principal d'un alcà ramificat?",
+  "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+  "fuente_pagina": 7,
+  "fuente_cara": 7,
+  "opciones": [
+   {
+    "texto": "La que té més ramificacions, encara que sigui més curta",
+    "trampa": "aplicar el criteri d'empat com si fos el criteri principal"
+   },
+   {
+    "texto": "La que es dibuixa en horitzontal",
+    "trampa": "pensar que depèn de com està dibuixada la molècula"
+   },
+   {
+    "texto": "La seqüència més llarga d'àtoms de carboni"
+   },
+   {
+    "texto": "La que acaba en el radical amb el nom més llarg",
+    "trampa": "deixar-se portar pel nom dels radicals"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "La cadena principal és la més llarga. Les ramificacions només decideixen quan dues cadenes tenen la mateixa longitud. Regla: primer longitud, després ramificacions."
+ },
+ {
+  "id": "qui-t3-0007",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alcans",
+  "concepto": "Radicals",
+  "dificultad": 2,
+  "enunciado": "El radical CH₃-CH₂-CH₂- s'anomena etil.",
+  "ayuda_larga": "Un radical és una ramificació que penja de la cadena principal. S'anomena com l'alcà del mateix nombre de carbonis però canviant la terminació -à per -il: CH₃- és metil, CH₃-CH₂- és etil i CH₃-CH₂-CH₂- és propil. Alguns radicals tenen noms especials: isopropil, secbutil, isobutil i tercbutil.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "comptar només els carbonis CH₂ i oblidar el CH₃ de l'extrem"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Té tres carbonis, per tant és el radical propil. L'etil només en té dos: CH₃-CH₂-."
+ },
+ {
+  "id": "qui-t3-0024",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Nom dels alquens",
+  "dificultad": 4,
+  "enunciado": "Quin és el nom de CH₂=CH-CH=CH-CH₃?",
+  "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+  "fuente_pagina": 11,
+  "fuente_cara": 11,
+  "opciones": [
+   {
+    "texto": "1,3-pentadiè"
+   },
+   {
+    "texto": "2,4-pentadiè",
+    "trampa": "numerar per l'extrem que dona localitzadors més alts"
+   },
+   {
+    "texto": "1,3-pentè",
+    "trampa": "oblidar el prefix di- amb dos dobles enllaços"
+   },
+   {
+    "texto": "1,4-pentadiè",
+    "trampa": "situar malament el segon doble enllaç"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Hi ha dos dobles enllaços en una cadena de 5 carbonis, que comencen als carbonis 1 i 3. Per això porta el prefix di- i s'acaba en -diè. Regla: tants localitzadors com dobles enllaços."
+ },
+ {
+  "id": "qui-t3-0046",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Hidrocarburs cíclics i aromàtics",
+  "concepto": "Hidrocarburs aromàtics: benzè",
+  "dificultad": 4,
+  "enunciado": "Com s'anomena el benzè amb un etil i un metil en les posicions 1 i 3?",
+  "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+  "fuente_pagina": 16,
+  "fuente_cara": 16,
+  "opciones": [
+   {
+    "texto": "1-metil-3-etilbenzè",
+    "trampa": "no ordenar els radicals alfabèticament"
+   },
+   {
+    "texto": "1-etil-3-metilbenzè"
+   },
+   {
+    "texto": "1-etil-5-metilbenzè",
+    "trampa": "no triar els localitzadors més baixos"
+   },
+   {
+    "texto": "3-etil-1-metilbenzè",
+    "trampa": "començar a numerar pel radical equivocat"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Els localitzadors més baixos són 1 i 3. Com que hi ha empat, el 1 és per al radical primer a l'alfabet, l'etil. El nom és 1-etil-3-metilbenzè."
+ },
+ {
+  "id": "qui-t3-0018",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Alquens: fórmula i cadena principal",
+  "dificultad": 1,
+  "enunciado": "Quina és la fórmula general dels alquens amb un sol doble enllaç?",
+  "ayuda_larga": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "opciones": [
+   {
+    "texto": "CₙH₂ₙ₊₂",
+    "trampa": "usar la fórmula dels alcans"
+   },
+   {
+    "texto": "CₙH₂ₙ₋₂",
+    "trampa": "usar la fórmula dels alquins"
+   },
+   {
+    "texto": "CₙH₂ₙ"
+   },
+   {
+    "texto": "CₙHₙ",
+    "trampa": "creure que hi ha un hidrogen per carboni"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "Un doble enllaç treu dos hidrògens a l'alcà CₙH₂ₙ₊₂, i queda CₙH₂ₙ. Regla: alcans +2, alquens 0, alquins -2."
+ },
+ {
+  "id": "qui-t3-0027",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Nom dels alquens",
+  "dificultad": 3,
+  "enunciado": "El nom 2-metil-1,3-butadiè indica dos dobles enllaços, situats als carbonis 1 i 3.",
+  "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+  "fuente_pagina": 11,
+  "fuente_cara": 11,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "creure que 1,3 són les posicions dels radicals"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "El prefix di- i els localitzadors 1,3 diuen que hi ha dos dobles enllaços, un al carboni 1 i l'altre al 3. A més hi ha un metil al carboni 2."
+ },
+ {
+  "id": "qui-t3-0019",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Alquens: fórmula i cadena principal",
+  "dificultad": 4,
+  "enunciado": "Un hidrocarbur té una cadena de 5 carbonis que només inclou un dels seus dos dobles enllaços i una altra de 4 carbonis que els inclou tots dos. Quina és la cadena principal?",
+  "ayuda_larga": "Els alquens són hidrocarburs amb un o més dobles enllaços C=C. Amb un sol doble enllaç la fórmula general és CₙH₂ₙ: per cada doble enllaç s'eliminen dos hidrògens de l'alcà. La cadena principal és la més llarga que conté tots els dobles enllaços, encara que n'hi hagi una de més llarga que en deixi algun fora. Exemple: el propè, CH₂=CH-CH₃, és C₃H₆.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "opciones": [
+   {
+    "texto": "La de 5 carbonis, perquè és la més llarga",
+    "trampa": "aplicar només el criteri de longitud dels alcans"
+   },
+   {
+    "texto": "La de 4 carbonis, perquè conté tots els dobles enllaços"
+   },
+   {
+    "texto": "Qualsevol de les dues, perquè totes dues tenen algun doble enllaç",
+    "trampa": "no exigir que hi siguin tots"
+   },
+   {
+    "texto": "La de 5 carbonis, perquè s'escull la més ramificada",
+    "trampa": "confondre el criteri d'empat amb el principal"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "En un alquè la cadena principal ha de contenir tots els dobles enllaços, encara que sigui més curta. Regla: primer els dobles enllaços, després la longitud."
+ },
+ {
+  "id": "qui-t3-0049",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Hidrocarburs cíclics i aromàtics",
+  "concepto": "Hidrocarburs aromàtics: benzè",
+  "dificultad": 3,
+  "enunciado": "Els prefixos orto, meta i para corresponen a les posicions 1,2, 1,3 i 1,4 del benzè.",
+  "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+  "fuente_pagina": 16,
+  "fuente_cara": 16,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "intercanviar l'ordre dels prefixos"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Orto és 1,2, meta és 1,3 i para és 1,4. Se solen abreujar o-, m- i p-."
+ },
+ {
+  "id": "qui-t3-0004",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alcans",
+  "concepto": "Alcans: fórmula general i cadena lineal",
+  "dificultad": 2,
+  "enunciado": "Els alcans són hidrocarburs saturats perquè tots els enllaços C-C són senzills.",
+  "ayuda_larga": "Els alcans són hidrocarburs acíclics i saturats: només tenen C i H i tots els enllaços C-C són senzills. La fórmula general és CₙH₂ₙ₊₂. Una cadena lineal s'anomena amb el prefix del nombre de carbonis (met-, et-, prop-, but-, pent-, hex-, hept-, oct-, non-, dec-) i la terminació -à. Exemple: CH₃-CH₂-CH₃ té 3 carbonis i és el propà, C₃H₈.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "creure que «saturat» vol dir que hi ha algun enllaç múltiple"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Un alcà només té enllaços senzills i per això porta el màxim nombre d'hidrògens possible, és a dir, és saturat."
+ },
+ {
+  "id": "qui-t3-0012",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alcans",
+  "concepto": "Cadena principal i numeració",
+  "dificultad": 3,
+  "enunciado": "Per numerar un alcà ramificat, sempre es comença per l'extrem esquerre del dibuix.",
+  "ayuda_larga": "Per anomenar un alcà ramificat, primer es tria la cadena principal: la seqüència més llarga de carbonis. Si hi ha dues cadenes igual de llargues, s'escull la que té més ramificacions. Després es numera la cadena perquè els radicals tinguin els localitzadors més baixos possibles i, si hi ha empat, es dona el número més baix al radical que va primer per ordre alfabètic. Exemple: en un pentà amb un metil, es numera perquè el metil quedi al carboni 2 i no al 4.",
+  "fuente_pagina": 7,
+  "fuente_cara": 7,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "pensar que el sentit de lectura marca la numeració"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "La numeració es tria perquè els radicals tinguin els localitzadors més baixos possibles, i pot començar per qualsevol dels dos extrems."
+ },
+ {
+  "id": "qui-t3-0095",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Àcids carboxílics i èsters",
+  "concepto": "Ésters",
+  "dificultad": 3,
+  "enunciado": "El compost CH₃-COO-CH₃ s'anomena etanoat de metil.",
+  "ayuda_larga": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+  "fuente_pagina": 26,
+  "fuente_cara": 26,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "confondre la part de l'àcid amb la del radical"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Ve de l'àcid etanoic i el radical que substitueix l'hidrogen és el metil: etanoat de metil."
+ },
+ {
+  "id": "qui-t3-0068",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Èters, aldehids i cetones",
+  "concepto": "Èters: nomenclatura radicofuncional",
+  "dificultad": 3,
+  "enunciado": "L'èter CH₃-CH₂-O-CH₂-CH₃ s'anomena dimetil èter.",
+  "ayuda_larga": "Els èters tenen la fórmula general R-O-R'. En la nomenclatura radicofuncional s'anomena cada radical unit a l'oxigen per ordre alfabètic i després la paraula èter; si els dos radicals són iguals s'usa di-. Exemple: CH₃-O-CH₂-CH₃ és l'etil metil èter i CH₃-CH₂-O-CH₂-CH₃ és el dietil èter.",
+  "fuente_pagina": 20,
+  "fuente_cara": 20,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "confondre el nombre de carbonis de cada radical"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Els dos radicals són etil, per tant és el dietil èter. El dimetil èter seria CH₃-O-CH₃."
+ },
+ {
+  "id": "qui-t3-0057",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Derivats halogenats i alcohols",
+  "concepto": "Alcohols: cadena i numeració",
+  "dificultad": 1,
+  "enunciado": "Quin és el grup funcional dels alcohols?",
+  "ayuda_larga": "Els alcohols tenen el grup hidroxil -OH (R-OH). La cadena principal és la més llarga que conté el carboni unit al grup -OH, encara que n'hi hagi una altra de més llarga. Es numera perquè el carboni de l'-OH tingui el número més baix possible, encara que hi hagi dobles enllaços o més radicals. Exemple: en CH₃-CH₂-CH₂-CH₂-OH es numera des del CH₂OH, que és el carboni 1.",
+  "fuente_pagina": 18,
+  "fuente_cara": 18,
+  "opciones": [
+   {
+    "texto": "-CHO (aldehid)",
+    "trampa": "confondre l'alcohol amb l'aldehid"
+   },
+   {
+    "texto": "-COOH (carboxil)",
+    "trampa": "confondre l'alcohol amb l'àcid"
+   },
+   {
+    "texto": "-O- (oxigen entre dos carbonis)",
+    "trampa": "confondre l'alcohol amb l'èter"
+   },
+   {
+    "texto": "-OH (hidroxil)"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Els alcohols tenen el grup hidroxil, -OH, unit a un carboni. Quan l'oxigen va entre dos carbonis és un èter."
+ },
+ {
+  "id": "qui-t3-0084",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Àcids carboxílics i èsters",
+  "concepto": "Àcids carboxílics",
+  "dificultad": 3,
+  "enunciado": "Quin és el nom de CH₃-CH=CH-COOH?",
+  "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+  "fuente_pagina": 24,
+  "fuente_cara": 24,
+  "opciones": [
+   {
+    "texto": "Àcid 2-butenoic"
+   },
+   {
+    "texto": "Àcid 3-butenoic",
+    "trampa": "numerar per l'extrem equivocat"
+   },
+   {
+    "texto": "Àcid 2-butanoic",
+    "trampa": "usar la terminació -à d'alcà amb un doble enllaç"
+   },
+   {
+    "texto": "2-butenoic",
+    "trampa": "oblidar la paraula àcid"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "La numeració comença pel carboni del -COOH, i el doble enllaç queda entre els carbonis 2 i 3. El nom comença per la paraula àcid i acaba en -oic."
+ },
+ {
+  "id": "qui-t3-0028",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Alquins",
+  "dificultad": 3,
+  "enunciado": "Quin és el nom de CH₃-C≡C-CH₂-CH₃?",
+  "ayuda_larga": "Els alquins tenen triples enllaços C≡C i la fórmula general CₙH₂ₙ₋₂ (amb un sol triple enllaç): per cada triple enllaç s'eliminen quatre hidrògens de l'alcà. S'anomenen igual que els alquens però amb la terminació -í en lloc de -è. Exemple: CH≡C-CH₂-CH₃ és l'1-butí.",
+  "fuente_pagina": 12,
+  "fuente_cara": 12,
+  "opciones": [
+   {
+    "texto": "3-pentí",
+    "trampa": "numerar per l'extrem que dona el localitzador més alt"
+   },
+   {
+    "texto": "2-pentí"
+   },
+   {
+    "texto": "2-pentè",
+    "trampa": "usar la terminació -è dels alquens"
+   },
+   {
+    "texto": "2-butí",
+    "trampa": "comptar un carboni de menys"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "La cadena té 5 carbonis i el triple enllaç està entre els carbonis 2 i 3. Es numera per l'extrem que dona el 2. Regla: terminació -í i localitzador més baix."
+ },
+ {
+  "id": "qui-t3-0103",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Amines, amides, nitrils i ordre de preferència",
+  "concepto": "Amides",
+  "dificultad": 2,
+  "enunciado": "Quin és el nom de CH₃-CO-NH₂?",
+  "ayuda_larga": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+  "fuente_pagina": 28,
+  "fuente_cara": 28,
+  "opciones": [
+   {
+    "texto": "Etanamina",
+    "trampa": "confondre el sufix -amida amb -amina"
+   },
+   {
+    "texto": "Etanamida"
+   },
+   {
+    "texto": "Àcid etanamida",
+    "trampa": "mantenir la paraula àcid"
+   },
+   {
+    "texto": "Metanamida",
+    "trampa": "no comptar el carboni del grup carbonil"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Deriva de l'àcid etanoic, de 2 carbonis, i -oic es canvia per -amida sense la paraula àcid. Resultat: etanamida."
+ },
+ {
+  "id": "qui-t3-0056",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Derivats halogenats i alcohols",
+  "concepto": "Derivats halogenats",
+  "dificultad": 2,
+  "enunciado": "En un cicle amb un sol halogen, com el bromociclobutà, no cal indicar el localitzador del brom.",
+  "ayuda_larga": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+  "fuente_pagina": 17,
+  "fuente_cara": 17,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "creure que sempre cal posar el localitzador 1"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "El carboni on penja l'únic halogen és sempre el 1, i per això no s'escriu."
+ },
+ {
+  "id": "qui-t3-0048",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Hidrocarburs cíclics i aromàtics",
+  "concepto": "Hidrocarburs aromàtics: benzè",
+  "dificultad": 3,
+  "enunciado": "Quants carbonis té en total el 4-etil-2-metil-1-propilbenzè?",
+  "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+  "fuente_pagina": 16,
+  "fuente_cara": 16,
+  "opciones": [
+   {
+    "texto": "6",
+    "trampa": "comptar només el cicle"
+   },
+   {
+    "texto": "9",
+    "trampa": "comptar un sol carboni per radical"
+   },
+   {
+    "texto": "11",
+    "trampa": "comptar el propil amb dos carbonis"
+   },
+   {
+    "texto": "12"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Sumem 6 del cicle, 2 de l'etil, 1 del metil i 3 del propil: 6 + 2 + 1 + 3 = 12. Regla: compta cada radical pel seu nombre de carbonis."
+ },
+ {
+  "id": "qui-t3-0025",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Nom dels alquens",
+  "dificultad": 4,
+  "enunciado": "En un alquè els dobles enllaços tenen el mateix localitzador numerant des de qualsevol extrem. Quin criteri decideix el sentit de la numeració?",
+  "ayuda_larga": "El nom d'un alquè es forma amb els radicals per ordre alfabètic, el localitzador del doble enllaç i el nom de la cadena acabat en -è. La cadena es numera perquè els dobles enllaços tinguin els localitzadors més baixos i, si hi ha empat, perquè els radicals els tinguin més baixos. Amb dos dobles enllaços s'usa di-: CH₂=CH-CH=CH-CH₃ és l'1,3-pentadiè. Exemple: CH₂=CH-CH₂-CH₃ és l'1-butè.",
+  "fuente_pagina": 11,
+  "fuente_cara": 11,
+  "opciones": [
+   {
+    "texto": "Es comença per l'extrem esquerre del dibuix",
+    "trampa": "pensar que el sentit de lectura marca la numeració"
+   },
+   {
+    "texto": "Els radicals reben els localitzadors més alts",
+    "trampa": "invertir el criteri dels radicals"
+   },
+   {
+    "texto": "Els radicals reben els localitzadors més baixos"
+   },
+   {
+    "texto": "Es comença pel carboni amb més hidrògens",
+    "trampa": "inventar un criteri que no existeix"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "Primer es dona el número més baix als dobles enllaços. Si hi ha empat, passen a decidir els radicals, que han de tenir els localitzadors més baixos possibles."
+ },
+ {
+  "id": "qui-t3-0043",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Hidrocarburs cíclics i aromàtics",
+  "concepto": "Hidrocarburs aromàtics: benzè",
+  "dificultad": 1,
+  "enunciado": "Quina és la fórmula molecular del benzè?",
+  "ayuda_larga": "El benzè, C₆H₆, és el hidrocarbur aromàtic base. Amb un sol radical es posa el nom del radical davant de benzè, sense localitzador: metilbenzè (toluè), etilbenzè. Amb dos radicals es numera el cicle perquè tinguin els localitzadors més baixos i s'ordenen alfabèticament; també es poden usar els prefixos orto (1,2), meta (1,3) i para (1,4). Amb tres o més radicals es fa igual. Exemple: 1-etil-3-metilbenzè o m-etilmetilbenzè.",
+  "fuente_pagina": 16,
+  "fuente_cara": 16,
+  "opciones": [
+   {
+    "texto": "C₆H₁₂",
+    "trampa": "confondre el benzè amb el ciclohexà"
+   },
+   {
+    "texto": "C₆H₁₄",
+    "trampa": "confondre el benzè amb el hexà"
+   },
+   {
+    "texto": "C₆H₁₀",
+    "trampa": "confondre el benzè amb el ciclohexè"
+   },
+   {
+    "texto": "C₆H₆"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "El benzè és el hidrocarbur aromàtic de fórmula C₆H₆: sis carbonis i sis hidrògens. Els altres són hidrocarburs saturats o amb un sol doble enllaç."
+ },
+ {
+  "id": "qui-t3-0083",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Àcids carboxílics i èsters",
+  "concepto": "Àcids carboxílics",
+  "dificultad": 2,
+  "enunciado": "Quin és el nom de CH₃-COOH?",
+  "ayuda_larga": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+  "fuente_pagina": 24,
+  "fuente_cara": 24,
+  "opciones": [
+   {
+    "texto": "Àcid metanoic",
+    "trampa": "no comptar el carboni del grup COOH"
+   },
+   {
+    "texto": "Etanal",
+    "trampa": "confondre l'àcid amb l'aldehid"
+   },
+   {
+    "texto": "Etanol",
+    "trampa": "confondre l'àcid amb l'alcohol"
+   },
+   {
+    "texto": "Àcid etanoic"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "La cadena té 2 carbonis, comptant el del -COOH, i la terminació dels àcids és -oic. És l'àcid etanoic, conegut com àcid acètic."
+ },
+ {
+  "id": "qui-t3-0029",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Alquens i alquins",
+  "concepto": "Alquins",
+  "dificultad": 3,
+  "enunciado": "Quants hidrògens té un alquí de 4 carbonis amb un sol triple enllaç?",
+  "ayuda_larga": "Els alquins tenen triples enllaços C≡C i la fórmula general CₙH₂ₙ₋₂ (amb un sol triple enllaç): per cada triple enllaç s'eliminen quatre hidrògens de l'alcà. S'anomenen igual que els alquens però amb la terminació -í en lloc de -è. Exemple: CH≡C-CH₂-CH₃ és l'1-butí.",
+  "fuente_pagina": 12,
+  "fuente_cara": 12,
+  "opciones": [
+   {
+    "texto": "6"
+   },
+   {
+    "texto": "8",
+    "trampa": "usar la fórmula dels alquens"
+   },
+   {
+    "texto": "10",
+    "trampa": "usar la fórmula dels alcans"
+   },
+   {
+    "texto": "4",
+    "trampa": "creure que hi ha un hidrogen per carboni"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "La fórmula dels alquins és CₙH₂ₙ₋₂ i amb n = 4 dona 2·4 - 2 = 6. Respecte al butà (10 hidrògens) falten quatre hidrògens."
+ },
+ {
+  "id": "qui-t3-0062",
+  "bloque": "Química",
+  "tema": "T3 Formulació orgànica",
+  "subtema": "Derivats halogenats i alcohols",
+  "concepto": "Nom dels alcohols",
+  "dificultad": 4,
+  "enunciado": "Quin és el nom de HO-CH₂-CH₂-CH(OH)-CH₃?",
+  "ayuda_larga": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+  "fuente_pagina": 19,
+  "fuente_cara": 19,
+  "opciones": [
+   {
+    "texto": "1,3-butandiol"
+   },
+   {
+    "texto": "2,4-butandiol",
+    "trampa": "numerar per l'extrem que dona localitzadors més alts"
+   },
+   {
+    "texto": "1,3-butanol",
+    "trampa": "oblidar el prefix di- amb dos grups OH"
+   },
+   {
+    "texto": "1,3-butandial",
+    "trampa": "confondre el sufix -ol amb el d'aldehid"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Hi ha dos grups OH en una cadena de 4 carbonis. Numerant des de l'esquerra queden al 1 i al 3 (des de l'altre costat serien 2 i 4). Dos OH porten di-: 1,3-butandiol."
+ },
+ {
+  "id": "cat-n1-0006",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "A/E àtones",
+  "concepto": "Substantius masculins i femenins",
+  "dificultad": 1,
+  "enunciado": "Quina és la forma correcta?",
+  "ayuda_larga": "Els substantius masculins acostumen a acabar en -e: pare, home. Els femenins acostumen a acabar en -a: dona. Les excepcions són les mateixes que en castellà. Els masculins acabats en -ista, -cida, -ma i -ta (artista, homicida, drama, problema, planeta) acaben en -a. Els femenins mare, febre, torre, imatge, verge, classe i fase acaben en -e.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "opciones": [
+   {
+    "texto": "para",
+    "trampa": "escriu una a final com en un femení"
+   },
+   {
+    "texto": "pari",
+    "trampa": "confon la e final amb una i"
+   },
+   {
+    "texto": "pare"
+   },
+   {
+    "texto": "paré",
+    "trampa": "tracta el mot com una aguda"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "Els masculins acostumen a acabar en -e: pare, home. Regla: masculí, normalment -e."
+ },
+ {
+  "id": "cat-n1-0034",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Accentuació",
+  "concepto": "Accents diacrítics",
+  "dificultad": 5,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "opciones": [
+   {
+    "texto": "Tinc déu euros i crec en Déu.",
+    "trampa": "posa accent al numeral"
+   },
+   {
+    "texto": "Tinc deu euros i crec en Déu."
+   },
+   {
+    "texto": "Tinc deu euros i crec en Deu.",
+    "trampa": "oblida l'accent de la divinitat"
+   },
+   {
+    "texto": "Tinc déu euros i crec en Deu.",
+    "trampa": "inverteix el numeral i la divinitat"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "«Deu» (10) no porta accent. «Déu» amb majúscula, referit a la divinitat, sí."
+ },
+ {
+  "id": "cat-n1-0044",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Dièresi i diftongs",
+  "concepto": "La dièresi: què és i quan s'usa",
+  "dificultad": 5,
+  "enunciado": "Per què escrivim «Lluïsa» amb dièresi i «Lluís» amb accent?",
+  "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "Perquè «Lluïsa» és femení i els femenins porten dièresi",
+    "trampa": "creu que el gènere decideix la dièresi"
+   },
+   {
+    "texto": "Perquè «Lluís» acaba en -s",
+    "trampa": "creu que la -s final decideix la dièresi"
+   },
+   {
+    "texto": "Perquè l'accent només s'usa en noms de persona masculins",
+    "trampa": "inventa una regla sobre el gènere"
+   },
+   {
+    "texto": "Perquè «Lluís» es pot accentuar i «Lluïsa» no"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "A «Lluís» la tònica cau en la i final, de manera que s'hi pot posar accent. A «Lluïsa» no, i cal la dièresi."
+ },
+ {
+  "id": "cat-n1-0038",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Accentuació",
+  "concepto": "Accents oberts i tancats",
+  "dificultad": 5,
+  "enunciado": "Quina és la forma correcta?",
+  "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "opciones": [
+   {
+    "texto": "cançò",
+    "trampa": "posa accent obert tot i que sona igual que en castellà «canción»"
+   },
+   {
+    "texto": "cancó",
+    "trampa": "escriu c en lloc de ç"
+   },
+   {
+    "texto": "cansó",
+    "trampa": "escriu s en lloc de ç"
+   },
+   {
+    "texto": "cançó"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "La o és tancada perquè sona igual que en castellà («canción»). Davant d'una o s'escriu ç, no c ni s."
+ },
+ {
+  "id": "cat-n1-0043",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Dièresi i diftongs",
+  "concepto": "La dièresi: què és i quan s'usa",
+  "dificultad": 4,
+  "enunciado": "Quina és la forma correcta?",
+  "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "agraïa"
+   },
+   {
+    "texto": "agraía",
+    "trampa": "posa accent en lloc de dièresi"
+   },
+   {
+    "texto": "agraia",
+    "trampa": "oblida trencar el diftong"
+   },
+   {
+    "texto": "agraïem",
+    "trampa": "posa dièresi en una forma que es pot accentuar"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "«Agraïa» porta dièresi, però «agraíem» porta accent perquè la i és tònica i es pot accentuar."
+ },
+ {
+  "id": "cat-n1-0074",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Apòstrof, contracció i plurals",
+  "concepto": "Contracció de les preposicions amb l'article",
+  "dificultad": 4,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "opciones": [
+   {
+    "texto": "Parlo del home.",
+    "trampa": "contrau davant d'una paraula que s'apostrofa"
+   },
+   {
+    "texto": "Parlo de lo home.",
+    "trampa": "utilitza «lo» com a article"
+   },
+   {
+    "texto": "Parlo de l'home."
+   },
+   {
+    "texto": "Parlo d'el home.",
+    "trampa": "apostrofa la preposició en lloc de l'article"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "Davant d'«home» l'article s'apostrofa (l'home), per tant no hi ha contracció."
+ },
+ {
+  "id": "cat-n1-0051",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Dièresi i diftongs",
+  "concepto": "Casos especials de dièresi",
+  "dificultad": 3,
+  "enunciado": "Les paraules acabades en -ista, -isme, -us i -um no s'escriuen amb dièresi.",
+  "ayuda_larga": "Els infinitius, gerunds, futurs i condicionals no porten mai dièresi a la terminació: agrair, agraint, agrairé, agrairia. Els derivats d'infinitius sí que en porten: agraïment, lluïment, posseïdor, traïció. També les paraules acabades en vocal + itat (ingenuïtat, continuïtat, excepte meitat) i els derivats de mots amb dièresi (raïmet, ruïnós). No porten dièresi les paraules acabades en -ista, -isme, -us i -um: egoista, heroisme, Màrius, harmònium.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "confondre aquest cas amb el de «veïna» i creure que sempre porten dièresi"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Exemples: egoista, egoisme, heroisme, Màrius, harmònium."
+ },
+ {
+  "id": "cat-n1-0062",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Apòstrof, contracció i plurals",
+  "concepto": "Apòstrof de l'article masculí",
+  "dificultad": 3,
+  "enunciado": "Quina és la forma correcta?",
+  "ayuda_larga": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "opciones": [
+   {
+    "texto": "el 11 de setembre",
+    "trampa": "no té en compte que «onze» comença per so de vocal"
+   },
+   {
+    "texto": "lo 11 de setembre",
+    "trampa": "utilitza «lo» com a article"
+   },
+   {
+    "texto": "l'11 de setembre"
+   },
+   {
+    "texto": "l'11 d'setembre",
+    "trampa": "apostrofa també la preposició davant de consonant"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "«Onze» comença per so de vocal, per tant l'article s'apostrofa: l'11 de setembre."
+ },
+ {
+  "id": "cat-n1-0083",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "B/V, ela geminada, O/U, essa i erra",
+  "concepto": "La b i la v",
+  "dificultad": 4,
+  "enunciado": "Quina paraula s'escriu amb v encara que en castellà porta b?",
+  "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+  "fuente_pagina": 8,
+  "fuente_cara": 8,
+  "opciones": [
+   {
+    "texto": "corb",
+    "trampa": "confon la llista amb la contrària: en català porta b"
+   },
+   {
+    "texto": "cavall"
+   },
+   {
+    "texto": "baró",
+    "trampa": "confon la llista amb la contrària: en català porta b"
+   },
+   {
+    "texto": "biga",
+    "trampa": "confon la llista amb la contrària: en català porta b"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "«Cavall» (castellà «caballo») porta v. Corb, baró i biga porten b en català i v en castellà."
+ },
+ {
+  "id": "cat-n1-0084",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "B/V, ela geminada, O/U, essa i erra",
+  "concepto": "La b i la v",
+  "dificultad": 4,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "La b i la v sonen igual en català i cal memoritzar les paraules, sovint comparant-les amb el castellà. La terminació de l'imperfet d'indicatiu s'escriu sempre amb v: cantava, acabava, arribava (en castellà cantaba). Hi ha paraules que en català porten b i en castellà v (corb, baró, biga, calb) i d'altres que en català porten v i en castellà b (cavall, avi, llavi, governar, gravar, Havana).",
+  "fuente_pagina": 8,
+  "fuente_cara": 8,
+  "opciones": [
+   {
+    "texto": "El gobernador va gravar el discurs a Havana.",
+    "trampa": "escriu b com en el castellà «gobernar»"
+   },
+   {
+    "texto": "El governador va grabar el discurs a Havana.",
+    "trampa": "escriu b com en el castellà «grabar»"
+   },
+   {
+    "texto": "El governador va gravar el discurs a Havana."
+   },
+   {
+    "texto": "El governador va gravar el discurs a Habana.",
+    "trampa": "escriu b com en el castellà «Habana»"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "Governar, gravar i Havana s'escriuen amb v en català i amb b en castellà."
+ },
+ {
+  "id": "cat-n1-0108",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Aspectes varis, barbarismes i pronoms",
+  "concepto": "perquè, per què, sinó, si no, sí, si",
+  "dificultad": 4,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "Perquè (junt) és la resposta o la finalitat: «Dóna-li el regal perquè l'emboliqui». Per què (separat) és pregunta o dubte: «Per què ho dius?». Sinó (junt) expressa oposició: «No ha dit això sinó això altre». Si no (separat) és condició més negació: «Si no plou...». Sí amb accent és afirmació i si sense accent és condició.",
+  "fuente_pagina": 13,
+  "fuente_cara": 13,
+  "opciones": [
+   {
+    "texto": "No ha dit això si no això altre.",
+    "trampa": "separa sinó quan expressa oposició"
+   },
+   {
+    "texto": "No ha dit això sinó això altre."
+   },
+   {
+    "texto": "No ha dit això sino això altre.",
+    "trampa": "oblida l'accent de sinó"
+   },
+   {
+    "texto": "No ha dit això si nò això altre.",
+    "trampa": "posa l'accent a la negació"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Sinó (junt, amb accent) expressa oposició: no això sinó allò."
+ },
+ {
+  "id": "cat-n1-0041",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Dièresi i diftongs",
+  "concepto": "La dièresi: què és i quan s'usa",
+  "dificultad": 1,
+  "enunciado": "Quina és la forma correcta?",
+  "ayuda_larga": "La dièresi serveix per trencar un diftong quan no podem accentuar la paraula perquè les normes d'accentuació ho impedeixen. Per això escrivim veïna però veí, països però país, agraïa però agraíem, Lluïsa però Lluís. Si la paraula es pot accentuar, s'accentua i no porta dièresi. També la fem servir en reïna, diürn, jesuïta o gratuït per distingir-ne la pronunciació.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "veina",
+    "trampa": "oblida trencar el diftong i sona «vei-na»"
+   },
+   {
+    "texto": "vèina",
+    "trampa": "posa accent en lloc de dièresi"
+   },
+   {
+    "texto": "veïna"
+   },
+   {
+    "texto": "veïnà",
+    "trampa": "accentua l'última síl·laba"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "«Veïna» porta dièresi perquè no es pot accentuar la i sense canviar la tònica. Regla: si no es pot accentuar, dièresi."
+ },
+ {
+  "id": "cat-n1-0028",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Accentuació",
+  "concepto": "Paraules planes i esdrúixoles",
+  "dificultad": 4,
+  "enunciado": "Per què «família» porta accent?",
+  "ayuda_larga": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "opciones": [
+   {
+    "texto": "Perquè és aguda i acaba en vocal",
+    "trampa": "confon esdrúixola amb aguda"
+   },
+   {
+    "texto": "Perquè és un accent diacrític",
+    "trampa": "confon l'accent diacrític amb el general"
+   },
+   {
+    "texto": "Perquè la síl·laba tònica és l'antepenúltima"
+   },
+   {
+    "texto": "Perquè la penúltima és tònica i acaba en -a",
+    "trampa": "creu que les planes acabades en vocal s'accentuen"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "«Família» es pronuncia fa-mí-li-a: la tònica és l'antepenúltima síl·laba. Les esdrúixoles sempre porten accent."
+ },
+ {
+  "id": "cat-n1-0096",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "B/V, ela geminada, O/U, essa i erra",
+  "concepto": "La essa i la doble erra",
+  "dificultad": 3,
+  "enunciado": "Quina és la forma correcta?",
+  "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+  "fuente_pagina": 10,
+  "fuente_cara": 10,
+  "opciones": [
+   {
+    "texto": "posible",
+    "trampa": "no dobla la essa entre vocals"
+   },
+   {
+    "texto": "possible"
+   },
+   {
+    "texto": "pocible",
+    "trampa": "escriu c en lloc de ss"
+   },
+   {
+    "texto": "poçible",
+    "trampa": "escriu ç en lloc de ss"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Entre dues vocals, si en castellà és s («posible»), s'escriu ss en català."
+ },
+ {
+  "id": "cat-n1-0013",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "A/E àtones",
+  "concepto": "Adjectius invariables i variables",
+  "dificultad": 4,
+  "enunciado": "Per què diem «una noia capaç» i no «una noia capaça»?",
+  "ayuda_larga": "Un adjectiu en singular acaba només en -e si en castellà també és invariable (terminació única): alegre, amable. Els adjectius que en castellà tenen dues terminacions també en tenen dues en català: ample/a, culte/a. Es pot aplicar a qualsevol adjectiu, encara que no acabi en e/a: una noia difícil, capaç, elegant, intel·ligent, fidel, igual que «una chica difícil, capaz, inteligente, fiel». Excepcions: pobre/a (variable en català) i rude, xerraire (invariables en català).",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "opciones": [
+   {
+    "texto": "Perquè en castellà «capaz» és invariable"
+   },
+   {
+    "texto": "Perquè els adjectius acabats en -ç no tenen femení",
+    "trampa": "inventa una regla sobre la lletra final"
+   },
+   {
+    "texto": "Perquè «noia» demana l'adjectiu en masculí",
+    "trampa": "creu que l'adjectiu no concorda amb el gènere"
+   },
+   {
+    "texto": "Perquè el femení de «capaç» s'escriu amb e final",
+    "trampa": "creu que tots els femenins s'escriuen amb e"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Apliquem la norma 4: l'adjectiu és invariable en català perquè en castellà («capaz») també ho és."
+ },
+ {
+  "id": "cat-n1-0102",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Aspectes varis, barbarismes i pronoms",
+  "concepto": "a/ha, em/hem, tan/tant, quan/quant",
+  "dificultad": 3,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "A és la preposició (per a la seva germana) i ha és el verb haver (ha pintat). Em és el pronom (a mi) i hem és el verb haver (hem de llegir). Tan correspon al castellà «tan» (tan fred) i tant al castellà «tanto» (t'estimava tant). Quan és «cuando» (no sé quan arribarà) i quant és «cuanto» (quant t'ha costat?).",
+  "fuente_pagina": 12,
+  "fuente_cara": 12,
+  "opciones": [
+   {
+    "texto": "Fa tant fred que haurem de posar la calefacció.",
+    "trampa": "confon tan (castellà «tan») amb tant (castellà «tanto»)"
+   },
+   {
+    "texto": "Fa tam fred que haurem de posar la calefacció.",
+    "trampa": "escriu m en lloc de n"
+   },
+   {
+    "texto": "Fa tans fred que haurem de posar la calefacció.",
+    "trampa": "afegeix una -s de plural"
+   },
+   {
+    "texto": "Fa tan fred que haurem de posar la calefacció."
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Davant d'un adjectiu s'escriu tan (castellà «tan»). Tant correspon a «tanto»."
+ },
+ {
+  "id": "cat-n1-0099",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "B/V, ela geminada, O/U, essa i erra",
+  "concepto": "La essa i la doble erra",
+  "dificultad": 2,
+  "enunciado": "«Caça» s'escriu «cassa» perquè la ç del castellà «caza» passa a ss.",
+  "ayuda_larga": "Si la essa sona igual que en castellà i és entre dues vocals, escrivim ss si en castellà és s (possible, dimissió) i ç si en castellà és z (caça). Excepcions: tassa, cassola, tros i asimetria (perquè és un prefix). La normativa del 2016 permet duplicar la erra dels derivats i compostos (arrítmia, correferent, corresponsable, erradicar). Excepcions: contrareforma, antireligiós, preromànic.",
+  "fuente_pagina": 10,
+  "fuente_cara": 10,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "confondre la z castellana amb la s"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Si en castellà s'escriu amb z, en català s'escriu ç: caça (caza)."
+ },
+ {
+  "id": "cat-n1-0040",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Accentuació",
+  "concepto": "Accents oberts i tancats",
+  "dificultad": 3,
+  "enunciado": "«Pollí» porta accent obert perquè la i pot portar accent obert o tancat.",
+  "ayuda_larga": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader",
+    "trampa": "creure que la i es comporta com la e i la o"
+   },
+   {
+    "texto": "Fals"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "La i i la u sempre porten accent tancat, igual que en castellà: pollí, Berlín, menú."
+ },
+ {
+  "id": "cat-n1-0023",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Accentuació",
+  "concepto": "Paraules agudes",
+  "dificultad": 4,
+  "enunciado": "Per què «depèn» porta accent?",
+  "ayuda_larga": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "opciones": [
+   {
+    "texto": "Perquè és plana i acaba en consonant",
+    "trampa": "confon aguda amb plana"
+   },
+   {
+    "texto": "Perquè és esdrúixola",
+    "trampa": "confon aguda amb esdrúixola"
+   },
+   {
+    "texto": "Perquè és un accent diacrític",
+    "trampa": "confon l'accent diacrític amb el general"
+   },
+   {
+    "texto": "Perquè és aguda i acaba en -en"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Les agudes acabades en -en porten accent: depèn, com Berlín (-in). Regla: aguda + en/in = accent."
+ },
+ {
+  "id": "cat-n1-0072",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Apòstrof, contracció i plurals",
+  "concepto": "Contracció de les preposicions amb l'article",
+  "dificultad": 3,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "opciones": [
+   {
+    "texto": "Fes-ho per el teu pare.",
+    "trampa": "no contrau per + el"
+   },
+   {
+    "texto": "Fes-ho per al teu pare.",
+    "trampa": "confon «per» amb «per a»"
+   },
+   {
+    "texto": "Fes-ho pels teu pare.",
+    "trampa": "usa el plural amb un nom singular"
+   },
+   {
+    "texto": "Fes-ho pel teu pare."
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Per + el = pel. «Per al» és per a + el."
+ },
+ {
+  "id": "cat-n1-0080",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Apòstrof, contracció i plurals",
+  "concepto": "Canvis ortogràfics dels plurals",
+  "dificultad": 3,
+  "enunciado": "El plural de «complex» és «complexos» i no «complexes».",
+  "ayuda_larga": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "afegir -es al plural d'un masculí acabat en x"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Els mots masculins acabats en -x no afegeixen -es sinó -os: complex, complexos."
+ },
+ {
+  "id": "cat-n1-0070",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Apòstrof, contracció i plurals",
+  "concepto": "Apòstrof de l'article femení",
+  "dificultad": 3,
+  "enunciado": "Es diu «la ira» i no «l'ira» per no confondre aquesta paraula amb «lira».",
+  "ayuda_larga": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "tipo": "vf",
+  "opciones": [
+   {
+    "texto": "Vertader"
+   },
+   {
+    "texto": "Fals",
+    "trampa": "creure que sempre s'apostrofa davant de i"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "És una excepció per evitar confusions: l'ira podria ser «la lira»."
+ },
+ {
+  "id": "cat-n1-0087",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "B/V, ela geminada, O/U, essa i erra",
+  "concepto": "L'ela geminada (l·l)",
+  "dificultad": 3,
+  "enunciado": "Quina d'aquestes paraules NO s'escriu amb ela geminada?",
+  "ayuda_larga": "L'ela geminada s'escriu amb punt volat: l·l. Porten l·l les paraules que comencen per al·l, col·l, il·l i mil·l (al·lèrgia, col·legi, il·legal, mil·límetre) i les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (novel·la, cancel·lar, tranquil·la, oscil·lar). Hi ha excepcions: alarma, alegre, alemany; còlera, colom, color; milió, milè; i el verb mutilar.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "opciones": [
+   {
+    "texto": "al·lèrgia",
+    "trampa": "creu que alemany segueix la regla d'al·l"
+   },
+   {
+    "texto": "al·ludir",
+    "trampa": "creu que alemany segueix la regla d'al·l"
+   },
+   {
+    "texto": "al·leluia",
+    "trampa": "creu que alemany segueix la regla d'al·l"
+   },
+   {
+    "texto": "alemany"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "«Alemany» és una excepció (com alarma, alegre, aliança). Al·lèrgia, al·ludir i al·leluia porten l·l."
+ },
+ {
+  "id": "cat-n1-0117",
+  "bloque": "Català",
+  "tema": "T1 Normativa general",
+  "subtema": "Aspectes varis, barbarismes i pronoms",
+  "concepto": "Pronoms febles, haver-hi i obligació",
+  "dificultad": 4,
+  "enunciado": "Quina frase és correcta?",
+  "ayuda_larga": "El pronom «lis» no existeix en català: cal dir «els». «Els hi» només és correcte si substituïm dos complements. La forma «hi ha, hi havia, hi haurà» (haver-hi) és invariable com el castellà «hay». L'obligació s'expressa amb «caldre» o «haver de» (hem d'anar, cal que portis), mai amb «tenir que», «tenir de» o «hi ha que». Els infinitius acabats en -guer són incorrectes: saber, poder, tenir (no sapiguer). El complement directe no s'introdueix amb a: «He saludat el teu germà».",
+  "fuente_pagina": 12,
+  "fuente_cara": 12,
+  "opciones": [
+   {
+    "texto": "Avui hi han molts cotxes al carrer.",
+    "trampa": "fa concordar haver-hi amb el plural"
+   },
+   {
+    "texto": "Avui els hi ha molts cotxes al carrer.",
+    "trampa": "afegeix un pronom innecessari"
+   },
+   {
+    "texto": "Avui hi ha de molts cotxes al carrer.",
+    "trampa": "afegeix una preposició de més"
+   },
+   {
+    "texto": "Avui hi ha molts cotxes al carrer."
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "«Hi ha» és invariable, com el castellà «hay»: hi ha molts cotxes."
+ }
+]

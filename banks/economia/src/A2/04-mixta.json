@@ -1,0 +1,116 @@
+{
+ "subtema": "Economía mixta y Estado del Bienestar",
+ "conceptos": [
+  {
+   "nombre": "Marco legal y bienes de interés social",
+   "pagina": 8,
+   "ayuda": "En una economía mixta, el Estado establece el marco legal que garantiza el funcionamiento de los mercados, los derechos de propiedad y los contratos. También proporciona bienes y servicios públicos: a los no rentables y estratégicos se añaden los de interés para toda la sociedad, sobre todo la educación y la sanidad.",
+   "test": [
+    [
+     2,
+     "¿Qué garantiza el Estado al establecer el marco legal en una economía mixta?",
+     "El funcionamiento de los mercados, los derechos de propiedad y los contratos",
+     [
+      "El precio y la cantidad producida por cada empresa",
+      "confunde marco legal con planificación de la producción"
+     ],
+     [
+      "El pleno empleo para toda la población",
+      "atribuye al marco legal un objetivo de estabilización"
+     ],
+     [
+      "La igualdad exacta de la renta de todos los ciudadanos",
+      "confunde marco legal con redistribución total"
+     ],
+     "El marco legal establece las normas que deben cumplir empresas y consumidores y garantiza mercados, derechos de propiedad y contratos. Regla: el marco legal es el reglamento del juego."
+    ],
+    [
+     3,
+     "En la economía mixta, ¿qué se añade a los bienes no rentables y estratégicos que provee el Estado?",
+     "Los bienes y servicios de interés para toda la sociedad, sobre todo educación y sanidad",
+     [
+      "Los bienes que más beneficio dan a las empresas privadas",
+      "confunde interés social con rentabilidad privada"
+     ],
+     [
+      "Los bienes que garantizan el funcionamiento de la democracia, como el ejército",
+      "repite los estratégicos y no añade nada nuevo"
+     ],
+     [
+      "Los bienes que fija el plan central para cada empresa",
+      "confunde economía mixta con planificada"
+     ],
+     "A los bienes no rentables y estratégicos, la economía mixta suma los de interés para toda la sociedad, principalmente la educación y la sanidad. Regla: no rentables, estratégicos y de interés social."
+    ]
+   ]
+  },
+  {
+   "nombre": "Estabilizar y combinar funciones",
+   "pagina": 8,
+   "ayuda": "Entre las funciones del Estado en la economía mixta, estabilizar busca reducir problemas como el desempleo, las crisis económicas o una elevada inflación. Redistribuir actúa sobre las desigualdades. Corregir fallos actúa sobre problemas como la contaminación. Saber qué problema ataca cada función permite identificarlas en ejemplos.",
+   "test": [
+    [
+     4,
+     "¿Qué problemas busca reducir el Estado cuando aplica políticas para estabilizar la economía?",
+     "El desempleo, las crisis económicas y la inflación elevada",
+     [
+      "Las desigualdades de renta y la pobreza",
+      "confunde estabilizar con redistribuir"
+     ],
+     [
+      "La contaminación y otras externalidades negativas",
+      "confunde estabilizar con corregir fallos del mercado"
+     ],
+     [
+      "La falta de infraestructuras, educación e investigación",
+      "confunde estabilizar con favorecer el crecimiento"
+     ],
+     "Estabilizar es reducir el desempleo, las crisis y la inflación alta. Redistribuir actúa sobre la desigualdad, corregir fallos sobre la contaminación y favorecer el crecimiento sobre infraestructuras e investigación. Regla: estabilizar es suavizar los altibajos."
+    ],
+    [
+     5,
+     "Tres medidas: A) una ley que obliga a cumplir los contratos; B) impuestos más altos a las rentas altas para financiar ayudas; C) un límite a las emisiones de las fábricas. ¿A qué funciones del Estado corresponden, en ese orden?",
+     "Marco legal, redistribuir la renta y corregir los fallos del mercado",
+     [
+      "Redistribuir la renta, marco legal y corregir los fallos del mercado",
+      "intercambia las dos primeras funciones"
+     ],
+     [
+      "Marco legal, corregir los fallos del mercado y redistribuir la renta",
+      "intercambia las dos últimas funciones"
+     ],
+     [
+      "Estabilizar la economía, redistribuir la renta y marco legal",
+      "no identifica ni los contratos ni la contaminación"
+     ],
+     "Cumplir los contratos es marco legal, gravar más a las rentas altas para financiar ayudas es redistribuir y limitar las emisiones es corregir un fallo del mercado, la externalidad. Regla: busca el problema que ataca cada medida."
+    ]
+   ]
+  },
+  {
+   "nombre": "Elementos del Estado del Bienestar",
+   "pagina": 9,
+   "ayuda": "El Estado del Bienestar es el conjunto de políticas con las que el Estado garantiza a toda la población un nivel de bienestar y protección social, sobre todo en situaciones de necesidad. Sus elementos principales son la educación pública, la sanidad pública, las pensiones, las prestaciones por desempleo, las ayudas y servicios sociales y otras políticas de protección social.",
+   "test": [
+    [
+     2,
+     "¿Cuál de los siguientes elementos no forma parte del Estado del Bienestar según el tema?",
+     "La planificación central de la producción de las empresas",
+     [
+      "Las pensiones",
+      "no recuerda que las pensiones son un elemento del bienestar"
+     ],
+     [
+      "Las prestaciones por desempleo",
+      "no recuerda que el paro protege económicamente"
+     ],
+     [
+      "La educación pública",
+      "no recuerda que la educación es un elemento del bienestar"
+     ],
+     "Las pensiones, el desempleo y la educación pública son elementos del Estado del Bienestar. La planificación central de la producción es característica de la economía planificada. Regla: bienestar es protección social, no plan de producción."
+    ]
+   ]
+  }
+ ]
+}

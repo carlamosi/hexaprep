@@ -1,0 +1,113 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Problemas de ecuaciones y sistemas",
+ "conceptos": [
+  {
+   "nombre": "Problemas con sistemas de dos incógnitas (libro)",
+   "pagina": 28,
+   "ayuda": "Elige las incógnitas, escribe una ecuación por cada condición del enunciado y resuelve el sistema (sustitución, igualación o reducción). Después comprueba la solución en el enunciado. Ejemplo: dos números suman 10 y su diferencia es 2. Con $x+y=10$ y $x-y=2$, sumando sale $x=6$ e $y=4$. Responde siempre a lo que se pregunta, no a una incógnita cualquiera.",
+   "problemas": [
+    [
+     1,
+     "Ana y Luis tienen juntos 45 euros y Ana tiene 9 euros más que Luis. ¿Cuántos euros tiene Ana? Escribe solo el número.",
+     27,
+     "Con $a$ y $l$: $a+l=45$ y $a-l=9$. Sumando, $2a=54$, luego $a=27$ (y $l=18$).",
+     "[a for a in range(0,100) for l in range(0,100) if a+l==45 and a-l==9][0]"
+    ],
+    [
+     2,
+     "En un teatro, 3 entradas de adulto y 2 de niño cuestan 29 euros, y 1 de adulto y 4 de niño cuestan 23 euros. ¿Cuánto cuesta una entrada de adulto, en euros? Escribe solo el número.",
+     7,
+     "Con $a$ y $n$: $3a+2n=29$ y $a+4n=23$. De la segunda, $a=23-4n$; en la primera, $69-12n+2n=29$, luego $n=4$ y $a=7$.",
+     "[a for a in range(0,30) for n in range(0,30) if 3*a+2*n==29 and a+4*n==23][0]"
+    ],
+    [
+     3,
+     "Se mezcla una aleación con un 30 % de cobre y otra con un 60 % de cobre para obtener 12 kg de aleación con un 50 % de cobre. ¿Cuántos kg se usan de la aleación del 60 %? Escribe solo el número.",
+     8,
+     "Con $x$ kg al 30 % e $y$ kg al 60 %: $x+y=12$ y $0{,}3x+0{,}6y=0{,}5\\cdot12=6$. Sustituyendo $x=12-y$: $3{,}6+0{,}3y=6$, luego $y=8$.",
+     "[y for x in range(0,13) for y in range(0,13) if x+y==12 and 30*x+60*y==50*12][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Problemas con sistemas de tres incógnitas (libro)",
+   "pagina": 29,
+   "ayuda": "Con tres incógnitas necesitas tres condiciones. Asigna una letra a cada cantidad desconocida, traduce cada frase a una ecuación y resuelve el sistema por sustitución o por Gauss. Comprueba que las soluciones sean positivas y razonables en el contexto (edades, euros, kilos). Ejemplo: tres números suman 12, el segundo es el doble del primero y el tercero vale 2 más que el segundo. Entonces $x+2x+2x+2=12$, luego $x=2$.",
+   "problemas": [
+    [
+     3,
+     "La suma de las edades de tres hermanos es 36 años. El mayor tiene el doble de edad que el menor, y el mediano tiene 4 años más que el menor. ¿Qué edad tiene el mediano? Escribe solo el número.",
+     12,
+     "Con $c$ el menor: el mayor es $2c$ y el mediano $c+4$. Entonces $c+(c+4)+2c=36$, luego $4c=32$ y $c=8$. El mediano tiene $8+4=12$ años.",
+     "[b for a in range(1,40) for b in range(1,40) for c in range(1,40) if a+b+c==36 and a==2*c and b==c+4][0]"
+    ],
+    [
+     4,
+     "Se reparten 10 000 euros en tres inversiones A, B y C al 3 %, 5 % y 8 % anual. En C se invierte el doble que en A y los intereses anuales suman 580 euros. ¿Cuántos euros se invierten en B? Escribe solo el número.",
+     4000,
+     "Con $a$, $b$, $c$: $a+b+c=10000$, $c=2a$ y $0{,}03a+0{,}05b+0{,}08c=580$. Sustituyendo, $b=10000-3a$ y $500+0{,}04a=580$, luego $a=2000$, $b=4000$ y $c=4000$.",
+     "[b for a in range(0,10001,100) for b in range(0,10001,100) if a+b+2*a==10000 and 3*a+5*b+8*(2*a)==100*580][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Problemas con ecuaciones de segundo grado y apartados",
+   "pagina": 28,
+   "ayuda": "Si en el enunciado aparece un producto, un cuadrado o una velocidad y un tiempo, el planteamiento suele dar una ecuación de segundo grado o un sistema no lineal. Plantea las ecuaciones, reduce a una sola incógnita y resuelve; descarta soluciones negativas o absurdas. Con tiempo igual a espacio entre velocidad: 100 km a $v$ km/h tardan $100/v$ horas. En los problemas con apartados, usa los resultados correctos de un apartado en el siguiente.",
+   "problemas": [
+    [
+     4,
+     "Un tren recorre 300 km a velocidad constante. Si fuese 10 km/h más rápido, tardaría 1 hora menos. ¿Cuál es su velocidad, en km/h? Escribe solo el número.",
+     50,
+     "Con $v$ la velocidad: $\\frac{300}{v}-\\frac{300}{v+10}=1$. Multiplicando, $3000=v(v+10)$, es decir $v^2+10v-3000=0$, con $v=50$ o $v=-60$. Solo vale la positiva: 50 km/h (tarda 6 h, o 5 h a 60 km/h).",
+     "[v for v in range(1,300) if abs(300/v-300/(v+10)-1)<1e-9][0]"
+    ]
+   ],
+   "grupos": [
+    {
+     "contexto": "En una granja hay gallinas y conejos. En total se cuentan 40 cabezas y 110 patas. Las gallinas tienen 2 patas y los conejos 4.",
+     "apartados": [
+      [
+       2,
+       "¿Cuántos conejos hay? Escribe solo el número.",
+       15,
+       "Con $g$ gallinas y $c$ conejos: $g+c=40$ y $2g+4c=110$. De la primera, $g=40-c$; en la segunda, $80-2c+4c=110$, luego $2c=30$ y $c=15$.",
+       "[c for g in range(0,41) for c in range(0,41) if g+c==40 and 2*g+4*c==110][0]"
+      ],
+      [
+       3,
+       "Se venden todas las gallinas a 6 euros cada una y todos los conejos a 18 euros cada uno. ¿Cuántos euros se ingresan en total? Escribe solo el número.",
+       420,
+       "Hay 25 gallinas y 15 conejos. Ingresos: $25\\cdot6+15\\cdot18=150+270=420$ euros.",
+       "[6*g+18*c for g in range(0,41) for c in range(0,41) if g+c==40 and 2*g+4*c==110][0]"
+      ]
+     ]
+    },
+    {
+     "contexto": "Un terreno rectangular tiene 70 m de perímetro y su diagonal mide 25 m.",
+     "apartados": [
+      [
+       4,
+       "Calcula las dos dimensiones del terreno y escríbelas de menor a mayor: a; b (separadas por punto y coma).",
+       [
+        15,
+        20
+       ],
+       "Con $a+b=35$ y $a^2+b^2=625$: $(a+b)^2=1225$, luego $2ab=600$ y $ab=300$. Resolviendo $t^2-35t+300=0$ salen $t=15$ y $t=20$.",
+       "[v for a in range(1,36) for b in range(1,36) if 2*(a+b)==70 and a*a+b*b==625 and a<b for v in (a,b)]",
+       true
+      ],
+      [
+       5,
+       "Se traza la altura del triángulo rectángulo formado por dos lados y la diagonal, desde el vértice del ángulo recto hasta la diagonal. ¿Cuánto mide esa altura, en metros? Escribe solo el número.",
+       12,
+       "El área del triángulo es $\\frac{15\\cdot20}{2}=150$ y también $\\frac{25\\cdot h}{2}$. Entonces $25h=300$ y $h=12$ m.",
+       "[a*b/25 for a in range(1,36) for b in range(1,36) if 2*(a+b)==70 and a*a+b*b==625][0]"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

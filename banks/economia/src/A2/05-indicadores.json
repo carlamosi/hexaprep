@@ -1,0 +1,134 @@
+{
+ "subtema": "Indicadores e impuestos",
+ "conceptos": [
+  {
+   "nombre": "PIB y empleo",
+   "pagina": 9,
+   "ayuda": "El PIB es el valor de todos los bienes y servicios finales producidos dentro de un país durante un período, normalmente un año. La tasa de paro es el porcentaje de personas desempleadas que buscan trabajo activamente respecto al conjunto de la población activa. Dos detalles importan: el PIB cuenta solo bienes finales y la tasa de paro se calcula sobre la población activa, no sobre toda la población.",
+   "test": [
+    [
+     3,
+     "¿Qué incluye correctamente la definición de PIB?",
+     "El valor de los bienes y servicios finales producidos en un país en un año",
+     [
+      "El valor de los bienes intermedios y finales de todas las empresas del mundo",
+      "confunde el ámbito del país y mezcla bienes intermedios"
+     ],
+     [
+      "El dinero que circula dentro del país durante un año",
+      "confunde producción con cantidad de dinero"
+     ],
+     [
+      "El valor de los bienes finales producidos en un solo día",
+      "ignora que el período habitual es un año"
+     ],
+     "El PIB mide bienes y servicios finales producidos dentro de un país en un período, normalmente un año. Regla: final, dentro del país, en un período."
+    ],
+    [
+     3,
+     "¿Respecto a qué conjunto se calcula la tasa de paro?",
+     "La población activa",
+     [
+      "La población total del país",
+      "cree que el denominador es toda la población"
+     ],
+     [
+      "Todas las personas sin trabajo, incluidas las que no buscan empleo",
+      "no exige buscar trabajo activamente"
+     ],
+     [
+      "El número de empresas del país",
+      "confunde empleo de personas con el número de empresas"
+     ],
+     "La tasa de paro es el porcentaje de desempleados que buscan trabajo activamente respecto a la población activa. Regla: paro igual a desempleados que buscan, dividido entre la población activa."
+    ]
+   ]
+  },
+  {
+   "nombre": "Precios, inflación y lectura conjunta",
+   "pagina": 9,
+   "ayuda": "El IPC refleja cómo evolucionan los precios de un conjunto de bienes y servicios que consumen habitualmente los hogares, y permite medir la inflación. Si la inflación está controlada, los precios suben de forma moderada y estable. Los indicadores se leen juntos: producción, empleo, precios y tipos de interés dan una imagen de la economía.",
+   "test": [
+    [
+     2,
+     "¿Qué conjunto de precios refleja el IPC?",
+     "Los de bienes y servicios que consumen habitualmente los hogares",
+     [
+      "Los de todos los bienes intermedios que usan las empresas",
+      "confunde la cesta de los hogares con costes de las empresas"
+     ],
+     [
+      "Los de los bienes de lujo que compran pocas personas",
+      "cree que mide bienes poco habituales"
+     ],
+     [
+      "Los de las acciones y los valores que cotizan en bolsa",
+      "confunde precios de consumo con activos financieros"
+     ],
+     "El IPC sigue los precios de bienes y servicios que consumen habitualmente los hogares y sirve para medir la inflación. Regla: el IPC es la cesta de la compra de las familias."
+    ],
+    [
+     5,
+     "Un país registra más producción, una tasa de paro a la baja, precios que suben de forma moderada y tipos de interés en descenso. ¿Cómo se interpreta en conjunto?",
+     "Crece la actividad y el empleo, con precios estables y préstamos más baratos que pueden favorecer el consumo y la inversión",
+     [
+      "Crece la actividad y el empleo, pero con precios inestables y préstamos más caros",
+      "no relaciona la bajada de tipos con préstamos más baratos"
+     ],
+     [
+      "Cae la actividad, sube el empleo y se encarecen los préstamos",
+      "lee al revés el PIB y el tipo de interés"
+     ],
+     [
+      "Crece la actividad pero se destruye empleo y bajan los precios con rapidez",
+      "lee al revés la tasa de paro y confunde inflación moderada con deflación"
+     ],
+     "Más producción es crecimiento, menos paro es más empleo, precios moderados es inflación controlada y tipos a la baja abaratan préstamos, lo que puede estimular el consumo y la inversión. Regla: lee cada indicador por separado y luego junta."
+    ]
+   ]
+  },
+  {
+   "nombre": "Clasificar los impuestos",
+   "pagina": 10,
+   "ayuda": "Los impuestos directos gravan directamente la renta o la riqueza: IRPF, Impuesto sobre Sociedades e Impuesto sobre el Patrimonio. Los indirectos gravan el consumo o determinadas operaciones: IVA, Impuestos Especiales e ITPAJD. Un truco: lo que grava lo que ganas o tienes es directo; lo que grava lo que compras o transmites es indirecto.",
+   "test": [
+    [
+     4,
+     "¿Cómo se clasifican, en este orden, el Impuesto sobre Sociedades, los Impuestos Especiales y el Impuesto sobre el Patrimonio?",
+     "Directo, indirecto y directo",
+     [
+      "Indirecto, indirecto y directo",
+      "clasifica Sociedades como indirecto aunque grava el beneficio"
+     ],
+     [
+      "Directo, directo e indirecto",
+      "clasifica el Patrimonio como indirecto"
+     ],
+     [
+      "Indirecto, directo e indirecto",
+      "invierte los tres tipos"
+     ],
+     "Sociedades grava el beneficio de las empresas y Patrimonio los bienes y derechos de una persona: ambos directos. Los Impuestos Especiales gravan el consumo de alcohol, tabaco o hidrocarburos: indirectos. Regla: ganar o tener, directo; consumir, indirecto."
+    ],
+    [
+     4,
+     "Una persona compra una vivienda de segunda mano. ¿Qué impuesto grava esa transmisión y cómo se clasifica?",
+     "El ITPAJD, un impuesto indirecto",
+     [
+      "El IRPF, un impuesto directo",
+      "confunde transmisión de bienes con renta"
+     ],
+     [
+      "El Impuesto sobre el Patrimonio, un impuesto directo",
+      "confunde transmisión de un bien con la riqueza que se posee"
+     ],
+     [
+      "El Impuesto sobre Sociedades, un impuesto directo",
+      "confunde operación entre personas con beneficios de empresas"
+     ],
+     "El ITPAJD grava determinadas transmisiones de bienes y actos jurídicos, como comprar una vivienda de segunda mano, y es indirecto. Regla: transmitir un bien, ITPAJD."
+    ]
+   ]
+  }
+ ]
+}

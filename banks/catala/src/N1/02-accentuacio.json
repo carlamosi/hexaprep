@@ -1,0 +1,350 @@
+{
+ "subtema": "Accentuació",
+ "conceptos": [
+  {
+   "nombre": "Paraules agudes",
+   "pagina": 2,
+   "cara": 2,
+   "ayuda": "Una paraula és aguda quan l'última síl·laba és tònica (forta). Porta accent si acaba en a, e, i, o, u (germà, cafè, menú), en as, es, is, os, us (procés, arròs) o en en, in (depèn, Berlín). Si acaba en una altra consonant, com cantar, no porta accent. Truc: marca l'última síl·laba i mira com acaba la paraula.",
+   "test": [
+    [
+     1,
+     "Quina és la forma correcta?",
+     "cafè",
+     [
+      "cafe",
+      "oblida l'accent d'una aguda acabada en vocal"
+     ],
+     [
+      "càfe",
+      "accentua la síl·laba equivocada"
+     ],
+     [
+      "café",
+      "posa accent tancat on el so és obert"
+     ],
+     "«Cafè» és aguda i acaba en vocal, per tant porta accent. La e sona diferent en castellà (café), per això l'accent és obert."
+    ],
+    [
+     2,
+     "Quina és la forma correcta?",
+     "menú",
+     [
+      "menu",
+      "oblida l'accent d'una aguda acabada en u"
+     ],
+     [
+      "ménu",
+      "accentua la síl·laba equivocada"
+     ],
+     [
+      "menù",
+      "posa accent obert a una u, que sempre és tancat"
+     ],
+     "«Menú» és aguda acabada en vocal: porta accent. Les vocals i i u, quan porten accent, el porten tancat."
+    ],
+    [
+     4,
+     "Per què «depèn» porta accent?",
+     "Perquè és aguda i acaba en -en",
+     [
+      "Perquè és plana i acaba en consonant",
+      "confon aguda amb plana"
+     ],
+     [
+      "Perquè és esdrúixola",
+      "confon aguda amb esdrúixola"
+     ],
+     [
+      "Perquè és un accent diacrític",
+      "confon l'accent diacrític amb el general"
+     ],
+     "Les agudes acabades en -en porten accent: depèn, com Berlín (-in). Regla: aguda + en/in = accent."
+    ],
+    [
+     5,
+     "Quina frase conté un error d'accent?",
+     "Va demanar un cafe i un tros de pastís.",
+     [
+      "Va viatjar a Berlín en tren.",
+      "creu que «Berlín» no porta accent"
+     ],
+     [
+      "El procés va ser molt llarg.",
+      "creu que «procés» no porta accent"
+     ],
+     [
+      "Aquest menú inclou pastís.",
+      "creu que «menú» no porta accent"
+     ],
+     "«Cafe» hauria de portar accent: és aguda acabada en vocal. Berlín (-in), procés (-es), menú (-u) i pastís (-is) ja estan ben accentuats."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Una paraula aguda acabada en vocal, com «germà», porta accent.",
+     true,
+     "Les agudes acabades en a, e, i, o, u porten accent: germà, cafè, menú.",
+     "trampa: confondre una aguda amb una plana i creure que no s'accentua"
+    ]
+   ]
+  },
+  {
+   "nombre": "Paraules planes i esdrúixoles",
+   "pagina": 2,
+   "cara": 2,
+   "ayuda": "Una paraula és plana quan la penúltima síl·laba és tònica. Porta accent si no acaba com les agudes: exàmens, àrab, però examen. Les esdrúixoles tenen tònica l'antepenúltima síl·laba o una d'anterior i sempre porten accent: gàbia, ràdio, justícia, família. A «dia» no s'accentua perquè es pronuncia di-a i és plana acabada en vocal.",
+   "test": [
+    [
+     1,
+     "Quina és la forma correcta?",
+     "examen",
+     [
+      "exàmen",
+      "accentua una plana acabada en -en"
+     ],
+     [
+      "examén",
+      "tracta la paraula com una aguda"
+     ],
+     [
+      "éxamen",
+      "accentua l'antepenúltima síl·laba"
+     ],
+     "«Examen» és plana i acaba en -en: no porta accent. Només s'accentuen les agudes acabades en -en."
+    ],
+    [
+     2,
+     "Quina és la forma correcta?",
+     "exàmens",
+     [
+      "examens",
+      "oblida l'accent d'una plana acabada en -ns"
+     ],
+     [
+      "examéns",
+      "tracta la paraula com una aguda"
+     ],
+     [
+      "éxamens",
+      "accentua l'antepenúltima síl·laba"
+     ],
+     "«Exàmens» és plana i no acaba com les agudes (-ns), per tant porta accent."
+    ],
+    [
+     4,
+     "Per què «família» porta accent?",
+     "Perquè la síl·laba tònica és l'antepenúltima",
+     [
+      "Perquè és aguda i acaba en vocal",
+      "confon esdrúixola amb aguda"
+     ],
+     [
+      "Perquè és un accent diacrític",
+      "confon l'accent diacrític amb el general"
+     ],
+     [
+      "Perquè la penúltima és tònica i acaba en -a",
+      "creu que les planes acabades en vocal s'accentuen"
+     ],
+     "«Família» es pronuncia fa-mí-li-a: la tònica és l'antepenúltima síl·laba. Les esdrúixoles sempre porten accent."
+    ],
+    [
+     5,
+     "Quin conjunt de paraules està ben accentuat?",
+     "exàmens, examen, família",
+     [
+      "examens, examen, família",
+      "oblida l'accent d'una plana acabada en -ns"
+     ],
+     [
+      "exàmens, exàmen, família",
+      "accentua una plana acabada en -en"
+     ],
+     [
+      "exàmens, examen, familia",
+      "oblida l'accent d'una esdrúixola"
+     ],
+     "Exàmens porta accent (plana acabada en -ns), examen no (plana acabada en -en) i família sí (esdrúixola)."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Dia» s'escriu «día» perquè la i és tònica.",
+     false,
+     "En català «dia» no s'accentua: es pronuncia di-a, és plana i acaba en vocal.",
+     "trampa: creure que el hiat sempre s'accentua, com en castellà «día»"
+    ]
+   ]
+  },
+  {
+   "nombre": "Accents diacrítics",
+   "pagina": 3,
+   "cara": 3,
+   "ayuda": "L'accent diacrític distingeix paraules que s'escriuen igual però signifiquen coses diferents. Exemples: més (quantitat) i mes (part de l'any); té (verb tenir) i te (infusió); sí (afirmació) i si (condició); sòl (terra) i sol (astre); són (verb ésser) i son (ganes de dormir); Déu (divinitat) i deu (10, font, verb deure). Cal pensar quin significat té la paraula en la frase.",
+   "test": [
+    [
+     1,
+     "Quina frase és correcta?",
+     "Aquest mes tinc més feina.",
+     [
+      "Aquest més tinc més feina.",
+      "confon el mes de l'any amb més"
+     ],
+     [
+      "Aquest mes tinc mes feina.",
+      "oblida l'accent de més"
+     ],
+     [
+      "Aquest més tinc mes feina.",
+      "inverteix les dues paraules"
+     ],
+     "«Mes» és la part de l'any (sense accent) i «més» és quantitat (amb accent)."
+    ],
+    [
+     2,
+     "Quina frase és correcta?",
+     "Ella té te amb llet.",
+     [
+      "Ella te té amb llet.",
+      "inverteix el verb i la infusió"
+     ],
+     [
+      "Ella té té amb llet.",
+      "posa accent a les dues paraules"
+     ],
+     [
+      "Ella te te amb llet.",
+      "oblida l'accent del verb"
+     ],
+     "«Té» és el verb tenir (amb accent) i «te» és la infusió (sense accent)."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "El sol escalfa el sòl.",
+     [
+      "El sòl escalfa el sol.",
+      "inverteix l'astre i la terra"
+     ],
+     [
+      "El sol escalfa el sol.",
+      "oblida l'accent de la terra"
+     ],
+     [
+      "El sòl escalfa el sòl.",
+      "posa l'accent a l'astre"
+     ],
+     "«Sol» és l'astre (sense accent) i «sòl» és la terra (amb accent)."
+    ],
+    [
+     5,
+     "Quina frase és correcta?",
+     "Tinc deu euros i crec en Déu.",
+     [
+      "Tinc déu euros i crec en Déu.",
+      "posa accent al numeral"
+     ],
+     [
+      "Tinc deu euros i crec en Deu.",
+      "oblida l'accent de la divinitat"
+     ],
+     [
+      "Tinc déu euros i crec en Deu.",
+      "inverteix el numeral i la divinitat"
+     ],
+     "«Deu» (10) no porta accent. «Déu» amb majúscula, referit a la divinitat, sí."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Sí» amb accent s'escriu per afirmar, i «si» sense accent per expressar una condició.",
+     true,
+     "Sí és l'afirmació i si és la condició: «Ha dit que sí» i «Si et sembla bé».",
+     "trampa: confondre l'afirmació amb la condició"
+    ]
+   ]
+  },
+  {
+   "nombre": "Accents oberts i tancats",
+   "pagina": 3,
+   "cara": 3,
+   "ayuda": "La a sempre s'accentua oberta: demà, pàgina. La e i la o s'accentuen obertes si sonen diferent en castellà: arròs, cafè, època. S'accentuen tancades si sonen igual que en castellà: avió, església, cançó, puré. La i i la u, quan porten accent, el porten tancat com en castellà: pollí, Berlín, menú.",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta?",
+     "demà",
+     [
+      "demá",
+      "posa accent tancat a la a"
+     ],
+     [
+      "dema",
+      "oblida l'accent d'una aguda acabada en a"
+     ],
+     [
+      "dèmà",
+      "accentua dues vocals"
+     ],
+     "La a sempre s'accentua oberta: demà."
+    ],
+    [
+     4,
+     "Quina és la forma correcta?",
+     "arròs",
+     [
+      "arrós",
+      "posa accent tancat tot i que la o sona diferent del castellà «arroz»"
+     ],
+     [
+      "arros",
+      "oblida l'accent d'una aguda acabada en -os"
+     ],
+     [
+      "àrros",
+      "accentua la síl·laba equivocada"
+     ],
+     "La o és oberta perquè en castellà «arroz» sona diferent. Les agudes acabades en -os porten accent."
+    ],
+    [
+     5,
+     "Quina és la forma correcta?",
+     "cançó",
+     [
+      "cançò",
+      "posa accent obert tot i que sona igual que en castellà «canción»"
+     ],
+     [
+      "cancó",
+      "escriu c en lloc de ç"
+     ],
+     [
+      "cansó",
+      "escriu s en lloc de ç"
+     ],
+     "La o és tancada perquè sona igual que en castellà («canción»). Davant d'una o s'escriu ç, no c ni s."
+    ]
+   ],
+   "vf": [
+    [
+     1,
+     "«Església» porta accent tancat perquè la e sona igual que en castellà.",
+     true,
+     "Quan la e o la o sonen igual que en castellà, s'accentuen tancades: església, avió, cançó.",
+     "trampa: creure que totes les e accentuades són obertes"
+    ],
+    [
+     3,
+     "«Pollí» porta accent obert perquè la i pot portar accent obert o tancat.",
+     false,
+     "La i i la u sempre porten accent tancat, igual que en castellà: pollí, Berlín, menú.",
+     "trampa: creure que la i es comporta com la e i la o"
+    ]
+   ]
+  }
+ ]
+}

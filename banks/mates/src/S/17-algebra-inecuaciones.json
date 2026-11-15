@@ -1,0 +1,76 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Inecuaciones",
+ "conceptos": [
+  {
+   "nombre": "Inecuaciones con fracciones algebraicas (variantes)",
+   "pagina": 27,
+   "ayuda": "Pasa todo a un lado para tener una fracción comparada con 0. Halla los ceros del numerador y del denominador: son los puntos críticos. Colócalos en la recta y estudia el signo de la fracción en cada intervalo. Los ceros del denominador nunca están en la solución; los del numerador solo si la desigualdad no es estricta. Ejemplo: $\\frac{x}{x-1}<0$. Puntos críticos 0 y 1; es negativa en $(0,1)$. Después cuenta, suma o localiza los enteros pedidos.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $\\frac{x}{x-4}<0$. ¿Cuántos números enteros entre $-10$ y 10, ambos incluidos, cumplen la inecuación? Escribe solo ese número.",
+     3,
+     "Puntos críticos 0 y 4. La fracción es negativa entre ellos: $0<x<4$ (el 4 anula el denominador). Los enteros son 1, 2 y 3: hay 3.",
+     "len([x for x in range(-10,11) if x!=4 and x/(x-4)<0])"
+    ],
+    [
+     2,
+     "Resuelve $\\frac{x+2}{x-3}\\le0$. ¿Cuántos números enteros entre $-10$ y 10, ambos incluidos, cumplen la inecuación? Escribe solo ese número.",
+     5,
+     "Puntos críticos $-2$ y 3. La fracción es negativa o cero en $-2\\le x<3$ (el 3 se excluye). Los enteros son $-2,-1,0,1,2$: hay 5.",
+     "len([x for x in range(-10,11) if x!=3 and (x+2)/(x-3)<=0])"
+    ],
+    [
+     3,
+     "Resuelve $\\frac{3x+1}{x-2}<2$. ¿Cuál es la suma de los números enteros entre $-20$ y 20, ambos incluidos, que cumplen la inecuación? Escribe solo ese número.",
+     -9,
+     "Pasamos el 2: $\\frac{3x+1-2(x-2)}{x-2}=\\frac{x+5}{x-2}<0$. Puntos críticos $-5$ y 2; es negativa en $-5<x<2$. Los enteros son $-4,-3,-2,-1,0,1$, que suman $-9$.",
+     "sum([x for x in range(-20,21) if x!=2 and (3*x+1)/(x-2)<2])"
+    ],
+    [
+     4,
+     "Resuelve $\\frac{2}{x-1}\\ge\\frac{1}{x+2}$. ¿Cuál es la suma de los números enteros entre $-10$ y 10, ambos incluidos, que cumplen la inecuación? Escribe solo ese número.",
+     42,
+     "Restando: $\\frac{2(x+2)-(x-1)}{(x-1)(x+2)}=\\frac{x+5}{(x-1)(x+2)}\\ge0$. Puntos críticos $-5,-2,1$. Positiva en $[-5,-2)$ y en $(1,\\infty)$. Enteros: $-5,-4,-3$ (suman $-12$) y de 2 a 10 (suman 54). Total 42.",
+     "sum([x for x in range(-10,11) if x!=1 and x!=-2 and 2/(x-1)>=1/(x+2)])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas de inecuaciones con una incógnita (variantes)",
+   "pagina": 27,
+   "ayuda": "Resuelve cada inecuación por separado y expresa su solución como intervalo. La solución del sistema es la intersección de los intervalos: los puntos que cumplen todas a la vez. Si la intersección está vacía, el sistema no tiene solución. Si hay una fracción algebraica, estudia los signos con los puntos críticos. Ejemplo: $x>1$ y $x\\le4$ dan $(1,4]$, con enteros 2, 3 y 4. Al final, cuenta o suma los enteros que pide el enunciado.",
+   "problemas": [
+    [
+     2,
+     "Resuelve el sistema de inecuaciones $2x+7>1$, $3x-4\\le14$. ¿Cuántos números enteros lo cumplen? Escribe solo ese número.",
+     9,
+     "Primera: $2x>-6$, luego $x>-3$. Segunda: $3x\\le18$, luego $x\\le6$. La solución es $(-3,6]$. Los enteros son $-2,-1,0,1,2,3,4,5,6$: hay 9.",
+     "len([x for x in range(-30,31) if 2*x+7>1 and 3*x-4<=14])"
+    ],
+    [
+     3,
+     "Resuelve el sistema de inecuaciones $3(x-1)-2x\\ge4$, $\\frac{x+1}{2}-\\frac{x-2}{3}<3$. ¿Cuál es la suma de los números enteros que lo cumplen? Escribe solo ese número.",
+     34,
+     "Primera: $x-3\\ge4$, luego $x\\ge7$. Segunda: multiplicando por 6, $3(x+1)-2(x-2)<18$, es decir $x+7<18$, luego $x<11$. La solución es $[7,11)$, con enteros 7, 8, 9 y 10, que suman 34.",
+     "sum([x for x in range(-50,51) if 3*(x-1)-2*x>=4 and (x+1)/2-(x-2)/3<3])"
+    ],
+    [
+     4,
+     "Resuelve el sistema $\\frac{x+3}{x-1}\\ge2$, $x^2\\ge9$. ¿Cuál es la suma de los números enteros que lo cumplen? Escribe solo ese número.",
+     12,
+     "Primera: $\\frac{x+3-2(x-1)}{x-1}=\\frac{5-x}{x-1}\\ge0$, con solución $(1,5]$. Segunda: $x\\le-3$ o $x\\ge3$. La intersección es $[3,5]$, con enteros 3, 4 y 5, que suman 12.",
+     "sum([x for x in range(-50,51) if x!=1 and (x+3)/(x-1)>=2 and x*x>=9])"
+    ],
+    [
+     5,
+     "Resuelve el sistema $\\frac{2}{x-3}\\le1$, $x^2-2x-8<0$. ¿Cuál es la suma de los números enteros que lo cumplen? Escribe solo ese número.",
+     2,
+     "Primera: $\\frac{5-x}{x-3}\\le0$, con solución $x<3$ o $x\\ge5$. Segunda: raíces $-2$ y 4, luego $(-2,4)$. La intersección es $(-2,3)$ (el 3 anula el denominador). Los enteros son $-1,0,1,2$, que suman 2.",
+     "sum([x for x in range(-50,51) if x!=3 and 2/(x-3)<=1 and x*x-2*x-8<0])"
+    ]
+   ]
+  }
+ ]
+}

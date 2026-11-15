@@ -1,0 +1,72 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones radicales y racionales",
+ "conceptos": [
+  {
+   "nombre": "Ecuaciones racionales con denominadores factorizados",
+   "pagina": 1,
+   "ayuda": "Se factorizan los denominadores, se busca el mínimo común múltiplo y se multiplica toda la ecuación por él. Se resuelve la ecuación que sale y se descartan los valores que anulan algún denominador, porque son soluciones falsas. Ejemplo: $\\frac{1}{x-1}=\\frac{3}{x+1}$ da $x+1=3(x-1)$, es decir $x=2$, que no anula ningún denominador.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $\\frac{2}{x+1}=\\frac{1}{x-2}$. Escribe la solución.",
+     5,
+     "Se multiplica en cruz: $2(x-2)=x+1$, es decir $2x-4=x+1$, luego $x=5$. No anula ningún denominador. Comprobación: $\\frac{2}{6}=\\frac{1}{3}$.",
+     "[x for x in range(-30,31) if x not in (-1,2) and abs(2/(x+1)-1/(x-2))<1e-9][0]"
+    ],
+    [
+     3,
+     "Resuelve $\\frac{x}{x-3}-\\frac{2}{x}=\\frac{9}{x^2-3x}$. Escribe la solución que vale.",
+     -1,
+     "Como $x^2-3x=x(x-3)$, se multiplica por $x(x-3)$: $x^2-2(x-3)=9$, es decir $x^2-2x-3=0$, con $x=3$ y $x=-1$. El valor $x=3$ anula un denominador y se descarta. Con $x=-1$: $\\frac{-1}{-4}+2=\\frac94$ y $\\frac{9}{4}$, correcto.",
+     "[x for x in range(-30,31) if x not in (0,3) and abs(x/(x-3)-2/x-9/(x**2-3*x))<1e-9][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones radicales con comprobación",
+   "pagina": 1,
+   "ayuda": "Se aísla un radical en un miembro y se elevan al cuadrado los dos miembros (recuerda $(a+b)^2=a^2+2ab+b^2$). Si quedan dos radicales, se repite el proceso una vez más. Elevar al cuadrado puede introducir soluciones falsas, así que cada solución se comprueba en la ecuación original. Ejemplo: $\\sqrt{2x+8}=x$ da $2x+8=x^2$, es decir $x^2-2x-8=0$, con $x=4$ y $x=-2$. Con $x=-2$ queda $2=-2$, falso; vale $x=4$.",
+   "problemas": [
+    [
+     2,
+     "Resuelve $\\sqrt{5x+6}=x$ y comprueba las soluciones. Escribe la solución que vale.",
+     6,
+     "Se eleva al cuadrado: $5x+6=x^2$, es decir $x^2-5x-6=0$, con $x=6$ y $x=-1$. Con $x=6$: $\\sqrt{36}=6$, correcto. Con $x=-1$: $\\sqrt1=1$ pero $x=-1$, falso. La solución es $x=6$.",
+     "[x for x in range(-20,41) if 5*x+6>=0 and abs(math.sqrt(5*x+6)-x)<1e-9][0]"
+    ],
+    [
+     3,
+     "Resuelve $\\sqrt{x+16}-\\sqrt{x}=2$ y comprueba la solución. Escribe la solución que vale.",
+     9,
+     "Se aísla: $\\sqrt{x+16}=2+\\sqrt{x}$. Al cuadrado: $x+16=4+4\\sqrt{x}+x$, es decir $12=4\\sqrt{x}$, luego $\\sqrt{x}=3$ y $x=9$. Comprobación: $\\sqrt{25}-\\sqrt{9}=5-3=2$, correcto.",
+     "[x for x in range(0,101) if abs(math.sqrt(x+16)-math.sqrt(x)-2)<1e-9][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones racionales en problemas y con cambio de variable",
+   "pagina": 2,
+   "ayuda": "En un problema de grifos, si el primero llena el depósito en $x$ horas, en una hora llena $\\frac1x$ del depósito. Si juntos tardan $T$ horas, en una hora llenan $\\frac1T$, y se plantea la suma de lo que hace cada uno en una hora (nunca la suma de los tiempos). Cuando una fracción y su inversa aparecen a la vez, el cambio $t=\\frac{p}{q}$ da $t+\\frac1t=k$, que se resuelve como ecuación de segundo grado. Después se deshace el cambio y se comprueban los denominadores.",
+   "problemas": [
+    [
+     4,
+     "Un grifo llena un depósito en $x$ horas y otro grifo tarda 3 horas más que el primero. Abiertos a la vez llenan el depósito en 2 horas. ¿Cuántas horas tarda el segundo grifo él solo? Escribe solo el número de horas.",
+     6,
+     "En una hora llenan $\\frac1x+\\frac1{x+3}=\\frac12$. Se multiplica por $2x(x+3)$: $2(x+3)+2x=x(x+3)$, es decir $x^2-x-6=0$, con $x=3$ y $x=-2$. El tiempo no puede ser negativo, así que $x=3$ y el segundo grifo tarda $3+3=6$ horas. Comprobación: $\\frac13+\\frac16=\\frac12$.",
+     "[x+3 for x in range(1,100) if abs(1/x+1/(x+3)-1/2)<1e-9][0]"
+    ],
+    [
+     5,
+     "Resuelve $\\frac{x+1}{x-1}+\\frac{x-1}{x+1}=\\frac{10}{3}$. Escribe las soluciones separadas por punto y coma.",
+     [
+      -2,
+      2
+     ],
+     "Con $t=\\frac{x+1}{x-1}$ queda $t+\\frac1t=\\frac{10}3$, es decir $3t^2-10t+3=0$, con $t=3$ y $t=\\frac13$. Si $\\frac{x+1}{x-1}=3$, entonces $x+1=3x-3$ y $x=2$. Si $\\frac{x+1}{x-1}=\\frac13$, entonces $3x+3=x-1$ y $x=-2$. Ninguna anula un denominador, valen las dos.",
+     "[x for x in range(-30,31) if x not in (1,-1) and abs((x+1)/(x-1)+(x-1)/(x+1)-10/3)<1e-9]"
+    ]
+   ]
+  }
+ ]
+}

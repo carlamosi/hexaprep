@@ -1,0 +1,134 @@
+{
+ "subtema": "Los mercados y sus tipos",
+ "conceptos": [
+  {
+   "nombre": "Qué es un mercado",
+   "pagina": 5,
+   "ayuda": "Un mercado es el conjunto de compradores y vendedores que interactúan para intercambiar bienes y servicios a un precio determinado por la oferta y la demanda. No tiene que ser un lugar físico: puede ser un entorno digital, como Amazon o Vinted.",
+   "test": [
+    [
+     2,
+     "¿Por qué se considera un mercado una aplicación como Vinted?",
+     "Porque reúne compradores y vendedores que intercambian bienes a un precio fijado por oferta y demanda",
+     [
+      "No es un mercado, porque no es un espacio físico",
+      "cree que un mercado debe ser un lugar físico"
+     ],
+     [
+      "Porque el Estado fija los precios de lo que se vende en ella",
+      "confunde mercado con planificación"
+     ],
+     [
+      "Porque solo hay un vendedor que controla todos los precios",
+      "confunde mercado con monopolio"
+     ],
+     "Un mercado es el conjunto de compradores y vendedores que intercambian bienes y servicios a un precio determinado por oferta y demanda, aunque sea digital. Regla: lo que define un mercado son los agentes que intercambian, no el lugar."
+    ]
+   ]
+  },
+  {
+   "nombre": "Comparar los tipos de mercado",
+   "pagina": 6,
+   "ayuda": "Los cuatro tipos se ordenan por grado de competencia. En competencia perfecta no hay barreras de entrada y el precio lo fija el mercado. En competencia monopolística hay muchos vendedores con productos diferenciados y barreras bajas. En oligopolio hay pocos vendedores, interdependencia y barreras altas. En monopolio hay un solo vendedor y barreras muy elevadas.",
+   "test": [
+    [
+     4,
+     "¿Qué barreras de entrada tienen, respectivamente, la competencia perfecta y el monopolio, según el cuadro?",
+     "Ninguna y muy elevadas",
+     [
+      "Bajas y moderadas",
+      "confunde con las barreras de la monopolística y el oligopolio"
+     ],
+     [
+      "Muy elevadas y ninguna",
+      "invierte los dos tipos"
+     ],
+     [
+      "Altas y bajas",
+      "mezcla los tipos de mercado intermedios"
+     ],
+     "En competencia perfecta no hay barreras (cualquiera puede entrar) y en monopolio son muy elevadas. Regla: más competencia, menos barreras."
+    ],
+    [
+     4,
+     "¿Qué influencia sobre el precio tienen, en este orden, competencia perfecta, monopolística, oligopolio y monopolio?",
+     "Nula, cierto control, elevada y total",
+     [
+      "Nula, elevada, cierto control y total",
+      "intercambia monopolística y oligopolio"
+     ],
+     [
+      "Cierto control, nula, total y elevada",
+      "invierte los dos primeros y los dos últimos"
+     ],
+     [
+      "Total, elevada, cierto control y nula",
+      "invierte todo el orden"
+     ],
+     "El cuadro va de la influencia nula en competencia perfecta, cierto control en monopolística, elevada en oligopolio, a total en monopolio. Regla: a menos competencia, más poder sobre el precio."
+    ],
+    [
+     3,
+     "¿En qué se diferencian un oligopolio y una competencia monopolística?",
+     "En el oligopolio hay pocos vendedores; en la monopolística, muchos y con productos diferenciados",
+     [
+      "En el oligopolio hay muchos vendedores pequeños; en la monopolística, solo unos pocos",
+      "invierte el número de vendedores"
+     ],
+     [
+      "En el oligopolio el producto es siempre idéntico; en la monopolística es único en el mercado",
+      "confunde la diferenciación del producto con homogeneidad"
+     ],
+     [
+      "En el oligopolio no hay barreras de entrada; en la monopolística las barreras son muy altas",
+      "invierte las barreras de entrada"
+     ],
+     "En el oligopolio pocas empresas se vigilan entre sí (interdependencia) y las barreras son altas. En la monopolística hay muchas empresas que se diferencian por marca y publicidad. Regla: pocos y dependientes frente a muchos y diferenciados."
+    ]
+   ]
+  },
+  {
+   "nombre": "Ejemplos del cuadro y monopolio",
+   "pagina": 6,
+   "ayuda": "El cuadro da ejemplos de cada mercado: lonjas de pescado, trigo y frutas para la competencia perfecta; zapatillas de deporte, restaurantes y ropa para la monopolística; telefonía móvil, gasolineras y bancos para el oligopolio; y la red de distribución de agua o Renfe para el monopolio. Un monopolio exige un solo vendedor y sin sustitutos cercanos.",
+   "test": [
+    [
+     2,
+     "¿Qué ejemplo del cuadro corresponde a un oligopolio?",
+     "Las gasolineras",
+     [
+      "Las lonjas de pescado",
+      "confunde oligopolio con competencia perfecta"
+     ],
+     [
+      "Los restaurantes",
+      "confunde oligopolio con competencia monopolística"
+     ],
+     [
+      "Renfe",
+      "confunde oligopolio con monopolio"
+     ],
+     "Telefonía móvil, gasolineras y bancos son los ejemplos de oligopolio del cuadro. Las lonjas son de competencia perfecta, los restaurantes de monopolística y Renfe de monopolio. Regla: pocas empresas que se vigilan, oligopolio."
+    ],
+    [
+     5,
+     "En un mercado hay un único vendedor, pero existen productos sustitutivos cercanos que cubren la misma necesidad. ¿Se trata de un monopolio según el tema?",
+     "No, porque el monopolio exige un solo vendedor y sin sustitutos cercanos",
+     [
+      "Sí, porque basta con que exista un solo vendedor",
+      "olvida la condición de no tener sustitutos cercanos"
+     ],
+     [
+      "Sí, pero con una influencia sobre el precio muy limitada",
+      "mezcla monopolio con tener sustitutos"
+     ],
+     [
+      "No, es un oligopolio, porque hay varios productos disponibles",
+      "confunde el número de productos con el de vendedores"
+     ],
+     "El tema define el monopolio como un solo vendedor que controla todo el mercado de un producto o servicio sin sustitutos cercanos. Con sustitutos cercanos no hay monopolio. Regla: un vendedor y ninguna alternativa cercana."
+    ]
+   ]
+  }
+ ]
+}

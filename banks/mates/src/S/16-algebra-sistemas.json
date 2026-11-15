@@ -1,0 +1,118 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Sistemas de ecuaciones",
+ "conceptos": [
+  {
+   "nombre": "Sistemas con una ecuación lineal y otra de segundo grado (variantes)",
+   "pagina": 14,
+   "ayuda": "Despeja una incógnita en la ecuación lineal y sustitúyela en la otra: queda una ecuación de segundo grado con una sola incógnita. Resuélvela con la fórmula general y calcula la otra incógnita con la ecuación lineal. Un sistema así tiene hasta dos soluciones, que son pares $(x,y)$. Ejemplo: $x+y=5$, $xy=6$. De $y=5-x$ sale $x^2-5x+6=0$, luego $x=2$ o $x=3$, y los pares son $(2,3)$ y $(3,2)$. Comprueba siempre los pares en las dos ecuaciones.",
+   "problemas": [
+    [
+     1,
+     "Resuelve el sistema $x-y=3$, $x\\cdot y=10$. Tiene dos soluciones; escribe la que cumple $x>0$ como x; y (separados por punto y coma).",
+     [
+      5,
+      2
+     ],
+     "De $x=y+3$ sale $(y+3)y=10$, es decir $y^2+3y-10=0$, con $y=2$ o $y=-5$. Los pares son $(5,2)$ y $(-2,-5)$. Con $x>0$ queda $(5,2)$.",
+     "[v for x in range(-30,31) for y in range(-30,31) if x-y==3 and x*y==10 and x>0 for v in (x,y)]",
+     true
+    ],
+    [
+     3,
+     "Resuelve el sistema $2x+y=5$, $x^2+y^2=10$. Tiene dos soluciones; escribe la que cumple $y<0$ como x; y (separados por punto y coma).",
+     [
+      3,
+      -1
+     ],
+     "De $y=5-2x$ sale $x^2+(5-2x)^2=10$, es decir $5x^2-20x+15=0$, o sea $x^2-4x+3=0$, con $x=1$ o $x=3$. Los pares son $(1,3)$ y $(3,-1)$. Con $y<0$ queda $(3,-1)$.",
+     "[v for x in range(-30,31) for y in range(-30,31) if 2*x+y==5 and x**2+y**2==10 and y<0 for v in (x,y)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas simétricos y homogéneos",
+   "pagina": 14,
+   "ayuda": "Hay sistemas que se resuelven sin sustituir directamente. Si aparece una diferencia de cuadrados, factorízala: $x^2-y^2=(x-y)(x+y)$. Si una ecuación tiene todos los términos de grado 2 y vale 0, factorízala como producto de dos rectas y resuelve dos sistemas más sencillos. En un sistema simétrico, a veces conviene sumar o restar las ecuaciones. Ejemplo: $x^2-y^2=5$, $x+y=5$. Dividiendo, $x-y=1$, luego $x=3$ e $y=2$. Comprueba todas las soluciones.",
+   "problemas": [
+    [
+     2,
+     "Resuelve el sistema $x^2-y^2=21$, $x+y=7$. Escribe la solución como x; y (separados por punto y coma).",
+     [
+      5,
+      2
+     ],
+     "Como $x^2-y^2=(x-y)(x+y)=21$ y $x+y=7$, resulta $x-y=3$. Sumando, $2x=10$, luego $x=5$ e $y=2$. Comprobación: $25-4=21$.",
+     "[v for x in range(-30,31) for y in range(-30,31) if x**2-y**2==21 and x+y==7 for v in (x,y)]",
+     true
+    ],
+    [
+     3,
+     "Resuelve el sistema $x^2+y^2=25$, $x\\cdot y=12$. Tiene cuatro soluciones; escribe la que cumple $x>y>0$ como x; y (separados por punto y coma).",
+     [
+      4,
+      3
+     ],
+     "Sumando $2xy=24$ a la primera, $(x+y)^2=49$, luego $x+y=\\pm7$; restando, $(x-y)^2=1$, luego $x-y=\\pm1$. Las combinaciones dan $(4,3)$, $(3,4)$, $(-3,-4)$ y $(-4,-3)$. Con $x>y>0$ queda $(4,3)$.",
+     "[v for x in range(-30,31) for y in range(-30,31) if x**2+y**2==25 and x*y==12 and x>y>0 for v in (x,y)]",
+     true
+    ],
+    [
+     5,
+     "Resuelve el sistema $x^2-3xy+2y^2=0$, $x+y=9$. Tiene dos soluciones; escribe la que cumple $x\\neq y$ como x; y (separados por punto y coma).",
+     [
+      6,
+      3
+     ],
+     "Factorizando, $x^2-3xy+2y^2=(x-y)(x-2y)=0$. Si $x=y$, con $x+y=9$ sale $x=y=4{,}5$. Si $x=2y$, entonces $3y=9$, luego $y=3$ y $x=6$. La solución con $x\\neq y$ es $(6,3)$.",
+     "[v for x in range(-60,61) for y in range(-60,61) if x/2+y/2==9 and (x/2)**2-3*(x/2)*(y/2)+2*(y/2)**2==0 and x!=y for v in (x/2,y/2)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas no lineales de tres ecuaciones con tres incógnitas",
+   "pagina": 14,
+   "ayuda": "Con tres incógnitas, busca la ecuación más sencilla y úsala para eliminar una incógnita por sustitución. Si hay productos como $xy$, $yz$, $xz$, multiplicarlos todos da $(xyz)^2$ y permite hallar $xyz$. Si dan suma, suma de cuadrados y producto, piensa en números enteros que cumplan las tres. Ejemplo: $xy=2$, $yz=6$, $xz=3$. Multiplicando, $(xyz)^2=36$, luego $xyz=6$ y $z=3$, $x=1$, $y=2$. En cada caso comprueba los resultados en las tres ecuaciones.",
+   "problemas": [
+    [
+     3,
+     "Resuelve el sistema $x+y+z=12$, $x\\cdot y=12$, $z=x+2$. Tiene dos soluciones; escribe la que cumple $x>2$ como x; y; z (en ese orden, separados por punto y coma).",
+     [
+      3,
+      4,
+      5
+     ],
+     "Con $z=x+2$ y $y=12/x$, la primera da $x+12/x+x+2=12$, es decir $2x^2-10x+12=0$, o sea $x^2-5x+6=0$, con $x=2$ o $x=3$. Las soluciones son $(2,6,4)$ y $(3,4,5)$. Con $x>2$ queda $(3,4,5)$.",
+     "[v for x in range(1,21) for y in range(1,21) for z in range(1,21) if x+y+z==12 and x*y==12 and z==x+2 and x>2 for v in (x,y,z)]",
+     true
+    ],
+    [
+     4,
+     "Resuelve el sistema $xy=6$, $yz=12$, $xz=8$. Tiene dos soluciones; escribe la que tiene todas las incógnitas positivas como x; y; z (en ese orden, separados por punto y coma).",
+     [
+      2,
+      3,
+      4
+     ],
+     "Multiplicando las tres, $(xyz)^2=576$, luego $xyz=\\pm24$. Con $xyz=24$: $z=24/6=4$, $x=24/12=2$, $y=24/8=3$. La otra solución es $(-2,-3,-4)$. La positiva es $(2,3,4)$.",
+     "[v for x in range(1,25) for y in range(1,25) for z in range(1,25) if x*y==6 and y*z==12 and x*z==8 for v in (x,y,z)]",
+     true
+    ],
+    [
+     4,
+     "Resuelve el sistema $x+y+z=9$, $x^2+y^2+z^2=29$, $xyz=24$. Tiene seis soluciones (permutaciones de tres números enteros); escribe la que cumple $x>y>z$ como x; y; z (en ese orden, separados por punto y coma).",
+     [
+      4,
+      3,
+      2
+     ],
+     "Buscamos tres enteros positivos de suma 9 y producto 24: pueden ser $2,3,4$, y comprobamos que $4+9+16=29$. Las seis soluciones son las permutaciones de $(2,3,4)$. Con $x>y>z$ queda $(4,3,2)$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if x+y+z==9 and x*x+y*y+z*z==29 and x*y*z==24 and x>y>z for v in (x,y,z)]",
+     true
+    ]
+   ]
+  }
+ ]
+}

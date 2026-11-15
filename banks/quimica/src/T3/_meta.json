@@ -1,0 +1,19 @@
+{
+ "tema": "T3 Formulació orgànica",
+ "prefijo": "qui-t3",
+ "bloque": "Química",
+ "asignatura": {
+  "nombre": "Química",
+  "idioma": "ca",
+  "color": "#1B998B",
+  "acento": "#1B998B"
+ },
+ "fuente": {
+  "nombre": "Química T3 Formulació orgànica",
+  "archivo": "Quimica_T3_Formulacio_organica.pdf"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "a1"
+ }
+}

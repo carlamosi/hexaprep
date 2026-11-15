@@ -1,0 +1,98 @@
+{
+ "subtema": "Flujo circular de la renta",
+ "conceptos": [
+  {
+   "nombre": "Distinguir flujo real y flujo monetario",
+   "pagina": 4,
+   "ayuda": "El flujo circular de la renta tiene dos circuitos: el flujo real y el flujo monetario. El real mueve factores de producción de las familias a las empresas y bienes y servicios de las empresas a las familias. El monetario mueve dinero en sentido contrario: pagos de las empresas por los factores y gasto de las familias.",
+   "test": [
+    [
+     2,
+     "Una empresa paga el salario a sus empleados. ¿Qué flujo representa y en qué sentido va?",
+     "Flujo monetario, de la empresa a las familias, como pago por el factor trabajo",
+     [
+      "Flujo real, de la empresa a las familias, como entrega de trabajo",
+      "confunde el pago con el factor que se aporta"
+     ],
+     [
+      "Flujo monetario, de las familias a la empresa, como gasto en bienes",
+      "confunde el pago de salarios con el gasto de las familias"
+     ],
+     [
+      "Flujo real, de las familias a la empresa, como entrega de bienes",
+      "confunde los bienes con el trabajo"
+     ],
+     "El salario es dinero que pagan las empresas a las familias por el factor trabajo, es decir, flujo monetario. El trabajo que aportan los empleados es el flujo real en sentido contrario. Regla: el dinero sigue el sentido opuesto al de lo que paga."
+    ],
+    [
+     4,
+     "Marcos aporta su trabajo a una empresa y con su sueldo compra una bicicleta a esa misma empresa. ¿Qué flujos aparecen entre Marcos (familia) y la empresa?",
+     "Cuatro: trabajo y bicicleta (reales) y salario y gasto (monetarios), en sentidos contrarios por pares",
+     [
+      "Dos: trabajo y salario, porque la compra pertenece a otro circuito",
+      "cree que la compra no forma parte del flujo circular"
+     ],
+     [
+      "Tres: trabajo, salario y bicicleta, porque el gasto no es un flujo",
+      "no cuenta el gasto de las familias como flujo monetario"
+     ],
+     [
+      "Cuatro, todos monetarios, porque tanto el trabajo como los bienes se pagan",
+      "confunde los flujos reales con los monetarios"
+     ],
+     "Hay dos pares: trabajo de la familia a la empresa (real) con el salario de la empresa a la familia (monetario), y bicicleta de la empresa a la familia (real) con el gasto de la familia a la empresa (monetario). Regla: cada flujo real tiene su flujo monetario opuesto."
+    ]
+   ]
+  },
+  {
+   "nombre": "Retribución de los factores de producción",
+   "pagina": 4,
+   "ayuda": "Cada factor de producción recibe una retribución. La tierra, o recursos naturales, recibe una renta o alquiler. El trabajo recibe un salario. El capital recibe un interés. La iniciativa empresarial, que organiza los demás factores y asume riesgos, recibe el beneficio.",
+   "test": [
+    [
+     3,
+     "¿Cuál de las siguientes series une correctamente tierra, capital e iniciativa empresarial con su retribución?",
+     "Renta o alquiler, interés y beneficio",
+     [
+      "Salario, interés y beneficio",
+      "asigna el salario a la tierra"
+     ],
+     [
+      "Interés, renta y salario",
+      "cambia el orden de las retribuciones"
+     ],
+     [
+      "Renta o alquiler, beneficio e interés",
+      "intercambia el interés y el beneficio"
+     ],
+     "La tierra se retribuye con renta o alquiler, el capital con interés y la iniciativa empresarial con beneficio. El salario es solo del trabajo. Regla: tierra-renta, trabajo-salario, capital-interés, empresa-beneficio."
+    ]
+   ]
+  },
+  {
+   "nombre": "Reconocer el factor tierra",
+   "pagina": 4,
+   "ayuda": "El factor tierra agrupa los recursos que provienen de la naturaleza: el suelo, los minerales y el agua. No hay que confundirlo con el capital, que son bienes duraderos fabricados para producir, como la maquinaria. Tampoco con el trabajo, que es esfuerzo humano.",
+   "test": [
+    [
+     1,
+     "¿Cuál de estos recursos pertenece al factor de producción tierra?",
+     "Los minerales y el agua",
+     [
+      "La maquinaria y las instalaciones",
+      "confunde tierra con capital"
+     ],
+     [
+      "El esfuerzo físico o mental de las personas",
+      "confunde tierra con trabajo"
+     ],
+     [
+      "La capacidad de organizar y asumir riesgos",
+      "confunde tierra con iniciativa empresarial"
+     ],
+     "La tierra son los recursos naturales: suelo, minerales y agua. Maquinaria es capital, esfuerzo es trabajo y organizar es iniciativa empresarial. Regla: si lo da la naturaleza, es tierra."
+    ]
+   ]
+  }
+ ]
+}

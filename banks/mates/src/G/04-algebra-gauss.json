@@ -1,0 +1,113 @@
+{
+ "tema": "T3 Método de Gauss",
+ "subtema": "Resolver sistemas por Gauss",
+ "conceptos": [
+  {
+   "nombre": "Sistemas escalonados y Gauss con tres ecuaciones",
+   "pagina": 1,
+   "ayuda": "Un sistema escalonado tiene la última ecuación con una sola incógnita, la anterior con dos, y así hacia arriba. Se resuelve de abajo hacia arriba: despejas la última incógnita y sustituyes hacia atrás. Si no está escalonado, escribe la matriz ampliada y haz ceros bajo la diagonal con operaciones entre filas; si el elemento de la diagonal es 0, intercambia filas. Ejemplo: $x+y=5$, $2y=6$. De la segunda, $y=3$; en la primera, $x=2$. Comprueba el resultado en todas las ecuaciones.",
+   "problemas": [
+    [
+     1,
+     "Resuelve el sistema escalonado $x+2y-z=1$, $y+z=4$, $2z=6$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      2,
+      1,
+      3
+     ],
+     "De la última, $z=3$. En la segunda, $y=4-3=1$. En la primera, $x=1-2y+z=1-2+3=2$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if x+2*y-z==1 and y+z==4 and 2*z==6 for v in (x,y,z)]",
+     true
+    ],
+    [
+     2,
+     "Resuelve por Gauss el sistema $2x+y+z=7$, $x-y+z=6$, $x+2y-z=-1$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      3,
+      -1,
+      2
+     ],
+     "Con $F_2\\to2F_2-F_1$ y $F_3\\to2F_3-F_1$ quedan $-3y+z=5$ y $3y-3z=-9$. Sumando, $-2z=-4$, luego $z=2$. De la primera, $-3y=3$, luego $y=-1$, y de la tercera original $x=-1-2y+z=3$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if 2*x+y+z==7 and x-y+z==6 and x+2*y-z==-1 for v in (x,y,z)]",
+     true
+    ],
+    [
+     3,
+     "Resuelve por Gauss el sistema $x+2y+3z=9$, $2x-y+z=8$, $3x+y-2z=-1$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      2,
+      -1,
+      3
+     ],
+     "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-3F_1$: $-5y-5z=-10$ y $-5y-11z=-28$. De la primera, $y+z=2$; restando, $-6z=-18$, luego $z=3$. Entonces $y=-1$ y $x=9+2-9=2$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if x+2*y+3*z==9 and 2*x-y+z==8 and 3*x+y-2*z==-1 for v in (x,y,z)]",
+     true
+    ],
+    [
+     3,
+     "Resuelve por Gauss el sistema $y+2z=-3$, $x+y+z=3$, $2x-y+3z=1$ (la primera ecuación no tiene $x$: intercambia filas). Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      4,
+      1,
+      -2
+     ],
+     "Intercambiamos $F_1$ y $F_2$. Con $F_3\\to F_3-2F_1$: $-3y+z=-5$. Con $F_3\\to F_3+3F_2$: $7z=-14$, luego $z=-2$. Entonces $y=-3-2z=1$ y $x=3-y-z=4$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if y+2*z==-3 and x+y+z==3 and 2*x-y+3*z==1 for v in (x,y,z)]",
+     true
+    ],
+    [
+     4,
+     "Resuelve el sistema de cuatro ecuaciones $x+y+z=6$, $x-y+z=4$, $2x+y-z=2$, $3x+2y=8$. Es compatible determinado. Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      2,
+      1,
+      3
+     ],
+     "Restando las dos primeras, $2y=2$, luego $y=1$ y $x+z=5$. En la tercera, $2x+1-z=2$, es decir $2x-z=1$; sumando con $x+z=5$, $3x=6$ y $x=2$, $z=3$. La cuarta se cumple: $6+2=8$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if x+y+z==6 and x-y+z==4 and 2*x+y-z==2 and 3*x+2*y==8 for v in (x,y,z)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Compatibles indeterminados: una incógnita libre",
+   "pagina": 1,
+   "ayuda": "Si al hacer Gauss una ecuación se anula ($0=0$), el sistema tiene menos ecuaciones independientes que incógnitas y es compatible indeterminado: hay infinitas soluciones. Una incógnita queda libre y las demás se expresan en función de ella. Para obtener una solución concreta, se da un valor a la incógnita libre. Ejemplo: $x+y=4$ (una sola ecuación independiente). Con $y=1$ sale $x=3$.",
+   "problemas": [
+    [
+     2,
+     "El sistema $x+2y-z=4$, $2x+y+z=5$, $3x+3y=9$ es compatible indeterminado. Fijando $y=1$, calcula x; z (en ese orden, separados por punto y coma).",
+     [
+      2,
+      0
+     ],
+     "Sumando las dos primeras se obtiene la tercera, que sobra. Con $y=1$ la tercera da $3x+3=9$, luego $x=2$. De la primera, $z=x+2y-4=2+2-4=0$. Comprobación en la segunda: $4+1+0=5$.",
+     "[v for x in range(-10,11) for z in range(-10,11) if x+2*1-z==4 and 2*x+1+z==5 and 3*x+3*1==9 for v in (x,z)]",
+     true
+    ],
+    [
+     4,
+     "El sistema $x+y+z=7$, $x-y+2z=3$, $3x+y+4z=17$ es compatible indeterminado. Fijando $z=2$, calcula x; y (en ese orden, separados por punto y coma).",
+     [
+      2,
+      3
+     ],
+     "La tercera ecuación es $2F_1+F_2$, luego sobra. Con $z=2$: $x+y=5$ y $x-y=-1$. Sumando, $2x=4$, luego $x=2$ e $y=3$.",
+     "[v for x in range(-10,11) for y in range(-10,11) if x+y+2==7 and x-y+2*2==3 and 3*x+y+4*2==17 for v in (x,y)]",
+     true
+    ],
+    [
+     5,
+     "El sistema $x+3y-z=5$, $2x-y+z=4$, $3x+2y=9$ es compatible indeterminado. Fijando $y=3$, calcula x; z (en ese orden, separados por punto y coma).",
+     [
+      1,
+      5
+     ],
+     "La tercera ecuación es la suma de las dos primeras. Con $y=3$, la tercera da $3x+6=9$, luego $x=1$. Con la primera: $1+9-z=5$, luego $z=5$. Comprobación en la segunda: $2-3+5=4$.",
+     "[v for x in range(-10,11) for z in range(-10,11) if x+3*3-z==5 and 2*x-3+z==4 and 3*x+2*3==9 for v in (x,z)]",
+     true
+    ]
+   ]
+  }
+ ]
+}

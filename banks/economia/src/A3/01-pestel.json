@@ -1,0 +1,159 @@
+{
+ "subtema": "El entorno y el análisis PESTEL",
+ "conceptos": [
+  {
+   "nombre": "Rasgos del macroentorno",
+   "pagina": 1,
+   "ayuda": "El entorno general o macroentorno incluye los factores externos que afectan a la empresa de manera indirecta y son comunes a todas las organizaciones de una economía o sociedad. Son globales y afectan a cualquier empresa, sea cual sea su sector. Se analizan con el PESTEL.",
+   "test": [
+    [
+     3,
+     "¿Qué tienen en común los factores del entorno general o macroentorno?",
+     "Afectan de forma indirecta a todas las empresas, sea cual sea su sector",
+     [
+      "Afectan solo a las empresas de un sector concreto",
+      "confunde macroentorno con microentorno"
+     ],
+     [
+      "Afectan de forma directa y distinta a cada empresa",
+      "atribuye al macroentorno un efecto directo y particular"
+     ],
+     [
+      "Dependen de las decisiones de la propia empresa",
+      "cree que la empresa controla el entorno"
+     ],
+     "El macroentorno reúne factores globales, comunes a toda la economía, que afectan indirectamente a cualquier empresa. Regla: macro es común a todos, micro es propio del sector."
+    ],
+    [
+     5,
+     "Una constructora y una cadena de ropa de sectores distintos sufren por la misma subida de los tipos de interés. ¿Por qué esto refleja el carácter del entorno general?",
+     "Porque es un factor común a todas las organizaciones de la economía, independientemente de su sector",
+     [
+      "Porque cada sector lo vive de forma única y particular",
+      "atribuye al macroentorno rasgos del microentorno"
+     ],
+     [
+      "Porque lo decide la propia empresa al fijar sus precios",
+      "cree que el entorno general depende de la empresa"
+     ],
+     [
+      "Porque solo afecta de forma directa a la empresa más grande",
+      "cree que el entorno general depende del tamaño de la empresa"
+     ],
+     "Los tipos de interés son una variable económica global que afecta a empresas de cualquier sector. Eso es lo propio del entorno general. Regla: si afecta a muchos sectores a la vez, es macroentorno."
+    ]
+   ]
+  },
+  {
+   "nombre": "Factores sociales y tecnológicos",
+   "pagina": 1,
+   "ayuda": "Los factores sociales incluyen los cambios demográficos, los valores, la cultura, los estilos de vida y la educación de la población. Los factores tecnológicos incluyen las innovaciones, el nivel de inversión en I+D y la velocidad del cambio tecnológico. Fíjate en la causa del cambio: si viene de la sociedad es social, si viene de la técnica es tecnológico.",
+   "test": [
+    [
+     2,
+     "Una empresa de cosmética detecta que cambian los valores y los estilos de vida de su público. ¿Qué factor del PESTEL refleja ese cambio?",
+     "Social",
+     [
+      "Económico",
+      "confunde valores y estilos de vida con poder adquisitivo"
+     ],
+     [
+      "Político",
+      "confunde cambio social con acción del gobierno"
+     ],
+     [
+      "Tecnológico",
+      "confunde cambio de hábitos con innovación técnica"
+     ],
+     "Los valores, la cultura y los estilos de vida de la población son factores sociales. Regla: gente, valores y costumbres, factor social."
+    ],
+    [
+     3,
+     "Una empresa duda si invertir en I+D porque la tecnología de su sector cambia muy rápido. ¿Qué factor del PESTEL está considerando?",
+     "Tecnológico",
+     [
+      "Económico, porque se trata de invertir dinero",
+      "confunde la inversión en I+D con una variable macroeconómica"
+     ],
+     [
+      "Social, porque afecta a cómo viven las personas",
+      "confunde cambio técnico con cambio social"
+     ],
+     [
+      "Legal, porque la I+D está regulada",
+      "añade una regulación que no aparece en el caso"
+     ],
+     "El nivel de inversión en I+D y la velocidad del cambio tecnológico son factores tecnológicos. Regla: innovación y velocidad del cambio, factor tecnológico."
+    ]
+   ]
+  },
+  {
+   "nombre": "Factores económicos y ecológicos",
+   "pagina": 2,
+   "ayuda": "Los factores económicos son variables macroeconómicas como la inflación, el tipo de interés, el crecimiento económico, el PIB, el nivel de empleo y el poder adquisitivo. Los ecológicos recogen los aspectos medioambientales, las leyes de sostenibilidad, el uso de recursos naturales y el cambio climático. Dos listas que conviene no mezclar.",
+   "test": [
+    [
+     4,
+     "¿Qué rasgo común tienen la inflación, el tipo de interés, el PIB y el nivel de empleo en el análisis PESTEL?",
+     "Son variables macroeconómicas y pertenecen a los factores económicos",
+     [
+      "Son aspectos de sostenibilidad y pertenecen a los factores ecológicos",
+      "confunde variables macro con medioambiente"
+     ],
+     [
+      "Son cambios demográficos y pertenecen a los factores sociales",
+      "confunde empleo con demografía"
+     ],
+     [
+      "Son regulaciones comerciales y pertenecen a los factores políticos",
+      "confunde indicadores con regulaciones"
+     ],
+     "Inflación, tipo de interés, PIB y empleo son variables macroeconómicas, es decir, factores económicos del PESTEL. Regla: lo que mide la macroeconomía es factor económico."
+    ],
+    [
+     1,
+     "En el análisis PESTEL, el cambio climático y el uso de recursos naturales son factores…",
+     "Ecológicos",
+     [
+      "Sociales",
+      "confunde medio ambiente con cultura"
+     ],
+     [
+      "Económicos",
+      "confunde recursos naturales con variables macroeconómicas"
+     ],
+     [
+      "Legales",
+      "confunde medio ambiente con normas"
+     ],
+     "Los aspectos medioambientales, el cambio climático y el uso de recursos naturales son factores ecológicos. Regla: naturaleza y sostenibilidad, factor ecológico."
+    ]
+   ]
+  },
+  {
+   "nombre": "Varios factores a la vez",
+   "pagina": 2,
+   "ayuda": "Una misma situación de una empresa suele combinar varios factores PESTEL. Para analizarla, separa cada elemento y pregunta de dónde viene el cambio: del mercado de dinero, de la población, del gobierno, de la técnica, de la naturaleza o de la ley.",
+   "test": [
+    [
+     4,
+     "Una subida de los tipos de interés, el envejecimiento de la población y una nueva subvención del Gobierno al sector. ¿Qué factores PESTEL son, en este orden?",
+     "Económico, social y político",
+     [
+      "Político, económico y social",
+      "cambia el orden de los tres factores"
+     ],
+     [
+      "Económico, tecnológico y legal",
+      "no reconoce los cambios demográficos ni la acción del Gobierno"
+     ],
+     [
+      "Social, económico y político",
+      "intercambia los dos primeros factores"
+     ],
+     "Los tipos de interés son factor económico, el envejecimiento es un cambio demográfico (social) y una subvención del Gobierno es una decisión política. Regla: clasifica cada elemento por separado."
+    ]
+   ]
+  }
+ ]
+}

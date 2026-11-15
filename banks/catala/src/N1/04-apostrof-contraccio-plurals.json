@@ -1,0 +1,350 @@
+{
+ "subtema": "Apòstrof, contracció i plurals",
+ "conceptos": [
+  {
+   "nombre": "Apòstrof de l'article masculí",
+   "pagina": 5,
+   "cara": 5,
+   "ayuda": "L'article masculí el s'apostrofa (l') davant d'un mot que comença per so de vocal: l'home, l'hoquei, l'11 de setembre, l'ONU, l'FBI. També s'apostrofa en davant d'un nom propi de persona (n'Isidre). Té excepcions: davant d'una hac aspirada (el hobby) i davant de paraules que comencen amb el so de i seguit d'una altra vocal (el iogurt, el iode, el hiat). Truc: escolta el primer so, no la lletra.",
+   "test": [
+    [
+     2,
+     "Quina és la forma correcta?",
+     "l'home",
+     [
+      "el home",
+      "no apostrofa davant d'una hac muda"
+     ],
+     [
+      "l'hobby",
+      "apostrofa davant d'una hac aspirada"
+     ],
+     [
+      "la home",
+      "confon el gènere de l'article"
+     ],
+     "La hac d'«home» és muda i el so inicial és de vocal: l'home. A «hobby» la hac és aspirada i no s'apostrofa."
+    ],
+    [
+     3,
+     "Quina és la forma correcta?",
+     "l'11 de setembre",
+     [
+      "el 11 de setembre",
+      "no té en compte que «onze» comença per so de vocal"
+     ],
+     [
+      "lo 11 de setembre",
+      "utilitza «lo» com a article"
+     ],
+     [
+      "l'11 d'setembre",
+      "apostrofa també la preposició davant de consonant"
+     ],
+     "«Onze» comença per so de vocal, per tant l'article s'apostrofa: l'11 de setembre."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "L'ONU i l'FBI són organitzacions.",
+     [
+      "El ONU i l'FBI són organitzacions.",
+      "no apostrofa davant d'una sigla que comença per so de vocal"
+     ],
+     [
+      "L'ONU i el FBI són organitzacions.",
+      "no apostrofa «FBI» tot i que s'hi diu «efe»"
+     ],
+     [
+      "La ONU i la FBI són organitzacions.",
+      "calca el femení castellà «la ONU»"
+     ],
+     "Les sigles s'apostrofen si comencen per so de vocal: l'ONU, l'FBI (es llegeix «efe»)."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "Vull el iogurt i l'hoquei.",
+     [
+      "Vull l'iogurt i l'hoquei.",
+      "apostrofa davant de «iogurt», que comença per so de consonant"
+     ],
+     [
+      "Vull el iogurt i el hoquei.",
+      "no apostrofa davant d'una hac muda"
+     ],
+     [
+      "Vull l'iogurt i el hoquei.",
+      "inverteix les dues regles"
+     ],
+     "«Iogurt» comença amb so de i seguit de vocal i no s'apostrofa, mentre que la hac d'«hoquei» és muda i s'apostrofa."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "S'escriu «l'iogurt» perquè la i inicial sona com una vocal.",
+     false,
+     "Davant de paraules que comencen amb so de i seguit d'una altra vocal no s'apostrofa: el iogurt.",
+     "trampa: creure que s'apostrofa davant de qualsevol lletra vocal"
+    ]
+   ]
+  },
+  {
+   "nombre": "Apòstrof de l'article femení",
+   "pagina": 5,
+   "cara": 5,
+   "ayuda": "L'article femení la s'apostrofa davant de paraules començades per vocal o hac: l'església, l'amiga, l'illa. Les excepcions són els mots femenins començats per i, u, hi, hu àtones (la universitat, la imatge, la història, la humanitat), les paraules amb so de i seguit de vocal (la iaia), la una del migdia, el nom de les lletres (la essa, la ela) i la ira, per no confondre-la amb lira. Si la i és forta, s'apostrofa: n'Imma.",
+   "test": [
+    [
+     2,
+     "Quina frase és correcta?",
+     "L'església és gran.",
+     [
+      "La església és gran.",
+      "no apostrofa davant d'una e àtona"
+     ],
+     [
+      "El església és gran.",
+      "confon el gènere de l'article"
+     ],
+     [
+      "L'esglèsia és gran.",
+      "canvia l'accent de la paraula"
+     ],
+     "«Església» és femení i comença per vocal àtona: l'església."
+    ],
+    [
+     3,
+     "Quina és la forma correcta?",
+     "la imatge",
+     [
+      "l'imatge",
+      "apostrofa una i àtona"
+     ],
+     [
+      "la imàtge",
+      "accentua una plana"
+     ],
+     [
+      "la imaje",
+      "escriu j davant d'una e"
+     ],
+     "Els mots femenins que comencen per i àtona no s'apostrofen: la imatge."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "La essa i la ela són lletres.",
+     [
+      "L'essa i l'ela són lletres.",
+      "apostrofa el nom de les lletres"
+     ],
+     [
+      "La essa i l'ela són lletres.",
+      "apostrofa només una de les dues"
+     ],
+     [
+      "Lo essa i la ela són lletres.",
+      "utilitza «lo» com a article"
+     ],
+     "El nom de les lletres és una excepció: la essa, la ela."
+    ],
+    [
+     4,
+     "Quina parella és correcta?",
+     "na Immaculada i n'Imma",
+     [
+      "n'Immaculada i na Imma",
+      "inverteix la i àtona i la i forta"
+     ],
+     [
+      "na Immaculada i na Imma",
+      "no apostrofa la i forta"
+     ],
+     [
+      "n'Immaculada i n'Imma",
+      "apostrofa també la i àtona"
+     ],
+     "A «Immaculada» la i és àtona i no s'apostrofa; a «Imma» la i és forta i sí que s'apostrofa."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Es diu «la ira» i no «l'ira» per no confondre aquesta paraula amb «lira».",
+     true,
+     "És una excepció per evitar confusions: l'ira podria ser «la lira».",
+     "trampa: creure que sempre s'apostrofa davant de i"
+    ]
+   ]
+  },
+  {
+   "nombre": "Contracció de les preposicions amb l'article",
+   "pagina": 6,
+   "cara": 6,
+   "ayuda": "Els articles el i els es contrauen darrere de les preposicions a, de, per i per a quan no es poden apostrofar. Això dona: al, als, del, dels, pel, pels, per al, per als. Per exemple: «Fes-ho pel teu pare» (per + el) i «Aquestes joguines són per als nens» (per a + els). Si l'article s'apostrofa (de l'home), no hi ha contracció.",
+   "test": [
+    [
+     2,
+     "Quina frase és correcta?",
+     "Parlo del meu pare.",
+     [
+      "Parlo de el meu pare.",
+      "no contrau de + el"
+     ],
+     [
+      "Parlo dels meu pare.",
+      "usa la contracció del plural amb un nom singular"
+     ],
+     [
+      "Parlo del'meu pare.",
+      "mescla contracció i apòstrof"
+     ],
+     "De + el es contrau en «del»: parlo del meu pare."
+    ],
+    [
+     3,
+     "Quina frase és correcta?",
+     "Fes-ho pel teu pare.",
+     [
+      "Fes-ho p'el teu pare.",
+      "apostrofa la preposició"
+     ],
+     [
+      "Fes-ho per al teu pare.",
+      "confon «per» amb «per a»"
+     ],
+     [
+      "Fes-ho pels teu pare.",
+      "usa el plural amb un nom singular"
+     ],
+     "Per + el = pel."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "Aquestes joguines són per als nens.",
+     [
+      "Aquestes joguines són pels nens.",
+      "confon per a + els amb per + els"
+     ],
+     [
+      "Aquestes joguines són per a els nens.",
+      "no contrau per a + els"
+     ],
+     [
+      "Aquestes joguines són per als nen.",
+      "oblida el plural del nom"
+     ],
+     "Per a + els = per als («para los»). Pels és per + els («por los»)."
+    ],
+    [
+     4,
+     "Quina frase és correcta?",
+     "Parlo de l'home.",
+     [
+      "Parlo del home.",
+      "contrau davant d'una paraula que s'apostrofa"
+     ],
+     [
+      "Parlo de lo home.",
+      "utilitza «lo» com a article"
+     ],
+     [
+      "Parlo d'el home.",
+      "apostrofa la preposició en lloc de l'article"
+     ],
+     "Davant d'«home» l'article s'apostrofa (l'home), per tant no hi ha contracció."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "«Per a + els» es contrau en «pels».",
+     false,
+     "Per a + els = per als. «Pels» és per + els.",
+     "trampa: confondre per + els amb per a + els"
+    ]
+   ]
+  },
+  {
+   "nombre": "Canvis ortogràfics dels plurals",
+   "pagina": 6,
+   "cara": 6,
+   "ayuda": "En formar el plural hi ha canvis d'ortografia: ca-ques (barca, barques), ça-ces (plaça, places), ja-ges (taronja, taronges), ga-gues (plaga, plagues), gua-gües (llengua, llengües). Davant d'una e o d'una i mai no escrivim ç, ni j (excepte les paraules que en castellà s'escriuen amb j: Jesús, objecte). Un mot masculí acabat en dues consonants o en x no forma el plural amb -es sinó amb -os: text, textos; complex, complexos.",
+   "test": [
+    [
+     3,
+     "Quin és el plural de «taronja»?",
+     "taronges",
+     [
+      "taronjes",
+      "conserva la j davant d'una e"
+     ],
+     [
+      "taronjas",
+      "calca la terminació castellana -as"
+     ],
+     [
+      "taronyes",
+      "confon la j amb el so ny"
+     ],
+     "Davant d'una e no s'escriu j: ja - ges, taronja - taronges."
+    ],
+    [
+     4,
+     "Quin és el plural de «llengua»?",
+     "llengües",
+     [
+      "llengues",
+      "oblida la dièresi de gua - gües"
+     ],
+     [
+      "llenguas",
+      "calca la terminació castellana -as"
+     ],
+     [
+      "llenges",
+      "treu la u i escriu g davant d'una e"
+     ],
+     "El plural de gua és gües: llengua - llengües. La dièresi fa sonar la u."
+    ],
+    [
+     4,
+     "Quin és el plural de «text»?",
+     "textos",
+     [
+      "textes",
+      "afegeix -es a un masculí acabat en dues consonants"
+     ],
+     [
+      "texts",
+      "afegeix només una -s"
+     ],
+     [
+      "textus",
+      "confon la terminació amb -us"
+     ],
+     "Un mot masculí acabat en dues consonants fa el plural amb -os: text, textos (textes és incorrecte)."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "El plural de «plaça» és «plaçes», perquè la ç es manté.",
+     false,
+     "Davant d'una e mai no s'escriu ç: plaça - places.",
+     "trampa: creure que la ç es manté davant d'una e"
+    ],
+    [
+     3,
+     "El plural de «complex» és «complexos» i no «complexes».",
+     true,
+     "Els mots masculins acabats en -x no afegeixen -es sinó -os: complex, complexos.",
+     "trampa: afegir -es al plural d'un masculí acabat en x"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "subtema": "Necesidades y bienes",
+ "conceptos": [
+  {
+   "nombre": "Necesidades ilimitadas y cambiantes",
+   "pagina": 1,
+   "ayuda": "Una necesidad es la sensación de carencia de algo unida al deseo de satisfacerla. Las necesidades humanas son ilimitadas y cambiantes, mientras que los recursos para cubrirlas son limitados. Por eso una familia que ya tiene lo básico sigue deseando cosas nuevas: sus necesidades no se acaban, solo cambian.",
+   "test": [
+    [
+     3,
+     "Una familia tiene cubiertos sus gastos básicos y aun así quiere cambiar de coche y viajar más. ¿Qué característica de las necesidades ilustra esta situación?",
+     "Que son ilimitadas y cambiantes, mientras que los recursos son limitados",
+     [
+      "Que son limitadas y fijas, porque la familia ya cubrió lo básico",
+      "cree que las necesidades se agotan al cubrir lo básico"
+     ],
+     [
+      "Que son ilimitadas y los recursos también, por eso nunca hay problema",
+      "supone que los recursos tampoco tienen límite"
+     ],
+     [
+      "Que son limitadas pero cambiantes, porque el coche y el viaje son bienes de lujo",
+      "confunde necesidad ilimitada con capricho puntual"
+     ],
+     "El tema dice que las necesidades son ilimitadas y cambiantes y que los recursos son limitados. Aunque se cubra lo básico, aparecen deseos nuevos. Regla: necesidades sin techo, recursos con techo."
+    ]
+   ]
+  },
+  {
+   "nombre": "Niveles de la pirámide de Maslow",
+   "pagina": 1,
+   "ayuda": "La pirámide de Maslow ordena las necesidades en cinco niveles, de la base a la cúspide: fisiológicas, de seguridad, de afiliación, de reconocimiento y de autorrealización. Cada nivel agrupa ejemplos concretos: respirar y descansar, tener vivienda y empleo, la amistad, el respeto de los demás y el desarrollo del propio potencial. Un truco: los niveles de abajo son de supervivencia y los de arriba son de realización personal.",
+   "test": [
+    [
+     2,
+     "En la pirámide de Maslow, ¿qué describe el nivel de reconocimiento?",
+     "Autoestima, respeto, estatus y valoración por parte de los demás",
+     [
+      "Amistad, familia y pertenencia a un grupo",
+      "confunde reconocimiento con afiliación"
+     ],
+     [
+      "Vivienda, empleo y protección frente a peligros",
+      "confunde reconocimiento con seguridad"
+     ],
+     [
+      "Creatividad y desarrollo del máximo potencial personal",
+      "confunde reconocimiento con autorrealización"
+     ],
+     "El reconocimiento (o estima) es el cuarto nivel: autoestima, respeto y estatus ante los demás. La afiliación va antes y es de amistad y grupo. Regla: afiliación es pertenecer, reconocimiento es ser valorado."
+    ],
+    [
+     4,
+     "Una persona con vivienda, empleo estable y buenos amigos siente que le falta desarrollar su creatividad y cumplir sus metas personales. ¿Qué nivel de la pirámide busca satisfacer?",
+     "Autorrealización",
+     [
+      "Reconocimiento, porque quiere que los demás valoren sus logros",
+      "confunde metas personales con estatus social"
+     ],
+     [
+      "Afiliación, porque necesita rodearse de más gente",
+      "ignora que la afiliación ya está cubierta"
+     ],
+     [
+      "Seguridad, porque desea mejorar su empleo",
+      "ignora que la seguridad ya está cubierta"
+     ],
+     "Desarrollar el máximo potencial, la creatividad y las metas personales es autorrealización, la cúspide. Los niveles de seguridad y afiliación ya están cubiertos. Regla: lo que nace de uno mismo y no de los demás es autorrealización."
+    ]
+   ]
+  },
+  {
+   "nombre": "Bienes duraderos y perecederos",
+   "pagina": 2,
+   "ayuda": "Entre los bienes de consumo, que satisfacen directamente una necesidad, hay duraderos y perecederos. Un bien duradero se usa durante mucho tiempo, como un coche. Un bien perecedero se consume o se estropea pronto, como los alimentos. No hay que confundirlos con los bienes de capital, que sirven para producir otros bienes.",
+   "test": [
+    [
+     1,
+     "¿Cuál de los siguientes es un bien de consumo perecedero, según el tema?",
+     "Los alimentos",
+     [
+      "Un coche",
+      "confunde perecedero con duradero"
+     ],
+     [
+      "La maquinaria de una fábrica",
+      "confunde bien de consumo con bien de capital"
+     ],
+     [
+      "Las herramientas de un taller",
+      "confunde perecedero con bien de capital"
+     ],
+     "El tema pone los alimentos como ejemplo de bien perecedero y el coche como duradero. La maquinaria y las herramientas son bienes de capital. Regla: perecedero se acaba pronto, duradero se usa mucho tiempo."
+    ]
+   ]
+  }
+ ]
+}

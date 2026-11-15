@@ -1,0 +1,69 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Inecuaciones",
+ "conceptos": [
+  {
+   "nombre": "Una cuadrática y una lineal a la vez",
+   "pagina": 1,
+   "ayuda": "Se resuelve cada inecuación por separado y se toma la intersección. La lineal da una semirrecta (si divides por un negativo, invierte el signo). La cuadrática se resuelve con sus raíces: con $a>0$ es negativa entre las raíces y positiva fuera de ellas. Ejemplo: $x^2\\le9$ da $[-3,3]$ y $x>1$ da $(1,+\\infty)$; la intersección es $(1,3]$ y los enteros que cumplen son 2 y 3.",
+   "problemas": [
+    [
+     1,
+     "Resuelve el sistema $x^2\\le16$, $2x+3>5$. ¿Cuántos números enteros entre $-10$ y 10, ambos incluidos, cumplen las dos inecuaciones? Escribe solo ese número.",
+     3,
+     "De $x^2\\le16$ sale $[-4,4]$. De $2x+3>5$ sale $x>1$. La intersección es $(1,4]$. Los enteros son 2, 3 y 4: 3 números.",
+     "len([x for x in range(-10,11) if x**2<=16 and 2*x+3>5])"
+    ],
+    [
+     2,
+     "Resuelve el sistema $x^2+x>6$, $2-3x<5$. ¿Cuál es el menor número entero que cumple las dos inecuaciones? Escribe solo ese número.",
+     3,
+     "La primera: $x^2+x-6=(x+3)(x-2)>0$ da $(-\\infty,-3)\\cup(2,+\\infty)$. La segunda: $-3x<3$, y al invertir el signo $x>-1$. La intersección es $(2,+\\infty)$ y el menor entero es 3.",
+     "min(x for x in range(-30,31) if x*x+x>6 and 2-3*x<5)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Extremos abiertos y cerrados en la intersección",
+   "pagina": 1,
+   "ayuda": "Un extremo solo pertenece a la solución del sistema si todas las inecuaciones lo aceptan. Una desigualdad estricta ($<$, $>$) no incluye el extremo; una no estricta ($\\le$, $\\ge$) sí. Si una cuadrática tiene el coeficiente de $x^2$ negativo, se multiplica por $-1$ y se invierte el signo. Ejemplo: $x^2-4x\\le0$ da $[0,4]$ y $x<2$ da $(-\\infty,2)$; la intersección es $[0,2)$, con el 0 dentro y el 2 fuera.",
+   "problemas": [
+    [
+     3,
+     "Resuelve el sistema $6x-x^2\\ge5$, $4x-3<2x+3$. ¿Cuál es la suma de los números enteros entre $-10$ y 10, ambos incluidos, que cumplen las dos inecuaciones? Escribe solo ese número.",
+     3,
+     "La primera: $x^2-6x+5\\le0$ da $(x-1)(x-5)\\le0$, es decir $[1,5]$. La segunda: $2x<6$, luego $x<3$. La intersección es $[1,3)$. Los enteros son 1 y 2, que suman 3.",
+     "sum(x for x in range(-10,11) if 6*x-x**2>=5 and 4*x-3<2*x+3)"
+    ],
+    [
+     3,
+     "Resuelve el sistema $x^2-6x-7\\ge0$, $-x^2+13x-30\\ge0$. ¿Cuál es la suma de los números enteros entre $-20$ y 20, ambos incluidos, que cumplen las dos inecuaciones? Escribe solo ese número.",
+     34,
+     "La primera: $(x-7)(x+1)\\ge0$ da $(-\\infty,-1]\\cup[7,+\\infty)$. La segunda: $x^2-13x+30\\le0$ tiene raíces 3 y 10 y da $[3,10]$. La intersección es $[7,10]$. Los enteros son 7, 8, 9 y 10, que suman 34.",
+     "sum(x for x in range(-20,21) if x**2-6*x-7>=0 and -x**2+13*x-30>=0)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas con uniones de intervalos y tres inecuaciones",
+   "pagina": 1,
+   "ayuda": "Una cuadrática con $\\ge$ y $a>0$ da una unión de dos tramos, y la intersección con otro intervalo puede dar también dos tramos. Se dibujan todas las soluciones en la recta y se toma la parte común. Con tres inecuaciones, un valor debe cumplir las tres: la intersección final es la más estrecha. Ejemplo: $x^2\\le9$ y $x^2-2x\\ge0$ dan $[-3,3]\\cap((-\\infty,0]\\cup[2,+\\infty))=[-3,0]\\cup[2,3]$.",
+   "problemas": [
+    [
+     4,
+     "Resuelve el sistema $x^2\\le25$, $x^2-6x+8\\ge0$. ¿Cuántos números enteros entre $-20$ y 20, ambos incluidos, cumplen las dos inecuaciones? Escribe solo ese número.",
+     10,
+     "La primera da $[-5,5]$. La segunda: $(x-2)(x-4)\\ge0$ da $(-\\infty,2]\\cup[4,+\\infty)$. La intersección es $[-5,2]\\cup[4,5]$. Los enteros son $-5,\\dots,2$ (8 números) y 4, 5 (2 números): 10 en total.",
+     "len([x for x in range(-20,21) if x**2<=25 and x**2-6*x+8>=0])"
+    ],
+    [
+     5,
+     "Resuelve el sistema de tres inecuaciones $x^2+2x-15>0$, $x^2-4x-21\\le0$, $2x-3\\ge5$. ¿Cuál es la suma de los números enteros entre $-20$ y 20, ambos incluidos, que cumplen las tres? Escribe solo ese número.",
+     22,
+     "La primera: $(x+5)(x-3)>0$ da $(-\\infty,-5)\\cup(3,+\\infty)$. La segunda: $(x-7)(x+3)\\le0$ da $[-3,7]$. La tercera: $2x\\ge8$, luego $x\\ge4$. La intersección es $[4,7]$. Los enteros son 4, 5, 6 y 7, que suman 22.",
+     "sum(x for x in range(-20,21) if x**2+2*x-15>0 and x**2-4*x-21<=0 and 2*x-3>=5)"
+    ]
+   ]
+  }
+ ]
+}

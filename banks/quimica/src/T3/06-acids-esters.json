@@ -1,0 +1,263 @@
+{
+ "subtema": "Àcids carboxílics i èsters",
+ "conceptos": [
+  {
+   "nombre": "Àcids carboxílics",
+   "pagina": 24,
+   "cara": 24,
+   "ayuda": "Els àcids carboxílics tenen el grup -COOH (R-COOH), que sempre és a l'extrem de la cadena. La cadena principal és la més llarga que inclou el -COOH i es numera començant per aquest grup. El nom és la paraula àcid, els radicals i l'hidrocarbur amb la terminació -oic. Exemple: CH₃-COOH és l'àcid etanoic (àcid acètic).",
+   "test": [
+    [
+     1,
+     "Quin és el grup funcional dels àcids carboxílics?",
+     "-COOH",
+     [
+      "-CHO",
+      "trampa: confondre l'àcid amb l'aldehid"
+     ],
+     [
+      "-CO-",
+      "trampa: confondre l'àcid amb la cetona"
+     ],
+     [
+      "-OH",
+      "trampa: confondre l'àcid amb l'alcohol"
+     ],
+     "El grup carboxil, -COOH, combina un carbonil i un hidroxil en el mateix carboni. Per això el seu carboni sempre és a l'extrem de la cadena."
+    ],
+    [
+     2,
+     "Quin és el nom de CH₃-COOH?",
+     "Àcid etanoic",
+     [
+      "Àcid metanoic",
+      "trampa: no comptar el carboni del grup COOH"
+     ],
+     [
+      "Etanal",
+      "trampa: confondre l'àcid amb l'aldehid"
+     ],
+     [
+      "Etanol",
+      "trampa: confondre l'àcid amb l'alcohol"
+     ],
+     "La cadena té 2 carbonis, comptant el del -COOH, i la terminació dels àcids és -oic. És l'àcid etanoic, conegut com àcid acètic."
+    ],
+    [
+     3,
+     "Quin és el nom de CH₃-CH=CH-COOH?",
+     "Àcid 2-butenoic",
+     [
+      "Àcid 3-butenoic",
+      "trampa: numerar per l'extrem equivocat"
+     ],
+     [
+      "Àcid 2-butanoic",
+      "trampa: usar la terminació -à d'alcà amb un doble enllaç"
+     ],
+     [
+      "2-butenoic",
+      "trampa: oblidar la paraula àcid"
+     ],
+     "La numeració comença pel carboni del -COOH, i el doble enllaç queda entre els carbonis 2 i 3. El nom comença per la paraula àcid i acaba en -oic."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "L'àcid etanoic també es coneix com a àcid acètic.",
+     true,
+     "L'àcid acètic és el nom habitual de CH₃-COOH, que sistemàticament és l'àcid etanoic.",
+     "trampa: creure que l'àcid acètic és un compost diferent"
+    ],
+    [
+     3,
+     "Un àcid carboxílic es numera començant per l'extrem més proper als radicals.",
+     false,
+     "La numeració d'un àcid comença sempre pel carboni del grup -COOH, que és el carboni 1.",
+     "trampa: aplicar la regla dels alcans en lloc de la dels àcids"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Àcids dicarboxílics i cíclics",
+   "pagina": 25,
+   "cara": 25,
+   "ayuda": "Si hi ha dos grups -COOH s'usa el prefix di-: àcid propandioic. Quan el localitzador d'un radical només pot ser un (per exemple el 2 en una cadena de tres carbonis), no s'escriu: àcid metilpropanoic i àcid metilpropandioic. Quan el -COOH està unit a un cicle s'usa el sufix -carboxílic: àcid ciclobutancarboxílic. L'àcid del benzè és l'àcid benzoic.",
+   "test": [
+    [
+     4,
+     "Quin és el nom de HOOC-CH₂-COOH?",
+     "Àcid propandioic",
+     [
+      "Àcid etandioic",
+      "trampa: comptar només els carbonis dels grups COOH"
+     ],
+     [
+      "Àcid propanoic",
+      "trampa: oblidar un dels dos grups carboxil"
+     ],
+     [
+      "Àcid dipropanoic",
+      "trampa: confondre di- amb duplicar la cadena"
+     ],
+     "Hi ha tres carbonis, comptant els dos dels grups -COOH, i dos grups àcid. Per això és l'àcid propandioic."
+    ],
+    [
+     5,
+     "Quin és el nom de HOOC-CH(CH₃)-COOH?",
+     "Àcid metilpropandioic",
+     [
+      "Àcid 2-metilpropandioic",
+      "trampa: afegir un localitzador que no cal"
+     ],
+     [
+      "Àcid metilpropanoic",
+      "trampa: oblidar un dels dos grups carboxil"
+     ],
+     [
+      "Àcid metilbutandioic",
+      "trampa: comptar un carboni de més a la cadena"
+     ],
+     "La cadena és de 3 carbonis amb dos grups àcid i el metil només pot estar al carboni 2. Com en l'àcid metilpropanoic, aquest localitzador no s'escriu."
+    ],
+    [
+     4,
+     "Com s'anomena un cicle de 4 carbonis que porta un grup -COOH?",
+     "Àcid ciclobutancarboxílic",
+     [
+      "Àcid ciclobutanoic",
+      "trampa: tractar el cicle com a cadena amb el sufix -oic"
+     ],
+     [
+      "Carboxiciclobutà",
+      "trampa: usar el prefix carboxi- quan el -COOH és la funció principal"
+     ],
+     [
+      "Àcid ciclobutandioic",
+      "trampa: confondre el sufix -carboxílic amb di-"
+     ],
+     "Quan el -COOH penja d'un cicle s'usa el sufix -carboxílic: àcid ciclobutancarboxílic. El prefix carboxi- només s'usa quan el grup és secundari."
+    ]
+   ],
+   "vf": [],
+   "problemas": []
+  },
+  {
+   "nombre": "Ésters",
+   "pagina": 26,
+   "cara": 26,
+   "ayuda": "Un èster resulta de substituir l'hidrogen del grup -COOH d'un àcid per un radical (R-COOR'). El nom canvia el sufix -oic de l'àcid per -oat, seguit de «de» (o «d'» davant de vocal) i el nom del radical. Exemple: CH₃-COO-CH₂-CH₃ és l'etanoat d'etil (o acetat d'etil); l'àcid benzoic, amb un fenil, dona el benzoat de fenil.",
+   "test": [
+    [
+     1,
+     "Quin sufix prenen els èsters, que deriven d'un àcid en -oic?",
+     "-oat, seguit de «de» i el radical",
+     [
+      "-oic, igual que l'àcid",
+      "trampa: creure que l'èster no canvia de sufix"
+     ],
+     [
+      "-amida, seguit del radical",
+      "trampa: confondre l'èster amb l'amida"
+     ],
+     [
+      "-al, seguit del radical",
+      "trampa: confondre l'èster amb l'aldehid"
+     ],
+     "El sufix -oic de l'àcid canvia per -oat i s'afegeix «de» i el radical. Exemple: àcid etanoic, etanoat d'etil."
+    ],
+    [
+     3,
+     "Quin és el nom de CH₃-COO-CH₂-CH₃?",
+     "Etanoat d'etil",
+     [
+      "Propanoat de metil",
+      "trampa: intercanviar la part de l'àcid i la del radical"
+     ],
+     [
+      "Etanoat de metil",
+      "trampa: confondre el radical etil amb metil"
+     ],
+     [
+      "Etanoic d'etil",
+      "trampa: mantenir el sufix -oic de l'àcid"
+     ],
+     "La part de l'àcid té 2 carbonis, és l'etanoat, i el radical és l'etil. El nom és etanoat d'etil, també dit acetat d'etil."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-CH₂-COO-CH(CH₃)-CH₃?",
+     "Propanoat d'isopropil",
+     [
+      "Etanoat d'isopropil",
+      "trampa: comptar un carboni de menys a la part de l'àcid"
+     ],
+     [
+      "Propanoat de propil",
+      "trampa: confondre l'isopropil amb el propil lineal"
+     ],
+     [
+      "Isopropanoat de propil",
+      "trampa: intercanviar la part de l'àcid i la del radical"
+     ],
+     "La part de l'àcid és CH₃-CH₂-COO, de 3 carbonis: propanoat. El radical ramificat CH(CH₃)₂ és l'isopropil. El nom és propanoat d'isopropil."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-CH(CH₃)-COO-CH₃?",
+     "Metilpropanoat de metil",
+     [
+      "Metilpropanoat d'etil",
+      "trampa: comptar el radical amb dos carbonis"
+     ],
+     [
+      "Metilbutanoat de metil",
+      "trampa: comptar un carboni de més a la part de l'àcid"
+     ],
+     [
+      "Metilpropanoic de metil",
+      "trampa: mantenir el sufix -oic de l'àcid"
+     ],
+     "L'àcid és el metilpropanoic i el radical que substitueix l'hidrogen és el metil. Es canvia -oic per -oat: metilpropanoat de metil."
+    ],
+    [
+     4,
+     "Quina és la fórmula del benzoat de fenil?",
+     "C₆H₅-COO-C₆H₅",
+     [
+      "C₆H₅-COO-CH₃",
+      "trampa: usar un metil en lloc d'un fenil"
+     ],
+     [
+      "C₆H₅-O-C₆H₅",
+      "trampa: confondre l'èster amb l'èter"
+     ],
+     [
+      "C₆H₅-CO-C₆H₅",
+      "trampa: confondre l'èster amb la cetona"
+     ],
+     "El benzoat ve de l'àcid benzoic, C₆H₅-COOH, i el radical fenil, C₆H₅-, substitueix l'hidrogen del -COOH. Resultat: C₆H₅-COO-C₆H₅."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "El compost CH₃-COO-CH₃ s'anomena etanoat de metil.",
+     true,
+     "Ve de l'àcid etanoic i el radical que substitueix l'hidrogen és el metil: etanoat de metil.",
+     "trampa: confondre la part de l'àcid amb la del radical"
+    ],
+    [
+     2,
+     "En els èsters s'escriu la paraula àcid davant del nom, igual que en els àcids carboxílics.",
+     false,
+     "Els èsters s'anomenen amb el sufix -oat i «de» més el radical, sense la paraula àcid. Només els àcids la porten.",
+     "trampa: copiar el format dels àcids en els èsters"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

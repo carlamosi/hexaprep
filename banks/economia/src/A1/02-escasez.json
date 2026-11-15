@@ -1,0 +1,105 @@
+{
+ "subtema": "La escasez",
+ "conceptos": [
+  {
+   "nombre": "La escasez como problema económico fundamental",
+   "pagina": 2,
+   "ayuda": "La escasez es el problema económico fundamental. Nace de la diferencia entre unas necesidades humanas ilimitadas y unos recursos limitados para satisfacerlas. No basta con que haya pocos recursos: lo que crea el problema es que, frente a ellos, las necesidades no tienen límite.",
+   "test": [
+    [
+     2,
+     "Dos economistas debaten sobre el origen de la escasez. Uno dice que nace de que los recursos son pocos; el otro, de la diferencia entre necesidades ilimitadas y recursos limitados. ¿Quién tiene razón según el tema?",
+     "El segundo, porque la escasez nace del contraste entre necesidades ilimitadas y recursos limitados",
+     [
+      "El primero, porque basta con que los recursos sean pocos",
+      "olvida el lado de las necesidades ilimitadas"
+     ],
+     [
+      "Ninguno, porque la escasez nace de que el Estado reparte mal los recursos",
+      "atribuye la escasez a un reparto y no a un desequilibrio"
+     ],
+     [
+      "Los dos, porque son definiciones equivalentes y no se distinguen",
+      "cree que tener pocos recursos y necesidades ilimitadas es lo mismo"
+     ],
+     "La escasez no depende solo de los recursos, sino de su diferencia con unas necesidades ilimitadas. Por eso incluso con muchos recursos puede existir. Regla: escasez = necesidades ilimitadas frente a recursos limitados."
+    ]
+   ]
+  },
+  {
+   "nombre": "Recursos que faltan en la escasez física",
+   "pagina": 2,
+   "ayuda": "La escasez física o absoluta es la falta real de recursos básicos para sobrevivir: alimentos, agua potable y vivienda. Afecta sobre todo a países en desarrollo o a regiones en crisis o con desastres naturales. No se trata de querer más, sino de no tener lo imprescindible.",
+   "test": [
+    [
+     1,
+     "¿Qué recursos básicos faltan cuando hay escasez física, según el tema?",
+     "Alimentos, agua potable y vivienda",
+     [
+      "Móviles, ropa de marca y viajes",
+      "confunde escasez física con deseos no básicos"
+     ],
+     [
+      "Dinero y tiempo para todo lo que se desea",
+      "confunde escasez física con escasez económica"
+     ],
+     [
+      "Maquinaria, herramientas y fábricas",
+      "confunde recursos de supervivencia con bienes de capital"
+     ],
+     "La escasez física es la falta real de lo necesario para sobrevivir: alimentos, agua potable y vivienda. Los deseos no básicos pertenecen a la escasez económica. Regla: física es no tener lo básico."
+    ]
+   ]
+  },
+  {
+   "nombre": "Dinero y tiempo: la escasez económica",
+   "pagina": 2,
+   "ayuda": "La escasez económica o relativa es la sensación de que los recursos no bastan para satisfacer todos nuestros deseos, incluso los no básicos. Existe en todas las sociedades, también en las más ricas, porque el dinero y el tiempo son finitos. Quien tiene mucho dinero sigue sin poder hacer todo a la vez.",
+   "test": [
+    [
+     3,
+     "¿Qué dos recursos finitos explican que la escasez económica exista incluso en las sociedades más ricas?",
+     "El dinero y el tiempo",
+     [
+      "Los alimentos y el agua potable",
+      "confunde escasez económica con escasez física"
+     ],
+     [
+      "La maquinaria y las herramientas",
+      "confunde recursos del hogar con bienes de capital"
+     ],
+     [
+      "Las leyes y las instituciones",
+      "confunde recursos con normas"
+     ],
+     "Los deseos humanos son ilimitados, pero el dinero y el tiempo son finitos, y esto ocurre incluso en los países ricos. Por eso la escasez económica es universal. Regla: aunque sobre dinero, siempre falta tiempo."
+    ]
+   ]
+  },
+  {
+   "nombre": "Distinguir escasez física y económica",
+   "pagina": 2,
+   "ayuda": "Para distinguir los dos tipos pregúntate si falta lo básico para sobrevivir o si falta para cumplir deseos. Sin agua ni comida hablamos de escasez física. Sin dinero o tiempo para todo lo que se quiere, de escasez económica. Una persona puede sufrir una sin la otra.",
+   "test": [
+    [
+     4,
+     "Ana no tiene acceso a agua potable en su aldea. Leo quiere comprarse un coche nuevo, pero su sueldo no le alcanza. ¿Cómo se clasifica la escasez que sufre cada uno?",
+     "Ana, escasez física; Leo, escasez económica",
+     [
+      "Ana, escasez económica; Leo, escasez física",
+      "invierte los dos tipos"
+     ],
+     [
+      "Los dos sufren escasez económica, porque ambos carecen de algo",
+      "no distingue entre lo básico y lo deseado"
+     ],
+     [
+      "Los dos sufren escasez física, porque ambos carecen de recursos",
+      "cree que cualquier falta de recursos es física"
+     ],
+     "Sin agua potable falta un recurso básico para sobrevivir: escasez física. El deseo de un coche que el sueldo no cubre es escasez económica. Regla: lo imprescindible es física, lo deseado es económica."
+    ]
+   ]
+  }
+ ]
+}

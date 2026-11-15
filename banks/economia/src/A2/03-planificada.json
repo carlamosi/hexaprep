@@ -1,0 +1,105 @@
+{
+ "subtema": "La economía planificada",
+ "conceptos": [
+  {
+   "nombre": "Países que aplicaron la planificación",
+   "pagina": 6,
+   "ayuda": "El ejemplo histórico de economía planificada es la Unión Soviética, sobre todo durante buena parte del siglo XX. También se aplicó, con diferentes características, en otros países como Cuba o China durante determinadas etapas. Son experiencias distintas, no un mismo modelo idéntico.",
+   "test": [
+    [
+     1,
+     "Además de la Unión Soviética, ¿en qué países se aplicó la economía planificada, con diferentes características, durante determinadas etapas?",
+     "Cuba y China",
+     [
+      "Estados Unidos y Reino Unido",
+      "confunde planificación con economías de mercado"
+     ],
+     [
+      "España y Francia",
+      "confunde economías mixtas con planificadas"
+     ],
+     [
+      "Alemania y Japón",
+      "asocia planificación con países europeos o asiáticos desarrollados sin base en el tema"
+     ],
+     "El tema cita Cuba y China como otros países que aplicaron la planificación, con características diferentes y en determinadas etapas, junto con la URSS. Regla: URSS, Cuba y China."
+    ]
+   ]
+  },
+  {
+   "nombre": "El objetivo de igualdad económica",
+   "pagina": 6,
+   "ayuda": "Uno de los principios de la economía planificada es el objetivo de una mayor igualdad económica. Se pretende reducir las diferencias de renta y garantizar a toda la población el acceso a determinados bienes y servicios básicos. Es un objetivo social, que el sistema perseguía con el control estatal de recursos y precios.",
+   "test": [
+    [
+     2,
+     "En la economía planificada, ¿qué persigue el objetivo de una mayor igualdad económica?",
+     "Reducir las diferencias de renta y garantizar el acceso a ciertos bienes y servicios básicos",
+     [
+      "Aumentar los beneficios de las empresas privadas",
+      "confunde igualdad con beneficio privado"
+     ],
+     [
+      "Dejar que la oferta y la demanda fijen los precios",
+      "confunde igualdad con mercado"
+     ],
+     [
+      "Eliminar la propiedad pública de los recursos",
+      "confunde la igualdad con la privatización"
+     ],
+     "El objetivo de igualdad busca reducir diferencias de renta y asegurar el acceso a bienes y servicios básicos. Por eso el Estado controla los recursos. Regla: planificada igual a igualdad como meta."
+    ]
+   ]
+  },
+  {
+   "nombre": "Falta de competencia y fracaso",
+   "pagina": 7,
+   "ayuda": "Entre las causas del fracaso de la economía planificada está la falta de competencia entre empresas. Sin competencia, había menos incentivos para mejorar la calidad, reducir costes o innovar. A esto se sumaban la falta de incentivos, los errores de información y el exceso de burocracia.",
+   "test": [
+    [
+     3,
+     "¿Qué reducía la ausencia o escasez de competencia entre empresas en la economía planificada?",
+     "Los incentivos para mejorar la calidad, reducir costes e innovar",
+     [
+      "La necesidad de una estructura administrativa grande",
+      "confunde la falta de competencia con el exceso de burocracia"
+     ],
+     [
+      "Los problemas de información del organismo central",
+      "confunde la falta de competencia con los errores de previsión"
+     ],
+     [
+      "La propiedad pública de los medios de producción",
+      "confunde una causa con un principio de la planificación"
+     ],
+     "Sin competencia, las empresas tenían menos incentivos para mejorar la calidad, reducir costes e innovar. La burocracia y la información son otras causas distintas. Regla: sin rival, menos innovación."
+    ]
+   ]
+  },
+  {
+   "nombre": "Planificación y problemas de información",
+   "pagina": 7,
+   "ayuda": "Para un organismo central es muy difícil conocer las necesidades y preferencias de millones de consumidores y decidir qué producir y en qué cantidades. Por eso la planificación podía producir bienes poco demandados mientras escaseaban otros. Además, gestionar tantas decisiones exigía una burocracia muy grande y compleja.",
+   "test": [
+    [
+     5,
+     "El Estado fija desde el centro el precio y la cantidad de miles de productos distintos. ¿Qué problemas de los señalados por el tema se agravan con esa situación?",
+     "Los de información y errores de previsión, y el exceso de burocracia",
+     [
+      "Solo la falta de competencia entre empresas",
+      "ignora que fijar miles de cantidades requiere información y administración"
+     ],
+     [
+      "Solo la falta de incentivos de los trabajadores",
+      "se queda en un único problema que no es el central"
+     ],
+     [
+      "Ninguno, porque la planificación elimina los errores de previsión",
+      "cree que planificar elimina los errores en vez de crearlos"
+     ],
+     "Decidir desde un centro miles de precios y cantidades requiere conocer necesidades de millones de personas, lo que provoca errores de previsión, y una gran estructura administrativa. Regla: más decisiones centrales, más información necesaria y más burocracia."
+    ]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1014 @@
+[
+ {
+  "id": "mat-s-0129",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones con valor absoluto",
+  "concepto": "Valor absoluto igual a un número",
+  "dificultad": 3,
+  "enunciado": "Resuelve $|x^2-2x|=3$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Si $a>0$, la ecuación $|f(x)|=a$ equivale a dos ecuaciones: $f(x)=a$ y $f(x)=-a$. Se resuelven las dos y se juntan las soluciones. Si $a<0$ no hay solución y si $a=0$ solo vale $f(x)=0$. Se comprueba cada solución en la ecuación original. Ejemplo: $|x-1|=4$ da $x-1=4$, es decir $x=5$, y $x-1=-4$, es decir $x=-3$.",
+  "fuente_pagina": 25,
+  "fuente_cara": 25,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   3
+  ],
+  "explicacion": "Caso $x^2-2x=3$: $x^2-2x-3=0$ da $x=3$ y $x=-1$. Caso $x^2-2x=-3$: $x^2-2x+3=0$ tiene discriminante $4-12<0$, sin soluciones reales. Las soluciones son $-1$ y $3$."
+ },
+ {
+  "id": "mat-s-0190",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Potencias, radicales y logaritmos",
+  "concepto": "Racionalización de denominadores",
+  "dificultad": 5,
+  "enunciado": "Calcula $\\frac{1}{\\sqrt5-2}-\\frac{1}{\\sqrt5+2}$. Escribe el valor.",
+  "ayuda_larga": "Racionalizar es quitar las raíces del denominador. Si el denominador es $\\sqrt{a}$, se multiplica numerador y denominador por $\\sqrt{a}$. Si es $\\sqrt{a}-\\sqrt{b}$, se multiplica por su conjugado $\\sqrt{a}+\\sqrt{b}$, porque $(\\sqrt a-\\sqrt b)(\\sqrt a+\\sqrt b)=a-b$. Ejemplo: $\\frac{2}{\\sqrt{3}}=\\frac{2\\sqrt3}{3}\\approx1{,}155$. El valor numérico no cambia al racionalizar.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 4,
+  "explicacion": "Se racionaliza cada fracción: $\\frac{1}{\\sqrt5-2}=\\frac{\\sqrt5+2}{5-4}=\\sqrt5+2$ y $\\frac{1}{\\sqrt5+2}=\\frac{\\sqrt5-2}{5-4}=\\sqrt5-2$. La resta es $(\\sqrt5+2)-(\\sqrt5-2)=4$."
+ },
+ {
+  "id": "mat-s-0140",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones bicuadradas y polinómicas",
+  "concepto": "Ecuaciones del tipo $ax^{2n}+bx^n+c=0$",
+  "dificultad": 2,
+  "enunciado": "Resuelve $x^6-7x^3-8=0$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Se hace el cambio $t=x^n$ y queda $at^2+bt+c=0$. Se resuelve para $t$ y se deshace el cambio: si $n$ es par, $x=\\pm\\sqrt[n]{t}$ (solo para $t\\ge0$); si $n$ es impar, $x=\\sqrt[n]{t}$ (una raíz real para cualquier $t$). Ejemplo: $x^6-9x^3+8=0$ da $t^2-9t+8=0$, $t=1$ o $8$, así que $x=1$ y $x=2$.",
+  "fuente_pagina": 26,
+  "fuente_cara": 26,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   2
+  ],
+  "explicacion": "Con $t=x^3$ queda $t^2-7t-8=0$, con $t=8$ y $t=-1$. Entonces $x^3=8$ da $x=2$ y $x^3=-1$ da $x=-1$. Las dos valen."
+ },
+ {
+  "id": "mat-s-0227",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones logarítmicas",
+  "concepto": "Logaritmos: propiedades básicas y comprobación",
+  "dificultad": 2,
+  "enunciado": "Resuelve $\\log x+\\log(x-3)=1$. Escribe la solución que vale.",
+  "ayuda_larga": "Se usan las propiedades $\\log a+\\log b=\\log(ab)$ y $\\log a-\\log b=\\log\\frac ab$ para dejar un solo logaritmo en cada miembro. Después se pasa a forma exponencial ($\\log N=k$ significa $N=10^k$) o se igualan los argumentos. Los logaritmos solo existen para argumentos positivos, así que cada solución se comprueba en la ecuación original. Ejemplo: $\\log(x+1)+\\log(x-2)=\\log 4$ da $x^2-x-2=4$, es decir $x=3$ o $x=-2$; con $x=-2$ el argumento $x-2$ es negativo, así que vale $x=3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 5,
+  "explicacion": "Por la propiedad del producto, $\\log[x(x-3)]=1$, luego $x^2-3x=10$, es decir $x^2-3x-10=0$, con $x=5$ y $x=-2$. Con $x=-2$ los argumentos son negativos y no vale. Comprobación con $x=5$: $\\log5+\\log2=\\log10=1$."
+ },
+ {
+  "id": "mat-s-0176",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Problemas con sistemas de tres incógnitas (libro)",
+  "dificultad": 4,
+  "enunciado": "Se reparten 10 000 euros en tres inversiones A, B y C al 3 %, 5 % y 8 % anual. En C se invierte el doble que en A y los intereses anuales suman 580 euros. ¿Cuántos euros se invierten en B? Escribe solo el número.",
+  "ayuda_larga": "Con tres incógnitas necesitas tres condiciones. Asigna una letra a cada cantidad desconocida, traduce cada frase a una ecuación y resuelve el sistema por sustitución o por Gauss. Comprueba que las soluciones sean positivas y razonables en el contexto (edades, euros, kilos). Ejemplo: tres números suman 12, el segundo es el doble del primero y el tercero vale 2 más que el segundo. Entonces $x+2x+2x+2=12$, luego $x=2$.",
+  "fuente_pagina": 29,
+  "fuente_cara": 29,
+  "tipo": "problema",
+  "solucion": 4000,
+  "explicacion": "Con $a$, $b$, $c$: $a+b+c=10000$, $c=2a$ y $0{,}03a+0{,}05b+0{,}08c=580$. Sustituyendo, $b=10000-3a$ y $500+0{,}04a=580$, luego $a=2000$, $b=4000$ y $c=4000$."
+ },
+ {
+  "id": "mat-s-0144",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones exponenciales",
+  "concepto": "Igualar exponentes",
+  "dificultad": 1,
+  "enunciado": "Resuelve $2^{x+3}=2^{2x-1}$. Escribe la solución.",
+  "ayuda_larga": "Si se puede escribir cada miembro como una potencia de la misma base, $a^{f(x)}=a^{g(x)}$, entonces $f(x)=g(x)$. Para ello se usan las propiedades de las potencias, por ejemplo $8=2^3$ o $9^x=3^{2x}$. Ejemplo: $3^{x+1}=9^x$ es $3^{x+1}=3^{2x}$, luego $x+1=2x$ y $x=1$.",
+  "fuente_pagina": 26,
+  "fuente_cara": 26,
+  "tipo": "problema",
+  "solucion": 4,
+  "explicacion": "Con la misma base se igualan los exponentes: $x+3=2x-1$, luego $x=4$."
+ },
+ {
+  "id": "mat-s-0217",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Inecuaciones",
+  "concepto": "Sistemas con dos cuadráticas",
+  "dificultad": 3,
+  "enunciado": "Resuelve el sistema $x^2+x-12<0$, $x^2-1\\ge0$. ¿Cuántos números enteros entre $-10$ y 10, ambos incluidos, cumplen las dos inecuaciones? Escribe solo ese número.",
+  "ayuda_larga": "Cada cuadrática se resuelve con sus raíces. Si el coeficiente de $x^2$ es negativo, se multiplica por $-1$ y se invierte el signo. Una cuadrática con signo $\\ge$ o $>$ y $a>0$ se cumple fuera de las raíces, y puede dar una unión de dos tramos. Se dibujan las dos soluciones en la recta y se toma la parte común, cuidando los extremos abiertos y cerrados. Ejemplo: $x^2-9\\ge0$ da $(-\\infty,-3]\\cup[3,+\\infty)$ y $x^2-25<0$ da $(-5,5)$; la intersección es $(-5,-3]\\cup[3,5)$.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "tipo": "problema",
+  "solucion": 5,
+  "explicacion": "La primera: $(x+4)(x-3)<0$ da $(-4,3)$. La segunda: $(x-1)(x+1)\\ge0$ da $(-\\infty,-1]\\cup[1,+\\infty)$. La intersección es $(-4,-1]\\cup[1,3)$. Los enteros son $-3,-2,-1,1,2$: 5 números."
+ },
+ {
+  "id": "mat-s-0131",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones con valor absoluto",
+  "concepto": "Valor absoluto igual a una expresión",
+  "dificultad": 3,
+  "enunciado": "Resuelve $|x+1|=2x-4$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "En $|f(x)|=g(x)$ el segundo miembro debe ser $g(x)\\ge0$. Se resuelven los dos casos $f(x)=g(x)$ y $f(x)=-g(x)$ y después se comprueba cada solución en la ecuación original, descartando las que dan $g(x)<0$. Ejemplo: $|x|=2x-3$ da $x=3$ (vale, $2\\cdot3-3=3$) y $x=1$ (no vale, $2\\cdot1-3=-1<0$).",
+  "fuente_pagina": 25,
+  "fuente_cara": 25,
+  "tipo": "problema",
+  "solucion": 5,
+  "explicacion": "Caso $x+1=2x-4$: $x=5$ y $2\\cdot5-4=6\\ge0$, vale. Caso $x+1=-(2x-4)$: $3x=3$, $x=1$, pero $2\\cdot1-4=-2<0$, no vale. La única solución es $x=5$."
+ },
+ {
+  "id": "mat-s-0143",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones bicuadradas y polinómicas",
+  "concepto": "Ecuaciones del tipo $ax^{2n}+bx^n+c=0$",
+  "dificultad": 4,
+  "enunciado": "Resuelve $16x^8-17x^4+1=0$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Se hace el cambio $t=x^n$ y queda $at^2+bt+c=0$. Se resuelve para $t$ y se deshace el cambio: si $n$ es par, $x=\\pm\\sqrt[n]{t}$ (solo para $t\\ge0$); si $n$ es impar, $x=\\sqrt[n]{t}$ (una raíz real para cualquier $t$). Ejemplo: $x^6-9x^3+8=0$ da $t^2-9t+8=0$, $t=1$ o $8$, así que $x=1$ y $x=2$.",
+  "fuente_pagina": 26,
+  "fuente_cara": 26,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   -0.5,
+   0.5,
+   1
+  ],
+  "explicacion": "Con $t=x^4$ queda $16t^2-17t+1=0$, con $t=\\frac{17\\pm15}{32}$, es decir $t=1$ y $t=\\frac{1}{16}$. Entonces $x=\\pm1$ y $x=\\pm\\frac12$. Las cuatro valen."
+ },
+ {
+  "id": "mat-g-0028",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Resolver sistemas por Gauss",
+  "concepto": "Compatibles indeterminados: una incógnita libre",
+  "dificultad": 2,
+  "enunciado": "El sistema $x+2y-z=4$, $2x+y+z=5$, $3x+3y=9$ es compatible indeterminado. Fijando $y=1$, calcula x; z (en ese orden, separados por punto y coma).",
+  "ayuda_larga": "Si al hacer Gauss una ecuación se anula ($0=0$), el sistema tiene menos ecuaciones independientes que incógnitas y es compatible indeterminado: hay infinitas soluciones. Una incógnita queda libre y las demás se expresan en función de ella. Para obtener una solución concreta, se da un valor a la incógnita libre. Ejemplo: $x+y=4$ (una sola ecuación independiente). Con $y=1$ sale $x=3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   2,
+   0
+  ],
+  "explicacion": "Sumando las dos primeras se obtiene la tercera, que sobra. Con $y=1$ la tercera da $3x+3=9$, luego $x=2$. De la primera, $z=x+2y-4=2+2-4=0$. Comprobación en la segunda: $4+1+0=5$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0198",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones radicales y racionales",
+  "concepto": "Irracionales con una raíz y comprobación",
+  "dificultad": 2,
+  "enunciado": "Resuelve $\\sqrt{4x+5}=x$. Escribe la solución que vale.",
+  "ayuda_larga": "Se aísla la raíz en un miembro y se elevan al cuadrado los dos miembros (recuerda $(a-b)^2=a^2-2ab+b^2$). Se resuelve la ecuación que sale y se comprueba cada solución en la ecuación original, porque elevar al cuadrado puede introducir soluciones falsas. Ejemplo: $\\sqrt{2x+3}=x$ da $2x+3=x^2$, con $x=3$ y $x=-1$. Con $x=-1$ queda $1=-1$, falso, así que la solución es $x=3$.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": 5,
+  "explicacion": "Se eleva al cuadrado: $4x+5=x^2$, es decir $x^2-4x-5=0$, con $x=5$ y $x=-1$. Con $x=5$: $\\sqrt{25}=5$, correcto. Con $x=-1$: $\\sqrt1=1$ pero $x=-1$, falso. La solución es $x=5$."
+ },
+ {
+  "id": "mat-s-0155",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones logarítmicas",
+  "concepto": "Logaritmo con cambio de variable",
+  "dificultad": 5,
+  "enunciado": "Resuelve $(\\log x)^2-\\log x^3+2=0$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Si la ecuación tiene $\\log x$ elevado al cuadrado, se usa $\\log x^n=n\\log x$ y se hace el cambio $t=\\log x$. Queda una ecuación de segundo grado en $t$ y se deshace el cambio con $x=10^t$. Ejemplo: $(\\log x)^2-3\\log x+2=0$ da $t=1$ y $t=2$, es decir $x=10$ y $x=100$.",
+  "fuente_pagina": 26,
+  "fuente_cara": 26,
+  "tipo": "problema",
+  "solucion": [
+   10,
+   100
+  ],
+  "explicacion": "Como $\\log x^3=3\\log x$, con $t=\\log x$ queda $t^2-3t+2=0$, con $t=1$ y $t=2$. Entonces $x=10$ y $x=100$, y ambas valen."
+ },
+ {
+  "id": "mat-s-0221",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones exponenciales",
+  "concepto": "Exponenciales igualando bases",
+  "dificultad": 2,
+  "enunciado": "Resuelve $7^{x^2-4x}=\\frac{1}{343}$. Escribe las soluciones separadas por punto y coma.",
+  "ayuda_larga": "Si los dos miembros se pueden escribir como potencias de la misma base, se igualan los exponentes. Se descomponen los números en factores primos: por ejemplo $125=5^3$ y $\\frac1{49}=7^{-2}$. Se resuelve la ecuación de los exponentes, que puede ser de segundo grado. Ejemplo: $3^{x^2-1}=27$ da $x^2-1=3$, es decir $x^2=4$ y $x=2$ o $x=-2$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   3
+  ],
+  "explicacion": "Como $\\frac1{343}=7^{-3}$, se igualan los exponentes: $x^2-4x=-3$, es decir $x^2-4x+3=0$, con $x=1$ y $x=3$. Comprobación: $7^{-3}=\\frac1{343}$ en los dos casos."
+ },
+ {
+  "id": "mat-s-0226",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones logarítmicas",
+  "concepto": "Logaritmos: propiedades básicas y comprobación",
+  "dificultad": 1,
+  "enunciado": "Resuelve $\\log(7x+6)-\\log x=1$. Escribe la solución.",
+  "ayuda_larga": "Se usan las propiedades $\\log a+\\log b=\\log(ab)$ y $\\log a-\\log b=\\log\\frac ab$ para dejar un solo logaritmo en cada miembro. Después se pasa a forma exponencial ($\\log N=k$ significa $N=10^k$) o se igualan los argumentos. Los logaritmos solo existen para argumentos positivos, así que cada solución se comprueba en la ecuación original. Ejemplo: $\\log(x+1)+\\log(x-2)=\\log 4$ da $x^2-x-2=4$, es decir $x=3$ o $x=-2$; con $x=-2$ el argumento $x-2$ es negativo, así que vale $x=3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 2,
+  "explicacion": "Por la propiedad del cociente, $\\log\\frac{7x+6}{x}=1$, luego $\\frac{7x+6}{x}=10$. Entonces $7x+6=10x$ y $x=2$. Comprobación: $\\log20-\\log2=\\log10=1$."
+ },
+ {
+  "id": "mat-s-0253",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Ecuaciones matriciales con la incógnita $X$",
+  "dificultad": 5,
+  "enunciado": "Resuelve la ecuación $AX=B+CX$ con $A=\\begin{pmatrix}3&1\\\\2&2\\end{pmatrix}$, $B=\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}$ y $C=\\begin{pmatrix}1&0\\\\1&1\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+  "ayuda_larga": "Se aísla $X$ agrupando los términos con $X$ y sacando $X$ como factor común del lado correcto, porque el producto de matrices no es conmutativo: $AX$ no es $XA$. Si $A$ es invertible, de $AX=B$ sale $X=A^{-1}B$. Para una matriz $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ de determinante $D\\ne0$, la inversa es $\\frac1D\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$. Ejemplo: de $AX+B=2X$ sale $(2I-A)X=B$ y $X=(2I-A)^{-1}B$. Se comprueba sustituyendo en la ecuación original.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   2,
+   0,
+   -1
+  ],
+  "explicacion": "Se agrupa: $(A-C)X=B$, con $A-C=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$ de determinante 1 e inversa $\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}$. Entonces $X=\\begin{pmatrix}1&-1\\\\-1&2\\end{pmatrix}\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}=\\begin{pmatrix}1&2\\\\0&-1\\end{pmatrix}$. Comprobación: $AX=\\begin{pmatrix}3&5\\\\2&2\\end{pmatrix}$ y $B+CX=\\begin{pmatrix}3&5\\\\2&2\\end{pmatrix}$."
+ },
+ {
+  "id": "mat-g-0025",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Resolver sistemas por Gauss",
+  "concepto": "Sistemas escalonados y Gauss con tres ecuaciones",
+  "dificultad": 3,
+  "enunciado": "Resuelve por Gauss el sistema $x+2y+3z=9$, $2x-y+z=8$, $3x+y-2z=-1$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+  "ayuda_larga": "Un sistema escalonado tiene la última ecuación con una sola incógnita, la anterior con dos, y así hacia arriba. Se resuelve de abajo hacia arriba: despejas la última incógnita y sustituyes hacia atrás. Si no está escalonado, escribe la matriz ampliada y haz ceros bajo la diagonal con operaciones entre filas; si el elemento de la diagonal es 0, intercambia filas. Ejemplo: $x+y=5$, $2y=6$. De la segunda, $y=3$; en la primera, $x=2$. Comprueba el resultado en todas las ecuaciones.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   2,
+   -1,
+   3
+  ],
+  "explicacion": "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-3F_1$: $-5y-5z=-10$ y $-5y-11z=-28$. De la primera, $y+z=2$; restando, $-6z=-18$, luego $z=3$. Entonces $y=-1$ y $x=9+2-9=2$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0224",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones exponenciales",
+  "concepto": "Exponenciales con cambio de variable",
+  "dificultad": 4,
+  "enunciado": "Resuelve $2\\cdot4^x-9\\cdot2^x+4=0$. Escribe las soluciones separadas por punto y coma.",
+  "ayuda_larga": "Si aparecen $4^x$ y $2^x$, o $2^x$ y $2^{-x}$, se escribe $4^x=(2^x)^2$ y se hace el cambio $t=2^x$. Sale una ecuación de segundo grado en $t$. Como $2^x>0$, solo valen las soluciones $t>0$. Después se deshace el cambio resolviendo $2^x=t$. Ejemplo: $4^x-5\\cdot2^x+4=0$ da $t^2-5t+4=0$, con $t=1$ y $t=4$, es decir $x=0$ y $x=2$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   2
+  ],
+  "explicacion": "Con $t=2^x$ queda $2t^2-9t+4=0$, y $t=\\frac{9\\pm7}{4}$ da $t=4$ y $t=\\frac12$. Ambas son positivas. Si $2^x=4$, $x=2$. Si $2^x=\\frac12$, $x=-1$."
+ },
+ {
+  "id": "mat-s-0130",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones con valor absoluto",
+  "concepto": "Valor absoluto igual a un número",
+  "dificultad": 3,
+  "enunciado": "Resuelve $|x^2-6x+4|=4$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Si $a>0$, la ecuación $|f(x)|=a$ equivale a dos ecuaciones: $f(x)=a$ y $f(x)=-a$. Se resuelven las dos y se juntan las soluciones. Si $a<0$ no hay solución y si $a=0$ solo vale $f(x)=0$. Se comprueba cada solución en la ecuación original. Ejemplo: $|x-1|=4$ da $x-1=4$, es decir $x=5$, y $x-1=-4$, es decir $x=-3$.",
+  "fuente_pagina": 25,
+  "fuente_cara": 25,
+  "tipo": "problema",
+  "solucion": [
+   0,
+   2,
+   4,
+   6
+  ],
+  "explicacion": "Caso $x^2-6x+4=4$: $x^2-6x=0$ da $x=0$ y $x=6$. Caso $x^2-6x+4=-4$: $x^2-6x+8=0$ da $x=2$ y $x=4$. Las cuatro valen."
+ },
+ {
+  "id": "mat-s-0214",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Inecuaciones",
+  "concepto": "Sistemas de inecuaciones de primer grado y cuadráticas",
+  "dificultad": 1,
+  "enunciado": "Resuelve el sistema $3x-2>4$, $7-x\\ge2$. La solución es un intervalo con dos extremos. Escribe esos extremos separados por punto y coma.",
+  "ayuda_larga": "En un sistema de inecuaciones se resuelve cada inecuación por separado y la solución del sistema es la intersección: los $x$ que cumplen todas a la vez. En las de primer grado, al multiplicar o dividir por un número negativo el signo se invierte. En las cuadráticas se hallan las raíces: con $a>0$ la parábola es negativa entre las raíces y positiva fuera. Un extremo solo entra si todas las inecuaciones lo aceptan. Ejemplo: $x^2-4\\le0$ da $[-2,2]$ y $x>0$ da $(0,+\\infty)$; la intersección es $(0,2]$.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "tipo": "problema",
+  "solucion": [
+   2,
+   5
+  ],
+  "explicacion": "De $3x-2>4$ sale $3x>6$, es decir $x>2$. De $7-x\\ge2$ sale $-x\\ge-5$, y al invertir el signo $x\\le5$. La intersección es $(2,5]$, con extremos 2 y 5."
+ },
+ {
+  "id": "mat-s-0133",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones con valor absoluto",
+  "concepto": "Valor absoluto igual a una expresión",
+  "dificultad": 4,
+  "enunciado": "Resuelve $|x^2-x-2|=x+1$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "En $|f(x)|=g(x)$ el segundo miembro debe ser $g(x)\\ge0$. Se resuelven los dos casos $f(x)=g(x)$ y $f(x)=-g(x)$ y después se comprueba cada solución en la ecuación original, descartando las que dan $g(x)<0$. Ejemplo: $|x|=2x-3$ da $x=3$ (vale, $2\\cdot3-3=3$) y $x=1$ (no vale, $2\\cdot1-3=-1<0$).",
+  "fuente_pagina": 25,
+  "fuente_cara": 25,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   1,
+   3
+  ],
+  "explicacion": "Hace falta $x+1\\ge0$. Caso $x^2-x-2=x+1$: $x^2-2x-3=0$ da $x=3$ y $x=-1$, ambas valen. Caso $x^2-x-2=-x-1$: $x^2=1$ da $x=\\pm1$ y ambas valen. Las soluciones distintas son $-1$, $1$ y $3$."
+ },
+ {
+  "id": "mat-s-0243",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Parámetros para que se cumpla una igualdad",
+  "dificultad": 4,
+  "enunciado": "Halla $a$ y $b$ para que $\\begin{pmatrix}a&1\\\\2&b\\end{pmatrix}\\cdot\\begin{pmatrix}1&2\\\\3&1\\end{pmatrix}=\\begin{pmatrix}5&5\\\\11&7\\end{pmatrix}$. Escribe $a;b$ en ese orden.",
+  "ayuda_larga": "Se calcula cada miembro de la igualdad, se igualan los elementos que ocupan la misma posición y se resuelve el sistema de ecuaciones que sale. Hay que comprobar que todas las posiciones se cumplen a la vez. Si aparece una potencia como $A^2=A\\cdot A$ o una identidad $I$, se desarrolla antes de igualar. Ejemplo: $\\begin{pmatrix}x&1\\\\0&2\\end{pmatrix}+\\begin{pmatrix}1&y\\\\0&1\\end{pmatrix}=\\begin{pmatrix}4&3\\\\0&3\\end{pmatrix}$ da $x+1=4$ y $1+y=3$, es decir $x=3$, $y=2$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   2,
+   3
+  ],
+  "explicacion": "El producto es $\\begin{pmatrix}a+3&2a+1\\\\2+3b&4+b\\end{pmatrix}$. Igualando: $a+3=5$ da $a=2$ y $2a+1=5$ lo confirma; $2+3b=11$ da $b=3$ y $4+b=7$ lo confirma. Solución $a=2$, $b=3$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0248",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Producto, potencias y problemas con matrices",
+  "dificultad": 4,
+  "enunciado": "Sea $A=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix}$. Calcula $A^{50}$ y escribe sus elementos fila a fila separados por punto y coma.",
+  "ayuda_larga": "Para multiplicar $A\\cdot B$ el número de columnas de $A$ debe ser el de filas de $B$, y cada elemento es la fila de $A$ por la columna de $B$. Un problema de stock se resuelve multiplicando la matriz de cantidades por la matriz de lo que se necesita de cada pieza. Las potencias de una matriz suelen repetirse con un periodo: si $A^2=-I$, entonces $A^4=I$ y basta ver el resto del exponente entre 4. Ejemplo: si $A^2=I$, entonces $A^{101}=A$.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   0,
+   0,
+   -1
+  ],
+  "explicacion": "$A^2=\\begin{pmatrix}-1&0\\\\0&-1\\end{pmatrix}=-I$, luego $A^4=I$. Como $50=4\\cdot12+2$, $A^{50}=(A^4)^{12}\\cdot A^2=A^2=-I$. Los elementos son $-1;0;0;-1$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0251",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Ecuaciones matriciales con la incógnita $X$",
+  "dificultad": 4,
+  "enunciado": "Resuelve la ecuación $AX+B=X$ con $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ y $B=\\begin{pmatrix}-4&-2\\\\-6&0\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+  "ayuda_larga": "Se aísla $X$ agrupando los términos con $X$ y sacando $X$ como factor común del lado correcto, porque el producto de matrices no es conmutativo: $AX$ no es $XA$. Si $A$ es invertible, de $AX=B$ sale $X=A^{-1}B$. Para una matriz $\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ de determinante $D\\ne0$, la inversa es $\\frac1D\\begin{pmatrix}d&-b\\\\-c&a\\end{pmatrix}$. Ejemplo: de $AX+B=2X$ sale $(2I-A)X=B$ y $X=(2I-A)^{-1}B$. Se comprueba sustituyendo en la ecuación original.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   2,
+   3,
+   0
+  ],
+  "explicacion": "Se agrupa: $(I-A)X=B$, con $I-A=\\begin{pmatrix}-1&-1\\\\0&-2\\end{pmatrix}$ de determinante 2 e inversa $\\frac12\\begin{pmatrix}-2&1\\\\0&-1\\end{pmatrix}$. Entonces $X=\\frac12\\begin{pmatrix}-2&1\\\\0&-1\\end{pmatrix}\\begin{pmatrix}-4&-2\\\\-6&0\\end{pmatrix}=\\begin{pmatrix}1&2\\\\3&0\\end{pmatrix}$. Comprobación: $AX=\\begin{pmatrix}5&4\\\\9&0\\end{pmatrix}$ y $AX+B=X$."
+ },
+ {
+  "id": "mat-s-0223",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones exponenciales",
+  "concepto": "Producto de potencias y factor común",
+  "dificultad": 3,
+  "enunciado": "Resuelve $3^{x+2}+2\\cdot3^{x+1}-4\\cdot3^{x}=99$. Escribe la solución.",
+  "ayuda_larga": "Con productos de potencias se pasa todo a la misma base y se suman los exponentes: $a^m\\cdot a^n=a^{m+n}$, y $(a^m)^n=a^{mn}$. Cuando hay sumas de potencias como $3^{x+2}$, $3^{x+1}$ y $3^x$, se escribe cada una como $3^x$ por una constante ($3^{x+2}=9\\cdot3^x$) y se saca factor común. Ejemplo: $2^{x+1}+2^x=24$ da $3\\cdot2^x=24$, luego $2^x=8$ y $x=3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 2,
+  "explicacion": "Se escribe todo con $3^x$: $9\\cdot3^x+6\\cdot3^x-4\\cdot3^x=99$, es decir $11\\cdot3^x=99$, luego $3^x=9$ y $x=2$. Comprobación: $81+54-36=99$."
+ },
+ {
+  "id": "mat-s-0187",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Potencias, radicales y logaritmos",
+  "concepto": "Radicales y exponentes fraccionarios",
+  "dificultad": 4,
+  "enunciado": "Calcula $\\frac{\\sqrt{8}\\cdot\\sqrt[3]{4}}{\\sqrt[6]{2}}$. Escribe el valor.",
+  "ayuda_larga": "Una raíz es una potencia de exponente fraccionario: $\\sqrt[n]{x^m}=x^{m/n}$. Así $\\sqrt[3]{x}=x^{1/3}$. Para multiplicar o dividir raíces de distinto índice se pasan a exponente fraccionario y se suman o restan los exponentes de la misma base. Ejemplo: $\\sqrt{2}\\cdot\\sqrt[3]{2}=2^{1/2}\\cdot2^{1/3}=2^{5/6}$. Se calcula la raíz primero si el número es una potencia exacta: $8^{2/3}=(\\sqrt[3]{8})^2=4$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 4,
+  "explicacion": "En base 2 con exponentes fraccionarios: $\\sqrt8=2^{3/2}$, $\\sqrt[3]{4}=2^{2/3}$, $\\sqrt[6]{2}=2^{1/6}$. El exponente final es $\\frac32+\\frac23-\\frac16=\\frac{9+4-1}{6}=2$, luego el valor es $2^2=4$."
+ },
+ {
+  "id": "mat-s-0197",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones radicales y racionales",
+  "concepto": "Racionales con denominadores distintos",
+  "dificultad": 5,
+  "enunciado": "Resuelve $\\frac{x-1}{x+2}-\\frac{x+3}{x-2}=1$. Escribe las soluciones separadas por punto y coma.",
+  "ayuda_larga": "Se factorizan los denominadores, se busca el mínimo común múltiplo y se multiplica toda la ecuación por él para quitar las fracciones. Se resuelve la ecuación que queda y se descartan los valores que anulan algún denominador, porque no pertenecen al dominio. Ejemplo: $\\frac{1}{x}=\\frac{2}{x+3}$ da $x+3=2x$, es decir $x=3$, que no anula ningún denominador.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   -8,
+   0
+  ],
+  "explicacion": "Se multiplica por $(x+2)(x-2)$: $(x-1)(x-2)-(x+3)(x+2)=x^2-4$. Queda $-8x-4=x^2-4$, es decir $x^2+8x=0$, con $x=0$ y $x=-8$. Ninguna anula un denominador y las dos cumplen la ecuación original."
+ },
+ {
+  "id": "mat-s-0182",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Potencias, radicales y logaritmos",
+  "concepto": "Propiedades de las potencias",
+  "dificultad": 1,
+  "enunciado": "Calcula $\\frac{2^5\\cdot 2^3}{2^6}$. Escribe el valor.",
+  "ayuda_larga": "Para multiplicar potencias de la misma base se suman los exponentes: $x^n\\cdot x^m=x^{n+m}$. Para dividir se restan: $\\frac{x^n}{x^m}=x^{n-m}$. Una potencia de potencia multiplica los exponentes: $(x^n)^m=x^{nm}$. Además $x^0=1$ y $x^{-n}=\\frac{1}{x^n}$. Lo primero es escribir todo con la misma base. Ejemplo: $\\frac{2^4\\cdot 4}{2^3}=\\frac{2^4\\cdot2^2}{2^3}=2^{4+2-3}=2^3=8$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 4,
+  "explicacion": "Se suman los exponentes del numerador: $2^5\\cdot2^3=2^8$. Se restan los del denominador: $\\frac{2^8}{2^6}=2^2=4$."
+ },
+ {
+  "id": "mat-s-0152",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones logarítmicas",
+  "concepto": "Igualar logaritmos y descartar soluciones",
+  "dificultad": 2,
+  "enunciado": "Resuelve $2\\log x=\\log(x+12)$. Escribe la solución.",
+  "ayuda_larga": "Se reduce la ecuación a $\\log A=\\log B$ y se iguala $A=B$. Después se resuelve y se comprueba cada solución en la ecuación original: los argumentos de los logaritmos deben ser positivos y las que no cumplen se descartan. Ejemplo: $2\\log x=\\log(x+2)$ da $x^2=x+2$, con $x=2$ y $x=-1$; $x=-1$ no vale porque $\\log(-1)$ no existe.",
+  "fuente_pagina": 26,
+  "fuente_cara": 26,
+  "tipo": "problema",
+  "solucion": 4,
+  "explicacion": "$\\log x^2=\\log(x+12)$, luego $x^2=x+12$, $x^2-x-12=0$, con $x=4$ y $x=-3$. Se descarta $x=-3$ porque $\\log(-3)$ no existe. La solución es $x=4$."
+ },
+ {
+  "id": "mat-s-0205",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones bicuadradas y polinómicas",
+  "concepto": "Cambio de variable y ecuaciones reducibles",
+  "dificultad": 3,
+  "enunciado": "Resuelve $x^6-7x^3-8=0$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Cuando aparece una potencia que se repite ($x^3$ en una ecuación de grado 6, o $x^2$ en una ecuación con fracciones) se hace un cambio de variable. En $ax^6+bx^3+c=0$ se pone $t=x^3$; se resuelve en $t$ y se deshace con $x=\\sqrt[3]{t}$ (la raíz cúbica existe también para números negativos). En ecuaciones con fracciones se multiplica antes por el denominador. Ejemplo: $x^6-9x^3+8=0$ da $t=1$ y $t=8$, luego $x=1$ y $x=2$.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "tipo": "problema",
+  "solucion": [
+   -1,
+   2
+  ],
+  "explicacion": "Con $t=x^3$: $t^2-7t-8=0$, con $t=8$ y $t=-1$. Entonces $x=\\sqrt[3]{8}=2$ y $x=\\sqrt[3]{-1}=-1$. Las dos valen, porque la raíz cúbica de un número negativo existe."
+ },
+ {
+  "id": "mat-s-0137",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones bicuadradas y polinómicas",
+  "concepto": "Factor común",
+  "dificultad": 3,
+  "enunciado": "Resuelve $x^5-2x^4-5x^3+6x^2=0$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Si la ecuación no tiene término independiente, o el polinomio tiene un factor repetido, se saca factor común: $x^k(\\dots)=0$. Cada factor igual a cero da soluciones, y el factor $x^k$ da $x=0$. Después se resuelve lo que queda. Ejemplo: $x^3-9x=0$ es $x(x^2-9)=0$, con $x=0$ y $x=\\pm3$.",
+  "fuente_pagina": 25,
+  "fuente_cara": 25,
+  "tipo": "problema",
+  "solucion": [
+   -2,
+   0,
+   1,
+   3
+  ],
+  "explicacion": "Factor común $x^2$: $x^2(x^3-2x^2-5x+6)=0$. Da $x=0$. En el cúbico, $x=1$ es raíz ($1-2-5+6=0$) y Ruffini da $x^2-x-6$, con raíces $3$ y $-2$. Las soluciones distintas son $-2$, $0$, $1$ y $3$."
+ },
+ {
+  "id": "mat-s-0178",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Problemas con ecuaciones de segundo grado y apartados",
+  "dificultad": 2,
+  "enunciado": "¿Cuántos conejos hay? Escribe solo el número.",
+  "ayuda_larga": "Si en el enunciado aparece un producto, un cuadrado o una velocidad y un tiempo, el planteamiento suele dar una ecuación de segundo grado o un sistema no lineal. Plantea las ecuaciones, reduce a una sola incógnita y resuelve; descarta soluciones negativas o absurdas. Con tiempo igual a espacio entre velocidad: 100 km a $v$ km/h tardan $100/v$ horas. En los problemas con apartados, usa los resultados correctos de un apartado en el siguiente.",
+  "fuente_pagina": 28,
+  "fuente_cara": 28,
+  "tipo": "problema",
+  "solucion": 15,
+  "explicacion": "Con $g$ gallinas y $c$ conejos: $g+c=40$ y $2g+4c=110$. De la primera, $g=40-c$; en la segunda, $80-2c+4c=110$, luego $2c=30$ y $c=15$.",
+  "grupo": "mat-s-g006",
+  "contexto": "En una granja hay gallinas y conejos. En total se cuentan 40 cabezas y 110 patas. Las gallinas tienen 2 patas y los conejos 4.",
+  "apartado": "a"
+ },
+ {
+  "id": "mat-s-0179",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Problemas con ecuaciones de segundo grado y apartados",
+  "dificultad": 3,
+  "enunciado": "Se venden todas las gallinas a 6 euros cada una y todos los conejos a 18 euros cada uno. ¿Cuántos euros se ingresan en total? Escribe solo el número.",
+  "ayuda_larga": "Si en el enunciado aparece un producto, un cuadrado o una velocidad y un tiempo, el planteamiento suele dar una ecuación de segundo grado o un sistema no lineal. Plantea las ecuaciones, reduce a una sola incógnita y resuelve; descarta soluciones negativas o absurdas. Con tiempo igual a espacio entre velocidad: 100 km a $v$ km/h tardan $100/v$ horas. En los problemas con apartados, usa los resultados correctos de un apartado en el siguiente.",
+  "fuente_pagina": 28,
+  "fuente_cara": 28,
+  "tipo": "problema",
+  "solucion": 420,
+  "explicacion": "Hay 25 gallinas y 15 conejos. Ingresos: $25\\cdot6+15\\cdot18=150+270=420$ euros.",
+  "grupo": "mat-s-g006",
+  "contexto": "En una granja hay gallinas y conejos. En total se cuentan 40 cabezas y 110 patas. Las gallinas tienen 2 patas y los conejos 4.",
+  "apartado": "b"
+ },
+ {
+  "id": "mat-s-0249",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Producto, potencias y problemas con matrices",
+  "dificultad": 2,
+  "enunciado": "Calcula $A\\cdot B$ y escribe sus elementos fila a fila separados por punto y coma.",
+  "ayuda_larga": "Para multiplicar $A\\cdot B$ el número de columnas de $A$ debe ser el de filas de $B$, y cada elemento es la fila de $A$ por la columna de $B$. Un problema de stock se resuelve multiplicando la matriz de cantidades por la matriz de lo que se necesita de cada pieza. Las potencias de una matriz suelen repetirse con un periodo: si $A^2=-I$, entonces $A^4=I$ y basta ver el resto del exponente entre 4. Ejemplo: si $A^2=I$, entonces $A^{101}=A$.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": [
+   4,
+   -2,
+   6,
+   0
+  ],
+  "explicacion": "Cada elemento es una fila de $A$ por una columna de $B$: $A\\cdot B=\\begin{pmatrix}4&-2\\\\6&0\\end{pmatrix}$.",
+  "ordenada": true,
+  "grupo": "mat-s-g009",
+  "contexto": "Sean $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ y $B=\\begin{pmatrix}1&-1\\\\2&0\\end{pmatrix}$.",
+  "apartado": "a"
+ },
+ {
+  "id": "mat-s-0250",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Producto, potencias y problemas con matrices",
+  "dificultad": 3,
+  "enunciado": "Calcula la traza de $B\\cdot A$ (suma de los elementos de la diagonal). Escribe solo el número.",
+  "ayuda_larga": "Para multiplicar $A\\cdot B$ el número de columnas de $A$ debe ser el de filas de $B$, y cada elemento es la fila de $A$ por la columna de $B$. Un problema de stock se resuelve multiplicando la matriz de cantidades por la matriz de lo que se necesita de cada pieza. Las potencias de una matriz suelen repetirse con un periodo: si $A^2=-I$, entonces $A^4=I$ y basta ver el resto del exponente entre 4. Ejemplo: si $A^2=I$, entonces $A^{101}=A$.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": 4,
+  "explicacion": "$B\\cdot A=\\begin{pmatrix}2&-2\\\\4&2\\end{pmatrix}$ y su traza es $2+2=4$.",
+  "grupo": "mat-s-g009",
+  "contexto": "Sean $A=\\begin{pmatrix}2&1\\\\0&3\\end{pmatrix}$ y $B=\\begin{pmatrix}1&-1\\\\2&0\\end{pmatrix}$.",
+  "apartado": "b"
+ },
+ {
+  "id": "mat-s-0180",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Problemas con ecuaciones de segundo grado y apartados",
+  "dificultad": 4,
+  "enunciado": "Calcula las dos dimensiones del terreno y escríbelas de menor a mayor: a; b (separadas por punto y coma).",
+  "ayuda_larga": "Si en el enunciado aparece un producto, un cuadrado o una velocidad y un tiempo, el planteamiento suele dar una ecuación de segundo grado o un sistema no lineal. Plantea las ecuaciones, reduce a una sola incógnita y resuelve; descarta soluciones negativas o absurdas. Con tiempo igual a espacio entre velocidad: 100 km a $v$ km/h tardan $100/v$ horas. En los problemas con apartados, usa los resultados correctos de un apartado en el siguiente.",
+  "fuente_pagina": 28,
+  "fuente_cara": 28,
+  "tipo": "problema",
+  "solucion": [
+   15,
+   20
+  ],
+  "explicacion": "Con $a+b=35$ y $a^2+b^2=625$: $(a+b)^2=1225$, luego $2ab=600$ y $ab=300$. Resolviendo $t^2-35t+300=0$ salen $t=15$ y $t=20$.",
+  "ordenada": true,
+  "grupo": "mat-s-g007",
+  "contexto": "Un terreno rectangular tiene 70 m de perímetro y su diagonal mide 25 m.",
+  "apartado": "a"
+ },
+ {
+  "id": "mat-s-0181",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Problemas con ecuaciones de segundo grado y apartados",
+  "dificultad": 5,
+  "enunciado": "Se traza la altura del triángulo rectángulo formado por dos lados y la diagonal, desde el vértice del ángulo recto hasta la diagonal. ¿Cuánto mide esa altura, en metros? Escribe solo el número.",
+  "ayuda_larga": "Si en el enunciado aparece un producto, un cuadrado o una velocidad y un tiempo, el planteamiento suele dar una ecuación de segundo grado o un sistema no lineal. Plantea las ecuaciones, reduce a una sola incógnita y resuelve; descarta soluciones negativas o absurdas. Con tiempo igual a espacio entre velocidad: 100 km a $v$ km/h tardan $100/v$ horas. En los problemas con apartados, usa los resultados correctos de un apartado en el siguiente.",
+  "fuente_pagina": 28,
+  "fuente_cara": 28,
+  "tipo": "problema",
+  "solucion": 12,
+  "explicacion": "El área del triángulo es $\\frac{15\\cdot20}{2}=150$ y también $\\frac{25\\cdot h}{2}$. Entonces $25h=300$ y $h=12$ m.",
+  "grupo": "mat-s-g007",
+  "contexto": "Un terreno rectangular tiene 70 m de perímetro y su diagonal mide 25 m.",
+  "apartado": "b"
+ },
+ {
+  "id": "eco-a2-0024",
+  "bloque": "Economía",
+  "tema": "T2 Sistemas",
+  "subtema": "Indicadores e impuestos",
+  "concepto": "Clasificar los impuestos",
+  "dificultad": 4,
+  "enunciado": "Una persona compra una vivienda de segunda mano. ¿Qué impuesto grava esa transmisión y cómo se clasifica?",
+  "ayuda_larga": "Los impuestos directos gravan directamente la renta o la riqueza: IRPF, Impuesto sobre Sociedades e Impuesto sobre el Patrimonio. Los indirectos gravan el consumo o determinadas operaciones: IVA, Impuestos Especiales e ITPAJD. Un truco: lo que grava lo que ganas o tienes es directo; lo que grava lo que compras o transmites es indirecto.",
+  "fuente_pagina": 10,
+  "fuente_cara": 10,
+  "opciones": [
+   {
+    "texto": "El IRPF, un impuesto directo",
+    "trampa": "confunde transmisión de bienes con renta"
+   },
+   {
+    "texto": "El Impuesto sobre el Patrimonio, un impuesto directo",
+    "trampa": "confunde transmisión de un bien con la riqueza que se posee"
+   },
+   {
+    "texto": "El ITPAJD, un impuesto indirecto"
+   },
+   {
+    "texto": "El Impuesto sobre Sociedades, un impuesto directo",
+    "trampa": "confunde operación entre personas con beneficios de empresas"
+   }
+  ],
+  "correcta": "c",
+  "explicacion": "El ITPAJD grava determinadas transmisiones de bienes y actos jurídicos, como comprar una vivienda de segunda mano, y es indirecto. Regla: transmitir un bien, ITPAJD."
+ },
+ {
+  "id": "eco-a1-0013",
+  "bloque": "Economía",
+  "tema": "T1 Decisiones",
+  "subtema": "Cómo decidimos",
+  "concepto": "Clasificar los incentivos",
+  "dificultad": 2,
+  "enunciado": "Una subvención, una bonificación y una multa son incentivos. ¿Cómo se clasifican?",
+  "ayuda_larga": "Un incentivo es un estímulo que cambia la conducta modificando los costes o los beneficios de las opciones. Puede ser una recompensa, como una bonificación o una subvención, o un castigo, como una multa. Todos funcionan porque hacen más atractiva o más cara una conducta.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "Las tres son castigos, porque modifican los costes",
+    "trampa": "cree que modificar costes es siempre castigar"
+   },
+   {
+    "texto": "La subvención y la multa son recompensas; la bonificación es un castigo",
+    "trampa": "mezcla recompensas y castigos"
+   },
+   {
+    "texto": "La bonificación y la multa son recompensas; la subvención es un castigo",
+    "trampa": "mezcla recompensas y castigos"
+   },
+   {
+    "texto": "La subvención y la bonificación son recompensas; la multa es un castigo"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Un incentivo es una recompensa o un castigo que cambia la conducta. Subvenciones y bonificaciones premian; las multas castigan. Regla: lo que premia es recompensa, lo que penaliza es castigo."
+ },
+ {
+  "id": "eco-a1-0014",
+  "bloque": "Economía",
+  "tema": "T1 Decisiones",
+  "subtema": "Flujo circular de la renta",
+  "concepto": "Distinguir flujo real y flujo monetario",
+  "dificultad": 2,
+  "enunciado": "Una empresa paga el salario a sus empleados. ¿Qué flujo representa y en qué sentido va?",
+  "ayuda_larga": "El flujo circular de la renta tiene dos circuitos: el flujo real y el flujo monetario. El real mueve factores de producción de las familias a las empresas y bienes y servicios de las empresas a las familias. El monetario mueve dinero en sentido contrario: pagos de las empresas por los factores y gasto de las familias.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "Flujo real, de la empresa a las familias, como entrega de trabajo",
+    "trampa": "confunde el pago con el factor que se aporta"
+   },
+   {
+    "texto": "Flujo monetario, de las familias a la empresa, como gasto en bienes",
+    "trampa": "confunde el pago de salarios con el gasto de las familias"
+   },
+   {
+    "texto": "Flujo real, de las familias a la empresa, como entrega de bienes",
+    "trampa": "confunde los bienes con el trabajo"
+   },
+   {
+    "texto": "Flujo monetario, de la empresa a las familias, como pago por el factor trabajo"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "El salario es dinero que pagan las empresas a las familias por el factor trabajo, es decir, flujo monetario. El trabajo que aportan los empleados es el flujo real en sentido contrario. Regla: el dinero sigue el sentido opuesto al de lo que paga."
+ },
+ {
+  "id": "eco-a2-0002",
+  "bloque": "Economía",
+  "tema": "T2 Sistemas",
+  "subtema": "Qué es y evolución histórica",
+  "concepto": "Etapas y cronología de los sistemas",
+  "dificultad": 1,
+  "enunciado": "¿Qué siglos abarca el mercantilismo, según el tema?",
+  "ayuda_larga": "Los sistemas económicos han cambiado a lo largo de la historia. El feudalismo se sitúa entre los siglos X y XV, el mercantilismo entre los siglos XVI y XVIII, la economía de mercado entre los siglos XIX y XXI y la economía planificada en el siglo XX. Cada etapa se reconoce por quién tiene el poder económico y qué papel tiene el Estado.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "opciones": [
+   {
+    "texto": "Del siglo XVI al siglo XVIII"
+   },
+   {
+    "texto": "Del siglo X al siglo XV",
+    "trampa": "confunde mercantilismo con feudalismo"
+   },
+   {
+    "texto": "Del siglo XIX al siglo XXI",
+    "trampa": "confunde mercantilismo con economía de mercado"
+   },
+   {
+    "texto": "El siglo XX",
+    "trampa": "confunde mercantilismo con economía planificada"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "El cuadro sitúa el mercantilismo entre los siglos XVI y XVIII, tras el feudalismo (X a XV). Regla: feudalismo, luego mercantilismo, después mercado."
+ },
+ {
+  "id": "eco-a2-0006",
+  "bloque": "Economía",
+  "tema": "T2 Sistemas",
+  "subtema": "La economía de mercado",
+  "concepto": "Decisiones de empresas y consumidores",
+  "dificultad": 1,
+  "enunciado": "¿Qué puede favorecer la competencia entre empresas, según el tema?",
+  "ayuda_larga": "En una economía de mercado las empresas producen bienes y servicios para satisfacer necesidades y obtener beneficios. Los consumidores deciden qué comprar según sus necesidades, preferencias y capacidad económica. La competencia entre empresas puede favorecer que ofrezcan mejores productos, precios o servicios.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "opciones": [
+   {
+    "texto": "Que el Estado fije los precios de todos los productos",
+    "trampa": "confunde competencia con control estatal de precios"
+   },
+   {
+    "texto": "Que ofrezcan mejores productos, precios o servicios"
+   },
+   {
+    "texto": "Que las empresas dejen de buscar beneficios",
+    "trampa": "confunde competencia con ausencia de ánimo de lucro"
+   },
+   {
+    "texto": "Que todas produzcan los mismos bienes en las mismas cantidades",
+    "trampa": "confunde competencia con uniformidad impuesta"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Para atraer a los consumidores, las empresas compiten ofreciendo mejores productos, precios o servicios. Regla: la competencia mueve a mejorar."
+ },
+ {
+  "id": "eco-a2-0004",
+  "bloque": "Economía",
+  "tema": "T2 Sistemas",
+  "subtema": "Qué es y evolución histórica",
+  "concepto": "Diversidad de modelos económicos",
+  "dificultad": 3,
+  "enunciado": "¿Por qué dice el tema que no existe una única forma de organizar una economía?",
+  "ayuda_larga": "A lo largo de la historia han existido distintos modelos, así que no hay una única forma de organizar una economía. En la actualidad predominan las economías mixtas, que combinan elementos del mercado con la intervención del Estado. El modelo cambia, no es único ni eterno.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "opciones": [
+   {
+    "texto": "Porque todas las economías actuales son de mercado sin intervención",
+    "trampa": "ignora la importancia de las economías mixtas"
+   },
+   {
+    "texto": "Porque cada país solo puede elegir entre mercado puro y planificación pura",
+    "trampa": "reduce las opciones a dos extremos"
+   },
+   {
+    "texto": "Porque feudalismo y mercantilismo siguen vigentes en la actualidad",
+    "trampa": "cree que las etapas antiguas siguen en uso"
+   },
+   {
+    "texto": "Porque a lo largo de la historia han existido distintos modelos y hoy predominan las economías mixtas"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Los sistemas han cambiado con la historia y hoy predominan los mixtos, que mezclan mercado e intervención del Estado. Regla: ni un modelo único ni solo dos extremos."
+ },
+ {
+  "id": "eco-a2-0019",
+  "bloque": "Economía",
+  "tema": "T2 Sistemas",
+  "subtema": "Indicadores e impuestos",
+  "concepto": "PIB y empleo",
+  "dificultad": 3,
+  "enunciado": "¿Qué incluye correctamente la definición de PIB?",
+  "ayuda_larga": "El PIB es el valor de todos los bienes y servicios finales producidos dentro de un país durante un período, normalmente un año. La tasa de paro es el porcentaje de personas desempleadas que buscan trabajo activamente respecto al conjunto de la población activa. Dos detalles importan: el PIB cuenta solo bienes finales y la tasa de paro se calcula sobre la población activa, no sobre toda la población.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "opciones": [
+   {
+    "texto": "El valor de los bienes y servicios finales producidos dentro de un país en un período, normalmente un año"
+   },
+   {
+    "texto": "El valor de los bienes intermedios y finales de todas las empresas del mundo",
+    "trampa": "confunde el ámbito del país y mezcla bienes intermedios"
+   },
+   {
+    "texto": "El dinero que circula dentro del país durante un año",
+    "trampa": "confunde producción con cantidad de dinero"
+   },
+   {
+    "texto": "El valor de los bienes finales producidos en un solo día",
+    "trampa": "ignora que el período habitual es un año"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "El PIB mide bienes y servicios finales producidos dentro de un país en un período, normalmente un año. Regla: final, dentro del país, en un período."
+ },
+ {
+  "id": "eco-a1-0016",
+  "bloque": "Economía",
+  "tema": "T1 Decisiones",
+  "subtema": "Flujo circular de la renta",
+  "concepto": "Retribución de los factores de producción",
+  "dificultad": 3,
+  "enunciado": "¿Cuál de las siguientes series une correctamente tierra, capital e iniciativa empresarial con su retribución?",
+  "ayuda_larga": "Cada factor de producción recibe una retribución. La tierra, o recursos naturales, recibe una renta o alquiler. El trabajo recibe un salario. El capital recibe un interés. La iniciativa empresarial, que organiza los demás factores y asume riesgos, recibe el beneficio.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "Salario, interés y beneficio",
+    "trampa": "asigna el salario a la tierra"
+   },
+   {
+    "texto": "Renta o alquiler, interés y beneficio"
+   },
+   {
+    "texto": "Interés, renta y salario",
+    "trampa": "cambia el orden de las retribuciones"
+   },
+   {
+    "texto": "Renta o alquiler, beneficio e interés",
+    "trampa": "intercambia el interés y el beneficio"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "La tierra se retribuye con renta o alquiler, el capital con interés y la iniciativa empresarial con beneficio. El salario es solo del trabajo. Regla: tierra-renta, trabajo-salario, capital-interés, empresa-beneficio."
+ },
+ {
+  "id": "eco-a3-0018",
+  "bloque": "Economía",
+  "tema": "T3 Mercado y entorno",
+  "subtema": "Los mercados y sus tipos",
+  "concepto": "Comparar los tipos de mercado",
+  "dificultad": 3,
+  "enunciado": "¿En qué se diferencian un oligopolio y una competencia monopolística?",
+  "ayuda_larga": "Los cuatro tipos se ordenan por grado de competencia. En competencia perfecta no hay barreras de entrada y el precio lo fija el mercado. En competencia monopolística hay muchos vendedores con productos diferenciados y barreras bajas. En oligopolio hay pocos vendedores, interdependencia y barreras altas. En monopolio hay un solo vendedor y barreras muy elevadas.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "opciones": [
+   {
+    "texto": "En el oligopolio hay muchos vendedores; en la monopolística, pocos",
+    "trampa": "invierte el número de vendedores"
+   },
+   {
+    "texto": "En el oligopolio el producto es idéntico; en la monopolística es único",
+    "trampa": "confunde la diferenciación del producto con homogeneidad"
+   },
+   {
+    "texto": "En el oligopolio no hay barreras de entrada; en la monopolística son altas",
+    "trampa": "invierte las barreras de entrada"
+   },
+   {
+    "texto": "En el oligopolio hay pocos vendedores con interdependencia; en la monopolística, muchos con productos diferenciados"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "En el oligopolio pocas empresas se vigilan entre sí (interdependencia) y las barreras son altas. En la monopolística hay muchas empresas que se diferencian por marca y publicidad. Regla: pocos y dependientes frente a muchos y diferenciados."
+ },
+ {
+  "id": "eco-a3-0003",
+  "bloque": "Economía",
+  "tema": "T3 Mercado y entorno",
+  "subtema": "El entorno y el análisis PESTEL",
+  "concepto": "Factores sociales y tecnológicos",
+  "dificultad": 2,
+  "enunciado": "Una empresa de cosmética detecta que cambian los valores y los estilos de vida de su público. ¿Qué factor del PESTEL refleja ese cambio?",
+  "ayuda_larga": "Los factores sociales incluyen los cambios demográficos, los valores, la cultura, los estilos de vida y la educación de la población. Los factores tecnológicos incluyen las innovaciones, el nivel de inversión en I+D y la velocidad del cambio tecnológico. Fíjate en la causa del cambio: si viene de la sociedad es social, si viene de la técnica es tecnológico.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "opciones": [
+   {
+    "texto": "Social"
+   },
+   {
+    "texto": "Económico",
+    "trampa": "confunde valores y estilos de vida con poder adquisitivo"
+   },
+   {
+    "texto": "Político",
+    "trampa": "confunde cambio social con acción del gobierno"
+   },
+   {
+    "texto": "Tecnológico",
+    "trampa": "confunde cambio de hábitos con innovación técnica"
+   }
+  ],
+  "correcta": "a",
+  "explicacion": "Los valores, la cultura y los estilos de vida de la población son factores sociales. Regla: gente, valores y costumbres, factor social."
+ },
+ {
+  "id": "eco-a3-0012",
+  "bloque": "Economía",
+  "tema": "T3 Mercado y entorno",
+  "subtema": "El microentorno y las 5 fuerzas",
+  "concepto": "Poder de los proveedores y sustitutivos",
+  "dificultad": 4,
+  "enunciado": "Los consumidores de un sector se acostumbran con facilidad a un producto alternativo de otro formato. ¿Qué fuerza de Porter aumenta?",
+  "ayuda_larga": "Los proveedores tienen mucho poder si hay muy pocos de un recurso clave, si su producto es único o sin sustitutos fáciles y si a la empresa le cuesta mucho dinero o tiempo cambiar de proveedor. La amenaza de productos sustitutivos es alta si ofrecen mejor precio o calidad y si el consumidor se acostumbra fácilmente al cambio.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "opciones": [
+   {
+    "texto": "El poder de negociación de los proveedores",
+    "trampa": "confunde sustitutos con proveedores"
+   },
+   {
+    "texto": "La amenaza de productos sustitutivos"
+   },
+   {
+    "texto": "La rivalidad entre competidores actuales",
+    "trampa": "confunde sustitutos con competidores directos"
+   },
+   {
+    "texto": "La amenaza de nuevos competidores",
+    "trampa": "confunde sustitutos con empresas nuevas del mismo producto"
+   }
+  ],
+  "correcta": "b",
+  "explicacion": "Que el consumidor se acostumbre fácilmente al cambio hacia otro producto que satisface la misma necesidad aumenta la amenaza de sustitutivos. Regla: otra forma de cubrir la misma necesidad, sustitutivo."
+ },
+ {
+  "id": "eco-a2-0007",
+  "bloque": "Economía",
+  "tema": "T2 Sistemas",
+  "subtema": "La economía de mercado",
+  "concepto": "La obra de Adam Smith",
+  "dificultad": 2,
+  "enunciado": "¿Cuál es la obra más conocida de Adam Smith y en qué año se publicó?",
+  "ayuda_larga": "Adam Smith (1723-1790) fue un economista y filósofo escocés, uno de los principales autores del pensamiento económico clásico. Su obra más conocida es La riqueza de las naciones, publicada en 1776. En ella defendía que, al buscar su propio interés, las personas pueden contribuir al bienestar de la sociedad.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "opciones": [
+   {
+    "texto": "El Capital, en 1776",
+    "trampa": "confunde la obra de Smith con la de Marx"
+   },
+   {
+    "texto": "La riqueza de las naciones, en 1723",
+    "trampa": "confunde el año de publicación con el de nacimiento"
+   },
+   {
+    "texto": "La riqueza de las naciones, en 1790",
+    "trampa": "confunde el año de publicación con el de la muerte"
+   },
+   {
+    "texto": "La riqueza de las naciones, en 1776"
+   }
+  ],
+  "correcta": "d",
+  "explicacion": "Smith publicó La riqueza de las naciones en 1776. El Capital es la obra de Marx. Los años 1723 y 1790 son su nacimiento y su muerte. Regla: Smith, 1776, La riqueza de las naciones."
+ }
+]

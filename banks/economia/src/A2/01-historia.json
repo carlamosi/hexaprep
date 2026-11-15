@@ -1,0 +1,98 @@
+{
+ "subtema": "Qué es y evolución histórica",
+ "conceptos": [
+  {
+   "nombre": "Etapas y cronología de los sistemas",
+   "pagina": 1,
+   "ayuda": "Los sistemas económicos han cambiado a lo largo de la historia. El feudalismo se sitúa entre los siglos X y XV, el mercantilismo entre los siglos XVI y XVIII, la economía de mercado entre los siglos XIX y XXI y la economía planificada en el siglo XX. Cada etapa se reconoce por quién tiene el poder económico y qué papel tiene el Estado.",
+   "test": [
+    [
+     2,
+     "Según el cuadro de la evolución histórica, ¿qué sistema se desarrolló en el siglo XX con los medios de producción en manos del Estado y planificación central?",
+     "La economía planificada",
+     [
+      "El mercantilismo",
+      "confunde el control estatal del comercio con la planificación central"
+     ],
+     [
+      "El feudalismo",
+      "confunde la tierra como recurso con la propiedad estatal"
+     ],
+     [
+      "La economía de mercado",
+      "confunde un sistema de decisiones libres con uno de decisiones centrales"
+     ],
+     "La economía planificada es la del siglo XX, con medios de producción del Estado y planificación central. El mercantilismo fue anterior (siglos XVI a XVIII). Regla: planificación central igual a siglo XX."
+    ],
+    [
+     1,
+     "¿Qué siglos abarca el mercantilismo, según el tema?",
+     "Del siglo XVI al siglo XVIII",
+     [
+      "Del siglo X al siglo XV",
+      "confunde mercantilismo con feudalismo"
+     ],
+     [
+      "Del siglo XIX al siglo XXI",
+      "confunde mercantilismo con economía de mercado"
+     ],
+     [
+      "El siglo XX",
+      "confunde mercantilismo con economía planificada"
+     ],
+     "El cuadro sitúa el mercantilismo entre los siglos XVI y XVIII, tras el feudalismo (X a XV). Regla: feudalismo, luego mercantilismo, después mercado."
+    ]
+   ]
+  },
+  {
+   "nombre": "Intervención del Estado a lo largo de la historia",
+   "pagina": 2,
+   "ayuda": "El papel del Estado cambia según el sistema. En el mercantilismo la intervención es elevada, porque regula el comercio y protege la producción nacional con aranceles. En la economía planificada es muy elevada, porque decide qué, cómo y para quién producir. En la economía de mercado es limitada: establece las reglas y puede corregir problemas.",
+   "test": [
+    [
+     4,
+     "Compara el papel del Estado en el mercantilismo, la economía planificada y la economía de mercado. ¿Qué serie de intensidad de intervención es correcta?",
+     "Elevada, muy elevada y limitada",
+     [
+      "Muy elevada, elevada y nula",
+      "cree que en el mercado el Estado no interviene nada"
+     ],
+     [
+      "Limitada, muy elevada y elevada",
+      "invierte mercantilismo y mercado"
+     ],
+     [
+      "Elevada, limitada y muy elevada",
+      "invierte planificada y mercado"
+     ],
+     "El Estado mercantilista regula el comercio (elevada), el planificador decide todo (muy elevada) y en el mercado pone las reglas y corrige (limitada, no nula). Regla: planificada es el máximo, mercado es el mínimo pero no cero."
+    ]
+   ]
+  },
+  {
+   "nombre": "Diversidad de modelos económicos",
+   "pagina": 2,
+   "ayuda": "A lo largo de la historia han existido distintos modelos, así que no hay una única forma de organizar una economía. En la actualidad predominan las economías mixtas, que combinan elementos del mercado con la intervención del Estado. El modelo cambia, no es único ni eterno.",
+   "test": [
+    [
+     3,
+     "¿Por qué dice el tema que no existe una única forma de organizar una economía?",
+     "Porque han existido distintos modelos y hoy predominan los mixtos",
+     [
+      "Porque todas las economías actuales son de mercado sin intervención",
+      "ignora la importancia de las economías mixtas"
+     ],
+     [
+      "Porque cada país solo puede elegir entre mercado puro y planificación pura",
+      "reduce las opciones a dos extremos"
+     ],
+     [
+      "Porque feudalismo y mercantilismo siguen vigentes en la actualidad",
+      "cree que las etapas antiguas siguen en uso"
+     ],
+     "Los sistemas han cambiado con la historia y hoy predominan los mixtos, que mezclan mercado e intervención del Estado. Regla: ni un modelo único ni solo dos extremos."
+    ]
+   ]
+  }
+ ]
+}

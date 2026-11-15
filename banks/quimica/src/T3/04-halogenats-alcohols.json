@@ -1,0 +1,275 @@
+{
+ "subtema": "Derivats halogenats i alcohols",
+ "conceptos": [
+  {
+   "nombre": "Derivats halogenats",
+   "pagina": 17,
+   "cara": 17,
+   "ayuda": "En un derivat halogenat, l'halogen es tracta com un radical: fluoro-, cloro-, bromo- i iodo-. Es tria la cadena principal, es numera perquè els radicals tinguin els localitzadors més baixos i s'ordenen alfabèticament amb els altres radicals. En un cicle amb un sol halogen no cal localitzador: bromociclobutà. Exemple: CH₃-CHCl-CH₂-CH₃ és el 2-clorobutà.",
+   "test": [
+    [
+     1,
+     "Quins prefixos s'utilitzen per anomenar els halògens com a radicals?",
+     "Fluoro-, cloro-, bromo- i iodo-",
+     [
+      "Fluor-, clor-, brom- i iod-",
+      "trampa: oblidar la -o final del prefix"
+     ],
+     [
+      "Fluoril-, cloril-, bromil- i iodil-",
+      "trampa: usar la terminació -il dels radicals alquil"
+     ],
+     [
+      "Fluoroxi-, cloroxi-, bromoxi- i iodoxi-",
+      "trampa: confondre els halògens amb els grups -oxi"
+     ],
+     "Els halògens s'anomenen amb els prefixos fluoro-, cloro-, bromo- i iodo-, sempre amb la -o final. Regla: halogen = prefix en -o."
+    ],
+    [
+     2,
+     "Quin és el nom de CH₃-CHCl-CH₂-CH₃?",
+     "2-clorobutà",
+     [
+      "3-clorobutà",
+      "trampa: numerar per l'extrem que dona el localitzador més alt"
+     ],
+     [
+      "2-cloropropà",
+      "trampa: comptar un carboni de menys a la cadena"
+     ],
+     [
+      "1-clorobutà",
+      "trampa: posar el clor a l'extrem de la cadena"
+     ],
+     "La cadena té 4 carbonis i el clor penja del segon. Numerant per l'extrem més proper queda el localitzador 2, i el nom és 2-clorobutà."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₂Br-CH₂-CH₂-CHI-CH₃?",
+     "1-bromo-4-iodopentà",
+     [
+      "4-bromo-1-iodopentà",
+      "trampa: intercanviar els halògens"
+     ],
+     [
+      "2-iodo-5-bromopentà",
+      "trampa: numerar per l'altre extrem i no ordenar alfabèticament"
+     ],
+     [
+      "1-bromo-4-iodobutà",
+      "trampa: comptar un carboni de menys"
+     ],
+     "La cadena és de 5 carbonis. Numerant des de l'extrem del brom els radicals queden al 1 i al 4, que són més baixos que el 2 i el 5. S'escriuen per ordre alfabètic: bromo abans que iodo."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-CF(CH₃)-CH₃?",
+     "2-fluoro-2-metilpropà",
+     [
+      "2-metil-2-fluoropropà",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     [
+      "2-fluorobutà",
+      "trampa: comptar una cadena de 4 carbonis que no existeix"
+     ],
+     [
+      "1-fluoro-2-metilpropà",
+      "trampa: col·locar el fluor a l'extrem"
+     ],
+     "La cadena més llarga és de 3 carbonis i del carboni central pengen el fluor i un metil. S'escriuen per ordre alfabètic: fluoro abans que metil."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₂=CH-CHBr-CH₃?",
+     "3-bromo-1-butè",
+     [
+      "2-bromo-3-butè",
+      "trampa: numerar pel halogen i no pel doble enllaç"
+     ],
+     [
+      "3-bromobutà",
+      "trampa: oblidar el doble enllaç"
+     ],
+     [
+      "4-bromo-1-butè",
+      "trampa: col·locar el brom al carboni equivocat"
+     ],
+     "El doble enllaç té prioritat en la numeració, per tant s'inicia pel carboni 1 del CH₂=. El brom queda al carboni 3: 3-bromo-1-butè."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "En un cicle amb un sol halogen, com el bromociclobutà, no cal indicar el localitzador del brom.",
+     true,
+     "El carboni on penja l'únic halogen és sempre el 1, i per això no s'escriu.",
+     "trampa: creure que sempre cal posar el localitzador 1"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Alcohols: cadena i numeració",
+   "pagina": 18,
+   "cara": 18,
+   "ayuda": "Els alcohols tenen el grup hidroxil -OH (R-OH). La cadena principal és la més llarga que conté el carboni unit al grup -OH, encara que n'hi hagi una altra de més llarga. Es numera perquè el carboni de l'-OH tingui el número més baix possible, encara que hi hagi dobles enllaços o més radicals. Exemple: en CH₃-CH₂-CH₂-CH₂-OH es numera des del CH₂OH, que és el carboni 1.",
+   "test": [
+    [
+     1,
+     "Quin és el grup funcional dels alcohols?",
+     "-OH (hidroxil)",
+     [
+      "-CHO (aldehid)",
+      "trampa: confondre l'alcohol amb l'aldehid"
+     ],
+     [
+      "-COOH (carboxil)",
+      "trampa: confondre l'alcohol amb l'àcid"
+     ],
+     [
+      "-O- (oxigen entre dos carbonis)",
+      "trampa: confondre l'alcohol amb l'èter"
+     ],
+     "Els alcohols tenen el grup hidroxil, -OH, unit a un carboni. Quan l'oxigen va entre dos carbonis és un èter."
+    ],
+    [
+     2,
+     "Quin és el nom de CH₃-CH(OH)-CH₂-CH₃?",
+     "2-butanol",
+     [
+      "3-butanol",
+      "trampa: numerar per l'extrem que dona el localitzador més alt"
+     ],
+     [
+      "2-butanal",
+      "trampa: confondre el sufix -ol amb el d'aldehid"
+     ],
+     [
+      "2-propanol",
+      "trampa: comptar un carboni de menys"
+     ],
+     "La cadena és de 4 carbonis i l'OH penja del segon començant per l'esquerra, que és el número més baix. El nom és 2-butanol."
+    ],
+    [
+     3,
+     "Quin és el nom de CH₂=CH-CH₂-OH?",
+     "2-propen-1-ol",
+     [
+      "1-propen-3-ol",
+      "trampa: numerar pel doble enllaç i no pel grup OH"
+     ],
+     [
+      "1-propanol",
+      "trampa: oblidar el doble enllaç"
+     ],
+     [
+      "2-propenal",
+      "trampa: confondre l'alcohol amb l'aldehid"
+     ],
+     "L'alcohol és el grup preferent, així que el carboni de l'OH és l'1 i el doble enllaç queda al 2. El nom cita primer el doble enllaç i després l'-ol: 2-propen-1-ol."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "En un alcohol amb un doble enllaç, es numera perquè el doble enllaç tingui el localitzador més baix.",
+     false,
+     "En un alcohol, el localitzador més baix és per al carboni del grup -OH, encara que hi hagi dobles o triples enllaços.",
+     "trampa: aplicar la regla dels alquens, on el doble enllaç mana"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Nom dels alcohols",
+   "pagina": 19,
+   "cara": 19,
+   "ayuda": "El nom d'un alcohol s'escriu amb els radicals per ordre alfabètic, després els dobles o triples enllaços i finalment la posició de l'hidroxil amb el nom de l'hidrocarbur acabat en -ol. Si hi ha més d'un -OH s'usen els prefixos di-, tri-... L'etanol no porta localitzador perquè l'OH sempre és a la posició 1. Exemple: 2-metil-1-butanol.",
+   "test": [
+    [
+     2,
+     "Com s'anomena CH₃-CH₂-OH?",
+     "Etanol",
+     [
+      "1-etanol",
+      "trampa: afegir un localitzador que no cal"
+     ],
+     [
+      "Etanal",
+      "trampa: confondre l'alcohol amb l'aldehid"
+     ],
+     [
+      "Metanol",
+      "trampa: comptar un carboni de menys"
+     ],
+     "Té 2 carbonis i un -OH, per tant és l'etanol. El localitzador no cal perquè l'OH sempre estaria al carboni 1."
+    ],
+    [
+     4,
+     "Quin és el nom de HO-CH₂-CH₂-CH(OH)-CH₃?",
+     "1,3-butandiol",
+     [
+      "2,4-butandiol",
+      "trampa: numerar per l'extrem que dona localitzadors més alts"
+     ],
+     [
+      "1,3-butanol",
+      "trampa: oblidar el prefix di- amb dos grups OH"
+     ],
+     [
+      "1,3-butandial",
+      "trampa: confondre el sufix -ol amb el d'aldehid"
+     ],
+     "Hi ha dos grups OH en una cadena de 4 carbonis. Numerant des de l'esquerra queden al 1 i al 3 (des de l'altre costat serien 2 i 4). Dos OH porten di-: 1,3-butandiol."
+    ],
+    [
+     5,
+     "Quin és el nom de CH₃-CH(OH)-CH(Br)-CH₃?",
+     "3-bromo-2-butanol",
+     [
+      "2-bromo-3-butanol",
+      "trampa: numerar pel radical i no pel grup OH"
+     ],
+     [
+      "2-bromo-3-hidroxibutà",
+      "trampa: indicar l'OH com a prefix en lloc de sufix"
+     ],
+     [
+      "3-bromo-1-butanol",
+      "trampa: col·locar l'OH a l'extrem de la cadena"
+     ],
+     "L'OH és la funció principal i ha de tenir el número més baix: queda al 2 i el brom al 3. El nom és 3-bromo-2-butanol."
+    ],
+    [
+     5,
+     "Quin és el nom de CH₃-CH(CH₃)-CH₂-CH₂-OH?",
+     "3-metil-1-butanol",
+     [
+      "2-metil-4-butanol",
+      "trampa: numerar pel radical i no pel grup OH"
+     ],
+     [
+      "3-metilbutanol",
+      "trampa: oblidar el localitzador de l'OH"
+     ],
+     [
+      "2-metil-1-butanol",
+      "trampa: col·locar el metil al carboni equivocat"
+     ],
+     "La cadena és de 4 carbonis, l'OH va al carboni 1 i el metil penja del carboni 3. Regla: primer numera perquè l'OH tingui el número més baix."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "L'alcohol derivat del benzè s'anomena benzaldehid.",
+     false,
+     "L'alcohol derivat del benzè és el fenol. El benzaldehid és l'aldehid derivat del benzè.",
+     "trampa: confondre el sufix -ol amb el d'aldehid"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}

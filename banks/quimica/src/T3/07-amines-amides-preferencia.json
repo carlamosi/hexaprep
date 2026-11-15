@@ -1,0 +1,285 @@
+{
+ "subtema": "Amines, amides, nitrils i ordre de preferència",
+ "conceptos": [
+  {
+   "nombre": "Amines",
+   "pagina": 27,
+   "cara": 27,
+   "ayuda": "Les amines deriven de l'amoníac, NH₃, en substituir hidrògens per radicals. Són primàries (1 radical), secundàries (2) o terciàries (3). S'anomenen citant els radicals units al nitrogen per ordre alfabètic seguits del sufix -amina, amb di- o tri- si es repeteixen. Exemple: CH₃-NH-CH₂-CH₃ és l'etilmetilamina; l'amina del benzè és la fenilamina (anilina).",
+   "test": [
+    [
+     1,
+     "De quina molècula deriven les amines?",
+     "De l'amoníac, NH₃",
+     [
+      "De l'aigua, H₂O",
+      "trampa: confondre les amines amb els alcohols"
+     ],
+     [
+      "Del metà, CH₄",
+      "trampa: confondre les amines amb els hidrocarburs"
+     ],
+     [
+      "De l'àcid carboxílic, R-COOH",
+      "trampa: confondre les amines amb les amides"
+     ],
+     "Una amina és un amoníac en què un, dos o tres hidrògens han estat substituïts per radicals. Regla: amina = NH₃ amb radicals."
+    ],
+    [
+     2,
+     "Com es classifica l'amina CH₃-N(CH₃)-CH₂-CH₃?",
+     "Terciària",
+     [
+      "Primària",
+      "trampa: oblidar els radicals metil"
+     ],
+     [
+      "Secundària",
+      "trampa: comptar només dos radicals diferents"
+     ],
+     [
+      "Amida",
+      "trampa: confondre l'amina amb l'amida"
+     ],
+     "El nitrogen porta tres radicals: dos metils i un etil. Amb tres radicals és una amina terciària."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-NH-CH₂-CH₃?",
+     "Etilmetilamina",
+     [
+      "Metiletilamina",
+      "trampa: no ordenar els radicals alfabèticament"
+     ],
+     [
+      "Dimetilamina",
+      "trampa: comptar dos radicals iguals"
+     ],
+     [
+      "Etilamina",
+      "trampa: oblidar el metil"
+     ],
+     "Els radicals units al nitrogen són etil i metil. S'ordenen alfabèticament i s'afegeix el sufix -amina: etilmetilamina."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-N(CH₃)-CH₂-CH₃?",
+     "Etildimetilamina",
+     [
+      "Dimetiletilamina",
+      "trampa: ordenar pel prefix di- i no pel nom del radical"
+     ],
+     [
+      "Trimetilamina",
+      "trampa: creure que tots els radicals són metil"
+     ],
+     [
+      "Etilmetilamina",
+      "trampa: oblidar un dels dos metils"
+     ],
+     "Hi ha un etil i dos metils. L'etil va primer per ordre alfabètic i els dos metils porten di-: etildimetilamina."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "Una amina terciària té el nitrogen unit a tres radicals.",
+     true,
+     "Les amines es classifiquen pel nombre de radicals units al nitrogen: 1 primària, 2 secundària i 3 terciària.",
+     "trampa: creure que només n'hi ha dos de radicals"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Amides",
+   "pagina": 28,
+   "cara": 28,
+   "ayuda": "Una amida resulta de substituir el grup -OH d'un àcid pel grup -NH₂. S'anomenen canviant la terminació -oic de l'àcid per -amida, sense la paraula àcid. Si el nitrogen té radicals s'indiquen amb N- davant, per ordre alfabètic i amb di- si es repeteixen. Exemple: CH₃-CO-NH₂ és l'etanamida i CH₃-CO-NH-CH₃ és la N-metiletanamida. L'amida del benzè és la benzamida.",
+   "test": [
+    [
+     2,
+     "Quin canvi converteix un àcid carboxílic en una amida?",
+     "Substituir el grup -OH pel grup -NH₂",
+     [
+      "Substituir l'hidrogen del -COOH per un radical",
+      "trampa: confondre l'amida amb l'èster"
+     ],
+     [
+      "Substituir el grup -COOH per -CHO",
+      "trampa: confondre l'amida amb l'aldehid"
+     ],
+     [
+      "Afegir un radical al nitrogen de l'amoníac",
+      "trampa: confondre l'amida amb l'amina"
+     ],
+     "L'amida es forma quan el -OH de l'àcid es canvia per -NH₂, i per això es diu -amida. Si es canvia l'hidrogen es forma un èster."
+    ],
+    [
+     2,
+     "Quin és el nom de CH₃-CO-NH₂?",
+     "Etanamida",
+     [
+      "Etanamina",
+      "trampa: confondre el sufix -amida amb -amina"
+     ],
+     [
+      "Àcid etanamida",
+      "trampa: mantenir la paraula àcid"
+     ],
+     [
+      "Metanamida",
+      "trampa: no comptar el carboni del grup carbonil"
+     ],
+     "Deriva de l'àcid etanoic, de 2 carbonis, i -oic es canvia per -amida sense la paraula àcid. Resultat: etanamida."
+    ],
+    [
+     4,
+     "Quin és el nom de CH₃-CO-NH-CH₃?",
+     "N-metiletanamida",
+     [
+      "Metiletanamida",
+      "trampa: oblidar la N- del radical del nitrogen"
+     ],
+     [
+      "N-etilmetanamida",
+      "trampa: intercanviar la cadena de l'àcid i el radical del nitrogen"
+     ],
+     [
+      "N-metilpropanamida",
+      "trampa: comptar el radical del nitrogen dins la cadena"
+     ],
+     "L'amida deriva de l'etanoic (2 carbonis) i el nitrogen porta un metil, que s'indica amb N- davant: N-metiletanamida."
+    ],
+    [
+     5,
+     "Quina és la fórmula de la N,N,3-trimetilbutanamida?",
+     "CH₃-CH(CH₃)-CH₂-CO-N(CH₃)₂",
+     [
+      "CH₃-CH(CH₃)-CH₂-CO-NH-CH₃",
+      "trampa: posar només un metil al nitrogen"
+     ],
+     [
+      "CH₃-CH₂-CH(CH₃)-CO-N(CH₃)₂",
+      "trampa: posar el metil de la cadena al carboni 2"
+     ],
+     [
+      "CH₃-CH(CH₃)-CH₂-CH₂-N(CH₃)₂",
+      "trampa: confondre l'amida amb una amina"
+     ],
+     "Butanamida és una cadena de 4 carbonis amb el -CO-NH₂ al carboni 1. Els dos N indiquen dos metils al nitrogen i el 3 un metil al carboni 3 de la cadena."
+    ]
+   ],
+   "vf": [
+    [
+     2,
+     "Les amides s'anomenen amb la paraula àcid davant, com els àcids carboxílics.",
+     false,
+     "Les amides s'anomenen canviant -oic per -amida, sense la paraula àcid. Només els àcids la porten.",
+     "trampa: copiar el format dels àcids en les amides"
+    ]
+   ],
+   "problemas": []
+  },
+  {
+   "nombre": "Nitrils",
+   "pagina": 29,
+   "cara": 29,
+   "ayuda": "Els nitrils tenen el grup ciano -C≡N (R-CN), amb un nitrogen unit al carboni per un triple enllaç. En casos senzills s'usa la nomenclatura funcional: la paraula cianur, la partícula «de» i el nom del radical unit al grup. Exemple: CH₃-CH₂-C≡N és el cianur d'etil. Recorda que el carboni del -CN no forma part del radical.",
+   "test": [
+    [
+     3,
+     "Com s'anomena CH₃-CH₂-C≡N en nomenclatura funcional?",
+     "Cianur d'etil",
+     [
+      "Cianur de propil",
+      "trampa: comptar el carboni del grup CN dins del radical"
+     ],
+     [
+      "Cianur de metil",
+      "trampa: oblidar un carboni del radical"
+     ],
+     [
+      "Etanoat d'etil",
+      "trampa: confondre el nitril amb l'èster"
+     ],
+     "El grup -C≡N s'anomena cianur i el radical unit és CH₃-CH₂-, l'etil. Per tant és el cianur d'etil. El carboni del -CN no compta en el radical."
+    ]
+   ],
+   "vf": [],
+   "problemas": []
+  },
+  {
+   "nombre": "Ordre de preferència dels grups",
+   "pagina": 3,
+   "cara": 3,
+   "ayuda": "Quan hi ha més d'un grup funcional, la cadena principal és la que conté la funció preferent i les altres s'anomenen com a substituents amb prefix. L'ordre és: àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina, èter, doble enllaç, triple enllaç i enllaç senzill. Prefixos com a substituent: carboxi-, oxicarbonil-, carbamoïl-, ciano-, formil-, oxo-, hidroxi-, amino-. Exemple: en OHC-CH₂-CH₂-OH l'aldehid mana i l'alcohol és hidroxi-: 3-hidroxipropanal.",
+   "test": [
+    [
+     2,
+     "Quin prefix s'utilitza per al grup -OH quan no és la funció principal?",
+     "Hidroxi-",
+     [
+      "Oxo-",
+      "trampa: confondre amb el prefix de la cetona"
+     ],
+     [
+      "Amino-",
+      "trampa: confondre amb el prefix del grup -NH₂"
+     ],
+     [
+      "Formil-",
+      "trampa: confondre amb el prefix de l'aldehid"
+     ],
+     "Quan una altra funció té preferència, l'alcohol s'indica amb el prefix hidroxi-. Oxo- és per al carbonil, amino- per a l'amina i formil- per a l'aldehid."
+    ],
+    [
+     3,
+     "Quina d'aquestes seqüències ordena els grups de més a menys preferència?",
+     "Àcid carboxílic, aldehid, alcohol, amina",
+     [
+      "Àcid carboxílic, cetona, aldehid, alcohol",
+      "trampa: intercanviar l'aldehid i la cetona"
+     ],
+     [
+      "Alcohol, cetona, aldehid, àcid carboxílic",
+      "trampa: invertir tot l'ordre"
+     ],
+     [
+      "Amina, alcohol, cetona, aldehid",
+      "trampa: invertir tot l'ordre i barrejar"
+     ],
+     "L'ordre és àcid carboxílic, èster, amida, nitril, aldehid, cetona, alcohol, amina. L'aldehid va abans que la cetona i que l'alcohol, i l'amina va després."
+    ],
+    [
+     5,
+     "Quin és el nom de HO-CH₂-CH₂-CHO?",
+     "3-hidroxipropanal",
+     [
+      "3-oxo-1-propanol",
+      "trampa: triar l'alcohol com a funció principal"
+     ],
+     [
+      "3-propanolal",
+      "trampa: posar dos sufixos"
+     ],
+     [
+      "1,3-propandiol",
+      "trampa: tractar l'aldehid com a alcohol"
+     ],
+     "L'aldehid té preferència sobre l'alcohol, per tant la cadena es numera des del -CHO i l'-OH s'indica amb el prefix hidroxi- al carboni 3. El nom és 3-hidroxipropanal."
+    ]
+   ],
+   "vf": [
+    [
+     3,
+     "En l'ordre de preferència, l'àcid carboxílic va abans que l'èster i que l'amida.",
+     true,
+     "L'ordre comença amb l'àcid carboxílic, seguit de l'èster i de l'amida.",
+     "trampa: pensar que una funció més simple va abans"
+    ]
+   ],
+   "problemas": []
+  }
+ ]
+}
