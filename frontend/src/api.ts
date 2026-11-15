@@ -104,6 +104,7 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
   const res = await fetch(path, init);
   const data = await res.json().catch(() => null);
   if (!res.ok) {
+    if (res.status === 401 && !path.startsWith("/api/auth/")) window.location.reload(); // la sesión caducó: vuelve a la entrada
     const detail = data && typeof data.detail === "string" ? data.detail : `Error ${res.status}`;
     throw new ApiError(res.status, detail);
   }
@@ -111,6 +112,10 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
 }
 
 export const api = {
+  getAuthConfig: () => request<{ google_client_id: string | null }>("/api/auth/config"),
+  authMe: () => request<{ email: string }>("/api/auth/me"),
+  authGoogle: (credential: string) => request<{ email: string; nombre: string }>("/api/auth/google", "POST", { credential }),
+  authLogout: () => request<{ ok: boolean }>("/api/auth/logout", "POST", {}),
   getSubjects: () => request<Subject[]>("/api/subjects"),
   getMap: (asignaturaId: string) => request<MapResponse>(`/api/map/${asignaturaId}`),
   createSession: (modo: Modo, filtro: Filtro) =>

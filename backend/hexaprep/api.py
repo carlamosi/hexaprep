@@ -10,13 +10,13 @@ from datetime import UTC, date, datetime
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from . import analytics, backup, events, export, mastery, quality, scheduling, selector
+from . import analytics, auth, backup, events, export, mastery, perfiles, quality, scheduling, selector
 from .bank import RUTA_IMAGEN, load_bank, validate_bank
 from .db import check_integrity, database_url, get_engine, get_engine_online, upgrade
 from .importer import import_bank
@@ -44,6 +44,10 @@ class AnswerIn(BaseModel):
     respuestas: list[str] | None = None  # solo escritas, una por campo
 
 
+class GoogleIn(BaseModel):
+    credential: str
+
+
 class CorrectIn(BaseModel):
     sesion_id: str
     pregunta_id: str
@@ -67,7 +71,11 @@ class WeakIn(BaseModel):
 
 
 def get_session(request: Request):
-    with Session(request.app.state.engine) as s:
+    engine = request.app.state.engine
+    esquema = getattr(request.state, "esquema", None)
+    if esquema and engine.dialect.name == "postgresql":  # cada persona trabaja en su propio esquema
+        engine = perfiles.engine_de(engine, esquema)
+    with Session(engine) as s:
         yield s
 
 
@@ -77,6 +85,9 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     data_dir = Path(data_dir or (Path(tempfile.gettempdir()) / "hexaprep" if online_url else ROOT / "data"))
     db_path = Path(db_path or data_dir / "hexaprep.db")
     password = os.environ.get("HEXAPREP_PASSWORD")
+    client_id, secreto = os.environ.get("GOOGLE_CLIENT_ID"), os.environ.get("SESSION_SECRET")
+    if client_id and not secreto:
+        raise RuntimeError("Con GOOGLE_CLIENT_ID hace falta SESSION_SECRET (una cadena larga al azar)")
     booklet_dir = Path(booklet_dir or ROOT / "banks")  # rglob: cada asignatura guarda sus PDF en banks/<asignatura>/fuentes
     static_dir = Path(static_dir or ROOT / "frontend" / "dist")
 
@@ -95,7 +106,53 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
 
     app = FastAPI(title="HexaPrep", lifespan=lifespan)
 
-    if password:  # acceso por contraseña (HTTP Basic: el navegador la pide solo; el usuario da igual)
+    def permitidos() -> str:
+        return os.environ.get("HEXAPREP_EMAILS_PERMITIDOS", "")
+
+    if client_id:  # acceso con Google: solo los emails de la lista, cada uno con su perfil
+        @app.middleware("http")
+        async def sesion(request: Request, call_next):
+            ruta = request.url.path
+            if ruta.startswith("/api/") and not ruta.startswith("/api/auth/"):
+                datos = auth.leer(secreto, request.cookies.get(auth.COOKIE))
+                if not datos or not auth.permitido(datos["e"], permitidos()):
+                    return JSONResponse({"detail": "Inicia sesión con Google"}, status_code=401)
+                request.state.esquema = datos["s"]
+            return await call_next(request)
+
+    @app.get("/api/auth/config")
+    def auth_config():
+        return {"google_client_id": client_id}
+
+    @app.get("/api/auth/me")
+    def auth_me(request: Request):
+        datos = auth.leer(secreto, request.cookies.get(auth.COOKIE)) if client_id else None
+        if not datos or not auth.permitido(datos["e"], permitidos()):
+            raise HTTPException(401, "Inicia sesión con Google")
+        return {"email": datos["e"]}
+
+    @app.post("/api/auth/google")
+    def auth_google(body: GoogleIn, request: Request, response: Response):
+        if not client_id:
+            raise HTTPException(404, "El acceso con Google no está activado")
+        try:
+            c = auth.verificar_google(body.credential, client_id)
+        except auth.AuthError as e:
+            raise HTTPException(401, str(e))
+        if not auth.permitido(c["email"], permitidos()):
+            raise HTTPException(403, "Este email no tiene acceso")
+        engine = request.app.state.engine
+        esquema = perfiles.asegurar_perfil(engine, c["email"]) if engine.dialect.name == "postgresql" else "local"
+        response.set_cookie(auth.COOKIE, auth.firmar(secreto, c["email"].lower(), esquema), max_age=auth.DURACION,
+                            httponly=True, secure=online_url is not None, samesite="lax", path="/")
+        return {"email": c["email"].lower(), "nombre": c.get("name", "")}
+
+    @app.post("/api/auth/logout")
+    def auth_logout(response: Response):
+        response.delete_cookie(auth.COOKIE, path="/")
+        return {"ok": True}
+
+    if password and not client_id:  # acceso por contraseña (HTTP Basic: el navegador la pide solo; el usuario da igual)
         esperada = password.encode()
 
         @app.middleware("http")
