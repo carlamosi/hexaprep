@@ -22,6 +22,12 @@ App web local para Carla Monté Sihuro con 4 asignaturas, 1280 preguntas y segui
 - **Pantallas:** selector de asignatura con tarjetas y teclado (sin recargar), panel de asignatura en pantalla completa al pulsar el hexágono grande, historial de analista (`/api/analytics`, `backend/hexaprep/analytics.py`, UI en `frontend/src/components/historial/`).
 - **Orden del temario:** el importador guarda el orden de aparición de temas y subtemas (antes alfabético; al reimportar se reordenan los bancos antiguos).
 
+## Versión online (Vercel + Neon, 2026-11-15)
+- Repo público `github.com/carlamosi/hexaprep`; cada push a `main` se despliega solo en el proyecto Vercel `hexaprep` (cuenta `carlas-projects-33023431`). URL de producción: https://hexaprep-ashy.vercel.app (la protege *Vercel Authentication* mientras no se desactive en Settings > Deployment Protection).
+- `vercel.json` (servicios `frontend/` y `backend/`, entrada `backend/main.py`). El backend usa Postgres si existe `DATABASE_URL` o `POSTGRES_URL` (Neon, recurso `hexaprep-db`, variables ya conectadas al proyecto); sin ellas sigue en SQLite local. `HEXAPREP_PASSWORD` (variable de entorno del proyecto) activa el acceso por contraseña (HTTP Basic, usuario libre).
+- Migrar el progreso local a Neon (solo copia a un destino vacío): `DATABASE_URL=<url directa> python tools/migrar_a_postgres.py`. Hecho el 2026-11-15 (19 tablas, 10340 filas, verificado). Desde entonces el progreso online y el local divergen: se usa uno u otro.
+- Online no funcionan las copias de seguridad de archivo (las hace Neon), ni «Abrir el booklet» (los PDF no están en git). Los bancos nuevos se importan con `tools/import_bank.py` apuntando `DATABASE_URL` a Neon.
+
 ## Cómo se arranca y se prueba
 - Todo en un comando: `powershell -ExecutionPolicy Bypass -File .\run.ps1` (importa todos los bancos con `tools\import_bank.py --all` y abre el navegador; solo comprobada su sintaxis, no de punta a punta).
 - A mano: `.venv\Scripts\python tools\import_bank.py --all` y `.venv\Scripts\python -m hexaprep` (http://127.0.0.1:8000). `HEXAPREP_PORT` cambia el puerto y `HEXAPREP_DATA` la carpeta de datos (úsala para probar sin tocar `data\`).
