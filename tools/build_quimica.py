@@ -46,6 +46,21 @@ def limpia(trampa: str) -> str:
     return trampa.removeprefix("Trampa: ").removeprefix("trampa: ")
 
 
+def revisa_campos(campos: list[dict], enunciado: str) -> list[str]:
+    """Fallos de redacción de una pregunta escrita: formas válidas vacías, un error típico que es una forma válida, o un
+    «Error» (troba l'error) que no aparece en la frase."""
+    from hexaprep.escritura import normalizar
+    out = []
+    for c in campos:
+        if not c["validas"]:
+            out.append(f"{c['etiqueta']}: sense formes vàlides")
+        if {normalizar(k) for k in c["errores"]} & {normalizar(v) for v in c["validas"]}:
+            out.append(f"{c['etiqueta']}: un error típic coincideix amb una forma vàlida")
+        if c["etiqueta"] == "Error" and not any(normalizar(v) in normalizar(enunciado) for v in c["validas"]):
+            out.append("l'error no apareix a la frase")
+    return out
+
+
 def build(src: Path) -> tuple[dict, list[str]]:
     src = Path(src)
     meta = json.loads((src / "_meta.json").read_text(encoding="utf-8"))
@@ -55,7 +70,7 @@ def build(src: Path) -> tuple[dict, list[str]]:
     for f in sorted(p for p in src.glob("*.json") if not p.name.startswith("_")):
         data = json.loads(f.read_text(encoding="utf-8"))
         for c in data["conceptos"]:
-            for tipo, clave in (("test", "test"), ("vf", "vf"), ("problema", "problemas")):
+            for tipo, clave in (("test", "test"), ("vf", "vf"), ("problema", "problemas"), ("escrita", "escritas")):
                 for q in c.get(clave, []):
                     items.append((data["subtema"], c, tipo, q, f.name, data.get("tema", meta["tema"]), None))
             for g in c.get("grupos", []):  # problema con apartados: enunciado común y una respuesta por apartado
@@ -99,6 +114,11 @@ def build(src: Path) -> tuple[dict, list[str]]:
             base["opciones"] = [{"texto": "Vertader"} if verdadero else {"texto": "Vertader", "trampa": trampa},
                                 {"texto": "Fals", "trampa": trampa} if verdadero else {"texto": "Fals"}]
             base.update(correcta="a" if verdadero else "b", explicacion=explicacion)
+        elif tipo == "escrita":  # [dificultad, enunciado, [[etiqueta, [validas], {errores}], ...], explicación]
+            _, _, campos, explicacion = q
+            base.update(tipo="escrita", explicacion=explicacion,
+                        campos=[{"etiqueta": e, "validas": v, "errores": (r[0] if r else {})} for e, v, *r in campos])
+            errores += [f"{archivo} {base['id']}: {m}" for m in revisa_campos(base["campos"], base["enunciado"])]
         else:
             _, _, solucion, explicacion, expr, *resto = q
             ordenada = bool(resto and resto[0])

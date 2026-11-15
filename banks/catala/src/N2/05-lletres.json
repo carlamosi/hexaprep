@@ -1,0 +1,58 @@
+{
+ "tema": "T1 Normativa general",
+ "subtema": "B/V, ela geminada, O/U, essa i erra",
+ "conceptos": [
+  {
+   "nombre": "La b i la v",
+   "pagina": 8,
+   "ayuda": "La terminació de l'imperfet d'indicatiu de la primera conjugació s'escriu sempre amb v: cantava, parlàvem. A més, hi ha moltes paraules que en català porten v i en castellà b: avortar, avorrir, savi, llavi, prova, governar. I al revés: baró, bena, biga, berruga, corb, oblidar, rebentar. Cal memoritzar les llistes: «b» a on el castellà té «v» i «v» a on el castellà té «b».",
+   "escritas": [
+    [1, "Escriu la forma de tercera persona del plural de l'imperfet d'indicatiu del verb «arribar».", [["Verb", ["arribaven"], {"arribaben": "L'imperfet de la primera conjugació s'escriu amb v: -ava, -aves, -ava...", "arribaban": "No és castellà: l'imperfet català és -aven."}]], "És «arribaven». L'imperfet d'indicatiu dels verbs en -ar porta sempre «v». Truc: cantava, tu cantaves, ells cantaven."],
+    [2, "Escriu la paraula completa: «ca_all» (animal de quatre potes que es munta).", [["Paraula", ["cavall"], {"caball": "En català és «v»: cavall, cavaller."}]], "És «cavall». El castellà és «caballo», però el català porta «v». Truc: cavall, cavaller."],
+    [3, "Escriu la paraula completa: «tro_ador» (poeta medieval que cantava l'amor).", [["Paraula", ["trobador"], {"trovador": "En català és «b»: trobador. El castellà és «trovador»."}]], "És «trobador». El català porta «b» i el castellà «v». Truc: trobador, trovador; oblidar, olvidar."],
+    [3, "Escriu la paraula completa: «can_i» (substantiu: acció de canviar una cosa per una altra).", [["Paraula", ["canvi"], {"canbi": "En català és «v», encara que el castellà «cambio» porti «b».", "cambi": "Ni «m» ni «b»: és «canvi»."}]], "És «canvi». El castellà és «cambio» però el català és «canvi». Truc: la v catalana correspon a la b castellana en canvi, cavall, avet."],
+    [3, "Troba l'error i corregeix-lo: «El mòvil de la Marta no té bateria.»", [["Error", ["mòvil"]], ["Correcció", ["mòbil"]]], "Cal «mòbil». Segueix la llista de «b» català i «v» castellana: mòbil i automòbil. Truc: mòbil, automòbil, móvil."],
+    [4, "Troba l'error i corregeix-lo: «El meu abi té vuitanta anys.»", [["Error", ["abi"]], ["Correcció", ["avi"]]], "Cal «avi». El català porta «v» i el castellà «b» (abuelo). Truc: avi, avorrir, avortar."]
+   ]
+  },
+  {
+   "nombre": "L'ela geminada (l·l)",
+   "pagina": 9,
+   "ayuda": "S'escriu l·l (ela geminada) en les paraules que comencen per al·l-, col·l-, il·l-, mil·l- (al·lèrgia, col·legi, il·lusió, mil·ligram) i en les acabades en -el·la/-el·lar/-el·lir i -il·la/-il·lar (aquarel·la, apel·lar, tranquil·la, vacil·lar). Excepcions: alarma, alegre, aliança, columna, colom, milió, milè i mutilar.",
+   "escritas": [
+    [1, "Escriu en català «colaborar» (amb l'ela geminada quan toqui).", [["Verb", ["col·laborar"], {"collaborar": "No són dues eles seguides: l'ela geminada porta punt volat: l·l.", "colaborar": "Cal l'ela geminada: col·l-."}]], "És «col·laborar». Les paraules que comencen per col·l- porten ela geminada. Truc: col·legi, col·lecció, col·locar."],
+    [2, "Escriu en català «novela» (gènere literari en prosa).", [["Nom", ["novel·la"], {"novella": "L'ela geminada porta un punt: l·l.", "novela": "Les acabades en -el·la porten ela geminada."}]], "És «novel·la». Les paraules acabades en -el·la porten ela geminada. Truc: aquarel·la, caravel·la, mortadel·la."],
+    [3, "Escriu en català «inteligente» (adjectiu masculí).", [["Adjectiu", ["intel·ligent"], {"inteligent": "Cal l'ela geminada: intel·ligent.", "intelligent": "No són dues eles normals: s'escriu amb punt volat: l·l."}]], "És «intel·ligent». És una paraula de la llista de l·l. Truc: intel·ligent, intel·ligència."],
+    [3, "Troba l'error i corregeix-lo: «Hem de cancelar la reunió perquè no hi ha ningú.»", [["Error", ["cancelar"]], ["Correcció", ["cancel·lar"]]], "Cal «cancel·lar». Els verbs acabats en -el·lar porten ela geminada. Truc: apel·lar, cancel·lar, interpel·lar."],
+    [4, "Troba l'error i corregeix-lo: «Va fer una calligrafia molt bonica a la targeta.»", [["Error", ["calligrafia"]], ["Correcció", ["cal·ligrafia"]]], "Cal «cal·ligrafia». L'ela geminada es marca amb un punt volat al mig, no amb dues eles normals. Truc: cal·ligrafia, cel·lular, pel·lícula."],
+    [4, "Troba l'error i corregeix-lo: «El col·or del cel és blau.»", [["Error", ["col·or"]], ["Correcció", ["color"]]], "Cal «color». És una de les excepcions de col-: color, colom, colònia, columna. Truc: només porten l·l col·laborar, col·legi, col·lecció..."]
+   ]
+  },
+  {
+   "nombre": "La o i la u",
+   "pagina": 10,
+   "ayuda": "Per saber si va «o» o «u», busquem el mot primitiu (forner ve de forn) o escrivim com en castellà. Però hi ha llistes d'excepcions: català «o» i castellà «u» (complir, sofrir, polir) i català «u» i castellà «o» (riu, europeu, trofeu). Als verbs collir, cosir, poder, sortir, voler i derivats escrivim «o» si és àtona; si és forta escrivim el que sona.",
+   "escritas": [
+    [1, "Escriu en català «cubrir».", [["Verb", ["cobrir"], {"cubrir": "El català escriu «o» a on el castellà té «u»: cobrir."}]], "És «cobrir». És una de les excepcions amb «o» en català i «u» en castellà. Truc: cobrir, complir, sofrir."],
+    [2, "Escriu en català «museo».", [["Nom", ["museu"], {"museo": "Acaba en -eu en català: museu.", "musseu": "Aquí no hi ha essa doble."}]], "És «museu». Moltes paraules en -eu fan «o» en castellà. Truc: museu, europeu, trofeu, ateneu."],
+    [3, "Escriu la forma «jo» del present d'indicatiu del verb «collir».", [["Verb", ["cullo"], {"collo": "A «cullo» la «u» és forta: escrivim el que sona."}]], "És «cullo». Quan la vocal és forta escrivim el que sona (cullo), i quan és àtona escrivim «o» (collia, colliré). Truc: cullo, culls, cull; collim."],
+    [3, "Troba l'error i corregeix-lo: «Vam comprar una butifarra per fer l'entrepà.»", [["Error", ["butifarra"]], ["Correcció", ["botifarra"]]], "Cal «botifarra». El català porta «o» i el castellà «u» (butifarra). Truc: botifarra, embotit, assortit."],
+    [4, "Escriu en català «montaña».", [["Nom", ["muntanya"], {"montanya": "El català escriu «u» a on el castellà escriu «o»: muntanya.", "muntaña": "La «ñ» és «ny» en català."}]], "És «muntanya». El català porta «u» i el castellà «o». Truc: muntanya, muntar, museu."],
+    [4, "Troba l'error i corregeix-lo: «Em vaig aburrir molt durant la conferència.»", [["Error", ["aburrir"]], ["Correcció", ["avorrir"]]], "Cal «avorrir». En català és «v» i «o» (avorrir-se); «aburrir» és la forma castellana. Truc: avorrir, avortar, avi."]
+   ]
+  },
+  {
+   "nombre": "La essa i la doble erra",
+   "pagina": 10,
+   "ayuda": "Si la essa sona com en castellà i és entre dues vocals, escrivim «ss» si en castellà és «s» i «ç» si en castellà és «z» (professor, assegurar; plaça, força). Hi ha excepcions, com cassola (cazuela). Amb prefix no es duplica: asocial. La doble erra: la normativa del 2016 duplica la erra en derivats i compostos (arrítmia, correferent, erradicar).",
+   "escritas": [
+    [1, "Escriu en català «caza» (acció de caçar animals).", [["Nom", ["caça"], {"casa": "Aquí el castellà escriu «z»: en català és «ç»."}]], "És «caça». Si el castellà escriu «z» entre vocals, el català escriu «ç». Truc: caça, caza; força, fuerza."],
+    [2, "Escriu en català «dimisión».", [["Nom", ["dimissió"], {"dimisió": "Entre dues vocals, si en castellà és «s», en català va «ss»."}]], "És «dimissió». Els mots que en castellà porten «s» entre vocals fan «ss» en català. Truc: possible, professor, dimissió."],
+    [3, "Escriu en català «taza».", [["Nom", ["tassa"], {"taça": "En català és una excepció amb «ss»: tassa.", "taza": "No és castellà: és «tassa»."}]], "És «tassa». És una excepció: el castellà escriu «z» però el català «ss». Truc: tassa i cassola són les dues excepcions."],
+    [3, "Troba l'error i corregeix-lo: «Em sembla posible que arribi tard.»", [["Error", ["posible"]], ["Correcció", ["possible"]]], "Cal «possible». Entre dues vocals, si en castellà és «s» el català duplica la essa: possible, assegurar."],
+    [4, "Troba l'error i corregeix-lo: «L'assimetria entre els dos costats és evident.»", [["Error", ["assimetria"]], ["Correcció", ["asimetria"]]], "Cal «asimetria». Si «a-» és un prefix no dupliquem la essa. Truc: asimetria, asocial, antisocial."],
+    [5, "Escriu el compost: prefix «co» més «responsable», segons la normativa del 2016.", [["Paraula", ["corresponsable"], {"coresponsable": "La normativa del 2016 duplica la erra en els derivats i compostos: corresponsable."}]], "És «corresponsable». La normativa del 2016 duplica la erra en derivats i compostos com aquest (arrítmia, correferent). Compte: hi ha excepcions com contrareforma o antireligiós."]
+   ]
+  }
+ ]
+}

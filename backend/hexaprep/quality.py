@@ -34,6 +34,20 @@ def _set_excluida(session: Session, clave: str, value: bool) -> None:
         p.excluida = value
 
 
+def retire_claves(session: Session, claves: list[str]) -> int:
+    """Retira preguntas (todas sus versiones): ni se sirven ni cuentan en el dominio. No borra nada; se reactivan desde el editor."""
+    conceptos = set()
+    for clave in claves:
+        for p in session.scalars(select(Pregunta).where(Pregunta.clave == clave)):
+            p.excluida = True
+            conceptos.add(p.concepto_id)
+    session.flush()
+    for c in conceptos:
+        _recompute(session, c)
+    session.commit()
+    return len(claves)
+
+
 def report_question(session: Session, pregunta_id: str, motivo: str, sesion_id: str | None = None) -> None:
     """Excluye la pregunta (todas sus versiones) de dominio y selector. No borra ningún evento."""
     p = _current(session, pregunta_id)

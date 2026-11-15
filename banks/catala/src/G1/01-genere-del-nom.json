@@ -1,0 +1,60 @@
+{
+ "tema": "T2 Gramàtica",
+ "subtema": "Gènere del nom",
+ "conceptos": [
+  {
+   "nombre": "Noms invariables",
+   "pagina": 3,
+   "cara": 2,
+   "ayuda": "Els noms acabats en -aire, -ista i -cida tenen la mateixa forma en masculí i en femení: només canvia l'article. Per exemple, «el ballaire / la ballaire», «el taxista / la taxista», «l'insecticida» no canvia mai de terminació. Per això no s'ha de fer «-a» ni «-essa».",
+   "escritas": [
+    [1, "Escriu el femení de «bolataire».", [["Femení", ["bolataire"], {"bolataira": "Els noms en -aire són invariables: no canvien en femení."}]], "El femení és «bolataire», igual que el masculí: «el bolataire, la bolataire». Els acabats en -aire no canvien. Truc: només canvia l'article."],
+    [2, "Escriu el femení de «dentista».", [["Femení", ["dentista"], {"dentisa": "Els acabats en -ista són invariables.", "dentistessa": "Els acabats en -ista no fan -essa."}]], "És «dentista» també en femení: «el dentista, la dentista». Els noms en -ista són invariables. Truc: l'article ja diu si és home o dona."],
+    [3, "Troba l'error i corregeix-lo: «Ella és la millor comptaira de la botiga.»", [["Error", ["comptaira"]], ["Correcció", ["comptaire"]]], "Hauria de ser «comptaire». Els noms en -aire són invariables i no canvien la vocal final en femení. Truc: «comptaire» serveix per a un home i per a una dona."],
+    [3, "Escriu el femení de «homicida».", [["Femení", ["homicida"], {"homicidia": "Els acabats en -cida són invariables.", "homicidessa": "Els acabats en -cida no fan -essa."}]], "És «homicida»: «l'homicida» serveix per a un home i per a una dona. Els noms en -cida són invariables. Truc: -cida (del llatí, «que mata») no canvia en femení."],
+    [4, "Troba l'error i corregeix-lo: «La meva germana és una bona pianisa.»", [["Error", ["pianisa"]], ["Correcció", ["pianista"]]], "Hauria de ser «pianista», invariable en femení. Els noms en -ista no fan -isa. Truc: «el pianista, la pianista»."]
+   ]
+  },
+  {
+   "nombre": "Femenins en -essa i -esa",
+   "pagina": 3,
+   "cara": 2,
+   "ayuda": "Molts noms de professió o de títol fan el femení en -essa o en -esa, i cal memoritzar-los: comtessa, duquessa, abadessa (amb dues s), però princesa i marquesa (amb una s). Els masculins en -ès (gentilicis) fan el femení en -esa amb una sola s: «burgès → burgesa», «japonès → japonesa».",
+   "escritas": [
+    [1, "Escriu el femení de «comte».", [["Femení", ["comtessa"], {"comtesa": "Aquest títol fa -essa, amb dues s.", "comta": "El femení de «comte» és «comtessa»."}]], "És «comtessa». Aquest títol fa -essa amb dues s. Truc: comte-comtessa."],
+    [2, "Escriu el femení de «duc».", [["Femení", ["duquessa"], {"ducessa": "Davant -essa, la c passa a -qu-: duquessa.", "duquesa": "Aquest títol fa -essa amb dues s."}]], "És «duquessa». La c es transforma en -qu- per mantenir el so [k], i el títol fa -essa amb dues s. Truc: du-qu-essa."],
+    [2, "Escriu el femení de «francès».", [["Femení", ["francesa"], {"francessa": "Els gentilicis en -ès fan -esa, amb una sola s."}]], "És «francesa». Els masculins en -ès passen a -esa amb una sola s. Truc: nacionalitat en -ès = una s."],
+    [3, "Troba l'error i corregeix-lo: «Va conèixer una anglessa molt simpàtica.»", [["Error", ["anglessa"]], ["Correcció", ["anglesa"]]], "Hauria de ser «anglesa», amb una sola s. Els gentilicis en -ès fan -esa. Truc: «anglès → anglesa»."],
+    [4, "Escriu el femení de «abat».", [["Femení", ["abadessa"], {"abatessa": "El femení de «abat» és «abadessa», amb d.", "abadesa": "Aquest càrrec fa -essa, amb dues s."}]], "És «abadessa», amb d i dues s. Truc: abat → abadessa, com «comtessa»."]
+   ]
+  },
+  {
+   "nombre": "Parelles irregulars",
+   "pagina": 3,
+   "cara": 2,
+   "ayuda": "Alguns noms d'animals tenen parelles de lèxic diferent: no es forma el femení afegint -a. Per exemple, «cabra / boc». Altres només canvien l'article («la girafa mascle i la girafa femella»). Cal memoritzar les parelles.",
+   "escritas": [
+    [1, "Escriu el femení de «porc».", [["Femení", ["truja"], {"porca": "La parella lèxica és «truja».", "porcina": "La parella lèxica és «truja»."}]], "És «truja». És una parella de lèxic diferent. Truc: porc-truja, cavall-euga."],
+    [2, "Escriu el femení de «ase».", [["Femení", ["somera"], {"asa": "La parella lèxica és «somera».", "ase": "El femení no coincideix amb el masculí: és «somera»."}]], "És «somera». No és «asa»: el femení té una arrel diferent. Truc: ase-somera."],
+    [3, "Escriu el masculí de «merla».", [["Masculí", ["merlot"], {"mèrlot": "El masculí és «merlot», sense accent.", "merl": "El masculí és «merlot»."}]], "És «merlot». És una parella de lèxic diferent i no porta accent (tampoc «merla»). Truc: merla-merlot."],
+    [3, "Escriu el femení de «marrà».", [["Femení", ["ovella"]]], "És «ovella». La parella és de lèxic diferent. Truc: marrà-ovella."],
+    [4, "Escriu el masculí de «perdiu».", [["Masculí", ["perdigot"], {"perdiu": "Hi ha un masculí propi: «perdigot».", "perdiguet": "El masculí és «perdigot»."}]], "És «perdigot». El masculí és una forma pròpia, no el mateix mot. Truc: perdiu-perdigot."],
+    [5, "Escriu el femení de «gall dindi».", [["Femení", ["polla dindia"], {"gallina dindia": "El femení de «gall dindi» és «polla dindia».", "polla dindi": "El femení també canvia l'adjectiu: «dindia»."}]], "És «polla dindia». Canvia el nom («gall → polla») i la terminació de «dindi» passa a «dindia». Truc: les dues paraules canvien."]
+   ]
+  },
+  {
+   "nombre": "Adjectius invariables i variables",
+   "pagina": 3,
+   "cara": 2,
+   "ayuda": "Els adjectius invariables tenen la mateixa forma en masculí i femení (per exemple, «feliç», «fàcil»). Els variables canvien la vocal final al femení (per exemple, «fosc → fosca», «blanc → blanca», «gros → grossa»). Cal saber quin tipus és cada adjectiu.",
+   "escritas": [
+    [2, "Escriu el femení de «pobre».", [["Femení", ["pobra"], {"pobre": "«Pobre» és variable: canvia la vocal final.", "pobrea": "Només canvia la -e per -a."}]], "És «pobra». És un adjectiu variable. Truc: pobre-pobra, agre-agra."],
+    [2, "Escriu el femení de «ample».", [["Femení", ["ampla"], {"ample": "«Ample» és variable: canvia la vocal final.", "amplea": "Només canvia la -e per -a."}]], "És «ampla». Els adjectius variables canvien la vocal final. Truc: ample-ampla."],
+    [3, "Escriu el femení de «reu».", [["Femení", ["rea"], {"reua": "El femení és «rea».", "reva": "El femení és «rea»."}]], "És «rea». És un adjectiu variable amb un canvi de terminació. Truc: reu-rea."],
+    [3, "Troba l'error i corregeix-lo: «És una noia molt alegra i amable.»", [["Error", ["alegra"]], ["Correcció", ["alegre"]]], "Hauria de ser «alegre». Aquest adjectiu és invariable i no canvia la vocal final en femení. Truc: alegre, amable, jove i rude no canvien."],
+    [3, "Completa amb el femení de «culte»: «L'Elena és una dona molt ____.»", [["Adjectiu", ["culta"], {"culte": "«Culte» és variable: canvia la vocal final."}]], "És «culta». Els adjectius variables canvien la -e per -a. Truc: culte-culta."],
+    [4, "Troba l'error i corregeix-lo: «Em va donar una llimona molt agre.»", [["Error", ["agre"]], ["Correcció", ["agra"]]], "Hauria de ser «agra». «Agre» és variable i canvia la vocal final en femení. Truc: agre-agra."]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,74 @@
+{
+ "tema": "T2 Gramàtica",
+ "subtema": "Verbs velars",
+ "conceptos": [
+  {
+   "nombre": "Saber si és velar",
+   "pagina": 7,
+   "cara": 9,
+   "ayuda": "Per saber si un verb és velar, mira la 1a persona del singular del present d'indicatiu. Si acaba en una c o -sc amb so [k], l'arrel és velar. Exemples: beure → bec, tenir → tinc, venir → vinc. La c final és la pista: aquesta arrel velar es manté en altres temps verbals.",
+   "escritas": [
+    [1, "Escriu la 1a persona del singular del present d'indicatiu de «creure».", [["Forma", ["crec"], {"creo": "És el calc del castellà. En català la 1a persona acaba en -c: crec."}]], "És «crec». La c final amb so [k] és la marca de l'arrel velar. Truc: beure → bec, creure → crec."],
+    [2, "Escriu la 1a persona del singular del present d'indicatiu de «treure».", [["Forma", ["trec"], {"treig": "El so final és [k], no [ʧ]: trec.", "treu": "Aquesta és la 3a persona. La 1a acaba en -c."}]], "És «trec». Acaba en c amb so [k], per això és velar. Truc: si acaba en -c, l'arrel és velar."],
+    [2, "Escriu la 1a persona del singular del present d'indicatiu de «viure».", [["Forma", ["visc"], {"vivo": "Calc del castellà. En català: visc.", "viu": "Aquesta és la 3a persona. La 1a acaba en -sc: visc."}]], "És «visc». Acaba en -sc amb so [k], per això és velar. Truc: viure → visc → viscut."],
+    [3, "Troba l'error i corregeix-lo: «Jo veu que no ve ningú.»", [["Error", ["veu"]], ["Correcció", ["veig"]]], "La 1a persona de «veure» és «veig». «Veu» és la 3a persona. Truc: jo veig, ell veu."],
+    [4, "Completa: «Jo ____ (fer) els deures cada tarda.»", [["Verb", ["faig"], {"fac": "La 1a persona de fer és «faig», amb -ig final.", "faço": "Calc del castellà. En català: faig."}]], "És «faig». Aquesta 1a persona és velar i d'ella surt el present de subjuntiu «faci». Truc: faig, tinc, vinc, veig."]
+   ]
+  },
+  {
+   "nombre": "Passat simple i imperfet de subjuntiu",
+   "pagina": 7,
+   "cara": 9,
+   "ayuda": "Les arrels velars es mantenen en el passat simple d'indicatiu i en l'imperfet de subjuntiu. Quan l'arrel és velar, es conserva el so [k] de la 1a persona (-c, -sc). Exemples: viure → visqué, visquessis; venir → vingué, vinguessis. Fixa't en els accents d'aquestes formes: -é i -és tanquen amb accent agut.",
+   "escritas": [
+    [2, "Escriu el passat simple d'indicatiu (ell) de «beure».", [["Forma", ["begué"], {"bevé": "L'arrel de beure és velar: begu-.", "beguè": "L'accent és agut: begué."}]], "És «begué». L'arrel velar begu- apareix en el passat simple. Truc: begué, begueres."],
+    [3, "Escriu el passat simple d'indicatiu (tu) de «beure».", [["Forma", ["begueres"], {"beveres": "El passat simple de beure és velar: begueres."}]], "És «begueres». Arrel velar begu- més la terminació -eres. Truc: begué, begueres."],
+    [3, "Escriu l'imperfet de subjuntiu (ell) de «beure».", [["Forma", ["begués"], {"bevés": "L'imperfet de subjuntiu és velar: begués.", "begues": "Falta l'accent: begués."}]], "És «begués». L'arrel velar begu- més la terminació -és. Truc: begué (passat simple) i begués (subjuntiu) només es diferencien per la -s."],
+    [3, "Escriu l'imperfet de subjuntiu (tu) de «tenir».", [["Forma", ["tinguessis"], {"tinguis": "Aquest és el present de subjuntiu. Cal l'imperfet: tinguessis.", "tenguessis": "L'arrel velar és tingu-."}]], "És «tinguessis». L'arrel velar tingu- més la terminació -essis. Truc: tinc → tingués, tinguessis."],
+    [4, "Troba l'error i corregeix-lo: «Si bevessis menys cafè, dormiries millor.»", [["Error", ["bevessis"]], ["Correcció", ["beguessis"]]], "L'imperfet de subjuntiu de beure és velar: «beguessis». Truc: begués, beguessis."],
+    [4, "Completa: «Si ell ____ (tenir) més temps, vindria a veure'ns.»", [["Verb", ["tingués"], {"tinguès": "L'accent és agut: tingués.", "tingues": "Falta l'accent: tingués."}]], "És «tingués». L'arrel velar tingu- més -és. Truc: tinc → tingués."]
+   ]
+  },
+  {
+   "nombre": "Present de subjuntiu velar",
+   "pagina": 7,
+   "cara": 9,
+   "ayuda": "El present de subjuntiu surt de la 1a persona del present d'indicatiu i, si és velar, la manté. Tenir → tinc → tingui, tinguis. Venir → vinc → vingui, vinguis. Alguns verbs no segueixen del tot aquest patró, i per això convé memoritzar la taula de la cara 9.",
+   "escritas": [
+    [1, "Escriu el present de subjuntiu (jo) de «creure».", [["Forma", ["cregui"], {"crei": "L'arrel velar es manté: cregui.", "creui": "La forma velar és cregui."}]], "És «cregui». De crec surt cregui. Truc: crec → cregui."],
+    [2, "Escriu el present de subjuntiu (jo) de «viure».", [["Forma", ["visqui"], {"vivi": "Viure és velar: visc → visqui.", "visqi": "Es manté el so [k] amb qu: visqui."}]], "És «visqui». De visc surt visqui. Truc: visc → visqui → viscut."],
+    [2, "Escriu el present de subjuntiu (jo) de «veure».", [["Forma", ["vegi"], {"vegui": "Veure fa «vegi», sense u.", "vei": "Falta la g: vegi."}]], "És «vegi». Veure té aquesta forma pròpia: veig → vegi. Truc: veig → vegi."],
+    [3, "Escriu el present de subjuntiu (jo) de «fer».", [["Forma", ["faci"], {"fagi": "Fer fa «faci», no «fagi».", "faigui": "Fer fa «faci»."}]], "És «faci». Fer és irregular: faig → faci. Truc: faig → faci → fet."],
+    [3, "Troba l'error i corregeix-lo: «Vull que tu venis a casa meva.»", [["Error", ["venis"]], ["Correcció", ["vinguis"]]], "Després de «vull que» va el present de subjuntiu: «vinguis». Truc: vinc → vingui, vinguis."],
+    [4, "Completa: «Dubto que ell ____ (treure) bona nota.»", [["Verb", ["tregui"], {"treu": "Després de «dubto que» va subjuntiu: tregui.", "traigui": "L'arrel velar és treg-: tregui."}]], "És «tregui». De trec surt tregui. Truc: trec → tregui → tret."]
+   ]
+  },
+  {
+   "nombre": "Imperatiu positiu i negatiu",
+   "pagina": 7,
+   "cara": 9,
+   "ayuda": "A l'imperatiu afirmatiu, les formes de tu i vosaltres no són velars, però vostè, nosaltres i vostès sí. L'ordre negativa va en present de subjuntiu, que sí és velar. Per tant, la mateixa persona canvia de forma segons si l'ordre és afirmativa o negativa. Amb «creure», per exemple, l'ordre negativa és «no creguis».",
+   "escritas": [
+    [1, "Escriu l'imperatiu afirmatiu (tu) de «beure».", [["Forma", ["beu"], {"begui": "La forma de tu no és velar.", "bec": "Aquesta és la 1a persona del present d'indicatiu."}]], "És «beu». A l'imperatiu afirmatiu, tu no és velar. Truc: beu (tu), beveu (vosaltres)."],
+    [2, "Escriu l'imperatiu afirmatiu (vosaltres) de «beure».", [["Forma", ["beveu"], {"begueu": "L'imperatiu afirmatiu de vosaltres no és velar: beveu."}]], "És «beveu». A l'afirmativa, vosaltres no és velar. Truc: Noies, beveu."],
+    [3, "Completa l'ordre negativa: «No ____ aigua d'aquesta font, noies.» (beure, vosaltres)", [["Forma", ["begueu"], {"beveu": "L'ordre negativa va en subjuntiu, que sí és velar."}]], "És «begueu». L'ordre negativa va en present de subjuntiu, que és velar. Truc: Noies, beveu / No, begueu."],
+    [3, "Completa l'ordre negativa: «No ____ aigua d'aquesta font.» (beure, tu)", [["Forma", ["beguis"], {"beus": "L'ordre negativa va en subjuntiu: beguis.", "bevis": "El subjuntiu de beure és velar: beguis."}]], "És «beguis». L'ordre negativa per a tu és el present de subjuntiu. Truc: beu (positiva) / no beguis (negativa)."],
+    [4, "Troba l'error i corregeix-lo: «No beu aigua si no tens set.»", [["Error", ["No beu"]], ["Correcció", ["no beguis"]]], "L'ordre negativa no va en imperatiu, sinó en present de subjuntiu: «no beguis». Truc: beu (positiva), no beguis (negativa)."],
+    [4, "Troba l'error i corregeix-lo: «Noies, begueu aigua abans de la cursa.»", [["Error", ["begueu"]], ["Correcció", ["beveu"]]], "L'ordre afirmativa per a vosaltres és l'imperatiu «beveu», no velar. Truc: Noies, beveu."]
+   ]
+  },
+  {
+   "nombre": "Taula de verbs velars",
+   "pagina": 7,
+   "cara": 9,
+   "ayuda": "La taula resumeix cada verb velar en quatre formes: infinitiu, 1a persona del present, present de subjuntiu i participi. Per exemple, tenir té tinc, tingui i tingut. Memoritza-ho en bloc: de la 1a persona surt el subjuntiu i el participi té una forma pròpia. No tots els participis segueixen el mateix patró.",
+   "escritas": [
+    [1, "Escriu el participi de «beure».", [["Participi", ["begut"], {"bevut": "El participi de beure és velar: begut."}]], "És «begut». Truc: beure → bec → begui → begut."],
+    [2, "Escriu el participi de «treure».", [["Participi", ["tret"], {"tregut": "El participi de treure és curt: tret.", "treit": "El participi és tret."}]], "És «tret». Aquest participi és curt i no segueix el patró de «begut». Truc: treure → tret."],
+    [2, "Escriu el participi de «viure».", [["Participi", ["viscut"], {"vigut": "El participi és velar: viscut.", "vivit": "El participi de viure és viscut."}]], "És «viscut». Duu la mateixa arrel que «visc» i «visqui». Truc: visc → viscut."],
+    [3, "Escriu la 1a persona del present d'indicatiu i el present de subjuntiu (jo) de «veure».", [["Present", ["veig"], {"veu": "Aquesta és la 3a persona. La 1a és veig."}], ["Subjuntiu", ["vegi"], {"vegui": "Veure fa «vegi», sense u."}]], "Són «veig» i «vegi». Veure té una forma de subjuntiu pròpia. Truc: veig → vegi → vist."],
+    [4, "Escriu la 1a persona del present d'indicatiu, el present de subjuntiu (jo) i el participi de «venir».", [["Present", ["vinc"], {"venc": "La 1a persona de venir és vinc."}], ["Subjuntiu", ["vingui"], {"venqui": "L'arrel velar és vingu-."}], ["Participi", ["vingut"], {"venit": "El participi de venir és vingut."}]], "Són «vinc», «vingui» i «vingut». Truc: tenir i venir fan igual: tinc/vinc, tingui/vingui, tingut/vingut."]
+   ]
+  }
+ ]
+}

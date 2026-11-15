@@ -1,0 +1,19 @@
+{
+ "bloque": "Català",
+ "asignatura": {
+  "nombre": "Català",
+  "idioma": "ca",
+  "color": "#D9822B",
+  "acento": "#D9822B"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "e1"
+ },
+ "tema": "T2 Gramàtica",
+ "prefijo": "cat-g1",
+ "fuente": {
+  "nombre": "Català Apunts de gramàtica",
+  "archivo": "Catala_Apunts_Gramatica.pdf"
+ }
+}

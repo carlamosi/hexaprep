@@ -1,0 +1,57 @@
+{
+ "tema": "T2 Gramàtica",
+ "subtema": "Per / per a i pronoms febles",
+ "conceptos": [
+  {
+   "nombre": "Per (motiu) i per a (finalitat)",
+   "pagina": 8,
+   "cara": 7,
+   "ayuda": "«Per» indica el motiu o la causa: «Plora per la tristesa». «Per a» indica la finalitat, l'objectiu o el destinatari: «Faig esport per a estar sa» o «Aquesta carta és per a l'àvia». Per decidir-ho, pregunta't si és la causa (per) o l'objectiu (per a).",
+   "escritas": [
+    [1, "Completa amb «per» o «per a»: «Estudio ____ aprovar l'examen.»", [["Paraula", ["per a"], {"per": "Aquí és la finalitat (l'objectiu): als apunts la finalitat va amb «per a»."}]], "És «per a». Indica la finalitat, com als apunts («Estudio per a aprovar»). La normativa del 2016 també admet «per» davant d'infinitiu, però a l'examen segueix el criteri dels apunts. Truc: l'objectiu, per a."],
+    [2, "Completa amb «per» o «per a»: «No han vingut ____ la pluja.»", [["Paraula", ["per"], {"per a": "Aquí és la causa (motiu): per."}]], "És «per». Indica el motiu. Truc: la causa, per."],
+    [2, "Troba l'error i corregeix-lo: «Aquest llibre és per tu.»", [["Error", ["per tu"]], ["Correcció", ["per a tu"]]], "El destinatari es diu «per a»: «per a tu». Truc: a qui va destinat, per a."],
+    [3, "Troba l'error i corregeix-lo: «He suspès per a no estudiar.»", [["Error", ["per a no"]], ["Correcció", ["per no"]]], "Aquí és el motiu del suspens, no la finalitat: «per no estudiar». Truc: la causa, per."],
+    [3, "Completa amb «per» o «per a»: «Guardo diners ____ viatjar l'estiu que ve.»", [["Paraula", ["per a"], {"per": "Aquí és la finalitat: als apunts la finalitat va amb «per a»."}]], "És «per a». Indica la finalitat (per què guardo diners? per a viatjar). Truc: l'objectiu, per a."]
+   ]
+  },
+  {
+   "nombre": "L'hi i la hi",
+   "pagina": 8,
+   "cara": 7,
+   "ayuda": "Quan «li» (a ell o a ella) es combina amb un pronom d'objecte directe, «li + el» dona «l'hi» i «li + la» dona «la hi». La diferència depèn del gènere de la cosa donada: masculina, «l'hi»; femenina, «la hi». «La hi» no s'apostrofa. Exemples amb altres noms: «El mapa? L'hi vaig deixar» i «La bufanda? La hi vaig deixar».",
+   "escritas": [
+    [1, "Escriu el resultat de combinar «li» + «el».", [["Combinació", ["l'hi"], {"la hi": "Això és «li + la».", "lahi": "Això és «li + la»."}]], "És «l'hi». Li + el es converteix en «l'hi». Truc: cosa masculina, l'hi."],
+    [2, "Completa: «La carta? ____ vaig enviar ahir (a ell).»", [["Pronoms", ["la hi"], {"l'hi": "La carta és femenina: li + la = la hi."}]], "És «la hi». Li + la es converteix en «la hi». Truc: cosa femenina, la hi."],
+    [2, "Completa: «El rellotge? ____ vaig regalar a la mare.»", [["Pronoms", ["l'hi"], {"la hi": "El rellotge és masculí: li + el = l'hi."}]], "És «l'hi». Li + el es converteix en «l'hi». Truc: cosa masculina, l'hi."],
+    [3, "Troba l'error i corregeix-lo: «La samarreta? L'hi vaig regalar ahir.»", [["Error", ["L'hi"]], ["Correcció", ["La hi"]]], "La samarreta és femenina: «la hi». Truc: el gènere de la cosa, no el de la persona."],
+    [3, "Troba l'error i corregeix-lo: «El mòbil? La hi he deixat al veí.»", [["Error", ["La hi"]], ["Correcció", ["L'hi"]]], "El mòbil és masculí: «l'hi». Truc: el gènere de la cosa donada."]
+   ]
+  },
+  {
+   "nombre": "Per: lloc de pas i temps",
+   "pagina": 8,
+   "cara": 7,
+   "ayuda": "A més del motiu, «per» també indica el lloc de pas o per on es passa, i també una època o un moment de l'any. Exemples: «El corredor va passar per Vic» i «Ho celebrarem per Pasqua».",
+   "escritas": [
+    [1, "Completa: «El tren passa ____ Girona.»", [["Paraula", ["per"], {"a": "Indica el lloc de pas: per."}]], "És «per». Indica el lloc de pas. Truc: passar per un lloc."],
+    [2, "Completa: «Hi anirem ____ Nadal.»", [["Paraula", ["per"]]], "És «per». Indica una època de l'any. Truc: per Nadal, per Setmana Santa."],
+    [2, "Completa amb la contracció de «per + el»: «Hem passat ____ pont.»", [["Contracció", ["pel"], {"per el": "Per + el es contreu: pel."}]], "És «pel». Per + el es contreu en «pel». Truc: pel, pels; però per la, per les."],
+    [3, "Completa: «Abans d'arribar al port, passarem ____ la platja.»", [["Paraula", ["per"], {"a": "Indica el lloc de pas: per."}]], "És «per». Indica el lloc de pas. Truc: no hi ha contracció davant «la»."],
+    [3, "Troba l'error i corregeix-lo: «Cada dia passo per a la plaça Major.»", [["Error", ["per a la"]], ["Correcció", ["per la"]]], "El lloc de pas es diu «per», no «per a». Truc: passar per un lloc."]
+   ]
+  },
+  {
+   "nombre": "No «lis» i «els hi»",
+   "pagina": 12,
+   "ayuda": "El pronom «lis» no existeix en català: per a «a ells» o «a elles» es diu «els». La combinació «els hi» només és correcta quan substitueix dos complements alhora. Exemple correcte: «Els vaig preguntar l'hora» (només un complement: «a ells»). Si només hi ha un complement, es diu «els» i no «els hi».",
+   "escritas": [
+    [1, "Completa amb el pronom correcte: «____ vaig explicar el problema (a ells).»", [["Pronom", ["els"], {"lis": "«Lis» no existeix en català.", "els hi": "Només hi ha un complement: «els»."}]], "És «els». Per a «a ells» es diu «els». Truc: «lis» no existeix."],
+    [2, "Troba l'error i corregeix-lo: «Lis vaig dir que vinguessin aviat.»", [["Error", ["Lis"]], ["Correcció", ["Els"]]], "El pronom «lis» no existeix en català: es diu «els». Truc: lis no existeix."],
+    [2, "Completa amb el pronom correcte: «Als nens, no ____ vaig dir res.»", [["Pronom", ["els"], {"lis": "«Lis» no existeix en català.", "els hi": "Només hi ha un complement: «els»."}]], "És «els». Només hi ha un complement: «a ells». Truc: «els hi» només amb dos complements."],
+    [3, "Troba l'error i corregeix-lo: «Els hi vaig dir que tornessin aviat.»", [["Error", ["Els hi"]], ["Correcció", ["Els"]]], "Només hi ha un complement: «els vaig dir». «Els hi» és correcte només si substitueix dos complements. Truc: un complement, «els»."],
+    [4, "Troba l'error i corregeix-lo: «Els hi vaig regalar uns llibres a les meves ties.»", [["Error", ["Els hi"]], ["Correcció", ["Els"]]], "La frase només té un complement pronominal («a elles»): «els». Truc: «els hi» exigeix dos complements pronominalitzats."]
+   ]
+  }
+ ]
+}

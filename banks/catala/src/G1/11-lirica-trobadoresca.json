@@ -1,0 +1,48 @@
+{
+ "tema": "T3 Literatura",
+ "subtema": "Lírica trobadoresca",
+ "conceptos": [
+  {
+   "nombre": "Origen i llengua",
+   "pagina": 3,
+   "cara": 13,
+   "ayuda": "La lírica trobadoresca és la primera literatura escrita en una llengua que no és el llatí. Va néixer al sud de l'actual França, una regió anomenada Provença, i va ser molt prestigiosa. Després va arribar a Catalunya, on va viure durant uns quants segles. La llengua dels poemes és la d'aquella regió, que rep dos noms.",
+   "escritas": [],
+   "vf": [
+    [1, "La lírica trobadoresca va néixer a Provença, al sud de França.", true, "Va néixer a Provença, al sud de França, a finals del segle XI. Truc: trobador = Provença.", "trampa: es pot pensar que va néixer a Catalunya perquè és la literatura que estudiem."],
+    [2, "La lírica trobadoresca va néixer a finals del segle XV.", false, "Va néixer a finals del segle XI. El segle XV és el d'Ausiàs March i de la novel·la cavalleresca.", "trampa: confondre el naixement de la lírica trobadoresca amb l'època d'Ausiàs March."],
+    [2, "La lírica trobadoresca va tenir molt de prestigi perquè va ser la primera literatura escrita en una llengua no llatina.", true, "El prestigi ve de ser la primera literatura escrita en una llengua que no era el llatí.", "trampa: creure que estava escrita en llatí, com la majoria de textos de l'època."],
+    [3, "La lírica trobadoresca es va donar a Catalunya entre els segles XII i XV.", true, "A Catalunya hi va ser present entre els segles XII i XV, després d'haver nascut a Provença al segle XI.", "trampa: barrejar el segle de naixement (XI) amb el període a Catalunya (XII-XV)."],
+    [3, "La lírica trobadoresca s'expressa en llengua catalana.", false, "S'expressa en llengua provençal o occitana. Escriure en català és precisament el pas que fa Ausiàs March.", "trampa: atribuir als trobadors la ruptura lingüística que fa Ausiàs March."]
+   ]
+  },
+  {
+   "nombre": "Trobador i joglar",
+   "pagina": 3,
+   "cara": 13,
+   "ayuda": "En el món trobadoresc hi havia dues figures diferents. Una creava els poemes, i l'altra els feia arribar al públic dient-los en veu alta. No s'han de confondre, perquè cada paraula descriu una tasca diferent.",
+   "escritas": [],
+   "vf": [
+    [1, "El trobador componia els poemes.", true, "El trobador és qui componia. Truc: trobador = compon, joglar = recita.", "trampa: intercanviar els dos oficis."],
+    [1, "El joglar recitava els poemes.", true, "El joglar recitava les composicions que feien els trobadors.", "trampa: pensar que el joglar també era l'autor."],
+    [2, "El joglar era qui componia les cançons trobadoresques.", false, "Qui componia era el trobador. El joglar només les recitava.", "trampa: trobadors i joglars són paraules que se solen confondre."],
+    [2, "El trobador era qui recitava els versos davant del públic.", false, "El trobador componia; recitar era la feina del joglar.", "trampa: creure que qui escriu també és qui recita."]
+   ]
+  },
+  {
+   "nombre": "Gèneres trobadorescos",
+   "pagina": 3,
+   "cara": 13,
+   "ayuda": "Els gèneres de la lírica trobadoresca s'estableixen segons la temàtica del poema. N'hi ha que parlen del dolor, d'altres de la crítica i d'altres de l'amor. Cada gènere té el seu nom propi.",
+   "escritas": [],
+   "vf": [
+    [2, "El plany és un poema de dolor per la mort d'alguna persona.", true, "El plany expressa el dolor per una mort. Truc: plany = plorar.", "trampa: confondre'l amb la cançó d'amor."],
+    [3, "El sirventès és un atac personal, ideològic o social.", true, "El sirventès serveix per atacar una persona o una idea.", "trampa: pensar que és un gènere amorós pel seu to líric."],
+    [2, "La cançó expressa el dolor per la mort d'alguna persona.", false, "Això és el plany. La cançó és el gènere de l'amor cortès.", "trampa: confondre la cançó amb el plany perquè tots dos són gèneres lírics."],
+    [3, "La pastorel·la tracta de l'amor entre un trobador o cavaller i una pastora.", true, "La pastorel·la és la trobada amorosa entre un trobador o cavaller i una pastora.", "trampa: confondre la pastora amb una dama de l'amor cortès."],
+    [3, "El plany és un atac ideològic contra una persona.", false, "Això és el sirventès. El plany expressa dolor per una mort.", "trampa: intercanviar els gèneres plany i sirventès."],
+    [4, "La pastorel·la tracta de l'amor cortès.", false, "L'amor cortès és el tema de la cançó. La pastorel·la parla de l'amor entre un trobador o cavaller i una pastora.", "trampa: atribuir la mateixa temàtica a la pastorel·la i a la cançó."]
+   ]
+  }
+ ]
+}

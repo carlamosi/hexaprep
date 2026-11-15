@@ -1,0 +1,56 @@
+{
+ "tema": "T2 Gramàtica",
+ "subtema": "Ser i estar, perífrasis",
+ "conceptos": [
+  {
+   "nombre": "Ser i estar: localització",
+   "pagina": 4,
+   "cara": 12,
+   "ayuda": "Per situar objectes i territoris s'utilitza ser: «Menorca és a la Mediterrània». Per a una persona, ser indica presència eventual i estar indica permanència. Per exemple: «Demà serem a Sitges» (només de pas) o «Estarem tot l'estiu a Sitges» (hi vivim).",
+   "escritas": [
+    [1, "Completa amb «ser» o «estar» (present): «La catedral ____ a Tarragona.»", [["Verb", ["és"], {"està": "Els objectes i els territoris se situen amb ser."}]], "És «és». Els objectes i els territoris es localitzen amb ser. Truc: coses i llocs, ser."],
+    [2, "Completa amb el futur de «ser» o «estar» (1a persona), segons el sentit: «Demà ____ a Maó, només de pas.»", [["Verb", ["seré"], {"estaré": "Presència eventual d'una persona: ser."}]], "És «seré». Presència eventual d'una persona: ser. Truc: de pas, ser; per quedar-s'hi, estar."],
+    [3, "Completa amb el futur de «ser» o «estar» (1a persona), segons el sentit: «Aquest curs ____ tot l'any a Berlín, sense moure'm d'allà.»", [["Verb", ["estaré"], {"seré": "Permanència d'una persona: estar."}]], "És «estaré». Permanència d'una persona: estar. Truc: viure-hi tot l'any, estar."],
+    [3, "Troba l'error i corregeix-lo: «L'església està al costat de la plaça.»", [["Error", ["està"]], ["Correcció", ["és"]]], "Un objecte o territori es localitza amb ser: «és». Truc: l'edifici no es mou, ser."]
+   ]
+  },
+  {
+   "nombre": "Ser i estar: qualitats i locucions",
+   "pagina": 4,
+   "cara": 12,
+   "ayuda": "Per a les qualitats d'objectes s'utilitza ser: «El cotxe és nou». Per a persones, estar indica qualitats transitòries («Està cansat») i ser les duradores («És alt»). Estar també forma locucions fixes: «estar a favor», «estar en venda». Estar implica idea de canvi.",
+   "escritas": [
+    [1, "Completa amb «ser» o «estar» (present): «La casa de la Pili ____ molt vella.»", [["Verb", ["és"], {"està": "Les qualitats d'un objecte van amb ser."}]], "És «és». Qualitat d'un objecte: ser. Truc: objecte i qualitat, ser."],
+    [2, "Completa amb «ser» o «estar» (present): «Avui, després de la notícia, el Pau ____ molt trist.»", [["Verb", ["està"], {"és": "És una qualitat transitòria d'una persona: estar."}]], "És «està». Qualitat transitòria d'una persona: estar. Truc: avui, ara, de moment, estar."],
+    [2, "Completa amb «ser» o «estar» (present): «Ells ____ a favor de la vaga.»", [["Verb", ["estan"], {"són": "La locució «estar a favor» sempre és amb estar."}]], "És «estan». «Estar a favor» és una locució fixa amb estar. Truc: estar a favor, estar en venda."],
+    [3, "Completa amb «ser» o «estar» (present): «El pis del carrer Major ____ en venda.»", [["Verb", ["està"], {"és": "La locució «estar en venda» es forma amb estar."}]], "És «està». «Estar en venda» és una locució fixa amb estar. Truc: locució, estar."],
+    [4, "Troba l'error i corregeix-lo: «La meva mare està gran.»", [["Error", ["està gran"]], ["Correcció", ["és gran"]]], "L'edat és una qualitat duradora d'una persona: ser. Truc: duradora, ser; transitòria, estar."]
+   ]
+  },
+  {
+   "nombre": "Perífrasis modals",
+   "pagina": 5,
+   "cara": 11,
+   "ayuda": "Les perífrasis modals expressen obligació, possibilitat o probabilitat: haver de + infinitiu, caldre + infinitiu, poder + infinitiu i deure + infinitiu. El parlant expressa una actitud davant de l'acció. Exemples: «Heu de callar» (obligació), «Cal esperar» (necessitat), «Podem anar-hi» (possibilitat).",
+   "escritas": [
+    [1, "Completa amb «poder» (tu, present): «____ entrar quan vulguis.»", [["Verb", ["pots"], {"pot": "És la 3a persona. Per a tu: pots."}]], "És «pots». Poder + infinitiu expressa possibilitat. Truc: tu pots, ell pot."],
+    [2, "Completa amb «haver de» (nosaltres, present): «____ marxar d'hora.»", [["Verb", ["hem de"], {"tenim de": "L'obligació es fa amb «haver de».", "tenim que": "«Tenir que» és un calc del castellà."}]], "És «hem de». Haver de + infinitiu expressa obligació. Truc: hem de marxar, no «tenim que»."],
+    [3, "Completa amb «deure» (ells, present), perquè expressa probabilitat: «No han arribat: ____ estar encara a l'autobús.»", [["Verb", ["deuen"], {"estaran": "La probabilitat s'expressa amb deure + infinitiu."}]], "És «deuen». Deure + infinitiu expressa probabilitat. Truc: probabilitat, deure."],
+    [3, "Troba l'error i corregeix-lo: «Tenim que recollir l'habitació abans de sopar.»", [["Error", ["Tenim que"]], ["Correcció", ["Hem de", "Cal"]]], "L'obligació s'expressa amb «haver de» o «caldre», no amb «tenir que». Truc: hem de, cal que."]
+   ]
+  },
+  {
+   "nombre": "Perífrasis aspectuals",
+   "pagina": 5,
+   "cara": 11,
+   "ayuda": "Les perífrasis aspectuals indiquen fases de l'acció: inici, durada, repetició o acabament. Les principals són començar a + infinitiu, estar + gerundi, tornar a + infinitiu, acabar de + infinitiu i soler + infinitiu. Exemples: «Comença a nevar» (inici), «Estic menjant» (durada).",
+   "escritas": [
+    [1, "Completa la perífrasi de repetició: «Avui tornes ____ arribar tard.»", [["Preposició", ["a"], {"de": "Per repetir l'acció: tornar a + infinitiu."}]], "És «a». Tornar a + infinitiu indica repetició. Truc: torna a cantar, tornes a arribar."],
+    [2, "Completa la perífrasi d'acabament recent: «Acaben ____ arribar a l'estació.»", [["Preposició", ["de"], {"a": "Acabament recent: acabar de + infinitiu."}]], "És «de». Acabar de + infinitiu indica acabament recent. Truc: acabo de sortir."],
+    [2, "Completa amb el verb «soler» (3a persona, present): «Ella ____ arribar tard cada dilluns.»", [["Verb", ["sol"], {"suel": "És un calc del castellà. En català: sol + infinitiu."}]], "És «sol». Soler + infinitiu indica hàbit. Truc: sol arribar tard."],
+    [3, "Completa amb la perífrasi «estar + gerundi» de «llegir» (1a persona, present): «____ el diari ara mateix.»", [["Perífrasi", ["estic llegint"], {"estic llegir": "Amb estar va el gerundi: llegint."}]], "És «estic llegint». Estar + gerundi indica acció en curs. Truc: estic estudiant."],
+    [3, "Troba l'error i corregeix-lo: «De sobte comença de ploure.»", [["Error", ["comença de"]], ["Correcció", ["comença a"]]], "La perífrasi d'inici és «començar a + infinitiu». Truc: comença a ploure."]
+   ]
+  }
+ ]
+}

@@ -1,0 +1,59 @@
+{
+ "tema": "T1 Normativa general",
+ "subtema": "Accentuació",
+ "conceptos": [
+  {
+   "nombre": "Paraules agudes",
+   "pagina": 2,
+   "ayuda": "Les paraules agudes tenen tònica l'última síl·laba. S'accentuen si acaben en a, e, i, o o consonant + u (també, canapè, aquí), en as, es, is, os, us (anglès) i en en, in. Si acaben en una altra lletra (per exemple, una consonant simple com -r o -l), no s'accentuen.",
+   "escritas": [
+    [1, "Posa l'accent que falta i escriu la paraula completa: «germa» (última síl·laba tònica).", [["Paraula", ["germà"], {"germa": "Aguda acabada en vocal: porta accent."}]], "Germà. És aguda i acaba en vocal, per això s'accentua. Truc: última tònica + vocal final = accent."],
+    [2, "Posa l'accent que falta i escriu la paraula completa: «depen» (última síl·laba tònica).", [["Paraula", ["depèn"], {"depen": "Aguda acabada en -en: porta accent.", "depén": "L'accent és obert (è): sona diferent del castellà."}]], "Depèn. Les agudes acabades en -en s'accentuen. Truc: -en i -in sempre amb accent."],
+    [2, "Posa l'accent que falta i escriu la paraula completa: «Berlin» (última síl·laba tònica).", [["Paraula", ["Berlín"], {"Berlin": "Aguda acabada en -in: porta accent."}]], "Berlín. És aguda i acaba en -in, per això s'accentua. Truc: les agudes en -in i -en porten accent."],
+    [3, "Posa l'accent que falta i escriu la paraula completa: «menu» (última síl·laba tònica).", [["Paraula", ["menú"], {"menu": "Aguda acabada en vocal tònica: porta accent."}]], "Menú. És aguda i la u final és tònica, per això porta accent. Truc: la i i la u amb accent sempre són tancades."],
+    [3, "Troba l'error i corregeix-lo: «Han comprat un sofa nou per al menjador.»", [["Error", ["sofa"]], ["Correcció", ["sofà"]]], "Sofà. És aguda acabada en a: porta accent. Truc: demà, sofà, tarannà."],
+    [4, "Troba l'error i corregeix-lo: «Hem arribat a l'estacio abans de les vuit.»", [["Error", ["estacio"]], ["Correcció", ["estació"]]], "Estació. És aguda acabada en -o: porta accent tancat. Truc: -ció s'accentua sempre."]
+   ]
+  },
+  {
+   "nombre": "Paraules planes i esdrúixoles",
+   "pagina": 2,
+   "ayuda": "Les planes (penúltima tònica) s'accentuen si NO acaben com les agudes (a, e, i, o, as, es, is, os, us, en, in): origen, però orígens. Les esdrúixoles (tònica l'antepenúltima o anterior) s'accentuen sempre: música, pàgina. Atenció: «dia» no s'accentua, perquè se separa di-a i acaba en vocal.",
+   "escritas": [
+    [2, "Escriu el plural de «examen».", [["Plural", ["exàmens"], {"examens": "Plana acabada en -ns (no en -en): porta accent."}]], "Exàmens. El singular no s'accentua (acaba en -en), però en plural acaba en -ns i sí. Truc: examen acaba en -en (sense accent), exàmens en -ens (amb accent)."],
+    [2, "Posa l'accent que falta i escriu la paraula completa: «arab» (penúltima síl·laba tònica).", [["Paraula", ["àrab"], {"arab": "Plana acabada en consonant (no -s/-en/-in): porta accent.", "árab": "La a s'accentua sempre oberta: «à»."}]], "Àrab. És plana i acaba en -b, per això s'accentua; la a sempre porta accent obert. Truc: planes en consonant, accent."],
+    [3, "Completa: «Quan érem petits, nosaltres no _____ (el verb témer, imperfet) la foscor.»", [["Verb", ["temíem"], {"temiem": "Plana acabada en -em (no és -en): porta accent."}]], "Temíem. És plana i no acaba en les terminacions de les agudes, per això s'accentua. Truc: la i tònica porta accent."],
+    [3, "Posa l'accent que falta i escriu la paraula completa: «radio» (antepenúltima síl·laba tònica).", [["Paraula", ["ràdio"], {"radio": "Esdrúixola: sempre porta accent.", "rádio": "La a s'accentua sempre oberta: «à»."}]], "Ràdio. És esdrúixola, per això s'accentua sempre. Truc: ràdio, pàgina, música."],
+    [4, "Troba l'error i corregeix-lo: «La justicia és un valor molt important.»", [["Error", ["justicia"]], ["Correcció", ["justícia"]]], "Justícia. És esdrúixola (jus-tí-ci-a) i s'accentua sempre. Truc: les esdrúixoles sempre porten accent."],
+    [4, "Troba l'error i corregeix-lo: «Han penjat l'ocell a la gabia del balcó.»", [["Error", ["gabia"]], ["Correcció", ["gàbia"]]], "Gàbia. Se separa gà-bi-a: la tònica és l'antepenúltima i s'accentua sempre. Truc: la a sempre porta accent obert."]
+   ]
+  },
+  {
+   "nombre": "Accents diacrítics",
+   "pagina": 3,
+   "ayuda": "L'accent diacrític distingeix paraules que s'escriuen igual però tenen un altre significat: bé (adverbi) i be (animal), mà i ma (la meva), sòl i sol (astre), déu i deu (10), ús i us (a vosaltres). Cal memoritzar la llista, parella per parella.",
+   "escritas": [
+    [1, "Completa: «El Joan _____ el meu cosí.» (verb ésser, tercera persona)", [["Paraula", ["és"], {"es": "El verb ésser porta accent diacrític; «es» és un pronom."}]], "És. És el verb ésser i porta accent. Truc: «és» es pot canviar per «era»; «es», no."],
+    [2, "Completa: «Jo no _____ conduir.» (verb saber, primera persona)", [["Paraula", ["sé"], {"se": "El verb saber porta accent diacrític; «se» és un pronom."}]], "Sé. És el verb saber i porta accent. Truc: «sé» es pot canviar per «sabia»."],
+    [2, "Completa: «Em va respondre que _____, que vindria.» (afirmació)", [["Paraula", ["sí"], {"si": "Per a l'afirmació, «sí» porta accent; «si» és condició."}]], "Sí. Afirma, i per això porta accent. Truc: «sí» respon a una pregunta; «si» és el «si» condicional."],
+    [3, "Escriu la paraula que falta: «Gener és el primer _____ de l'any.» (part de l'any)", [["Paraula", ["mes"], {"més": "«més» (quantitat) porta accent; «mes» (part de l'any) no."}]], "Mes. Quan és una part de l'any no porta accent. Truc: «més» és quantitat, «mes» és el calendari."],
+    [3, "Troba l'error i corregeix-lo: «Vam passejar pèl parc tota la tarda.»", [["Error", ["pèl"]], ["Correcció", ["pel"]]], "Pel. Equival a «per + el» i no porta accent. Truc: «pèl» (vellositat) sí que n'hi porta, «pel» no."],
+    [4, "Completa: «Tinc molta _____ i me'n vaig al llit.» (ganes de dormir)", [["Paraula", ["son"], {"són": "«són» (verb ésser) porta accent; «son» (ganes de dormir) no."}]], "Son. Les ganes de dormir no porten accent. Truc: «són» és verb i es pot canviar per «eren»."],
+    [4, "Completa: «Digues-me _____ penses d'això.» (pregunta indirecta)", [["Paraula", ["què"], {"que": "En una pregunta, «què» porta accent."}]], "Què. És una pregunta, directa o indirecta, i porta accent. Truc: «què» es pot canviar per «quina cosa»."]
+   ]
+  },
+  {
+   "nombre": "Accents oberts i tancats",
+   "pagina": 3,
+   "ayuda": "La a s'accentua sempre oberta (demà). La e i la o s'accentuen oberta (è, ò) si sonen diferent en castellà (repòs, cafè) i tancada (é, ó) si sonen igual (església, camió). La i i la u sempre porten accent tancat (pollí, ningú).",
+   "escritas": [
+    [2, "Posa l'accent que falta i escriu la paraula completa: «espes».", [["Paraula", ["espès"], {"espés": "Sona diferent del castellà «espeso»: accent obert."}]], "Espès. La e sona diferent en castellà («espeso»), per això l'accent és obert. Truc: si no sona igual, obert."],
+    [2, "Posa l'accent que falta i escriu la paraula completa: «arros».", [["Paraula", ["arròs"], {"arrós": "Sona diferent del castellà «arroz»: accent obert."}]], "Arròs. La o sona diferent del castellà, per això l'accent és obert. Truc: -ò- obert en «arròs»."],
+    [3, "Posa l'accent que falta i escriu la paraula completa: «canço».", [["Paraula", ["cançó"], {"cançò": "Sona igual que el castellà «canción»: accent tancat."}]], "Cançó. La o sona igual que en castellà («canción»), per això l'accent és tancat. Truc: igual en castellà, tancat."],
+    [3, "Posa l'accent que falta i escriu la paraula completa: «avio».", [["Paraula", ["avió"], {"aviò": "Sona igual que el castellà «avión»: accent tancat."}]], "Avió. La o sona igual que en castellà («avión»), per això l'accent és tancat. Truc: -ió amb accent tancat."],
+    [3, "Posa l'accent que falta i escriu la paraula completa: «semafor» (la a és tònica).", [["Paraula", ["semàfor"], {"semáfor": "La a s'accentua sempre oberta: «à»."}]], "Semàfor. La a s'accentua sempre oberta. Truc: només hi ha un accent possible per a la a."],
+    [4, "Troba l'error i corregeix-lo: «Va actuar amb molta prudencia davant del perill.»", [["Error", ["prudencia"]], ["Correcció", ["prudència"]]], "Prudència. És esdrúixola (pru-dèn-ci-a) i s'accentua sempre; la e sona diferent del castellà «prudencia», per això l'accent és obert. Truc: com «època» i «repòs»."]
+   ]
+  }
+ ]
+}

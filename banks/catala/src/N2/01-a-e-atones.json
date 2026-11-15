@@ -1,0 +1,59 @@
+{
+ "tema": "T1 Normativa general",
+ "subtema": "A/E àtones",
+ "conceptos": [
+  {
+   "nombre": "Penúltima lletra àtona",
+   "pagina": 1,
+   "ayuda": "Si la penúltima lletra d'una paraula és àtona (no hi cau la síl·laba forta), s'escriu sempre una e. Passa en substantius i adjectius (cases, taules, noies) i també en verbs (tu llegeixes, ells escolten). Compte amb els futurs: allà la a és tònica, i per això escoltaran porta a.",
+   "escritas": [
+    [1, "Escriu la paraula completa: «nen_s» (plural de «nena»; vocal àtona).", [["Paraula", ["nenes"], {"nenas": "La penúltima lletra àtona és sempre una e: «-es»."}]], "Nenes. La penúltima lletra és àtona i per això porta e. Truc: si no hi cau la veu, és una e."],
+    [2, "Completa: «Ells _____ (parlar) amb el director cada dia.»", [["Verb", ["parlen"], {"parlan": "En els verbs, la penúltima lletra àtona és e: «-en»."}]], "Parlen. La a de «parlar» s'hi manté, però la terminació àtona del present és -en. Truc: ells -en, tu -es."],
+    [2, "Escriu el plural de «llibreta».", [["Plural", ["llibretes"], {"llibretas": "El plural femení acaba en «-es», amb e àtona."}]], "Llibretes. El plural dels femenins acaba en -es, amb la e àtona. Truc: el plural de la -a és -es."],
+    [3, "Troba l'error i corregeix-lo: «Els meus germans mengan molt poc.»", [["Error", ["mengan"]], ["Correcció", ["mengen"]]], "Mengen. La penúltima lletra de la forma verbal és àtona, per tant, una e. Truc: ells -en."],
+    [3, "Completa: «Tu _____ (estudiar) molt per als exàmens.»", [["Verb", ["estudies"], {"estudias": "A la segona persona, la penúltima àtona és e: «-es»."}]], "Estudies. La terminació de la segona persona és àtona i s'escriu amb e. Truc: tu -es."],
+    [4, "Completa: «Demà ells _____ (cantar, futur) a la plaça.»", [["Verb", ["cantaran"], {"canten": "El futur és «-aran»: la a és tònica.", "cantan": "Cal la a tònica del futur i la terminació «-an»."}]], "Cantaran. En el futur la síl·laba «-ran» és forta, i en ser tònica s'escriu a. Truc: si hi cau la veu, escrius el que sona."]
+   ]
+  },
+  {
+   "nombre": "Substantius masculins i femenins",
+   "pagina": 1,
+   "ayuda": "Els substantius masculins acostumen a acabar en -e (cotxe, llibre) i els femenins en -a (casa, taula). Les excepcions són les mateixes que en castellà: masculins en -ista (dentista), -cida (insecticida), -ma (tema) i -ta (poeta), i femenins com mare, febre, verge o fase.",
+   "escritas": [
+    [1, "Escriu la paraula completa: «hom_» (masculí; el contrari de «dona»).", [["Paraula", ["home"], {"homa": "Els masculins acaben en -e, com en castellà «hombre»."}]], "Home. Els substantius masculins acostumen a acabar en -e. Truc: «hombre» acaba en -e, doncs «home» també."],
+    [2, "Escriu la paraula completa: «torr_» (femení; edifici molt alt).", [["Paraula", ["torre"], {"torra": "És una excepció femenina en -e, com en castellà «torre»."}]], "Torre. És una de les excepcions femenines que acaben en -e. Truc: si en castellà acaba en -e, en català també."],
+    [2, "Escriu la paraula completa: «problem_» (masculí).", [["Paraula", ["problema"], {"probleme": "Excepció masculina en -ma, com en castellà «problema»."}]], "Problema. Els masculins en -ma són una excepció, igual que en castellà. Truc: drama, tema, problema."],
+    [3, "Troba l'error i corregeix-lo: «L'artisto va pintar un quadre enorme.»", [["Error", ["artisto"]], ["Correcció", ["artista"]]], "Artista. Els acabats en -ista són excepció i porten a, sigui l'home o la dona. Truc: «artista», com en castellà."],
+    [3, "Troba l'error i corregeix-lo: «La classa de matemàtiques comença a les nou.»", [["Error", ["classa"]], ["Correcció", ["classe"]]], "Classe. És un femení que acaba en -e, igual que en castellà. Truc: «clase» acaba en -e."],
+    [3, "Escriu la paraula completa: «imatg_» (femení).", [["Paraula", ["imatge"], {"imatga": "Excepció: és un femení que acaba en -e."}]], "Imatge. És una excepció femenina que acaba en -e. Truc: memoritza la llista mare, febre, imatge."],
+    [4, "Escriu la paraula completa: «planet_» (masculí).", [["Paraula", ["planeta"], {"planete": "Excepció masculina en -ta, com en castellà «planeta»."}]], "Planeta. Els masculins en -ta són excepció, igual que en castellà. Truc: «planeta» acaba en -a en castellà, doncs en català també."]
+   ]
+  },
+  {
+   "nombre": "Adjectius invariables i variables",
+   "pagina": 1,
+   "ayuda": "Si un adjectiu és invariable en castellà (una sola terminació), també ho és en català: amable, difícil, capaç. Si en castellà té dues terminacions, en català també (masculí i femení). Aquesta regla serveix per a qualsevol adjectiu, encara que no acabi en e/a. Hi ha poques excepcions que cal memoritzar.",
+   "escritas": [
+    [1, "Escriu el femení singular de «alegre».", [["Femení", ["alegre"], {"alegra": "És invariable, com en castellà «alegre»."}]], "Alegre. En castellà és invariable («alegre»), doncs en català també. Truc: una sola terminació en castellà, una sola en català."],
+    [2, "Escriu el femení singular de «culte».", [["Femení", ["culta"], {"culte": "En castellà és «culto/culta»: té dues terminacions."}]], "Culta. En castellà té dues terminacions, i en català també. Truc: «culto/culta» es tradueix per «culte/culta»."],
+    [2, "Escriu el femení singular de «ample».", [["Femení", ["ampla"], {"ample": "En castellà és «ancho/ancha»: variable també en català."}]], "Ampla. Els adjectius variables en castellà també ho són en català. Truc: «ancho/ancha» és «ample/ampla»."],
+    [3, "Escriu el femení singular de «pobre».", [["Femení", ["pobra"], {"pobre": "Excepció: «pobre» fa «pobra» en femení."}]], "Pobra. És una excepció: tot i acabar en -e, és variable. Truc: «pobre/a» és l'excepció de la norma dels invariables."],
+    [3, "Troba l'error i corregeix-lo: «Aquella amiga és molt fidela.»", [["Error", ["fidela"]], ["Correcció", ["fidel"]]], "Fidel. En castellà és «fiel» (invariable), i en català també. Truc: «fiel» → «fidel» per a tots dos gèneres."],
+    [5, "Escriu el femení singular de «rude» (en castellà és «rudo/ruda»).", [["Femení", ["rude"], {"ruda": "Excepció: en català «rude» és invariable."}]], "Rude. És una de les excepcions: en castellà varia, però en català no. Truc: «rude» i «xerraire» són invariables."]
+   ]
+  },
+  {
+   "nombre": "Interior de mot i llista d'excepcions",
+   "pagina": 2,
+   "ayuda": "Si la a/e àtona és a l'interior d'un mot, busca el mot primitiu (cadeneta es fa amb e perquè ve de cadena) o escriu el mateix que en castellà. Tingues present la llista d'excepcions: afaitar, xocolata, enyorar, monestir i altres. Als verbs jeure, néixer i treure, la e canvia a a si no és forta: traurem (però trec).",
+   "escritas": [
+    [2, "Escriu la paraula completa: «dav_ntal» (peça de roba que et poses per no tacar-te quan cuines).", [["Paraula", ["davantal"], {"davental": "Excepció: «davantal» amb a, encara que en castellà és «delantal»."}]], "Davantal. És una excepció de la llista: a en català i e en castellà. Truc: «davant» i «davantal» van junts."],
+    [3, "Escriu la paraula completa: «m_ravella» (cosa que causa admiració).", [["Paraula", ["meravella"], {"maravella": "Excepció: «meravella» porta e, encara que en castellà és «maravilla»."}]], "Meravella. És una excepció de la llista: e en català i a en castellà. Truc: «meravella» no s'assembla a «maravilla»."],
+    [3, "Escriu la paraula completa: «fin_streta» (finestra petita).", [["Paraula", ["finestreta"], {"finastreta": "Busca el primitiu: «finestra» porta e."}]], "Finestreta. La vocal àtona de l'interior es resol amb el mot primitiu, «finestra», que porta e. Truc: busca la paraula primitiva."],
+    [3, "Troba l'error i corregeix-lo: «Els nens van nadar a la piscina tot el matí.»", [["Error", ["nadar"]], ["Correcció", ["nedar"]]], "Nedar. És una excepció de la llista: e en català i a en castellà. Truc: «nedar» no és «nadar»."],
+    [4, "Troba l'error i corregeix-lo: «Els músics van ensajar tota la tarda.»", [["Error", ["ensajar"]], ["Correcció", ["assajar"]]], "Assajar. És una excepció de la llista: a en català i e en castellà («ensayar»). Truc: «assajar» té dues essa i a."],
+    [5, "Escriu la forma verbal: «Aquest estiu _____ (néixer, futur) tres cadells a la granja.»", [["Verb", ["naixeran"], {"neixeran": "Si la e no és forta, canvia a a: «naix-»."}]], "Naixeran. En els verbs néixer, jeure i treure, la e es converteix en a si no és forta. Truc: neixo (forta), naixeran (no forta)."]
+   ]
+  }
+ ]
+}

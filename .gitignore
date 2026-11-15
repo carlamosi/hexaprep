@@ -12,3 +12,4 @@ test-results/
 banks/*/fuentes/
 *.egg-info/
 frontend/e2e/capturas/
+banks/catala/texto/img/

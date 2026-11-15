@@ -57,4 +57,4 @@ def test_import_all_orders_banks_by_subject_then_theme_original_first():
     assert orden.index("economia/T1.json") < orden.index("economia/A1.json")  # el booklet antes que sus apuntes
     assert orden.index("economia/T2.json") < orden.index("economia/A2.json") and orden.index("economia/T3.json") < orden.index("economia/A3.json")
     assert orden.index("economia/A1.json") < orden.index("economia/T2.json")  # y los temas en orden
-    assert "catala/N1.json" in orden
+    assert "catala/N1.json" not in orden and "catala/N2.json" in orden  # N1 está retirado (banks/catala/retiradas)

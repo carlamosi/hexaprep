@@ -1,0 +1,46 @@
+{
+ "tema": "T3 Literatura",
+ "subtema": "Ausiàs March",
+ "conceptos": [
+  {
+   "nombre": "Autor i època",
+   "pagina": 3,
+   "cara": 13,
+   "ayuda": "Ausiàs March és un autor del segle XV. És conegut amb un sobrenom que té a veure amb la manera com expressa les idees. Fa servir la poesia per transmetre pensaments, no només sentiments.",
+   "escritas": [],
+   "vf": [
+    [1, "Ausiàs March és un autor del segle XV.", true, "Ausiàs March va escriure al segle XV.", "trampa: situar-lo al segle XI, com els primers trobadors."],
+    [2, "Ausiàs March és conegut com el poeta filòsof.", true, "Té aquest nom perquè els seus pensaments s'expressen a través del gènere poètic.", "trampa: pensar que és un poeta cortesà més."],
+    [2, "Ausiàs March és un autor del segle XII.", false, "És del segle XV. El segle XII és el de l'arribada de la lírica trobadoresca a Catalunya.", "trampa: confondre els segles de la lírica trobadoresca amb el d'Ausiàs March."],
+    [3, "Els pensaments d'Ausiàs March s'expressen a través de la prosa.", false, "S'expressen a través del gènere poètic, per això és el poeta filòsof.", "trampa: associar un filòsof amb escriure en prosa."]
+   ]
+  },
+  {
+   "nombre": "Ruptura amb la lírica trobadoresca",
+   "pagina": 3,
+   "cara": 13,
+   "ayuda": "Ausiàs March trenca definitivament amb la lírica trobadoresca. Ho fa per dos fets, un que té a veure amb la llengua i un altre amb el tipus d'amor que tracta. Per això se'l considera el final d'una tradició.",
+   "escritas": [],
+   "vf": [
+    [2, "Ausiàs March escriu en llengua catalana i no en provençal.", true, "Escriure en català és un dels dos motius de la ruptura amb la lírica trobadoresca.", "trampa: pensar que continua amb la llengua dels trobadors."],
+    [3, "Ausiàs March tracta de l'amor humà.", true, "No tracta de l'amor cortès sinó de l'amor humà.", "trampa: creure que segueix l'amor cortès dels trobadors."],
+    [3, "L'amor humà d'Ausiàs March té un doble vessant, espiritual i religiós.", false, "El doble vessant del seu amor humà és intel·lectual i sensual.", "trampa: pensar que, com que és un poeta filòsof, el seu amor no té res de sensual."],
+    [2, "Ausiàs March continua escrivint en provençal.", false, "Escriu en català, i això el fa trencar amb la lírica trobadoresca.", "trampa: atribuir-li la llengua dels trobadors."],
+    [3, "Ausiàs March tracta de l'amor cortès.", false, "Tracta de l'amor humà. L'amor cortès és el de la lírica trobadoresca i dels llibres de cavalleria.", "trampa: confondre l'amor humà amb l'amor cortès."]
+   ]
+  },
+  {
+   "nombre": "Els tres temes de March",
+   "pagina": 3,
+   "cara": 13,
+   "ayuda": "La poesia d'Ausiàs March gira entorn de tres grans temes. Un és sentimental, un altre té a veure amb el destí de l'ànima i el tercer amb la conducta, amb allò que està bé i allò que està malament.",
+   "escritas": [],
+   "vf": [
+    [1, "L'amor és un dels tres temes d'Ausiàs March.", true, "Els tres temes són l'amor, la mort i la moral.", "trampa: dubtar de si l'amor hi és, per la ruptura amb l'amor cortès."],
+    [2, "La mort, vista com a condemna o salvació de l'ànima, és un dels temes d'Ausiàs March.", true, "March tracta la mort en relació amb la condemna o la salvació de l'ànima.", "trampa: pensar que només tracta temes amorosos."],
+    [2, "En la poesia d'Ausiàs March, la moral tracta de la condemna o la salvació de l'ànima.", false, "La condemna o la salvació de l'ànima és el tema de la mort. La moral tracta del bé i el mal.", "trampa: barrejar el que vol dir el tema de la mort amb el de la moral."],
+    [3, "Un dels tres temes principals d'Ausiàs March és la cavalleria.", false, "Els tres temes són l'amor, la mort i la moral. La cavalleria és el tema dels llibres de cavalleria.", "trampa: mesclar autors del mateix segle."]
+   ]
+  }
+ ]
+}

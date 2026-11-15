@@ -23,6 +23,7 @@ PDFS = [
     ("mates", "Mates_Inequacions.pdf", "inequacions.md"),
     ("mates", "Mates_Matrius_exercicis.pdf", "matrius_exercicis.md"),
     ("catala", "Catala_Normativa_general.pdf", "normativa.md"),
+    ("catala", "Catala_Apunts_Gramatica.pdf", "apunts_gramatica.md"),
 ]
 
 

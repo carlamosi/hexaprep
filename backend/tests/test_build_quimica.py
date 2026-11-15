@@ -65,3 +65,32 @@ def test_a_wrong_list_is_reported_unless_order_is_free(tmp_path):
             [2, "libre", [4, 1], "P.", "[1, 4]"], [2, "ordenada mal", [4, 1], "P.", "[1, 4]", True]]}]}), encoding="utf-8")
     _, errores = build(src)
     assert len(errores) == 1 and "no coincide" in errores[0]
+
+
+# ---------- preguntas escritas (Català) ----------
+def src_escritas(tmp_path, escritas):
+    src = make_src(tmp_path)
+    c = {"nombre": "Barbarismes", "pagina": 12, "ayuda": "Ajuda.", "escritas": escritas}
+    (src / "02-b.json").write_text(json.dumps({"subtema": "Sub B", "conceptos": [c]}), encoding="utf-8")
+    return src
+
+
+def test_builds_written_questions_with_fields_and_typical_errors(tmp_path):
+    esc = [[2, "Escriu el femení de «cavall».", [["Femení", ["euga"], {"egua": "Compte: és «euga»."}]], "Parella lèxica irregular."],
+           [3, "Troba l'error: «Tinc que anar a classe».", [["Error", ["tinc que"]], ["Correcció", ["he d'anar", "cal que vagi"]]], "Obligació: haver de."]]
+    bank, errores = build(src_escritas(tmp_path, esc))
+    assert errores == []
+    BankFile.model_validate(bank)
+    q = [p for p in bank["preguntas"] if p.get("tipo") == "escrita"]
+    assert len(q) == 2 and q[0]["campos"][0] == {"etiqueta": "Femení", "validas": ["euga"], "errores": {"egua": "Compte: és «euga»."}}
+    assert q[1]["campos"][1]["validas"] == ["he d'anar", "cal que vagi"] and q[1]["campos"][1]["errores"] == {}
+    assert q[0]["fuente_cara"] == 12 and q[0]["explicacion"] == "Parella lèxica irregular."
+
+
+def test_written_question_checks_catch_authoring_mistakes(tmp_path):
+    esc = [[3, "Troba l'error: «Hem de anar».", [["Error", ["tinc que"]], ["Correcció", ["hem d'anar"]]], "E."],
+           [2, "Escriu el femení de «gall».", [["Femení", ["gallina"], {"Gallina": "n"}]], "E."],
+           [2, "Escriu el femení de «porc».", [["Femení", []]], "E."]]
+    _, errores = build(src_escritas(tmp_path, esc))
+    assert len(errores) == 3
+    assert "no apareix a la frase" in errores[0] and "coincideix amb una forma vàlida" in errores[1] and "sense formes vàlides" in errores[2]

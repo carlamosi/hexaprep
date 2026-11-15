@@ -45,3 +45,12 @@ def test_corregir_exige_todos_los_campos_y_el_mismo_numero_de_respuestas():
         corregir(campos, ["venint"])
     ok, _ = corregir(campos, ["", ""])
     assert not ok
+
+
+def test_en_troba_l_error_vale_un_fragmento_algo_mas_largo_pero_no_uno_distinto():
+    error = {"etiqueta": "Error", "validas": ["tinc que"]}
+    for ok in ("tinc que", "Tinc que anar", "el tinc que"):
+        assert corregir_campo(ok, error)["correcto"] is True
+    for mal in ("tinc", "que", "tinc que anar a classe ara mateix", "tincque"):
+        assert corregir_campo(mal, error)["correcto"] is False
+    assert corregir_campo("tinc que anar", {"etiqueta": "Paraula", "validas": ["tinc que"]})["correcto"] is False  # solo en «Error»

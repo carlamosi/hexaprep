@@ -1,0 +1,64 @@
+{
+ "tema": "T3 Literatura",
+ "subtema": "Llibres de cavalleria i novel·la cavalleresca",
+ "conceptos": [
+  {
+   "nombre": "Època, ideari i visió del món",
+   "pagina": 2,
+   "cara": 14,
+   "ayuda": "Els llibres de cavalleria i la novel·la cavalleresca són dos moments successius. Els primers són més antics i miren el món des de la religió. La novel·la cavalleresca arriba més tard i comença a posar la persona al centre. Cada una té el seu ideari propi.",
+   "escritas": [],
+   "vf": [
+    [1, "Els llibres de cavalleria es donen a Catalunya entre els segles XII i XIV.", true, "Els llibres de cavalleria són dels segles XII-XIV. Truc: primer els llibres, després la novel·la.", "trampa: situar-los al segle XV, com la novel·la."],
+    [2, "La novel·la cavalleresca es dona a Catalunya entre els segles XII i XIV.", false, "Aquesta és l'època dels llibres de cavalleria. La novel·la cavalleresca és del segle XV.", "trampa: pensar que és anterior als llibres de cavalleria."],
+    [2, "Els llibres de cavalleria tenen un ideari basat en el realisme i l'humanisme.", false, "Realisme i humanisme és l'ideari de la novel·la cavalleresca. Els llibres de cavalleria barregen l'ideari cavalleresc i la religió.", "trampa: atribuir-los l'ideari de la novel·la cavalleresca."],
+    [3, "Els llibres de cavalleria tenen una visió teocentrista.", true, "Teocentrisme vol dir que Déu és el centre. Truc: teo = Déu.", "trampa: confondre teocentrisme amb antropocentrisme."],
+    [3, "La novel·la cavalleresca té una visió teocentrista.", false, "La novel·la cavalleresca marca l'inici de l'antropocentrisme. El teocentrisme és dels llibres de cavalleria.", "trampa: atribuir a la novel·la cavalleresca el teocentrisme."]
+   ]
+  },
+  {
+   "nombre": "Estil, forma i amor",
+   "pagina": 2,
+   "cara": 14,
+   "ayuda": "Les dues obres s'escriuen en prosa, però no tenen el mateix estil. Una busca el misteri i la imaginació, i l'altra els fets que es poden explicar amb la lògica. També canvia el tipus d'amor que apareix i el tipus de temes que tracten.",
+   "escritas": [],
+   "vf": [
+    [1, "Els llibres de cavalleria estan escrits en prosa.", true, "Els llibres de cavalleria són prosa. La novel·la cavalleresca és prosa estructurada.", "trampa: associar la cavalleria amb el vers de la lírica."],
+    [2, "L'estil dels llibres de cavalleria és fantasiós i misteriós.", true, "Els llibres de cavalleria són inversemblants, d'estil fantasiós i misteriós.", "trampa: atribuir-los un estil realista."],
+    [2, "L'estil de la novel·la cavalleresca és fantasiós i misteriós.", false, "Fantasiós i misteriós és l'estil dels llibres de cavalleria. La novel·la cavalleresca és realista: fets dominats per la lògica i la raó.", "trampa: creure que és igual de fantasiosa que els llibres de cavalleria."],
+    [2, "Els llibres de cavalleria tracten de l'amor cortès.", true, "L'amor és cortès als llibres de cavalleria. A la novel·la cavalleresca és humà.", "trampa: confondre amor cortès i amor humà."],
+    [3, "La novel·la cavalleresca tracta de l'amor cortès.", false, "La novel·la cavalleresca tracta de l'amor humà. L'amor cortès és dels llibres de cavalleria.", "trampa: pensar que l'amor és igual a totes dues obres."],
+    [4, "Els temes de la novel·la cavalleresca són accions cavalleresques individuals, torneigs i amor cortès.", false, "Això són els temes dels llibres de cavalleria. La novel·la tracta batalles organitzades, torneigs, lluites individuals i amor humà.", "trampa: intercanviar els temes de les dues obres."]
+   ]
+  },
+  {
+   "nombre": "El cavaller i el protagonista",
+   "pagina": 2,
+   "cara": 14,
+   "ayuda": "El protagonista és molt diferent d'una obra a l'altra. En una és un heroi sense profunditat que viu aventures i en l'altra és una persona amb virtuts i defectes. Això es reflecteix en com s'anomena el tipus de personatge.",
+   "escritas": [],
+   "vf": [
+    [2, "Als llibres de cavalleria el cavaller és errant i no té destí.", true, "El cavaller errant va sense destí i és un heroi que busca l'honor i la glòria.", "trampa: pensar que el cavaller té un objectiu clar, com a la novel·la."],
+    [3, "El protagonista dels llibres de cavalleria és un personatge pla, que no canvia.", true, "Pla vol dir que no evoluciona. Tots els cavallers són iguals.", "trampa: confondre'l amb el personatge rodó."],
+    [3, "El protagonista de la novel·la cavalleresca és un personatge pla, que no canvia.", false, "És un personatge rodó: cada cavaller és únic i irrepetible. El personatge pla és el dels llibres de cavalleria.", "trampa: intercanviar personatge pla i personatge rodó."],
+    [3, "A la novel·la cavalleresca el cavaller és humà, amb defectes i virtuts.", true, "El cavaller de la novel·la és humà i té un objectiu, com l'hàbil capità.", "trampa: creure que és un heroi perfecte."],
+    [4, "Als llibres de cavalleria cada cavaller és únic i irrepetible.", false, "Això és de la novel·la cavalleresca. Als llibres tots els cavallers són iguals.", "trampa: intercanviar personatge pla i personatge rodó."]
+   ]
+  },
+  {
+   "nombre": "Obres, espai i temps",
+   "pagina": 2,
+   "cara": 14,
+   "ayuda": "Cada tipus d'obra té els seus títols més coneguts i una manera pròpia de situar l'acció. Una vola cap a un món imaginari i llunyà, i l'altra s'acosta a la història i als llocs coneguts. També es parla d'un valor que té una obra quan perdura al llarg del temps.",
+   "escritas": [],
+   "vf": [
+    [2, "El Llibre de l'orde de cavalleria, de Ramon Llull, és una obra didàctica catalana.", true, "És l'obra dels llibres de cavalleria, i és didàctica.", "trampa: situar-lo com a novel·la cavalleresca."],
+    [2, "Tirant lo Blanc, de Joanot Martorell, és una novel·la cavalleresca.", true, "Tirant lo Blanc és de Martorell i és la gran novel·la cavalleresca. Curial e Güelfa és anònima.", "trampa: atribuir-lo a Ramon Llull."],
+    [3, "Curial e Güelfa és una novel·la de Joanot Martorell.", false, "Curial e Güelfa és anònima. Joanot Martorell és l'autor de Tirant lo Blanc.", "trampa: pensar que les dues grans novel·les cavalleresques són del mateix autor."],
+    [3, "A la novel·la cavalleresca hi ha personatges històrics, com Enric VI d'Anglaterra o Roger de Flor, i llocs propers com Bretanya, Constantinoble o Itàlia.", true, "Això crea versemblança: personatges històrics, llocs coneguts i temps pròxim.", "trampa: pensar que són llocs llunyans i exòtics."],
+    [3, "Els llibres de cavalleria situen l'acció en llocs propers i coneguts i en un temps pròxim.", false, "Als llibres de cavalleria el lloc és llunyà i exòtic i el temps remot, amb nans, bruixots i dracs. Els llocs coneguts i el temps pròxim són de la novel·la cavalleresca.", "trampa: atribuir als llibres de cavalleria la versemblança de la novel·la."],
+    [4, "Tirant lo Blanc és de Ramon Llull.", false, "És de Joanot Martorell. Ramon Llull és l'autor del Llibre de l'orde de cavalleria.", "trampa: confondre els autors de les dues obres."]
+   ]
+  }
+ ]
+}

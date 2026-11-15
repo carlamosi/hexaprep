@@ -1,0 +1,56 @@
+{
+ "tema": "T2 Gramàtica",
+ "subtema": "Llur, qualsevol, diversos i plural",
+ "conceptos": [
+  {
+   "nombre": "Llur i qualsevol",
+   "pagina": 5,
+   "cara": 4,
+   "ayuda": "«Llur» (plural «llurs») només s'usa quan el subjecte és plural: «Els veïns i llur gos». Si el subjecte és singular, es fa servir «el seu» o «la seva». «Qualsevol» és singular («una nena qualsevol») i el plural és «qualssevol» («unes nenes qualssevol»).",
+   "escritas": [
+    [2, "Escriu el plural de «qualsevol».", [["Plural", ["qualssevol"], {"qualsevols": "El plural no afegeix -s al final: és «qualssevol»."}]], "És «qualssevol». La -s s'afegeix a la primera part del mot, no al final. Truc: qualsevol → qualssevol."],
+    [3, "Troba l'error i corregeix-lo: «Pots portar unes sabates qualsevol.»", [["Error", ["qualsevol"]], ["Correcció", ["qualssevol"]]], "Hauria de ser «qualssevol». El nom és plural i el determinant també. Truc: unes sabates qualssevol."],
+    [3, "Troba l'error i corregeix-lo: «L'alumne i llur professora han arribat tard.»", [["Error", ["llur"]], ["Correcció", ["la seva"]]], "Hauria de ser «la seva». «Llur» només s'usa amb subjecte plural, i aquí el subjecte és «l'alumne», en singular. Truc: llur = només plural."],
+    [4, "Troba l'error i corregeix-lo: «La Maria ha rebut llur premi.»", [["Error", ["llur"]], ["Correcció", ["el seu"]]], "Hauria de ser «el seu». El subjecte és singular, i «llur» només va amb subjecte plural. Truc: un possessor, «el seu»."]
+   ]
+  },
+  {
+   "nombre": "Diversos i numerals",
+   "pagina": 5,
+   "cara": 4,
+   "ayuda": "Segons els apunts, «vari, vària» vol dir «de diferent tipus» i no s'usa per indicar una quantitat (per a això hi ha «alguns» o «uns quants»). Els derivats cultes de «mil» porten ela geminada quan sonen dues l, com «mil·límetre» o «mil·ligram». Alguns col·lectius numerals tenen forma pròpia que no és calc del castellà, com «una dotzena» o «un centenar».",
+   "escritas": [
+    [2, "Escriu el nom d'un conjunt aproximat de mil unitats.", [["Paraula", ["miler", "milenar"], {"millar": "En català és «miler» (o «milenar»), no «millar»."}]], "És «miler» (també «milenar»). «Millar» és un calc del castellà. Truc: miler, milió."],
+    [2, "Escriu la paraula que designa un període de mil anys.", [["Paraula", ["mil·lenni", "mil·lenari"], {"millenni": "Porta ela geminada: «mil·lenni».", "mil·leni": "Té dues n: «mil·lenni»."}]], "És «mil·lenni». Porta ela geminada (l·l) i dues n. Truc: mil + anni (anys)."],
+    [3, "Troba l'error i corregeix-lo: «Han vingut vàries alumnes a la reunió.»", [["Error", ["vàries"]], ["Correcció", ["diversos", "diverses"]]], "Hauria de ser «diverses» (o «diversos»). Segons els apunts, per dir «alguns» es fa servir «diversos, diverses», i «vari, vària» queda per a «de diferent tipus». Truc: diversos, no vàries."],
+    [3, "Completa amb l'adjectiu que vol dir «de diferents tipus»: «A la botiga hi ha regals ____.»", [["Adjectiu", ["varis", "diversos", "variats", "diferents"], {"vàries": "La forma correcta és «varis» (o «diversos»)."}]], "És «varis» (o «diversos»). Truc: regals varis."],
+    [4, "Escriu la paraula completa: «mil·l_sima» (cadascuna de les parts d'un tot dividit en mil).", [["Paraula", ["mil·lèsima"], {"mil·lesima": "Porta accent obert a la e: «mil·lèsima»."}]], "És «mil·lèsima». Porta ela geminada i accent obert a la e. Truc: mil·lèsima, com «mil·lenni»."]
+   ]
+  },
+  {
+   "nombre": "Plural en -os",
+   "pagina": 5,
+   "cara": 4,
+   "ayuda": "Els mots acabats en -s, -x o -ç tònics fan el plural en -os: «gas → gasos», «peix → peixos». Els acabats en -sc, -st, -xt i -ig també fan -os, que és la forma dels apunts (la normativa admet també -s): «disc → discos», «gest → gestos». Quan el mot acaba en -ig, la g passa a -j- davant -os: «raig → rajos».",
+   "escritas": [
+    [1, "Escriu el plural de «reflex».", [["Plural", ["reflexos"], {"reflexs": "Els acabats en -x afegeixen -os.", "reflexes": "S'afegeix -os, no -es."}]], "És «reflexos». Els mots acabats en -x (-ex) afegeixen -os. Truc: reflex-reflexos."],
+    [2, "Escriu el plural de «text».", [["Plural", ["textos", "texts"], {"textes": "S'afegeix -os, no -es."}]], "És «textos», la forma dels apunts: els mots acabats en -xt afegeixen -os. La normativa també admet «texts». Truc: text-textos."],
+    [3, "Troba l'error i corregeix-lo: «Han construït dos complexs esportius nous.»", [["Error", ["complexs"]], ["Correcció", ["complexos"]]], "Hauria de ser «complexos». Els mots aguts acabats en -x afegeixen -os, com «reflex → reflexos» i «flux → fluxos». Truc: si l'accent cau a l'última síl·laba, -x fa -xos."],
+    [4, "Escriu el plural de «passeig».", [["Plural", ["passejos", "passeigs"], {"passeigos": "Davant -os, la g passa a -j-: «passejos».", "passetjos": "No porta t: «passejos»."}]], "És «passejos», la forma dels apunts: els acabats en -ig afegeixen -os i la g passa a -j-. La normativa també admet «passeigs». Truc: com «raig → rajos»."]
+   ]
+  },
+  {
+   "nombre": "Plurals invariables",
+   "pagina": 5,
+   "cara": 4,
+   "ayuda": "Alguns noms tenen el mateix plural que el singular: els dies de la setmana (excepte dissabte i diumenge), com «dimarts» o «dimecres»; també alguns compostos acabats en -s, com «el llevataps / els llevataps». Els mots plans (accent a la penúltima síl·laba) acabats en -x només afegeixen -s: «índex → índexs». Per exemple, «el dijous» i «els dijous».",
+   "escritas": [
+    [1, "Escriu el plural de «dilluns».", [["Plural", ["dilluns"], {"dillunsos": "Els dies de la setmana no canvien al plural."}]], "És «dilluns», igual que el singular: «el dilluns, els dilluns». Truc: els dies de la setmana són invariables."],
+    [2, "Escriu el plural de «dissabte».", [["Plural", ["dissabtes"], {"dissabte": "«Dissabte» i «diumenge» sí que fan -s al plural."}]], "És «dissabtes». És l'excepció dels dies de la setmana: dissabtes i diumenges porten -s. Truc: dis-sabtes, diu-menges."],
+    [3, "Troba l'error i corregeix-lo: «Tots els diumenge dinem junts.»", [["Error", ["diumenge"]], ["Correcció", ["diumenges"]]], "Hauria de ser «diumenges». «Dissabte» i «diumenge» són l'excepció i fan plural amb -s. Truc: diumenges amb -s."],
+    [3, "Escriu el plural de «salvavides».", [["Plural", ["salvavides"], {"salvavidess": "«Salvavides» ja acaba en -s i és invariable.", "salvavidesos": "«Salvavides» és invariable."}]], "És «salvavides», igual que el singular. Els acabats en -s d'aquest tipus són invariables. Truc: el salvavides, els salvavides."],
+    [4, "Escriu el plural de «apèndix».", [["Plural", ["apèndixs"], {"apèndixos": "És un mot pla acabat en -x: només afegeix -s.", "apèndices": "En català el plural és «apèndixs»."}]], "És «apèndixs». Els mots plans acabats en -x només afegeixen -s, com «índex → índexs»; els aguts, com «calaix», fan -os. Truc: apèndix-apèndixs."]
+   ]
+  }
+ ]
+}

@@ -13,6 +13,7 @@ Los botones «Abrir el booklet en la página N» buscan el archivo por nombre en
 | Examen_equacions_inequacions_1BAT_SOLUCIONS.pdf | `banks/mates/fuentes/Mates_Examen_equacions_inequacions_solucions.pdf` | Examen de ecuaciones e inecuaciones con solucionario (3 págs, catalán) |
 | Fitxa d'equacions exponencials i logarítmiques.pdf | `banks/mates/fuentes/Mates_Fitxa_exponencials_logaritmiques.pdf` | Ficha de ecuaciones exponenciales y logarítmicas (1 pág, solo imagen) |
 | Catala_Apunts_Gramatica_1.pdf (Descargas) | `banks/catala/fuentes/Catala_Apunts_Gramatica.pdf` | Apuntes de gramática y literatura de Carla (8 págs; tabla de gerundis i participis en la pág. 6, cara 10) |
+| Català.pdf (Descargas) | `banks/catala/fuentes/Catala_Literatura_apunts_fotos.pdf` | Fotos de los apuntes de literatura de Carla (8 págs, solo imagen; la 1 y la 2 son literatura) |
 | NORMATIVA GENERAL CATALÀ.pdf | `banks/catala/fuentes/Catala_Normativa_general.pdf` | Normativa general de la lengua catalana (17 págs) |
 | Propiedades de potencias, radicales y logaritmos.pdf | `banks/mates/fuentes/Mates_Propietats_potencies_radicals_logaritmes.pdf` | Resumen de propiedades de potencias, radicales y logaritmos (1 pág) |
 | ecuacionesracionalesirracionalesybicuadradas.pdf | `banks/mates/fuentes/Mates_Equacions_racionals_irracionals_bicuadrades.pdf` | Ejercicios de ecuaciones racionales, irracionales y bicuadradas (3 págs) |
