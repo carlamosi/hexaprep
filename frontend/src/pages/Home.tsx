@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { api, type MapResponse } from "../api";
 import { HexMap } from "../components/HexMap";
+import { PanelAsignatura } from "../components/PanelAsignatura";
 import { Hexagon } from "../components/Hexagon";
 import { t, tn } from "../i18n";
 
@@ -9,6 +10,7 @@ type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kin
 /** Inicio: solo el panal de la primera asignatura, sin mensajes por días sin usar. */
 export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onNivel?: () => void; onPracticar?: () => void; onPracticarTema?: (id: string) => void }) {
   const [state, setState] = useState<State>({ kind: "loading" });
+  const [panel, setPanel] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -32,7 +34,9 @@ export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }:
     <main id="main" className="wrap">
       <section className="page-head">
         <div className="subject-hero">
-          <Hexagon percent={map.percent} color={acento || "var(--lila)"} big />
+          <button type="button" className="hero-hex" aria-label={`${t("panal.verPanal")} ${map.asignatura}`} onClick={() => setPanel(true)}>
+            <Hexagon percent={map.percent} color={acento || "var(--lila)"} big />
+          </button>
           <div>
             <span className="kicker">{t("panal.titulo")}</span>
             <h1>{map.asignatura}</h1>
@@ -54,6 +58,7 @@ export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }:
           </div>
         </div>
       </section>
+      {panel && <PanelAsignatura map={map} onClose={() => setPanel(false)} onSelectSubtema={(id) => { setPanel(false); onSelectSubtema?.(id); }} />}
       <HexMap hexes={map.hexes} subtemas={map.subtemas} onSelect={(id) => onSelectSubtema?.(id)} onPracticarTema={onPracticarTema} />
     </main>
   );

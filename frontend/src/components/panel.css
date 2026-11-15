@@ -1,18 +1,31 @@
-/* Panel del título: todos los conceptos a la vez. Cada tema un color, cada subtema un tono. */
-.asig-panel { position: relative; }
-.asig-panel-body {
-  position: absolute; left: 0; top: 100%; z-index: 20; width: min(92vw, 720px); max-height: 70vh; overflow: auto;
-  margin-top: 6px; padding: 16px 18px; background: #fff; border: 1.5px solid var(--ink); border-radius: 14px;
-  box-shadow: 5px 5px 0 var(--lila);
+/* Panel de la asignatura: todo el panal en una pantalla. Un color por tema, un tono por subtema. */
+.pm-backdrop { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: 3vh 3vw; background: rgb(31 26 36 / .45); }
+.pm {
+  width: min(96vw, 1400px); max-height: 94vh; display: flex; flex-direction: column; overflow: hidden;
+  background: var(--paper, #fff); border: 1.5px solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--lila);
 }
-.asig-panel-body section + section { margin-top: 14px; }
-.asig-panel-body h3 { margin: 0 0 6px; font-size: .95rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-.asig-panel-body h3::before { content: ""; width: 14px; height: 12px; clip-path: var(--hex-flat); background: var(--tc); }
-.asig-sub { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; padding: 3px 0; }
-.asig-sub-name { width: 170px; font-size: .78rem; color: var(--ink-2); }
-.asig-hexes { display: flex; flex-wrap: wrap; gap: 3px; }
+.pm-head { display: flex; align-items: baseline; gap: 14px; padding: 14px 20px; border-bottom: 1.5px solid var(--ink); }
+.pm-head h2 { margin: 0; font-size: 1.4rem; font-weight: 600; }
+.pm-total { font-size: 1.4rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.pm-close { margin-left: auto; border: 1.5px solid var(--ink); border-radius: 11px; background: #fff; padding: 4px 14px; font: inherit; font-weight: 600; cursor: pointer; }
+.pm-close:focus-visible, .pm-sub-name:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 2px; }
+.pm-body { display: flex; flex-wrap: wrap; align-content: flex-start; gap: 14px; padding: 16px 20px 20px; overflow: auto; }
+.pm-tema { flex: 1 1 auto; border: 1.5px solid var(--tc); border-radius: 14px; padding: 10px 14px 14px; background: color-mix(in srgb, var(--tc) 6%, #fff); }
+.pm-tema h3 { margin: 0 0 8px; font-size: .95rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.pm-tema h3::before { content: ""; width: 14px; height: 12px; clip-path: var(--hex-flat); background: var(--tc); }
+.pm-subs { display: flex; flex-wrap: wrap; gap: 14px 20px; }
+.pm-sub-name { display: block; max-width: 220px; margin-bottom: 4px; padding: 0; border: 0; background: none; font: inherit; font-size: .78rem; text-align: left; color: var(--ink-2); cursor: pointer; }
+.pm-sub-name b { color: var(--ink); font-variant-numeric: tabular-nums; }
+.pm-sub-name:hover { color: var(--ink); text-decoration: underline; }
+.pm-cluster { position: relative; }
 .mini-hex {
-  width: 22px; height: 19px; clip-path: var(--hex-flat);
+  position: absolute; clip-path: var(--hex-flat); transform: scale(.93);
   background: linear-gradient(to top, var(--c) var(--p), color-mix(in srgb, var(--c) 14%, #fff) var(--p));
 }
-@media (max-width: 640px) { .asig-sub-name { width: 100%; } }
+
+/* Hexágono grande de la portada: invita a abrir el panel. */
+.hero-hex { background: none; border: 0; padding: 0; cursor: pointer; border-radius: 16px; }
+.hero-hex .hex-wrap { transition: transform .25s var(--ease); }
+.hero-hex:hover .hex-wrap, .hero-hex:focus-visible .hex-wrap { transform: translate(-2px, -3px) scale(1.04); }
+.hero-hex:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .hero-hex .hex-wrap { transition: none; } }

@@ -38,7 +38,7 @@ export default function App() {
   const sinNav = route === "nivel" || route === "practica";
   return (
     <div className="min-h-screen pb-20 font-sans sm:pb-0">
-      <AppHeader asignatura={nombre} asignaturaId={asignaturaId}ruta={route} sinNav={sinNav} />
+      <AppHeader asignatura={nombre} ruta={route} sinNav={sinNav} />
       {page}
     </div>
   );

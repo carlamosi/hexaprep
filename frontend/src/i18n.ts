@@ -108,6 +108,7 @@ const es: Dict = {
   "practica.terminar": "Terminar sesión",
   "panal.practicarTema": "Practicar tema",
   "panal.verPanal": "Ver panal",
+  "panal.cerrar": "Cerrar",
   "panal.sinAsignaturas": "Todavía no hay ninguna asignatura importada.",
 };
 
