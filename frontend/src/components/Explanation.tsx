@@ -12,9 +12,9 @@ export function Explanation({ result, onNext, onMarcarBien }: { result: AnswerRe
           result.correcta ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]"
         }`}
       >
-        <p className="font-semibold">{result.correcta ? t("practica.acierto") : t("practica.fallo")}</p>
+        <p className="font-semibold">{result.correcta ? t("practica.acierto") : t(result.solucion != null ? "practica.falloProblema" : "practica.fallo")}</p>
         {!result.correcta && result.trampa && <p className="mt-1">{result.trampa}</p>}
-        {result.solucion != null && <p className="mt-1">{t("practica.solucion")}: <strong>{String(result.solucion).replace(".", ",")}</strong></p>}
+        {result.solucion != null && <p className="mt-1">{t("practica.solucion")}: <strong>{[result.solucion].flat().map((v) => String(v).replace(".", ",")).join("; ")}</strong></p>}
       </div>
 
       {result.explicacion && (

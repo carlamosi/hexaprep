@@ -1,0 +1,94 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Inecuaciones",
+ "conceptos": [
+  {
+   "nombre": "Inecuaciones de primer grado",
+   "pagina": 5,
+   "ayuda": "Una inecuación de primer grado se resuelve como una ecuación: quita denominadores, quita paréntesis, agrupa las $x$ a un lado y despeja. Si multiplicas o divides por un número negativo, el signo de la desigualdad se invierte. La solución es un intervalo, por ejemplo $x>4$ es $(4,+\\infty)$. Para dar una respuesta numérica se cuentan o se suman los enteros que están en el intervalo. Ejemplo: $2x+1>7$ da $x>3$, y el menor entero que cumple es 4.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $5x-3>2x+9$. ¿Cuál es el menor número entero que cumple la inecuación? Escribe solo ese número.",
+     5,
+     "Pasamos las $x$ a un lado: $5x-2x>9+3$, es decir $3x>12$, luego $x>4$. Como la desigualdad es estricta, $x=4$ no vale. El menor entero que cumple es 5.",
+     "min(x for x in range(-100, 101) if 5*x - 3 > 2*x + 9)"
+    ],
+    [
+     2,
+     "Resuelve $2(x-1)-\\frac{x+3}{2}\\ge x$. ¿Cuántos números enteros entre 0 y 20, ambos incluidos, cumplen la inecuación? Escribe solo ese número.",
+     14,
+     "Multiplicamos por 2: $4(x-1)-(x+3)\\ge2x$, es decir $4x-4-x-3\\ge2x$, luego $x\\ge7$. Los enteros de 0 a 20 que cumplen son del 7 al 20, o sea 14 números.",
+     "len([x for x in range(0, 21) if 2*(x - 1) - (x + 3)/2 >= x])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Inecuaciones cuadráticas",
+   "pagina": 5,
+   "ayuda": "Para resolver una inecuación cuadrática, pásalo todo a un lado y halla las raíces de la ecuación asociada. Las raíces dividen la recta en tramos y la parábola tiene el mismo signo en todo el tramo, así que basta probar un punto de cada uno. Con $a>0$, es negativa entre las raíces y positiva fuera. Ejemplo: $x^2-3x-4>0$ tiene raíces $-1$ y $4$, y se cumple en $(-\\infty,-1)\\cup(4,+\\infty)$. Si la desigualdad es estricta, los extremos no se incluyen.",
+   "problemas": [
+    [
+     2,
+     "Resuelve $x^2-6x+5\\le0$. La solución es un intervalo cerrado $[a,b]$. Escribe sus dos extremos, a; b (separados por punto y coma).",
+     [
+      1,
+      5
+     ],
+     "Las raíces de $x^2-6x+5=0$ son $x=1$ y $x=5$. La parábola abre hacia arriba, así que es negativa entre las raíces, y como la desigualdad es no estricta se incluyen los extremos. La solución es $[1,5]$.",
+     "[x for x in range(-50, 51) if x**2 - 6*x + 5 == 0]",
+     true
+    ],
+    [
+     3,
+     "Resuelve $x^2-2x-8>0$. ¿Cuántos números enteros entre $-6$ y 8, ambos incluidos, cumplen la inecuación? Escribe solo ese número.",
+     8,
+     "Las raíces de $x^2-2x-8=0$ son $-2$ y $4$. La parábola es positiva fuera de ellas: $(-\\infty,-2)\\cup(4,+\\infty)$, sin incluir los extremos. Los enteros del rango son $-6,-5,-4,-3$ y $5,6,7,8$, en total 8.",
+     "len([x for x in range(-6, 9) if x**2 - 2*x - 8 > 0])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Inecuaciones racionales",
+   "pagina": 5,
+   "ayuda": "En una inecuación racional pasa todo a un lado para tener un solo cociente comparado con 0. Halla las raíces del numerador y del denominador: dividen la recta en tramos, y en cada uno el cociente tiene un signo fijo, que compruebas con un punto de prueba. Las raíces del denominador nunca se incluyen. Las del numerador se incluyen solo si la desigualdad no es estricta. Ejemplo: $\\frac{x-1}{x+2}\\ge0$ se cumple en $(-\\infty,-2)\\cup[1,+\\infty)$.",
+   "problemas": [
+    [
+     3,
+     "Resuelve $\\frac{x-3}{x+2}\\ge0$. ¿Cuántos números enteros entre $-5$ y 6, ambos incluidos, cumplen la inecuación? Escribe solo ese número.",
+     7,
+     "Las raíces son $x=3$ (numerador, se incluye) y $x=-2$ (denominador, no se incluye). El cociente es positivo fuera de $[-2,3]$, luego la solución es $(-\\infty,-2)\\cup[3,+\\infty)$. Cumplen $-5,-4,-3$ y $3,4,5,6$: 7 números.",
+     "len([x for x in range(-5, 7) if x != -2 and (x - 3)/(x + 2) >= 0])"
+    ],
+    [
+     4,
+     "Resuelve $\\frac{2x-1}{x+3}<1$. ¿Cuál es la suma de los números enteros entre $-20$ y 20, ambos incluidos, que cumplen la inecuación? Escribe solo ese número.",
+     3,
+     "Pasamos el 1 a la izquierda: $\\frac{2x-1-(x+3)}{x+3}<0$, es decir $\\frac{x-4}{x+3}<0$. El cociente es negativo entre las raíces $-3$ y $4$, que no se incluyen: la solución es $(-3,4)$. Los enteros son $-2,-1,0,1,2,3$ y suman 3.",
+     "sum(x for x in range(-20, 21) if x != -3 and (2*x - 1)/(x + 3) < 1)"
+    ]
+   ]
+  },
+  {
+   "nombre": "Inecuaciones cúbicas y sistemas de inecuaciones",
+   "pagina": 5,
+   "ayuda": "En una inecuación cúbica factoriza el polinomio (con Ruffini o factor común) y halla todas las raíces. Ordénalas en la recta y estudia el signo del producto en cada tramo. En un sistema de inecuaciones resuelve cada una por separado y quédate con la intersección de las soluciones; dibujar la recta ayuda. Ejemplo: $x^3-x\\ge0$ es $x(x-1)(x+1)\\ge0$ y se cumple en $[-1,0]\\cup[1,+\\infty)$. Si hay un denominador, sus raíces no se incluyen nunca.",
+   "problemas": [
+    [
+     4,
+     "Resuelve $x^3-3x^2-4x+12\\le0$. ¿Cuántos números enteros entre $-6$ y 6, ambos incluidos, cumplen la inecuación? Escribe solo ese número.",
+     7,
+     "Factorizamos: $x^3-3x^2-4x+12=(x-3)(x-2)(x+2)$, con raíces $-2$, $2$ y $3$. El producto es negativo en $(-\\infty,-2)$ y en $(2,3)$, y se anula en las raíces, así que la solución es $(-\\infty,-2]\\cup[2,3]$. Cumplen $-6,-5,-4,-3,-2$ y $2,3$: 7 números.",
+     "len([x for x in range(-6, 7) if x**3 - 3*x**2 - 4*x + 12 <= 0])"
+    ],
+    [
+     5,
+     "Resuelve el sistema de inecuaciones $\\frac{x+1}{x-2}\\ge0$, $x^3-9x\\le0$. ¿Cuántos números enteros entre $-8$ y 8, ambos incluidos, cumplen las dos inecuaciones a la vez? Escribe solo ese número.",
+     7,
+     "La primera se cumple en $(-\\infty,-1]\\cup(2,+\\infty)$. En la segunda, $x(x-3)(x+3)\\le0$ da $(-\\infty,-3]\\cup[0,3]$. La intersección es $(-\\infty,-3]\\cup(2,3]$. Cumplen $-8,-7,-6,-5,-4,-3$ y $3$: 7 números.",
+     "len([x for x in range(-8, 9) if x != 2 and (x + 1)/(x - 2) >= 0 and x**3 - 9*x <= 0])"
+    ]
+   ]
+  }
+ ]
+}

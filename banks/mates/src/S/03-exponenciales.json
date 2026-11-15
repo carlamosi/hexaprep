@@ -1,0 +1,144 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones exponenciales",
+ "conceptos": [
+  {
+   "nombre": "Igualar bases",
+   "pagina": 2,
+   "ayuda": "Si puedes escribir los dos miembros como potencias de la misma base, $a^{f(x)}=a^{g(x)}$, entonces $f(x)=g(x)$. Descompón los números en factores primos: $9=3^2$, $27=3^3$, $\\frac14=2^{-2}$, $\\sqrt3=3^{1/2}$. Usa $(a^m)^n=a^{mn}$ y $a^m\\cdot a^n=a^{m+n}$. Ejemplo: $4^{x}=8$ se escribe $2^{2x}=2^3$, luego $2x=3$ y $x=\\frac32$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $2^{x+3}=32$. Escribe el valor de x.",
+     2,
+     "Como $32=2^5$, queda $2^{x+3}=2^5$. Igualamos los exponentes: $x+3=5$, luego $x=2$.",
+     "min([x for x in range(-20, 21) if abs(2**(x+3) - 32) < 1e-9])"
+    ],
+    [
+     2,
+     "Resuelve $25^{x+1}=125^{x-2}$. Escribe el valor de x.",
+     8,
+     "Con $25=5^2$ y $125=5^3$: $5^{2(x+1)}=5^{3(x-2)}$. Igualamos exponentes: $2x+2=3x-6$, luego $x=8$.",
+     "min([x for x in range(-30, 31) if abs(25**(x+1) / 125**(x-2) - 1) < 1e-9])"
+    ],
+    [
+     3,
+     "Resuelve $3^{x^2+x}=9$. Escribe las soluciones separadas por punto y coma.",
+     [
+      -2,
+      1
+     ],
+     "Como $9=3^2$, igualamos exponentes: $x^2+x=2$, es decir $x^2+x-2=0$. Sus soluciones son $x=1$ y $x=-2$, y las dos valen porque una potencia no restringe el dominio.",
+     "sorted([x for x in range(-20, 21) if abs(3**(x*x + x) - 9) < 1e-9])"
+    ],
+    [
+     4,
+     "Resuelve $9^{x}\\cdot\\sqrt{3}=\\frac{1}{27}$. Escribe el valor de x. Puedes escribir un decimal o una fracción.",
+     -1.75,
+     "Escribimos todo con base 3: $3^{2x}\\cdot3^{1/2}=3^{-3}$. Sumamos exponentes: $2x+\\frac12=-3$. Entonces $2x=-\\frac72$ y $x=-\\frac74=-1{,}75$.",
+     "min([k/4 for k in range(-40, 41) if abs(9**(k/4) * math.sqrt(3) * 27 - 1) < 1e-9])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Factor común",
+   "pagina": 3,
+   "ayuda": "Cuando aparecen sumas de potencias de la misma base con exponentes distintos, saca factor común la potencia más sencilla usando $a^{x+k}=a^k\\cdot a^x$. La ecuación queda $(\\text{número})\\cdot a^x=\\text{número}$ y se despeja $a^x$. Ejemplo: $3^{x+1}+3^x=12$ se escribe $3\\cdot3^x+3^x=4\\cdot3^x=12$, luego $3^x=3$ y $x=1$.",
+   "problemas": [
+    [
+     2,
+     "Resuelve $2^{x+1}+2^{x}=24$. Escribe el valor de x.",
+     3,
+     "Como $2^{x+1}=2\\cdot2^x$, queda $2\\cdot2^x+2^x=3\\cdot2^x=24$. Entonces $2^x=8=2^3$ y $x=3$.",
+     "min([x for x in range(-10, 21) if abs(2**(x+1) + 2**x - 24) < 1e-9])"
+    ],
+    [
+     3,
+     "Resuelve $2^{x+2}+2^{x-1}=18$. Escribe el valor de x.",
+     2,
+     "Escribimos $2^{x+2}=4\\cdot2^x$ y $2^{x-1}=\\frac12\\cdot2^x$. Queda $\\left(4+\\frac12\\right)2^x=18$, es decir $4{,}5\\cdot2^x=18$. Entonces $2^x=4$ y $x=2$.",
+     "min([x for x in range(-10, 21) if abs(2**(x+2) + 2**(x-1) - 18) < 1e-9])"
+    ],
+    [
+     4,
+     "Resuelve $5^{x+1}+5^{x}+5^{x-1}=155$. Escribe el valor de x.",
+     2,
+     "Con $5^{x+1}=5\\cdot5^x$ y $5^{x-1}=\\frac15\\cdot5^x$, queda $\\left(5+1+\\frac15\\right)5^x=\\frac{31}{5}\\cdot5^x=155$. Entonces $5^x=25$ y $x=2$.",
+     "min([x for x in range(-10, 21) if abs(5**(x+1) + 5**x + 5**(x-1) - 155) < 1e-9])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Cambio de variable",
+   "pagina": 3,
+   "ayuda": "Si la ecuación tiene $a^{2x}$ (es decir $(a^x)^2$) y $a^x$, llama $t=a^x$ con $t>0$. Obtienes una ecuación de segundo grado en $t$. Resuélvela, descarta las $t$ negativas (una potencia es siempre positiva) y deshaz el cambio con $a^x=t$. Ejemplo: $4^x-5\\cdot2^x+4=0$ con $t=2^x$ da $t^2-5t+4=0$, luego $t=1$ o $t=4$, así que $x=0$ o $x=2$.",
+   "problemas": [
+    [
+     3,
+     "Resuelve $4^{x}-6\\cdot2^{x}+8=0$. Escribe las soluciones separadas por punto y coma.",
+     [
+      1,
+      2
+     ],
+     "Con $t=2^x$ queda $t^2-6t+8=0$, cuyas soluciones son $t=2$ y $t=4$. Deshacemos el cambio: $2^x=2$ da $x=1$ y $2^x=4$ da $x=2$.",
+     "sorted([x for x in range(-10, 11) if abs(4**x - 6*2**x + 8) < 1e-9])"
+    ],
+    [
+     4,
+     "Resuelve $9^{x}-2\\cdot3^{x+1}-27=0$. Escribe el valor de x.",
+     2,
+     "Escribimos $3^{x+1}=3\\cdot3^x$ y $t=3^x$: $t^2-6t-27=0$, con soluciones $t=9$ y $t=-3$. La solución $t=-3$ se descarta porque $3^x>0$. Con $3^x=9$ se obtiene $x=2$.",
+     "min([x for x in range(-10, 11) if abs(9**x - 2*3**(x+1) - 27) < 1e-9])"
+    ],
+    [
+     4,
+     "Resuelve $3^{x}+3^{3-x}=28$. Escribe las soluciones separadas por punto y coma.",
+     [
+      0,
+      3
+     ],
+     "Escribimos $3^{3-x}=\\frac{27}{3^x}$ y llamamos $t=3^x$: $t+\\frac{27}{t}=28$. Multiplicando por $t$ queda $t^2-28t+27=0$, con $t=1$ y $t=27$. Entonces $3^x=1$ da $x=0$ y $3^x=27$ da $x=3$.",
+     "sorted([x for x in range(-10, 11) if abs(3**x + 3**(3-x) - 28) < 1e-9])"
+    ],
+    [
+     4,
+     "Resuelve $4^{x+1}-17\\cdot2^{x}+4=0$. Escribe las soluciones separadas por punto y coma.",
+     [
+      -2,
+      2
+     ],
+     "Como $4^{x+1}=4\\cdot(2^x)^2$, con $t=2^x$ queda $4t^2-17t+4=0$. Sus soluciones son $t=4$ y $t=\\frac14$, ambas positivas. Entonces $2^x=4$ da $x=2$ y $2^x=\\frac14$ da $x=-2$.",
+     "sorted([x for x in range(-10, 11) if abs(4**(x+1) - 17*2**x + 4) < 1e-9])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Con logaritmos",
+   "pagina": 3,
+   "ayuda": "Cuando no se pueden igualar las bases, toma logaritmos en los dos miembros y usa $\\log a^x=x\\log a$. Así $a^x=b$ da $x=\\frac{\\log b}{\\log a}$. Si hay potencias en los dos lados, agrupa los términos con $x$ y despeja. Ejemplo: $3^x=20$ da $x=\\frac{\\log 20}{\\log 3}\\approx2{,}727$.",
+   "problemas": [
+    [
+     2,
+     "Resuelve $5^{x}=60$. Redondea a 3 decimales. Escribe el valor de x.",
+     2.544,
+     "Tomamos logaritmos: $x\\log5=\\log60$. Entonces $x=\\frac{\\log60}{\\log5}\\approx2{,}544$.",
+     "math.log(60) / math.log(5)"
+    ],
+    [
+     3,
+     "Resuelve $2^{x+1}=5^{x}$. Redondea a 3 decimales. Escribe el valor de x.",
+     0.756,
+     "Tomamos logaritmos: $(x+1)\\log2=x\\log5$. Agrupamos: $\\log2=x(\\log5-\\log2)$. Entonces $x=\\frac{\\log2}{\\log5-\\log2}\\approx0{,}756$.",
+     "math.log(2) / (math.log(5) - math.log(2))"
+    ],
+    [
+     5,
+     "Resuelve $9^{x}-3^{x}-12=0$. Redondea a 3 decimales. Escribe el valor de x.",
+     1.262,
+     "Con $t=3^x$ queda $t^2-t-12=0$, con soluciones $t=4$ y $t=-3$. Se descarta $t=-3$ porque $3^x>0$. De $3^x=4$ sale $x=\\frac{\\log4}{\\log3}\\approx1{,}262$.",
+     "math.log((1 + math.sqrt(1 + 48)) / 2) / math.log(3)"
+    ]
+   ]
+  }
+ ]
+}

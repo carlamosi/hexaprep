@@ -17,9 +17,28 @@ LETRAS = "abcd"
 MARGEN = 0.005  # diferencia relativa máxima entre la solución escrita y la que da la expresión
 
 
-def evaluar(expr: str) -> float:
-    """Evalúa la expresión de un problema solo con números, operadores y `math`."""
-    return float(eval(expr, {"__builtins__": {}, "math": math}, {}))  # noqa: S307 (fuentes propias del repositorio)
+SEGUROS = {n: __builtins__[n] if isinstance(__builtins__, dict) else getattr(__builtins__, n)
+           for n in ("range", "abs", "sorted", "sum", "min", "max", "len", "round", "float", "int", "all", "any", "zip", "pow")}
+
+
+def evaluar(expr: str):
+    """Evalúa la expresión de un problema solo con números, operadores, `math` y unas pocas funciones puras.
+
+    shortcut: eval sobre fuentes propias del repositorio (nunca entrada de la alumna ni de terceros); si algún día
+    se aceptan bancos ajenos, sustituirlo por un intérprete de expresiones.
+    """
+    return eval(expr, {"__builtins__": SEGUROS, "math": math}, {})  # noqa: S307
+
+
+def coinciden(real, solucion, ordenada: bool) -> bool:
+    """¿Coincide lo que da la expresión con la solución escrita (diferencia relativa menor de MARGEN)?"""
+    a = [float(x) for x in (real if isinstance(real, (list, tuple)) else [real])]
+    b = [float(x) for x in (solucion if isinstance(solucion, list) else [solucion])]
+    if len(a) != len(b):
+        return False
+    if not ordenada:
+        a, b = sorted(a), sorted(b)
+    return all(math.isclose(x, y, rel_tol=MARGEN, abs_tol=1e-6) for x, y in zip(a, b))
 
 
 def limpia(trampa: str) -> str:
@@ -37,17 +56,17 @@ def build(src: Path) -> tuple[dict, list[str]]:
         for c in data["conceptos"]:
             for tipo, clave in (("test", "test"), ("vf", "vf"), ("problema", "problemas")):
                 for q in c.get(clave, []):
-                    items.append((data["subtema"], c, tipo, q, f.name))
+                    items.append((data["subtema"], c, tipo, q, f.name, data.get("tema", meta["tema"])))
     n_test = sum(1 for i in items if i[2] == "test")
     letras = [LETRAS[i % 4] for i in range(n_test)]
     random.Random(meta["prefijo"]).shuffle(letras)
     letras = iter(letras)
 
     preguntas = []
-    for n, (subtema, c, tipo, q, archivo) in enumerate(items, start=1):
-        base = {"id": f"{meta['prefijo']}-{n:04d}", "bloque": meta["bloque"], "tema": meta["tema"], "subtema": subtema,
+    for n, (subtema, c, tipo, q, archivo, tema) in enumerate(items, start=1):
+        base = {"id": f"{meta['prefijo']}-{n:04d}", "bloque": meta["bloque"], "tema": tema, "subtema": subtema,
                 "concepto": c["nombre"], "dificultad": q[0], "enunciado": q[1], "ayuda_larga": c["ayuda"],
-                "fuente_pagina": c["pagina"], "fuente_cara": c["cara"]}
+                "fuente_pagina": c["pagina"], "fuente_cara": c.get("cara", c["pagina"])}
         if tipo == "test":
             correcta = next(letras)
             dificultad, enunciado, ok, *malas, explicacion = q
@@ -63,17 +82,19 @@ def build(src: Path) -> tuple[dict, list[str]]:
                                 {"texto": "Fals", "trampa": trampa} if verdadero else {"texto": "Fals"}]
             base.update(correcta="a" if verdadero else "b", explicacion=explicacion)
         else:
-            _, _, solucion, explicacion, expr = q
+            _, _, solucion, explicacion, expr, *resto = q
+            ordenada = bool(resto and resto[0])
             try:
                 real = evaluar(expr)
             except Exception as e:  # noqa: BLE001
                 errores.append(f"{archivo} {base['id']}: expresión no evaluable ({e})")
-                real = None
-            if real is not None and not math.isclose(real, solucion, rel_tol=MARGEN):
-                errores.append(f"{archivo} {base['id']}: la solución {solucion} no coincide con la expresión ({real:.6g})")
-            base.update(tipo="problema", solucion=solucion, explicacion=explicacion)
+            else:
+                if not coinciden(real, solucion, ordenada):
+                    errores.append(f"{archivo} {base['id']}: la solución {solucion} no coincide con la expresión ({real})")
+            base.update(tipo="problema", solucion=solucion, explicacion=explicacion, **({"ordenada": True} if ordenada else {}))
         preguntas.append(base)
-    bank = {"asignatura": meta["asignatura"], "fuente": meta["fuente"], "lote": meta["lote"], "preguntas": preguntas}
+    bank = {"asignatura": meta["asignatura"], **({"fuente": meta["fuente"]} if "fuente" in meta else {}),
+            "lote": meta["lote"], "preguntas": preguntas}
     return bank, errores
 
 

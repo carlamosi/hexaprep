@@ -1,0 +1,92 @@
+{
+ "tema": "T2 Matrices",
+ "subtema": "Problemas con matrices",
+ "conceptos": [
+  {
+   "nombre": "Ingresos con un producto de matrices",
+   "pagina": 10,
+   "ayuda": "Cuando hay varias fábricas (o tiendas) y varios productos, se ordenan los datos en una matriz con una fila por fábrica y una columna por producto. Los precios se escriben como matriz columna. El producto de la matriz de producción por la de precios da una matriz columna con el ingreso de cada fábrica. Ejemplo: $\\begin{pmatrix}2&3\\end{pmatrix}\\cdot\\begin{pmatrix}5\\\\4\\end{pmatrix}=2\\cdot5+3\\cdot4=22$. Si luego se pide el total, se suman los elementos del resultado.",
+   "problemas": [
+    [
+     2,
+     "La fábrica 1 produce 25, 10 y 15 unidades de los modelos A, B y C, y la fábrica 2 produce 18, 20 y 12. Los precios son 4 €, 6 € y 9 € por unidad. Calcula con el producto $\\begin{pmatrix}25&10&15\\\\18&20&12\\end{pmatrix}\\cdot\\begin{pmatrix}4\\\\6\\\\9\\end{pmatrix}$ los ingresos de cada fábrica y escribe el ingreso de la fábrica 1 y el de la fábrica 2 (en ese orden, en euros) separados por punto y coma.",
+     [
+      295,
+      300
+     ],
+     "Fábrica 1: $25\\cdot4+10\\cdot6+15\\cdot9=295$ €. Fábrica 2: $18\\cdot4+20\\cdot6+12\\cdot9=300$ €.",
+     "[sum([[25,10,15],[18,20,12]][i][k]*[4,6,9][k] for k in range(3)) for i in range(2)]",
+     true
+    ],
+    [
+     2,
+     "Una librería vende bolígrafos y cuadernos. En tres días vende $V=\\begin{pmatrix}10&5\\\\8&12\\\\15&6\\end{pmatrix}$ unidades (cada fila es un día; primera columna bolígrafos, segunda cuadernos). Un bolígrafo cuesta 3 € y un cuaderno 4 €. Calcula $V\\cdot\\begin{pmatrix}3\\\\4\\end{pmatrix}$ y escribe el ingreso total de los tres días en euros.",
+     191,
+     "Ingresos por día: $50$, $72$ y $69$ €. El total es $50+72+69=191$ €.",
+     "sum([[10,5],[8,12],[15,6]][i][0]*3+[[10,5],[8,12],[15,6]][i][1]*4 for i in range(3))"
+    ]
+   ]
+  },
+  {
+   "nombre": "Costes y beneficios con matrices",
+   "pagina": 10,
+   "ayuda": "Si multiplicas la matriz de producción (fábricas x modelos) por una matriz de datos con varias columnas, por ejemplo precio de venta y coste, el resultado tiene una fila por fábrica y una columna por cada dato. El producto de una matriz $2\\times3$ por una $3\\times2$ es $2\\times2$. Ejemplo: la primera fila del resultado son los ingresos y costes de la fábrica 1. El beneficio es ingresos menos costes.",
+   "problemas": [
+    [
+     4,
+     "Dos fábricas producen 30, 20 y 10 unidades (fábrica 1) y 25, 15 y 40 unidades (fábrica 2) de tres modelos. Cada modelo tiene precio de venta y coste de fabricación (en euros): $\\begin{pmatrix}6&4\\\\9&5\\\\12&7\\end{pmatrix}$ (filas: modelos; columnas: precio, coste). Calcula el producto de la matriz de producción ($2\\times3$) por esta ($3\\times2$) y escribe sus elementos fila a fila (ingresos 1; costes 1; ingresos 2; costes 2) en euros, separados por punto y coma.",
+     [
+      480,
+      290,
+      765,
+      455
+     ],
+     "Fábrica 1: ingresos $30\\cdot6+20\\cdot9+10\\cdot12=480$ y costes $30\\cdot4+20\\cdot5+10\\cdot7=290$. Fábrica 2: ingresos $25\\cdot6+15\\cdot9+40\\cdot12=765$ y costes $25\\cdot4+15\\cdot5+40\\cdot7=455$.",
+     "[sum([[30,20,10],[25,15,40]][i][k]*[[6,4],[9,5],[12,7]][k][j] for k in range(3)) for i in range(2) for j in range(2)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas en forma matricial A·X=B",
+   "pagina": 10,
+   "ayuda": "Un problema con dos o tres precios desconocidos se escribe como $A\\cdot X=B$: $A$ contiene las cantidades compradas, $X$ los precios (incógnitas) y $B$ los totales pagados. Ejemplo: $2x+3y=13$ y $x+y=5$ se escribe $\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}\\cdot\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}13\\\\5\\end{pmatrix}$. Se resuelve el sistema por reducción o sustitución (o con $X=A^{-1}B$). Siempre se comprueba en las ecuaciones originales.",
+   "problemas": [
+    [
+     2,
+     "Dos kg de pienso A y 3 kg de pienso B cuestan 13 €, y 4 kg de A y 1 kg de B cuestan 11 €. Escribe el sistema como $\\begin{pmatrix}2&3\\\\4&1\\end{pmatrix}\\cdot\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}13\\\\11\\end{pmatrix}$ y resuélvelo. Escribe $x;y$ (precio por kg del pienso A y del B, en euros).",
+     [
+      2,
+      3
+     ],
+     "Se multiplica la segunda ecuación por 3: $12x+3y=33$. Restando la primera, $10x=20$, luego $x=2$ y $3y=13-4$ da $y=3$. Pienso A a 2 €/kg y pienso B a 3 €/kg.",
+     "[v for x in range(61) for y in range(61) if 2*x+3*y==13 and 4*x+1*y==11 for v in (x,y)]",
+     true
+    ],
+    [
+     3,
+     "En el cine, 2 adultos y 3 niños pagan 31 €, y 4 adultos y 1 niño pagan 37 €. Escribe el sistema en forma matricial $A\\cdot X=B$ y resuélvelo. Escribe $x;y$ (precio de la entrada de adulto y de niño, en euros).",
+     [
+      8,
+      5
+     ],
+     "$2x+3y=31$ y $4x+y=37$. De la segunda, $y=37-4x$; en la primera, $2x+111-12x=31$, así que $-10x=-80$, $x=8$ y $y=5$. Adulto 8 € y niño 5 €.",
+     "[v for x in range(61) for y in range(61) if 2*x+3*y==31 and 4*x+1*y==37 for v in (x,y)]",
+     true
+    ],
+    [
+     5,
+     "En una frutería, 2 kg de manzanas, 1 kg de peras y 1 kg de naranjas cuestan 11 €; 1 kg de manzanas, 2 kg de peras y 1 kg de naranjas cuestan 12 €; y 1 kg de manzanas, 1 kg de peras y 3 kg de naranjas cuestan 17 €. Escribe el sistema como $A\\cdot X=B$ con $A$ de tamaño $3\\times3$ y resuélvelo. Escribe $x;y;z$ (precio por kg de manzanas, peras y naranjas, en euros).",
+     [
+      2,
+      3,
+      4
+     ],
+     "Restando las dos primeras ecuaciones: $x-y=-1$, es decir $y=x+1$. Sustituyendo en la primera: $3x+1+z=11$, luego $z=10-3x$. En la tercera: $x+x+1+30-9x=17$, así que $-7x=-14$, $x=2$, $y=3$, $z=4$.",
+     "[v for x in range(21) for y in range(21) for z in range(21) if 2*x+y+z==11 and x+2*y+z==12 and x+y+3*z==17 for v in (x,y,z)]",
+     true
+    ]
+   ]
+  }
+ ]
+}

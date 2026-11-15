@@ -1,0 +1,186 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones bicuadradas y polinómicas",
+ "conceptos": [
+  {
+   "nombre": "Ecuaciones bicuadradas",
+   "pagina": 1,
+   "ayuda": "Una ecuación bicuadrada tiene la forma $ax^4+bx^2+c=0$. Se hace el cambio $t=x^2$ y queda una ecuación de segundo grado $at^2+bt+c=0$. Se resuelve para $t$ y se deshace el cambio con $x=\\pm\\sqrt{t}$. Si $t$ sale negativo no da soluciones reales y si $t=0$ solo da $x=0$. Ejemplo: $x^4-5x^2+4=0$ da $t^2-5t+4=0$, con $t=1$ o $t=4$, así que $x=\\pm1$ y $x=\\pm2$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $x^4-10x^2+9=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -3,
+      -1,
+      1,
+      3
+     ],
+     "Con $t=x^2$ queda $t^2-10t+9=0$, que da $t=1$ y $t=9$. Deshaciendo el cambio, $x=\\pm1$ y $x=\\pm3$. Las cuatro soluciones valen.",
+     "[x for x in range(-20, 21) if abs(x**4 - 10*x**2 + 9) < 1e-9]"
+    ],
+    [
+     2,
+     "Resuelve $x^4-13x^2+36=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -3,
+      -2,
+      2,
+      3
+     ],
+     "Con $t=x^2$ queda $t^2-13t+36=0$, con $t=4$ y $t=9$. Entonces $x=\\pm2$ y $x=\\pm3$.",
+     "[x for x in range(-20, 21) if abs(x**4 - 13*x**2 + 36) < 1e-9]"
+    ],
+    [
+     2,
+     "Resuelve $x^4-24x^2-25=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -5,
+      5
+     ],
+     "Con $t=x^2$ queda $t^2-24t-25=0$, con $t=25$ y $t=-1$. Como $x^2=-1$ no tiene solución real, solo queda $x^2=25$, es decir $x=\\pm5$.",
+     "[x for x in range(-20, 21) if abs(x**4 - 24*x**2 - 25) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $4x^4-17x^2+4=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      -0.5,
+      0.5,
+      2
+     ],
+     "Con $t=x^2$ queda $4t^2-17t+4=0$, con $t=\\frac{17\\pm15}{8}$, es decir $t=4$ y $t=\\frac{1}{4}$. Entonces $x=\\pm2$ y $x=\\pm\\frac{1}{2}$.",
+     "[k/2 for k in range(-20, 21) if abs(4*(k/2)**4 - 17*(k/2)**2 + 4) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $x^2+\\frac{16}{x^2}=17$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -4,
+      -1,
+      1,
+      4
+     ],
+     "Se multiplica por $x^2$ (con $x\\neq0$) y queda $x^4-17x^2+16=0$. Con $t=x^2$: $t^2-17t+16=0$, $t=1$ y $t=16$. Así $x=\\pm1$ y $x=\\pm4$, ninguna anula el denominador.",
+     "[x for x in range(-20, 21) if x != 0 and abs(x**2 + 16/x**2 - 17) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones polinómicas con Ruffini",
+   "pagina": 1,
+   "ayuda": "En una ecuación polinómica de grado 3 o más se busca una raíz entera probando los divisores del término independiente. Si $r$ es raíz, la regla de Ruffini divide el polinomio entre $(x-r)$ y deja un cociente de grado menor. Se repite hasta llegar a grado 2 y se resuelve con la fórmula. Si el coeficiente principal no es 1, también pueden salir raíces fraccionarias. Ejemplo: $x^3-6x^2+11x-6=0$ tiene la raíz $1$; el cociente es $x^2-5x+6$, con raíces $2$ y $3$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $x^3-2x^2-x+2=0$ (Ruffini: divide entre $2$). Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -1,
+      1,
+      2
+     ],
+     "Con $x=2$: $8-8-2+2=0$, luego es raíz. Ruffini da el cociente $x^2-1$, cuyas raíces son $1$ y $-1$. Las soluciones son $-1$, $1$ y $2$.",
+     "[x for x in range(-20, 21) if abs(x**3 - 2*x**2 - x + 2) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $x^3+x^2-10x+8=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -4,
+      1,
+      2
+     ],
+     "Con $x=1$: $1+1-10+8=0$, así que es raíz. Ruffini da el cociente $x^2+2x-8$, con raíces $2$ y $-4$. Las soluciones son $-4$, $1$ y $2$.",
+     "[x for x in range(-20, 21) if abs(x**3 + x**2 - 10*x + 8) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $2x^3+3x^2-11x-6=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -3,
+      -0.5,
+      2
+     ],
+     "Con $x=2$: $16+12-22-6=0$, luego es raíz. Ruffini da el cociente $2x^2+7x+3$, cuyas raíces son $x=\\frac{-7\\pm5}{4}$, es decir $-\\frac{1}{2}$ y $-3$. Las soluciones son $-3$, $-0,5$ y $2$.",
+     "[k/2 for k in range(-20, 21) if abs(2*(k/2)**3 + 3*(k/2)**2 - 11*(k/2) - 6) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $x^4-5x^3+5x^2+5x-6=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -1,
+      1,
+      2,
+      3
+     ],
+     "Con $x=1$: $1-5+5+5-6=0$, es raíz. Ruffini da $x^3-4x^2+x+6$, y con $x=-1$: $-1-4-1+6=0$, otra raíz. El nuevo cociente es $x^2-5x+6$, con raíces $2$ y $3$. Las soluciones son $-1$, $1$, $2$ y $3$.",
+     "[x for x in range(-20, 21) if abs(x**4 - 5*x**3 + 5*x**2 + 5*x - 6) < 1e-9]"
+    ],
+    [
+     5,
+     "Resuelve $x^4-3x^3-3x^2+11x-6=0$. Escribe las soluciones reales distintas separadas por punto y coma (si una se repite, escríbela una sola vez).",
+     [
+      -2,
+      1,
+      3
+     ],
+     "Con $x=1$ es raíz: $1-3-3+11-6=0$. Ruffini da $x^3-2x^2-5x+6$, y $x=1$ vuelve a ser raíz (es doble). El cociente $x^2-x-6$ tiene raíces $3$ y $-2$. Las soluciones distintas son $-2$, $1$ y $3$.",
+     "[x for x in range(-20, 21) if abs(x**4 - 3*x**3 - 3*x**2 + 11*x - 6) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones factorizables y con cambio de variable",
+   "pagina": 1,
+   "ayuda": "Antes de aplicar Ruffini conviene buscar una forma más simple: sacar factor común, agrupar términos o hacer un cambio de variable como $t=x^3$ o $t=x^2+x$. Cada factor igual a cero da soluciones. Con un cambio de variable se resuelve para $t$ y luego se deshace el cambio. Ejemplo: $x^3-9x=0$ es $x(x^2-9)=0$, con $x=0$ y $x=\\pm3$.",
+   "problemas": [
+    [
+     3,
+     "Resuelve $x^3-3x^2-4x+12=0$ (agrupa términos). Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      2,
+      3
+     ],
+     "Se agrupa: $x^2(x-3)-4(x-3)=(x-3)(x^2-4)$. Los factores dan $x=3$ y $x=\\pm2$. Las soluciones son $-2$, $2$ y $3$.",
+     "[x for x in range(-20, 21) if abs(x**3 - 3*x**2 - 4*x + 12) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $(x^2-1)^2=3(x^2-1)$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -2,
+      -1,
+      1,
+      2
+     ],
+     "Con $t=x^2-1$ queda $t^2=3t$, es decir $t(t-3)=0$, con $t=0$ y $t=3$. Entonces $x^2=1$ o $x^2=4$, luego $x=\\pm1$ y $x=\\pm2$.",
+     "[x for x in range(-20, 21) if abs((x**2 - 1)**2 - 3*(x**2 - 1)) < 1e-9]"
+    ],
+    [
+     4,
+     "Resuelve $x^6-9x^3+8=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      1,
+      2
+     ],
+     "Con $t=x^3$ queda $t^2-9t+8=0$, con $t=1$ y $t=8$. Entonces $x^3=1$ da $x=1$ y $x^3=8$ da $x=2$. No hay más soluciones reales porque la raíz cúbica real es única.",
+     "[x for x in range(-20, 21) if abs(x**6 - 9*x**3 + 8) < 1e-9]"
+    ],
+    [
+     5,
+     "Resuelve $x^4+2x^3-13x^2-14x+24=0$. Escribe las soluciones reales separadas por punto y coma.",
+     [
+      -4,
+      -2,
+      1,
+      3
+     ],
+     "Se observa que $x^4+2x^3-13x^2-14x+24=(x^2+x)^2-14(x^2+x)+24$. Con $t=x^2+x$: $t^2-14t+24=0$, $t=2$ y $t=12$. Entonces $x^2+x-2=0$ da $x=1,-2$ y $x^2+x-12=0$ da $x=3,-4$. Las cuatro soluciones valen.",
+     "[x for x in range(-20, 21) if abs(x**4 + 2*x**3 - 13*x**2 - 14*x + 24) < 1e-9]"
+    ]
+   ]
+  }
+ ]
+}

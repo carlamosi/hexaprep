@@ -1,0 +1,249 @@
+{
+ "asignatura": {
+  "nombre": "Matemáticas",
+  "idioma": "es",
+  "color": "#4A6FE3",
+  "acento": "#4A6FE3"
+ },
+ "lote": {
+  "modelo": "claude-sonnet-5-5",
+  "version_prompt": "m1"
+ },
+ "preguntas": [
+  {
+   "id": "mat-g-0001",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Escalonar y sustituir hacia atrás",
+   "dificultad": 1,
+   "enunciado": "Resuelve por el método de Gauss el sistema $x+y=7$, $2x-y=2$. Escribe x; y (en ese orden, separados por punto y coma).",
+   "ayuda_larga": "El método de Gauss transforma el sistema en otro equivalente y escalonado con operaciones entre filas: intercambiar dos filas, multiplicar una fila por un número distinto de cero, o sumarle a una fila un múltiplo de otra. Se escribe la matriz ampliada (coeficientes y términos independientes) y se hacen ceros bajo la diagonal, columna por columna. Con la matriz triangular, se despeja la última incógnita y se sube sustituyendo hacia atrás. Ejemplo: $x+y=5$, $x-y=1$. Con $F_2 \\to F_2-F_1$ queda $-2y=-4$, luego $y=2$ y $x=3$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": [
+    3,
+    4
+   ],
+   "explicacion": "Sumando las dos ecuaciones (operación entre filas) queda $3x=9$, luego $x=3$. Sustituyendo en la primera, $y=7-3=4$. Comprobación: $2\\cdot3-4=2$.",
+   "ordenada": true
+  },
+  {
+   "id": "mat-g-0002",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Escalonar y sustituir hacia atrás",
+   "dificultad": 2,
+   "enunciado": "Resuelve por Gauss el sistema $x+y+z=6$, $2x-y+z=3$, $x+2y-z=2$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+   "ayuda_larga": "El método de Gauss transforma el sistema en otro equivalente y escalonado con operaciones entre filas: intercambiar dos filas, multiplicar una fila por un número distinto de cero, o sumarle a una fila un múltiplo de otra. Se escribe la matriz ampliada (coeficientes y términos independientes) y se hacen ceros bajo la diagonal, columna por columna. Con la matriz triangular, se despeja la última incógnita y se sube sustituyendo hacia atrás. Ejemplo: $x+y=5$, $x-y=1$. Con $F_2 \\to F_2-F_1$ queda $-2y=-4$, luego $y=2$ y $x=3$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": [
+    1,
+    2,
+    3
+   ],
+   "explicacion": "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-F_1$ quedan $-3y-z=-9$ y $y-2z=-4$. Con $F_3\\to 3F_3+F_2$ sale $-7z=-21$, luego $z=3$. Sustituyendo hacia atrás, $y=2$ y $x=1$.",
+   "ordenada": true
+  },
+  {
+   "id": "mat-g-0003",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Escalonar y sustituir hacia atrás",
+   "dificultad": 3,
+   "enunciado": "Resuelve por Gauss el sistema $2x+y-z=0$, $x-y+2z=9$, $3x+2y+z=7$. Escribe el valor de $x+y+z$.",
+   "ayuda_larga": "El método de Gauss transforma el sistema en otro equivalente y escalonado con operaciones entre filas: intercambiar dos filas, multiplicar una fila por un número distinto de cero, o sumarle a una fila un múltiplo de otra. Se escribe la matriz ampliada (coeficientes y términos independientes) y se hacen ceros bajo la diagonal, columna por columna. Con la matriz triangular, se despeja la última incógnita y se sube sustituyendo hacia atrás. Ejemplo: $x+y=5$, $x-y=1$. Con $F_2 \\to F_2-F_1$ queda $-2y=-4$, luego $y=2$ y $x=3$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 4,
+   "explicacion": "Intercambiamos $F_1\\leftrightarrow F_2$ para tener pivote 1. Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-3F_1$ quedan $3y-5z=-18$ y $5y-5z=-20$. Restando, $2y=-2$, luego $y=-1$; entonces $z=3$ y $x=2$. La suma es $2-1+3=4$."
+  },
+  {
+   "id": "mat-g-0004",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Coeficientes fraccionarios y negativos",
+   "dificultad": 2,
+   "enunciado": "Resuelve el sistema $3x+2y=0$, $x-4y=-14$. Escribe x; y (en ese orden, separados por punto y coma).",
+   "ayuda_larga": "Si hay fracciones, multiplica cada ecuación por el mínimo común múltiplo de sus denominadores para trabajar solo con enteros: el sistema obtenido es equivalente. Con coeficientes negativos, cuida los signos al restar filas: $F_2 \\to F_2-2F_1$ cambia el signo de todo lo que se resta. Después se aplica Gauss como siempre. Ejemplo: $\\frac{x}{2}+\\frac{y}{3}=2$ pasa a $3x+2y=12$ al multiplicar por 6.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": [
+    -2,
+    3
+   ],
+   "explicacion": "De la segunda, $x=4y-14$. Sustituyendo en la primera: $12y-42+2y=0$, luego $y=3$ y $x=-2$. En forma de Gauss: $F_1\\to F_1-3F_2$ da $14y=42$.",
+   "ordenada": true
+  },
+  {
+   "id": "mat-g-0005",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Coeficientes fraccionarios y negativos",
+   "dificultad": 4,
+   "enunciado": "Resuelve el sistema $\\frac{x}{2}-y+\\frac{z}{3}=6$, $x+\\frac{y}{2}-\\frac{z}{6}=2$, $\\frac{x}{4}+\\frac{y}{2}+\\frac{z}{6}=1$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+   "ayuda_larga": "Si hay fracciones, multiplica cada ecuación por el mínimo común múltiplo de sus denominadores para trabajar solo con enteros: el sistema obtenido es equivalente. Con coeficientes negativos, cuida los signos al restar filas: $F_2 \\to F_2-2F_1$ cambia el signo de todo lo que se resta. Después se aplica Gauss como siempre. Ejemplo: $\\frac{x}{2}+\\frac{y}{3}=2$ pasa a $3x+2y=12$ al multiplicar por 6.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": [
+    4,
+    -2,
+    6
+   ],
+   "explicacion": "Multiplicamos por 6, 6 y 12 y queda $3x-6y+2z=36$, $6x+3y-z=12$, $3x+6y+2z=12$. Restando la primera a la tercera, $12y=-24$ y $y=-2$. Entonces $3x+2z=24$ y $6x-z=18$, de donde $z=6x-18$ y $15x=60$: $x=4$, $z=6$.",
+   "ordenada": true
+  },
+  {
+   "id": "mat-g-0006",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Problemas con enunciado que llevan a un sistema 3x3",
+   "dificultad": 3,
+   "enunciado": "En una papelería, 2 bolígrafos, 1 cuaderno y 1 carpeta cuestan 12 euros; 1 bolígrafo, 2 cuadernos y 1 carpeta cuestan 13 euros; 3 bolígrafos, 1 cuaderno y 2 carpetas cuestan 19 euros. ¿Cuánto cuesta una carpeta en euros? Escribe solo el número.",
+   "ayuda_larga": "En un problema con enunciado, primero se eligen las incógnitas (lo que se quiere averiguar), luego se traduce cada dato a una ecuación y sale un sistema; con tres datos independientes es un sistema $3\\times3$. Se resuelve por Gauss y se interpreta la solución comprobando que tiene sentido (por ejemplo, que no sea negativa). Ejemplo: dos números suman 10 y uno es el triple del otro: $x+y=10$, $x-3y=0$, de donde $y=2{,}5$ y $x=7{,}5$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 5,
+   "explicacion": "Con $x,y,z$ los precios: $2x+y+z=12$, $x+2y+z=13$, $3x+y+2z=19$. Restando las dos primeras, $y=x+1$. Con $F_3\\to F_3-F_1$ sale $x+z=7$, así $z=7-x$. En la primera, $2x+x+1+7-x=12$, luego $x=2$, $y=3$, $z=5$."
+  },
+  {
+   "id": "mat-g-0007",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Problemas con enunciado que llevan a un sistema 3x3",
+   "dificultad": 4,
+   "enunciado": "Se mezclan 20 kg de frutos secos de tres tipos que cuestan 4, 6 y 10 euros el kilo. La mezcla cuesta en total 108 euros y de los de 4 euros se ponen 2 kg más que de los de 6 euros. ¿Cuántos kilos se ponen de los de 10 euros? Escribe solo el número.",
+   "ayuda_larga": "En un problema con enunciado, primero se eligen las incógnitas (lo que se quiere averiguar), luego se traduce cada dato a una ecuación y sale un sistema; con tres datos independientes es un sistema $3\\times3$. Se resuelve por Gauss y se interpreta la solución comprobando que tiene sentido (por ejemplo, que no sea negativa). Ejemplo: dos números suman 10 y uno es el triple del otro: $x+y=10$, $x-3y=0$, de donde $y=2{,}5$ y $x=7{,}5$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 2,
+   "explicacion": "Con $x,y,z$ los kilos: $x+y+z=20$, $4x+6y+10z=108$, $x-y=2$. Poniendo $x=y+2$: $2y+z=18$ y $10y+10z=100$, es decir $y+z=10$. Restando, $y=8$, luego $z=2$ y $x=10$."
+  },
+  {
+   "id": "mat-g-0008",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Resolver sistemas por Gauss",
+   "concepto": "Problemas con enunciado que llevan a un sistema 3x3",
+   "dificultad": 5,
+   "enunciado": "Una fábrica produce tres modelos A, B y C. Cada unidad necesita en las máquinas M1, M2 y M3 estas horas: A (2, 1, 3), B (1, 3, 2), C (3, 2, 1). En una semana las máquinas trabajan 89 h (M1), 102 h (M2) y 91 h (M3), sin horas libres. ¿Cuántas unidades se fabrican en total? Escribe solo el número.",
+   "ayuda_larga": "En un problema con enunciado, primero se eligen las incógnitas (lo que se quiere averiguar), luego se traduce cada dato a una ecuación y sale un sistema; con tres datos independientes es un sistema $3\\times3$. Se resuelve por Gauss y se interpreta la solución comprobando que tiene sentido (por ejemplo, que no sea negativa). Ejemplo: dos números suman 10 y uno es el triple del otro: $x+y=10$, $x-3y=0$, de donde $y=2{,}5$ y $x=7{,}5$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 47,
+   "explicacion": "Con $x,y,z$ las unidades: $2x+y+3z=89$, $x+3y+2z=102$, $3x+2y+z=91$. Con $F_1\\leftrightarrow F_2$, $F_2\\to F_2-2F_1$, $F_3\\to F_3-3F_1$ quedan $-5y-z=-115$ y $-7y-5z=-215$. De la primera $z=115-5y$; en la segunda $18y=360$, $y=20$, $z=15$, $x=12$. Total: $12+20+15=47$."
+  },
+  {
+   "id": "mat-g-0009",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Discusión de sistemas",
+   "concepto": "Discusión con un parámetro",
+   "dificultad": 2,
+   "enunciado": "Se considera el sistema $x+y+z=3$, $2x-y+z=1$, $3x+2z=m$. Halla el valor de $m$ para el que el sistema es compatible indeterminado. Escribe solo el número.",
+   "ayuda_larga": "Para discutir un sistema se escalona la matriz ampliada y se compara el rango $r$ de la matriz de coeficientes con el rango $r'$ de la ampliada y con el número de incógnitas $n$. Si $r=r'=n$ es compatible determinado (una solución); si $r=r'<n$ es compatible indeterminado (infinitas soluciones, con $n-r$ variables libres); si $r<r'$ es incompatible (una fila queda como $0=k$ con $k\\neq0$). Con un parámetro $m$, se busca el valor que anula una fila o el determinante de la matriz de coeficientes. Ejemplo: si al escalonar queda $0=3$, el sistema es incompatible.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 4,
+   "explicacion": "La fila de coeficientes $(3,0,2)$ es la suma de las dos primeras, así que con $F_3\\to F_3-F_1-F_2$ queda $0=m-4$. Si $m=4$ la fila es nula (compatible indeterminado, rango 2); si $m\\neq4$ queda $0=k$ con $k\\neq0$ (incompatible)."
+  },
+  {
+   "id": "mat-g-0010",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Discusión de sistemas",
+   "concepto": "Discusión con un parámetro",
+   "dificultad": 3,
+   "enunciado": "Se considera el sistema $x+2y+z=4$, $2x+y-z=1$, $3x+3y+(m-1)z=6$. Halla el valor de $m$ para el que el sistema no tiene solución. Escribe solo el número.",
+   "ayuda_larga": "Para discutir un sistema se escalona la matriz ampliada y se compara el rango $r$ de la matriz de coeficientes con el rango $r'$ de la ampliada y con el número de incógnitas $n$. Si $r=r'=n$ es compatible determinado (una solución); si $r=r'<n$ es compatible indeterminado (infinitas soluciones, con $n-r$ variables libres); si $r<r'$ es incompatible (una fila queda como $0=k$ con $k\\neq0$). Con un parámetro $m$, se busca el valor que anula una fila o el determinante de la matriz de coeficientes. Ejemplo: si al escalonar queda $0=3$, el sistema es incompatible.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 1,
+   "explicacion": "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-3F_1$ quedan $-3y-3z=-7$ y $-3y+(m-4)z=-6$. Con $F_3\\to F_3-F_2$ sale $(m-1)z=1$. Si $m\\neq1$ hay solución única; si $m=1$ queda $0=1$, imposible: el sistema es incompatible."
+  },
+  {
+   "id": "mat-g-0011",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Discusión de sistemas",
+   "concepto": "Discusión con un parámetro",
+   "dificultad": 4,
+   "enunciado": "Se considera el sistema $x+y+mz=1$, $x+my+z=1$, $mx+y+z=1$. Escribe, en cualquier orden y separados por punto y coma, los valores de $m$ para los que el sistema NO es compatible determinado.",
+   "ayuda_larga": "Para discutir un sistema se escalona la matriz ampliada y se compara el rango $r$ de la matriz de coeficientes con el rango $r'$ de la ampliada y con el número de incógnitas $n$. Si $r=r'=n$ es compatible determinado (una solución); si $r=r'<n$ es compatible indeterminado (infinitas soluciones, con $n-r$ variables libres); si $r<r'$ es incompatible (una fila queda como $0=k$ con $k\\neq0$). Con un parámetro $m$, se busca el valor que anula una fila o el determinante de la matriz de coeficientes. Ejemplo: si al escalonar queda $0=3$, el sistema es incompatible.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": [
+    -2,
+    1
+   ],
+   "explicacion": "El sistema no es compatible determinado cuando se anula el determinante de coeficientes: $-(m-1)^2(m+2)=0$, es decir $m=1$ o $m=-2$. Para $m=1$ las tres ecuaciones coinciden (indeterminado) y para $m=-2$ la suma de las tres da $0=3$ (incompatible)."
+  },
+  {
+   "id": "mat-g-0012",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Discusión de sistemas",
+   "concepto": "Rango y soluciones libres",
+   "dificultad": 1,
+   "enunciado": "Halla el rango de la matriz de coeficientes de un sistema cuyas filas son $(1,2,-1)$, $(2,5,1)$, $(3,7,0)$. Escribe solo el número.",
+   "ayuda_larga": "El rango de una matriz es el número de filas no nulas que quedan al escalonarla (o el orden del mayor menor distinto de cero). Si una ecuación es combinación de las otras, desaparece al escalonar. Quedan tantas variables libres como incógnitas menos el rango. En un sistema compatible indeterminado se fija la variable libre en un valor y se despeja el resto. Ejemplo: en $x+y=2$, $2x+2y=4$ la segunda es el doble de la primera, el rango es 1 y con $y=1$ resulta $x=1$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 2,
+   "explicacion": "La tercera fila es la suma de las dos primeras, así que al escalonar ($F_3\\to F_3-F_1-F_2$) queda una fila de ceros. Quedan 2 filas no nulas y el rango es 2."
+  },
+  {
+   "id": "mat-g-0013",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Discusión de sistemas",
+   "concepto": "Rango y soluciones libres",
+   "dificultad": 3,
+   "enunciado": "El sistema $2x+y-z=5$, $x-y+2z=1$, $3x+z=6$ es compatible indeterminado. Si fijamos $z=3$, ¿cuánto valen x e y? Escribe x; y (en ese orden, separados por punto y coma).",
+   "ayuda_larga": "El rango de una matriz es el número de filas no nulas que quedan al escalonarla (o el orden del mayor menor distinto de cero). Si una ecuación es combinación de las otras, desaparece al escalonar. Quedan tantas variables libres como incógnitas menos el rango. En un sistema compatible indeterminado se fija la variable libre en un valor y se despeja el resto. Ejemplo: en $x+y=2$, $2x+2y=4$ la segunda es el doble de la primera, el rango es 1 y con $y=1$ resulta $x=1$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": [
+    1,
+    6
+   ],
+   "explicacion": "La tercera ecuación es la suma de las dos primeras, así que se elimina al escalonar y queda una variable libre. Con $z=3$: $3x=6-3$ da $x=1$, y de la primera $y=5-2x+z=5-2+3=6$.",
+   "ordenada": true
+  },
+  {
+   "id": "mat-g-0014",
+   "bloque": "Matemáticas",
+   "tema": "T3 Método de Gauss",
+   "subtema": "Discusión de sistemas",
+   "concepto": "Rango y soluciones libres",
+   "dificultad": 4,
+   "enunciado": "Se considera el sistema $x+y+z=6$, $x-y+2z=5$, $2x+3z=11$, $x+3y=k$. Halla el valor de $k$ para que el sistema tenga solución. Escribe solo el número.",
+   "ayuda_larga": "El rango de una matriz es el número de filas no nulas que quedan al escalonarla (o el orden del mayor menor distinto de cero). Si una ecuación es combinación de las otras, desaparece al escalonar. Quedan tantas variables libres como incógnitas menos el rango. En un sistema compatible indeterminado se fija la variable libre en un valor y se despeja el resto. Ejemplo: en $x+y=2$, $2x+2y=4$ la segunda es el doble de la primera, el rango es 1 y con $y=1$ resulta $x=1$.",
+   "fuente_pagina": 1,
+   "fuente_cara": 1,
+   "tipo": "problema",
+   "solucion": 7,
+   "explicacion": "La tercera ecuación es la suma de las dos primeras y la cuarta es $2F_1-F_2$ en coeficientes. Al escalonar, las filas 3 y 4 quedan $0=0$ y $0=k-7$. Para que el sistema no sea incompatible hace falta $k=7$ (rango 2 y una variable libre)."
+  }
+ ]
+}

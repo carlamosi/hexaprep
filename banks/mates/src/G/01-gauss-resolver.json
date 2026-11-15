@@ -1,0 +1,101 @@
+{
+ "tema": "T3 Método de Gauss",
+ "subtema": "Resolver sistemas por Gauss",
+ "conceptos": [
+  {
+   "nombre": "Escalonar y sustituir hacia atrás",
+   "pagina": 1,
+   "ayuda": "El método de Gauss transforma el sistema en otro equivalente y escalonado con operaciones entre filas: intercambiar dos filas, multiplicar una fila por un número distinto de cero, o sumarle a una fila un múltiplo de otra. Se escribe la matriz ampliada (coeficientes y términos independientes) y se hacen ceros bajo la diagonal, columna por columna. Con la matriz triangular, se despeja la última incógnita y se sube sustituyendo hacia atrás. Ejemplo: $x+y=5$, $x-y=1$. Con $F_2 \\to F_2-F_1$ queda $-2y=-4$, luego $y=2$ y $x=3$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve por el método de Gauss el sistema $x+y=7$, $2x-y=2$. Escribe x; y (en ese orden, separados por punto y coma).",
+     [
+      3,
+      4
+     ],
+     "Sumando las dos ecuaciones (operación entre filas) queda $3x=9$, luego $x=3$. Sustituyendo en la primera, $y=7-3=4$. Comprobación: $2\\cdot3-4=2$.",
+     "[v for x in range(-20,21) for y in range(-20,21) if x+y==7 and 2*x-y==2 for v in (x,y)]",
+     true
+    ],
+    [
+     2,
+     "Resuelve por Gauss el sistema $x+y+z=6$, $2x-y+z=3$, $x+2y-z=2$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      1,
+      2,
+      3
+     ],
+     "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-F_1$ quedan $-3y-z=-9$ y $y-2z=-4$. Con $F_3\\to 3F_3+F_2$ sale $-7z=-21$, luego $z=3$. Sustituyendo hacia atrás, $y=2$ y $x=1$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if x+y+z==6 and 2*x-y+z==3 and x+2*y-z==2 for v in (x,y,z)]",
+     true
+    ],
+    [
+     3,
+     "Resuelve por Gauss el sistema $2x+y-z=0$, $x-y+2z=9$, $3x+2y+z=7$. Escribe el valor de $x+y+z$.",
+     4,
+     "Intercambiamos $F_1\\leftrightarrow F_2$ para tener pivote 1. Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-3F_1$ quedan $3y-5z=-18$ y $5y-5z=-20$. Restando, $2y=-2$, luego $y=-1$; entonces $z=3$ y $x=2$. La suma es $2-1+3=4$.",
+     "[x+y+z for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if 2*x+y-z==0 and x-y+2*z==9 and 3*x+2*y+z==7][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Coeficientes fraccionarios y negativos",
+   "pagina": 1,
+   "ayuda": "Si hay fracciones, multiplica cada ecuación por el mínimo común múltiplo de sus denominadores para trabajar solo con enteros: el sistema obtenido es equivalente. Con coeficientes negativos, cuida los signos al restar filas: $F_2 \\to F_2-2F_1$ cambia el signo de todo lo que se resta. Después se aplica Gauss como siempre. Ejemplo: $\\frac{x}{2}+\\frac{y}{3}=2$ pasa a $3x+2y=12$ al multiplicar por 6.",
+   "problemas": [
+    [
+     2,
+     "Resuelve el sistema $3x+2y=0$, $x-4y=-14$. Escribe x; y (en ese orden, separados por punto y coma).",
+     [
+      -2,
+      3
+     ],
+     "De la segunda, $x=4y-14$. Sustituyendo en la primera: $12y-42+2y=0$, luego $y=3$ y $x=-2$. En forma de Gauss: $F_1\\to F_1-3F_2$ da $14y=42$.",
+     "[v for x in range(-20,21) for y in range(-20,21) if 3*x+2*y==0 and x-4*y==-14 for v in (x,y)]",
+     true
+    ],
+    [
+     4,
+     "Resuelve el sistema $\\frac{x}{2}-y+\\frac{z}{3}=6$, $x+\\frac{y}{2}-\\frac{z}{6}=2$, $\\frac{x}{4}+\\frac{y}{2}+\\frac{z}{6}=1$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+     [
+      4,
+      -2,
+      6
+     ],
+     "Multiplicamos por 6, 6 y 12 y queda $3x-6y+2z=36$, $6x+3y-z=12$, $3x+6y+2z=12$. Restando la primera a la tercera, $12y=-24$ y $y=-2$. Entonces $3x+2z=24$ y $6x-z=18$, de donde $z=6x-18$ y $15x=60$: $x=4$, $z=6$.",
+     "[v for x in range(-10,11) for y in range(-10,11) for z in range(-10,11) if abs(x/2-y+z/3-6)<1e-9 and abs(x+y/2-z/6-2)<1e-9 and abs(x/4+y/2+z/6-1)<1e-9 for v in (x,y,z)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Problemas con enunciado que llevan a un sistema 3x3",
+   "pagina": 1,
+   "ayuda": "En un problema con enunciado, primero se eligen las incógnitas (lo que se quiere averiguar), luego se traduce cada dato a una ecuación y sale un sistema; con tres datos independientes es un sistema $3\\times3$. Se resuelve por Gauss y se interpreta la solución comprobando que tiene sentido (por ejemplo, que no sea negativa). Ejemplo: dos números suman 10 y uno es el triple del otro: $x+y=10$, $x-3y=0$, de donde $y=2{,}5$ y $x=7{,}5$.",
+   "problemas": [
+    [
+     3,
+     "En una papelería, 2 bolígrafos, 1 cuaderno y 1 carpeta cuestan 12 euros; 1 bolígrafo, 2 cuadernos y 1 carpeta cuestan 13 euros; 3 bolígrafos, 1 cuaderno y 2 carpetas cuestan 19 euros. ¿Cuánto cuesta una carpeta en euros? Escribe solo el número.",
+     5,
+     "Con $x,y,z$ los precios: $2x+y+z=12$, $x+2y+z=13$, $3x+y+2z=19$. Restando las dos primeras, $y=x+1$. Con $F_3\\to F_3-F_1$ sale $x+z=7$, así $z=7-x$. En la primera, $2x+x+1+7-x=12$, luego $x=2$, $y=3$, $z=5$.",
+     "[z/2 for x in range(1,61) for y in range(1,61) for z in range(1,61) if 2*x/2+y/2+z/2==12 and x/2+2*y/2+z/2==13 and 3*x/2+y/2+2*z/2==19]"
+    ],
+    [
+     4,
+     "Se mezclan 20 kg de frutos secos de tres tipos que cuestan 4, 6 y 10 euros el kilo. La mezcla cuesta en total 108 euros y de los de 4 euros se ponen 2 kg más que de los de 6 euros. ¿Cuántos kilos se ponen de los de 10 euros? Escribe solo el número.",
+     2,
+     "Con $x,y,z$ los kilos: $x+y+z=20$, $4x+6y+10z=108$, $x-y=2$. Poniendo $x=y+2$: $2y+z=18$ y $10y+10z=100$, es decir $y+z=10$. Restando, $y=8$, luego $z=2$ y $x=10$.",
+     "[z for x in range(0,21) for y in range(0,21) for z in range(0,21) if x+y+z==20 and 4*x+6*y+10*z==108 and x-y==2]"
+    ],
+    [
+     5,
+     "Una fábrica produce tres modelos A, B y C. Cada unidad necesita en las máquinas M1, M2 y M3 estas horas: A (2, 1, 3), B (1, 3, 2), C (3, 2, 1). En una semana las máquinas trabajan 89 h (M1), 102 h (M2) y 91 h (M3), sin horas libres. ¿Cuántas unidades se fabrican en total? Escribe solo el número.",
+     47,
+     "Con $x,y,z$ las unidades: $2x+y+3z=89$, $x+3y+2z=102$, $3x+2y+z=91$. Con $F_1\\leftrightarrow F_2$, $F_2\\to F_2-2F_1$, $F_3\\to F_3-3F_1$ quedan $-5y-z=-115$ y $-7y-5z=-215$. De la primera $z=115-5y$; en la segunda $18y=360$, $y=20$, $z=15$, $x=12$. Total: $12+20+15=47$.",
+     "[x+y+z for x in range(0,41) for y in range(0,41) for z in range(0,41) if 2*x+y+3*z==89 and x+3*y+2*z==102 and 3*x+2*y+z==91][0]"
+    ]
+   ]
+  }
+ ]
+}

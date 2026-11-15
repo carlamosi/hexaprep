@@ -6,6 +6,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 DASHES = ("—", "–")
+MAX_VALORES = 6  # valores que puede pedir un problema (y que acepta la respuesta)
 
 
 def _find_dashes(node, path="") -> list[str]:
@@ -57,7 +58,9 @@ class PreguntaIn(Strict):
     opciones: list[OpcionIn] = []
     correcta: Literal["a", "b", "c", "d"] | None = None
     tipo: Literal["test", "vf", "problema"] = "test"
-    solucion: float | None = None  # solo problemas: el número que hay que escribir, sin unidades
+    # solo problemas: el número (o la lista de números) que hay que escribir, sin unidades
+    solucion: float | list[float] | None = None
+    ordenada: bool = False  # lista: ¿importa el orden en que se escriben los valores?
     explicacion: str
     ayuda_larga: str
     fuente_pagina: int = Field(ge=1)
@@ -76,6 +79,8 @@ class PreguntaIn(Strict):
         if self.tipo == "problema":
             if self.solucion is None or self.opciones or self.correcta is not None:
                 raise ValueError("un problema lleva solucion y no lleva opciones ni correcta")
+            if isinstance(self.solucion, list) and not 1 <= len(self.solucion) <= MAX_VALORES:
+                raise ValueError(f"la solución lleva entre 1 y {MAX_VALORES} valores")
             return self
         n = 4 if self.tipo == "test" else 2
         if len(self.opciones) != n or self.solucion is not None:

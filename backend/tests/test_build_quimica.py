@@ -39,3 +39,29 @@ def test_builds_a_bank_the_validator_accepts(tmp_path):
 def test_a_wrong_solution_is_reported(tmp_path):
     _, errores = build(make_src(tmp_path, solucion=3.0))
     assert len(errores) == 1 and "no coincide" in errores[0]
+
+
+def test_lists_brute_force_expressions_theme_override_and_optional_source(tmp_path):
+    src = make_src(tmp_path)
+    meta = json.loads((src / "_meta.json").read_text(encoding="utf-8"))
+    del meta["fuente"]
+    (src / "_meta.json").write_text(json.dumps(meta), encoding="utf-8")
+    (src / "02-b.json").write_text(json.dumps({"tema": "Otro tema", "subtema": "Sub B", "conceptos": [
+        {"nombre": "Bicuadradas", "pagina": 1, "ayuda": "Ajuda.", "problemas": [
+            [2, "x^4-5x^2+4=0", [1, 2, -1, -2], "Pasos.", "[x for x in range(-20, 21) if abs(x**4 - 5*x**2 + 4) < 1e-9]"],
+            [3, "(x, y)", [4, 3], "Pasos.", "[x for x in range(1, 20) for y in range(1, 20) if x - y == 1 and x * y == 12][:1] + [3]", True]]}]}),
+        encoding="utf-8")
+    bank, errores = build(src)
+    assert errores == [] and "fuente" not in bank
+    BankFile.model_validate(bank)
+    p = [q for q in bank["preguntas"] if q["tema"] == "Otro tema"]
+    assert len(p) == 2 and p[1]["ordenada"] is True and "ordenada" not in p[0] and p[0]["fuente_cara"] == 1
+
+
+def test_a_wrong_list_is_reported_unless_order_is_free(tmp_path):
+    src = make_src(tmp_path)
+    (src / "02-b.json").write_text(json.dumps({"subtema": "Sub B", "conceptos": [
+        {"nombre": "C", "pagina": 1, "ayuda": "A.", "problemas": [
+            [2, "libre", [4, 1], "P.", "[1, 4]"], [2, "ordenada mal", [4, 1], "P.", "[1, 4]", True]]}]}), encoding="utf-8")
+    _, errores = build(src)
+    assert len(errores) == 1 and "no coincide" in errores[0]

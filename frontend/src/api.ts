@@ -43,7 +43,7 @@ export interface AnswerResult {
   trampas: Partial<Record<Letra, string>>; fuente_id: string | null; fuente_pagina: number | null;
   fuente_cara: number | null; percent: number;
   /** Solo problemas: la solución numérica. */
-  solucion?: number | null;
+  solucion?: number | number[] | null;
 }
 export interface Suggestion {
   tipo: "concepto" | "placement"; concepto_id: string | null; concepto: string | null; subtema_id: string | null;

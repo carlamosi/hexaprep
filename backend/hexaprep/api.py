@@ -102,7 +102,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             .join(Tema, Tema.id == Subtema.tema_id).join(Bloque, Bloque.id == Tema.bloque_id)
             .outerjoin(Dominio, Dominio.concepto_id == Concepto.id)
             .where(Bloque.asignatura_id == a.id, Concepto.deleted_at.is_(None))
-            .order_by(Bloque.orden, Tema.orden, Subtema.orden, Subtema.nombre, Concepto.nombre)).all()
+            .order_by(Bloque.orden, Tema.orden, Tema.nombre, Subtema.orden, Subtema.nombre, Concepto.nombre)).all()
         hexes = [{"concepto_id": c.id, "nombre": c.nombre, "subtema_id": sub.id, "subtema": sub.nombre,
                   "tema": t.nombre, "tema_id": t.id, "color": a.acento,
                   "percent": mastery.percent(d.theta) if d is not None and d.n_intentos > 0 else 0}

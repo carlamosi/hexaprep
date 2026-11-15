@@ -1,0 +1,3 @@
+{"tema": "T3 Método de Gauss", "prefijo": "mat-g", "bloque": "Matemáticas",
+ "asignatura": {"nombre": "Matemáticas", "idioma": "es", "color": "#4A6FE3", "acento": "#4A6FE3"},
+ "lote": {"modelo": "claude-sonnet-5-5", "version_prompt": "m1"}}

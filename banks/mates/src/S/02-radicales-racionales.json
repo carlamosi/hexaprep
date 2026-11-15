@@ -1,0 +1,137 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Ecuaciones radicales y racionales",
+ "conceptos": [
+  {
+   "nombre": "Ecuaciones radicales con una raíz",
+   "pagina": 2,
+   "ayuda": "Se aísla la raíz en un miembro y se elevan al cuadrado los dos miembros (recuerda que $(a+b)^2=a^2+2ab+b^2$). Se resuelve la ecuación que sale y se comprueba cada solución en la ecuación original, porque elevar al cuadrado puede introducir soluciones falsas. Ejemplo: $\\sqrt{x+7}=x+1$ da $x+7=x^2+2x+1$, es decir $x^2+x-6=0$, con $x=2$ y $x=-3$. Con $x=-3$ queda $2=-2$, falso, así que la única solución es $x=2$.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $\\sqrt{x+3}=x+1$ y comprueba la solución. Escribe la solución que vale.",
+     1,
+     "Se eleva al cuadrado: $x+3=x^2+2x+1$, es decir $x^2+x-2=0$, con $x=1$ y $x=-2$. Con $x=1$: $\\sqrt4=2$ correcto. Con $x=-2$: $\\sqrt1=1$ pero $x+1=-1$, falso. La solución es $x=1$.",
+     "[x for x in range(-20, 41) if x + 3 >= 0 and abs(math.sqrt(x + 3) - (x + 1)) < 1e-9][0]"
+    ],
+    [
+     2,
+     "Resuelve $\\sqrt{3x+1}=x-1$ y comprueba la solución. Escribe la solución que vale.",
+     5,
+     "Se eleva al cuadrado: $3x+1=x^2-2x+1$, es decir $x^2-5x=0$, con $x=0$ y $x=5$. Con $x=0$: $\\sqrt1=1$ pero $x-1=-1$, falso. Con $x=5$: $\\sqrt{16}=4=5-1$, correcto. La solución es $x=5$.",
+     "[x for x in range(-20, 41) if 3*x + 1 >= 0 and abs(math.sqrt(3*x + 1) - (x - 1)) < 1e-9][0]"
+    ],
+    [
+     2,
+     "Resuelve $\\sqrt{7-x}+1=x$ y comprueba la solución. Escribe la solución que vale.",
+     3,
+     "Se aísla la raíz: $\\sqrt{7-x}=x-1$. Al cuadrado: $7-x=x^2-2x+1$, es decir $x^2-x-6=0$, con $x=3$ y $x=-2$. Con $x=3$: $\\sqrt4=2=3-1$, correcto. Con $x=-2$: $\\sqrt9=3$ pero $x-1=-3$, falso. La solución es $x=3$.",
+     "[x for x in range(-20, 41) if 7 - x >= 0 and abs(math.sqrt(7 - x) + 1 - x) < 1e-9][0]"
+    ],
+    [
+     3,
+     "Resuelve $3\\sqrt{x}=x+2$. Escribe las soluciones que valen separadas por punto y coma.",
+     [
+      1,
+      4
+     ],
+     "Se eleva al cuadrado: $9x=x^2+4x+4$, es decir $x^2-5x+4=0$, con $x=1$ y $x=4$. Con $x=1$: $3\\cdot1=3$ correcto. Con $x=4$: $3\\cdot2=6$ correcto. Las dos soluciones valen.",
+     "[x for x in range(0, 41) if abs(3*math.sqrt(x) - (x + 2)) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $\\sqrt{x^2+5}=x+1$ y comprueba la solución. Escribe la solución que vale.",
+     2,
+     "Se eleva al cuadrado: $x^2+5=x^2+2x+1$. Los términos en $x^2$ se cancelan y queda $2x=4$, es decir $x=2$. Comprobación: $\\sqrt9=3=2+1$, correcto. La solución es $x=2$.",
+     "[x for x in range(-20, 41) if abs(math.sqrt(x**2 + 5) - (x + 1)) < 1e-9][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones radicales con dos raíces",
+   "pagina": 2,
+   "ayuda": "Se aísla una de las raíces, se elevan al cuadrado los dos miembros y queda una ecuación con una sola raíz. Se aísla esa raíz y se eleva al cuadrado otra vez. Se resuelve y se comprueban todas las soluciones en la ecuación original. Ejemplo: $\\sqrt{x+4}+\\sqrt{x-1}=5$ da $\\sqrt{x+4}=5-\\sqrt{x-1}$, luego $x+4=25-10\\sqrt{x-1}+x-1$, es decir $10\\sqrt{x-1}=20$, $\\sqrt{x-1}=2$ y $x=5$.",
+   "problemas": [
+    [
+     4,
+     "Resuelve $\\sqrt{x+5}-\\sqrt{x-3}=2$ y comprueba la solución. Escribe la solución que vale.",
+     4,
+     "Se aísla: $\\sqrt{x+5}=2+\\sqrt{x-3}$. Al cuadrado: $x+5=4+4\\sqrt{x-3}+x-3$, es decir $4=4\\sqrt{x-3}$, luego $x-3=1$ y $x=4$. Comprobación: $\\sqrt9-\\sqrt1=3-1=2$, correcto.",
+     "[x for x in range(3, 41) if abs(math.sqrt(x + 5) - math.sqrt(x - 3) - 2) < 1e-9][0]"
+    ],
+    [
+     4,
+     "Resuelve $\\sqrt{x+9}+\\sqrt{x}=9$ y comprueba la solución. Escribe la solución que vale.",
+     16,
+     "Se aísla: $\\sqrt{x+9}=9-\\sqrt{x}$. Al cuadrado: $x+9=81-18\\sqrt{x}+x$, es decir $18\\sqrt{x}=72$, luego $\\sqrt{x}=4$ y $x=16$. Comprobación: $\\sqrt{25}+\\sqrt{16}=5+4=9$, correcto.",
+     "[x for x in range(0, 101) if abs(math.sqrt(x + 9) + math.sqrt(x) - 9) < 1e-9][0]"
+    ],
+    [
+     5,
+     "Resuelve $\\sqrt{2x+3}-\\sqrt{x-2}=2$. Escribe las soluciones que valen separadas por punto y coma.",
+     [
+      3,
+      11
+     ],
+     "Se aísla: $\\sqrt{2x+3}=2+\\sqrt{x-2}$. Al cuadrado: $2x+3=4+4\\sqrt{x-2}+x-2$, es decir $x+1=4\\sqrt{x-2}$. Al cuadrado otra vez: $x^2+2x+1=16x-32$, es decir $x^2-14x+33=0$, con $x=3$ y $x=11$. Con $x=3$: $3-1=2$ correcto. Con $x=11$: $5-3=2$ correcto. Las dos valen.",
+     "[x for x in range(2, 101) if abs(math.sqrt(2*x + 3) - math.sqrt(x - 2) - 2) < 1e-9]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones racionales",
+   "pagina": 2,
+   "ayuda": "Se factorizan los denominadores y se multiplica toda la ecuación por el mínimo común múltiplo para quitar las fracciones. Se resuelve la ecuación resultante y se descartan los valores que anulan algún denominador. Ejemplo: $\\frac{1}{x-1}=\\frac{2}{x+1}$ da $x+1=2(x-1)$, es decir $x=3$, que no anula ningún denominador, así que es solución.",
+   "problemas": [
+    [
+     1,
+     "Resuelve $\\frac{2}{x-1}=\\frac{3}{x+1}$. Escribe la solución.",
+     5,
+     "Se multiplica en cruz: $2(x+1)=3(x-1)$, es decir $2x+2=3x-3$, luego $x=5$. No anula ningún denominador. Comprobación: $\\frac{2}{4}=\\frac{3}{6}=0,5$.",
+     "[x for x in range(-20, 21) if x not in (1, -1) and abs(2/(x - 1) - 3/(x + 1)) < 1e-9][0]"
+    ],
+    [
+     2,
+     "Resuelve $\\frac{x}{x-1}-\\frac{2}{x+1}=1$. Escribe la solución.",
+     3,
+     "Se multiplica por $(x-1)(x+1)$: $x(x+1)-2(x-1)=x^2-1$, es decir $x^2-x+2=x^2-1$, luego $-x=-3$ y $x=3$. No anula ningún denominador. Comprobación: $\\frac32-\\frac24=1$.",
+     "[x for x in range(-20, 21) if x not in (1, -1) and abs(x/(x - 1) - 2/(x + 1) - 1) < 1e-9][0]"
+    ],
+    [
+     3,
+     "Resuelve $\\frac{4}{x}+\\frac{5}{x+1}=2$. Escribe las soluciones que valen separadas por punto y coma.",
+     [
+      -0.5,
+      4
+     ],
+     "Se multiplica por $x(x+1)$: $4(x+1)+5x=2x(x+1)$, es decir $9x+4=2x^2+2x$, luego $2x^2-7x-4=0$. Su fórmula da $x=\\frac{7\\pm9}{4}$, es decir $x=4$ y $x=-\\frac{1}{2}$. Ninguna anula un denominador, así que valen las dos.",
+     "[k/2 for k in range(-40, 41) if k not in (0, -2) and abs(4/(k/2) + 5/(k/2 + 1) - 2) < 1e-9]"
+    ],
+    [
+     3,
+     "Resuelve $\\frac{3}{x-1}+\\frac{1}{x+1}=\\frac{10}{x^2-1}$. Escribe la solución.",
+     2,
+     "Como $x^2-1=(x-1)(x+1)$, se multiplica por ese producto: $3(x+1)+(x-1)=10$, es decir $4x+2=10$, luego $x=2$. No anula ningún denominador. Comprobación: $3+\\frac13=\\frac{10}{3}$.",
+     "[x for x in range(-20, 21) if x not in (1, -1) and abs(3/(x - 1) + 1/(x + 1) - 10/(x**2 - 1)) < 1e-9][0]"
+    ],
+    [
+     4,
+     "Resuelve $\\frac{x}{x-2}-\\frac{4}{x^2-2x}=3$. Escribe la solución que vale.",
+     1,
+     "Como $x^2-2x=x(x-2)$, se multiplica por $x(x-2)$: $x^2-4=3x(x-2)$, es decir $x^2-4=3x^2-6x$, luego $2x^2-6x+4=0$, $x^2-3x+2=0$ y $x=1$ o $x=2$. El valor $x=2$ anula el denominador y se descarta. Con $x=1$: $-1+4=3$, correcto.",
+     "[x for x in range(-20, 21) if x not in (0, 2) and abs(x/(x - 2) - 4/(x**2 - 2*x) - 3) < 1e-9][0]"
+    ],
+    [
+     5,
+     "Resuelve $\\frac{x}{x+1}+\\frac{x+1}{x}=\\frac{13}{6}$. Escribe las soluciones que valen separadas por punto y coma.",
+     [
+      -3,
+      2
+     ],
+     "Con $t=\\frac{x}{x+1}$ queda $t+\\frac1t=\\frac{13}{6}$, es decir $6t^2-13t+6=0$, con $t=\\frac23$ y $t=\\frac32$. Si $\\frac{x}{x+1}=\\frac23$, entonces $3x=2x+2$ y $x=2$. Si $\\frac{x}{x+1}=\\frac32$, entonces $2x=3x+3$ y $x=-3$. Ninguna anula un denominador, valen las dos.",
+     "[x for x in range(-20, 21) if x not in (0, -1) and abs(x/(x + 1) + (x + 1)/x - 13/6) < 1e-9]"
+    ]
+   ]
+  }
+ ]
+}

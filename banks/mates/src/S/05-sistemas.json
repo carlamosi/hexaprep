@@ -1,0 +1,166 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Sistemas de ecuaciones",
+ "conceptos": [
+  {
+   "nombre": "Sustitución: una ecuación lineal y otra cuadrática",
+   "pagina": 4,
+   "ayuda": "Si una ecuación es lineal, despeja una incógnita en ella y sustitúyela en la otra. Así queda una ecuación de segundo grado en una sola incógnita. Resuélvela con la fórmula general y calcula la otra incógnita con la ecuación lineal. Un sistema así puede tener hasta dos soluciones, que son pares $(x,y)$. Ejemplo: $x-y=1$, $xy=6$. De la primera, $x=y+1$; en la segunda, $y^2+y-6=0$, luego $y=2$ o $y=-3$, y las soluciones son $(3,2)$ y $(-2,-3)$. Comprueba siempre los pares en las dos ecuaciones.",
+   "problemas": [
+    [
+     1,
+     "Resuelve el sistema $x+y=7$, $x\\cdot y=12$. Tiene dos soluciones; escribe la que cumple $x<y$ como x; y (separados por punto y coma).",
+     [
+      3,
+      4
+     ],
+     "Despejamos $y=7-x$ y sustituimos: $x(7-x)=12$, es decir $x^2-7x+12=0$, con soluciones $x=3$ y $x=4$. Los pares son $(3,4)$ y $(4,3)$. Cumple $x<y$ el par $(3,4)$.",
+     "[[x, y] for x in range(-30, 31) for y in range(-30, 31) if x + y == 7 and x * y == 12 and x < y][0]",
+     true
+    ],
+    [
+     2,
+     "Resuelve el sistema $x-y=2$, $x\\cdot y=15$. Tiene dos soluciones; escribe la que cumple $x>0$ como x; y (separados por punto y coma).",
+     [
+      5,
+      3
+     ],
+     "Despejamos $x=y+2$ y sustituimos: $(y+2)y=15$, es decir $y^2+2y-15=0$, con $y=3$ o $y=-5$. Los pares son $(5,3)$ y $(-3,-5)$. Con $x>0$ queda $(5,3)$.",
+     "[[x, y] for x in range(-30, 31) for y in range(-30, 31) if x - y == 2 and x * y == 15 and x > 0][0]",
+     true
+    ],
+    [
+     2,
+     "Resuelve el sistema $y=x+1$, $x^2+y^2=25$. Tiene dos soluciones; escribe la que cumple $x>0$ como x; y (separados por punto y coma).",
+     [
+      3,
+      4
+     ],
+     "Sustituimos $y=x+1$: $x^2+(x+1)^2=25$, que da $2x^2+2x-24=0$, o sea $x^2+x-12=0$, con $x=3$ o $x=-4$. Los pares son $(3,4)$ y $(-4,-3)$. Con $x>0$ queda $(3,4)$.",
+     "[[x, y] for x in range(-30, 31) for y in range(-30, 31) if y == x + 1 and x**2 + y**2 == 25 and x > 0][0]",
+     true
+    ],
+    [
+     3,
+     "Resuelve el sistema $y=x^2$, $x+y=6$. Tiene dos soluciones; escribe la que cumple $x<0$ como x; y (separados por punto y coma).",
+     [
+      -3,
+      9
+     ],
+     "Sustituimos $y=x^2$ en la segunda ecuación: $x+x^2=6$, es decir $x^2+x-6=0$, con $x=2$ o $x=-3$. Los pares son $(2,4)$ y $(-3,9)$. Con $x<0$ queda $(-3,9)$.",
+     "[[x, y] for x in range(-30, 31) for y in range(-100, 101) if y == x**2 and x + y == 6 and x < 0][0]",
+     true
+    ],
+    [
+     5,
+     "Resuelve el sistema $x^2+xy+y^2=19$, $x-y=1$. Tiene dos soluciones; escribe la que cumple $x>0$ como x; y (separados por punto y coma).",
+     [
+      3,
+      2
+     ],
+     "Despejamos $x=y+1$ y sustituimos: $(y+1)^2+(y+1)y+y^2=3y^2+3y+1=19$, o sea $y^2+y-6=0$, con $y=2$ o $y=-3$. Los pares son $(3,2)$ y $(-2,-3)$, y ambos cumplen las dos ecuaciones. Con $x>0$ queda $(3,2)$.",
+     "[[x, y] for x in range(-30, 31) for y in range(-30, 31) if x**2 + x*y + y**2 == 19 and x - y == 1 and x > 0][0]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Reducción en sistemas de ecuaciones cuadráticas",
+   "pagina": 4,
+   "ayuda": "Cuando las dos ecuaciones solo tienen $x^2$ e $y^2$, trátalas como si las incógnitas fueran $x^2$ e $y^2$. Suma o resta las ecuaciones (multiplicando antes si hace falta) para eliminar una de ellas. Así obtienes el valor de $x^2$ y de $y^2$, y cada raíz da dos signos posibles, de modo que salen cuatro soluciones. Ejemplo: $x^2+y^2=13$, $x^2-y^2=5$. Sumando, $2x^2=18$, $x^2=9$, $x=\\pm3$; restando, $y^2=4$, $y=\\pm2$. Las soluciones son $(\\pm3,\\pm2)$ en las cuatro combinaciones.",
+   "problemas": [
+    [
+     2,
+     "Resuelve el sistema $x^2+y^2=34$, $x^2-y^2=16$. Tiene cuatro soluciones; escribe la que cumple $x>0$ e $y<0$ como x; y (separados por punto y coma).",
+     [
+      5,
+      -3
+     ],
+     "Sumando las ecuaciones: $2x^2=50$, $x^2=25$, $x=\\pm5$. Restando: $2y^2=18$, $y^2=9$, $y=\\pm3$. Hay cuatro pares con los signos posibles. Con $x>0$ e $y<0$ queda $(5,-3)$.",
+     "[[x, y] for x in range(-10, 11) for y in range(-10, 11) if x*x + y*y == 34 and x*x - y*y == 16 and x > 0 and y < 0][0]",
+     true
+    ],
+    [
+     3,
+     "Resuelve el sistema $2x^2+3y^2=30$, $x^2-y^2=5$. Tiene cuatro soluciones; escribe la que cumple $x<0$ e $y>0$ como x; y (separados por punto y coma).",
+     [
+      -3,
+      2
+     ],
+     "Multiplicamos la segunda ecuación por 2: $2x^2-2y^2=10$. Restándola de la primera: $5y^2=20$, $y^2=4$, $y=\\pm2$. Entonces $x^2=5+4=9$, $x=\\pm3$. Con $x<0$ e $y>0$ queda $(-3,2)$.",
+     "[[x, y] for x in range(-10, 11) for y in range(-10, 11) if 2*x*x + 3*y*y == 30 and x*x - y*y == 5 and x < 0 and y > 0][0]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas con logaritmos",
+   "pagina": 4,
+   "ayuda": "Convierte primero las ecuaciones logarítmicas en ecuaciones normales con las propiedades: $\\log a+\\log b=\\log(ab)$, $\\log a-\\log b=\\log\\frac{a}{b}$ y $\\log_b N=k$ significa $N=b^k$. Después resuelve el sistema por sustitución. Los logaritmos solo existen para números positivos, así que descarta las soluciones con $x\\le0$ o $y\\le0$. Ejemplo: $\\log x+\\log y=1$, $x-y=3$. Queda $xy=10$ y $x=y+3$, luego $y^2+3y-10=0$, $y=2$ ($y=-5$ no vale) y $x=5$.",
+   "problemas": [
+    [
+     3,
+     "Resuelve el sistema $\\log x+\\log y=3$, $x-y=90$ (logaritmos decimales). Escribe la solución como x; y (separados por punto y coma).",
+     [
+      100,
+      10
+     ],
+     "La primera ecuación da $\\log(xy)=3$, es decir $xy=1000$. Con $x=y+90$: $y^2+90y-1000=0$, y sale $y=10$ o $y=-100$. El valor $y=-100$ no vale porque no existe $\\log y$. Entonces $y=10$ y $x=100$.",
+     "[[x, y] for x in range(1, 301) for y in range(1, 301) if abs(math.log10(x) + math.log10(y) - 3) < 1e-9 and x - y == 90][0]",
+     true
+    ],
+    [
+     4,
+     "Resuelve el sistema $\\log_2 x+\\log_2 y=5$, $x+y=12$. Tiene dos soluciones; escribe la que cumple $x<y$ como x; y (separados por punto y coma).",
+     [
+      4,
+      8
+     ],
+     "La primera ecuación da $\\log_2(xy)=5$, es decir $xy=2^5=32$. Con $y=12-x$: $x(12-x)=32$, o sea $x^2-12x+32=0$, con $x=4$ o $x=8$. Ambas soluciones valen porque $x$ e $y$ son positivos. Con $x<y$ queda $(4,8)$.",
+     "[[x, y] for x in range(1, 61) for y in range(1, 61) if abs(math.log2(x) + math.log2(y) - 5) < 1e-9 and x + y == 12 and x < y][0]",
+     true
+    ],
+    [
+     3,
+     "Resuelve el sistema $\\log(x+y)=1$, $\\log x-\\log y=\\log 4$ (logaritmos decimales). Escribe la solución como x; y (separados por punto y coma).",
+     [
+      8,
+      2
+     ],
+     "De la primera: $x+y=10$. De la segunda: $\\log\\frac{x}{y}=\\log4$, luego $x=4y$. Sustituyendo, $5y=10$, $y=2$ y $x=8$. Ambos son positivos, así que la solución vale.",
+     "[[x, y] for x in range(1, 51) for y in range(1, 51) if abs(math.log10(x + y) - 1) < 1e-9 and abs(math.log10(x) - math.log10(y) - math.log10(4)) < 1e-9][0]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas exponenciales",
+   "pagina": 4,
+   "ayuda": "En un sistema exponencial, escribe las potencias con la misma base y iguala exponentes, o usa un cambio de variable. Por ejemplo $2^x\\cdot2^y=2^{x+y}$ y $3^x=3^{2y}$ da $x=2y$. Así el sistema exponencial se convierte en uno más sencillo. Ejemplo: $3^x\\cdot3^y=81$, $3^x:3^y=9$ da $x+y=4$ y $x-y=2$, luego $x=3$, $y=1$. Si aparece una suma de potencias, llama $t=2^x$ y resuelve la ecuación en $t$.",
+   "problemas": [
+    [
+     5,
+     "Resuelve el sistema $2^x+2^y=12$, $x+y=5$. Tiene dos soluciones; escribe la que cumple $x<y$ como x; y (separados por punto y coma).",
+     [
+      2,
+      3
+     ],
+     "Despejamos $y=5-x$, así que $2^y=\\frac{32}{2^x}$. Con $t=2^x$: $t+\\frac{32}{t}=12$, es decir $t^2-12t+32=0$, con $t=4$ o $t=8$. Entonces $x=2$ o $x=3$, y los pares son $(2,3)$ y $(3,2)$. Con $x<y$ queda $(2,3)$.",
+     "[[x, y] for x in range(-10, 11) for y in range(-10, 11) if abs(2**x + 2**y - 12) < 1e-9 and x + y == 5 and x < y][0]",
+     true
+    ],
+    [
+     3,
+     "Resuelve el sistema $3^x=9^y$, $x\\cdot y=18$. Tiene dos soluciones; escribe la que cumple $x>0$ como x; y (separados por punto y coma).",
+     [
+      6,
+      3
+     ],
+     "Como $9^y=3^{2y}$, de $3^x=3^{2y}$ sale $x=2y$. Sustituyendo, $2y^2=18$, $y^2=9$, $y=\\pm3$. Los pares son $(6,3)$ y $(-6,-3)$. Con $x>0$ queda $(6,3)$.",
+     "[[x, y] for x in range(1, 41) for y in range(1, 41) if abs(3**x - 9**y) < 1e-9 and x * y == 18][0]",
+     true
+    ]
+   ]
+  }
+ ]
+}

@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen, waitFor } from "@testing-library/react"
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { AnswerResult, Question } from "../src/api";
-import { Practice, type PracticeClient } from "../src/components/Practice";
+import { Practice, respuestaValida, type PracticeClient } from "../src/components/Practice";
 
 const Q: Question = {
   pregunta_id: "p1", concepto_id: "c1", subtema_id: "s1",
@@ -177,7 +177,7 @@ describe("problemas numéricos y verdadero/falso", () => {
   it("problem_rejects_text_without_calling_the_server", async () => {
     const a = setupProblem(OK);
     await a.user.type(await screen.findByLabelText(/Tu respuesta/), "dos mols{Enter}");
-    expect(await screen.findByRole("alert")).toHaveTextContent("solo un número");
+    expect(await screen.findByRole("alert")).toHaveTextContent("solo números o fracciones");
     expect(a.client.answer).not.toHaveBeenCalled();
   });
 
@@ -201,5 +201,24 @@ describe("problemas numéricos y verdadero/falso", () => {
     await userEvent.keyboard("2");
     await waitFor(() => expect(client.answer).toHaveBeenCalled());
     expect(client.answer.mock.calls[0][0]).toMatchObject({ elegida: "a", orden_opciones: ["b", "a"] });
+  });
+});
+
+describe("respuesta con fracciones y varios valores", () => {
+  it.each(["2", "2,5", "-3/4", "−3", "1; 4", "1 y 4", "1/2; -3; 0,25", "6,022e23"])("accepts %s", (v) => expect(respuestaValida(v)).toBe(true));
+  it.each(["", "dos", "1/0", "1/", "x=3", "1;2;3;4;5;6;7", "1,,2"])("rejects %s", (v) => expect(respuestaValida(v)).toBe(false));
+
+  it("sends the list as typed and shows every solution when wrong", async () => {
+    const PR2: Question = { ...Q, pregunta_id: "p7", tipo: "problema", opciones: [], orden: [], enunciado: "Resuelve x^2-5x+4=0" };
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(PR2).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue({ ...KO, trampa: null, solucion: [1, 4] }),
+      reportQuestion: vi.fn(),
+    } satisfies PracticeClient;
+    render(<Practice sesionId="s1" client={client} />);
+    await userEvent.type(await screen.findByLabelText(/Tu respuesta/), "1/2; 4{Enter}");
+    await waitFor(() => expect(client.answer.mock.calls[0][0].respuesta).toBe("1/2; 4"));
+    expect(await screen.findByText("1; 4", { selector: "strong" })).toBeInTheDocument();
+    expect(screen.getByText("Casi. Compara con la solución y revisa tus pasos:")).toBeInTheDocument();
   });
 });

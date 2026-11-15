@@ -7,7 +7,7 @@ from sqlalchemy import select
 
 from hexaprep import selector
 from hexaprep.bank import BankFile, PreguntaIn, load_bank
-from hexaprep.events import mark_correct, parse_numero, start_session, submit_answer
+from hexaprep.events import mark_correct, parse_numero, parse_respuesta, start_session, submit_answer
 from hexaprep.importer import import_bank, question_digest
 from hexaprep.models import Dominio, Intento, Opcion, Pregunta
 
@@ -99,3 +99,51 @@ def test_mark_correct_flips_the_attempt_and_rebuilds_mastery(session, ctx):
     with pytest.raises(ValueError):
         mark_correct(session, sid, ps["q-vf"].id)
 
+
+
+def test_scalar_problem_and_vf_digests_are_unchanged_by_lists():
+    assert question_digest(problema()) == "5d788e4f92aad2ea4b75563a8cf0e4fb2bd3eac6c4800d53b9199fbf3c1e495f"
+    assert question_digest(vf()) == "a21fa882894d4edfbaf492ebd84cd0362d1525b30e8696bc50eeac7ebde310bc"
+    assert question_digest(problema(solucion=[1.0, 4.0])) != question_digest(problema(solucion=[1.0, 4.0], ordenada=True))
+
+
+@pytest.mark.parametrize("texto,esperado", [("3/4", 0.75), ("-1/2", -0.5), ("−3", -3.0), (" 1 000 ", 1000.0), ("2,5", 2.5)])
+def test_parse_numero_accepts_fractions_and_unicode_minus(texto, esperado):
+    assert parse_numero(texto) == pytest.approx(esperado)
+
+
+@pytest.mark.parametrize("malo", ["1/0", "a/b", "1/", "", "inf", "1;2;3;4;5;6;7"])
+def test_parse_respuesta_rejects_garbage(malo):
+    with pytest.raises(ValueError):
+        parse_respuesta(malo)
+
+
+def test_parse_respuesta_lists():
+    assert parse_respuesta("1; 4") == [1.0, 4.0]
+    assert parse_respuesta("-1/2 y 3") == [-0.5, 3.0]
+    assert parse_respuesta("2,5") == [2.5]
+
+
+def lista_ctx(session, solucion, ordenada):
+    bank = BankFile(asignatura={"nombre": "Mates", "idioma": "es", "color": "#4A6FE3", "acento": "#4A6FE3"},
+                    preguntas=[problema(id="q-ls", solucion=solucion, ordenada=ordenada)])
+    import_bank(session, bank)
+    return start_session(session, "practica", {}), session.scalar(select(Pregunta))
+
+
+@pytest.mark.parametrize("texto,ordenada,ok", [
+    ("4; 1", False, True), ("1; 4", False, True), ("1,005; 4", False, True), ("1,05; 4", False, False), ("1", False, False), ("1; 4; 5", False, False),
+    ("4; 1", True, False), ("1; 4", True, True), ("2/2; 8/2", True, True)])
+def test_list_answers_respect_order_and_count(session, texto, ordenada, ok):
+    sid, p = lista_ctx(session, [1.0, 4.0], ordenada)
+    res = submit_answer(session, sid, p.id, [], "a", None, {}, texto)
+    assert res.correcta is ok and res.solucion == [1.0, 4.0]
+
+
+def test_list_solution_survives_the_editor_roundtrip_and_old_scalar_rows_still_read(session):
+    from hexaprep.importer import leer_solucion
+    from hexaprep.quality import question_content
+    sid, p = lista_ctx(session, [1.0, 4.0], True)
+    c = question_content(session, p.id)
+    assert c["solucion"] == [1.0, 4.0] and c["ordenada"] is True
+    assert leer_solucion("2.0") == (2.0, False)  # formato antiguo de las preguntas ya importadas

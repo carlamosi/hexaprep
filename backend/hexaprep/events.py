@@ -1,5 +1,6 @@
 import logging
 import math
+import re
 import time
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
@@ -8,6 +9,8 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import mastery, scheduling
+from .bank import MAX_VALORES
+from .importer import leer_solucion
 from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
 
 logger = logging.getLogger(__name__)
@@ -35,7 +38,7 @@ class AnswerResult:
     correcta: bool
     opcion_correcta: str
     trampa: str | None
-    solucion: float | None = None  # solo problemas
+    solucion: float | list[float] | None = None  # solo problemas
 
 
 @dataclass
@@ -100,14 +103,32 @@ def _selection_path(session: Session, sesion_id: str, pregunta_id: str, elegida:
 
 
 def parse_numero(texto: str) -> float:
-    """Número escrito por la alumna: admite coma decimal, espacios y exponente (6,022e23)."""
+    """Un número escrito por la alumna: coma decimal, espacios, exponente (6,022e23), fracción (3/4) y signo menos Unicode."""
+    t = texto.strip().replace(" ", "").replace("−", "-").replace(",", ".")
     try:
-        v = float(texto.strip().replace(" ", "").replace(",", "."))
-    except ValueError:
+        num, barra, den = t.partition("/")
+        v = float(num) / float(den) if barra else float(num)
+    except (ValueError, ZeroDivisionError):
         raise ValueError(f"respuesta no numérica: {texto!r}") from None
     if not math.isfinite(v):
         raise ValueError(f"respuesta no numérica: {texto!r}")
     return v
+
+
+def parse_respuesta(texto: str) -> list[float]:
+    """Uno o varios números separados por «;» o por « y » (1; 4, o 1 y 4)."""
+    partes = [p for p in re.split(r";|\sy\s", texto.strip()) if p.strip()]
+    if not 1 <= len(partes) <= MAX_VALORES:
+        raise ValueError(f"respuesta no válida: {texto!r}")
+    return [parse_numero(p) for p in partes]
+
+
+def coincide(valores: list[float], esperado: list[float], ordenada: bool) -> bool:
+    """¿Coinciden los valores con la solución (margen del 1 %)? Sin orden se comparan ordenados."""
+    if len(valores) != len(esperado):
+        return False
+    a, b = (valores, esperado) if ordenada else (sorted(valores), sorted(esperado))
+    return all(math.isclose(x, y, rel_tol=TOLERANCIA_PROBLEMA, abs_tol=1e-9) for x, y in zip(a, b))
 
 
 def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opciones: list[str], elegida: str,
@@ -120,7 +141,7 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     if problema:
         if respuesta is None:
             raise ValueError("un problema se responde con un número")
-        valor = parse_numero(respuesta)
+        valores = parse_respuesta(respuesta)
         elegida, orden_opciones = "a", []
     else:
         letras = LETRAS[:2] if pregunta.tipo == "vf" else LETRAS
@@ -133,9 +154,9 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
 
     opciones = {o.posicion: o for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == pregunta_id))}
     correcta_letra = next(l for l, o in opciones.items() if o.correcta)
-    solucion = float(opciones["a"].texto) if problema else None
+    solucion, ordenada = leer_solucion(opciones["a"].texto) if problema else (None, False)
     if problema:
-        es_correcta = math.isclose(valor, solucion, rel_tol=TOLERANCIA_PROBLEMA, abs_tol=1e-9)
+        es_correcta = coincide(valores, solucion if isinstance(solucion, list) else [solucion], ordenada)
     else:
         es_correcta = elegida == correcta_letra
     trampa = None if es_correcta or problema else opciones[elegida].tipo_trampa

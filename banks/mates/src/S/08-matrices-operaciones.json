@@ -1,0 +1,233 @@
+{
+ "tema": "T2 Matrices",
+ "subtema": "Operaciones y ecuaciones con matrices",
+ "conceptos": [
+  {
+   "nombre": "Suma, producto por escalar y traspuesta",
+   "pagina": 8,
+   "ayuda": "Las matrices del mismo tamaño se suman y restan elemento a elemento, y para multiplicar por un número se multiplica cada elemento. La traspuesta $A^t$ se obtiene intercambiando filas y columnas: la fila $i$ pasa a ser la columna $i$. Ejemplo: si $A=\\begin{pmatrix}1&2\\\\3&4\\end{pmatrix}$, entonces $2A=\\begin{pmatrix}2&4\\\\6&8\\end{pmatrix}$ y $A^t=\\begin{pmatrix}1&3\\\\2&4\\end{pmatrix}$. Primero se hacen las traspuestas y los productos por escalar, y después las sumas.",
+   "problemas": [
+    [
+     1,
+     "Sean $A=\\begin{pmatrix}4&-2\\\\1&5\\end{pmatrix}$ y $B=\\begin{pmatrix}3&0\\\\-1&2\\end{pmatrix}$. Calcula $2A-3B$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      -1,
+      -4,
+      5,
+      4
+     ],
+     "Se multiplica cada matriz por su escalar y se restan elemento a elemento: $2A-3B=\\begin{pmatrix}-1&-4\\\\5&4\\end{pmatrix}$.",
+     "[2*[[4,-2],[1,5]][i][j]-3*[[3,0],[-1,2]][i][j] for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     1,
+     "Sean $A=\\begin{pmatrix}1&3\\\\-2&4\\end{pmatrix}$ y $B=\\begin{pmatrix}5&-1\\\\2&0\\end{pmatrix}$. Calcula $(A+B)^t$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      6,
+      0,
+      2,
+      4
+     ],
+     "Primero $A+B=\\begin{pmatrix}6&2\\\\0&4\\end{pmatrix}$ y después se intercambian filas y columnas: $(A+B)^t=\\begin{pmatrix}6&0\\\\2&4\\end{pmatrix}$.",
+     "[[[1,3],[-2,4]][j][i]+[[5,-1],[2,0]][j][i] for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     2,
+     "Sean $A=\\begin{pmatrix}2&1\\\\-3&4\\end{pmatrix}$ y $B=\\begin{pmatrix}1&0\\\\5&-2\\end{pmatrix}$. Calcula la matriz $3A^t-B$ y escribe la suma de todos sus elementos.",
+     8,
+     "$A^t=\\begin{pmatrix}2&-3\\\\1&4\\end{pmatrix}$, luego $3A^t-B=\\begin{pmatrix}5&-9\\\\-2&14\\end{pmatrix}$. La suma de sus elementos es $8$.",
+     "sum(3*[[2,1],[-3,4]][j][i]-[[1,0],[5,-2]][i][j] for i in range(2) for j in range(2))"
+    ]
+   ]
+  },
+  {
+   "nombre": "Producto de matrices",
+   "pagina": 8,
+   "ayuda": "Para multiplicar $A\\cdot B$ el número de columnas de $A$ debe coincidir con el de filas de $B$. El elemento de la fila $i$ y columna $j$ del resultado es la suma de multiplicar la fila $i$ de $A$ por la columna $j$ de $B$, elemento a elemento. Ejemplo: con $A=\\begin{pmatrix}1&2\\\\0&1\\end{pmatrix}$ y $B=\\begin{pmatrix}3&0\\\\1&2\\end{pmatrix}$, el elemento (1,1) de $A\\cdot B$ es $1\\cdot3+2\\cdot1=5$. El producto no es conmutativo: en general $A\\cdot B\\neq B\\cdot A$, así que el orden importa.",
+   "problemas": [
+    [
+     2,
+     "Sean $A=\\begin{pmatrix}3&-2\\\\1&4\\end{pmatrix}$ y $B=\\begin{pmatrix}2&0\\\\-1&5\\end{pmatrix}$. Calcula $A\\cdot B$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      8,
+      -10,
+      -2,
+      20
+     ],
+     "Cada elemento es fila de $A$ por columna de $B$: $A\\cdot B=\\begin{pmatrix}8&-10\\\\-2&20\\end{pmatrix}$.",
+     "[sum([[3,-2],[1,4]][i][k]*[[2,0],[-1,5]][k][j] for k in range(2)) for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     3,
+     "Sean $A=\\begin{pmatrix}2&1\\\\-1&3\\end{pmatrix}$ y $B=\\begin{pmatrix}4&0\\\\1&-2\\end{pmatrix}$. Calcula $B\\cdot A$ y escribe únicamente el elemento de la segunda fila y primera columna.",
+     4,
+     "Se multiplica la segunda fila de $B$ por la primera columna de $A$: $1\\cdot2+(-2)\\cdot(-1)=4$. (Toda la matriz es $B\\cdot A=\\begin{pmatrix}8&4\\\\4&-5\\end{pmatrix}$.)",
+     "sum([[4,0],[1,-2]][1][k]*[[2,1],[-1,3]][k][0] for k in range(2))"
+    ],
+    [
+     3,
+     "Sean $A=\\begin{pmatrix}1&0&2\\\\3&-1&1\\end{pmatrix}$ (2x3) y $B=\\begin{pmatrix}2&1\\\\0&4\\\\-1&3\\end{pmatrix}$ (3x2). Calcula $A\\cdot B$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      0,
+      7,
+      5,
+      2
+     ],
+     "Como $A$ es 2x3 y $B$ es 3x2, el producto es 2x2. Cada elemento suma tres productos: $A\\cdot B=\\begin{pmatrix}0&7\\\\5&2\\end{pmatrix}$.",
+     "[sum([[1,0,2],[3,-1,1]][i][k]*[[2,1],[0,4],[-1,3]][k][j] for k in range(3)) for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     4,
+     "Sean $A=\\begin{pmatrix}1&2\\\\3&0\\end{pmatrix}$ y $B=\\begin{pmatrix}0&1\\\\2&-1\\end{pmatrix}$. Calcula $A\\cdot B-B\\cdot A$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      1,
+      -1,
+      1,
+      -1
+     ],
+     "$A\\cdot B=\\begin{pmatrix}4&-1\\\\0&3\\end{pmatrix}$ y $B\\cdot A=\\begin{pmatrix}3&0\\\\-1&4\\end{pmatrix}$. Al restar queda $\\begin{pmatrix}1&-1\\\\1&-1\\end{pmatrix}$, distinta de la matriz nula: el producto no es conmutativo.",
+     "[sum([[1,2],[3,0]][i][k]*[[0,1],[2,-1]][k][j]-[[0,1],[2,-1]][i][k]*[[1,2],[3,0]][k][j] for k in range(2)) for i in range(2) for j in range(2)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Ecuaciones matriciales",
+   "pagina": 8,
+   "ayuda": "Una ecuación matricial se resuelve como una ecuación normal, pero sin dividir entre matrices: se suma, resta y multiplica por números para dejar la incógnita sola. Ejemplo: en $2X-A=B$ se pasa $A$ sumando, $2X=A+B$, y se divide entre 2: $X=\\frac{A+B}{2}$. Si la incógnita aparece en un producto, se escribe $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, se hace el producto, se iguala elemento a elemento y se resuelve el sistema de ecuaciones que sale. Comprueba siempre sustituyendo en la ecuación original.",
+   "problemas": [
+    [
+     2,
+     "Resuelve la ecuación matricial $2X-A=B$ con $A=\\begin{pmatrix}3&-1\\\\2&4\\end{pmatrix}$ y $B=\\begin{pmatrix}1&5\\\\-2&0\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+     [
+      2,
+      2,
+      0,
+      2
+     ],
+     "Se pasa $A$ sumando: $2X=A+B=\\begin{pmatrix}4&4\\\\0&4\\end{pmatrix}$ y se divide entre 2: $X=\\begin{pmatrix}2&2\\\\0&2\\end{pmatrix}$.",
+     "[[x for x in range(-20,21) if 2*x-[[3,-1],[2,4]][i][j]==[[1,5],[-2,0]][i][j]][0] for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     3,
+     "Resuelve $3X+A=B-X$ con $A=\\begin{pmatrix}1&-3\\\\2&0\\end{pmatrix}$ y $B=\\begin{pmatrix}9&1\\\\-2&12\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+     [
+      2,
+      1,
+      -1,
+      3
+     ],
+     "Se agrupan las $X$: $4X=B-A=\\begin{pmatrix}8&4\\\\-4&12\\end{pmatrix}$, así que $X=\\begin{pmatrix}2&1\\\\-1&3\\end{pmatrix}$.",
+     "[[x for x in range(-20,21) if 3*x+[[1,-3],[2,0]][i][j]==[[9,1],[-2,12]][i][j]-x][0] for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     4,
+     "Resuelve $A\\cdot X+B=C$ con $A=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$, $B=\\begin{pmatrix}1&0\\\\2&-1\\end{pmatrix}$ y $C=\\begin{pmatrix}6&-4\\\\6&-3\\end{pmatrix}$. Escribe los elementos de $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ fila a fila ($a;b;c;d$) separados por punto y coma.",
+     [
+      1,
+      -2,
+      3,
+      0
+     ],
+     "$A\\cdot X=C-B=\\begin{pmatrix}5&-4\\\\4&-2\\end{pmatrix}$. Con $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$: $2a+c=5$ y $a+c=4$ dan $a=1$, $c=3$; $2b+d=-4$ y $b+d=-2$ dan $b=-2$, $d=0$.",
+     "[v for a in range(-6,7) for b in range(-6,7) for c in range(-6,7) for d in range(-6,7) if 2*a+1*c+1==6 and 2*b+1*d+0==-4 and 1*a+1*c+2==6 and 1*b+1*d+-1==-3 for v in (a,b,c,d)]",
+     true
+    ],
+    [
+     5,
+     "Resuelve $X\\cdot A=B$ con $A=\\begin{pmatrix}1&2\\\\1&3\\end{pmatrix}$ y $B=\\begin{pmatrix}1&1\\\\3&9\\end{pmatrix}$ (la incógnita va a la izquierda). Escribe los elementos de $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ fila a fila ($a;b;c;d$) separados por punto y coma.",
+     [
+      2,
+      -1,
+      0,
+      3
+     ],
+     "Al multiplicar $X\\cdot A$, la primera fila da $a+b=1$ y $2a+3b=1$, luego $a=2$, $b=-1$. La segunda fila da $c+d=3$ y $2c+3d=9$, luego $c=0$, $d=3$. Se comprueba que $X\\cdot A=B$.",
+     "[v for a in range(-6,7) for b in range(-6,7) for c in range(-6,7) for d in range(-6,7) if a*1+b*1==1 and a*2+b*3==1 and c*1+d*1==3 and c*2+d*3==9 for v in (a,b,c,d)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Matrices que conmutan y parámetros",
+   "pagina": 9,
+   "ayuda": "Cuando una condición matricial contiene letras desconocidas, se calcula cada miembro, se igualan los elementos que ocupan la misma posición y se resuelve el sistema resultante. Ejemplo: para $A\\cdot B=B\\cdot A$ se calculan los dos productos y se igualan sus cuatro elementos. Dos matrices que cumplen $A\\cdot B=B\\cdot A$ se dice que conmutan. Si aparece $A^2+xA+yI=0$, recuerda que $A^2=A\\cdot A$, que $I$ es la identidad y que cada posición da una ecuación para $x$ e $y$.",
+   "problemas": [
+    [
+     4,
+     "Sean $A=\\begin{pmatrix}1&4\\\\0&1\\end{pmatrix}$ y $B=\\begin{pmatrix}a&0\\\\b&2\\end{pmatrix}$. Halla $a$ y $b$ para que $A\\cdot B=B\\cdot A$. Escribe $a;b$ en ese orden.",
+     [
+      2,
+      0
+     ],
+     "$A\\cdot B=\\begin{pmatrix}a+4b&8\\\\b&2\\end{pmatrix}$ y $B\\cdot A=\\begin{pmatrix}a&4a\\\\b&4b+2\\end{pmatrix}$. Igualando: $a+4b=a$ da $b=0$; $8=4a$ da $a=2$; y $2=4b+2$ se cumple. Solución $a=2$, $b=0$.",
+     "[v for a in range(-8,9) for b in range(-8,9) if 1*a+4*b==a*1 and 4*2==a*4 and 0*a+1*b==b*1+2*0 and 1*2==b*4+2*1 for v in (a,b)]",
+     true
+    ],
+    [
+     4,
+     "Sea $A=\\begin{pmatrix}2&3\\\\1&2\\end{pmatrix}$. Halla $x$ e $y$ para que $A^2+xA+yI=0$, donde $I$ es la identidad y $0$ la matriz nula. Escribe $x;y$ en ese orden.",
+     [
+      -4,
+      1
+     ],
+     "$A^2=\\begin{pmatrix}7&12\\\\4&7\\end{pmatrix}$. Fuera de la diagonal: $12+3x=0$ da $x=-4$ (y $4+x=0$ lo confirma). En la diagonal: $7+2x+y=0$ da $y=1$.",
+     "[v for x in range(-20,21) for y in range(-20,21) if all(sum([[2,3],[1,2]][i][k]*[[2,3],[1,2]][k][j] for k in range(2))+x*[[2,3],[1,2]][i][j]+y*(1 if i==j else 0)==0 for i in range(2) for j in range(2)) for v in (x,y)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Sistemas de matrices y potencias",
+   "pagina": 9,
+   "ayuda": "Un sistema con matrices incógnita $X$ e $Y$ se resuelve igual que uno de números: por suma, resta o sustitución, tratando las matrices como si fueran letras. Ejemplo: con $X+Y=P$ y $X-Y=Q$, al sumar queda $2X=P+Q$, y después $Y=P-X$. Para una potencia $A^3$ se calcula primero $A^2=A\\cdot A$ y luego $A^3=A^2\\cdot A$, cuidando de multiplicar en el orden correcto.",
+   "problemas": [
+    [
+     3,
+     "Halla $X$ e $Y$ sabiendo que $X+Y=\\begin{pmatrix}5&3\\\\1&4\\end{pmatrix}$ y $X-Y=\\begin{pmatrix}1&-1\\\\3&2\\end{pmatrix}$. Escribe los elementos de $Y$ fila a fila separados por punto y coma.",
+     [
+      2,
+      2,
+      -1,
+      1
+     ],
+     "Restando las dos ecuaciones: $2Y=(X+Y)-(X-Y)=\\begin{pmatrix}4&4\\\\-2&2\\end{pmatrix}$, luego $Y=\\begin{pmatrix}2&2\\\\-1&1\\end{pmatrix}$. (Y entonces $X=\\begin{pmatrix}3&1\\\\2&3\\end{pmatrix}$.)",
+     "[[y for y in range(-30,31) if ([[5,3],[1,4]][i][j]-y)-y==[[1,-1],[3,2]][i][j]][0] for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     3,
+     "Halla $X$ e $Y$ sabiendo que $2X+Y=\\begin{pmatrix}5&5\\\\1&0\\end{pmatrix}$ y $X-Y=\\begin{pmatrix}1&-2\\\\2&-3\\end{pmatrix}$. Escribe los elementos de $X$ fila a fila separados por punto y coma.",
+     [
+      2,
+      1,
+      1,
+      -1
+     ],
+     "Sumando las dos ecuaciones desaparece $Y$: $3X=\\begin{pmatrix}6&3\\\\3&-3\\end{pmatrix}$, y dividiendo entre 3, $X=\\begin{pmatrix}2&1\\\\1&-1\\end{pmatrix}$. Con $Y=X-Q=\\begin{pmatrix}1&3\\\\-1&2\\end{pmatrix}$ se comprueba la primera ecuación.",
+     "[[x for x in range(-30,31) if 3*x-[[5,5],[1,0]][i][j]==[[1,-2],[2,-3]][i][j]][0] for i in range(2) for j in range(2)]",
+     true
+    ],
+    [
+     4,
+     "Sea $A=\\begin{pmatrix}2&-1\\\\1&0\\end{pmatrix}$. Calcula $A^3$ y escribe sus elementos fila a fila separados por punto y coma.",
+     [
+      4,
+      -3,
+      3,
+      -2
+     ],
+     "$A^2=\\begin{pmatrix}3&-2\\\\2&-1\\end{pmatrix}$ y $A^3=A^2\\cdot A=\\begin{pmatrix}4&-3\\\\3&-2\\end{pmatrix}$.",
+     "[sum([[2,-1],[1,0]][i][k]*[[2,-1],[1,0]][k][l]*[[2,-1],[1,0]][l][j] for k in range(2) for l in range(2)) for i in range(2) for j in range(2)]",
+     true
+    ]
+   ]
+  }
+ ]
+}

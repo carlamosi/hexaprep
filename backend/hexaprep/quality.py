@@ -8,13 +8,13 @@ from sqlalchemy.orm import Session
 
 from . import events, mastery, scheduling
 from .bank import AsignaturaIn, BankFile, FuenteIn, OpcionIn, PreguntaIn
-from .importer import _add_question, question_digest
+from .importer import _add_question, leer_solucion, question_digest
 from .models import (
     Asignatura, Bloque, Concepto, Explicacion, Fuente, Opcion, Pregunta, ReporteCalidad, Subtema, Tema, utcnow,
 )
 
 EDITABLE = {"enunciado", "ayuda_larga", "explicacion", "dificultad", "opciones", "correcta", "fuente_pagina",
-            "fuente_cara", "excluida", "solucion"}
+            "fuente_cara", "excluida", "solucion", "ordenada"}
 
 
 def _current(session: Session, pregunta_id: str) -> Pregunta:
@@ -57,7 +57,8 @@ def _to_bank_question(session: Session, p: Pregunta) -> PreguntaIn:
     return PreguntaIn(
         id=p.clave, bloque=bloque.nombre, tema=tema.nombre, subtema=sub.nombre, concepto=c.nombre,
         dificultad=p.dificultad_base, enunciado=p.enunciado, tipo=p.tipo,
-        solucion=float(ops[0].texto) if problema else None,
+        solucion=leer_solucion(ops[0].texto)[0] if problema else None,
+        ordenada=leer_solucion(ops[0].texto)[1] if problema else False,
         opciones=[] if problema else [OpcionIn(texto=o.texto, trampa=o.tipo_trampa) for o in ops],
         correcta=None if problema else next(o.posicion for o in ops if o.correcta), explicacion=expl or "",
         ayuda_larga=p.ayuda_larga or "", fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara)
@@ -70,7 +71,8 @@ def question_content(session: Session, pregunta_id: str) -> dict:
     return {"pregunta_id": cur.id, "version": cur.version, "excluida": cur.excluida, "enunciado": q.enunciado,
             "opciones": [o.model_dump() for o in q.opciones], "correcta": q.correcta, "explicacion": q.explicacion,
             "ayuda_larga": q.ayuda_larga, "dificultad": q.dificultad, "fuente_pagina": q.fuente_pagina,
-            "fuente_cara": q.fuente_cara, "tipo": q.tipo, "solucion": q.solucion}
+            "fuente_cara": q.fuente_cara, "tipo": q.tipo, "solucion": q.solucion,
+            "ordenada": q.ordenada}
 
 
 def reported_questions(session: Session) -> list[dict]:

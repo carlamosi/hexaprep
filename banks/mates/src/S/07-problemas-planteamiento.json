@@ -1,0 +1,195 @@
+{
+ "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+ "subtema": "Problemas de ecuaciones y sistemas",
+ "conceptos": [
+  {
+   "nombre": "Cifras de un número",
+   "pagina": 5,
+   "ayuda": "Un número de dos cifras con decenas $d$ y unidades $u$ vale $10d+u$; con las cifras invertidas vale $10u+d$. Traduce cada frase del enunciado a una ecuación con $d$ y $u$ y obtén un sistema. Despeja una incógnita en una ecuación y sustituye en la otra: sale una ecuación de 1º o 2º grado. Descarta soluciones que no sean cifras (enteros de 0 a 9, y la de las decenas distinta de 0). Ejemplo: si la suma de las cifras es 7 y la diferencia es 3, $d+u=7$, $d-u=3$, luego $d=5$, $u=2$ y el número es 52.",
+   "problemas": [
+    [
+     1,
+     "En un número de dos cifras, la de las decenas es el triple que la de las unidades. Si se invierten las cifras, el número disminuye en 54. ¿Cuál es el número? Escribe el número.",
+     93,
+     "Sea $d$ las decenas y $u$ las unidades: $d=3u$ y $(10d+u)-(10u+d)=54$, es decir $9d-9u=54$, $d-u=6$. Sustituyendo, $3u-u=6$, $u=3$ y $d=9$. El número es 93.",
+     "[10*d+u for d in range(1,10) for u in range(0,10) if d==3*u and (10*d+u)-(10*u+d)==54][0]"
+    ],
+    [
+     3,
+     "En un número de dos cifras, el producto de las cifras es 18 y el número supera en 27 al que resulta de invertir sus cifras. ¿Cuál es el número? Escribe el número.",
+     63,
+     "Del dato del número invertido, $9d-9u=27$, luego $d=u+3$. El producto da $u(u+3)=18$, es decir $u^2+3u-18=0$, con soluciones $u=3$ y $u=-6$. Solo vale $u=3$ (una cifra no es negativa), así que $d=6$ y el número es 63.",
+     "[10*d+u for d in range(1,10) for u in range(0,10) if d*u==18 and (10*d+u)-(10*u+d)==27][0]"
+    ],
+    [
+     4,
+     "La suma de los cuadrados de las dos cifras de un número es 34 y el número supera en 18 al que resulta de invertir sus cifras. ¿Cuál es el número? Escribe el número.",
+     53,
+     "De $(10d+u)-(10u+d)=18$ sale $d-u=2$. Entonces $(u+2)^2+u^2=34$, es decir $2u^2+4u-30=0$, $u^2+2u-15=0$, con $u=3$ o $u=-5$. Solo vale $u=3$, luego $d=5$ y el número es 53.",
+     "[10*d+u for d in range(1,10) for u in range(0,10) if d*d+u*u==34 and (10*d+u)-(10*u+d)==18][0]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Inversiones, mezclas y grifos",
+   "pagina": 6,
+   "ayuda": "En los problemas de intereses, la ganancia es capital por tipo: $x$ al 4 % da $0{,}04x$. En las mezclas, el precio total es la suma de kg por precio, igual a kg totales por precio de la mezcla. En los grifos se trabaja con la parte del depósito que llena cada uno en una hora: si tarda $t$ horas llena $1/t$. Define una incógnita, expresa la otra con el total y plantea una ecuación. Ejemplo: 100 kg a 3 € mezclados de dos tipos a 2 € y 4 €: $2x+4(100-x)=300$.",
+   "problemas": [
+    [
+     2,
+     "Un inversor tiene 30 000 € y coloca una parte al 4 % anual y el resto al 6 % anual, con lo que obtiene 1 520 € de intereses al año. Escribe lo colocado al 4 % y lo colocado al 6 %, en ese orden y separados por punto y coma (en euros).",
+     [
+      14000,
+      16000
+     ],
+     "Sea $x$ lo colocado al 4 %: $0{,}04x+0{,}06(30000-x)=1520$, es decir $1800-0{,}02x=1520$, $x=14000$. Al 6 % ha colocado $30000-14000=16000$ euros.",
+     "[v for x in range(0,30001,100) if abs(x*0.04+(30000-x)*0.06-1520)<1e-6 for v in (x,30000-x)]",
+     true
+    ],
+    [
+     2,
+     "Se mezcla café de 9 €/kg con café de 14 €/kg para obtener 50 kg de mezcla a 11 €/kg. Escribe los kg que se usan del de 9 €/kg y del de 14 €/kg, en ese orden y separados por punto y coma.",
+     [
+      30,
+      20
+     ],
+     "Con $x$ kg del de 9 €: $9x+14(50-x)=11\\cdot 50$, es decir $700-5x=550$, $x=30$. Del de 14 € se usan $50-30=20$ kg.",
+     "[v for x in range(0,51) if abs(9*x+14*(50-x)-550)<1e-6 for v in (x,50-x)]",
+     true
+    ],
+    [
+     5,
+     "Dos grifos llenan juntos un depósito en 6 horas. Uno de ellos, solo, tardaría 5 horas más que el otro. ¿Cuántas horas tarda cada grifo por separado? Escribe los dos tiempos separados por punto y coma, en cualquier orden.",
+     [
+      10,
+      15
+     ],
+     "Si el rápido tarda $x$ horas, el otro tarda $x+5$ y $\\frac{1}{x}+\\frac{1}{x+5}=\\frac{1}{6}$. Multiplicando por $6x(x+5)$: $6(2x+5)=x^2+5x$, es decir $x^2-7x-30=0$, con $x=10$ o $x=-3$. Vale $x=10$ (el tiempo es positivo), y el otro tarda 15 horas.",
+     "[v for x in range(1,100) if abs(1/x+1/(x+5)-1/6)<1e-9 for v in (x,x+5)]"
+    ]
+   ]
+  },
+  {
+   "nombre": "Áreas, perímetros y Pitágoras",
+   "pagina": 6,
+   "ayuda": "En geometría, dibuja la figura y pon nombre a los lados. Para un rectángulo, el perímetro es $2(a+b)$ y el área $ab$: de ahí sale $a+b$ y $ab$, que dan una ecuación de 2º grado. En un triángulo rectángulo, $a^2+b^2=h^2$ con $h$ la hipotenusa. Una ecuación de 2º grado da dos soluciones: descarta las negativas. Ejemplo: $a+b=10$, $ab=21$ lleva a $a(10-a)=21$, $a^2-10a+21=0$ y los lados son 3 y 7.",
+   "problemas": [
+    [
+     1,
+     "Un rectángulo tiene 84 m² de área y 38 m de perímetro. Escribe sus dos dimensiones separadas por punto y coma, en cualquier orden (en metros).",
+     [
+      7,
+      12
+     ],
+     "El semiperímetro es $a+b=19$, luego $b=19-a$ y $a(19-a)=84$, es decir $a^2-19a+84=0$, con $a=7$ o $a=12$. Las dimensiones son 7 m y 12 m.",
+     "[v for w in range(1,40) for l in range(w,40) if w*l==84 and 2*(w+l)==38 for v in (w,l)]"
+    ],
+    [
+     3,
+     "La hipotenusa de un triángulo rectángulo mide 13 cm y uno de los catetos mide 7 cm más que el otro. Escribe los dos catetos, de menor a mayor y separados por punto y coma (en cm).",
+     [
+      5,
+      12
+     ],
+     "Con catetos $x$ y $x+7$: $x^2+(x+7)^2=169$, es decir $2x^2+14x-120=0$, $x^2+7x-60=0$, con $x=5$ o $x=-12$. Solo vale $x=5$, y el otro cateto es 12.",
+     "[v for x in range(1,14) if x**2+(x+7)**2==169 for v in (x,x+7)]",
+     true
+    ],
+    [
+     4,
+     "Un triángulo rectángulo tiene 17 cm de hipotenusa y 40 cm de perímetro. Escribe la longitud de sus dos catetos, de menor a mayor y separados por punto y coma (en cm).",
+     [
+      8,
+      15
+     ],
+     "Los catetos suman $a+b=40-17=23$ y cumplen $a^2+b^2=289$. Como $(a+b)^2=a^2+b^2+2ab$, $529=289+2ab$ y $ab=120$. Entonces $a^2-23a+120=0$, con $a=8$ o $a=15$. Los catetos miden 8 cm y 15 cm.",
+     "[v for a in range(1,18) for b in range(a,18) if a*a+b*b==289 and a+b+17==40 for v in (a,b)]",
+     true
+    ],
+    [
+     5,
+     "Una foto de 20 cm por 30 cm se enmarca con un marco de anchura uniforme. El conjunto de foto y marco ocupa 936 cm². ¿Cuánto mide la anchura del marco? Escribe la anchura en cm.",
+     3,
+     "Con anchura $x$, el conjunto mide $(20+2x)(30+2x)=936$, es decir $4x^2+100x+600=936$, $x^2+25x-84=0$, con $x=3$ o $x=-28$. Solo vale $x=3$ (una anchura no es negativa).",
+     "max([x/2 for x in range(1,101) if abs((20+x)*(30+x)-936)<1e-9])"
+    ]
+   ]
+  },
+  {
+   "nombre": "Repartos entre amigos y números cuadrados",
+   "pagina": 7,
+   "ayuda": "En un reparto entre $n$ amigos de una cantidad $C$, cada uno paga $C/n$; si se apuntan más personas, el pago baja y se obtiene una ecuación que, tras quitar denominadores, es de 2º grado. En los problemas con cuadrados o consecutivos, llama $x$ al menor y escribe el siguiente como $x+1$ (o $x+2$ si son pares o impares). Resuelve y descarta soluciones negativas o que no sean enteras si el contexto las exige. Ejemplo: 60 euros entre $n$ y, con 1 más, 1 euro menos: $60/n-60/(n+1)=1$.",
+   "problemas": [
+    [
+     3,
+     "Unos amigos pagan 180 € por una cena a partes iguales. Si fueran 3 más, cada uno pagaría 3 € menos. Escribe el número de amigos y lo que paga cada uno, en ese orden y separados por punto y coma (en euros).",
+     [
+      12,
+      15
+     ],
+     "Con $n$ amigos: $\\frac{180}{n}-\\frac{180}{n+3}=3$. Quitando denominadores, $540=3n(n+3)$, es decir $n^2+3n-180=0$, con $n=12$ o $n=-15$. Vale $n=12$ y cada uno paga $180/12=15$ euros.",
+     "[v for n in range(1,100) if abs(180/n-180/(n+3)-3)<1e-9 for v in (n,180/n)]",
+     true
+    ],
+    [
+     2,
+     "La suma de los cuadrados de dos números impares positivos consecutivos es 130. Escribe los dos números, de menor a mayor y separados por punto y coma.",
+     [
+      7,
+      9
+     ],
+     "Los números son $x$ y $x+2$: $x^2+(x+2)^2=130$, es decir $2x^2+4x-126=0$, $x^2+2x-63=0$, con $x=7$ o $x=-9$. Como piden positivos, $x=7$ y los números son 7 y 9.",
+     "[v for n in range(1,50,2) if n**2+(n+2)**2==130 for v in (n,n+2)]",
+     true
+    ],
+    [
+     4,
+     "Dos parcelas cuadradas suman 208 m² de superficie y el lado de una es 4 m mayor que el de la otra. Escribe los dos lados, de menor a mayor y separados por punto y coma (en metros).",
+     [
+      8,
+      12
+     ],
+     "Con lados $x$ y $x+4$: $x^2+(x+4)^2=208$, es decir $2x^2+8x-192=0$, $x^2+4x-96=0$, con $x=8$ o $x=-12$. Solo vale $x=8$, y el otro lado mide 12 m.",
+     "[v for x in range(1,30) if x*x+(x+4)**2==208 for v in (x,x+4)]",
+     true
+    ]
+   ]
+  },
+  {
+   "nombre": "Porcentajes y edades",
+   "pagina": 7,
+   "ayuda": "Un aumento del $r$ % multiplica por $1+r/100$ y una bajada del $r$ % por $1-r/100$; dos cambios sucesivos se multiplican. En los problemas de edades, haz una tabla con hoy y con el futuro o pasado: si hoy tiene $x$, dentro de $k$ años tendrá $x+k$ y hace $k$ años tenía $x-k$. Plantea con el dato de producto o suma una ecuación de 2º grado o un sistema. Descarta soluciones negativas. Ejemplo: un precio que baja un 10 % dos veces seguidas se multiplica por $0{,}9^2$.",
+   "problemas": [
+    [
+     3,
+     "Un producto cuesta 200 € y se rebaja dos veces seguidas el mismo porcentaje, con lo que pasa a costar 162 €. ¿Qué porcentaje es cada rebaja? Escribe el porcentaje sin el símbolo %.",
+     10,
+     "Con rebaja $r$ %: $200(1-r/100)^2=162$, luego $(1-r/100)^2=0{,}81$ y $1-r/100=\\pm 0{,}9$. La opción $-0{,}9$ da $r=190$ %, imposible; con $0{,}9$ resulta $r=10$.",
+     "max([r for r in range(1,100) if abs(200*(1-r/100)**2-162)<1e-9])"
+    ],
+    [
+     4,
+     "Un padre tiene el cuádruple de la edad de su hijo. Dentro de 4 años, el producto de sus edades será 432. Escribe la edad actual del hijo y la del padre, en ese orden y separadas por punto y coma.",
+     [
+      8,
+      32
+     ],
+     "Con el hijo de $x$ años y el padre de $4x$: $(x+4)(4x+4)=432$, es decir $4x^2+20x+16=432$, $x^2+5x-104=0$, con $x=8$ o $x=-13$. Vale $x=8$: el hijo tiene 8 años y el padre 32.",
+     "[v for x in range(1,100) if (x+4)*(4*x+4)==432 for v in (x,4*x)]",
+     true
+    ],
+    [
+     3,
+     "Dos hermanos tienen hoy edades que suman 29 años. Hace 4 años, el producto de sus edades era 98. Escribe las edades actuales, de mayor a menor y separadas por punto y coma.",
+     [
+      18,
+      11
+     ],
+     "Con edades $a$ y $29-a$ hoy: $(a-4)(25-a)=98$, es decir $-a^2+29a-100=98$, $a^2-29a+198=0$, con $a=18$ o $a=11$. Las edades son 18 y 11.",
+     "[v for a in range(5,30) for b in range(5,a) if a+b==29 and (a-4)*(b-4)==98 for v in (a,b)]",
+     true
+    ]
+   ]
+  }
+ ]
+}

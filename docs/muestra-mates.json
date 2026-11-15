@@ -1,0 +1,463 @@
+[
+ {
+  "id": "mat-s-0058",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Sistemas de ecuaciones",
+  "concepto": "Sustitución: una ecuación lineal y otra cuadrática",
+  "dificultad": 3,
+  "enunciado": "Resuelve el sistema $y=x^2$, $x+y=6$. Tiene dos soluciones; escribe la que cumple $x<0$ como x; y (separados por punto y coma).",
+  "ayuda_larga": "Si una ecuación es lineal, despeja una incógnita en ella y sustitúyela en la otra. Así queda una ecuación de segundo grado en una sola incógnita. Resuélvela con la fórmula general y calcula la otra incógnita con la ecuación lineal. Un sistema así puede tener hasta dos soluciones, que son pares $(x,y)$. Ejemplo: $x-y=1$, $xy=6$. De la primera, $x=y+1$; en la segunda, $y^2+y-6=0$, luego $y=2$ o $y=-3$, y las soluciones son $(3,2)$ y $(-2,-3)$. Comprueba siempre los pares en las dos ecuaciones.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "problema",
+  "solucion": [
+   -3,
+   9
+  ],
+  "explicacion": "Sustituimos $y=x^2$ en la segunda ecuación: $x+x^2=6$, es decir $x^2+x-6=0$, con $x=2$ o $x=-3$. Los pares son $(2,4)$ y $(-3,9)$. Con $x<0$ queda $(-3,9)$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0111",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Problemas con matrices",
+  "concepto": "Sistemas en forma matricial A·X=B",
+  "dificultad": 3,
+  "enunciado": "En el cine, 2 adultos y 3 niños pagan 31 €, y 4 adultos y 1 niño pagan 37 €. Escribe el sistema en forma matricial $A\\cdot X=B$ y resuélvelo. Escribe $x;y$ (precio de la entrada de adulto y de niño, en euros).",
+  "ayuda_larga": "Un problema con dos o tres precios desconocidos se escribe como $A\\cdot X=B$: $A$ contiene las cantidades compradas, $X$ los precios (incógnitas) y $B$ los totales pagados. Ejemplo: $2x+3y=13$ y $x+y=5$ se escribe $\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}\\cdot\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}13\\\\5\\end{pmatrix}$. Se resuelve el sistema por reducción o sustitución (o con $X=A^{-1}B$). Siempre se comprueba en las ecuaciones originales.",
+  "fuente_pagina": 10,
+  "fuente_cara": 10,
+  "tipo": "problema",
+  "solucion": [
+   8,
+   5
+  ],
+  "explicacion": "$2x+3y=31$ y $4x+y=37$. De la segunda, $y=37-4x$; en la primera, $2x+111-12x=31$, así que $-10x=-80$, $x=8$ y $y=5$. Adulto 8 € y niño 5 €.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0072",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Inecuaciones",
+  "concepto": "Inecuaciones racionales",
+  "dificultad": 4,
+  "enunciado": "Resuelve $\\frac{2x-1}{x+3}<1$. ¿Cuál es la suma de los números enteros entre $-20$ y 20, ambos incluidos, que cumplen la inecuación? Escribe solo ese número.",
+  "ayuda_larga": "En una inecuación racional pasa todo a un lado para tener un solo cociente comparado con 0. Halla las raíces del numerador y del denominador: dividen la recta en tramos, y en cada uno el cociente tiene un signo fijo, que compruebas con un punto de prueba. Las raíces del denominador nunca se incluyen. Las del numerador se incluyen solo si la desigualdad no es estricta. Ejemplo: $\\frac{x-1}{x+2}\\ge0$ se cumple en $(-\\infty,-2)\\cup[1,+\\infty)$.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "tipo": "problema",
+  "solucion": 3,
+  "explicacion": "Pasamos el 1 a la izquierda: $\\frac{2x-1-(x+3)}{x+3}<0$, es decir $\\frac{x-4}{x+3}<0$. El cociente es negativo entre las raíces $-3$ y $4$, que no se incluyen: la solución es $(-3,4)$. Los enteros son $-2,-1,0,1,2,3$ y suman 3."
+ },
+ {
+  "id": "mat-s-0110",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Problemas con matrices",
+  "concepto": "Sistemas en forma matricial A·X=B",
+  "dificultad": 1,
+  "enunciado": "Dos kg de pienso A y 3 kg de pienso B cuestan 13 €, y 4 kg de A y 1 kg de B cuestan 11 €. Escribe el sistema como $\\begin{pmatrix}2&3\\\\4&1\\end{pmatrix}\\cdot\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}13\\\\11\\end{pmatrix}$ y resuélvelo. Escribe $x;y$ (precio por kg del pienso A y del B, en euros).",
+  "ayuda_larga": "Un problema con dos o tres precios desconocidos se escribe como $A\\cdot X=B$: $A$ contiene las cantidades compradas, $X$ los precios (incógnitas) y $B$ los totales pagados. Ejemplo: $2x+3y=13$ y $x+y=5$ se escribe $\\begin{pmatrix}2&3\\\\1&1\\end{pmatrix}\\cdot\\begin{pmatrix}x\\\\y\\end{pmatrix}=\\begin{pmatrix}13\\\\5\\end{pmatrix}$. Se resuelve el sistema por reducción o sustitución (o con $X=A^{-1}B$). Siempre se comprueba en las ecuaciones originales.",
+  "fuente_pagina": 10,
+  "fuente_cara": 10,
+  "tipo": "problema",
+  "solucion": [
+   2,
+   3
+  ],
+  "explicacion": "Se multiplica la segunda ecuación por 3: $12x+3y=33$. Restando la primera, $10x=20$, luego $x=2$ y $3y=13-4$ da $y=3$. Pienso A a 2 €/kg y pienso B a 3 €/kg.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-g-0007",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Resolver sistemas por Gauss",
+  "concepto": "Problemas con enunciado que llevan a un sistema 3x3",
+  "dificultad": 4,
+  "enunciado": "Se mezclan 20 kg de frutos secos de tres tipos que cuestan 4, 6 y 10 euros el kilo. La mezcla cuesta en total 108 euros y de los de 4 euros se ponen 2 kg más que de los de 6 euros. ¿Cuántos kilos se ponen de los de 10 euros? Escribe solo el número.",
+  "ayuda_larga": "En un problema con enunciado, primero se eligen las incógnitas (lo que se quiere averiguar), luego se traduce cada dato a una ecuación y sale un sistema; con tres datos independientes es un sistema $3\\times3$. Se resuelve por Gauss y se interpreta la solución comprobando que tiene sentido (por ejemplo, que no sea negativa). Ejemplo: dos números suman 10 y uno es el triple del otro: $x+y=10$, $x-3y=0$, de donde $y=2{,}5$ y $x=7{,}5$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 2,
+  "explicacion": "Con $x,y,z$ los kilos: $x+y+z=20$, $4x+6y+10z=108$, $x-y=2$. Poniendo $x=y+2$: $2y+z=18$ y $10y+10z=100$, es decir $y+z=10$. Restando, $y=8$, luego $z=2$ y $x=10$."
+ },
+ {
+  "id": "mat-s-0100",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Ecuaciones matriciales",
+  "dificultad": 4,
+  "enunciado": "Resuelve $A\\cdot X+B=C$ con $A=\\begin{pmatrix}2&1\\\\1&1\\end{pmatrix}$, $B=\\begin{pmatrix}1&0\\\\2&-1\\end{pmatrix}$ y $C=\\begin{pmatrix}6&-4\\\\6&-3\\end{pmatrix}$. Escribe los elementos de $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$ fila a fila ($a;b;c;d$) separados por punto y coma.",
+  "ayuda_larga": "Una ecuación matricial se resuelve como una ecuación normal, pero sin dividir entre matrices: se suma, resta y multiplica por números para dejar la incógnita sola. Ejemplo: en $2X-A=B$ se pasa $A$ sumando, $2X=A+B$, y se divide entre 2: $X=\\frac{A+B}{2}$. Si la incógnita aparece en un producto, se escribe $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$, se hace el producto, se iguala elemento a elemento y se resuelve el sistema de ecuaciones que sale. Comprueba siempre sustituyendo en la ecuación original.",
+  "fuente_pagina": 8,
+  "fuente_cara": 8,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   -2,
+   3,
+   0
+  ],
+  "explicacion": "$A\\cdot X=C-B=\\begin{pmatrix}5&-4\\\\4&-2\\end{pmatrix}$. Con $X=\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}$: $2a+c=5$ y $a+c=4$ dan $a=1$, $c=3$; $2b+d=-4$ y $b+d=-2$ dan $b=-2$, $d=0$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0060",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Sistemas de ecuaciones",
+  "concepto": "Reducción en sistemas de ecuaciones cuadráticas",
+  "dificultad": 2,
+  "enunciado": "Resuelve el sistema $x^2+y^2=34$, $x^2-y^2=16$. Tiene cuatro soluciones; escribe la que cumple $x>0$ e $y<0$ como x; y (separados por punto y coma).",
+  "ayuda_larga": "Cuando las dos ecuaciones solo tienen $x^2$ e $y^2$, trátalas como si las incógnitas fueran $x^2$ e $y^2$. Suma o resta las ecuaciones (multiplicando antes si hace falta) para eliminar una de ellas. Así obtienes el valor de $x^2$ y de $y^2$, y cada raíz da dos signos posibles, de modo que salen cuatro soluciones. Ejemplo: $x^2+y^2=13$, $x^2-y^2=5$. Sumando, $2x^2=18$, $x^2=9$, $x=\\pm3$; restando, $y^2=4$, $y=\\pm2$. Las soluciones son $(\\pm3,\\pm2)$ en las cuatro combinaciones.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "problema",
+  "solucion": [
+   5,
+   -3
+  ],
+  "explicacion": "Sumando las ecuaciones: $2x^2=50$, $x^2=25$, $x=\\pm5$. Restando: $2y^2=18$, $y^2=9$, $y=\\pm3$. Hay cuatro pares con los signos posibles. Con $x>0$ e $y<0$ queda $(5,-3)$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-g-0014",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Discusión de sistemas",
+  "concepto": "Rango y soluciones libres",
+  "dificultad": 5,
+  "enunciado": "Se considera el sistema $x+y+z=6$, $x-y+2z=5$, $2x+3z=11$, $x+3y=k$. Halla el valor de $k$ para que el sistema tenga solución. Escribe solo el número.",
+  "ayuda_larga": "El rango de una matriz es el número de filas no nulas que quedan al escalonarla (o el orden del mayor menor distinto de cero). Si una ecuación es combinación de las otras, desaparece al escalonar y deja una variable libre. En un sistema compatible indeterminado se fija la variable libre en un valor y se despeja el resto. Ejemplo: en $x+y=2$, $2x+2y=4$ la segunda es el doble de la primera, el rango es 1 y con $y=1$ resulta $x=1$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 7,
+  "explicacion": "La tercera ecuación es la suma de las dos primeras y la cuarta es $2F_1-F_2$ en coeficientes. Al escalonar, las filas 3 y 4 quedan $0=0$ y $0=k-7$. Para que el sistema no sea incompatible hace falta $k=7$ (rango 2 y una variable libre)."
+ },
+ {
+  "id": "mat-s-0066",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Sistemas de ecuaciones",
+  "concepto": "Sistemas exponenciales",
+  "dificultad": 3,
+  "enunciado": "Resuelve el sistema $3^x=9^y$, $x\\cdot y=18$. Tiene dos soluciones; escribe la que cumple $x>0$ como x; y (separados por punto y coma).",
+  "ayuda_larga": "En un sistema exponencial, escribe las potencias con la misma base y iguala exponentes, o usa un cambio de variable. Por ejemplo $2^x\\cdot2^y=2^{x+y}$ y $3^x=3^{2y}$ da $x=2y$. Así el sistema exponencial se convierte en uno más sencillo. Ejemplo: $3^x\\cdot3^y=81$, $3^x:3^y=9$ da $x+y=4$ y $x-y=2$, luego $x=3$, $y=1$. Si aparece una suma de potencias, llama $t=2^x$ y resuelve la ecuación en $t$.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "problema",
+  "solucion": [
+   6,
+   3
+  ],
+  "explicacion": "Como $9^y=3^{2y}$, de $3^x=3^{2y}$ sale $x=2y$. Sustituyendo, $2y^2=18$, $y^2=9$, $y=\\pm3$. Los pares son $(6,3)$ y $(-6,-3)$. Con $x>0$ queda $(6,3)$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-g-0011",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Discusión de sistemas",
+  "concepto": "Discusión con un parámetro",
+  "dificultad": 4,
+  "enunciado": "Se considera el sistema $x+y+mz=1$, $x+my+z=1$, $mx+y+z=1$. Escribe, en cualquier orden y separados por punto y coma, los valores de $m$ para los que el sistema NO es compatible determinado.",
+  "ayuda_larga": "Para discutir un sistema se escalona la matriz ampliada y se compara el rango $r$ de la matriz de coeficientes con el rango $r'$ de la ampliada y con el número de incógnitas $n$. Si $r=r'=n$ es compatible determinado (una solución); si $r=r'<n$ es compatible indeterminado (infinitas soluciones, con $n-r$ variables libres); si $r<r'$ es incompatible (una fila queda como $0=k$ con $k\\neq0$). Con un parámetro $m$, se busca el valor que anula una fila o el determinante de la matriz de coeficientes. Ejemplo: si al escalonar queda $0=3$, el sistema es incompatible.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   -2,
+   1
+  ],
+  "explicacion": "El sistema no es compatible determinado cuando se anula el determinante de coeficientes: $-(m-1)^2(m+2)=0$, es decir $m=1$ o $m=-2$. Para $m=1$ las tres ecuaciones coinciden (indeterminado) y para $m=-2$ la suma de las tres da $0=3$ (incompatible)."
+ },
+ {
+  "id": "mat-s-0076",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Cifras de un número",
+  "dificultad": 3,
+  "enunciado": "En un número de dos cifras, el producto de las cifras es 18 y el número supera en 27 al que resulta de invertir sus cifras. ¿Cuál es el número? Escribe el número.",
+  "ayuda_larga": "Un número de dos cifras con decenas $d$ y unidades $u$ vale $10d+u$; con las cifras invertidas vale $10u+d$. Traduce cada frase del enunciado a una ecuación con $d$ y $u$ y obtén un sistema. Despeja una incógnita en una ecuación y sustituye en la otra: sale una ecuación de 1º o 2º grado. Descarta soluciones que no sean cifras (enteros de 0 a 9). Ejemplo: si la suma de las cifras es 7 y la diferencia es 3, $d+u=7$, $d-u=3$, luego $d=5$, $u=2$ y el número es 52.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "tipo": "problema",
+  "solucion": 63,
+  "explicacion": "Del dato del número invertido, $9d-9u=27$, luego $d=u+3$. El producto da $u(u+3)=18$, es decir $u^2+3u-18=0$, con soluciones $u=3$ y $u=-6$. Solo vale $u=3$ (una cifra no es negativa), así que $d=6$ y el número es 63."
+ },
+ {
+  "id": "mat-s-0025",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones radicales y racionales",
+  "concepto": "Ecuaciones racionales",
+  "dificultad": 3,
+  "enunciado": "Resuelve $\\frac{4}{x}+\\frac{5}{x+1}=2$. Escribe las soluciones que valen separadas por punto y coma.",
+  "ayuda_larga": "Se factorizan los denominadores y se multiplica toda la ecuación por el mínimo común múltiplo para quitar las fracciones. Se resuelve la ecuación resultante y se descartan los valores que anulan algún denominador. Ejemplo: $\\frac{1}{x-1}=\\frac{2}{x+1}$ da $x+1=2(x-1)$, es decir $x=3$, que no anula ningún denominador, así que es solución.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": [
+   -0.5,
+   4
+  ],
+  "explicacion": "Se multiplica por $x(x+1)$: $4(x+1)+5x=2x(x+1)$, es decir $9x+4=2x^2+2x$, luego $2x^2-7x-4=0$. Su fórmula da $x=\\frac{7\\pm9}{4}$, es decir $x=4$ y $x=-\\frac{1}{2}$. Ninguna anula un denominador, así que valen las dos."
+ },
+ {
+  "id": "mat-s-0024",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones radicales y racionales",
+  "concepto": "Ecuaciones racionales",
+  "dificultad": 2,
+  "enunciado": "Resuelve $\\frac{x}{x-1}-\\frac{2}{x+1}=1$. Escribe la solución.",
+  "ayuda_larga": "Se factorizan los denominadores y se multiplica toda la ecuación por el mínimo común múltiplo para quitar las fracciones. Se resuelve la ecuación resultante y se descartan los valores que anulan algún denominador. Ejemplo: $\\frac{1}{x-1}=\\frac{2}{x+1}$ da $x+1=2(x-1)$, es decir $x=3$, que no anula ningún denominador, así que es solución.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": 3,
+  "explicacion": "Se multiplica por $(x-1)(x+1)$: $x(x+1)-2(x-1)=x^2-1$, es decir $x^2-x+2=x^2-1$, luego $-x=-3$ y $x=3$. No anula ningún denominador. Comprobación: $\\frac32-\\frac24=1$."
+ },
+ {
+  "id": "mat-s-0103",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Matrices que conmutan y parámetros",
+  "dificultad": 5,
+  "enunciado": "Sea $A=\\begin{pmatrix}2&3\\\\1&2\\end{pmatrix}$. Halla $x$ e $y$ para que $A^2+xA+yI=0$, donde $I$ es la identidad y $0$ la matriz nula. Escribe $x;y$ en ese orden.",
+  "ayuda_larga": "Cuando una condición matricial contiene letras desconocidas, se calcula cada miembro, se igualan los elementos que ocupan la misma posición y se resuelve el sistema resultante. Ejemplo: para $A\\cdot B=B\\cdot A$ se calculan los dos productos y se igualan sus cuatro elementos. Dos matrices que cumplen $A\\cdot B=B\\cdot A$ se dice que conmutan. Si aparece $A^2+xA+yI=0$, recuerda que $A^2=A\\cdot A$, que $I$ es la identidad y que cada posición da una ecuación para $x$ e $y$.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "tipo": "problema",
+  "solucion": [
+   -4,
+   1
+  ],
+  "explicacion": "$A^2=\\begin{pmatrix}7&12\\\\4&7\\end{pmatrix}$. Fuera de la diagonal: $12+3x=0$ da $x=-4$ (y $4+x=0$ lo confirma). En la diagonal: $7+2x+y=0$ da $y=1$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-g-0006",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Resolver sistemas por Gauss",
+  "concepto": "Problemas con enunciado que llevan a un sistema 3x3",
+  "dificultad": 3,
+  "enunciado": "En una papelería, 2 bolígrafos, 1 cuaderno y 1 carpeta cuestan 12 euros; 1 bolígrafo, 2 cuadernos y 1 carpeta cuestan 13 euros; 3 bolígrafos, 1 cuaderno y 2 carpetas cuestan 19 euros. Cada precio es múltiplo de 0,5 euros. ¿Cuánto cuesta una carpeta en euros? Escribe solo el número.",
+  "ayuda_larga": "En un problema con enunciado, primero se eligen las incógnitas (lo que se quiere averiguar), luego se traduce cada dato a una ecuación y sale un sistema; con tres datos independientes es un sistema $3\\times3$. Se resuelve por Gauss y se interpreta la solución comprobando que tiene sentido (por ejemplo, que no sea negativa). Ejemplo: dos números suman 10 y uno es el triple del otro: $x+y=10$, $x-3y=0$, de donde $y=2{,}5$ y $x=7{,}5$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 5,
+  "explicacion": "Con $x,y,z$ los precios: $2x+y+z=12$, $x+2y+z=13$, $3x+y+2z=19$. Restando las dos primeras, $y=x+1$. Con $F_3\\to F_3-F_1$ sale $x+z=7$, así $z=7-x$. En la primera, $2x+x+1+7-x=12$, luego $x=2$, $y=3$, $z=5$."
+ },
+ {
+  "id": "mat-s-0061",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Sistemas de ecuaciones",
+  "concepto": "Reducción en sistemas de ecuaciones cuadráticas",
+  "dificultad": 4,
+  "enunciado": "Resuelve el sistema $2x^2+3y^2=30$, $x^2-y^2=5$. Tiene cuatro soluciones; escribe la que cumple $x<0$ e $y>0$ como x; y (separados por punto y coma).",
+  "ayuda_larga": "Cuando las dos ecuaciones solo tienen $x^2$ e $y^2$, trátalas como si las incógnitas fueran $x^2$ e $y^2$. Suma o resta las ecuaciones (multiplicando antes si hace falta) para eliminar una de ellas. Así obtienes el valor de $x^2$ y de $y^2$, y cada raíz da dos signos posibles, de modo que salen cuatro soluciones. Ejemplo: $x^2+y^2=13$, $x^2-y^2=5$. Sumando, $2x^2=18$, $x^2=9$, $x=\\pm3$; restando, $y^2=4$, $y=\\pm2$. Las soluciones son $(\\pm3,\\pm2)$ en las cuatro combinaciones.",
+  "fuente_pagina": 4,
+  "fuente_cara": 4,
+  "tipo": "problema",
+  "solucion": [
+   -3,
+   2
+  ],
+  "explicacion": "Multiplicamos la segunda ecuación por 2: $2x^2-2y^2=10$. Restándola de la primera: $5y^2=20$, $y^2=4$, $y=\\pm2$. Entonces $x^2=5+4=9$, $x=\\pm3$. Con $x<0$ e $y>0$ queda $(-3,2)$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0081",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Áreas, perímetros y Pitágoras",
+  "dificultad": 1,
+  "enunciado": "Un rectángulo tiene 84 m² de área y 38 m de perímetro. Escribe sus dos dimensiones separadas por punto y coma, en cualquier orden (en metros).",
+  "ayuda_larga": "En geometría, dibuja la figura y pon nombre a los lados. Para un rectángulo, el perímetro es $2(a+b)$ y el área $ab$: de ahí sale $a+b$ y $ab$, que dan una ecuación de 2º grado. En un triángulo rectángulo, $a^2+b^2=h^2$ con $h$ la hipotenusa. Una ecuación de 2º grado da dos soluciones: descarta las negativas. Ejemplo: $a+b=10$, $ab=21$ lleva a $a(10-a)=21$, $a^2-10a+21=0$ y los lados son 3 y 7.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "tipo": "problema",
+  "solucion": [
+   7,
+   12
+  ],
+  "explicacion": "El semiperímetro es $a+b=19$, luego $b=19-a$ y $a(19-a)=84$, es decir $a^2-19a+84=0$, con $a=7$ o $a=12$. Las dimensiones son 7 m y 12 m."
+ },
+ {
+  "id": "mat-s-0079",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Problemas de ecuaciones y sistemas",
+  "concepto": "Inversiones, mezclas y grifos",
+  "dificultad": 2,
+  "enunciado": "Se mezcla café de 9 €/kg con café de 14 €/kg para obtener 50 kg de mezcla a 11 €/kg. Escribe los kg que se usan del de 9 €/kg y del de 14 €/kg, en ese orden y separados por punto y coma.",
+  "ayuda_larga": "En los problemas de intereses, la ganancia es capital por tipo: $x$ al 4 % da $0{,}04x$. En las mezclas, el precio total es la suma de kg por precio, igual a kg totales por precio de la mezcla. En los grifos se trabaja con la parte del depósito que llena cada uno en una hora: si tarda $t$ horas llena $1/t$. Define una incógnita, expresa la otra con el total y plantea una ecuación. Ejemplo: 100 kg a 3 € mezclados de dos tipos a 2 € y 4 €: $2x+4(100-x)=300$.",
+  "fuente_pagina": 6,
+  "fuente_cara": 6,
+  "tipo": "problema",
+  "solucion": [
+   30,
+   20
+  ],
+  "explicacion": "Con $x$ kg del de 9 €: $9x+14(50-x)=11\\cdot 50$, es decir $700-5x=550$, $x=30$. Del de 14 € se usan $50-30=20$ kg.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0102",
+  "bloque": "Matemáticas",
+  "tema": "T2 Matrices",
+  "subtema": "Operaciones y ecuaciones con matrices",
+  "concepto": "Matrices que conmutan y parámetros",
+  "dificultad": 4,
+  "enunciado": "Sean $A=\\begin{pmatrix}1&4\\\\0&1\\end{pmatrix}$ y $B=\\begin{pmatrix}a&0\\\\b&2\\end{pmatrix}$. Halla $a$ y $b$ para que $A\\cdot B=B\\cdot A$. Escribe $a;b$ en ese orden.",
+  "ayuda_larga": "Cuando una condición matricial contiene letras desconocidas, se calcula cada miembro, se igualan los elementos que ocupan la misma posición y se resuelve el sistema resultante. Ejemplo: para $A\\cdot B=B\\cdot A$ se calculan los dos productos y se igualan sus cuatro elementos. Dos matrices que cumplen $A\\cdot B=B\\cdot A$ se dice que conmutan. Si aparece $A^2+xA+yI=0$, recuerda que $A^2=A\\cdot A$, que $I$ es la identidad y que cada posición da una ecuación para $x$ e $y$.",
+  "fuente_pagina": 9,
+  "fuente_cara": 9,
+  "tipo": "problema",
+  "solucion": [
+   2,
+   0
+  ],
+  "explicacion": "$A\\cdot B=\\begin{pmatrix}a+4b&8\\\\b&2\\end{pmatrix}$ y $B\\cdot A=\\begin{pmatrix}a&4a\\\\b&4b+2\\end{pmatrix}$. Igualando: $a+4b=a$ da $b=0$; $8=4a$ da $a=2$; y $2=4b+2$ se cumple. Solución $a=2$, $b=0$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-g-0002",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Resolver sistemas por Gauss",
+  "concepto": "Escalonar y sustituir hacia atrás",
+  "dificultad": 2,
+  "enunciado": "Resuelve por Gauss el sistema $x+y+z=6$, $2x-y+z=3$, $x+2y-z=2$. Escribe x; y; z (en ese orden, separados por punto y coma).",
+  "ayuda_larga": "El método de Gauss transforma el sistema en otro equivalente y escalonado con operaciones entre filas: intercambiar dos filas, multiplicar una fila por un número distinto de cero, o sumarle a una fila un múltiplo de otra. Se escribe la matriz ampliada (coeficientes y términos independientes) y se hacen ceros bajo la diagonal, columna por columna. Con la matriz triangular, se despeja la última incógnita y se sube sustituyendo hacia atrás. Ejemplo: $x+y=5$, $x-y=1$. Con $F_2 \\to F_2-F_1$ queda $-2y=-4$, luego $y=2$ y $x=3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   2,
+   3
+  ],
+  "explicacion": "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-F_1$ quedan $-3y-z=-9$ y $y-2z=-4$. Con $F_3\\to 3F_3+F_2$ sale $-7z=-21$, luego $z=3$. Sustituyendo hacia atrás, $y=2$ y $x=1$.",
+  "ordenada": true
+ },
+ {
+  "id": "mat-s-0013",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones bicuadradas y polinómicas",
+  "concepto": "Ecuaciones factorizables y con cambio de variable",
+  "dificultad": 4,
+  "enunciado": "Resuelve $x^6-9x^3+8=0$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Antes de aplicar Ruffini conviene buscar una forma más simple: sacar factor común, agrupar términos o hacer un cambio de variable como $t=x^3$ o $t=x^2+x$. Cada factor igual a cero da soluciones. Con un cambio de variable se resuelve para $t$ y luego se deshace el cambio. Ejemplo: $x^3-9x=0$ es $x(x^2-9)=0$, con $x=0$ y $x=\\pm3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   2
+  ],
+  "explicacion": "Con $t=x^3$ queda $t^2-9t+8=0$, con $t=1$ y $t=8$. Entonces $x^3=1$ da $x=1$ y $x^3=8$ da $x=2$. No hay más soluciones reales porque la raíz cúbica real es única."
+ },
+ {
+  "id": "mat-g-0010",
+  "bloque": "Matemáticas",
+  "tema": "T3 Método de Gauss",
+  "subtema": "Discusión de sistemas",
+  "concepto": "Discusión con un parámetro",
+  "dificultad": 3,
+  "enunciado": "Se considera el sistema $x+2y+z=4$, $2x+y-z=1$, $3x+3y+(m-1)z=6$. Halla el valor de $m$ para el que el sistema no tiene solución. Escribe solo el número.",
+  "ayuda_larga": "Para discutir un sistema se escalona la matriz ampliada y se compara el rango $r$ de la matriz de coeficientes con el rango $r'$ de la ampliada y con el número de incógnitas $n$. Si $r=r'=n$ es compatible determinado (una solución); si $r=r'<n$ es compatible indeterminado (infinitas soluciones, con $n-r$ variables libres); si $r<r'$ es incompatible (una fila queda como $0=k$ con $k\\neq0$). Con un parámetro $m$, se busca el valor que anula una fila o el determinante de la matriz de coeficientes. Ejemplo: si al escalonar queda $0=3$, el sistema es incompatible.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": 1,
+  "explicacion": "Con $F_2\\to F_2-2F_1$ y $F_3\\to F_3-3F_1$ quedan $-3y-3z=-7$ y $-3y+(m-4)z=-6$. Con $F_3\\to F_3-F_2$ sale $(m-1)z=1$. Si $m\\neq1$ hay solución única; si $m=1$ queda $0=1$, imposible: el sistema es incompatible."
+ },
+ {
+  "id": "mat-s-0039",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones exponenciales",
+  "concepto": "Cambio de variable",
+  "dificultad": 5,
+  "enunciado": "Resuelve $4^{x+1}-17\\cdot2^{x}+4=0$. Escribe las soluciones separadas por punto y coma.",
+  "ayuda_larga": "Si la ecuación tiene $a^{2x}$ (es decir $(a^x)^2$) y $a^x$, llama $t=a^x$ con $t>0$. Obtienes una ecuación de segundo grado en $t$. Resuélvela, descarta las $t$ negativas (una potencia es siempre positiva) y deshaz el cambio con $a^x=t$. Ejemplo: $4^x-5\\cdot2^x+4=0$ con $t=2^x$ da $t^2-5t+4=0$, luego $t=1$ o $t=4$, así que $x=0$ o $x=2$.",
+  "fuente_pagina": 3,
+  "fuente_cara": 3,
+  "tipo": "problema",
+  "solucion": [
+   -2,
+   2
+  ],
+  "explicacion": "Como $4^{x+1}=4\\cdot(2^x)^2$, con $t=2^x$ queda $4t^2-17t+4=0$. Sus soluciones son $t=4$ y $t=\\frac14$, ambas positivas. Entonces $2^x=4$ da $x=2$ y $2^x=\\frac14$ da $x=-2$."
+ },
+ {
+  "id": "mat-s-0019",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones radicales y racionales",
+  "concepto": "Ecuaciones radicales con una raíz",
+  "dificultad": 3,
+  "enunciado": "Resuelve $\\sqrt{x^2+5}=x+1$ y comprueba la solución. Escribe la solución que vale.",
+  "ayuda_larga": "Se aísla la raíz en un miembro y se elevan al cuadrado los dos miembros (recuerda que $(a+b)^2=a^2+2ab+b^2$). Se resuelve la ecuación que sale y se comprueba cada solución en la ecuación original, porque elevar al cuadrado puede introducir soluciones falsas. Ejemplo: $\\sqrt{x+7}=x+1$ da $x+7=x^2+2x+1$, es decir $x^2+x-6=0$, con $x=2$ y $x=-3$. Con $x=-3$ queda $2=-2$, falso, así que la única solución es $x=2$.",
+  "fuente_pagina": 2,
+  "fuente_cara": 2,
+  "tipo": "problema",
+  "solucion": 2,
+  "explicacion": "Se eleva al cuadrado: $x^2+5=x^2+2x+1$. Los términos en $x^2$ se cancelan y queda $2x=4$, es decir $x=2$. Comprobación: $\\sqrt9=3=2+1$, correcto. La solución es $x=2$."
+ },
+ {
+  "id": "mat-s-0012",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Ecuaciones bicuadradas y polinómicas",
+  "concepto": "Ecuaciones factorizables y con cambio de variable",
+  "dificultad": 3,
+  "enunciado": "Resuelve $(x^2-1)^2=3(x^2-1)$. Escribe las soluciones reales separadas por punto y coma.",
+  "ayuda_larga": "Antes de aplicar Ruffini conviene buscar una forma más simple: sacar factor común, agrupar términos o hacer un cambio de variable como $t=x^3$ o $t=x^2+x$. Cada factor igual a cero da soluciones. Con un cambio de variable se resuelve para $t$ y luego se deshace el cambio. Ejemplo: $x^3-9x=0$ es $x(x^2-9)=0$, con $x=0$ y $x=\\pm3$.",
+  "fuente_pagina": 1,
+  "fuente_cara": 1,
+  "tipo": "problema",
+  "solucion": [
+   -2,
+   -1,
+   1,
+   2
+  ],
+  "explicacion": "Con $t=x^2-1$ queda $t^2=3t$, es decir $t(t-3)=0$, con $t=0$ y $t=3$. Entonces $x^2=1$ o $x^2=4$, luego $x=\\pm1$ y $x=\\pm2$."
+ },
+ {
+  "id": "mat-s-0069",
+  "bloque": "Matemáticas",
+  "tema": "T1 Ecuaciones, sistemas e inecuaciones",
+  "subtema": "Inecuaciones",
+  "concepto": "Inecuaciones cuadráticas",
+  "dificultad": 2,
+  "enunciado": "Resuelve $x^2-6x+5\\le0$. La solución es un intervalo cerrado $[a,b]$. Escribe sus dos extremos, a; b (separados por punto y coma).",
+  "ayuda_larga": "Para resolver una inecuación cuadrática, pásalo todo a un lado y halla las raíces de la ecuación asociada. Las raíces dividen la recta en tramos y la parábola tiene el mismo signo en todo el tramo, así que basta probar un punto de cada uno. Con $a>0$, es negativa entre las raíces y positiva fuera. Ejemplo: $x^2-3x-4>0$ tiene raíces $-1$ y $4$, y se cumple en $(-\\infty,-1)\\cup(4,+\\infty)$. Si la desigualdad es estricta, los extremos no se incluyen.",
+  "fuente_pagina": 5,
+  "fuente_cara": 5,
+  "tipo": "problema",
+  "solucion": [
+   1,
+   5
+  ],
+  "explicacion": "Las raíces de $x^2-6x+5=0$ son $x=1$ y $x=5$. La parábola abre hacia arriba, así que es negativa entre las raíces, y como la desigualdad es no estricta se incluyen los extremos. La solución es $[1,5]$.",
+  "ordenada": true
+ }
+]

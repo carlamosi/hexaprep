@@ -1,0 +1,4 @@
+{"tema": "T1 Ecuaciones, sistemas e inecuaciones", "prefijo": "mat-s", "bloque": "Matemáticas",
+ "asignatura": {"nombre": "Matemáticas", "idioma": "es", "color": "#4A6FE3", "acento": "#4A6FE3"},
+ "fuente": {"nombre": "Matemáticas Simulacro trimestral II", "archivo": "Simulacro_trimestral_II.pdf"},
+ "lote": {"modelo": "claude-sonnet-5-5", "version_prompt": "m1"}}

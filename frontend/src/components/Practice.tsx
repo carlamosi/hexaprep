@@ -6,7 +6,14 @@ import { RichText } from "./RichText";
 
 export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect">>;
 
-const NUMERO = /^[+-]?(\d+([.,]\d*)?|[.,]\d+)(e[+-]?\d+)?$/i;
+const NUMERO = /^[+\-−]?(\d+([.,]\d*)?|[.,]\d+)(e[+\-]?\d+)?(\/[+\-−]?(\d+([.,]\d*)?|[.,]\d+))?$/i;
+
+/** Uno o varios números (decimales o fracciones) separados por «;» o « y ». Igual que el servidor: una fracción no divide entre 0. */
+export function respuestaValida(texto: string): boolean {
+  const partes = texto.trim().split(/;|\sy\s/).map((p) => p.replace(/\s/g, "")).filter(Boolean);
+  const divideEntreCero = (p: string) => p.includes("/") && Number(p.split("/")[1].replace(",", ".")) === 0;
+  return partes.length >= 1 && partes.length <= 6 && partes.every((p) => NUMERO.test(p) && !divideEntreCero(p));
+}
 
 const LETTERS = ["A", "B", "C", "D"];
 const CONFIANZAS: { id: Confianza; key: string }[] = [
@@ -114,7 +121,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
 
   const submitProblem = useCallback(async () => {
     if (!question || locked.current) return;
-    if (!NUMERO.test(valor.trim())) {
+    if (!respuestaValida(valor)) {
       setNumeroMal(true);
       return;
     }
@@ -251,6 +258,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
               <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
                 {t("practica.comprobar")}
               </button>
+              <p className="w-full text-sm text-[var(--ink-3)]">{t("practica.formatoRespuesta")}</p>
               {numeroMal && <p role="alert" className="w-full text-sm text-[var(--ko)]">{t("practica.numeroNoValido")}</p>}
             </form>
           ) : (
