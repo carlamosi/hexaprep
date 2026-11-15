@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
+import type { Subject } from "../api";
 import { t } from "../i18n";
+import { AsignaturaSelector } from "./AsignaturaSelector";
 
 const NAV = ["panal", "hoy", "historial", "ajustes"] as const;
 type Ruta = (typeof NAV)[number];
@@ -43,14 +45,15 @@ interface Props {
   asignatura?: string | null;
   asignaturaId?: string | null;
   /** Con más de una asignatura el nombre pasa a ser un selector. */
-  asignaturas?: { id: string; nombre: string }[];
+  asignaturas?: Subject[];
   onCambiarAsignatura?: (id: string) => void;
+  onAbrirSelector?: () => void;
   ruta: string;
   /** En práctica y test de nivel la navegación se oculta para concentrarse. */
   sinNav?: boolean;
 }
 
-export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, ruta, sinNav }: Props) {
+export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, onAbrirSelector, ruta, sinNav }: Props) {
   return (
     <header className="sticky top-0 z-10 border-b border-[var(--rule)] bg-[var(--paper)]/95 backdrop-blur">
       <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-4 py-3">
@@ -62,14 +65,12 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
           </svg>
           <span className="font-semibold">{t("app.nombre")}</span>
         </a>
-          {asignatura && (
+          {asignaturas.length > 1 ? (
+            <AsignaturaSelector asignaturas={asignaturas} actual={asignaturaId ?? null} onElegir={(id) => onCambiarAsignatura?.(id)} onAbrir={onAbrirSelector} />
+          ) : asignatura && (
             <span className="hidden items-center gap-2 rounded-full border border-[var(--lila-tint)] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)] sm:inline-flex">
               <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[var(--lila)]" />
-              {asignaturas.length > 1 ? (
-                <select aria-label={t("nav.asignatura")} value={asignaturaId ?? ""} onChange={(e) => onCambiarAsignatura?.(e.target.value)} className="cursor-pointer bg-transparent font-medium">
-                  {asignaturas.map((a) => <option key={a.id} value={a.id}>{a.nombre}</option>)}
-                </select>
-              ) : asignatura}
+              {asignatura}
             </span>
           )}
         </div>

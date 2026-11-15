@@ -53,6 +53,30 @@ export interface History {
   dias: string[];
   evolucion: { subtema_id: string; subtema: string; puntos: { fecha: string; percent: number }[] }[];
 }
+/** Un grupo de respuestas: cuántas hay (n) y qué % acertó (null si n es 0). */
+export interface Grupo { n: number; aciertos_pct: number | null }
+export interface Serie { fecha: string; percent: number }
+export interface Analytics {
+  resumen: {
+    respondidas: number; aciertos_pct: number | null; dias_estudiados: number; tiempo_medio_s: number | null;
+    mejor_hora: number | null; sesiones: number; dominio_pct: number; dominio_delta: number;
+  };
+  actividad: { fecha: string; n: number; aciertos: number }[];
+  evolucion: {
+    asignatura: Serie[];
+    temas: { tema_id: string; tema: string; puntos: Serie[]; subtemas: { subtema_id: string; subtema: string; puntos: Serie[] }[] }[];
+  };
+  confianza: (Grupo & { confianza: Confianza | "sin" })[];
+  horas: (Grupo & { hora: number })[];
+  semana: (Grupo & { dia: number })[];
+  fatiga: (Grupo & { tramo: string; desde: number; tiempo_medio_s: number | null })[];
+  velocidad: (Grupo & { tramo: string })[];
+  dificultad: (Grupo & { dificultad: number })[];
+  trampas: { trampa: string; n: number; concepto: string }[];
+  debiles: (Grupo & { concepto_id: string; concepto: string; subtema: string; percent: number })[];
+  dificiles: { pregunta_id: string; enunciado: string; n: number; fallos: number }[];
+  sesiones_recientes: { sesion_id: string; modo: Modo; inicio: string; duracion_s: number; n: number; aciertos: number }[];
+}
 export interface QuestionContent {
   pregunta_id: string; version: number; excluida: boolean; enunciado: string;
   opciones: { texto: string; trampa?: string | null }[]; correcta: Letra; explicacion: string;
@@ -94,6 +118,8 @@ export const api = {
   reportedQuestions: () => request<ReportedQuestion[]>("/api/questions/reported"),
   suggestions: () => request<Suggestion[]>("/api/suggestions"),
   history: () => request<History>("/api/history"),
+  analytics: (asignaturaId: string, dias: 0 | 7 | 30 = 0) =>
+    request<Analytics>(`/api/analytics?asignatura_id=${encodeURIComponent(asignaturaId)}&dias=${dias}`),
   getBackup: () => request<BackupRow | null>("/api/backup"),
   makeBackup: () => request<BackupRow>("/api/backup", "POST"),
   restoreBackup: (ruta: string) => request<{ ok: boolean }>("/api/restore", "POST", { ruta }),

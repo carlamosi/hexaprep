@@ -70,7 +70,7 @@ test("recorrido completo: importar, test de nivel, práctica, reporte, editor, c
   await captura(page, "08-hoy");
   await page.getByRole("link", { name: "Historial" }).click();
   await expect(page.getByRole("heading", { name: "Historial" })).toBeVisible();
-  await expect(page.getByLabel(/, estudiado/)).toHaveCount(1); // solo hoy
+  await expect(page.getByRole("img", { name: /^Actividad: .*[^0-9]1 día con práctica/ })).toBeVisible(); // solo hoy, sin rachas
   await captura(page, "09-historial");
 
   // 7. Ajustes: editor de la pregunta reportada, copia de seguridad y restauración

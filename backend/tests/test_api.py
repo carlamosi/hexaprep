@@ -155,3 +155,9 @@ def test_automatic_weekly_backup_is_registered_and_listed(paths):
     with TestClient(create_app(**paths)) as c:
         row = c.get("/api/backup").json()
         assert row is not None and row["verificada"] and Path(row["ruta"]).is_file()
+
+
+def test_analytics_endpoint_validates_input(client, loaded):
+    assert client.get("/api/analytics", params={"asignatura_id": loaded}).json()["resumen"]["respondidas"] == 0
+    assert client.get("/api/analytics", params={"asignatura_id": "nope"}).status_code == 404
+    assert client.get("/api/analytics", params={"asignatura_id": loaded, "dias": -1}).status_code == 422

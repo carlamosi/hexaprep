@@ -1,0 +1,14 @@
+/* Aviso flotante: historial y panel de la asignatura. */
+.hp-tip {
+  position: fixed; z-index: 60; transform: translate(-50%, calc(-100% - 10px)); max-width: 220px; padding: 9px 12px;
+  display: grid; gap: 2px; background: var(--ink); color: #fff; border-radius: 10px; font-size: .8rem; line-height: 1.35;
+  pointer-events: none; box-shadow: 3px 3px 0 var(--lila);
+}
+.hp-tip b { font-size: 1rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.hp-tip .hp-tip-n { color: #D9D2DD; font-size: .74rem; }
+.hp-tip .hp-tip-h { color: #D9D2DD; font-size: .74rem; margin-bottom: 2px; }
+.hp-tip-row { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.hp-tip-row b { font-size: .86rem; min-width: 40px; }
+.hp-tip-row span { overflow: hidden; text-overflow: ellipsis; }
+.hp-tip-row .hp-key line { filter: brightness(1.25); }
+

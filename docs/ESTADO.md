@@ -10,6 +10,8 @@ Las 20 tareas del plan `docs/superpowers/plans/2026-11-14-hexaprep-economia.md` 
 - Tipos de pregunta nuevos: `vf` (2 opciones) y `problema` (número sin unidades, margen del 1 %, botón «Lo he hecho bien» que corrige el intento y recalcula el dominio). Selector de asignatura en la cabecera.
 - Química T2 (catalán): 161 preguntas (80 test, 42 vf, 39 problemas) en `banks/quimica/` (fuentes en `src/T2/`, formato en `FORMATO.md`). Reconstruir con `python tools/build_quimica.py banks/quimica/src/T2 banks/quimica/T2.json`; el script recalcula cada problema con su expresión. Importar con `tools/import_bank.py banks/quimica/T2.json`.
 - Verificación: muestra de 20 revisada por Opus (`docs/verificacion-quimica.md`), 2 fallos: uno corregido (trampa de qui-t2-0078), otro menor sin corregir (qui-t2-0150 cita la página 23 y la frase está en la 10). El resto del banco no tiene revisión humana ni de modelo.
+- Historial de analista (`/api/analytics`, `backend/hexaprep/analytics.py`; UI en `frontend/src/components/historial/`), selector de asignatura con tarjetas y teclado, y panel de asignatura rediseñado. Para ver el historial con datos hay un generador de datos simulados fuera del repositorio (no usar con la base real); la base real solo tenía 6 respuestas.
+- Pendiente del historial: contraste AA sin medir con herramienta; los colores de tema 7 y 8 (marrón y carmín) se confunden con daltonismo; el tiempo de lectura de la explicación sigue sin registrarse.
 - Límites: el editor de la app no muestra la solución de un problema; el booklet de Química no trata % en masa ni molaridad, así que no hay problemas de eso.
 
 ## Cómo se prueba

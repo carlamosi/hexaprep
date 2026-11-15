@@ -13,7 +13,7 @@ from pydantic import BaseModel, ValidationError
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from . import backup, events, export, mastery, quality, scheduling, selector
+from . import analytics, backup, events, export, mastery, quality, scheduling, selector
 from .bank import load_bank, validate_bank
 from .db import check_integrity, get_engine, upgrade
 from .importer import import_bank
@@ -238,6 +238,14 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             {"subtema_id": sub, "subtema": nombres[sub],
              "puntos": [{"fecha": f, "percent": mastery.percent(sum(t) / len(t))} for f, t in sorted(fechas.items())]}
             for sub, fechas in by.items()]}
+
+    @app.get("/api/analytics")
+    def analytics_(asignatura_id: str, dias: int = 0, s: Session = Depends(get_session)):
+        if s.get(Asignatura, asignatura_id) is None:
+            raise HTTPException(404, "Asignatura desconocida")
+        if dias < 0:
+            raise HTTPException(422, "dias no puede ser negativo")
+        return analytics.analytics(s, asignatura_id, dias)
 
     # ---------- copias, exportaciones, importación ----------
     @app.post("/api/backup")
