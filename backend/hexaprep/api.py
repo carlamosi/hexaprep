@@ -37,6 +37,7 @@ class AnswerIn(BaseModel):
     confianza: str | None = None
     tiempos: dict = {}
     respuesta: str | None = None  # solo problemas
+    respuestas: list[str] | None = None  # solo escritas, una por campo
 
 
 class CorrectIn(BaseModel):
@@ -170,7 +171,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     def answer(body: AnswerIn, s: Session = Depends(get_session)):
         try:
             res = events.submit_answer(s, body.sesion_id, body.pregunta_id, body.orden_opciones, body.elegida,
-                                       body.confianza, body.tiempos, body.respuesta)
+                                       body.confianza, body.tiempos, body.respuesta, body.respuestas)
         except events.UnknownSession:
             raise HTTPException(404, "Sesión desconocida")
         except events.AlreadyAnswered as e:

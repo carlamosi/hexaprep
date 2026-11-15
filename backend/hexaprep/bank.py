@@ -49,6 +49,16 @@ class OpcionIn(Strict):
     trampa: str | None = None
 
 
+class CampoIn(Strict):
+    """Un hueco de una pregunta escrita: lo válido y los errores típicos con su regla."""
+    etiqueta: str = ""
+    validas: list[str] = Field(min_length=1)
+    errores: dict[str, str] = {}
+
+
+MAX_CAMPOS = 4
+
+
 class PreguntaIn(Strict):
     id: str = Field(min_length=1)
     bloque: str = "General"
@@ -59,7 +69,9 @@ class PreguntaIn(Strict):
     enunciado: str = Field(min_length=1)
     opciones: list[OpcionIn] = []
     correcta: Literal["a", "b", "c", "d"] | None = None
-    tipo: Literal["test", "vf", "problema"] = "test"
+    tipo: Literal["test", "vf", "problema", "escrita"] = "test"
+    # solo escritas: uno o varios huecos que se escriben (p. ej. gerundi y participi)
+    campos: list[CampoIn] | None = None
     # solo problemas: el número (o la lista de números) que hay que escribir, sin unidades
     solucion: float | list[float] | None = None
     ordenada: bool = False  # lista: ¿importa el orden en que se escriben los valores?
@@ -93,6 +105,12 @@ class PreguntaIn(Strict):
 
     @model_validator(mode="after")
     def _traps(self):
+        if (self.tipo == "escrita") != (self.campos is not None):
+            raise ValueError("solo una pregunta escrita lleva campos, y debe llevarlos")
+        if self.tipo == "escrita":
+            if not 1 <= len(self.campos) <= MAX_CAMPOS or self.opciones or self.correcta is not None or self.solucion is not None:
+                raise ValueError(f"una escrita lleva de 1 a {MAX_CAMPOS} campos y no lleva opciones, correcta ni solucion")
+            return self
         if self.tipo == "problema":
             if self.solucion is None or self.opciones or self.correcta is not None:
                 raise ValueError("un problema lleva solucion y no lleva opciones ni correcta")

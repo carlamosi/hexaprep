@@ -1,0 +1,2517 @@
+{
+ "asignatura": {
+  "nombre": "Català",
+  "idioma": "ca",
+  "color": "#D9822B",
+  "acento": "#D9822B"
+ },
+ "fuente": {
+  "nombre": "Català Apunts de gramàtica",
+  "archivo": "Catala_Apunts_Gramatica.pdf"
+ },
+ "lote": {
+  "modelo": "tools/build_verbs.py",
+  "version_prompt": "v1"
+ },
+ "preguntas": [
+  {
+   "id": "cat-v1-0001",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «absoldre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "absolent"
+     ],
+     "errores": {
+      "absoldent": "Compte: el gerundi de «absoldre» no és «absoldent», és irregular: absolent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "absolt"
+     ],
+     "errores": {
+      "absoldut": "Compte: el participi de «absoldre» no és «absoldut», és irregular: absolt."
+     }
+    }
+   ],
+   "explicacion": "absoldre → gerundi «absolent», participi «absolt». El gerundi és irregular (no és «absoldent»). El participi és irregular (no és «absoldut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0002",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «admetre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "admetent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "admès"
+     ],
+     "errores": {
+      "admetut": "Compte: el participi de «admetre» no és «admetut», és irregular: admès."
+     }
+    }
+   ],
+   "explicacion": "admetre → gerundi «admetent», participi «admès». El gerundi és regular. El participi és irregular (no és «admetut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0003",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «aparèixer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "apareixent"
+     ],
+     "errores": {
+      "aparèixent": "Compte: el gerundi de «aparèixer» no és «aparèixent», és irregular: apareixent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "aparegut"
+     ],
+     "errores": {
+      "aparèixut": "Compte: el participi de «aparèixer» no és «aparèixut», és irregular: aparegut.",
+      "apareixut": "Compte: el participi de «aparèixer» no és «aparèixut», és irregular: aparegut."
+     }
+    }
+   ],
+   "explicacion": "aparèixer → gerundi «apareixent», participi «aparegut». El gerundi és irregular (no és «aparèixent»). El participi és irregular (no és «aparèixut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0004",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «aprendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "aprenent"
+     ],
+     "errores": {
+      "aprendent": "Compte: el gerundi de «aprendre» no és «aprendent», és irregular: aprenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "après"
+     ],
+     "errores": {
+      "aprendut": "Compte: el participi de «aprendre» no és «aprendut», és irregular: après."
+     }
+    }
+   ],
+   "explicacion": "aprendre → gerundi «aprenent», participi «après». El gerundi és irregular (no és «aprendent»). El participi és irregular (no és «aprendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0005",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «atendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "atenent"
+     ],
+     "errores": {
+      "atendent": "Compte: el gerundi de «atendre» no és «atendent», és irregular: atenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "atès"
+     ],
+     "errores": {
+      "atendut": "Compte: el participi de «atendre» no és «atendut», és irregular: atès."
+     }
+    }
+   ],
+   "explicacion": "atendre → gerundi «atenent», participi «atès». El gerundi és irregular (no és «atendent»). El participi és irregular (no és «atendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0006",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «atènyer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "atenyent"
+     ],
+     "errores": {
+      "atènyent": "Compte: el gerundi de «atènyer» no és «atènyent», és irregular: atenyent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "atès"
+     ],
+     "errores": {
+      "atènyut": "Compte: el participi de «atènyer» no és «atènyut», és irregular: atès.",
+      "atenyut": "Compte: el participi de «atènyer» no és «atènyut», és irregular: atès."
+     }
+    }
+   ],
+   "explicacion": "atènyer → gerundi «atenyent», participi «atès». El gerundi és irregular (no és «atènyent»). El participi és irregular (no és «atènyut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0007",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «batre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "batent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "batut"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "batre → gerundi «batent», participi «batut». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0008",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «beure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "bevent"
+     ],
+     "errores": {
+      "beuent": "Compte: el gerundi de «beure» no és «beuent», és irregular: bevent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "begut"
+     ],
+     "errores": {
+      "beuut": "Compte: el participi de «beure» no és «beuut», és irregular: begut."
+     }
+    }
+   ],
+   "explicacion": "beure → gerundi «bevent», participi «begut». El gerundi és irregular (no és «beuent»). El participi és irregular (no és «beuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0009",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «cabre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "cabent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "cabut"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "cabre → gerundi «cabent», participi «cabut». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0010",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «caldre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "calent"
+     ],
+     "errores": {
+      "caldent": "Compte: el gerundi de «caldre» no és «caldent», és irregular: calent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "calgut"
+     ],
+     "errores": {
+      "caldut": "Compte: el participi de «caldre» no és «caldut», és irregular: calgut."
+     }
+    }
+   ],
+   "explicacion": "caldre → gerundi «calent», participi «calgut». El gerundi és irregular (no és «caldent»). El participi és irregular (no és «caldut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0011",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «caure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "caient"
+     ],
+     "errores": {
+      "cauent": "Compte: el gerundi de «caure» no és «cauent», és irregular: caient."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "caigut"
+     ],
+     "errores": {
+      "cauut": "Compte: el participi de «caure» no és «cauut», és irregular: caigut."
+     }
+    }
+   ],
+   "explicacion": "caure → gerundi «caient», participi «caigut». El gerundi és irregular (no és «cauent»). El participi és irregular (no és «cauut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0012",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «cloure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "cloent"
+     ],
+     "errores": {
+      "clouent": "Compte: el gerundi de «cloure» no és «clouent», és irregular: cloent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "clos"
+     ],
+     "errores": {
+      "clouut": "Compte: el participi de «cloure» no és «clouut», és irregular: clos."
+     }
+    }
+   ],
+   "explicacion": "cloure → gerundi «cloent», participi «clos». El gerundi és irregular (no és «clouent»). El participi és irregular (no és «clouut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0013",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «cobrir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "cobrint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "cobert"
+     ],
+     "errores": {
+      "cobrit": "Compte: el participi de «cobrir» no és «cobrit», és irregular: cobert."
+     }
+    }
+   ],
+   "explicacion": "cobrir → gerundi «cobrint», participi «cobert». El gerundi és regular. El participi és irregular (no és «cobrit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0014",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «comparèixer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "compareixent"
+     ],
+     "errores": {
+      "comparèixent": "Compte: el gerundi de «comparèixer» no és «comparèixent», és irregular: compareixent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "comparegut"
+     ],
+     "errores": {
+      "comparèixut": "Compte: el participi de «comparèixer» no és «comparèixut», és irregular: comparegut.",
+      "compareixut": "Compte: el participi de «comparèixer» no és «comparèixut», és irregular: comparegut."
+     }
+    }
+   ],
+   "explicacion": "comparèixer → gerundi «compareixent», participi «comparegut». El gerundi és irregular (no és «comparèixent»). El participi és irregular (no és «comparèixut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0015",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «complir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "complint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "complert",
+      "complit"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "complir → gerundi «complint», participi «complert o complit». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0016",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «conèixer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "coneixent"
+     ],
+     "errores": {
+      "conèixent": "Compte: el gerundi de «conèixer» no és «conèixent», és irregular: coneixent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "conegut"
+     ],
+     "errores": {
+      "conèixut": "Compte: el participi de «conèixer» no és «conèixut», és irregular: conegut.",
+      "coneixut": "Compte: el participi de «conèixer» no és «conèixut», és irregular: conegut."
+     }
+    }
+   ],
+   "explicacion": "conèixer → gerundi «coneixent», participi «conegut». El gerundi és irregular (no és «conèixent»). El participi és irregular (no és «conèixut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0017",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «córrer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "corrent"
+     ],
+     "errores": {
+      "córrent": "Compte: el gerundi de «córrer» no és «córrent», és irregular: corrent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "corregut"
+     ],
+     "errores": {
+      "córrut": "Compte: el participi de «córrer» no és «córrut», és irregular: corregut.",
+      "corrut": "Compte: el participi de «córrer» no és «córrut», és irregular: corregut."
+     }
+    }
+   ],
+   "explicacion": "córrer → gerundi «corrent», participi «corregut». El gerundi és irregular (no és «córrent»). El participi és irregular (no és «córrut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0018",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 5,
+   "enunciado": "Escriu el gerundi i el participi del verb «coure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "coent"
+     ],
+     "errores": {
+      "couent": "Compte: el gerundi de «coure» no és «couent», és irregular: coent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "cuit",
+      "cogut"
+     ],
+     "errores": {
+      "couut": "Compte: el participi de «coure» no és «couut», és irregular: cuit o cogut."
+     }
+    }
+   ],
+   "explicacion": "coure → gerundi «coent», participi «cuit o cogut». El gerundi és irregular (no és «couent»). El participi és irregular (no és «couut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0019",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «creure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "creient"
+     ],
+     "errores": {
+      "creuent": "Compte: el gerundi de «creure» no és «creuent», és irregular: creient."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "cregut"
+     ],
+     "errores": {
+      "creuut": "Compte: el participi de «creure» no és «creuut», és irregular: cregut."
+     }
+    }
+   ],
+   "explicacion": "creure → gerundi «creient», participi «cregut». El gerundi és irregular (no és «creuent»). El participi és irregular (no és «creuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0020",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «dependre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "depenent"
+     ],
+     "errores": {
+      "dependent": "Compte: el gerundi de «dependre» no és «dependent», és irregular: depenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "depès"
+     ],
+     "errores": {
+      "dependut": "Compte: el participi de «dependre» no és «dependut», és irregular: depès."
+     }
+    }
+   ],
+   "explicacion": "dependre → gerundi «depenent», participi «depès». El gerundi és irregular (no és «dependent»). El participi és irregular (no és «dependut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0021",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «desaparèixer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "desapareixent"
+     ],
+     "errores": {
+      "desaparèixent": "Compte: el gerundi de «desaparèixer» no és «desaparèixent», és irregular: desapareixent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "desaparegut"
+     ],
+     "errores": {
+      "desaparèixut": "Compte: el participi de «desaparèixer» no és «desaparèixut», és irregular: desaparegut.",
+      "desapareixut": "Compte: el participi de «desaparèixer» no és «desaparèixut», és irregular: desaparegut."
+     }
+    }
+   ],
+   "explicacion": "desaparèixer → gerundi «desapareixent», participi «desaparegut». El gerundi és irregular (no és «desaparèixent»). El participi és irregular (no és «desaparèixut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0022",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «descloure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "descloent"
+     ],
+     "errores": {
+      "desclouent": "Compte: el gerundi de «descloure» no és «desclouent», és irregular: descloent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "desclòs"
+     ],
+     "errores": {
+      "desclouut": "Compte: el participi de «descloure» no és «desclouut», és irregular: desclòs."
+     }
+    }
+   ],
+   "explicacion": "descloure → gerundi «descloent», participi «desclòs». El gerundi és irregular (no és «desclouent»). El participi és irregular (no és «desclouut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0023",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «despendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "desprenent"
+     ],
+     "errores": {
+      "despendent": "Compte: el gerundi de «despendre» no és «despendent», és irregular: desprenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "desprès"
+     ],
+     "errores": {
+      "despendut": "Compte: el participi de «despendre» no és «despendut», és irregular: desprès."
+     }
+    }
+   ],
+   "explicacion": "despendre → gerundi «desprenent», participi «desprès». El gerundi és irregular (no és «despendent»). El participi és irregular (no és «despendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0024",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «dir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "dient"
+     ],
+     "errores": {
+      "dint": "Compte: el gerundi de «dir» no és «dint», és irregular: dient."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "dit"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "dir → gerundi «dient», participi «dit». El gerundi és irregular (no és «dint»). El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0025",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «dissoldre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "dissolent"
+     ],
+     "errores": {
+      "dissoldent": "Compte: el gerundi de «dissoldre» no és «dissoldent», és irregular: dissolent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "dissolt"
+     ],
+     "errores": {
+      "dissoldut": "Compte: el participi de «dissoldre» no és «dissoldut», és irregular: dissolt."
+     }
+    }
+   ],
+   "explicacion": "dissoldre → gerundi «dissolent», participi «dissolt». El gerundi és irregular (no és «dissoldent»). El participi és irregular (no és «dissoldut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0026",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «doldre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "dolent"
+     ],
+     "errores": {
+      "doldent": "Compte: el gerundi de «doldre» no és «doldent», és irregular: dolent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "dolgut"
+     ],
+     "errores": {
+      "doldut": "Compte: el participi de «doldre» no és «doldut», és irregular: dolgut."
+     }
+    }
+   ],
+   "explicacion": "doldre → gerundi «dolent», participi «dolgut». El gerundi és irregular (no és «doldent»). El participi és irregular (no és «doldut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0027",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «dur».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "duent"
+     ],
+     "errores": {
+      "dent": "Compte: el gerundi de «dur» no és «dent», és irregular: duent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "dut"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "dur → gerundi «duent», participi «dut». El gerundi és irregular (no és «dent»). El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0028",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «empènyer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "empenyent"
+     ],
+     "errores": {
+      "empènyent": "Compte: el gerundi de «empènyer» no és «empènyent», és irregular: empenyent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "empès"
+     ],
+     "errores": {
+      "empènyut": "Compte: el participi de «empènyer» no és «empènyut», és irregular: empès.",
+      "empenyut": "Compte: el participi de «empènyer» no és «empènyut», és irregular: empès."
+     }
+    }
+   ],
+   "explicacion": "empènyer → gerundi «empenyent», participi «empès». El gerundi és irregular (no és «empènyent»). El participi és irregular (no és «empènyut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0029",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «encendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "encenent"
+     ],
+     "errores": {
+      "encendent": "Compte: el gerundi de «encendre» no és «encendent», és irregular: encenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "encès"
+     ],
+     "errores": {
+      "encendut": "Compte: el participi de «encendre» no és «encendut», és irregular: encès."
+     }
+    }
+   ],
+   "explicacion": "encendre → gerundi «encenent», participi «encès». El gerundi és irregular (no és «encendent»). El participi és irregular (no és «encendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0030",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «entendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "entenent"
+     ],
+     "errores": {
+      "entendent": "Compte: el gerundi de «entendre» no és «entendent», és irregular: entenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "entès"
+     ],
+     "errores": {
+      "entendut": "Compte: el participi de «entendre» no és «entendut», és irregular: entès."
+     }
+    }
+   ],
+   "explicacion": "entendre → gerundi «entenent», participi «entès». El gerundi és irregular (no és «entendent»). El participi és irregular (no és «entendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0031",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «escriure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "escrivint"
+     ],
+     "errores": {
+      "escriuent": "Compte: el gerundi de «escriure» no és «escriuent», és irregular: escrivint."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "escrit"
+     ],
+     "errores": {
+      "escriuut": "Compte: el participi de «escriure» no és «escriuut», és irregular: escrit."
+     }
+    }
+   ],
+   "explicacion": "escriure → gerundi «escrivint», participi «escrit». El gerundi és irregular (no és «escriuent»). El participi és irregular (no és «escriuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0032",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «ésser».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "essent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "estat"
+     ],
+     "errores": {
+      "sigut": "«Sigut» és incorrecte: el participi d'ésser és «estat»."
+     }
+    }
+   ],
+   "explicacion": "ésser → gerundi «essent», participi «estat». El gerundi és irregular (no és «éssent»). El participi és irregular (no és «éssut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0033",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «establir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "establint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "establert"
+     ],
+     "errores": {
+      "establit": "Compte: el participi de «establir» no és «establit», és irregular: establert."
+     }
+    }
+   ],
+   "explicacion": "establir → gerundi «establint», participi «establert». El gerundi és regular. El participi és irregular (no és «establit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0034",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «estrènyer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "estrenyent"
+     ],
+     "errores": {
+      "estrènyent": "Compte: el gerundi de «estrènyer» no és «estrènyent», és irregular: estrenyent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "estret"
+     ],
+     "errores": {
+      "estrènyut": "Compte: el participi de «estrènyer» no és «estrènyut», és irregular: estret.",
+      "estrenyut": "Compte: el participi de «estrènyer» no és «estrènyut», és irregular: estret."
+     }
+    }
+   ],
+   "explicacion": "estrènyer → gerundi «estrenyent», participi «estret». El gerundi és irregular (no és «estrènyent»). El participi és irregular (no és «estrènyut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0035",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «fendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "fenent"
+     ],
+     "errores": {
+      "fendent": "Compte: el gerundi de «fendre» no és «fendent», és irregular: fenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "fes"
+     ],
+     "errores": {
+      "fendut": "Compte: el participi de «fendre» no és «fendut», és irregular: fes."
+     }
+    }
+   ],
+   "explicacion": "fendre → gerundi «fenent», participi «fes». El gerundi és irregular (no és «fendent»). El participi és irregular (no és «fendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0036",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «fer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "fent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "fet"
+     ],
+     "errores": {
+      "fut": "Compte: el participi de «fer» no és «fut», és irregular: fet."
+     }
+    }
+   ],
+   "explicacion": "fer → gerundi «fent», participi «fet». El gerundi és regular. El participi és irregular (no és «fut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0037",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «fondre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "fonent"
+     ],
+     "errores": {
+      "fondent": "Compte: el gerundi de «fondre» no és «fondent», és irregular: fonent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "fos"
+     ],
+     "errores": {
+      "fondut": "Compte: el participi de «fondre» no és «fondut», és irregular: fos."
+     }
+    }
+   ],
+   "explicacion": "fondre → gerundi «fonent», participi «fos». El gerundi és irregular (no és «fondent»). El participi és irregular (no és «fondut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0038",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «haver».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "havent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "hagut"
+     ],
+     "errores": {
+      "havut": "Compte: el participi de «haver» no és «havut», és irregular: hagut."
+     }
+    }
+   ],
+   "explicacion": "haver → gerundi «havent», participi «hagut». El gerundi és regular. El participi és irregular (no és «havut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0039",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «imprimir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "imprimint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "imprès"
+     ],
+     "errores": {
+      "imprimit": "Compte: el participi de «imprimir» no és «imprimit», és irregular: imprès."
+     }
+    }
+   ],
+   "explicacion": "imprimir → gerundi «imprimint», participi «imprès». El gerundi és regular. El participi és irregular (no és «imprimit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0040",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «jeure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "jaient"
+     ],
+     "errores": {
+      "jeuent": "Compte: el gerundi de «jeure» no és «jeuent», és irregular: jaient."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "jagut"
+     ],
+     "errores": {
+      "jeuut": "Compte: el participi de «jeure» no és «jeuut», és irregular: jagut."
+     }
+    }
+   ],
+   "explicacion": "jeure → gerundi «jaient», participi «jagut». El gerundi és irregular (no és «jeuent»). El participi és irregular (no és «jeuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0041",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «meréixer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "mereixent"
+     ],
+     "errores": {
+      "meréixent": "Compte: el gerundi de «meréixer» no és «meréixent», és irregular: mereixent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "merescut"
+     ],
+     "errores": {
+      "meréixut": "Compte: el participi de «meréixer» no és «meréixut», és irregular: merescut.",
+      "mereixut": "Compte: el participi de «meréixer» no és «meréixut», és irregular: merescut."
+     }
+    }
+   ],
+   "explicacion": "meréixer → gerundi «mereixent», participi «merescut». El gerundi és irregular (no és «meréixent»). El participi és irregular (no és «meréixut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0042",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «moldre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "molent"
+     ],
+     "errores": {
+      "moldent": "Compte: el gerundi de «moldre» no és «moldent», és irregular: molent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "molt"
+     ],
+     "errores": {
+      "moldut": "Compte: el participi de «moldre» no és «moldut», és irregular: molt."
+     }
+    }
+   ],
+   "explicacion": "moldre → gerundi «molent», participi «molt». El gerundi és irregular (no és «moldent»). El participi és irregular (no és «moldut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0043",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «morir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "morint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "mort"
+     ],
+     "errores": {
+      "morit": "Compte: el participi de «morir» no és «morit», és irregular: mort."
+     }
+    }
+   ],
+   "explicacion": "morir → gerundi «morint», participi «mort». El gerundi és regular. El participi és irregular (no és «morit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0044",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «obrir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "obrint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "obert"
+     ],
+     "errores": {
+      "obrit": "Compte: el participi de «obrir» no és «obrit», és irregular: obert."
+     }
+    }
+   ],
+   "explicacion": "obrir → gerundi «obrint», participi «obert». El gerundi és regular. El participi és irregular (no és «obrit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0045",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «ofendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "ofenent"
+     ],
+     "errores": {
+      "ofendent": "Compte: el gerundi de «ofendre» no és «ofendent», és irregular: ofenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "ofès"
+     ],
+     "errores": {
+      "ofendut": "Compte: el participi de «ofendre» no és «ofendut», és irregular: ofès."
+     }
+    }
+   ],
+   "explicacion": "ofendre → gerundi «ofenent», participi «ofès». El gerundi és irregular (no és «ofendent»). El participi és irregular (no és «ofendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0046",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «oferir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "oferint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "ofert"
+     ],
+     "errores": {
+      "oferit": "Compte: el participi de «oferir» no és «oferit», és irregular: ofert."
+     }
+    }
+   ],
+   "explicacion": "oferir → gerundi «oferint», participi «ofert». El gerundi és regular. El participi és irregular (no és «oferit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0047",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «ometre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "ometent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "omès"
+     ],
+     "errores": {
+      "ometut": "Compte: el participi de «ometre» no és «ometut», és irregular: omès."
+     }
+    }
+   ],
+   "explicacion": "ometre → gerundi «ometent», participi «omès». El gerundi és regular. El participi és irregular (no és «ometut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0048",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «omplir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "omplint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "omplert"
+     ],
+     "errores": {
+      "omplit": "Compte: el participi de «omplir» no és «omplit», és irregular: omplert."
+     }
+    }
+   ],
+   "explicacion": "omplir → gerundi «omplint», participi «omplert». El gerundi és regular. El participi és irregular (no és «omplit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0049",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «percebre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "percebent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "percebut"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "percebre → gerundi «percebent», participi «percebut». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0050",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 5,
+   "enunciado": "Escriu el gerundi i el participi del verb «pertànyer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "pertanyent"
+     ],
+     "errores": {
+      "pertànyent": "Compte: el gerundi de «pertànyer» no és «pertànyent», és irregular: pertanyent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "pertanyut",
+      "pertangut"
+     ],
+     "errores": {
+      "pertànyut": "Compte: el participi de «pertànyer» no és «pertànyut», és irregular: pertanyut o pertangut."
+     }
+    }
+   ],
+   "explicacion": "pertànyer → gerundi «pertanyent», participi «pertanyut o pertangut». El gerundi és irregular (no és «pertànyent»). El participi és irregular (no és «pertànyut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0051",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 5,
+   "enunciado": "Escriu el gerundi i el participi del verb «plànyer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "planyent"
+     ],
+     "errores": {
+      "plànyent": "Compte: el gerundi de «plànyer» no és «plànyent», és irregular: planyent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "planyut",
+      "plangut"
+     ],
+     "errores": {
+      "plànyut": "Compte: el participi de «plànyer» no és «plànyut», és irregular: planyut o plangut."
+     }
+    }
+   ],
+   "explicacion": "plànyer → gerundi «planyent», participi «planyut o plangut». El gerundi és irregular (no és «plànyent»). El participi és irregular (no és «plànyut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0052",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «plaure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "plaent"
+     ],
+     "errores": {
+      "plauent": "Compte: el gerundi de «plaure» no és «plauent», és irregular: plaent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "plagut"
+     ],
+     "errores": {
+      "plauut": "Compte: el participi de «plaure» no és «plauut», és irregular: plagut."
+     }
+    }
+   ],
+   "explicacion": "plaure → gerundi «plaent», participi «plagut». El gerundi és irregular (no és «plauent»). El participi és irregular (no és «plauut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0053",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «poder».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "podent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "pogut"
+     ],
+     "errores": {
+      "podut": "Compte: el participi de «poder» no és «podut», és irregular: pogut."
+     }
+    }
+   ],
+   "explicacion": "poder → gerundi «podent», participi «pogut». El gerundi és regular. El participi és irregular (no és «podut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0054",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «pondre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "ponent"
+     ],
+     "errores": {
+      "pondent": "Compte: el gerundi de «pondre» no és «pondent», és irregular: ponent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "post"
+     ],
+     "errores": {
+      "pondut": "Compte: el participi de «pondre» no és «pondut», és irregular: post."
+     }
+    }
+   ],
+   "explicacion": "pondre → gerundi «ponent», participi «post». El gerundi és irregular (no és «pondent»). El participi és irregular (no és «pondut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0055",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «prémer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "prement"
+     ],
+     "errores": {
+      "prément": "Compte: el gerundi de «prémer» no és «prément», és irregular: prement."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "premut"
+     ],
+     "errores": {
+      "prémut": "Compte: el participi de «prémer» no és «prémut», és irregular: premut."
+     }
+    }
+   ],
+   "explicacion": "prémer → gerundi «prement», participi «premut». El gerundi és irregular (no és «prément»). El participi és irregular (no és «prémut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0056",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «prendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "prenent"
+     ],
+     "errores": {
+      "prendent": "Compte: el gerundi de «prendre» no és «prendent», és irregular: prenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "pres"
+     ],
+     "errores": {
+      "prendut": "Compte: el participi de «prendre» no és «prendut», és irregular: pres."
+     }
+    }
+   ],
+   "explicacion": "prendre → gerundi «prenent», participi «pres». El gerundi és irregular (no és «prendent»). El participi és irregular (no és «prendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0057",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «pretendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "pretenent"
+     ],
+     "errores": {
+      "pretendent": "Compte: el gerundi de «pretendre» no és «pretendent», és irregular: pretenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "pretès"
+     ],
+     "errores": {
+      "pretendut": "Compte: el participi de «pretendre» no és «pretendut», és irregular: pretès."
+     }
+    }
+   ],
+   "explicacion": "pretendre → gerundi «pretenent», participi «pretès». El gerundi és irregular (no és «pretendent»). El participi és irregular (no és «pretendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0058",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «resoldre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "resolent"
+     ],
+     "errores": {
+      "resoldent": "Compte: el gerundi de «resoldre» no és «resoldent», és irregular: resolent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "resolt"
+     ],
+     "errores": {
+      "resoldut": "Compte: el participi de «resoldre» no és «resoldut», és irregular: resolt."
+     }
+    }
+   ],
+   "explicacion": "resoldre → gerundi «resolent», participi «resolt». El gerundi és irregular (no és «resoldent»). El participi és irregular (no és «resoldut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0059",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «restrènyer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "restrenyent"
+     ],
+     "errores": {
+      "restrènyent": "Compte: el gerundi de «restrènyer» no és «restrènyent», és irregular: restrenyent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "restret"
+     ],
+     "errores": {
+      "restrènyut": "Compte: el participi de «restrènyer» no és «restrènyut», és irregular: restret.",
+      "restrenyut": "Compte: el participi de «restrènyer» no és «restrènyut», és irregular: restret."
+     }
+    }
+   ],
+   "explicacion": "restrènyer → gerundi «restrenyent», participi «restret». El gerundi és irregular (no és «restrènyent»). El participi és irregular (no és «restrènyut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0060",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «riure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "rient"
+     ],
+     "errores": {
+      "riuent": "Compte: el gerundi de «riure» no és «riuent», és irregular: rient."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "rigut"
+     ],
+     "errores": {
+      "riuut": "Compte: el participi de «riure» no és «riuut», és irregular: rigut."
+     }
+    }
+   ],
+   "explicacion": "riure → gerundi «rient», participi «rigut». El gerundi és irregular (no és «riuent»). El participi és irregular (no és «riuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0061",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «romandre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "romanent"
+     ],
+     "errores": {
+      "romandent": "Compte: el gerundi de «romandre» no és «romandent», és irregular: romanent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "romàs"
+     ],
+     "errores": {
+      "romandut": "Compte: el participi de «romandre» no és «romandut», és irregular: romàs."
+     }
+    }
+   ],
+   "explicacion": "romandre → gerundi «romanent», participi «romàs». El gerundi és irregular (no és «romandent»). El participi és irregular (no és «romandut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0062",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «rompre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "rompent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "romput"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "rompre → gerundi «rompent», participi «romput». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0063",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «saber».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "sabent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "sabut"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "saber → gerundi «sabent», participi «sabut». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0064",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «sofrir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "sofrint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "sofert"
+     ],
+     "errores": {
+      "sofrit": "Compte: el participi de «sofrir» no és «sofrit», és irregular: sofert."
+     }
+    }
+   ],
+   "explicacion": "sofrir → gerundi «sofrint», participi «sofert». El gerundi és regular. El participi és irregular (no és «sofrit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0065",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «soler».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "solent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "solgut"
+     ],
+     "errores": {
+      "solut": "Compte: el participi de «soler» no és «solut», és irregular: solgut."
+     }
+    }
+   ],
+   "explicacion": "soler → gerundi «solent», participi «solgut». El gerundi és regular. El participi és irregular (no és «solut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0066",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «suplir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "suplint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "suplert",
+      "suplit"
+     ],
+     "errores": {}
+    }
+   ],
+   "explicacion": "suplir → gerundi «suplint», participi «suplert o suplit». El gerundi és regular. El participi és regular.",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0067",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «suspendre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "suspenent"
+     ],
+     "errores": {
+      "suspendent": "Compte: el gerundi de «suspendre» no és «suspendent», és irregular: suspenent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "suspès"
+     ],
+     "errores": {
+      "suspendut": "Compte: el participi de «suspendre» no és «suspendut», és irregular: suspès."
+     }
+    }
+   ],
+   "explicacion": "suspendre → gerundi «suspenent», participi «suspès». El gerundi és irregular (no és «suspendent»). El participi és irregular (no és «suspendut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0068",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «tenir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "tenint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "tingut"
+     ],
+     "errores": {
+      "tenit": "Compte: el participi de «tenir» no és «tenit», és irregular: tingut."
+     }
+    }
+   ],
+   "explicacion": "tenir → gerundi «tenint», participi «tingut». El gerundi és regular. El participi és irregular (no és «tenit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0069",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «tòrcer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "torcent"
+     ],
+     "errores": {
+      "tòrcent": "Compte: el gerundi de «tòrcer» no és «tòrcent», és irregular: torcent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "tort"
+     ],
+     "errores": {
+      "tòrcut": "Compte: el participi de «tòrcer» no és «tòrcut», és irregular: tort.",
+      "torcut": "Compte: el participi de «tòrcer» no és «tòrcut», és irregular: tort."
+     }
+    }
+   ],
+   "explicacion": "tòrcer → gerundi «torcent», participi «tort». El gerundi és irregular (no és «tòrcent»). El participi és irregular (no és «tòrcut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0070",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «treure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "traient"
+     ],
+     "errores": {
+      "treuent": "Compte: el gerundi de «treure» no és «treuent», és irregular: traient."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "tret"
+     ],
+     "errores": {
+      "treuut": "Compte: el participi de «treure» no és «treuut», és irregular: tret."
+     }
+    }
+   ],
+   "explicacion": "treure → gerundi «traient», participi «tret». El gerundi és irregular (no és «treuent»). El participi és irregular (no és «treuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0071",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «valdre».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "valent"
+     ],
+     "errores": {
+      "valdent": "Compte: el gerundi de «valdre» no és «valdent», és irregular: valent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "valgut"
+     ],
+     "errores": {
+      "valdut": "Compte: el participi de «valdre» no és «valdut», és irregular: valgut."
+     }
+    }
+   ],
+   "explicacion": "valdre → gerundi «valent», participi «valgut». El gerundi és irregular (no és «valdent»). El participi és irregular (no és «valdut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0072",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 4,
+   "enunciado": "Escriu el gerundi i el participi del verb «vèncer».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "vencent"
+     ],
+     "errores": {
+      "vèncent": "Compte: el gerundi de «vèncer» no és «vèncent», és irregular: vencent."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "vençut"
+     ],
+     "errores": {
+      "vèncut": "Compte: el participi de «vèncer» no és «vèncut», és irregular: vençut.",
+      "vencut": "Compte: el participi de «vèncer» no és «vèncut», és irregular: vençut."
+     }
+    }
+   ],
+   "explicacion": "vèncer → gerundi «vencent», participi «vençut». El gerundi és irregular (no és «vèncent»). El participi és irregular (no és «vèncut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0073",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «venir».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "venint"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "vingut"
+     ],
+     "errores": {
+      "venit": "Compte: el participi de «venir» no és «venit», és irregular: vingut."
+     }
+    }
+   ],
+   "explicacion": "venir → gerundi «venint», participi «vingut». El gerundi és regular. El participi és irregular (no és «venit»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0074",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 3,
+   "enunciado": "Escriu el gerundi i el participi del verb «viure».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "vivint"
+     ],
+     "errores": {
+      "viuent": "Compte: el gerundi de «viure» no és «viuent», és irregular: vivint."
+     }
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "viscut"
+     ],
+     "errores": {
+      "viuut": "Compte: el participi de «viure» no és «viuut», és irregular: viscut."
+     }
+    }
+   ],
+   "explicacion": "viure → gerundi «vivint», participi «viscut». El gerundi és irregular (no és «viuent»). El participi és irregular (no és «viuut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  },
+  {
+   "id": "cat-v1-0075",
+   "bloque": "Català",
+   "tema": "Verbs",
+   "subtema": "Gerundis i participis",
+   "concepto": "Gerundi i participi dels verbs irregulars",
+   "dificultad": 2,
+   "enunciado": "Escriu el gerundi i el participi del verb «voler».",
+   "tipo": "escrita",
+   "campos": [
+    {
+     "etiqueta": "Gerundi",
+     "validas": [
+      "volent"
+     ],
+     "errores": {}
+    },
+    {
+     "etiqueta": "Participi",
+     "validas": [
+      "volgut"
+     ],
+     "errores": {
+      "volut": "Compte: el participi de «voler» no és «volut», és irregular: volgut."
+     }
+    }
+   ],
+   "explicacion": "voler → gerundi «volent», participi «volgut». El gerundi és regular. El participi és irregular (no és «volut»).",
+   "ayuda_larga": "El gerundi regular acaba en -ant (verbs en -ar), -ent (en -er i -re) o -int (en -ir), i el participi en -at, -ut o -it. La taula dels apunts recull els verbs que s'aparten d'aquesta regla. Truc: els verbs molt freqüents (dir, fer, tenir, venir...) gairebé sempre són irregulars; estudia'ls sencers.",
+   "fuente_pagina": 6,
+   "fuente_cara": 10
+  }
+ ]
+}

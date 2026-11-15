@@ -9,7 +9,7 @@ import { t, tn } from "../i18n";
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[] };
 
 /** Inicio: solo el panal de la primera asignatura, sin mensajes por días sin usar. */
-export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onPracticar?: () => void; onPracticarTipo?: (grupo: "test" | "problemas") => void; onPracticarTema?: (id: string) => void }) {
+export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onPracticar?: () => void; onPracticarTipo?: (grupo: "test" | "problemas" | "escritas") => void; onPracticarTema?: (id: string) => void }) {
   const [state, setState] = useState<State>({ kind: "loading" });
   const [panel, setPanel] = useState(false);
 
@@ -32,7 +32,9 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
 
   const { map, acento, tipos } = state;
   // Solo en asignaturas con preguntas de teoría (test y V/F) y también problemas tiene sentido practicar una sola cosa
-  const mezcla = tipos.includes("problema") && tipos.some((x) => x === "test" || x === "vf");
+  const grupos = [["test", ["test", "vf"], "home.soloTest"], ["problemas", ["problema"], "home.soloProblemas"], ["escritas", ["escrita"], "home.soloEscritas"]] as const;
+  const presentes = grupos.filter(([, ts]) => ts.some((x) => tipos.includes(x)));
+  const mezcla = presentes.length > 1;
   const temas = new Set(map.hexes.map((h) => h.tema)).size;
   return (
     <main id="main" className="wrap">
@@ -56,12 +58,11 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
             )}
             {mezcla && (
               <>
-                <button type="button" onClick={() => onPracticarTipo?.("test")} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
-                  {t("home.soloTest")}
-                </button>
-                <button type="button" onClick={() => onPracticarTipo?.("problemas")} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
-                  {t("home.soloProblemas")}
-                </button>
+                {presentes.map(([clave, , texto]) => (
+                  <button key={clave} type="button" onClick={() => onPracticarTipo?.(clave)} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
+                    {t(texto)}
+                  </button>
+                ))}
               </>
             )}
           </div>

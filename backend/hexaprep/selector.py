@@ -10,8 +10,9 @@
 - Saltar: una pregunta saltada vuelve después de SKIP_GAP respuestas (antes, solo si no queda otra).
 - Problemas con apartados: se sirven seguidos y en orden; los apartados b, c... no entran por su cuenta.
 """
+import json
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from sqlalchemy import Select, func, select
 from sqlalchemy.orm import Session
@@ -69,6 +70,7 @@ class QuestionOut:
     grupo: str | None = None
     contexto: str | None = None
     apartado: str | None = None
+    campos: list[str] = field(default_factory=list)  # etiquetas de los huecos de una escrita
 
 
 def _candidates(filtro: Filtro) -> Select:
@@ -92,7 +94,8 @@ def _candidates(filtro: Filtro) -> Select:
 def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random) -> QuestionOut:
     sub = session.get(Subtema, subtema_id)
     textos = {o.posicion: o.texto for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == p.id))}
-    if p.tipo == "problema":
+    etiquetas = [c.get("etiqueta", "") for c in json.loads(textos["a"])] if p.tipo == "escrita" else []
+    if p.tipo in ("problema", "escrita"):
         textos = {}  # la solución no sale del servidor hasta que se responde
     orden = sorted(textos)
     rng.shuffle(orden)
@@ -101,7 +104,8 @@ def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random) 
         opciones=[OpcionOut(l, textos[l]) for l in orden], orden=orden, dificultad=p.dificultad_base,
         ayuda_larga=p.ayuda_larga, fuente_id=p.fuente_id, fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara,
         tema=session.get(Tema, sub.tema_id).nombre, subtema=sub.nombre, tipo=p.tipo, imagen=p.imagen,
-        grupo=p.grupo, contexto=p.contexto, apartado=p.apartado)
+        grupo=p.grupo, contexto=p.contexto, apartado=p.apartado,
+        campos=etiquetas)
 
 
 def _seen_counts(session: Session) -> dict[str, int]:

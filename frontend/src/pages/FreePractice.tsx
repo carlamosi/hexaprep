@@ -5,7 +5,7 @@ import { t } from "../i18n";
 import { clearSession, openSession } from "../session";
 import { Review, type Fallo } from "./Review";
 
-const TIPOS: Record<string, string[]> = { test: ["test", "vf"], problemas: ["problema"] };
+const TIPOS: Record<string, string[]> = { test: ["test", "vf"], problemas: ["problema"], escritas: ["escrita"] };
 
 type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "getSession">>;
 

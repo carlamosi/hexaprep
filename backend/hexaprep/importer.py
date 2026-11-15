@@ -25,7 +25,7 @@ def _digest(text: str) -> str:
 def question_digest(q: PreguntaIn) -> str:
     # Las preguntas test no incluyen los campos de tipo: así su huella no cambia y no se reimportan como nuevas versiones.
     # Los campos que no se usan se dejan fuera: las preguntas anteriores a cada ampliación conservan su huella.
-    exclude = {f for f in ("imagen", "grupo", "contexto", "apartado") if getattr(q, f) is None}
+    exclude = {f for f in ("imagen", "grupo", "contexto", "apartado", "campos") if getattr(q, f) is None}
     if q.tipo == "test":
         exclude |= {"tipo", "solucion", "ordenada"}
     elif not q.ordenada:
@@ -35,6 +35,10 @@ def question_digest(q: PreguntaIn) -> str:
 
 def guardar_solucion(q: PreguntaIn) -> str:
     return json.dumps({"s": q.solucion, "o": q.ordenada})
+
+
+def guardar_campos(q: PreguntaIn) -> str:
+    return json.dumps([c.model_dump() for c in q.campos], ensure_ascii=False)
 
 
 def leer_solucion(texto: str) -> tuple[float | list[float], bool]:
@@ -76,6 +80,8 @@ def _add_question(session: Session, q: PreguntaIn, concepto: Concepto, version: 
     session.flush()
     if q.tipo == "problema":  # una sola opción «a» guarda la solución; el selector no la envía al cliente
         session.add(Opcion(pregunta_id=p.id, posicion="a", texto=guardar_solucion(q), correcta=True))
+    if q.tipo == "escrita":  # misma idea: la opción «a» guarda los campos y nunca sale hacia el cliente
+        session.add(Opcion(pregunta_id=p.id, posicion="a", texto=guardar_campos(q), correcta=True))
     for i, o in enumerate(q.opciones):
         letra = "abcd"[i]
         session.add(Opcion(pregunta_id=p.id, posicion=letra, texto=o.texto, correcta=letra == q.correcta,

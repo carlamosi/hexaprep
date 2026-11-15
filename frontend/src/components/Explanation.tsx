@@ -12,10 +12,22 @@ export function Explanation({ result, onNext, onMarcarBien }: { result: AnswerRe
           result.correcta ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]"
         }`}
       >
-        <p className="font-semibold">{result.correcta ? t("practica.acierto") : t(result.solucion != null ? "practica.falloProblema" : "practica.fallo")}</p>
+        <p className="font-semibold">{result.correcta ? t("practica.acierto") : t(result.campos ? "practica.falloEscrita" : result.solucion != null ? "practica.falloProblema" : "practica.fallo")}</p>
         {!result.correcta && result.trampa && <p className="mt-1">{result.trampa}</p>}
         {result.solucion != null && <p className="mt-1">{t("practica.solucion")}: <strong>{[result.solucion].flat().map((v) => String(v).replace(".", ",")).join("; ")}</strong></p>}
       </div>
+
+      {result.campos && !result.correcta && (
+        <ul className="space-y-2">
+          {result.campos.map((c, i) => (
+            <li key={i} className="rounded-[11px] border border-[var(--rule)] bg-white px-4 py-2">
+              <span className="font-semibold">{c.etiqueta}</span>: {c.correcto ? "✓ " : "✗ "}
+              <strong>{c.esperado.join(" o ")}</strong>
+              {c.nota && <p className="mt-1 text-[var(--ink-2)]">{c.nota}</p>}
+            </li>
+          ))}
+        </ul>
+      )}
 
       {result.explicacion && (
         <details className="rounded-[11px] border border-[var(--rule)] bg-white px-4 py-3">

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api, type AnswerResult, type Letra, type Question } from "../api";
 import { t, tn } from "../i18n";
+import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
@@ -127,6 +128,25 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     }
   }, [load, question, sesionId, valor]);
 
+  const submitEscrita = useCallback(async (respuestas: string[]) => {
+    if (!question || locked.current) return;
+    locked.current = true;
+    const now = performance.now();
+    firstClickAt.current = now;
+    setChosen("a");
+    try {
+      const res = await client.current.answer({
+        sesion_id: sesionId, pregunta_id: question.pregunta_id, orden_opciones: [], elegida: "a", respuestas,
+        tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
+      });
+      onAnsweredRef.current?.(question, res);
+      setAnswered((n) => n + 1);
+      setResult(res);
+    } catch {
+      setFailed(true);
+    }
+  }, [question, sesionId]);
+
   async function marcarBien() {
     if (!question || !result || !client.current.markCorrect) return;
     const { percent } = await client.current.markCorrect(sesionId, question.pregunta_id);
@@ -148,7 +168,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
 
   // Pasa sola a la siguiente: 1 s tras un acierto, 2,5 s tras un fallo. Enter o «Siguiente» saltan la espera.
   useEffect(() => {
-    if (!result || (question?.tipo === "problema" && !result.correcta)) return;
+    if (!result || ((question?.tipo === "problema" || question?.tipo === "escrita") && !result.correcta)) return;
     const id = setTimeout(() => void load(), result.correcta ? 1000 : 2500);
     return () => clearTimeout(id);
   }, [load, question, result]);
@@ -245,7 +265,9 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
         </div>
       ) : (
         <>
-          {question.tipo === "problema" ? (
+          {question.tipo === "escrita" ? (
+            <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v) => void submitEscrita(v)} />
+          ) : question.tipo === "problema" ? (
             <form
               className="mt-5 flex flex-wrap items-center gap-3"
               onSubmit={(e) => { e.preventDefault(); void submitProblem(); }}

@@ -31,9 +31,11 @@ export interface Question {
   pregunta_id: string; concepto_id: string; subtema_id: string; enunciado: string;
   opciones: { letra: Letra; texto: string }[]; orden: Letra[]; dificultad: number;
   ayuda_larga: string | null; fuente_id: string | null; fuente_pagina: number | null; fuente_cara: number | null;
-  tema?: string; subtema?: string; tipo?: "test" | "vf" | "problema";
+  tema?: string; subtema?: string; tipo?: "test" | "vf" | "problema" | "escrita";
   /** Imagen del enunciado (ruta relativa a banks/<asignatura>/img/) y datos de un problema con apartados. */
   imagen?: string | null; grupo?: string | null; contexto?: string | null; apartado?: string | null;
+  /** Solo escritas: la etiqueta de cada hueco (Gerundi, Participi...). */
+  campos?: string[];
 }
 export interface SessionState { sesion_id: string; modo: Modo; filtro: Record<string, unknown>; respondidas: string[]; pendiente: string | null }
 export interface AnswerBody {
@@ -41,6 +43,8 @@ export interface AnswerBody {
   confianza?: Confianza | null; tiempos?: Record<string, number>;
   /** Solo problemas: el número escrito, sin unidades. */
   respuesta?: string;
+  /** Solo escritas: un texto por hueco. */
+  respuestas?: string[];
 }
 export interface AnswerResult {
   correcta: boolean; opcion_correcta: Letra; trampa: string | null; explicacion: string | null;
@@ -48,6 +52,8 @@ export interface AnswerResult {
   fuente_cara: number | null; percent: number;
   /** Solo problemas: la solución numérica. */
   solucion?: number | number[] | null;
+  /** Solo escritas: acierto, formas válidas y pista de cada hueco. */
+  campos?: { etiqueta: string; correcto: boolean; esperado: string[]; nota: string | null }[] | null;
 }
 export interface Suggestion {
   tipo: "concepto" | "placement"; concepto_id: string | null; concepto: string | null; subtema_id: string | null;

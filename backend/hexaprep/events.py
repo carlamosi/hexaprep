@@ -1,3 +1,4 @@
+import json
 import logging
 import math
 import re
@@ -9,6 +10,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import mastery, scheduling
+from .escritura import corregir
 from .bank import MAX_VALORES
 from .importer import leer_solucion
 from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
@@ -39,6 +41,7 @@ class AnswerResult:
     opcion_correcta: str
     trampa: str | None
     solucion: float | list[float] | None = None  # solo problemas
+    campos: list[dict] | None = None  # solo escritas: el resultado de cada campo
 
 
 @dataclass
@@ -146,13 +149,19 @@ def coincide(valores: list[float], esperado: list[float], ordenada: bool) -> boo
 
 
 def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opciones: list[str], elegida: str,
-                  confianza: str | None, tiempos: dict, respuesta: str | None = None) -> AnswerResult:
+                  confianza: str | None, tiempos: dict, respuesta: str | None = None,
+                  respuestas: list[str] | None = None) -> AnswerResult:
     _require_session(session, sesion_id)
     pregunta = session.get(Pregunta, pregunta_id)
     if pregunta is None:
         raise ValueError(f"pregunta desconocida: {pregunta_id}")
     problema = pregunta.tipo == "problema"
-    if problema:
+    escrita = pregunta.tipo == "escrita"
+    if escrita:
+        if respuestas is None:
+            raise ValueError("una pregunta escrita se responde con texto")
+        elegida, orden_opciones = "a", []
+    elif problema:
         if respuesta is None:
             raise ValueError("un problema se responde con un número")
         valores = parse_respuesta(respuesta)
@@ -169,13 +178,16 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     opciones = {o.posicion: o for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == pregunta_id))}
     correcta_letra = next(l for l, o in opciones.items() if o.correcta)
     solucion, ordenada = leer_solucion(opciones["a"].texto) if problema else (None, False)
-    if problema:
+    detalle = None
+    if escrita:
+        es_correcta, detalle = corregir(json.loads(opciones["a"].texto), respuestas)
+    elif problema:
         es_correcta = coincide(valores, solucion if isinstance(solucion, list) else [solucion], ordenada)
     else:
         es_correcta = elegida == correcta_letra
-    trampa = None if es_correcta or problema else opciones[elegida].tipo_trampa
+    trampa = None if es_correcta or problema or escrita else opciones[elegida].tipo_trampa
 
-    path = ["a"] if problema else _selection_path(session, sesion_id, pregunta_id, elegida)
+    path = ["a"] if problema or escrita else _selection_path(session, sesion_id, pregunta_id, elegida)
     previos = session.scalars(
         select(Intento).where(Intento.concepto_id == pregunta.concepto_id).order_by(Intento.id.desc())).all()
     ahora, ahora_utc = datetime.now(), utcnow()
@@ -183,7 +195,8 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     ev = Evento(sesion_id=sesion_id, tipo="respuesta_enviada", pregunta_id=pregunta_id, t_cliente=ahora_utc,
                 payload={"elegida": elegida, "orden_opciones": orden_opciones, "confianza": confianza,
                          "tiempos": tiempos, "correcta": es_correcta,
-                         **({"respuesta": respuesta} if problema else {})})
+                         **({"respuesta": respuesta} if problema else {}),
+                         **({"respuestas": respuestas} if escrita else {})})
     session.add(ev)
     session.flush()
     intento = Intento(
@@ -209,7 +222,8 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     except Exception:
         session.rollback()  # dominio y FSRS son reconstruibles (mastery.rebuild, scheduling.rebuild)
         logger.exception("no se pudo actualizar el dominio tras la respuesta %s", intento_id)
-    return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa, solucion=solucion)
+    return AnswerResult(correcta=es_correcta, opcion_correcta=correcta_letra, trampa=trampa, solucion=solucion,
+                        campos=detalle)
 
 
 def skip_question(session: Session, sesion_id: str, pregunta_id: str) -> None:

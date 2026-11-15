@@ -7,7 +7,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from . import events, mastery, scheduling
-from .bank import AsignaturaIn, BankFile, FuenteIn, OpcionIn, PreguntaIn
+from .bank import AsignaturaIn, BankFile, CampoIn, FuenteIn, OpcionIn, PreguntaIn
 from .importer import _add_question, leer_solucion, question_digest
 from .models import (
     Asignatura, Bloque, Concepto, Explicacion, Fuente, Opcion, Pregunta, ReporteCalidad, Subtema, Tema, utcnow,
@@ -53,12 +53,13 @@ def _to_bank_question(session: Session, p: Pregunta) -> PreguntaIn:
     bloque = session.get(Bloque, tema.bloque_id)
     ops = session.scalars(select(Opcion).where(Opcion.pregunta_id == p.id).order_by(Opcion.posicion)).all()
     expl = session.scalar(select(Explicacion.texto).where(Explicacion.pregunta_id == p.id))
-    problema = p.tipo == "problema"
+    problema = p.tipo in ("problema", "escrita")
     return PreguntaIn(
         id=p.clave, bloque=bloque.nombre, tema=tema.nombre, subtema=sub.nombre, concepto=c.nombre,
         dificultad=p.dificultad_base, enunciado=p.enunciado, tipo=p.tipo,
-        solucion=leer_solucion(ops[0].texto)[0] if problema else None,
-        ordenada=leer_solucion(ops[0].texto)[1] if problema else False,
+        solucion=leer_solucion(ops[0].texto)[0] if p.tipo == "problema" else None,
+        ordenada=leer_solucion(ops[0].texto)[1] if p.tipo == "problema" else False,
+        campos=[CampoIn(**c) for c in json.loads(ops[0].texto)] if p.tipo == "escrita" else None,
         imagen=p.imagen, grupo=p.grupo, contexto=p.contexto, apartado=p.apartado,
         opciones=[] if problema else [OpcionIn(texto=o.texto, trampa=o.tipo_trampa) for o in ops],
         correcta=None if problema else next(o.posicion for o in ops if o.correcta), explicacion=expl or "",

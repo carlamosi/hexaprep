@@ -1,0 +1,47 @@
+"""Corrección de respuestas escritas: acentos exigidos, formas válidas múltiples y errores típicos con su regla."""
+import pytest
+
+from hexaprep.escritura import corregir, corregir_campo, normalizar
+
+PARTICIPI = {"etiqueta": "Participi", "validas": ["complert", "complit"], "errores": {"complet": "Ojo: «complet» es el adjetivo."}}
+ESTAT = {"etiqueta": "Participi", "validas": ["estat"], "errores": {"sigut": "«Sigut» es incorrecto: el participi de ésser es «estat»."}}
+VENIR = {"etiqueta": "Gerundi", "validas": ["venint"]}
+
+
+@pytest.mark.parametrize("escrito", ["Complert", "  complit ", "COMPLERT"])
+def test_acepta_cualquier_forma_valida_sin_mayusculas_ni_espacios(escrito):
+    assert corregir_campo(escrito, PARTICIPI)["correcto"] is True
+
+
+def test_normaliza_apostrofe_y_ele_geminada():
+    assert normalizar("l’home") == "l'home"
+    assert normalizar("col.legi") == normalizar("col·legi") == "col·legi"
+    assert normalizar("  Dos   espais ") == "dos espais"
+
+
+def test_el_acento_es_obligatorio_y_se_avisa():
+    r = corregir_campo("pomes", {"etiqueta": "x", "validas": ["pomés"]})
+    assert r["correcto"] is False and "acento" in r["nota"].lower()
+    assert corregir_campo("apareixent", {"etiqueta": "x", "validas": ["apareixent"]})["correcto"] is True
+
+
+def test_error_tipico_devuelve_su_regla():
+    r = corregir_campo("sigut", ESTAT)
+    assert r["correcto"] is False and "estat" in r["nota"]
+
+
+def test_fallo_sin_pista_lista_las_formas_validas():
+    r = corregir_campo("vingut", VENIR)
+    assert r == {"correcto": False, "esperado": ["venint"], "nota": None, "etiqueta": "Gerundi"}
+
+
+def test_corregir_exige_todos_los_campos_y_el_mismo_numero_de_respuestas():
+    campos = [VENIR, ESTAT]
+    ok, detalle = corregir(campos, ["venint", "estat"])
+    assert ok and [d["correcto"] for d in detalle] == [True, True]
+    ok, detalle = corregir(campos, ["venint", "sigut"])
+    assert not ok and [d["correcto"] for d in detalle] == [True, False]
+    with pytest.raises(ValueError):
+        corregir(campos, ["venint"])
+    ok, _ = corregir(campos, ["", ""])
+    assert not ok
