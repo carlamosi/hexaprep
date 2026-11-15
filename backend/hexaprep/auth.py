@@ -52,8 +52,12 @@ def verificar_google(credential: str, client_id: str, abrir=urllib.request.urlop
             c = json.load(r)
     except (OSError, ValueError) as e:
         raise AuthError("Google no ha validado el token") from e
+    try:
+        caducado = int(c.get("exp")) < time.time()
+    except (TypeError, ValueError):
+        caducado = True
     if (c.get("aud") != client_id or c.get("iss") not in EMISORES or str(c.get("email_verified")).lower() != "true"
-            or not c.get("email") or int(c.get("exp", 0)) < time.time()):
+            or not c.get("email") or caducado):
         raise AuthError("token de Google no válido")
     return c
 

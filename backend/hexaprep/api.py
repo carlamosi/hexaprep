@@ -6,17 +6,18 @@ import tempfile
 from collections import defaultdict
 from contextlib import asynccontextmanager
 from dataclasses import asdict
-from datetime import UTC, date, datetime
+from datetime import UTC, datetime
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
-from . import analytics, auth, backup, events, export, mastery, perfiles, quality, scheduling, selector
+from . import analytics, auth, backup, events, export, mastery, perfiles, quality, scheduling, selector, tiempo
 from .bank import RUTA_IMAGEN, load_bank, validate_bank
 from .db import check_integrity, database_url, get_engine, get_engine_online, upgrade
 from .importer import import_bank
@@ -109,6 +110,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     def permitidos() -> str:
         return os.environ.get("HEXAPREP_EMAILS_PERMITIDOS", "")
 
+    listos: set[str] = set()  # perfiles ya comprobados por esta instancia
+
     if client_id:  # acceso con Google: solo los emails de la lista, cada uno con su perfil
         @app.middleware("http")
         async def sesion(request: Request, call_next):
@@ -117,7 +120,11 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
                 datos = auth.leer(secreto, request.cookies.get(auth.COOKIE))
                 if not datos or not auth.permitido(datos["e"], permitidos()):
                     return JSONResponse({"detail": "Inicia sesión con Google"}, status_code=401)
-                request.state.esquema = datos["s"]
+                esquema = perfiles.esquema_de(datos["e"])
+                if request.app.state.engine.dialect.name == "postgresql" and esquema not in listos:
+                    await run_in_threadpool(perfiles.asegurar_perfil, request.app.state.engine, datos["e"])
+                    listos.add(esquema)
+                request.state.esquema = esquema
             return await call_next(request)
 
     @app.get("/api/auth/config")
@@ -229,7 +236,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             k: v for k, v in state.filtro.items() if k in selector.Filtro.__dataclass_fields__}))
         if q is None:
             return None
-        events.record_event(s, sesion_id, "pregunta_mostrada", q.pregunta_id, {"orden": q.orden}, datetime.now())
+        events.record_event(s, sesion_id, "pregunta_mostrada", q.pregunta_id, {"orden": q.orden}, tiempo.ahora())
         return asdict(q)
 
     @app.post("/api/sessions/{sesion_id}/skip")
@@ -257,7 +264,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         except ValueError as e:
             raise HTTPException(422, str(e))
         p = s.get(Pregunta, body.pregunta_id)
-        mastery.snapshot_daily(s, date.today())
+        mastery.snapshot_daily(s, tiempo.hoy())
         dom = s.scalar(select(Dominio).where(Dominio.concepto_id == p.concepto_id))
         return {
             **asdict(res),
@@ -276,7 +283,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             s.rollback()
             raise HTTPException(422, str(e))
         p = s.get(Pregunta, body.pregunta_id)
-        mastery.snapshot_daily(s, date.today())
+        mastery.snapshot_daily(s, tiempo.hoy())
         dom = s.scalar(select(Dominio).where(Dominio.concepto_id == p.concepto_id))
         return {"percent": mastery.percent(dom.theta) if dom and dom.n_intentos else 0}
 
@@ -318,7 +325,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     @app.get("/api/history")
     def history(s: Session = Depends(get_session)):
         stamps = s.scalars(select(Evento.t_servidor).where(Evento.tipo == "respuesta_enviada"))
-        dias = sorted({t.replace(tzinfo=UTC).astimezone().date().isoformat() for t in stamps})
+        dias = sorted({tiempo.a_local(t).date().isoformat() for t in stamps})
         by: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
         for snap, sub in s.execute(select(DominioSnapshot, Concepto.subtema_id)
                                    .join(Concepto, Concepto.id == DominioSnapshot.concepto_id)).all():
@@ -391,6 +398,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
 
     @app.post("/api/import")
     def import_(body: PathIn, s: Session = Depends(get_session)):
+        if online_url:
+            raise HTTPException(501, "No disponible online: los bancos se cargan con tools/import_bank.py")
         path = Path(body.ruta)
         if path.suffix != ".json" or not path.is_file():
             raise HTTPException(404, f"No encuentro el banco {path.name}")

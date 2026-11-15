@@ -10,6 +10,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import mastery, scheduling
+from . import tiempo
 from .escritura import corregir
 from .bank import MAX_VALORES
 from .importer import leer_solucion
@@ -190,7 +191,7 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     path = ["a"] if problema or escrita else _selection_path(session, sesion_id, pregunta_id, elegida)
     previos = session.scalars(
         select(Intento).where(Intento.concepto_id == pregunta.concepto_id).order_by(Intento.id.desc())).all()
-    ahora, ahora_utc = datetime.now(), utcnow()
+    ahora, ahora_utc = tiempo.ahora(), utcnow()
 
     ev = Evento(sesion_id=sesion_id, tipo="respuesta_enviada", pregunta_id=pregunta_id, t_cliente=ahora_utc,
                 payload={"elegida": elegida, "orden_opciones": orden_opciones, "confianza": confianza,
@@ -232,7 +233,7 @@ def skip_question(session: Session, sesion_id: str, pregunta_id: str) -> None:
         raise ValueError(f"pregunta desconocida: {pregunta_id}")
     if session.scalar(select(Intento.id).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)):
         raise AlreadyAnswered("pregunta ya respondida en esta sesión")
-    record_event(session, sesion_id, "pregunta_saltada", pregunta_id, {}, datetime.now())
+    record_event(session, sesion_id, "pregunta_saltada", pregunta_id, {}, tiempo.ahora())
 
 
 def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:
@@ -247,7 +248,7 @@ def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:
         return
     intento.correcta = True
     session.flush()
-    record_event(session, sesion_id, "marcada_correcta", pregunta_id, {}, datetime.now())
+    record_event(session, sesion_id, "marcada_correcta", pregunta_id, {}, tiempo.ahora())
     mastery.rebuild(session, intento.concepto_id)
     scheduling.rebuild(session, intento.concepto_id)
     _commit(session)

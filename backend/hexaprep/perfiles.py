@@ -54,6 +54,7 @@ def asegurar_perfil(engine: Engine, email: str) -> str:
     """Esquema del perfil de `email`; lo crea desde la plantilla si es la primera vez."""
     esquema = esquema_de(email)
     with engine.begin() as conn:
+        conn.execute(text("SELECT pg_advisory_xact_lock(hashtext(:e))"), {"e": esquema})  # dos primeros accesos a la vez no chocan
         if not existe(conn, esquema):
             if not existe(conn, PLANTILLA):
                 raise RuntimeError("falta la plantilla de perfiles: ejecuta tools/perfiles.py plantilla")

@@ -5,7 +5,7 @@ from datetime import UTC, datetime, timedelta
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from . import mastery
+from . import mastery, tiempo
 from .models import Bloque, Concepto, Dominio, DominioSnapshot, Intento, Pregunta, Sesion, Subtema, Tema
 
 CONFIANZAS = ("seguro", "dudo", "adivino")
@@ -23,7 +23,7 @@ def _media(xs: list[float]) -> float | None:
 
 
 def _local(dt: datetime) -> datetime:
-    return dt.replace(tzinfo=UTC).astimezone()
+    return tiempo.a_local(dt)
 
 
 def _grupo(rows: list, clave, etiquetas: list) -> list[dict]:

@@ -118,3 +118,11 @@ def test_con_google_pero_sin_secreto_de_sesion_la_app_no_arranca(tmp_path, monke
     monkeypatch.delenv("SESSION_SECRET", raising=False)
     with pytest.raises(RuntimeError):
         create_app(db_path=tmp_path / "h.db", data_dir=tmp_path)
+
+
+@pytest.mark.parametrize("exp", ["no-es-un-numero", None, "", "1e99x"])
+def test_un_exp_raro_en_el_token_se_rechaza_sin_romper(exp):
+    c = claims_de_google()
+    c["exp"] = exp
+    with pytest.raises(auth.AuthError):
+        auth.verificar_google("tok", CLIENT, abrir_con(c))
