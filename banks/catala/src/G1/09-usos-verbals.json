@@ -8,10 +8,115 @@
    "cara": 12,
    "ayuda": "Per expressar obligació es diu «haver de + infinitiu» o «caldre», mai «tenir que», que és un calc del castellà. Exemples correctes: «Heu de callar», «Cal que vingueu», «Han d'entrar». Després de «cal que» va el present de subjuntiu.",
    "escritas": [
-    [1, "Completa amb «haver de» (nosaltres, present): «____ treballar més, si volem aprovar.»", [["Verb", ["hem de"], {"tenim que": "«Tenir que» és un calc del castellà.", "tenim de": "L'obligació es fa amb «haver de»."}]], "És «hem de». L'obligació s'expressa amb «haver de». Truc: hem de, no «tenim que»."],
-    [3, "Troba l'error i corregeix-lo: «Tinc que acabar la feina abans de les vuit.»", [["Error", ["Tinc que acabar", "Tinc que"]], ["Correcció", ["He d'acabar", "Haig d'acabar", "Cal que acabi", "Cal acabar", "He de", "Haig de"]]], "L'obligació és «haver de» o «caldre», no «tenir que». Truc: he d'acabar, haig d'acabar, cal que acabi."],
-    [3, "Troba l'error i corregeix-lo: «Tenen que pagar abans de sortir.»", [["Error", ["Tenen que pagar", "Tenen que"]], ["Correcció", ["Han de pagar", "Cal que paguin", "Cal pagar", "Han de"]]], "El català diu «han de» per a l'obligació. Truc: han de, cal que."],
-    [3, "Completa: «Cal que tu ____ (venir) aviat.»", [["Verb", ["vinguis"], {"vens": "Després de «cal que» va el subjuntiu.", "venguis": "L'arrel velar és vingu-."}]], "És «vinguis». Després de «cal que» va el present de subjuntiu. Truc: cal que + subjuntiu."]
+    [
+     2,
+     "Completa amb «haver de» (present): «____ treballar més, si volem aprovar, i vosaltres ____ estudiar també.»",
+     [
+      [
+       "Nosaltres",
+       [
+        "hem de"
+       ],
+       {
+        "tenim que": "«Tenir que» és un calc del castellà.",
+        "tenim de": "L'obligació es fa amb «haver de»."
+       }
+      ],
+      [
+       "Vosaltres",
+       [
+        "heu de"
+       ],
+       {
+        "teniu que": "«Tenir que» és un calc del castellà.",
+        "teniu de": "L'obligació es fa amb «haver de»."
+       }
+      ]
+     ],
+     "Són «hem de» i «heu de». Truc: haver de, no «tenir que»."
+    ],
+    [
+     3,
+     "Escriu l'obligació amb «haver de» (1a persona del singular, present): «____ acabar la feina abans de les vuit.»",
+     [
+      [
+       "Forma",
+       [
+        "he de",
+        "haig de"
+       ],
+       {
+        "tinc que": "«Tenir que» és un calc del castellà.",
+        "tinc de": "L'obligació es fa amb «haver de»."
+       }
+      ]
+     ],
+     "És «he de» (o «haig de»). Truc: haver de, no «tenir que»."
+    ],
+    [
+     4,
+     "Completa: «Cal que nosaltres ____ (venir) aviat i que ells ____ (tenir) paciència.»",
+     [
+      [
+       "Venir",
+       [
+        "vinguem"
+       ],
+       {
+        "venim": "Després de «cal que» va el subjuntiu.",
+        "venguem": "L'arrel velar és vingu-."
+       }
+      ],
+      [
+       "Tenir",
+       [
+        "tinguin"
+       ],
+       {
+        "tenen": "Després de «cal que» va el subjuntiu.",
+        "tenguin": "L'arrel velar és tingu-."
+       }
+      ]
+     ],
+     "Són «vinguem» i «tinguin». Truc: cal que + subjuntiu velar."
+    ],
+    [
+     4,
+     "Completa: «Cal que tu ____ (beure) aigua, que jo ____ (veure) el metge i que ells ____ (creure) en tu.»",
+     [
+      [
+       "Beure",
+       [
+        "beguis"
+       ],
+       {
+        "beus": "Després de «cal que» va el subjuntiu.",
+        "bevis": "Beure és velar."
+       }
+      ],
+      [
+       "Veure",
+       [
+        "vegi"
+       ],
+       {
+        "vegui": "Veure fa «vegi», sense u.",
+        "veig": "Cal el subjuntiu."
+       }
+      ],
+      [
+       "Creure",
+       [
+        "creguin"
+       ],
+       {
+        "creuen": "Cal el subjuntiu.",
+        "creiguin": "Creure és velar: creguin."
+       }
+      ]
+     ],
+     "Són «beguis», «vegi» i «creguin». Truc: cal que + subjuntiu."
+    ]
    ]
   },
   {
@@ -20,10 +125,102 @@
    "cara": 12,
    "ayuda": "La probabilitat no s'expressa amb el futur (això és un calc del castellà), sinó amb «deure + infinitiu». Exemples correctes: «Deu fer fred» o «Deuen arribar tard». Fixa't que no cal que hi hagi cap preposició entre el verb i l'infinitiu.",
    "escritas": [
-    [1, "Completa amb «deure» (ell, present): «Algú truca; ____ ser el carter.»", [["Verb", ["deu"], {"serà": "La probabilitat no s'expressa amb el futur."}]], "És «deu». Deure + infinitiu expressa probabilitat. Truc: probabilitat, deure."],
-    [3, "Completa amb «deure» (ells, present): «Fa estona que no responen: ____ dormir encara.»", [["Verb", ["deuen"], {"dormiran": "La probabilitat s'expressa amb deure, no amb el futur."}]], "És «deuen». Deure + infinitiu expressa probabilitat. Truc: no futur, sí deure."],
-    [3, "Troba l'error i corregeix-lo: «Mira, algú truca a la porta: serà el Joan.»", [["Error", ["serà"]], ["Correcció", ["deu ser"]]], "La probabilitat s'expressa amb «deure + infinitiu»: «deu ser». Truc: serà és futur, deu ser és probabilitat."],
-    [4, "Expressa la probabilitat amb «deure» en lloc del futur: «Tindran gana.» Escriu només la perífrasi.", [["Perífrasi", ["deuen tenir"], {"tindran": "Cal deure + infinitiu."}]], "És «deuen tenir». La probabilitat no es fa amb el futur sinó amb deure + infinitiu. Truc: tindran gana = deuen tenir gana."]
+    [
+     3,
+     "Completa amb «deure» (present): «Algú truca: ____ ser el carter. Fa estona que no responen: ____ dormir encara.»",
+     [
+      [
+       "Primer",
+       [
+        "deu"
+       ],
+       {
+        "serà": "La probabilitat no s'expressa amb el futur."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "deuen"
+       ],
+       {
+        "dormiran": "La probabilitat s'expressa amb deure."
+       }
+      ]
+     ],
+     "Són «deu» i «deuen». Truc: probabilitat, deure + infinitiu."
+    ],
+    [
+     3,
+     "Troba l'error i corregeix-lo: «Mira, algú truca a la porta: serà el Joan.»",
+     [
+      [
+       "Error",
+       [
+        "serà"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "deu ser"
+       ]
+      ]
+     ],
+     "La probabilitat s'expressa amb «deure + infinitiu»: «deu ser». Truc: serà és futur, deu ser és probabilitat."
+    ],
+    [
+     4,
+     "Expressa la probabilitat amb «deure» en lloc del futur: «Tindran gana.» «Sabran la resposta.» Escriu només les perífrasis.",
+     [
+      [
+       "Primera",
+       [
+        "deuen tenir"
+       ],
+       {
+        "tindran": "Cal deure + infinitiu."
+       }
+      ],
+      [
+       "Segona",
+       [
+        "deuen saber"
+       ],
+       {
+        "sabran": "Cal deure + infinitiu."
+       }
+      ]
+     ],
+     "Són «deuen tenir» i «deuen saber». Truc: futur de probabilitat = deure + infinitiu."
+    ],
+    [
+     5,
+     "Expressa la probabilitat en el passat amb «deure»: «Han perdut el tren.» «Va tenir un accident.» Escriu només les perífrasis.",
+     [
+      [
+       "Primera",
+       [
+        "deuen haver perdut"
+       ],
+       {
+        "han perdut": "Cal deure + infinitiu compost.",
+        "deuen perdre": "Cal l'infinitiu compost: haver perdut."
+       }
+      ],
+      [
+       "Segona",
+       [
+        "deu haver tingut"
+       ],
+       {
+        "va tenir": "Cal deure + infinitiu compost.",
+        "deu tenir": "Cal l'infinitiu compost: haver tingut."
+       }
+      ]
+     ],
+     "Són «deuen haver perdut» i «deu haver tingut». Truc: probabilitat en el passat, deure + haver + participi."
+    ]
    ]
   },
   {
@@ -32,10 +229,138 @@
    "cara": 12,
    "ayuda": "«Anar a + infinitiu» no serveix per expressar una acció futura: això és un calc del castellà i en català es fa servir el futur simple. «Al + infinitiu» tampoc és correcte: en català es diu «en + infinitiu». Exemples: «En sortir de casa, vaig veure la neu» i «Demà tornaré els llibres».",
    "escritas": [
-    [1, "Completa amb la preposició correcta: «____ sortir de l'aula, vaig trobar la professora.»", [["Preposició", ["en"], {"al": "Davant un infinitiu temporal es diu «en», no «al»."}]], "És «en». En català es diu «en + infinitiu». Truc: en sortir, no al sortir."],
-    [2, "Completa amb el futur simple de «netejar» (1a persona): «Demà ____ la cuina.»", [["Verb", ["netejaré"], {"vaig a netejar": "L'acció futura s'expressa amb el futur simple."}]], "És «netejaré». L'acció futura es diu amb el futur simple. Truc: no «vaig a + infinitiu»."],
-    [3, "Troba l'error i corregeix-lo: «Aquesta nit vaig a fer la paella per a tots.»", [["Error", ["vaig a fer"]], ["Correcció", ["faré"]]], "L'acció futura s'expressa amb el futur simple: «faré». Truc: no «anar a + infinitiu»."],
-    [3, "Troba l'error i corregeix-lo: «Al entrar a classe, he dit bon dia.»", [["Error", ["Al entrar"]], ["Correcció", ["En entrar"]]], "En català es diu «en + infinitiu». Truc: en entrar, no al entrar."]
+    [
+     2,
+     "Escriu la preposició que falta: «____ sortir de l'aula, vaig trobar la professora, i ____ entrar a casa, vaig saludar tothom.»",
+     [
+      [
+       "Primera",
+       [
+        "en"
+       ],
+       {
+        "al": "Davant un infinitiu temporal es diu «en», no «al»."
+       }
+      ],
+      [
+       "Segona",
+       [
+        "en"
+       ],
+       {
+        "al": "Davant un infinitiu temporal es diu «en», no «al»."
+       }
+      ]
+     ],
+     "És «en» en els dos casos. Truc: en sortir, en entrar."
+    ],
+    [
+     3,
+     "Substitueix «vaig a + infinitiu» pel futur simple (1a persona): «vaig a fer», «vaig a venir», «vaig a tenir», «vaig a veure».",
+     [
+      [
+       "Fer",
+       [
+        "faré"
+       ],
+       {
+        "faig": "Cal el futur.",
+        "fararé": "El futur de fer és faré."
+       }
+      ],
+      [
+       "Venir",
+       [
+        "vindré"
+       ],
+       {
+        "venré": "El futur de venir és vindré."
+       }
+      ],
+      [
+       "Tenir",
+       [
+        "tindré"
+       ],
+       {
+        "tenré": "El futur de tenir és tindré."
+       }
+      ],
+      [
+       "Veure",
+       [
+        "veuré"
+       ],
+       {
+        "vejaré": "El futur de veure és veuré.",
+        "veré": "Cal veuré."
+       }
+      ]
+     ],
+     "Són «faré», «vindré», «tindré» i «veuré». Truc: el futur té arrel pròpia."
+    ],
+    [
+     4,
+     "Substitueix «vaig a + infinitiu» pel futur simple (1a persona): «vaig a saber», «vaig a voler», «vaig a poder», «vaig a beure».",
+     [
+      [
+       "Saber",
+       [
+        "sabré"
+       ],
+       {
+        "saberé": "El futur de saber és sabré."
+       }
+      ],
+      [
+       "Voler",
+       [
+        "voldré"
+       ],
+       {
+        "voleré": "El futur de voler és voldré."
+       }
+      ],
+      [
+       "Poder",
+       [
+        "podré"
+       ],
+       {
+        "poderé": "El futur de poder és podré."
+       }
+      ],
+      [
+       "Beure",
+       [
+        "beuré"
+       ],
+       {
+        "beguré": "El futur de beure és beuré."
+       }
+      ]
+     ],
+     "Són «sabré», «voldré», «podré» i «beuré». Truc: futur amb arrel pròpia."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «Al sortir del cinema, vam trobar-nos amb la Marta.»",
+     [
+      [
+       "Error",
+       [
+        "Al sortir"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "En sortir"
+       ]
+      ]
+     ],
+     "En català es diu «en + infinitiu»: «en sortir». Truc: en sortir, no al sortir."
+    ]
    ]
   },
   {
@@ -44,11 +369,184 @@
    "cara": 12,
    "ayuda": "El gerundi indica una acció simultània a la del verb principal: «Escoltava la ràdio, ordenant l'habitació». No s'ha d'utilitzar per indicar una acció posterior: aleshores es fa servir una coordinada amb «i». Exemple correcte: «Va caure i es va fer mal».",
    "escritas": [
-    [1, "Completa amb el gerundi de «cantar»: «Rentava els plats ____ una cançó.»", [["Gerundi", ["cantant"], {"cantar": "Cal un gerundi: cantant.", "cantat": "Cal un gerundi, no un participi."}]], "És «cantant». El gerundi expressa simultaneïtat. Truc: la mateixa estona, gerundi."],
-    [2, "Completa amb el gerundi de «xerrar»: «Passejaven pel parc ____ de tot.»", [["Gerundi", ["xerrant"], {"xerrar": "Cal un gerundi: xerrant."}]], "És «xerrant». Les dues accions passen alhora. Truc: simultània, gerundi."],
-    [3, "Troba l'error i corregeix-lo: «Va caure de la bicicleta, trencant-se el turmell.»", [["Error", ["trencant-se"]], ["Correcció", ["i es va trencar", "es va trencar"]]], "El gerundi no pot expressar una acció posterior. Cal coordinar amb «i»: «i es va trencar». Truc: primer una cosa, després l'altra: cap gerundi."],
-    [4, "Troba l'error i corregeix-lo: «El cotxe va derrapar, estavellant-se contra un mur.»", [["Error", ["estavellant-se"]], ["Correcció", ["i es va estavellar", "es va estavellar"]]], "L'acció és posterior: cal una coordinada amb «i». Truc: derrapar i després estavellar-se."],
-    [3, "Completa amb el gerundi de «somriure»: «Va entrar a l'aula ____ a tothom.»", [["Gerundi", ["somrient"], {"somriant": "El gerundi de somriure és somrient.", "somriure": "Cal un gerundi: somrient."}]], "És «somrient». Les dues accions passen alhora. Truc: simultaneïtat, gerundi."]
+    [
+     3,
+     "Completa amb el gerundi: «Va entrar a l'aula ____ (somriure) a tothom, ____ (dir) bon dia i ____ (riure) amb tots.»",
+     [
+      [
+       "Somriure",
+       [
+        "somrient"
+       ],
+       {
+        "somriant": "El gerundi de somriure és somrient.",
+        "somriure": "Cal un gerundi."
+       }
+      ],
+      [
+       "Dir",
+       [
+        "dient"
+       ],
+       {
+        "dint": "El gerundi de dir és dient.",
+        "diguent": "El gerundi de dir és dient."
+       }
+      ],
+      [
+       "Riure",
+       [
+        "rient"
+       ],
+       {
+        "riant": "El gerundi de riure és rient."
+       }
+      ]
+     ],
+     "Són «somrient», «dient» i «rient». Truc: -ent en els verbs en -re i -ure."
+    ],
+    [
+     4,
+     "Completa amb el gerundi: «Estudiava a la biblioteca ____ (treure) apunts i ____ (beure) cafè.»",
+     [
+      [
+       "Treure",
+       [
+        "traient"
+       ],
+       {
+        "treient": "El gerundi de treure és traient.",
+        "treguent": "El gerundi de treure és traient."
+       }
+      ],
+      [
+       "Beure",
+       [
+        "bevent"
+       ],
+       {
+        "beguent": "El gerundi no és velar: bevent.",
+        "bevint": "El gerundi de beure és bevent."
+       }
+      ]
+     ],
+     "Són «traient» i «bevent». Truc: el gerundi no és velar."
+    ],
+    [
+     3,
+     "Troba l'error i corregeix-lo: «Va caure de la bicicleta, trencant-se el turmell.»",
+     [
+      [
+       "Error",
+       [
+        "trencant-se"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "i es va trencar",
+        "es va trencar"
+       ]
+      ]
+     ],
+     "El gerundi no pot expressar una acció posterior. Cal coordinar amb «i»: «i es va trencar». Truc: primer una cosa, després l'altra: cap gerundi."
+    ],
+    [
+     4,
+     "Completa amb el gerundi: «Va marxar ____ (conduir) fins a casa, ____ (seguir) el camí i ____ (prendre) notes.»",
+     [
+      [
+       "Conduir",
+       [
+        "conduint"
+       ],
+       {
+        "conduïnt": "El gerundi no porta dièresi: conduint."
+       }
+      ],
+      [
+       "Seguir",
+       [
+        "seguint"
+       ],
+       {
+        "seguent": "Els verbs en -ir fan -int."
+       }
+      ],
+      [
+       "Prendre",
+       [
+        "prenent"
+       ],
+       {
+        "prenint": "Els verbs en -re fan -ent."
+       }
+      ]
+     ],
+     "Són «conduint», «seguint» i «prenent». Truc: -ir fa -int, -re fa -ent."
+    ],
+    [
+     5,
+     "Escriu el gerundi de «tenir», «venir», «fer», «poder», «voler» i «saber».",
+     [
+      [
+       "Tenir",
+       [
+        "tenint"
+       ],
+       {
+        "tinguent": "El gerundi no és velar: tenint."
+       }
+      ],
+      [
+       "Venir",
+       [
+        "venint"
+       ],
+       {
+        "vinguent": "El gerundi no és velar: venint."
+       }
+      ],
+      [
+       "Fer",
+       [
+        "fent"
+       ],
+       {
+        "faent": "El gerundi de fer és fent."
+       }
+      ],
+      [
+       "Poder",
+       [
+        "podent"
+       ],
+       {
+        "podint": "Els verbs en -er fan -ent."
+       }
+      ],
+      [
+       "Voler",
+       [
+        "volent"
+       ],
+       {
+        "volint": "Els verbs en -er fan -ent."
+       }
+      ],
+      [
+       "Saber",
+       [
+        "sabent"
+       ],
+       {
+        "sabint": "Els verbs en -er fan -ent."
+       }
+      ]
+     ],
+     "Són «tenint», «venint», «fent», «podent», «volent» i «sabent». Truc: -ir fa -int, -er i -re fan -ent."
+    ]
    ]
   },
   {
@@ -57,11 +555,203 @@
    "cara": 12,
    "ayuda": "L'ordre negativa s'expressa amb el present de subjuntiu, no amb l'imperatiu. Per exemple: «No parlis tan fort» i no «No parla tan fort». Si l'ordre és afirmativa, es fa servir l'imperatiu: «Parla més baix».",
    "escritas": [
-    [2, "Completa l'ordre negativa: «No ____ (tenir, tu) por.»", [["Verb", ["tinguis"], {"tens": "L'ordre negativa va en subjuntiu: tinguis."}]], "És «tinguis». L'ordre negativa es fa amb present de subjuntiu. Truc: no + subjuntiu."],
-    [2, "Troba l'error i corregeix-lo: «No canta tan fort!»", [["Error", ["No canta"]], ["Correcció", ["No cantis"]]], "L'ordre negativa va en present de subjuntiu: «no cantis». Truc: no + subjuntiu."],
-    [3, "Troba l'error i corregeix-lo: «No dorm a classe, que et castigaran.»", [["Error", ["No dorm"]], ["Correcció", ["No dormis"]]], "L'ordre negativa no va en imperatiu: «no dormis». Truc: dorm (afirmativa), no dormis (negativa)."],
-    [3, "Completa l'ordre negativa: «No ____ (fer, tu) soroll!»", [["Verb", ["facis"], {"fas": "L'ordre negativa va en subjuntiu: facis.", "fagis": "El subjuntiu de fer és faci: facis."}]], "És «facis». L'ordre negativa es fa amb present de subjuntiu. Truc: faig → faci → no facis."],
-    [4, "Completa l'ordre negativa: «No ____ (venir, vosaltres) tard.»", [["Verb", ["vingueu"], {"veniu": "L'ordre negativa va en subjuntiu: vingueu."}]], "És «vingueu». L'ordre negativa es fa amb present de subjuntiu i l'arrel velar. Truc: veniu (afirmativa), no vingueu (negativa)."]
+    [
+     3,
+     "Completa l'ordre negativa: «No ____ (tenir, tu) por i no ____ (venir, tu) tard.»",
+     [
+      [
+       "Tenir",
+       [
+        "tinguis"
+       ],
+       {
+        "tens": "L'ordre negativa va en subjuntiu.",
+        "tenguis": "L'arrel velar és tingu-."
+       }
+      ],
+      [
+       "Venir",
+       [
+        "vinguis"
+       ],
+       {
+        "véns": "L'ordre negativa va en subjuntiu.",
+        "venguis": "L'arrel velar és vingu-."
+       }
+      ]
+     ],
+     "Són «tinguis» i «vinguis». Truc: no + subjuntiu."
+    ],
+    [
+     3,
+     "Completa l'ordre negativa: «No ____ (fer, tu) soroll i no ____ (dir, tu) res.»",
+     [
+      [
+       "Fer",
+       [
+        "facis"
+       ],
+       {
+        "fas": "L'ordre negativa va en subjuntiu.",
+        "fagis": "El subjuntiu de fer és faci."
+       }
+      ],
+      [
+       "Dir",
+       [
+        "diguis"
+       ],
+       {
+        "dius": "L'ordre negativa va en subjuntiu.",
+        "digis": "El subjuntiu de dir és digui."
+       }
+      ]
+     ],
+     "Són «facis» i «diguis». Truc: no + subjuntiu."
+    ],
+    [
+     4,
+     "Escriu l'ordre negativa per a vosaltres: «No ____ (venir) tard», «No ____ (beure) aigua», «No ____ (veure) aquesta pel·lícula», «No ____ (dir) mentides».",
+     [
+      [
+       "Venir",
+       [
+        "vingueu"
+       ],
+       {
+        "veniu": "L'ordre negativa va en subjuntiu."
+       }
+      ],
+      [
+       "Beure",
+       [
+        "begueu"
+       ],
+       {
+        "beveu": "L'ordre negativa va en subjuntiu."
+       }
+      ],
+      [
+       "Veure",
+       [
+        "vegeu"
+       ],
+       {
+        "veieu": "L'ordre negativa va en subjuntiu."
+       }
+      ],
+      [
+       "Dir",
+       [
+        "digueu"
+       ],
+       {
+        "dieu": "L'ordre negativa va en subjuntiu."
+       }
+      ]
+     ],
+     "Són «vingueu», «begueu», «vegeu» i «digueu». Truc: no + subjuntiu."
+    ],
+    [
+     4,
+     "Escriu l'ordre negativa de cortesia (vostè): «No ____ (tenir) por», «No ____ (veure) aquesta pel·lícula», «No ____ (treure) el cotxe».",
+     [
+      [
+       "Tenir",
+       [
+        "tingui"
+       ],
+       {
+        "té": "L'ordre negativa va en subjuntiu.",
+        "tengui": "L'arrel velar és tingu-."
+       }
+      ],
+      [
+       "Veure",
+       [
+        "vegi"
+       ],
+       {
+        "vegui": "Veure fa «vegi», sense u.",
+        "veu": "L'ordre negativa va en subjuntiu."
+       }
+      ],
+      [
+       "Treure",
+       [
+        "tregui"
+       ],
+       {
+        "treu": "L'ordre negativa va en subjuntiu.",
+        "traigui": "L'arrel velar és treg-."
+       }
+      ]
+     ],
+     "Són «tingui», «vegi» i «tregui». Truc: no + subjuntiu."
+    ],
+    [
+     5,
+     "Escriu l'imperatiu afirmatiu i l'ordre negativa (tu) de «dir», «fer» i «dormir».",
+     [
+      [
+       "Dir afirmativa",
+       [
+        "digues"
+       ],
+       {
+        "diu": "L'imperatiu de dir és digues.",
+        "dius": "Aquesta és l'indicatiu."
+       }
+      ],
+      [
+       "Dir negativa",
+       [
+        "diguis"
+       ],
+       {
+        "digues": "La negativa va en subjuntiu."
+       }
+      ],
+      [
+       "Fer afirmativa",
+       [
+        "fes"
+       ],
+       {
+        "fa": "L'imperatiu de fer és fes.",
+        "fas": "Aquesta és l'indicatiu."
+       }
+      ],
+      [
+       "Fer negativa",
+       [
+        "facis"
+       ],
+       {
+        "fes": "La negativa va en subjuntiu."
+       }
+      ],
+      [
+       "Dormir afirmativa",
+       [
+        "dorm"
+       ],
+       {
+        "dormis": "Aquest és el subjuntiu."
+       }
+      ],
+      [
+       "Dormir negativa",
+       [
+        "dormis"
+       ],
+       {
+        "dorm": "La negativa va en subjuntiu."
+       }
+      ]
+     ],
+     "Són «digues / diguis», «fes / facis» i «dorm / dormis». Truc: afirmativa imperatiu, negativa subjuntiu."
+    ]
    ]
   },
   {
@@ -70,10 +760,113 @@
    "cara": 12,
    "ayuda": "En una oració condicional irreal, a la condició (si...) va l'imperfet o el plusquamperfet de subjuntiu, però a la conseqüència va el condicional, no el subjuntiu. Exemple correcte: «Si hagués plogut, no hauríem sortit». Si no, es barregen els dos modes.",
    "escritas": [
-    [3, "Completa: «Si haguessis estudiat més, ____ (aprovar, tu).»", [["Verb", ["hauries aprovat"], {"haguessis aprovat": "La conseqüència va en condicional, no en subjuntiu."}]], "És «hauries aprovat». La conseqüència va en condicional. Truc: si + subjuntiu, condicional."],
-    [3, "Completa: «Si ____ (venir, tu) a la festa, t'ho hauries passat bé.»", [["Verb", ["haguessis vingut"], {"hauries vingut": "A la condició (si) va el subjuntiu, no el condicional."}]], "És «haguessis vingut». A la condició va el subjuntiu. Truc: si + subjuntiu."],
-    [4, "Troba l'error i corregeix-lo: «Si haguessis arribat abans, haguessis vist l'espectacle.»", [["Error", ["haguessis vist"]], ["Correcció", ["hauries vist"]]], "La conseqüència va en condicional: «hauries vist». Truc: si haguessis, hauries."],
-    [4, "Troba l'error i corregeix-lo: «Si hagués sabut la veritat, no hagués dit res.»", [["Error", ["hagués dit"]], ["Correcció", ["hauria dit"]]], "La conseqüència va en condicional: «hauria dit». Truc: si hagués, hauria."]
+    [
+     3,
+     "Completa: «Si haguessis estudiat més, ____ (aprovar, tu), i si haguessis arribat abans, ____ (veure, tu) l'espectacle.»",
+     [
+      [
+       "Primer",
+       [
+        "hauries aprovat"
+       ],
+       {
+        "haguessis aprovat": "La conseqüència va en condicional, no en subjuntiu."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "hauries vist"
+       ],
+       {
+        "haguessis vist": "La conseqüència va en condicional, no en subjuntiu.",
+        "hauries veigut": "El participi de veure és vist."
+       }
+      ]
+     ],
+     "Són «hauries aprovat» i «hauries vist». Truc: si + subjuntiu, condicional."
+    ],
+    [
+     4,
+     "Completa: «Si ____ (venir, tu) a la festa, t'ho hauries passat bé; si ell ____ (tenir) temps, ho hauria fet.»",
+     [
+      [
+       "Primer",
+       [
+        "haguessis vingut"
+       ],
+       {
+        "hauries vingut": "A la condició va el subjuntiu.",
+        "haguessis venit": "El participi de venir és vingut."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "hagués tingut"
+       ],
+       {
+        "hauria tingut": "A la condició va el subjuntiu.",
+        "hagués tenit": "El participi de tenir és tingut."
+       }
+      ]
+     ],
+     "Són «haguessis vingut» i «hagués tingut». Truc: si + haguessis / hagués."
+    ],
+    [
+     3,
+     "Completa: «Si ____ (beure, tu) menys cafè, ____ (dormir, tu) millor.»",
+     [
+      [
+       "Primer",
+       [
+        "beguessis"
+       ],
+       {
+        "bevessis": "L'imperfet de subjuntiu de beure és velar.",
+        "begues": "Falta -sis."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "dormiries"
+       ],
+       {
+        "dormissis": "La conseqüència va en condicional.",
+        "dormis": "La conseqüència va en condicional."
+       }
+      ]
+     ],
+     "Són «beguessis» i «dormiries». Truc: si + imperfet de subjuntiu, condicional."
+    ],
+    [
+     5,
+     "Completa: «Si nosaltres ____ (veure) el perill a temps, ____ (treure, nosaltres) el cotxe del garatge.»",
+     [
+      [
+       "Primer",
+       [
+        "haguéssim vist"
+       ],
+       {
+        "haguessim vist": "Falta l'accent: haguéssim.",
+        "hauríem vist": "A la condició va el subjuntiu."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "hauríem tret"
+       ],
+       {
+        "haguéssim tret": "La conseqüència va en condicional.",
+        "hauriem tret": "Falta l'accent: hauríem."
+       }
+      ]
+     ],
+     "Són «haguéssim vist» i «hauríem tret». Truc: -éssim al subjuntiu, -íem al condicional."
+    ]
    ]
   }
  ]

@@ -8,10 +8,102 @@
    "cara": 12,
    "ayuda": "Per situar objectes i territoris s'utilitza ser: «Menorca és a la Mediterrània». Per a una persona, ser indica presència eventual i estar indica permanència. Per exemple: «Demà serem a Sitges» (només de pas) o «Estarem tot l'estiu a Sitges» (hi vivim).",
    "escritas": [
-    [1, "Completa amb «ser» o «estar» (present): «La catedral ____ a Tarragona.»", [["Verb", ["és"], {"està": "Els objectes i els territoris se situen amb ser."}]], "És «és». Els objectes i els territoris es localitzen amb ser. Truc: coses i llocs, ser."],
-    [2, "Completa amb el futur de «ser» o «estar» (1a persona), segons el sentit: «Demà ____ a Maó, només de pas.»", [["Verb", ["seré"], {"estaré": "Presència eventual d'una persona: ser."}]], "És «seré». Presència eventual d'una persona: ser. Truc: de pas, ser; per quedar-s'hi, estar."],
-    [3, "Completa amb el futur de «ser» o «estar» (1a persona), segons el sentit: «Aquest curs ____ tot l'any a Berlín, sense moure'm d'allà.»", [["Verb", ["estaré"], {"seré": "Permanència d'una persona: estar."}]], "És «estaré». Permanència d'una persona: estar. Truc: viure-hi tot l'any, estar."],
-    [3, "Troba l'error i corregeix-lo: «L'església està al costat de la plaça.»", [["Error", ["està"]], ["Correcció", ["és"]]], "Un objecte o territori es localitza amb ser: «és». Truc: l'edifici no es mou, ser."]
+    [
+     3,
+     "Completa amb el futur (1a persona del singular) de «ser» o «estar»: «Demà ____ a Maó, només de pas, i després ____ tot l'estiu a Menorca.»",
+     [
+      [
+       "Primer",
+       [
+        "seré"
+       ],
+       {
+        "estaré": "Presència eventual d'una persona: ser."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "estaré"
+       ],
+       {
+        "seré": "Permanència d'una persona: estar."
+       }
+      ]
+     ],
+     "Són «seré» i «estaré». De pas, ser; per quedar-s'hi, estar."
+    ],
+    [
+     4,
+     "Completa amb «ser» o «estar» en la forma indicada: «Em sorprendria que l'estació ____ (present de subjuntiu) al costat del riu, però cal que nosaltres ____ (futur) allà a les set, només de pas.»",
+     [
+      [
+       "Primer",
+       [
+        "sigui"
+       ],
+       {
+        "estigui": "Un edifici es localitza amb ser.",
+        "siga": "Forma no normativa."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "serem"
+       ],
+       {
+        "estarem": "Presència eventual d'una persona: ser."
+       }
+      ]
+     ],
+     "Són «sigui» i «serem». Objectes i edificis, ser; persones de pas, ser."
+    ],
+    [
+     4,
+     "Completa amb «ser» o «estar» en la forma indicada: «Si l'any que ve ____ (imperfet de subjuntiu) tot el curs a Berlín sense moure'm, no veuria la família, però ____ (condicional, 1a persona) allà amb molt de gust.»",
+     [
+      [
+       "Primer",
+       [
+        "estigués"
+       ],
+       {
+        "estiguès": "L'accent és agut.",
+        "estigues": "Falta l'accent: estigués."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "estaria"
+       ],
+       {
+        "seria": "Permanència d'una persona: estar."
+       }
+      ]
+     ],
+     "Són «estigués» i «estaria». Permanència, estar."
+    ],
+    [
+     3,
+     "Troba l'error i corregeix-lo: «El Palau de la Música està al carrer de Sant Pere Més Alt.»",
+     [
+      [
+       "Error",
+       [
+        "està"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "és"
+       ]
+      ]
+     ],
+     "Un edifici es localitza amb ser: «és». Truc: l'edifici no es mou, ser."
+    ]
    ]
   },
   {
@@ -20,11 +112,154 @@
    "cara": 12,
    "ayuda": "Per a les qualitats d'objectes s'utilitza ser: «El cotxe és nou». Per a persones, estar indica qualitats transitòries («Està cansat») i ser les duradores («És alt»). Estar també forma locucions fixes: «estar a favor», «estar en venda». Estar implica idea de canvi.",
    "escritas": [
-    [1, "Completa amb «ser» o «estar» (present): «La casa de la Pili ____ molt vella.»", [["Verb", ["és"], {"està": "Les qualitats d'un objecte van amb ser."}]], "És «és». Qualitat d'un objecte: ser. Truc: objecte i qualitat, ser."],
-    [2, "Completa amb «ser» o «estar» (present): «Avui, després de la notícia, el Pau ____ molt trist.»", [["Verb", ["està"], {"és": "És una qualitat transitòria d'una persona: estar."}]], "És «està». Qualitat transitòria d'una persona: estar. Truc: avui, ara, de moment, estar."],
-    [2, "Completa amb «ser» o «estar» (present): «Ells ____ a favor de la vaga.»", [["Verb", ["estan"], {"són": "La locució «estar a favor» sempre és amb estar."}]], "És «estan». «Estar a favor» és una locució fixa amb estar. Truc: estar a favor, estar en venda."],
-    [3, "Completa amb «ser» o «estar» (present): «El pis del carrer Major ____ en venda.»", [["Verb", ["està"], {"és": "La locució «estar en venda» es forma amb estar."}]], "És «està». «Estar en venda» és una locució fixa amb estar. Truc: locució, estar."],
-    [4, "Troba l'error i corregeix-lo: «La meva mare està gran.»", [["Error", ["està gran"]], ["Correcció", ["és gran"]]], "L'edat és una qualitat duradora d'una persona: ser. Truc: duradora, ser; transitòria, estar."]
+    [
+     3,
+     "Completa amb «ser» o «estar» (present): «Ells ____ a favor de la vaga, el pis ____ en venda i la casa ____ molt vella.»",
+     [
+      [
+       "Primer",
+       [
+        "estan"
+       ],
+       {
+        "són": "La locució «estar a favor» va amb estar."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "està"
+       ],
+       {
+        "és": "La locució «estar en venda» va amb estar."
+       }
+      ],
+      [
+       "Tercer",
+       [
+        "és"
+       ],
+       {
+        "està": "La qualitat d'un objecte va amb ser."
+       }
+      ]
+     ],
+     "Són «estan», «està» i «és». Locucions amb estar; qualitat d'objecte amb ser."
+    ],
+    [
+     4,
+     "Completa amb «ser» o «estar» (imperfet d'indicatiu): «Ahir, després de la notícia, el Pau ____ molt trist, però de natural ____ molt alegre.»",
+     [
+      [
+       "Primer",
+       [
+        "estava"
+       ],
+       {
+        "era": "És una qualitat transitòria: estar."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "era"
+       ],
+       {
+        "estava": "És una qualitat duradora: ser."
+       }
+      ]
+     ],
+     "Són «estava» i «era». Transitòria, estar; duradora, ser."
+    ],
+    [
+     4,
+     "Completa amb «ser» o «estar» en la forma indicada: «Si el pis ____ (imperfet de subjuntiu) en venda, jo ____ (condicional) el primer a comprar-lo.»",
+     [
+      [
+       "Primer",
+       [
+        "estigués"
+       ],
+       {
+        "fos": "«Estar en venda» és una locució amb estar."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "seria"
+       ],
+       {
+        "estaria": "Aquí és una qualitat duradora: ser."
+       }
+      ]
+     ],
+     "Són «estigués» i «seria». Locució amb estar."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «La meva mare està gran.»",
+     [
+      [
+       "Error",
+       [
+        "està gran"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "és gran"
+       ]
+      ]
+     ],
+     "L'edat és una qualitat duradora d'una persona: ser. Truc: duradora, ser; transitòria, estar."
+    ],
+    [
+     5,
+     "Escriu l'imperatiu (tu) de «ser» i de «estar» i el present de subjuntiu (tu) de «ser» i de «estar».",
+     [
+      [
+       "Imperatiu ser",
+       [
+        "sigues"
+       ],
+       {
+        "ets": "Cal l'imperatiu.",
+        "siguis": "Aquest és el subjuntiu."
+       }
+      ],
+      [
+       "Imperatiu estar",
+       [
+        "estigues"
+       ],
+       {
+        "estàs": "Cal l'imperatiu.",
+        "estiguis": "Aquest és el subjuntiu."
+       }
+      ],
+      [
+       "Subjuntiu ser",
+       [
+        "siguis"
+       ],
+       {
+        "sigues": "Aquest és l'imperatiu."
+       }
+      ],
+      [
+       "Subjuntiu estar",
+       [
+        "estiguis"
+       ],
+       {
+        "estigues": "Aquest és l'imperatiu."
+       }
+      ]
+     ],
+     "Són «sigues», «estigues», «siguis» i «estiguis». Truc: -es a l'imperatiu afirmatiu, -is al subjuntiu."
+    ]
    ]
   },
   {
@@ -33,10 +268,137 @@
    "cara": 11,
    "ayuda": "Les perífrasis modals expressen obligació, possibilitat o probabilitat: haver de + infinitiu, caldre + infinitiu, poder + infinitiu i deure + infinitiu. El parlant expressa una actitud davant de l'acció. Exemples: «Heu de callar» (obligació), «Cal esperar» (necessitat), «Podem anar-hi» (possibilitat).",
    "escritas": [
-    [1, "Completa amb «poder» (tu, present): «____ entrar quan vulguis.»", [["Verb", ["pots"], {"pot": "És la 3a persona. Per a tu: pots."}]], "És «pots». Poder + infinitiu expressa possibilitat. Truc: tu pots, ell pot."],
-    [2, "Completa amb «haver de» (nosaltres, present): «____ marxar d'hora.»", [["Verb", ["hem de"], {"tenim de": "L'obligació es fa amb «haver de».", "tenim que": "«Tenir que» és un calc del castellà."}]], "És «hem de». Haver de + infinitiu expressa obligació. Truc: hem de marxar, no «tenim que»."],
-    [3, "Completa amb «deure» (ells, present), perquè expressa probabilitat: «No han arribat: ____ estar encara a l'autobús.»", [["Verb", ["deuen"], {"estaran": "La probabilitat s'expressa amb deure + infinitiu."}]], "És «deuen». Deure + infinitiu expressa probabilitat. Truc: probabilitat, deure."],
-    [3, "Troba l'error i corregeix-lo: «Tenim que recollir l'habitació abans de sopar.»", [["Error", ["Tenim que"]], ["Correcció", ["Hem de", "Cal"]]], "L'obligació s'expressa amb «haver de» o «caldre», no amb «tenir que». Truc: hem de, cal que."]
+    [
+     4,
+     "Escriu del verb «poder» el present de subjuntiu (tu), l'imperfet de subjuntiu (tu) i el futur (ell).",
+     [
+      [
+       "Subjuntiu",
+       [
+        "pugis"
+       ],
+       {
+        "podis": "El subjuntiu de poder és pugui.",
+        "poguis": "El present de subjuntiu és pugui."
+       }
+      ],
+      [
+       "Imperfet subj.",
+       [
+        "poguessis"
+       ],
+       {
+        "pugessis": "L'imperfet és pogu-."
+       }
+      ],
+      [
+       "Futur",
+       [
+        "podrà"
+       ],
+       {
+        "poderà": "El futur és podr-."
+       }
+      ]
+     ],
+     "Són «pugis», «poguessis» i «podrà». Truc: pugui (present), pogués (imperfet), podrà (futur)."
+    ],
+    [
+     3,
+     "Completa amb «haver de» (present): «____ marxar d'hora i tu ____ quedar-te fins al final.»",
+     [
+      [
+       "Nosaltres",
+       [
+        "hem de"
+       ],
+       {
+        "tenim que": "«Tenir que» és un calc del castellà.",
+        "tenim de": "L'obligació es fa amb «haver de»."
+       }
+      ],
+      [
+       "Tu",
+       [
+        "has de"
+       ],
+       {
+        "tens que": "«Tenir que» és un calc del castellà.",
+        "tens de": "L'obligació es fa amb «haver de»."
+       }
+      ]
+     ],
+     "Són «hem de» i «has de». Truc: hem de, has de."
+    ],
+    [
+     4,
+     "Completa amb «deure» + infinitiu (probabilitat, present): «No han arribat: ____ estar encara a l'autobús, i ell no ____ saber res.»",
+     [
+      [
+       "Primer",
+       [
+        "deuen"
+       ],
+       {
+        "estaran": "La probabilitat s'expressa amb deure."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "deu"
+       ],
+       {
+        "sabrà": "La probabilitat s'expressa amb deure."
+       }
+      ]
+     ],
+     "Són «deuen» i «deu». Truc: probabilitat, deure + infinitiu."
+    ],
+    [
+     5,
+     "Escriu del verb «caldre» el present de subjuntiu, l'imperfet de subjuntiu, el futur i el condicional (tots en 3a persona del singular).",
+     [
+      [
+       "Subjuntiu",
+       [
+        "calgui"
+       ],
+       {
+        "caldi": "El subjuntiu de caldre és calgui."
+       }
+      ],
+      [
+       "Imperfet subj.",
+       [
+        "calgués"
+       ],
+       {
+        "calgues": "Falta l'accent: calgués.",
+        "caldés": "L'arrel és calgu-."
+       }
+      ],
+      [
+       "Futur",
+       [
+        "caldrà"
+       ],
+       {
+        "calerà": "El futur és caldr-."
+       }
+      ],
+      [
+       "Condicional",
+       [
+        "caldria"
+       ],
+       {
+        "caleria": "El condicional és caldr-."
+       }
+      ]
+     ],
+     "Són «calgui», «calgués», «caldrà» i «caldria». Truc: arrel calg- al subjuntiu, caldr- al futur i condicional."
+    ]
    ]
   },
   {
@@ -45,11 +407,164 @@
    "cara": 11,
    "ayuda": "Les perífrasis aspectuals indiquen fases de l'acció: inici, durada, repetició o acabament. Les principals són començar a + infinitiu, estar + gerundi, tornar a + infinitiu, acabar de + infinitiu i soler + infinitiu. Exemples: «Comença a nevar» (inici), «Estic menjant» (durada).",
    "escritas": [
-    [1, "Completa la perífrasi de repetició: «Avui tornes ____ arribar tard.»", [["Preposició", ["a"], {"de": "Per repetir l'acció: tornar a + infinitiu."}]], "És «a». Tornar a + infinitiu indica repetició. Truc: torna a cantar, tornes a arribar."],
-    [2, "Completa la perífrasi d'acabament recent: «Acaben ____ arribar a l'estació.»", [["Preposició", ["de"], {"a": "Acabament recent: acabar de + infinitiu."}]], "És «de». Acabar de + infinitiu indica acabament recent. Truc: acabo de sortir."],
-    [2, "Completa amb el verb «soler» (3a persona, present): «Ella ____ arribar tard cada dilluns.»", [["Verb", ["sol"], {"suel": "És un calc del castellà. En català: sol + infinitiu."}]], "És «sol». Soler + infinitiu indica hàbit. Truc: sol arribar tard."],
-    [3, "Completa amb la perífrasi «estar + gerundi» de «llegir» (1a persona, present): «____ el diari ara mateix.»", [["Perífrasi", ["estic llegint"], {"estic llegir": "Amb estar va el gerundi: llegint."}]], "És «estic llegint». Estar + gerundi indica acció en curs. Truc: estic estudiant."],
-    [3, "Troba l'error i corregeix-lo: «De sobte comença de ploure.»", [["Error", ["comença de"]], ["Correcció", ["comença a"]]], "La perífrasi d'inici és «començar a + infinitiu». Truc: comença a ploure."]
+    [
+     3,
+     "Escriu la preposició que falta: «Comença ____ ploure; ella acaba ____ arribar; ells tornen ____ cridar.»",
+     [
+      [
+       "Primera",
+       [
+        "a"
+       ],
+       {
+        "de": "L'inici es fa amb començar a + infinitiu."
+       }
+      ],
+      [
+       "Segona",
+       [
+        "de"
+       ],
+       {
+        "a": "Acabament recent: acabar de + infinitiu."
+       }
+      ],
+      [
+       "Tercera",
+       [
+        "a"
+       ],
+       {
+        "de": "Repetició: tornar a + infinitiu."
+       }
+      ]
+     ],
+     "Són «a», «de» i «a». Truc: començar a, acabar de, tornar a."
+    ],
+    [
+     3,
+     "Escriu del verb «soler» la 3a persona del singular del present, la 1a persona del singular de l'imperfet d'indicatiu i la 1a persona del plural del present.",
+     [
+      [
+       "Ell",
+       [
+        "sol"
+       ],
+       {
+        "suel": "Calc del castellà."
+       }
+      ],
+      [
+       "Jo (imperfet)",
+       [
+        "solia"
+       ],
+       {
+        "soleva": "L'imperfet és solia.",
+        "solía": "Cal solia, sense accent."
+       }
+      ],
+      [
+       "Nosaltres",
+       [
+        "solem"
+       ],
+       {
+        "soltem": "El present és solem."
+       }
+      ]
+     ],
+     "Són «sol», «solia» i «solem». Truc: soler + infinitiu indica hàbit."
+    ],
+    [
+     3,
+     "Completa amb la perífrasi «estar + gerundi» (present): «Ara mateix ____ (llegir, 1a persona) i ells ____ (escriure, 3a persona del plural).»",
+     [
+      [
+       "Primer",
+       [
+        "estic llegint"
+       ],
+       {
+        "estic llegir": "Amb estar va el gerundi.",
+        "estic llegit": "Amb estar va el gerundi."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "estan escrivint"
+       ],
+       {
+        "estan escrivent": "El gerundi d'escriure és escrivint.",
+        "estan escriure": "Amb estar va el gerundi."
+       }
+      ]
+     ],
+     "Són «estic llegint» i «estan escrivint». Truc: estar + gerundi indica acció en curs."
+    ],
+    [
+     4,
+     "Escriu la perífrasi «estar + gerundi» (3a persona del singular, present) de «beure», «treure» i «fer».",
+     [
+      [
+       "Beure",
+       [
+        "està bevent"
+       ],
+       {
+        "està bevint": "El gerundi de beure és bevent.",
+        "està beguent": "El gerundi no és velar: bevent."
+       }
+      ],
+      [
+       "Treure",
+       [
+        "està traient"
+       ],
+       {
+        "està treient": "El gerundi de treure és traient."
+       }
+      ],
+      [
+       "Fer",
+       [
+        "està fent"
+       ],
+       {
+        "està faent": "El gerundi de fer és fent."
+       }
+      ]
+     ],
+     "Són «està bevent», «està traient» i «està fent». Truc: -ent a la majoria de verbs en -re."
+    ],
+    [
+     5,
+     "Escriu amb la perífrasi indicada: «Quan vam arribar, ells ____ (acabar de + sortir, imperfet d'indicatiu) i ell ____ (tornar a + dir, present, 3a persona del singular) el mateix.»",
+     [
+      [
+       "Primer",
+       [
+        "acabaven de sortir"
+       ],
+       {
+        "acabaven a sortir": "Acabament recent: acabar de.",
+        "acabaren de sortir": "Cal l'imperfet."
+       }
+      ],
+      [
+       "Segon",
+       [
+        "torna a dir"
+       ],
+       {
+        "torna de dir": "Repetició: tornar a.",
+        "torna a dient": "Va infinitiu: dir."
+       }
+      ]
+     ],
+     "Són «acabaven de sortir» i «torna a dir». Truc: acabar de, tornar a."
+    ]
    ]
   }
  ]

@@ -8,12 +8,159 @@
    "cara": 6,
    "ayuda": "Alguns adjectius tenen un comparatiu i un superlatiu propis, que no es formen amb «més» ni amb «-íssim». Per exemple, el comparatiu de «bo» és «millor». En aquesta llista cal memoritzar la tríada positiu, comparatiu i superlatiu.",
    "escritas": [
-    [1, "Escriu el comparatiu irregular (una sola paraula) de «dolent».", [["Comparatiu", ["pitjor"], {"més dolent": "«Més dolent» també és correcte, però aquí es demana la forma irregular d'una sola paraula.", "pijor": "S'escriu amb tj: «pitjor»."}]], "És «pitjor». És el comparatiu irregular de «dolent». Truc: dolent, pitjor, pèssim."],
-    [2, "Escriu el superlatiu irregular de «petit».", [["Superlatiu", ["mínim"], {"minim": "Porta accent: «mínim».", "petitíssim": "«Petitíssim» és el superlatiu regular; aquí es demana l'irregular."}]], "És «mínim». Porta accent a la í. Truc: petit, menor, mínim."],
-    [3, "Escriu el comparatiu i el superlatiu irregulars de «gran».", [["Comparatiu", ["major"], {"més gran": "«Més gran» també és correcte, però aquí es demana la forma irregular d'una sola paraula."}], ["Superlatiu", ["màxim"], {"maxim": "Porta accent: «màxim»."}]], "Són «major» i «màxim». Són formes irregulars: màxim porta accent obert. Truc: gran, major, màxim."],
-    [3, "Escriu el superlatiu irregular de «baix».", [["Superlatiu", ["ínfim"], {"infim": "Porta accent: «ínfim».", "baixíssim": "«Baixíssim» és el superlatiu regular; aquí es demana l'irregular."}]], "És «ínfim». Porta accent a la í. Truc: baix, inferior, ínfim."],
-    [3, "Escriu el superlatiu irregular de «dolent».", [["Superlatiu", ["pèssim"], {"pessim": "Porta accent obert: «pèssim».", "pèsim": "Porta dues s: «pèssim»."}]], "És «pèssim». Porta accent obert i dues s. Truc: dolent, pitjor, pèssim."],
-    [4, "Escriu el comparatiu i el superlatiu irregulars de «alt».", [["Comparatiu", ["superior"], {"més alt": "«Més alt» també és correcte, però aquí es demana la forma irregular d'una sola paraula."}], ["Superlatiu", ["suprem"], {"suprim": "S'escriu amb e: «suprem»."}]], "Són «superior» i «suprem». Són formes irregulars, derivades del llatí. Truc: alt, superior, suprem."]
+    [
+     3,
+     "Escriu el comparatiu i el superlatiu irregulars de «bo».",
+     [
+      [
+       "Comparatiu",
+       [
+        "millor"
+       ],
+       {
+        "mellor": "S'escriu amb i: «millor»."
+       }
+      ],
+      [
+       "Superlatiu",
+       [
+        "òptim"
+       ],
+       {
+        "optim": "Porta accent obert: «òptim»."
+       }
+      ]
+     ],
+     "Són «millor» i «òptim». Truc: bo, millor, òptim."
+    ],
+    [
+     3,
+     "Escriu el comparatiu i el superlatiu irregulars de «dolent».",
+     [
+      [
+       "Comparatiu",
+       [
+        "pitjor"
+       ],
+       {
+        "pijor": "S'escriu amb tj: «pitjor»."
+       }
+      ],
+      [
+       "Superlatiu",
+       [
+        "pèssim"
+       ],
+       {
+        "pessim": "Porta accent obert: «pèssim».",
+        "pèsim": "Porta dues s: «pèssim»."
+       }
+      ]
+     ],
+     "Són «pitjor» i «pèssim». Truc: dolent, pitjor, pèssim."
+    ],
+    [
+     4,
+     "Escriu el comparatiu i el superlatiu irregulars de «gran».",
+     [
+      [
+       "Comparatiu",
+       [
+        "major"
+       ],
+       {
+        "més gran": "Aquí es demana la forma irregular d'una sola paraula."
+       }
+      ],
+      [
+       "Superlatiu",
+       [
+        "màxim"
+       ],
+       {
+        "maxim": "Porta accent obert: «màxim»."
+       }
+      ]
+     ],
+     "Són «major» i «màxim». Truc: gran, major, màxim."
+    ],
+    [
+     4,
+     "Escriu el comparatiu i el superlatiu irregulars de «petit».",
+     [
+      [
+       "Comparatiu",
+       [
+        "menor"
+       ],
+       {
+        "més petit": "Aquí es demana la forma irregular d'una sola paraula."
+       }
+      ],
+      [
+       "Superlatiu",
+       [
+        "mínim"
+       ],
+       {
+        "minim": "Porta accent: «mínim».",
+        "petitíssim": "Aquí es demana l'irregular."
+       }
+      ]
+     ],
+     "Són «menor» i «mínim». Truc: petit, menor, mínim."
+    ],
+    [
+     4,
+     "Escriu el comparatiu i el superlatiu irregulars de «alt».",
+     [
+      [
+       "Comparatiu",
+       [
+        "superior"
+       ],
+       {
+        "més alt": "Aquí es demana la forma irregular d'una sola paraula."
+       }
+      ],
+      [
+       "Superlatiu",
+       [
+        "suprem"
+       ],
+       {
+        "suprim": "S'escriu amb e: «suprem»."
+       }
+      ]
+     ],
+     "Són «superior» i «suprem». Truc: alt, superior, suprem."
+    ],
+    [
+     5,
+     "Escriu el comparatiu i el superlatiu irregulars de «baix».",
+     [
+      [
+       "Comparatiu",
+       [
+        "inferior"
+       ],
+       {
+        "més baix": "Aquí es demana la forma irregular d'una sola paraula."
+       }
+      ],
+      [
+       "Superlatiu",
+       [
+        "ínfim"
+       ],
+       {
+        "infim": "Porta accent: «ínfim».",
+        "baixíssim": "Aquí es demana l'irregular."
+       }
+      ]
+     ],
+     "Són «inferior» i «ínfim». Truc: baix, inferior, ínfim."
+    ]
    ]
   },
   {
@@ -22,37 +169,457 @@
    "cara": 6,
    "ayuda": "Alguns adjectius en -re (i altres de formes cultes) fan el superlatiu amb el sufix -èrrim, amb accent obert i rr, i sovint recuperen l'arrel llatina. Aquest superlatiu s'escriu amb una sola paraula: no porta «més» ni «-íssim».",
    "escritas": [
-    [2, "Escriu el superlatiu culte de «salubre».", [["Superlatiu", ["salubèrrim"], {"salubríssim": "Aquest és el superlatiu regular; el culte és en -èrrim.", "salubrèrrim": "S'escriu «salubèrrim»: la r de «bre» no es repeteix."}]], "És «salubèrrim». Els adjectius en -re fan el superlatiu culte en -èrrim. Truc: salubre → salubèrrim."],
-    [3, "Escriu el superlatiu culte de «pobre».", [["Superlatiu", ["paupèrrim"], {"pobrèrrim": "El superlatiu culte recupera l'arrel llatina: «paupèrrim».", "pobríssim": "Aquest és el superlatiu regular; el culte és «paupèrrim»."}]], "És «paupèrrim». Recupera l'arrel llatina (paup-) i porta -èrrim. Truc: pobre → paupèrrim."],
-    [3, "Escriu el superlatiu culte de «negre».", [["Superlatiu", ["nigèrrim"], {"negrèrrim": "El superlatiu culte recupera l'arrel llatina: «nigèrrim».", "negríssim": "Aquest és el superlatiu regular; el culte és «nigèrrim»."}]], "És «nigèrrim». Recupera l'arrel llatina (nig-) i porta -èrrim. Truc: negre → nigèrrim."],
-    [3, "Troba l'error i corregeix-lo: «Aquest museu és celebèrim a tot el món.»", [["Error", ["celebèrim"]], ["Correcció", ["celebèrrim"]]], "Hauria de ser «celebèrrim». El sufix culte -èrrim porta accent obert i dues r. Truc: cèlebre → celebèrrim, amb erra doble com «ferro»."],
-    [4, "Escriu el superlatiu culte de «acre».", [["Superlatiu", ["acèrrim"], {"acrèrrim": "S'escriu «acèrrim».", "acríssim": "Aquest és el superlatiu regular; el culte és «acèrrim»."}]], "És «acèrrim». Porta accent obert i rr. Truc: acre → acèrrim."],
-    [4, "Escriu el superlatiu culte de «lliure».", [["Superlatiu", ["libèrrim"], {"lliurèrrim": "El superlatiu culte recupera l'arrel llatina: «libèrrim».", "lliuríssim": "Aquest és el superlatiu regular; el culte és «libèrrim»."}]], "És «libèrrim». Recupera l'arrel llatina (lib-) i porta -èrrim. Truc: lliure → libèrrim."]
+    [
+     3,
+     "Escriu el superlatiu culte (en -èrrim) de cada adjectiu.",
+     [
+      [
+       "íntegre",
+       [
+        "integèrrim"
+       ],
+       {
+        "integrèrrim": "La r de «gre» no es repeteix: «integèrrim».",
+        "integríssim": "Aquest és el regular; el culte és «integèrrim»."
+       }
+      ],
+      [
+       "míser",
+       [
+        "misèrrim"
+       ],
+       {
+        "mísserrim": "S'escriu «misèrrim».",
+        "miseríssim": "El culte és «misèrrim»."
+       }
+      ]
+     ],
+     "Són «integèrrim» i «misèrrim». Truc: íntegre → integèrrim, míser → misèrrim."
+    ],
+    [
+     4,
+     "Escriu el superlatiu culte (en -èrrim) de cada adjectiu.",
+     [
+      [
+       "pobre",
+       [
+        "paupèrrim"
+       ],
+       {
+        "pobrèrrim": "Recupera l'arrel llatina: «paupèrrim».",
+        "pobríssim": "El culte és «paupèrrim»."
+       }
+      ],
+      [
+       "negre",
+       [
+        "nigèrrim"
+       ],
+       {
+        "negrèrrim": "Recupera l'arrel llatina: «nigèrrim».",
+        "negríssim": "El culte és «nigèrrim»."
+       }
+      ]
+     ],
+     "Són «paupèrrim» i «nigèrrim». Recuperen l'arrel llatina (paup-, nig-). Truc: pobre → paupèrrim, negre → nigèrrim."
+    ],
+    [
+     4,
+     "Escriu el superlatiu culte (en -èrrim) de cada adjectiu.",
+     [
+      [
+       "salubre",
+       [
+        "salubèrrim"
+       ],
+       {
+        "salubrèrrim": "La r de «bre» no es repeteix: «salubèrrim».",
+        "salubríssim": "El culte és «salubèrrim»."
+       }
+      ],
+      [
+       "acre",
+       [
+        "acèrrim"
+       ],
+       {
+        "acrèrrim": "S'escriu «acèrrim».",
+        "acríssim": "El culte és «acèrrim»."
+       }
+      ]
+     ],
+     "Són «salubèrrim» i «acèrrim». Porten accent obert i rr. Truc: salubre → salubèrrim, acre → acèrrim."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «La conferència va atreure un públic nombrosíssim i un ponent celebèrim.»",
+     [
+      [
+       "Error",
+       [
+        "celebèrim"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "celebèrrim"
+       ]
+      ]
+     ],
+     "Hauria de ser «celebèrrim». El sufix culte -èrrim porta accent obert i dues r. Truc: cèlebre → celebèrrim, erra doble com «ferro»."
+    ],
+    [
+     4,
+     "Escriu el superlatiu culte (en -èrrim) de cada adjectiu.",
+     [
+      [
+       "lliure",
+       [
+        "libèrrim"
+       ],
+       {
+        "lliurèrrim": "Recupera l'arrel llatina: «libèrrim».",
+        "lliuríssim": "El culte és «libèrrim»."
+       }
+      ],
+      [
+       "aspre",
+       [
+        "aspèrrim"
+       ],
+       {
+        "asprèrrim": "La r de «pre» no es repeteix: «aspèrrim».",
+        "aspríssim": "El culte és «aspèrrim»."
+       }
+      ]
+     ],
+     "Són «libèrrim» i «aspèrrim». Truc: lliure → libèrrim, aspre → aspèrrim."
+    ],
+    [
+     5,
+     "Escriu el superlatiu culte (en -èrrim) de cada adjectiu.",
+     [
+      [
+       "íntegre",
+       [
+        "integèrrim"
+       ],
+       {
+        "integrèrrim": "La r de «gre» no es repeteix."
+       }
+      ],
+      [
+       "míser",
+       [
+        "misèrrim"
+       ],
+       {
+        "mísserrim": "S'escriu «misèrrim»."
+       }
+      ],
+      [
+       "salubre",
+       [
+        "salubèrrim"
+       ],
+       {
+        "salubrèrrim": "La r de «bre» no es repeteix."
+       }
+      ],
+      [
+       "lliure",
+       [
+        "libèrrim"
+       ],
+       {
+        "lliurèrrim": "Recupera l'arrel llatina."
+       }
+      ]
+     ],
+     "Són «integèrrim», «misèrrim», «salubèrrim» i «libèrrim». Truc: accent obert i rr, i sovint arrel llatina."
+    ]
    ]
   },
   {
    "nombre": "Diftongs",
    "pagina": 7,
    "cara": 6,
-   "ayuda": "Un diftong és un grup de dues vocals en una sola síl·laba. Pot ser creixent (i o u + vocal) o decreixent (vocal + i o u). Per exemple, «peix» té diftong decreixent «ei» i «hiena» té un diftong creixent. Després de «qu» i «gu», la u forma diftong amb la vocal següent.",
+   "ayuda": "Un diftong és un grup de dues vocals en una sola síl·laba. Pot ser creixent (i o u + vocal a inici de paraula, vocal + i/u + vocal, o qu/gu + vocal) o decreixent (vocal + i/u, o i/u + i/u). Per exemple, «peix» té un diftong decreixent. Un hiat són dues vocals en síl·labes diferents; també es trenca el diftong amb accent o dièresi.",
    "escritas": [
-    [1, "Escriu el diftong de la paraula «pau».", [["Diftong", ["au"]]], "És «au». És un diftong decreixent (vocal + u). Truc: pau, cau."],
-    [2, "Escriu el diftong de la paraula «cuina».", [["Diftong", ["ui"]]], "És «ui». És un diftong format per dues vocals tancades (u + i). Truc: cuina, buit."],
-    [2, "Escriu el diftong de la paraula «ioga» (al començament de paraula).", [["Diftong", ["io"]]], "És «io». És un diftong creixent: i + vocal a l'inici de paraula. Truc: iogurt, ioga."],
-    [3, "Escriu el diftong de la paraula «quatre».", [["Diftong", ["ua"], {"qua": "El diftong és només les dues vocals: «ua»."}]], "És «ua». Després de qu / gu, la u forma diftong amb la vocal següent. Truc: qu + vocal."],
-    [3, "Completa: el diftong de «aire» és ____ (creixent o decreixent).", [["Tipus", ["decreixent"], {"creixent": "Vocal + i/u és decreixent."}]], "És «decreixent». Vocal + i/u és un diftong decreixent. Truc: aire, eina, peix."]
+    [
+     3,
+     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     [
+      [
+       "iogurt",
+       [
+        "creixent"
+       ]
+      ],
+      [
+       "eina",
+       [
+        "decreixent"
+       ]
+      ],
+      [
+       "eòlic",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "quadre",
+       [
+        "creixent"
+       ]
+      ],
+      [
+       "cantina",
+       [
+        "res"
+       ]
+      ],
+      [
+       "diu",
+       [
+        "decreixent"
+       ]
+      ]
+     ],
+     "«Iogurt» és creixent (i a inici de paraula); «eina» i «diu» són decreixents; «eòlic» és hiat; «quadre» és creixent (qu + vocal); «cantina» no té cap grup. Truc: mira on són les vocals i si hi ha qu/gu."
+    ],
+    [
+     4,
+     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     [
+      [
+       "quatre",
+       [
+        "creixent"
+       ]
+      ],
+      [
+       "paüra",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "veí",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "llum",
+       [
+        "res"
+       ]
+      ],
+      [
+       "mou",
+       [
+        "decreixent"
+       ]
+      ]
+     ],
+     "«quatre» és creixent (qu + vocal); «paüra» i «veí» són hiats (dièresi i accent); «llum» no en té; «mou» és decreixent. Truc: l'accent i la dièresi trenquen el diftong."
+    ],
+    [
+     4,
+     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     [
+      [
+       "raïm",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "guant",
+       [
+        "creixent"
+       ]
+      ],
+      [
+       "seu",
+       [
+        "decreixent"
+       ]
+      ],
+      [
+       "poema",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "mà",
+       [
+        "res"
+       ]
+      ],
+      [
+       "ioga",
+       [
+        "creixent"
+       ]
+      ]
+     ],
+     "«Raïm» i «poema» són hiats; «guant» és creixent (gu + vocal); «seu» és decreixent; «mà» no en té; «ioga» és creixent (i a inici de paraula). Truc: vocal + vocal no tancades = hiat."
+    ],
+    [
+     4,
+     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     [
+      [
+       "bou",
+       [
+        "decreixent"
+       ]
+      ],
+      [
+       "suïssa",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "quota",
+       [
+        "creixent"
+       ]
+      ],
+      [
+       "idea",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "reina",
+       [
+        "decreixent"
+       ]
+      ]
+     ],
+     "«Bou» i «reina» són decreixents; «suïssa» i «idea» són hiats; «quota» és creixent (qu + vocal)."
+    ],
+    [
+     5,
+     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     [
+      [
+       "països",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "caure",
+       [
+        "decreixent"
+       ]
+      ],
+      [
+       "veïna",
+       [
+        "hiat"
+       ]
+      ],
+      [
+       "estudi",
+       [
+        "res"
+       ]
+      ],
+      [
+       "veu",
+       [
+        "decreixent"
+       ]
+      ]
+     ],
+     "«Països» i «veïna» són hiats (dièresi); «caure» i «veu» són decreixents; «estudi» no té cap grup de vocals. Truc: la dièresi trenca el diftong."
+    ]
    ]
   },
   {
    "nombre": "Hiats",
    "pagina": 7,
    "cara": 6,
-   "ayuda": "Un hiat és un grup de dues vocals que es pronuncien en síl·labes diferents. Es produeix quan es troben dues vocals que no són i ni u, o quan una i o u seguida de vocal no és a l'inici de paraula. Un diftong es trenca amb l'accent o amb la dièresi: «veí», «raïm», «aïllar».",
+   "ayuda": "Un hiat és un grup de dues vocals que es pronuncien en síl·labes diferents. Es produeix quan es troben dues vocals que no són i ni u, o quan una i o u seguida de vocal no és a l'inici de paraula. Un diftong es trenca amb l'accent o amb la dièresi: «veí», «raïm».",
    "escritas": [
-    [1, "Com es diu el grup de dues vocals que es pronuncien en síl·labes diferents?", [["Nom", ["hiat"], {"diftong": "El diftong és una sola síl·laba; aquí són dues."}]], "És un «hiat». Les dues vocals van en síl·labes diferents. Truc: hiat = separades."],
-    [2, "Escriu la paraula completa: «e_lic» (relatiu al vent).", [["Paraula", ["eòlic"], {"eolic": "Cal accent obert a la o: «eòlic».", "èolic": "L'accent va a la o: «eòlic»."}]], "És «eòlic». Les vocals e i ò van en síl·labes diferents: és un hiat. Truc: e-ò-lic."],
-    [3, "Escriu el femení de «suís».", [["Femení", ["suïssa"], {"suissa": "Cal dièresi perquè trenca el diftong: «suïssa».", "suïsa": "Porta dues s: «suïssa»."}]], "És «suïssa». La dièresi trenca el diftong i porta dues s. Truc: suís, suïssa."],
-    [3, "Troba l'error i corregeix-lo: «Aquesta noia és suissa i viu a Berna.»", [["Error", ["suissa"]], ["Correcció", ["suïssa"]]], "Hauria de ser «suïssa». Cal dièresi per trencar el diftong. Truc: suís, suïssa."]
+    [
+     3,
+     "Escriu la lletra que falta: «e_lic».",
+     [
+      [
+       "Vocal",
+       [
+        "ò"
+       ],
+       {
+        "o": "Cal accent obert: «eòlic».",
+        "ó": "L'accent és obert: «eòlic»."
+       }
+      ]
+     ],
+     "És «ò»: «eòlic». Les vocals e i ò van en síl·labes diferents: és un hiat. Truc: e-ò-lic."
+    ],
+    [
+     3,
+     "Escriu la lletra que falta: «Llu_sa».",
+     [
+      [
+       "Vocal",
+       [
+        "ï"
+       ],
+       {
+        "i": "Cal dièresi per trencar el diftong: «Lluïsa».",
+        "í": "Aquí va dièresi, no accent."
+       }
+      ]
+     ],
+     "És «ï»: «Lluïsa». La dièresi trenca el diftong u + i. Truc: Llu-ï-sa."
+    ],
+    [
+     4,
+     "Escriu la lletra que falta: «hero_na».",
+     [
+      [
+       "Vocal",
+       [
+        "ï"
+       ],
+       {
+        "i": "Cal dièresi: «heroïna».",
+        "í": "Aquí va dièresi, no accent."
+       }
+      ]
+     ],
+     "És «ï»: «heroïna». La dièresi trenca el diftong o + i. Truc: he-ro-ï-na."
+    ],
+    [
+     4,
+     "Escriu la lletra que falta: «tra_dor».",
+     [
+      [
+       "Vocal",
+       [
+        "ï"
+       ],
+       {
+        "i": "Cal dièresi: «traïdor».",
+        "í": "Aquí va dièresi, no accent."
+       }
+      ]
+     ],
+     "És «ï»: «traïdor». La dièresi trenca el diftong a + i. Truc: tra-ï-dor."
+    ]
    ]
   }
  ]

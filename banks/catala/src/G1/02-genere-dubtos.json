@@ -6,40 +6,601 @@
    "nombre": "Noms femenins dubtosos",
    "pagina": 4,
    "cara": 3,
-   "ayuda": "Alguns noms que en castellà són masculins en català són femenins: «la dolor», «l'olor», «la verdor», «la sida», «la vall», «les postres», «l'anomalia». Cal memoritzar-los perquè la forma no ajuda a endevinar el gènere.",
+   "ayuda": "Alguns noms que en castellà són masculins en català són femenins, i cal memoritzar-los perquè la forma no ajuda a endevinar el gènere. Per exemple: «la tos», «la mel», «la pell», «la llet»",
    "escritas": [
-    [1, "Completa amb l'article definit: «____ calor és molt forta a l'estiu.»", [["Article", ["la"], {"el": "«Calor» és femení en català."}]], "És «la calor». És un nom femení tot i que en castellà és masculí. Truc: la calor, la dolor, la suor."],
-    [2, "Completa amb l'article definit: «____ suor li regalimava pel front.»", [["Article", ["la"], {"el": "«Suor» és femení en català."}]], "És «la suor». Els noms en -or d'aquesta llista són femenins. Truc: la suor, la remor, la dolor."],
-    [3, "Troba l'error i corregeix-lo: «El remor del mar no em deixava dormir.»", [["Error", ["El remor"]], ["Correcció", ["La remor"]]], "Hauria de ser «la remor». «Remor» és femení en català. Truc: la remor, la calor."],
-    [3, "Troba l'error i corregeix-lo: «Em va fer mal un dent del davant.»", [["Error", ["un dent"]], ["Correcció", ["una dent"]]], "Hauria de ser «una dent». «Dent» és femení. Truc: la dent, la vall, la resta."],
-    [4, "Troba l'error i corregeix-lo: «Vaig menjar un nespla.»", [["Error", ["un nespla"]], ["Correcció", ["una nespla"]]], "Hauria de ser «una nespla». «Nespla» és femení. Truc: la nespla, la vall."]
+    [
+     2,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "calor",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "suor",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "vall",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «la calor», «la suor» i «la vall». Tots són femenins tot i que en castellà són masculins. Truc: la calor, la suor."
+    ],
+    [
+     3,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "olor",
+       [
+        "l'"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "dent",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "nespla",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "anomalia",
+       [
+        "l'"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «l'olor», «la dent», «la nespla» i «l'anomalia». Davant vocal s'apostrofa. Truc: tots femenins."
+    ],
+    [
+     3,
+     "Troba l'error i corregeix-lo: «Va notar una olor forta, però aquell dolor al pit no marxava.»",
+     [
+      [
+       "Error",
+       [
+        "aquell dolor"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "aquella dolor"
+       ]
+      ]
+     ],
+     "Hauria de ser «aquella dolor». «Dolor» és femení en català. Truc: la dolor, la calor."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "verdor",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "sal",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "sang",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «la verdor», «la sal» i «la sang». Truc: femenins tot i la terminació."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "sida",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "postres",
+       [
+        "les"
+       ],
+       {
+        "els": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "remor",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «la sida», «les postres» i «la remor». Truc: la sida és femení; «postres» és plural femení."
+    ]
    ]
   },
   {
    "nombre": "Noms masculins dubtosos",
    "pagina": 4,
    "cara": 3,
-   "ayuda": "Alguns noms que podrien semblar femenins són masculins: «el llegum», «el corrent», «el noviu», «el ret», «el pendent», «l'escaire». L'article no es pot deduir de la terminació: cal memoritzar-los.",
+   "ayuda": "Alguns noms que podrien semblar femenins són masculins: «el sucre», «el corrent», «el noviu», «el ret», «l'escaire». L'article no es pot deduir de la terminació: cal memoritzar-los. Els acabats en -ge, -re o -ri sovint ho són.",
    "escritas": [
-    [1, "Completa amb l'article definit: «Passa'm ____ pebre, si us plau.»", [["Article", ["el"], {"la": "«Pebre» és masculí."}]], "És «el pebre». És un nom masculí tot i la terminació en -e. Truc: el pebre, el llegum."],
-    [2, "Completa amb l'article indefinit: «Va fer ____ interviu al president.»", [["Article", ["un"], {"una": "«Interviu» és masculí."}]], "És «un interviu». «Interviu» és masculí. Truc: l'interviu, el noviu."],
-    [3, "Troba l'error i corregeix-lo: «Tinc una avantatge sobre tu.»", [["Error", ["una avantatge"]], ["Correcció", ["un avantatge"]]], "Hauria de ser «un avantatge». «Avantatge» és masculí. Truc: l'avantatge, el pebre."],
-    [3, "Troba l'error i corregeix-lo: «La somriure d'aquella nena és preciós.»", [["Error", ["La somriure"]], ["Correcció", ["El somriure"]]], "Hauria de ser «el somriure». És masculí, i l'adjectiu «preciós» ja hi concorda. Truc: el somriure, el llegum."],
-    [4, "Troba l'error i corregeix-lo: «Han descobert una bacteri al laboratori.»", [["Error", ["una bacteri"]], ["Correcció", ["un bacteri"]]], "Hauria de ser «un bacteri». «Bacteri» és masculí. Truc: el bacteri, el llegum."]
+    [
+     3,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "llegum",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "ret",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "escaire",
+       [
+        "l'"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "pendent",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «el llegum», «el ret», «l'escaire» i «el pendent». Tots masculins. Truc: el llegum, el ret."
+    ],
+    [
+     3,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "interviu",
+       [
+        "l'"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "avantatge",
+       [
+        "l'"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "noviu",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "corrent",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «l'interviu», «l'avantatge», «el noviu» i «el corrent». Tots masculins; davant vocal «el» s'apostrofa. Truc: tots masculins."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «La nena va mostrar una somriure tímid a la fotògrafa.»",
+     [
+      [
+       "Error",
+       [
+        "una somriure"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "un somriure"
+       ]
+      ]
+     ],
+     "Hauria de ser «un somriure». «Somriure» és masculí i l'adjectiu «tímid» ja hi concorda. Truc: el somriure, el sucre."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "pebre",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "sal",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "mel",
+       [
+        "la"
+       ],
+       {
+        "el": "Tria bé l'article d'aquest nom."
+       }
+      ],
+      [
+       "bacteri",
+       [
+        "el"
+       ],
+       {
+        "la": "Tria bé l'article d'aquest nom."
+       }
+      ]
+     ],
+     "Són «el pebre», «la sal», «la mel» i «el bacteri». Truc: no es dedueix de la terminació."
+    ],
+    [
+     4,
+     "Escriu l'article indefinit (un o una) davant cada nom.",
+     [
+      [
+       "somriure",
+       [
+        "un"
+       ],
+       {
+        "una": "«Somriure» és masculí."
+       }
+      ],
+      [
+       "dent",
+       [
+        "una"
+       ],
+       {
+        "un": "«Dent» és femení."
+       }
+      ],
+      [
+       "interviu",
+       [
+        "un"
+       ],
+       {
+        "una": "«Interviu» és masculí."
+       }
+      ],
+      [
+       "vall",
+       [
+        "una"
+       ],
+       {
+        "un": "«Vall» és femení."
+       }
+      ]
+     ],
+     "Són «un somriure», «una dent», «un interviu» i «una vall». Truc: memoritza'ls per parelles."
+    ]
    ]
   },
   {
    "nombre": "Canvi de significat segons el gènere",
    "pagina": 4,
    "cara": 3,
-   "ayuda": "Algunes paraules són iguals però canvien de significat segons si són masculines o femenines. Cal escollir l'article segons el que es vol dir. Per exemple, «el guarda» és la persona que vigila (en masculí) i «la guarda» és la custòdia.",
+   "ayuda": "Algunes paraules són iguals però canvien de significat segons si són masculines o femenines. Cal escollir l'article segons el que es vol dir. Per exemple, «el capital» són els diners i «la capital» és la ciutat principal.",
    "escritas": [
-    [1, "Escriu l'article de «pols» amb el significat de «batec»: «____ pols».", [["Article", ["el"], {"la": "«La pols» és la brutícia; el batec és «el pols»."}]], "És «el pols» (batec). En femení, «la pols» és la brutícia. Truc: el pols del cor, la pols dels mobles."],
-    [2, "Completa amb l'article: «Necessito ____ clau per obrir la porta.»", [["Article", ["la"], {"el": "«El clau» és la peça metàl·lica; per obrir és «la clau»."}]], "És «la clau» (objecte per obrir). «El clau» és la peça metàl·lica. Truc: la clau per obrir."],
-    [3, "Completa amb l'article: «Em cau ____ son després de dinar.»", [["Article", ["la"], {"el": "«El son» és l'estat de dormir; les ganes de dormir són «la son»."}]], "És «la son» (ganes de dormir). «El son» és l'estat de dormir. Truc: tinc son = tinc ganes."],
-    [3, "Troba l'error i corregeix-lo: «El llum del sol entrava per la finestra.»", [["Error", ["El llum"]], ["Correcció", ["La llum"]]], "Hauria de ser «la llum» (claror). «El llum» és l'aparell elèctric. Truc: la llum del sol."],
-    [3, "Completa amb l'article indefinit: «Va publicar la novel·la en ____ editorial de Barcelona.»", [["Article", ["una"], {"un": "L'empresa de llibres és «una editorial» (femení)."}]], "És «una editorial» (empresa de llibres). «Un editorial» és un article d'opinió. Truc: una editorial publica llibres."],
-    [4, "Troba l'error i corregeix-lo: «Va esclatar amb un còlera enorme.»", [["Error", ["un còlera"]], ["Correcció", ["una còlera"]]], "Hauria de ser «una còlera» (ira). «El còlera» és la malaltia. Truc: la còlera és ràbia."]
+    [
+     3,
+     "Escriu l'article definit segons el significat.",
+     [
+      [
+       "pols (brutícia)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El pols» és el batec."
+       }
+      ],
+      [
+       "pols (batec)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La pols» és la brutícia."
+       }
+      ],
+      [
+       "cometa (estel de paper)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El cometa» és l'astre."
+       }
+      ],
+      [
+       "cometa (astre)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La cometa» és l'estel de paper."
+       }
+      ]
+     ],
+     "Són «la pols», «el pols», «la cometa» i «el cometa». Truc: el pols del cor, la pols dels mobles."
+    ],
+    [
+     3,
+     "Escriu l'article definit segons el significat.",
+     [
+      [
+       "clau (per obrir)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El clau» és la peça de ferro."
+       }
+      ],
+      [
+       "clau (peça de ferro)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La clau» és la que obre."
+       }
+      ],
+      [
+       "son (ganes de dormir)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El son» és el somni."
+       }
+      ],
+      [
+       "son (somni)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La son» és la ganes de dormir."
+       }
+      ]
+     ],
+     "Són «la clau», «el clau», «la son» i «el son». Truc: tinc la son = tinc ganes de dormir."
+    ],
+    [
+     4,
+     "Escriu l'article definit segons el significat.",
+     [
+      [
+       "policia (cos)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El policia» és l'agent."
+       }
+      ],
+      [
+       "policia (agent home)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La policia» és el cos."
+       }
+      ],
+      [
+       "guarda (persona que vigila)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La guarda» és la custòdia."
+       }
+      ],
+      [
+       "guarda (custòdia)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El guarda» és qui vigila."
+       }
+      ]
+     ],
+     "Són «la policia», «el policia», «el guarda» i «la guarda». Truc: persona = el; institució o acció = la."
+    ],
+    [
+     4,
+     "Escriu l'article definit segons el significat.",
+     [
+      [
+       "llum (claror)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El llum» és l'aparell."
+       }
+      ],
+      [
+       "llum (làmpada)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La llum» és la claror."
+       }
+      ],
+      [
+       "editorial (empresa de llibres)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El editorial» és l'article d'opinió."
+       }
+      ],
+      [
+       "editorial (article d'opinió)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La editorial» és l'empresa."
+       }
+      ]
+     ],
+     "Són «la llum», «el llum», «la editorial» (empresa) i «el editorial» (article d'opinió). Truc: claror = la; aparell = el."
+    ],
+    [
+     4,
+     "Escriu l'article definit segons el significat.",
+     [
+      [
+       "còlera (ira)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El còlera» és la malaltia."
+       }
+      ],
+      [
+       "còlera (malaltia)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La còlera» és la ira."
+       }
+      ]
+     ],
+     "Són «la còlera» (ira) i «el còlera» (malaltia). Truc: la còlera és ràbia."
+    ],
+    [
+     5,
+     "Escriu l'article definit segons el significat.",
+     [
+      [
+       "fi (final)",
+       [
+        "la"
+       ],
+       {
+        "el": "«El fi» és la finalitat."
+       }
+      ],
+      [
+       "fi (finalitat)",
+       [
+        "el"
+       ],
+       {
+        "la": "«La fi» és el final."
+       }
+      ]
+     ],
+     "Són «la fi» (final) i «el fi» (finalitat). Truc: la fi del món, el fi justifica els mitjans."
+    ]
    ]
   }
  ]

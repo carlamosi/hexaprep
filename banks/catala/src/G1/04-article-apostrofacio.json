@@ -8,24 +8,342 @@
    "cara": 5,
    "ayuda": "L'article «el» i «la» s'apostrofa (l') davant vocal o h muda, tant en masculí com en femení: «l'estiu», «l'herba». «La» no s'apostrofa davant i o u àtones: «la imatge», «la urgència». Tampoc no s'apostrofa davant noms d'estrangers ni de persones famoses.",
    "escritas": [
-    [1, "Completa amb l'article definit: «Hem arribat a ____ escola.»", [["Article", ["l'"], {"la": "Davant vocal s'apostrofa l'article.", "el": "«Escola» és femení i s'apostrofa."}]], "És «l'escola». L'article s'apostrofa davant vocal. Truc: l'escola, l'amic."],
-    [1, "Completa amb l'article definit: «____ hora de dinar ja ha passat.»", [["Article", ["l'"], {"la": "Davant h muda s'apostrofa l'article.", "el": "«Hora» és femení i s'apostrofa."}]], "És «l'hora». Davant h muda l'article s'apostrofa. Truc: l'hora, l'herba."],
-    [2, "Completa amb l'article definit: «____ universitat és molt gran.»", [["Article", ["la"], {"l'": "Davant i o u àtones no s'apostrofa."}]], "És «la universitat». La u és àtona, així que no s'apostrofa. Truc: la unitat, la idea."],
-    [3, "Troba l'error i corregeix-lo: «Va treballar a l'universitat de Girona.»", [["Error", ["l'universitat"]], ["Correcció", ["la universitat"]]], "Hauria de ser «la universitat». La u àtona no permet apostrofar. Truc: la universitat, la unitat."],
-    [4, "Completa amb l'article definit davant el nom d'una persona famosa: «____ Uma Thurman és actriu.»", [["Article", ["la"], {"l'": "No s'apostrofa davant noms de persones famoses."}]], "És «la Uma Thurman». No s'apostrofa davant noms d'estrangers ni de persones famoses. Truc: no s'apostrofen."]
+    [
+     3,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "humanitat",
+       [
+        "la"
+       ],
+       {
+        "l'": "La u és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "ira",
+       [
+        "l'"
+       ],
+       {
+        "la": "La i és tònica: s'apostrofa."
+       }
+      ],
+      [
+       "història",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "hostilitat",
+       [
+        "l'"
+       ],
+       {
+        "la": "Davant o s'apostrofa."
+       }
+      ]
+     ],
+     "Són «la humanitat», «l'ira», «la història» i «l'hostilitat». «La» no s'apostrofa davant i o u àtones. Truc: mira si la i o la u són àtones."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant cada nom propi.",
+     [
+      [
+       "Isabel",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "Anna",
+       [
+        "l'"
+       ],
+       {
+        "la": "Davant a s'apostrofa."
+       }
+      ],
+      [
+       "Úrsula",
+       [
+        "l'"
+       ],
+       {
+        "la": "La ú és tònica: s'apostrofa."
+       }
+      ],
+      [
+       "Irene",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ]
+     ],
+     "Són «la Isabel», «l'Anna», «l'Úrsula» i «la Irene». Només no s'apostrofa davant i o u àtones. Truc: Ú-r-su-la porta la u tònica."
+    ],
+    [
+     3,
+     "Troba l'error i corregeix-lo: «Va defensar l'hipòtesi davant del tribunal.»",
+     [
+      [
+       "Error",
+       [
+        "l'hipòtesi"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "la hipòtesi"
+       ]
+      ]
+     ],
+     "Hauria de ser «la hipòtesi». La i és àtona (hi-pò-te-si), així que «la» no s'apostrofa. Truc: la hipòtesi, la història."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "idea",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "uva",
+       [
+        "l'"
+       ],
+       {
+        "la": "La u és tònica: s'apostrofa."
+       }
+      ],
+      [
+       "indústria",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "ungla",
+       [
+        "l'"
+       ],
+       {
+        "la": "La u és tònica: s'apostrofa."
+       }
+      ]
+     ],
+     "Són «la idea», «l'uva», «la indústria» i «l'ungla». Truc: i o u àtones = «la»; tòniques = «l'»."
+    ],
+    [
+     5,
+     "Escriu l'article definit davant el nom d'una persona famosa: «____ Uma Thurman és actriu.»",
+     [
+      [
+       "Article",
+       [
+        "la"
+       ],
+       {
+        "l'": "No s'apostrofa davant noms d'estrangers ni de persones famoses."
+       }
+      ]
+     ],
+     "És «la Uma Thurman». No s'apostrofa davant noms d'estrangers ni de persones famoses. Truc: no s'apostrofen."
+    ]
    ]
   },
   {
    "nombre": "Article salat",
    "pagina": 6,
    "cara": 5,
-   "ayuda": "A les illes Balears s'usa l'article salat: «es» (masculí singular), «sa» (femení singular) i «ses» (plural femení). Davant vocal passa a «s'»: «s'estiu». Per exemple, «es camí», «sa platja», «ses platges».",
+   "ayuda": "L'article salat (es, sa, ses) és propi de les Illes Balears. En català estàndard, davant una paraula femenina que comença per vocal, «la» s'apostrofa («l'hora») excepte davant i o u àtones («la ullera»). Aquí practiquem l'article definit estàndard davant mots femenins i noms propis.",
    "escritas": [
-    [1, "Completa amb l'article salat: «____ casa de la meva àvia.»", [["Article", ["sa"], {"la": "L'article salat femení singular és «sa»."}]], "És «sa casa». L'article salat femení singular és «sa». Truc: sa = la."],
-    [1, "Completa amb l'article salat masculí singular: «____ pi és alt.»", [["Article", ["es"], {"el": "L'article salat masculí singular és «es»."}]], "És «es pi». L'article salat masculí singular és «es». Truc: es = el."],
-    [2, "Completa amb l'article salat: «____ cases del poble són blanques.»", [["Article", ["ses"], {"les": "L'article salat plural femení és «ses»."}]], "És «ses cases». L'article salat femení plural és «ses». Truc: ses = les."],
-    [3, "Completa amb l'article salat davant vocal: «Hi ha una barca a ____ illa.»", [["Article", ["s'"], {"sa": "Davant vocal l'article salat s'apostrofa: «s'»."}]], "És «s'illa». Davant vocal, l'article salat s'apostrofa. Truc: s'illa."],
-    [4, "Troba l'error i corregeix-lo: «Vaig menjar sa ensaïmada a Mallorca.»", [["Error", ["sa ensaïmada"]], ["Correcció", ["s'ensaïmada"]]], "Hauria de ser «s'ensaïmada». Davant vocal l'article salat s'apostrofa. Truc: s'ensaïmada, s'illa."]
+    [
+     3,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "hiena",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "ull",
+       [
+        "l'"
+       ],
+       {
+        "la": "«Ull» és masculí i s'apostrofa."
+       }
+      ],
+      [
+       "unitat",
+       [
+        "la"
+       ],
+       {
+        "l'": "La u és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "hora",
+       [
+        "l'"
+       ],
+       {
+        "la": "Davant h muda s'apostrofa."
+       }
+      ]
+     ],
+     "Són «la hiena», «l'ull», «la unitat» i «l'hora». Truc: i o u àtones no s'apostrofen amb «la»."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "ullera",
+       [
+        "la"
+       ],
+       {
+        "l'": "La u és àtona (u-lle-ra): no s'apostrofa."
+       }
+      ],
+      [
+       "illa",
+       [
+        "l'"
+       ],
+       {
+        "la": "La i és tònica (í-lla): s'apostrofa."
+       }
+      ],
+      [
+       "hipoteca",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "ocupació",
+       [
+        "l'"
+       ],
+       {
+        "la": "Davant o s'apostrofa."
+       }
+      ]
+     ],
+     "Són «la ullera», «l'illa», «la hipoteca» i «l'ocupació». Truc: compta on cau l'accent."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «L'ucraïnesa va guanyar la competició.»",
+     [
+      [
+       "Error",
+       [
+        "L'ucraïnesa"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "La ucraïnesa"
+       ]
+      ]
+     ],
+     "Hauria de ser «la ucraïnesa». La u és àtona i «la» no s'apostrofa. Truc: la ucraïnesa, la unitat."
+    ],
+    [
+     4,
+     "Escriu l'article definit davant el nom d'una persona famosa estrangera.",
+     [
+      [
+       "Ingrid Bergman",
+       [
+        "la"
+       ],
+       {
+        "l'": "No s'apostrofa davant noms d'estrangers."
+       }
+      ],
+      [
+       "Edith Piaf",
+       [
+        "la"
+       ],
+       {
+        "l'": "No s'apostrofa davant noms de persones famoses."
+       }
+      ]
+     ],
+     "Són «la Ingrid Bergman» i «la Edith Piaf». No s'apostrofa davant noms d'estrangers ni de persones famoses. Truc: excepció."
+    ],
+    [
+     3,
+     "Escriu l'article definit davant cada nom.",
+     [
+      [
+       "harmonia",
+       [
+        "l'"
+       ],
+       {
+        "la": "Davant h muda i a s'apostrofa."
+       }
+      ],
+      [
+       "hipnosi",
+       [
+        "la"
+       ],
+       {
+        "l'": "La i és àtona: no s'apostrofa."
+       }
+      ],
+      [
+       "hortalissa",
+       [
+        "l'"
+       ],
+       {
+        "la": "Davant h muda i o s'apostrofa."
+       }
+      ]
+     ],
+     "Són «l'harmonia», «la hipnosi» i «l'hortalissa». La h muda no impedeix apostrofar, excepte davant i o u àtones. Truc: mira la vocal que segueix la h."
+    ]
    ]
   },
   {
@@ -34,10 +352,178 @@
    "cara": 5,
    "ayuda": "Els noms de ciutat i de lloc porten «tot» en masculí quan es refereixen a tota la gent que hi viu: «Tot Manresa era al carrer.» No es diu «tota Manresa». Aquesta regla és diferent de la de «tota la ciutat», que sí porta el femení.",
    "escritas": [
-    [1, "Completa amb «tot» o «tota»: «____ Tarragona estava de festa.»", [["Paraula", ["tot"], {"tota": "Davant un nom de ciutat s'usa «tot» en masculí."}]], "És «tot». Els noms de ciutat porten «tot» en masculí. Truc: tot Tarragona."],
-    [2, "Completa amb «tot» o «tota»: «____ Girona va celebrar la festa.»", [["Paraula", ["tot"], {"tota": "Davant un nom de ciutat s'usa «tot» en masculí."}]], "És «tot». Els noms de ciutat porten «tot» en masculí. Truc: tot Girona."],
-    [3, "Troba l'error i corregeix-lo: «Tota Lleida va sortir al carrer.»", [["Error", ["Tota"]], ["Correcció", ["Tot"]]], "Hauria de ser «tot». Els noms de ciutat porten «tot» en masculí. Truc: tot Lleida."],
-    [3, "Troba l'error i corregeix-lo: «Aquest cap de setmana tota Reus serà a la plaça.»", [["Error", ["tota Reus"]], ["Correcció", ["tot Reus"]]], "Hauria de ser «tot Reus». Els noms de ciutat porten «tot» en masculí. Truc: tot Reus."]
+    [
+     3,
+     "Completa amb «tot» o «tota».",
+     [
+      [
+       "____ Terrassa",
+       [
+        "tot"
+       ],
+       {
+        "tota": "Davant un nom de ciutat s'usa «tot»."
+       }
+      ],
+      [
+       "____ la gent de Terrassa",
+       [
+        "tota"
+       ],
+       {
+        "tot": "Amb «la gent» concorda en femení."
+       }
+      ],
+      [
+       "____ Vic",
+       [
+        "tot"
+       ],
+       {
+        "tota": "Davant un nom de ciutat s'usa «tot»."
+       }
+      ],
+      [
+       "____ l'escola",
+       [
+        "tota"
+       ],
+       {
+        "tot": "Amb «l'escola» concorda en femení."
+       }
+      ]
+     ],
+     "Són «tot Terrassa», «tota la gent», «tot Vic» i «tota l'escola». Només el nom propi de ciutat porta «tot». Truc: ciutat sola = tot."
+    ],
+    [
+     4,
+     "Completa amb «tot» o «tota».",
+     [
+      [
+       "____ Lleida",
+       [
+        "tot"
+       ],
+       {
+        "tota": "Davant un nom de ciutat s'usa «tot»."
+       }
+      ],
+      [
+       "____ la ciutat de Lleida",
+       [
+        "tota"
+       ],
+       {
+        "tot": "Amb «la ciutat» concorda en femení."
+       }
+      ],
+      [
+       "____ Ripoll",
+       [
+        "tot"
+       ],
+       {
+        "tota": "Davant un nom de ciutat s'usa «tot»."
+       }
+      ],
+      [
+       "____ la vila de Ripoll",
+       [
+        "tota"
+       ],
+       {
+        "tot": "Amb «la vila» concorda en femení."
+       }
+      ]
+     ],
+     "Són «tot Lleida», «tota la ciutat», «tot Ripoll» i «tota la vila». Truc: si hi ha «la» davant el nom comú, concorda amb ell."
+    ],
+    [
+     3,
+     "Completa amb «tot», «tots», «tota» o «totes».",
+     [
+      [
+       "____ Olot",
+       [
+        "tot"
+       ],
+       {
+        "tota": "Davant un nom de ciutat s'usa «tot»."
+       }
+      ],
+      [
+       "____ les cases d'Olot",
+       [
+        "totes"
+       ],
+       {
+        "tot": "Concorda amb «cases»."
+       }
+      ],
+      [
+       "____ els carrers d'Olot",
+       [
+        "tots"
+       ],
+       {
+        "tot": "Concorda amb «carrers»."
+       }
+      ],
+      [
+       "____ la plaça",
+       [
+        "tota"
+       ],
+       {
+        "tot": "Concorda amb «plaça»."
+       }
+      ]
+     ],
+     "Són «tot Olot», «totes les cases», «tots els carrers» i «tota la plaça». Truc: concorda amb el nom comú; el nom de ciutat porta «tot»."
+    ],
+    [
+     4,
+     "Completa amb «tot», «tots», «tota» o «totes».",
+     [
+      [
+       "____ Figueres",
+       [
+        "tot"
+       ],
+       {
+        "tota": "Davant un nom de ciutat s'usa «tot»."
+       }
+      ],
+      [
+       "____ els carrers de Figueres",
+       [
+        "tots"
+       ],
+       {
+        "tot": "Concorda amb «carrers»."
+       }
+      ],
+      [
+       "____ les places de Figueres",
+       [
+        "totes"
+       ],
+       {
+        "tot": "Concorda amb «places»."
+       }
+      ],
+      [
+       "____ la gent de Figueres",
+       [
+        "tota"
+       ],
+       {
+        "tot": "Concorda amb «la gent»."
+       }
+      ]
+     ],
+     "Són «tot Figueres», «tots els carrers», «totes les places» i «tota la gent». Truc: ciutat = tot."
+    ]
    ]
   },
   {
@@ -46,11 +532,203 @@
    "cara": 5,
    "ayuda": "Les preposicions «a», «de» i «per» s'ajunten amb l'article masculí: «a + el = al», «de + el = del», «per + el = pel», i en plural «als», «dels», «pels». No hi ha contracció amb «la» ni «les»: «a la», «de la», «per les».",
    "escritas": [
-    [1, "Completa amb la contracció: «Vaig anar ____ (a + el) mercat.»", [["Contracció", ["al"], {"a el": "Cal contreure: a + el = al."}]], "És «al». La preposició «a» s'ajunta amb «el». Truc: a + el = al."],
-    [2, "Completa amb la contracció: «Passa ____ (per + el) carrer major.»", [["Contracció", ["pel"], {"per el": "Cal contreure: per + el = pel."}]], "És «pel». La preposició «per» s'ajunta amb «el». Truc: per + el = pel."],
-    [2, "Completa amb la contracció: «Això és ____ (de + els) meus germans.»", [["Contracció", ["dels"], {"de els": "Cal contreure: de + els = dels."}]], "És «dels». La preposició «de» s'ajunta amb «els». Truc: de + els = dels."],
-    [3, "Troba l'error i corregeix-lo: «Vam parlar de els problemes de la feina.»", [["Error", ["de els"]], ["Correcció", ["dels"]]], "Hauria de ser «dels». De + els es contrau sempre. Truc: de + els = dels."],
-    [3, "Troba l'error i corregeix-lo: «Anirem a els Pirineus aquest estiu.»", [["Error", ["a els"]], ["Correcció", ["als"]]], "Hauria de ser «als». A + els es contrau sempre. Truc: a + els = als."]
+    [
+     2,
+     "Escriu la forma correcta de cada combinació.",
+     [
+      [
+       "a + els",
+       [
+        "als"
+       ],
+       {
+        "a els": "Cal contreure."
+       }
+      ],
+      [
+       "de + els",
+       [
+        "dels"
+       ],
+       {
+        "de els": "Cal contreure."
+       }
+      ],
+      [
+       "per + els",
+       [
+        "pels"
+       ],
+       {
+        "per els": "Cal contreure."
+       }
+      ],
+      [
+       "a + el",
+       [
+        "al"
+       ],
+       {
+        "a el": "Cal contreure."
+       }
+      ]
+     ],
+     "Són «als», «dels», «pels» i «al». Truc: amb «el» i «els» sempre es contrau."
+    ],
+    [
+     3,
+     "Escriu la forma correcta de cada combinació.",
+     [
+      [
+       "a + la",
+       [
+        "a la"
+       ],
+       {
+        "ala": "No hi ha contracció amb «la»."
+       }
+      ],
+      [
+       "de + les",
+       [
+        "de les"
+       ],
+       {
+        "deles": "No hi ha contracció amb «les»."
+       }
+      ],
+      [
+       "per + el",
+       [
+        "pel"
+       ],
+       {
+        "per el": "Cal contreure."
+       }
+      ],
+      [
+       "de + el",
+       [
+        "del"
+       ],
+       {
+        "de el": "Cal contreure."
+       }
+      ]
+     ],
+     "Són «a la», «de les», «pel» i «del». Truc: amb «la» i «les» no es contrau mai."
+    ],
+    [
+     3,
+     "Completa amb la forma correcta.",
+     [
+      [
+       "Comparteix els apunts ____ (a + els) companys.",
+       [
+        "als"
+       ],
+       {
+        "a els": "Cal contreure."
+       }
+      ],
+      [
+       "Això és propietat ____ (de + els) veïns.",
+       [
+        "dels"
+       ],
+       {
+        "de els": "Cal contreure."
+       }
+      ],
+      [
+       "Va passar ____ (per + el) darrere.",
+       [
+        "pel"
+       ],
+       {
+        "per el": "Cal contreure."
+       }
+      ]
+     ],
+     "Són «als», «dels» i «pel». Truc: preposició + el(s) = contracció."
+    ],
+    [
+     3,
+     "Completa amb la forma correcta.",
+     [
+      [
+       "Vam arribar ____ (a + el) cim.",
+       [
+        "al"
+       ],
+       {
+        "a el": "Cal contreure."
+       }
+      ],
+      [
+       "Vam sortir ____ (de + la) cova.",
+       [
+        "de la"
+       ],
+       {
+        "dela": "No hi ha contracció amb «la»."
+       }
+      ],
+      [
+       "Vam passar ____ (per + els) pobles.",
+       [
+        "pels"
+       ],
+       {
+        "per els": "Cal contreure."
+       }
+      ]
+     ],
+     "Són «al», «de la» i «pels». Truc: només es contrau amb l'article masculí."
+    ],
+    [
+     4,
+     "Completa amb la forma correcta.",
+     [
+      [
+       "Torna ____ (de + el) mercat.",
+       [
+        "del"
+       ],
+       {
+        "de el": "Cal contreure."
+       }
+      ],
+      [
+       "Parla ____ (a + les) amigues.",
+       [
+        "a les"
+       ],
+       {
+        "ales": "No hi ha contracció amb «les»."
+       }
+      ],
+      [
+       "Ho sé ____ (per + els) teus germans.",
+       [
+        "pels"
+       ],
+       {
+        "per els": "Cal contreure."
+       }
+      ],
+      [
+       "Ve ____ (de + la) feina.",
+       [
+        "de la"
+       ],
+       {
+        "dela": "No hi ha contracció amb «la»."
+       }
+      ]
+     ],
+     "Són «del», «a les», «pels» i «de la». Truc: amb «la» i «les» no es contrau."
+    ]
    ]
   }
  ]

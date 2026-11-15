@@ -56,7 +56,7 @@ class CampoIn(Strict):
     errores: dict[str, str] = {}
 
 
-MAX_CAMPOS = 4
+MAX_CAMPOS = 6  # una taula de classificació puede pedir hasta 6 palabras
 
 
 class PreguntaIn(Strict):

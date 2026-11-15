@@ -5,14 +5,14 @@
   {
    "nombre": "a/ha, em/hem, tan/tant, quan/quant",
    "pagina": 12,
-   "ayuda": "«a» és preposició (Vaig a Girona) i «ha» és el verb haver (Ha plogut). «Em» és el pronom «a mi» (Em truca) i «hem» és el verb haver (Hem sopat). «Tan» va davant d'un adjectiu o adverbi (tan lluny) i «tant» va sol o davant d'un nom (tant de temps, plou tant). «Quan» és «cuando» (Quan vens?) i «quant» és «cuánto» (Quant val?).",
+   "ayuda": "«a» és preposició (Vaig a Girona) i «ha» és el verb haver (Ha plogut). «Em» és el pronom «a mi» (Em truca) i «hem» és el verb haver (Hem sopat). «Tan» va davant d'un adjectiu o adverbi (tan lluny) i «tant» va sol, davant d'un nom o davant de «que» (tant de temps, plou tant). «Quan» és «cuando» (Quan vens?) i «quant» és «cuánto» (Quant val?).",
    "escritas": [
-    [1, "Completa amb «a» o «ha»: «La Marta ____ pintat la paret de groc.»", [["Paraula", ["ha"], {"a": "Aquí és el verb haver (ha pintat), no la preposició."}]], "És «ha». Si es pot canviar per «havia», és el verb haver. Truc: ha pintat, ha cantat."],
-    [2, "Completa amb «em» o «hem»: «Nosaltres ____ de llegir molt si volem escriure bé.»", [["Paraula", ["hem"], {"em": "«em» és el pronom «a mi». Aquí és el verb haver: hem de."}]], "És «hem». És el verb haver (nosaltres hem). Truc: substitueix per «havíem»: «havíem de llegir»."],
-    [2, "Completa amb «tan» o «tant»: «És ____ alt que toca el sostre.»", [["Paraula", ["tan"], {"tant": "Davant d'un adjectiu (alt) cal «tan», sense t final."}]], "És «tan». Davant d'adjectiu o adverbi va «tan» (com «tan alto» en castellà). Truc: «tan» és «tan» en castellà i «tant» és «tanto»."],
-    [3, "Troba l'error i corregeix-lo: «Aquest abric és tant car que no el puc comprar.»", [["Error", ["tant car", "tant"]], ["Correcció", ["tan car", "tan"]]], "Cal «tan car». Davant d'un adjectiu s'escriu «tan». «Tant» es fa servir sol o amb un nom."],
-    [3, "Completa amb «quan» o «quant»: «No sé ____ arribarà el tren.»", [["Paraula", ["quan"], {"quant": "Aquí és «cuando» (temps), no «cuánto» (quantitat)."}]], "És «quan». Vol dir «cuando». Truc: si en castellà és «cuando», va sense t."],
-    [4, "Completa amb «quan» o «quant»: «____ t'ha costat aquest vestit?»", [["Paraula", ["quant"], {"quan": "Aquí és «cuánto» (quantitat): amb t final."}]], "És «quant». Vol dir «cuánto». Truc: «quant» és quantitat i porta t de «tanto»."]
+    [3, "Escriu la lletra que falta: «Nosaltres _em de llegir molt si volem escriure bé.»", [["Lletra", ["h"]]], "Hem. És el verb haver (nosaltres hem). Truc: substitueix per «havíem»: «havíem de llegir»."],
+    [3, "Escriu la lletra que falta: «No sé quan_ val aquest abric.»", [["Lletra", ["t"]]], "Quant. Aquí és «cuánto» (quantitat), amb t final. Truc: «quant» és quantitat i porta t de «tanto»."],
+    [4, "Escriu la lletra que falta: «T'estimo tan_ que no et voldria fer patir.»", [["Lletra", ["t"]]], "Tant. Davant de «que» va «tant» (tanto). Truc: «tan» només davant d'adjectiu o adverbi."],
+    [3, "Escriu la lletra que falta: «Fa ta_ fred que hem posat la calefacció.»", [["Lletra", ["n"], {"m": "Cal una n.", "t": "No va t: davant d'un adjectiu va «tan»."}]], "Tan. Davant d'un adjectiu (fred) va «tan», sense t final. Truc: «tan» és «tan» en castellà."],
+    [3, "Escriu la lletra que falta: «La Júlia _a vist aquella pel·lícula tres vegades.»", [["Lletra", ["h"]]], "Ha. És el verb haver (ha vist). Truc: si pots posar «havia», és «ha»."],
+    [3, "Troba l'error i corregeix-lo: «Demà em de llegir tot el capítol abans de l'examen.»", [["Error", ["em de"]], ["Correcció", ["hem de"]]], "Cal «hem de». És el verb haver. Truc: substitueix per «havíem de»: té sentit, per tant és «hem»."]
    ]
   },
   {
@@ -20,26 +20,26 @@
    "pagina": 13,
    "ayuda": "«Perquè» (junt) respon a una pregunta o expressa finalitat: Ho faig perquè vull. «Per què» (separat) és la pregunta o el dubte: Per què plores? «Sinó» és oposició (no això, sinó allò) i «si no» és condició + negació (si no vens, me'n vaig). «Sí» (amb accent) és afirmació i «si» (sense accent) és condició.",
    "escritas": [
-    [1, "Completa amb «perquè» o «per què»: «No sé ____ ho ha dit.»", [["Paraula", ["per què"], {"perquè": "És una pregunta indirecta: va separat, «per què».", "per qué": "L'accent és obert: què."}]], "És «per què». És una pregunta indirecta (¿por qué?). Truc: si el pots posar en pregunta, va separat."],
-    [2, "Completa amb «perquè» o «per què»: «T'he donat aquest llibre ____ el llegeixis.»", [["Paraula", ["perquè"], {"per què": "No és pregunta: és finalitat («para que»). Va tot junt."}]], "És «perquè». Expressa finalitat o causa (para que, porque). Truc: si no és pregunta, tot junt."],
-    [2, "Completa amb «sinó» o «si no»: «No vull el vermell ____ el blau.»", [["Paraula", ["sinó"], {"si no": "Aquí hi ha oposició (no això, sinó allò), per tant va junt."}]], "És «sinó». Expressa oposició (sino). Truc: si diu «no X, sinó Y», tot junt."],
-    [3, "Completa amb «sinó» o «si no»: «____ estudies, no aprovaràs.»", [["Paraula", ["si no"], {"sinó": "Aquí hi ha una condició (si + no): separat."}]], "És «si no». És una condició amb negació (si no). Truc: si hi pots posar «en cas que no», va separat."],
-    [3, "Completa amb «sí» o «si»: «____ et sembla bé, em podries ajudar a fer el dinar.»", [["Paraula", ["si"], {"sí": "Aquí és condició: sense accent."}]], "És «si». És una condició, i la condició no porta accent. Truc: «sí» amb accent només és l'afirmació (dir que sí)."],
+    [3, "Escriu la lletra que falta: «No sé per qu_ ho ha dit.»", [["Lletra", ["è"], {"e": "És pregunta indirecta: «què» porta accent.", "é": "L'accent és obert: è."}]], "Què. És una pregunta indirecta (no sé per què). Truc: si el pots posar en pregunta, va separat i amb accent."],
+    [3, "Escriu la lletra que falta: «Ho he fet perqu_ ho necessitaves.»", [["Lletra", ["è"], {"e": "«perquè» porta accent.", "é": "L'accent és obert: è."}]], "Perquè. Expressa causa o finalitat i va tot junt, amb accent obert. Truc: si no és pregunta, tot junt."],
+    [3, "Escriu la lletra que falta: «No vull el vermell, sin_ el blau.»", [["Lletra", ["ó"], {"o": "«sinó» (oposició) porta accent.", "ò": "L'accent és tancat: ó."}]], "Sinó. Expressa oposició (no això, sinó allò) i porta accent tancat. Truc: «sinó» és «sino» en castellà."],
+    [4, "Escriu la lletra que falta: «S_ no estudies, no aprovaràs.»", [["Lletra", ["i"], {"í": "Aquí és condició: sense accent."}]], "Si. És condició (si + no, separat) i no porta accent. Truc: només l'afirmació («sí») té accent."],
+    [3, "Escriu la lletra que falta: «Ha dit que s_, que vindrà a la festa.»", [["Lletra", ["í"], {"i": "Aquí és afirmació: porta accent."}]], "Sí. És afirmació i per això porta accent. Truc: «sí» respon a una pregunta."],
     [4, "Troba l'error i corregeix-lo: «No sé perquè ha marxat tan aviat de la festa.»", [["Error", ["perquè"]], ["Correcció", ["per què"]]], "Cal «per què». És una pregunta indirecta (no sé per què). Truc: darrere de «no sé» o «pregunta» hi ha un dubte, i va separat."]
    ]
   },
   {
    "nombre": "Barbarismes i interferències del castellà",
    "pagina": 14,
-   "ayuda": "Un barbarisme és una paraula del castellà (o d'una altra llengua) que fem servir en català amb forma castellana. Algunes parelles que cal recordar: ajornar (no aplaçar), enviament (no envio), fre (no freno), entrepà (no bocadillo), tauró (no tiburó), estalviar (no ahorrar), a més (no ademés), sud (no sur). A les interferències, fixa't que moltes diferències són d'una sola lletra.",
+   "ayuda": "Un barbarisme és una paraula del castellà (o d'una altra llengua) que fem servir en català amb forma castellana. Algunes parelles que cal recordar: ajornar (no aplaçar), enviament (no envio), fre (no freno), entrepà (no bocadillo), tauró (no tiburó), plet (no pleit), a més (no ademés), sud (no sur). A les interferències, fixa't que moltes diferències són d'una sola lletra.",
    "escritas": [
-    [2, "Troba l'error i corregeix-lo: «Aquest matí ha passat un aconteixement molt estrany al poble.»", [["Error", ["aconteixement"]], ["Correcció", ["esdeveniment"]]], "Cal «esdeveniment». «Aconteixement» és calc de «acontecimiento». Truc: esdevenir, esdeveniment."],
-    [2, "Troba l'error i corregeix-lo: «Vam comprar el cotxe a plaços durant dos anys.»", [["Error", ["a plaços"]], ["Correcció", ["a terminis"]]], "Cal «a terminis». «A plaços» és calc de «a plazos». Truc: termini, a terminis."],
-    [3, "Troba l'error i corregeix-lo: «Vam trobar casi tothom a casa quan vam arribar.»", [["Error", ["casi"]], ["Correcció", ["quasi", "gairebé"]]], "Cal «quasi» o «gairebé». «Casi» és castellà. Truc: quasi, gairebé."],
-    [3, "Troba l'error i corregeix-lo: «Ambos germans viuen a Girona des de fa anys.»", [["Error", ["ambos"]], ["Correcció", ["ambdós"]]], "Cal «ambdós». «Ambos» és castellà. Truc: ambdós, ambdues."],
-    [4, "Troba l'error i corregeix-lo: «Van riure tots, inclús el professor, de la broma.»", [["Error", ["inclús"]], ["Correcció", ["fins i tot"]]], "Cal «fins i tot». «Inclús» és un calc de «incluso». Truc: fins i tot."],
-    [4, "Completa en català el mot que falta (castellà «tamaño»): «Quina ____ fa aquesta camisa?»", [["Paraula", ["mida", "grandària"], {"tamany": "«Tamany» és calc de «tamaño»: en català és mida o grandària."}]], "És «mida» (o «grandària»). «Tamany» és castellà. Truc: la mida de la camisa."],
-    [5, "Troba l'error i corregeix-lo: «Vaig enterar-me de la notícia ahir al vespre.»", [["Error", ["enterar-me"]], ["Correcció", ["assabentar-me"]]], "Cal «assabentar-me». «Enterar-se» és castellà. Truc: assabentar-se."]
+    [3, "Completa: «Vam pagar la moto a ____ durant dos anys.»", [["Paraula", ["terminis"], {"plaços": "«A plaços» és un calc del castellà: en català són terminis.", "plazos": "No és castellà: és «terminis»."}]], "A terminis. «A plaços» és calc de «a plazos». Truc: termini, a terminis."],
+    [4, "Escriu la lletra que falta: «es_eveniment».", [["Lletra", ["d"], {"t": "Prové d'esdevenir: esdeveniment, amb d."}]], "Esdeveniment. Prové del verb esdevenir; «aconteixement» és un calc. Truc: esdevenir, esdeveniment."],
+    [3, "Completa: «Vam trobar ____ tothom a casa quan vam arribar.»", [["Paraula", ["quasi", "gairebé"], {"casi": "«Casi» és castellà: en català és quasi o gairebé."}]], "Quasi o gairebé. «Casi» és castellà. Truc: quasi, gairebé."],
+    [4, "Escriu la lletra que falta: «ambd_s».", [["Lletra", ["ó"], {"o": "És aguda acabada en -s: porta accent.", "ò": "L'accent és tancat: ó."}]], "Ambdós. És aguda acabada en -s, per això porta accent; «ambos» és la forma castellana. Truc: ambdós, ambdues."],
+    [4, "Escriu la lletra que falta: «estal_iar».", [["Lletra", ["v"], {"b": "En català és «v»: estalviar (en castellà «ahorrar»)."}]], "Estalviar. Verb català per a «ahorrar». Truc: estalviar, estalvi."],
+    [3, "Completa: «Ho vam fer ____ força, sense voler.»", [["Paraula", ["per"], {"a la": "«A la força» és calc del castellà: en català és «per força».", "a": "Cal «per força»."}]], "Per força. «A la força» és un calc. Truc: per força, de gust."],
+    [5, "Escriu la lletra que falta: «a_astar».", [["Lletra", ["b"], {"v": "En català és «b»: abastar, abarcar."}]], "Abastar. Verb català amb b, equivalent a «abarcar». Truc: abastar, comprendre."]
    ]
   },
   {
@@ -47,12 +47,11 @@
    "pagina": 12,
    "ayuda": "«Lo» només existeix com a pronom (el vaig comprar, comprar-lo), mai com a article. «Lis» no existeix: s'usa «els». «Els hi» només si hi ha dos complements. «Hi ha» (haver-hi) és invariable: hi ha un llibre, hi ha molts llibres. L'obligació s'expressa amb «haver de» o «caldre», mai amb «tenir que». Cap infinitiu no acaba en -guer. El complement directe no porta «a»: he vist el teu germà.",
    "escritas": [
-    [2, "Troba l'error i corregeix-lo: «Demà tinc que estudiar més per a l'examen.»", [["Error", ["tinc que"]], ["Correcció", ["he d'estudiar", "haig d'estudiar", "cal que estudiï"]]], "Cal «he d'estudiar». L'obligació es diu amb haver de o caldre. Truc: mai «tenir que»."],
-    [2, "Troba l'error i corregeix-lo: «Al carrer hi han molts cotxes aparcats.»", [["Error", ["hi han"]], ["Correcció", ["hi ha"]]], "Cal «hi ha». «Haver-hi» és invariable (hi havia, hi haurà). Truc: com el castellà «hay»."],
-    [3, "Troba l'error i corregeix-lo: «Vaig comprar lo llibre que m'havies recomanat.»", [["Error", ["lo llibre"]], ["Correcció", ["el llibre"]]], "Cal «el llibre». «Lo» només és pronom, no article. Truc: lo és pronom (comprar-lo), el és article."],
-    [3, "Troba l'error i corregeix-lo: «Als nens els hi vaig dir que callessin.»", [["Error", ["els hi"]], ["Correcció", ["els"]]], "Cal «els». «Els hi» només és correcte quan substituïm dos complements. Aquí només n'hi ha un."],
-    [4, "Troba l'error i corregeix-lo: «Vull sapiguer què ha passat realment.»", [["Error", ["sapiguer"]], ["Correcció", ["saber"]]], "Cal «saber». Tots els infinitius acabats en -guer són incorrectes. Truc: saber, poder, voler, tenir."],
     [4, "Substitueix «a la nena» i «pomes» per dos pronoms febles: «Dona pomes a la nena» → «Dona-____» (imperatiu).", [["Pronoms", ["li'n", "n'hi"], {"lin": "Falta l'apòstrof: li'n.", "li hi": "El pronom de «pomes» és «en»: li + en = li'n."}]], "És «li'n» o «n'hi». «Li» substitueix a la nena i «en» substitueix pomes. Truc: el pronom «en» apostrofa."],
+    [4, "Substitueix «això» i «al veí» per dos pronoms febles: «Porta això al veí» → «Porta-____» (imperatiu).", [["Pronoms", ["li-ho", "l'hi"], {"li ho": "Falta el guionet: li-ho.", "liho": "Falta el guionet: li-ho.", "lo hi": "«Lo» no existeix com a pronom d'aquest tipus."}]], "És «li-ho» o «l'hi». «Li» substitueix al veí i «ho» substitueix això. Truc: li + ho = li-ho; la normativa del 2016 també admet l'hi."],
+    [3, "Completa: «Ahir ____ molta gent a la plaça.» (haver-hi)", [["Verb", ["hi havia"], {"hi havien": "«Haver-hi» és invariable: hi havia.", "hi habia": "No és castellà: és «havia»."}]], "Hi havia. «Haver-hi» és invariable com el castellà «hay». Truc: hi ha, hi havia, hi haurà."],
+    [4, "Completa: «Cal que tu ____ (saber) la lliçó per demà.»", [["Verb", ["sàpigues"], {"sapigues": "Falta l'accent: sàpigues (esdrúixola).", "sabis": "El present de subjuntiu de «saber» és irregular: sàpigues."}]], "Sàpigues. Present de subjuntiu irregular de «saber»: sàpiga, sàpigues, sàpiga. Truc: és esdrúixola i porta accent."],
+    [4, "Escriu l'infinitiu correcte d'aquestes formes: «jo puc», «jo tinc» i «jo vull».", [["Infinitiu de «puc»", ["poder"], {"poguer": "Cap infinitiu no acaba en -guer."}], ["Infinitiu de «tinc»", ["tenir"], {"tinguer": "Cap infinitiu no acaba en -guer."}], ["Infinitiu de «vull»", ["voler"], {"volguer": "Cap infinitiu no acaba en -guer."}]], "Poder, tenir, voler. Tots els infinitius acabats en -guer són incorrectes. Truc: poder, tenir, voler."],
     [5, "Troba l'error i corregeix-lo: «Ahir vaig saludar a la teva germana al carrer.»", [["Error", ["saludar a la"]], ["Correcció", ["saludar la"]]], "Cal «saludar la». El complement directe no porta «a» en català. Truc: «Qui rep l'acció?» sense a."]
    ]
   }

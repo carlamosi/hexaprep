@@ -6,52 +6,758 @@
    "nombre": "Verbs en -ir sense -eix-",
    "pagina": 8,
    "cara": 8,
-   "ayuda": "Molts verbs en -ir són incoatius i afegeixen -eix- a la 1a persona (serveixo). Però alguns no ho són i fan la 1a persona amb -o. Exemples: ajupir-se → ajupo, grunyir → grunyo, munyir → munyo, ressentir-se → ressento. Cal memoritzar la llista, perquè la forma s'assembla a la dels incoatius.",
+   "ayuda": "Molts verbs en -ir són incoatius i afegeixen -eix- (patir → pateixo). Però alguns no ho són i fan la 1a persona amb -o: sentir → sento, dormir → dormo, ressentir-se → ressento. Cal memoritzar la llista, perquè la forma s'assembla a la dels incoatius.",
    "escritas": [
-    [1, "Escriu la 1a persona del singular del present d'indicatiu de «bullir».", [["Forma", ["bullo"], {"bulleixo": "Bullir no és incoatiu: no porta -eix-."}]], "És «bullo». Bullir és un verb en -ir sense -eix-. Truc: bullir → bullo, com cosir → cuso."],
-    [2, "Escriu la 1a persona del singular del present d'indicatiu de «cosir».", [["Forma", ["cuso"], {"coso": "La u és tònica a la 1a persona: cuso.", "cuseixo": "Cosir no és incoatiu: cuso."}]], "És «cuso». No porta -eix- i la vocal tònica és u. Truc: cosir → cuso, però cosim (àtona)."],
-    [3, "Escriu la 1a persona del singular del present d'indicatiu de «escollir».", [["Forma", ["escullo"], {"escolleixo": "Escollir no és incoatiu: escullo.", "escollo": "La vocal tònica és u: escullo."}]], "És «escullo». No porta -eix- i fa l'alternança u/o. Truc: escollir → escullo, escollim."],
-    [3, "Completa: «Jo ____ (consentir) que surtis amb els amics.»", [["Verb", ["consento"], {"consenteixo": "Consentir no és incoatiu: consento."}]], "És «consento». Consentir és un dels verbs en -ir sense -eix-. Truc: ressento, pressento, consento."],
-    [4, "Troba l'error i corregeix-lo: «Jo pressenteixo que avui plourà.»", [["Error", ["pressenteixo"]], ["Correcció", ["pressento"]]], "«Pressentir» no és incoatiu, així que fa «pressento». Truc: ressentir-se i pressentir fan -o."]
+    [
+     2,
+     "Escriu la 1a persona del singular del present d'indicatiu de «cosir», «escollir» i «grunyir».",
+     [
+      [
+       "Cosir",
+       [
+        "cuso"
+       ],
+       {
+        "coso": "La u és tònica a la 1a persona.",
+        "cuseixo": "Cosir no és incoatiu."
+       }
+      ],
+      [
+       "Escollir",
+       [
+        "escullo"
+       ],
+       {
+        "escolleixo": "Escollir no és incoatiu.",
+        "escollo": "La vocal tònica és u."
+       }
+      ],
+      [
+       "Grunyir",
+       [
+        "grunyo"
+       ],
+       {
+        "grunyeixo": "Grunyir no és incoatiu."
+       }
+      ]
+     ],
+     "Són «cuso», «escullo» i «grunyo». Cap porta -eix-. Truc: tònica u, àtona o."
+    ],
+    [
+     3,
+     "Escriu la 1a persona del singular del present d'indicatiu de «pressentir», «consentir» i «munyir».",
+     [
+      [
+       "Pressentir",
+       [
+        "pressento"
+       ],
+       {
+        "pressenteixo": "Pressentir no és incoatiu."
+       }
+      ],
+      [
+       "Consentir",
+       [
+        "consento"
+       ],
+       {
+        "consenteixo": "Consentir no és incoatiu."
+       }
+      ],
+      [
+       "Munyir",
+       [
+        "munyo"
+       ],
+       {
+        "munyeixo": "Munyir no és incoatiu."
+       }
+      ]
+     ],
+     "Són «pressento», «consento» i «munyo». Truc: cap d'ells porta -eix-."
+    ],
+    [
+     4,
+     "Escriu de «cruixir» la 1a persona del present d'indicatiu, el present de subjuntiu (jo) i l'imperfet de subjuntiu (ell).",
+     [
+      [
+       "Present",
+       [
+        "cruixo"
+       ],
+       {
+        "cruixeixo": "Cruixir no és incoatiu."
+       }
+      ],
+      [
+       "Subjuntiu",
+       [
+        "cruixi"
+       ],
+       {
+        "cruixeixi": "Cruixir no és incoatiu."
+       }
+      ],
+      [
+       "Imperfet subj.",
+       [
+        "cruixís"
+       ],
+       {
+        "cruixis": "Falta l'accent: cruixís.",
+        "cruixés": "Els verbs en -ir fan -ís."
+       }
+      ]
+     ],
+     "Són «cruixo», «cruixi» i «cruixís». Cruixir no és incoatiu. Truc: sense -eix- en cap temps."
+    ],
+    [
+     4,
+     "Escriu de «bullir» la 1a persona del present d'indicatiu, la 3a persona (ell), el present de subjuntiu (jo) i l'imperatiu (tu).",
+     [
+      [
+       "Jo",
+       [
+        "bullo"
+       ],
+       {
+        "bulleixo": "Bullir no és incoatiu."
+       }
+      ],
+      [
+       "Ell",
+       [
+        "bull"
+       ],
+       {
+        "bulleix": "Bullir no és incoatiu."
+       }
+      ],
+      [
+       "Subjuntiu (jo)",
+       [
+        "bulli"
+       ],
+       {
+        "bulleixi": "Bullir no és incoatiu."
+       }
+      ],
+      [
+       "Imperatiu (tu)",
+       [
+        "bull"
+       ],
+       {
+        "bulleix": "Bullir no és incoatiu."
+       }
+      ]
+     ],
+     "Són «bullo», «bull», «bulli» i «bull». Truc: cap forma porta -eix-."
+    ],
+    [
+     5,
+     "Troba l'error i corregeix-lo: «Jo no consenteixo que ningú parli així a la meva germana.»",
+     [
+      [
+       "Error",
+       [
+        "consenteixo"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "consento"
+       ]
+      ]
+     ],
+     "«Consentir» no és incoatiu: «consento». Truc: consento, pressento, ressento."
+    ]
    ]
   },
   {
    "nombre": "Altres verbs amb -eixo",
    "pagina": 8,
    "cara": 8,
-   "ayuda": "Alguns verbs que s'assemblen als anteriors sí són incoatius i duen -eix- a la 1a persona. Pensa en verbs com servir (serveixo) o patir (pateixo). Als apunts hi ha dos verbs acabats en «-sentir» que sí que són incoatius, i es confonen fàcilment amb els de la família de «sentir», que fan -o (com ressentir-se → ressento).",
+   "ayuda": "Alguns verbs que s'assemblen als anteriors sí són incoatius i duen -eix- a la 1a persona. Pensa en verbs com servir (serveixo) o patir (pateixo). Als apunts hi ha dos verbs acabats en «-sentir» que sí són incoatius, i es confonen fàcilment amb els de la família de «sentir», que fan -o.",
    "escritas": [
-    [2, "Escriu la 1a persona del singular del present d'indicatiu de «assentir».", [["Forma", ["assenteixo"], {"assento": "Assentir és incoatiu: porta -eix-.", "asenteixo": "S'escriu amb dues s, com l'infinitiu: «assenteixo»."}]], "És «assenteixo», amb dues s com «assentir». Assentir és incoatiu, a diferència de consentir. Truc: assentir i dissentir fan -eixo."],
-    [2, "Escriu la 1a persona del singular del present d'indicatiu de «dissentir».", [["Forma", ["dissenteixo"], {"dissento": "Dissentir és incoatiu: porta -eix-."}]], "És «dissenteixo». Dissentir és incoatiu. Truc: assentir i dissentir fan -eixo."],
-    [3, "Troba l'error i corregeix-lo: «Jo sempre dissento del que diu el director.»", [["Error", ["dissento"]], ["Correcció", ["dissenteixo"]]], "«Dissentir» és incoatiu: «dissenteixo». Truc: consentir fa -o, dissentir fa -eixo."],
-    [3, "Escriu la 1a persona del present de «consentir» i la de «dissentir».", [["Consentir", ["consento"], {"consenteixo": "Consentir no és incoatiu: consento."}], ["Dissentir", ["dissenteixo"], {"dissento": "Dissentir és incoatiu: dissenteixo."}]], "Són «consento» i «dissenteixo». Els dos acaben igual en l'infinitiu però només dissentir és incoatiu. Truc: consento sense -eix-, dissenteixo amb -eix-."],
-    [4, "Completa: «En aquest punt jo ____ (assentir), però ell no.»", [["Verb", ["assenteixo"], {"assento": "Assentir és incoatiu: porta -eix-.", "asenteixo": "S'escriu amb dues s, com l'infinitiu: «assenteixo»."}]], "És «assenteixo», amb dues s. Assentir és incoatiu. Truc: assentir i dissentir fan -eixo."]
+    [
+     3,
+     "Escriu la 1a persona del singular del present d'indicatiu de «dissentir», «consentir» i «assentir».",
+     [
+      [
+       "Dissentir",
+       [
+        "dissenteixo"
+       ],
+       {
+        "dissento": "Dissentir és incoatiu."
+       }
+      ],
+      [
+       "Consentir",
+       [
+        "consento"
+       ],
+       {
+        "consenteixo": "Consentir no és incoatiu."
+       }
+      ],
+      [
+       "Assentir",
+       [
+        "assenteixo"
+       ],
+       {
+        "asenteixo": "S'escriu amb doble s: «assenteixo».",
+        "assento": "Assentir és incoatiu.",
+        "dissenteixo": "Aquesta és la forma de dissentir."
+       }
+      ]
+     ],
+     "Són «dissenteixo», «consento» i «assenteixo». Només assentir i dissentir són incoatius."
+    ],
+    [
+     3,
+     "Escriu de «dissentir» la 3a persona (ell) del present d'indicatiu, el present de subjuntiu (jo) i la 1a persona del plural del present d'indicatiu.",
+     [
+      [
+       "Ell",
+       [
+        "dissenteix"
+       ],
+       {
+        "dissent": "Dissentir és incoatiu."
+       }
+      ],
+      [
+       "Subjuntiu (jo)",
+       [
+        "dissenteixi"
+       ],
+       {
+        "dissenti": "Dissentir és incoatiu."
+       }
+      ],
+      [
+       "Nosaltres",
+       [
+        "dissentim"
+       ],
+       {
+        "dissenteixem": "A nosaltres i a vosaltres no hi ha -eix-."
+       }
+      ]
+     ],
+     "Són «dissenteix», «dissenteixi» i «dissentim». Truc: -eix- a tot menys nosaltres i vosaltres."
+    ],
+    [
+     4,
+     "Escriu de «dissentir» el present d'indicatiu de tu, de vosaltres i d'ells.",
+     [
+      [
+       "Tu",
+       [
+        "dissenteixes"
+       ],
+       {
+        "dissents": "Dissentir és incoatiu."
+       }
+      ],
+      [
+       "Vosaltres",
+       [
+        "dissentiu"
+       ],
+       {
+        "dissenteixeu": "A vosaltres no hi ha -eix-."
+       }
+      ],
+      [
+       "Ells",
+       [
+        "dissenteixen"
+       ],
+       {
+        "dissenten": "Dissentir és incoatiu."
+       }
+      ]
+     ],
+     "Són «dissenteixes», «dissentiu» i «dissenteixen». Truc: -eix- a tu, ell i ells."
+    ],
+    [
+     4,
+     "Escriu el participi de «consentir» i de «dissentir», i el present de subjuntiu (tu) de «consentir» i de «dissentir».",
+     [
+      [
+       "Participi consentir",
+       [
+        "consentit"
+       ]
+      ],
+      [
+       "Participi dissentir",
+       [
+        "dissentit"
+       ]
+      ],
+      [
+       "Subjuntiu (tu) consentir",
+       [
+        "consentis"
+       ],
+       {
+        "consenteixis": "Consentir no és incoatiu."
+       }
+      ],
+      [
+       "Subjuntiu (tu) dissentir",
+       [
+        "dissenteixis"
+       ],
+       {
+        "dissentis": "Dissentir és incoatiu."
+       }
+      ]
+     ],
+     "Són «consentit», «dissentit», «consentis» i «dissenteixis». Truc: consentir sense -eix-, dissentir amb -eix-."
+    ],
+    [
+     5,
+     "Completa: «Ell no ____ (consentir) que li ho diguis, però jo ____ (dissentir) obertament i ella ____ (assentir) sempre.»",
+     [
+      [
+       "Consentir",
+       [
+        "consent"
+       ],
+       {
+        "consenteix": "Consentir no és incoatiu."
+       }
+      ],
+      [
+       "Dissentir",
+       [
+        "dissenteixo"
+       ],
+       {
+        "dissento": "Dissentir és incoatiu."
+       }
+      ],
+      [
+       "Assentir",
+       [
+        "assenteix"
+       ],
+       {
+        "asenteix": "S'escriu amb doble s: «assenteix».",
+        "assent": "Assentir és incoatiu."
+       }
+      ]
+     ],
+     "Són «consent», «dissenteixo» i «assenteix». Truc: consentir fa -o, dissentir i assentir fan -eixo."
+    ]
    ]
   },
   {
    "nombre": "Alternança e / a",
    "pagina": 8,
    "cara": 8,
-   "ayuda": "En alguns verbs la vocal e de les formes tòniques passa a a en les àtones: la E és tònica i la A és àtona. Treure, jeure, néixer i péixer fan aquesta alternança. La vocal tònica és la que porta l'accent: és la forma més forta del verb.",
+   "ayuda": "En alguns verbs la vocal E de les formes tòniques passa a A en les àtones: la E és tònica i la A és àtona. Treure, jeure, néixer i péixer fan aquesta alternança. La vocal tònica és la que porta l'accent: és la forma més forta del verb.",
    "escritas": [
-    [1, "Escriu la 1a persona del plural (nosaltres) del present d'indicatiu de «treure».", [["Forma", ["traiem"], {"treiem": "La vocal és àtona: passa de e a a, com en traiem."}]], "És «traiem». La vocal àtona és la a. Truc: trec (tònica e), traiem (àtona a)."],
-    [2, "Troba l'error i corregeix-lo: «Cada matí jo traig el gos a passejar.»", [["Error", ["traig"]], ["Correcció", ["trec"]]], "Hauria de ser «trec». A la 1a persona la vocal és tònica i és la e, i el verb és velar (-c). Truc: trec / traiem."],
-    [3, "Escriu la 1a persona del singular i la del plural del present d'indicatiu de «néixer».", [["Jo", ["neixo"], {"naixo": "La forma tònica porta e: neixo."}], ["Nosaltres", ["naixem"], {"neixem": "La forma àtona porta a: naixem."}]], "Són «neixo» i «naixem». Néixer fa l'alternança e/a. Truc: tònica e, àtona a."],
-    [3, "Troba l'error i corregeix-lo: «Nosaltres treiem les escombraries cada nit.»", [["Error", ["treiem"]], ["Correcció", ["traiem"]]], "La forma àtona porta a: «traiem». Truc: trec / traiem."],
-    [4, "Completa: «Jo ____ (jeure) al sofà, però nosaltres ____ (jeure) al llit.»", [["Jo", ["jec"], {"jaig": "La forma tònica porta e: jec."}], ["Nosaltres", ["jaiem"], {"jeiem": "La forma àtona porta a: jaiem."}]], "Són «jec» i «jaiem». Jeure fa e/a com treure. Truc: la forma forta té e, la feble té a."]
+    [
+     3,
+     "Escriu del verb «jeure» la 1a persona del singular, la 1a i la 2a del plural, i la 3a del plural del present d'indicatiu.",
+     [
+      [
+       "Jo",
+       [
+        "jec"
+       ],
+       {
+        "jaig": "La forma tònica porta e.",
+        "jeg": "Jeure és velar: jec."
+       }
+      ],
+      [
+       "Nosaltres",
+       [
+        "jaiem"
+       ],
+       {
+        "jeiem": "La forma àtona porta a."
+       }
+      ],
+      [
+       "Vosaltres",
+       [
+        "jaieu"
+       ],
+       {
+        "jeieu": "La forma àtona porta a."
+       }
+      ],
+      [
+       "Ells",
+       [
+        "jeuen"
+       ],
+       {
+        "jauen": "La forma tònica porta e."
+       }
+      ]
+     ],
+     "Són «jec», «jaiem», «jaieu» i «jeuen». Truc: tònica e, àtona a."
+    ],
+    [
+     3,
+     "Escriu la 1a persona del singular i la del plural del present d'indicatiu de «néixer» i de «péixer».",
+     [
+      [
+       "Néixer (jo)",
+       [
+        "neixo"
+       ],
+       {
+        "naixo": "La forma tònica porta e."
+       }
+      ],
+      [
+       "Néixer (nosaltres)",
+       [
+        "naixem"
+       ],
+       {
+        "neixem": "La forma àtona porta a."
+       }
+      ],
+      [
+       "Péixer (jo)",
+       [
+        "peixo"
+       ],
+       {
+        "paixo": "La forma tònica porta e."
+       }
+      ],
+      [
+       "Péixer (nosaltres)",
+       [
+        "paixem"
+       ],
+       {
+        "peixem": "La forma àtona porta a."
+       }
+      ]
+     ],
+     "Són «neixo», «naixem», «peixo» i «paixem». Truc: tònica e, àtona a."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «Nosaltres treiem les escombraries cada nit.»",
+     [
+      [
+       "Error",
+       [
+        "treiem"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "traiem"
+       ]
+      ]
+     ],
+     "La forma àtona porta a: «traiem». Truc: trec / traiem."
+    ],
+    [
+     4,
+     "Escriu del verb «péixer» la 1a persona del plural i la 2a del plural del present d'indicatiu, i del verb «néixer» la 3a persona del singular.",
+     [
+      [
+       "Péixer (nosaltres)",
+       [
+        "paixem"
+       ],
+       {
+        "peixem": "La forma àtona porta a."
+       }
+      ],
+      [
+       "Péixer (vosaltres)",
+       [
+        "paixeu"
+       ],
+       {
+        "peixeu": "La forma àtona porta a."
+       }
+      ],
+      [
+       "Néixer (ell)",
+       [
+        "neix"
+       ],
+       {
+        "naix": "La forma tònica porta e."
+       }
+      ]
+     ],
+     "Són «paixem», «paixeu» i «neix». Truc: tònica e, àtona a."
+    ],
+    [
+     5,
+     "Escriu de «treure» la 1a persona del plural del present d'indicatiu, la 1a persona del plural del present de subjuntiu, la 1a persona del singular del present de subjuntiu i la 1a persona del singular de l'imperfet d'indicatiu.",
+     [
+      [
+       "Present (nosaltres)",
+       [
+        "traiem"
+       ],
+       {
+        "treiem": "La forma àtona porta a."
+       }
+      ],
+      [
+       "Subjuntiu (nosaltres)",
+       [
+        "traguem"
+       ],
+       {
+        "treguem": "La vocal és àtona: a."
+       }
+      ],
+      [
+       "Subjuntiu (jo)",
+       [
+        "tregui"
+       ],
+       {
+        "traigui": "La vocal és tònica: e."
+       }
+      ],
+      [
+       "Imperfet (jo)",
+       [
+        "treia"
+       ],
+       {
+        "traia": "La vocal és tònica: e."
+       }
+      ]
+     ],
+     "Són «traiem», «traguem», «tregui» i «treia». Truc: la a només surt quan l'accent cau en una altra síl·laba."
+    ]
    ]
   },
   {
    "nombre": "Alternança u / o",
    "pagina": 8,
    "cara": 8,
-   "ayuda": "En altres verbs la vocal u de la forma tònica passa a o en l'àtona: la U és tònica i la O és àtona. Exemples: sortir → surto / sortim; escopir → escupo / escopim. Un truc és pensar que la vocal tònica és la forma més forta del verb i l'àtona és la que s'afebleix.",
+   "ayuda": "En altres verbs la vocal U de la forma tònica passa a O en l'àtona: la U és tònica i la O és àtona. Un truc és pensar que la vocal tònica és la forma més forta del verb i l'àtona és la que s'afebleix. Hi ha pocs verbs així i cal memoritzar-los.",
    "escritas": [
-    [1, "Escriu la 1a persona del singular del present d'indicatiu de «collir».", [["Forma", ["cullo"], {"collo": "La vocal tònica és la u: cullo."}]], "És «cullo». La vocal tònica és la u. Truc: cullo / collim."],
-    [2, "Escriu la 1a persona del plural (nosaltres) del present d'indicatiu de «collir».", [["Forma", ["collim"], {"cullim": "La vocal àtona és la o: collim."}]], "És «collim». La vocal àtona és la o. Truc: cullo (u forta) / collim (o feble)."],
-    [2, "Escriu la 1a persona del singular del present d'indicatiu de «tossir».", [["Forma", ["tusso"], {"tosso": "La vocal tònica és la u: tusso."}]], "És «tusso». Tossir fa u/o. Truc: tusso / tossim."],
-    [3, "Troba l'error i corregeix-lo: «Nosaltres cusim els botons de la jaqueta.»", [["Error", ["cusim"]], ["Correcció", ["cosim"]]], "La vocal àtona és la o: «cosim». Truc: cuso / cosim."],
-    [4, "Completa: «Jo ____ (cosir) la cortina i nosaltres ____ (cosir) les mitges.»", [["Jo", ["cuso"], {"coso": "La vocal tònica és la u: cuso."}], ["Nosaltres", ["cosim"], {"cusim": "La vocal àtona és la o: cosim."}]], "Són «cuso» i «cosim». Truc: cuso (tònica u) / cosim (àtona o)."]
+    [
+     3,
+     "Escriu del verb «collir» i del verb «sortir» la 1a persona del singular i la 1a persona del plural del present d'indicatiu.",
+     [
+      [
+       "Collir (jo)",
+       [
+        "cullo"
+       ],
+       {
+        "collo": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Collir (nosaltres)",
+       [
+        "collim"
+       ],
+       {
+        "cullim": "La vocal àtona és la o."
+       }
+      ],
+      [
+       "Sortir (jo)",
+       [
+        "surto"
+       ],
+       {
+        "sorto": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Sortir (nosaltres)",
+       [
+        "sortim"
+       ],
+       {
+        "surtim": "La vocal àtona és la o."
+       }
+      ]
+     ],
+     "Són «cullo», «collim», «surto» i «sortim». Truc: tònica u, àtona o."
+    ],
+    [
+     3,
+     "Escriu del verb «tossir» i del verb «escopir» la 1a persona del singular i la 1a persona del plural del present d'indicatiu.",
+     [
+      [
+       "Tossir (jo)",
+       [
+        "tusso"
+       ],
+       {
+        "tosso": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Tossir (nosaltres)",
+       [
+        "tossim"
+       ],
+       {
+        "tussim": "La vocal àtona és la o."
+       }
+      ],
+      [
+       "Escopir (jo)",
+       [
+        "escupo"
+       ],
+       {
+        "escopo": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Escopir (nosaltres)",
+       [
+        "escopim"
+       ],
+       {
+        "escupim": "La vocal àtona és la o."
+       }
+      ]
+     ],
+     "Són «tusso», «tossim», «escupo» i «escopim». Truc: tònica u, àtona o."
+    ],
+    [
+     4,
+     "Escriu de «cosir» la 1a persona del plural, la 2a del singular i la 3a del plural del present d'indicatiu, i la 1a del singular del present de subjuntiu.",
+     [
+      [
+       "Nosaltres",
+       [
+        "cosim"
+       ],
+       {
+        "cusim": "La vocal àtona és la o."
+       }
+      ],
+      [
+       "Tu",
+       [
+        "cuses"
+       ],
+       {
+        "coses": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Ells",
+       [
+        "cusen"
+       ],
+       {
+        "cosen": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Subjuntiu (jo)",
+       [
+        "cusi"
+       ],
+       {
+        "cosi": "La vocal tònica és la u."
+       }
+      ]
+     ],
+     "Són «cosim», «cuses», «cusen» i «cusi». Truc: u quan l'accent hi cau, o si no."
+    ],
+    [
+     4,
+     "Troba l'error i corregeix-lo: «Nosaltres cusim els botons de la jaqueta.»",
+     [
+      [
+       "Error",
+       [
+        "cusim"
+       ]
+      ],
+      [
+       "Correcció",
+       [
+        "cosim"
+       ]
+      ]
+     ],
+     "La vocal àtona és la o: «cosim». Truc: cuso / cosim."
+    ],
+    [
+     5,
+     "Escriu del verb «collir» la 1a persona del singular, la 2a del singular i la 1a del plural del present d'indicatiu, la 2a del singular del present de subjuntiu i el participi.",
+     [
+      [
+       "Jo",
+       [
+        "cullo"
+       ],
+       {
+        "collo": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Tu",
+       [
+        "culls"
+       ],
+       {
+        "colls": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Nosaltres",
+       [
+        "collim"
+       ],
+       {
+        "cullim": "La vocal àtona és la o."
+       }
+      ],
+      [
+       "Subjuntiu (tu)",
+       [
+        "cullis"
+       ],
+       {
+        "collis": "La vocal tònica és la u."
+       }
+      ],
+      [
+       "Participi",
+       [
+        "collit"
+       ],
+       {
+        "cullit": "Al participi l'accent cau al final: o."
+       }
+      ]
+     ],
+     "Són «cullo», «culls», «collim», «cullis» i «collit». Truc: la u només apareix si l'accent hi cau."
+    ]
    ]
   }
  ]

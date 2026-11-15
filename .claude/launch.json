@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "hexaprep",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "set HEXAPREP_PORT=8002&& set PYTHONUTF8=1&& .venv\\Scripts\\python.exe -m hexaprep"],
+      "port": 8002
+    }
+  ]
+}
