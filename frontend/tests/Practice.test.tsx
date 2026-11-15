@@ -109,10 +109,19 @@ describe("pantalla de práctica", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent("No encuentro el PDF Economia_T1.pdf");
   });
 
+  it("long_help_is_hidden_until_the_question_is_answered", async () => {
+    const a = setup();
+    await screen.findByText(Q.enunciado);
+    expect(screen.queryByText(/Ayuda: entender el concepto/)).toBeNull(); // podría desvelar la respuesta
+    await a.user.click(screen.getByRole("button", { name: /Texto A/ }));
+    expect(await screen.findByText(/Ayuda: entender el concepto/)).toBeInTheDocument();
+  });
+
   it("long_help_shown_on_demand", async () => {
     const a = setup();
     await screen.findByText(Q.enunciado);
-    const summary = screen.getByText(/Ayuda: entender el concepto/);
+    await a.user.click(screen.getByRole("button", { name: /Texto A/ }));
+    const summary = await screen.findByText(/Ayuda: entender el concepto/);
     expect(summary.closest("details")).not.toHaveAttribute("open");
     await a.user.click(summary);
     expect(screen.getByText("Ayuda larga de prueba")).toBeVisible();

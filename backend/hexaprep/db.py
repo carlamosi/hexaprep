@@ -48,10 +48,14 @@ def get_engine(path: Path) -> Engine:
     return engine
 
 
-def upgrade(engine: Engine) -> None:
+def upgrade(engine: Engine, esquema: str | None = None) -> None:
+    """Aplica las migraciones; con `esquema` (Postgres) las aplica a ese perfil en lugar de a public."""
     cfg = Config()
     cfg.set_main_option("script_location", str(MIGRATIONS))
     with engine.begin() as conn:
+        if esquema:
+            from .perfiles import _q
+            conn.execute(text(f"SET LOCAL search_path TO {_q(esquema)}"))
         cfg.attributes["connection"] = conn
         command.upgrade(cfg, "head")
 

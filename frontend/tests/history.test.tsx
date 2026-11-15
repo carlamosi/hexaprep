@@ -1,6 +1,7 @@
 import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
+import { ApiError } from "../src/api";
 import type { Analytics, BackupRow, Hex, MapResponse, QuestionContent } from "../src/api";
 import { Columnas } from "../src/components/historial/Barras";
 import { estado, lineas, mejorGrupo, ordenPanal, semanasActividad } from "../src/components/historial/datos";
@@ -250,6 +251,14 @@ describe("ajustes", () => {
       ...over,
     };
   }
+
+  it("online_sin_copias_de_archivo_oculta_la_seccion_de_copia_de_seguridad", async () => {
+    const c = client({ getBackup: vi.fn().mockRejectedValue(new ApiError(501, "No disponible online")) });
+    render(<Settings asignaturaId="a1" client={c} />);
+    await waitFor(() => expect(c.getBackup).toHaveBeenCalled());
+    await waitFor(() => expect(screen.queryByRole("heading", { name: "Copia de seguridad" })).toBeNull());
+    expect(screen.getByRole("heading", { name: "Ajustes" })).toBeInTheDocument();
+  });
 
   it("settings_triggers_backup_and_shows_last_one", async () => {
     const c = client();

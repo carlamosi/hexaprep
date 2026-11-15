@@ -219,6 +219,8 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
             s += SKIPPED_PENALTY if len(answered) - salto < SKIP_GAP else -SKIPPED_BONUS
         return s
 
-    ranking = sorted(pool, key=score)[: max(variedad, 1)]
+    # una saltada espera fuera del sorteo hasta pasar SKIP_GAP respuestas; solo se sirve antes si no queda otra
+    esperando = {p.id for p, _ in pool if saltada_en(p) is not None and len(answered) - saltada_en(p) < SKIP_GAP}
+    ranking = sorted([it for it in pool if it[0].id not in esperando] or pool, key=score)[: max(variedad, 1)]
     p, sub = rng.choices(ranking, weights=[1 / (1 + i) ** 1.5 for i in range(len(ranking))])[0]
     return _to_out(session, p, sub, rng)

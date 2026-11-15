@@ -359,6 +359,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
 
     @app.get("/api/backup")
     def last_backup(s: Session = Depends(get_session)):
+        if online_url:
+            raise HTTPException(501, "No disponible online: las copias las hace Neon")
         row = s.scalar(select(CopiaSeguridad).order_by(CopiaSeguridad.id.desc()).limit(1))
         return _backup_row(row) if row else None
 

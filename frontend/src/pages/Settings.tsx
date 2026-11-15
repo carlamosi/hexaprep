@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api, type BackupRow, type ReportedQuestion } from "../api";
+import { ApiError, api, type BackupRow, type ReportedQuestion } from "../api";
 import { Editor } from "../components/Editor";
 import { t } from "../i18n";
 
@@ -12,6 +12,7 @@ const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-white p
 /** Ajustes: copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */
 export function Settings({ asignaturaId, client = api }: { asignaturaId: string; client?: Client }) {
   const [backup, setBackup] = useState<BackupRow | null | undefined>(undefined);
+  const [sinCopias, setSinCopias] = useState(false); // online las copias las hace Neon, no hay archivo que copiar
   const [confirmar, setConfirmar] = useState(false);
   const [aviso, setAviso] = useState<string | null>(null);
   const [weak, setWeak] = useState<string | null>(null);
@@ -22,7 +23,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
 
   useEffect(() => {
     let alive = true;
-    client.getBackup().then((b) => alive && setBackup(b)).catch(() => alive && setBackup(null));
+    client.getBackup().then((b) => alive && setBackup(b)).catch((e) => { if (alive) { setSinCopias(e instanceof ApiError && e.status === 501); setBackup(null); } });
     client.reportedQuestions().then((r) => alive && setReportadas(r)).catch(() => undefined);
     return () => { alive = false; };
   }, [client]);
@@ -40,7 +41,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
     <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6">
       <h1 className="text-2xl font-semibold">{t("ajustes.titulo")}</h1>
 
-      <section className={seccion} aria-labelledby="aj-copia">
+      {!sinCopias && <section className={seccion} aria-labelledby="aj-copia">
         <h2 id="aj-copia" className="text-lg font-semibold">{t("ajustes.copia")}</h2>
         {backup ? (
           <p>
@@ -76,7 +77,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
           </div>
         )}
         {aviso && <p role="status">{aviso}</p>}
-      </section>
+      </section>}
 
       <section className={seccion} aria-labelledby="aj-exp">
         <h2 id="aj-exp" className="text-lg font-semibold">{t("ajustes.exportar")}</h2>

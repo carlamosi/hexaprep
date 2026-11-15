@@ -32,12 +32,13 @@ def clonar_esquema(conn: Connection, origen: str, destino: str, datos: str = "ca
     o, d = _q(origen), _q(destino)
     conn.execute(text(f"CREATE SCHEMA {d}"))
     tablas = [r[0] for r in conn.execute(text(
-        "SELECT table_name FROM information_schema.tables WHERE table_schema = :s AND table_type = 'BASE TABLE' "
-        "AND table_name <> 'alembic_version'"), {"s": origen})]
+        "SELECT table_name FROM information_schema.tables WHERE table_schema = :s AND table_type = 'BASE TABLE'"),
+        {"s": origen})]
     copiadas = 0
     for t in tablas:
         conn.execute(text(f'CREATE TABLE {d}."{t}" (LIKE {o}."{t}" INCLUDING ALL)'))
-        if datos == "todo" or (datos == "catalogo" and t in CATALOGO):
+        # alembic_version viaja siempre: cada esquema sabe en qué versión de las tablas está
+        if t == "alembic_version" or datos == "todo" or (datos == "catalogo" and t in CATALOGO):
             copiadas += conn.execute(text(f'INSERT INTO {d}."{t}" SELECT * FROM {o}."{t}"')).rowcount
     if "evento" in tablas:  # el evento es de solo añadir: los triggers no viajan con LIKE
         for op in ("update", "delete"):

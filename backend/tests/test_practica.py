@@ -188,3 +188,12 @@ def test_old_questions_keep_their_digest_after_the_new_fields():
     ("10^3", 1e3), ("3·10^(−2)", 3e-2)])
 def test_scientific_notation_forms(texto, esperado):
     assert parse_numero(texto) == pytest.approx(esperado)
+
+
+def test_una_saltada_no_vuelve_enseguida_aunque_haya_pocas_preguntas_y_sorteo(session, monkeypatch):
+    monkeypatch.setattr(selector, "TOP_K", 5)  # con el sorteo real la saltada seguía teniendo ~26 % de volver de inmediato
+    asig, sid = montar(session, preg_test("a", "A"), preg_test("b", "B"))
+    saltada = next_question(session, sid, Filtro(asig), random.Random(0))
+    skip_question(session, sid, saltada.pregunta_id)
+    for semilla in range(60):
+        assert next_question(session, sid, Filtro(asig), random.Random(semilla)).pregunta_id != saltada.pregunta_id

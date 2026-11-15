@@ -319,7 +319,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
 
           {result && <Explanation result={result} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
 
-          {question.ayuda_larga && (
+          {question.ayuda_larga && result && ( // antes de responder podría desvelar la respuesta
             <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3">
               <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.ayuda")}</summary>
               <p className="mt-2 text-[var(--ink-2)]"><RichText text={question.ayuda_larga} /></p>
