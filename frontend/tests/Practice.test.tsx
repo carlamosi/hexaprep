@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { AnswerResult, Question } from "../src/api";
@@ -122,6 +122,22 @@ describe("pantalla de práctica", () => {
     expect(summary.closest("details")).not.toHaveAttribute("open");
     await a.user.click(summary);
     expect(screen.getByText("Ayuda larga de prueba")).toBeVisible();
+  });
+
+  it.each([[OK, 1000], [KO, 2500]])("auto_advances_after_the_delay_of_the_result", async (result, ms) => {
+    const a = setup({}, result);
+    await screen.findByText(Q.enunciado);
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    try {
+      fireEvent.click(screen.getByRole("button", { name: /Opción B: Texto A/ }));
+      await act(async () => { await Promise.resolve(); await Promise.resolve(); });
+      await act(async () => { vi.advanceTimersByTime(ms - 1); });
+      expect(a.client.nextQuestion).toHaveBeenCalledTimes(1);
+      await act(async () => { vi.advanceTimersByTime(1); });
+      expect(a.client.nextQuestion).toHaveBeenCalledTimes(2);
+    } finally {
+      vi.useRealTimers();
+    }
   });
 
   it("enter_goes_to_next_question_and_finishes_with_onDone", async () => {

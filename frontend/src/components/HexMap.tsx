@@ -3,16 +3,19 @@ import { t } from "../i18n";
 import { Hexagon } from "./Hexagon";
 
 // Color por tema en orden de aparición (mockup aprobado: T1 azul, T2 verde, T3 naranja).
-const TEMA_COLORS = ["var(--azul)", "var(--verde)", "var(--naranja)", "var(--indigo)", "var(--ambar)", "var(--rosa)", "var(--marron)", "var(--carmin)"];
+export const TEMA_COLORS = ["var(--azul)", "var(--verde)", "var(--naranja)", "var(--indigo)", "var(--ambar)", "var(--rosa)", "var(--marron)", "var(--carmin)"];
+
+/** Tono del subtema: el color del tema (`--tc`) cada vez más claro. */
+export const tone = (si: number) => (si === 0 ? "var(--tc)" : `color-mix(in srgb, var(--tc) ${Math.max(35, 100 - si * 25)}%, #fff)`);
 
 interface Sub { id: string; nombre: string; hexes: Hex[] }
-interface Tema { nombre: string; subtemas: Sub[] }
+export interface Tema { id: string; nombre: string; subtemas: Sub[] }
 
-function group(hexes: Hex[]): Tema[] {
+export function group(hexes: Hex[]): Tema[] {
   const temas: Tema[] = [];
   for (const h of hexes) {
-    let tema = temas.find((x) => x.nombre === h.tema);
-    if (!tema) temas.push((tema = { nombre: h.tema, subtemas: [] }));
+    let tema = temas.find((x) => x.id === h.tema_id);
+    if (!tema) temas.push((tema = { id: h.tema_id, nombre: h.tema, subtemas: [] }));
     let sub = tema.subtemas.find((s) => s.id === h.subtema_id);
     if (!sub) tema.subtemas.push((sub = { id: h.subtema_id, nombre: h.subtema, hexes: [] }));
     sub.hexes.push(h);
@@ -23,9 +26,10 @@ function group(hexes: Hex[]): Tema[] {
 const mean = (xs: number[]) => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : 0);
 
 /** Panal de dominio: un hexágono por concepto, agrupado por tema y subtema. */
-export function HexMap({ hexes, onSelect, subtemas }: {
+export function HexMap({ hexes, onSelect, onPracticarTema, subtemas }: {
   hexes: Hex[];
   onSelect: (subtemaId: string) => void;
+  onPracticarTema?: (temaId: string) => void;
   /** % de subtema calculado por el backend; si falta, se usa la media de sus conceptos. */
   subtemas?: { id: string; percent: number }[];
 }) {
@@ -33,18 +37,23 @@ export function HexMap({ hexes, onSelect, subtemas }: {
   return (
     <>
       {group(hexes).map((tema, ti) => (
-        <section key={tema.nombre} className="tema" style={{ "--c": TEMA_COLORS[ti % TEMA_COLORS.length] } as React.CSSProperties} aria-labelledby={`tema-${ti}`}>
+        <section key={tema.id} className="tema" style={{ "--c": TEMA_COLORS[ti % TEMA_COLORS.length], "--tc": TEMA_COLORS[ti % TEMA_COLORS.length] } as React.CSSProperties} aria-labelledby={`tema-${ti}`}>
           <div className="tema-head">
             <i className="chip" aria-hidden="true" />
             <span className="kicker kicker-muted">{t("panal.tema")} {ti + 1}</span>
             <h2 id={`tema-${ti}`}>{tema.nombre}</h2>
             {/* shortcut: % de tema como media de conceptos, el backend no lo envía; usar el suyo si llega */}
             <span className="tema-pct"><span>{t("panal.dominio")}</span>{mean(tema.subtemas.flatMap((s) => s.hexes.map((h) => h.percent)))}&nbsp;%</span>
+            {onPracticarTema && (
+              <button type="button" className="tema-practicar" aria-label={`${t("panal.practicarTema")} ${tema.nombre}`} onClick={() => onPracticarTema(tema.id)}>
+                {t("panal.practicarTema")}
+              </button>
+            )}
           </div>
-          {tema.subtemas.map((s) => {
+          {tema.subtemas.map((s, si) => {
             const pct = subPct(s);
             return (
-              <div key={s.id} className="subtema">
+              <div key={s.id} className="subtema" style={{ "--c": tone(si) } as React.CSSProperties}>
                 <div className="subtema-meta">
                   <h3>{s.nombre}</h3>
                   <span className="big" data-testid={`subtema-pct-${s.id}`}>{pct}<small>&nbsp;%</small></span>

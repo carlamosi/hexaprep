@@ -32,7 +32,7 @@ def loaded(client):
 def test_map_returns_zero_percent_on_first_run(client, loaded):
     m = client.get(f"/api/map/{loaded}").json()
     assert m["percent"] == 0 and len(m["hexes"]) == 2
-    assert all(h["percent"] == 0 and {"concepto_id", "nombre", "subtema_id"} <= set(h) for h in m["hexes"])
+    assert all(h["percent"] == 0 and {"concepto_id", "nombre", "subtema_id", "tema_id"} <= set(h) for h in m["hexes"])
 
 
 def test_full_answer_flow_over_http(client, loaded):

@@ -1,0 +1,18 @@
+/* Panel del título: todos los conceptos a la vez. Cada tema un color, cada subtema un tono. */
+.asig-panel { position: relative; }
+.asig-panel-body {
+  position: absolute; left: 0; top: 100%; z-index: 20; width: min(92vw, 720px); max-height: 70vh; overflow: auto;
+  margin-top: 6px; padding: 16px 18px; background: #fff; border: 1.5px solid var(--ink); border-radius: 14px;
+  box-shadow: 5px 5px 0 var(--lila);
+}
+.asig-panel-body section + section { margin-top: 14px; }
+.asig-panel-body h3 { margin: 0 0 6px; font-size: .95rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.asig-panel-body h3::before { content: ""; width: 14px; height: 12px; clip-path: var(--hex-flat); background: var(--tc); }
+.asig-sub { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px; padding: 3px 0; }
+.asig-sub-name { width: 170px; font-size: .78rem; color: var(--ink-2); }
+.asig-hexes { display: flex; flex-wrap: wrap; gap: 3px; }
+.mini-hex {
+  width: 22px; height: 19px; clip-path: var(--hex-flat);
+  background: linear-gradient(to top, var(--c) var(--p), color-mix(in srgb, var(--c) 14%, #fff) var(--p));
+}
+@media (max-width: 640px) { .asig-sub-name { width: 100%; } }

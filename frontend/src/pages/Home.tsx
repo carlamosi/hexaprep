@@ -7,7 +7,7 @@ import { t, tn } from "../i18n";
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string };
 
 /** Inicio: solo el panal de la primera asignatura, sin mensajes por días sin usar. */
-export function Home({ onSelectSubtema, onNivel, onPracticar }: { onSelectSubtema?: (id: string) => void; onNivel?: () => void; onPracticar?: () => void }) {
+export function Home({ onSelectSubtema, onNivel, onPracticar, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onNivel?: () => void; onPracticar?: () => void; onPracticarTema?: (id: string) => void }) {
   const [state, setState] = useState<State>({ kind: "loading" });
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export function Home({ onSelectSubtema, onNivel, onPracticar }: { onSelectSubtem
           </div>
         </div>
       </section>
-      <HexMap hexes={map.hexes} subtemas={map.subtemas} onSelect={(id) => onSelectSubtema?.(id)} />
+      <HexMap hexes={map.hexes} subtemas={map.subtemas} onSelect={(id) => onSelectSubtema?.(id)} onPracticarTema={onPracticarTema} />
     </main>
   );
 }

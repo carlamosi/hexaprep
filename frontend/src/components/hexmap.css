@@ -32,6 +32,9 @@
 .tema-head .tema-pct { margin-left: auto; font-size: 1.35rem; font-weight: 600; font-variant-numeric: tabular-nums; }
 .tema-head .tema-pct span { font-size: .78rem; font-weight: 500; color: var(--ink-3); margin-right: 6px; }
 
+.tema-head .tema-practicar { border: 1.5px solid var(--ink); border-radius: 11px; background: #fff; padding: 4px 12px; font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer; box-shadow: 3px 3px 0 var(--c); }
+.tema-head .tema-practicar:hover { transform: translate(-1px, -1px); }
+.tema-head .tema-practicar:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 3px; }
 .subtema { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 28px; padding: 26px 0 30px; border-bottom: 1px solid var(--rule); }
 .subtema:last-child { border-bottom: 0; }
 

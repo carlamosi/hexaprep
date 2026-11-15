@@ -6,13 +6,13 @@ import { HexMap } from "../src/components/HexMap";
 
 const hex = (over: Partial<Hex>): Hex => ({
   concepto_id: "c1", nombre: "Coste de oportunidad", subtema_id: "s1", subtema: "La escasez",
-  tema: "Decisiones", color: "#B05A8F", percent: 0, ...over,
+  tema: "Decisiones", tema_id: "t1", color: "#B05A8F", percent: 0, ...over,
 });
 
 const HEXES: Hex[] = [
   hex({ concepto_id: "c1", nombre: "Coste de oportunidad", percent: 40 }),
   hex({ concepto_id: "c2", nombre: "Frontera de posibilidades", percent: 75 }),
-  hex({ concepto_id: "c3", nombre: "El mercado", subtema_id: "s2", subtema: "Agentes", tema: "Sistemas", percent: 10 }),
+  hex({ concepto_id: "c3", nombre: "El mercado", subtema_id: "s2", subtema: "Agentes", tema: "Sistemas", tema_id: "t2", percent: 10 }),
 ];
 
 describe("HexMap", () => {
@@ -42,6 +42,21 @@ describe("HexMap", () => {
     render(<HexMap hexes={HEXES} onSelect={onSelect} />);
     await userEvent.click(screen.getByRole("button", { name: /El mercado/ }));
     expect(onSelect).toHaveBeenCalledWith("s2");
+  });
+
+  it("practice_button_per_tema_calls_onPracticarTema", async () => {
+    const onPracticarTema = vi.fn();
+    render(<HexMap hexes={HEXES} onSelect={() => {}} onPracticarTema={onPracticarTema} />);
+    await userEvent.click(screen.getByRole("button", { name: "Practicar tema Sistemas" }));
+    expect(onPracticarTema).toHaveBeenCalledWith("t2");
+  });
+
+  it("subtemas_of_a_tema_share_color_in_different_tones", () => {
+    const hexes = [...HEXES, hex({ concepto_id: "c4", subtema_id: "s3", subtema: "Otro", percent: 5 })];
+    const { container } = render(<HexMap hexes={hexes} onSelect={() => {}} />);
+    const [s1, s2] = Array.from(container.querySelectorAll<HTMLElement>(".tema:first-of-type .subtema"));
+    expect(s1.style.getPropertyValue("--c")).not.toBe(s2.style.getPropertyValue("--c"));
+    expect(s2.style.getPropertyValue("--c")).toContain("var(--tc)");
   });
 
   it("keyboard_focus_visible", async () => {

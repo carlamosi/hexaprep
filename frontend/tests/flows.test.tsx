@@ -20,7 +20,7 @@ const RES: AnswerResult = {
 
 const MAP: MapResponse = {
   asignatura: "Economía", percent: 37,
-  hexes: [{ concepto_id: "c1", nombre: "Coste de oportunidad", subtema_id: "s1", subtema: "Cómo decidimos", tema: "T1", color: "#B05A8F", percent: 37 }],
+  hexes: [{ concepto_id: "c1", nombre: "Coste de oportunidad", subtema_id: "s1", subtema: "Cómo decidimos", tema: "T1", tema_id: "t1", color: "#B05A8F", percent: 37 }],
   subtemas: [{ id: "s1", nombre: "Cómo decidimos", percent: 37 }],
 };
 

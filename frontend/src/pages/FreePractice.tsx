@@ -8,23 +8,23 @@ import { Review, type Fallo } from "./Review";
 type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "getSession">>;
 
 /** Práctica adaptativa libre: sin duración fija, mezclando temas. «Terminar sesión» enseña los fallos agrupados. */
-export function FreePractice({ asignaturaId, client = api, onFinish }: { asignaturaId: string; client?: Client; onFinish: () => void }) {
+export function FreePractice({ asignaturaId, temaId, client = api, onFinish }: { asignaturaId: string; temaId?: string; client?: Client; onFinish: () => void }) {
   const [sid, setSid] = useState<string | null>(null);
   const [answered, setAnswered] = useState(0);
   const [fin, setFinState] = useState(false);
   const [failed, setFailed] = useState(false);
   const fallos = useRef<Fallo[]>([]);
   const started = useRef(false);
-  const key = `hexaprep.sesion.practica.${asignaturaId}`;
+  const key = `hexaprep.sesion.practica.${asignaturaId}${temaId ? `.${temaId}` : ""}`;
   const setFin = (v: boolean) => { if (v) clearSession(key); setFinState(v); };
 
   useEffect(() => {
     if (started.current) return;
     started.current = true;
-    openSession(key, client, () => client.createSession("practica", { asignatura_id: asignaturaId }))
+    openSession(key, client, () => client.createSession("practica", { asignatura_id: asignaturaId, ...(temaId && { tema_id: temaId }) }))
       .then((o) => { setSid(o.sid); setAnswered(o.answered); })
       .catch(() => setFailed(true));
-  }, [asignaturaId, client, key]);
+  }, [asignaturaId, temaId, client, key]);
 
   if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   if (!sid) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;

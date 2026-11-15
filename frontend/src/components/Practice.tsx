@@ -106,6 +106,13 @@ export function Practice({ sesionId, client: clientProp = api, onDone, sinFeedba
     [confianza, load, question, sesionId, sinFeedback],
   );
 
+  // Pasa sola a la siguiente: 1 s tras un acierto, 2,5 s tras un fallo. Enter o «Siguiente» saltan la espera.
+  useEffect(() => {
+    if (!result) return;
+    const id = setTimeout(() => void load(), result.correcta ? 1000 : 2500);
+    return () => clearTimeout(id);
+  }, [load, result]);
+
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.ctrlKey || e.metaKey || e.altKey) return;

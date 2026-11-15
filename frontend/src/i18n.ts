@@ -106,6 +106,8 @@ const es: Dict = {
   "nivel.boton": "Test de nivel",
   "practica.libre": "Práctica libre",
   "practica.terminar": "Terminar sesión",
+  "panal.practicarTema": "Practicar tema",
+  "panal.verPanal": "Ver panal",
   "panal.sinAsignaturas": "Todavía no hay ninguna asignatura importada.",
 };
 

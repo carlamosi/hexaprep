@@ -26,19 +26,19 @@ export default function App() {
   const [route, arg] = hash.split("/");
 
   let page = null;
-  if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onNivel={() => go("nivel")} onPracticar={() => go("practica")} />;
+  if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onNivel={() => go("nivel")} onPracticar={() => go("practica")} onPracticarTema={(tm) => go(`practica/${tm}`)} />;
   else if (failed) page = <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   else if (asignaturaId && route === "hoy") page = <Suggestions onPracticeSubtema={(s) => go(`subtema/${s}`)} onPlacement={() => go("nivel")} />;
   else if (route === "historial") page = <History />;
   else if (asignaturaId && route === "ajustes") page = <Settings asignaturaId={asignaturaId} />;
-  else if (asignaturaId && route === "practica") page = <FreePractice asignaturaId={asignaturaId} onFinish={() => go("panal")} />;
+  else if (asignaturaId && route === "practica") page = <FreePractice key={arg} asignaturaId={asignaturaId} temaId={arg} onFinish={() => go("panal")} />;
   else if (asignaturaId && route === "nivel") page = <Placement asignaturaId={asignaturaId} onFinish={() => go("panal")} />;
   else if (asignaturaId && route === "subtema" && arg) page = <Subtopic asignaturaId={asignaturaId} subtemaId={arg} onBack={() => go("panal")} />;
 
   const sinNav = route === "nivel" || route === "practica";
   return (
     <div className="min-h-screen pb-20 font-sans sm:pb-0">
-      <AppHeader asignatura={nombre} ruta={route} sinNav={sinNav} />
+      <AppHeader asignatura={nombre} asignaturaId={asignaturaId}ruta={route} sinNav={sinNav} />
       {page}
     </div>
   );

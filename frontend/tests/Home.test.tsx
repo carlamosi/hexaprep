@@ -13,7 +13,7 @@ describe("Home", () => {
     ]);
     const getMap = vi.spyOn(api, "getMap").mockResolvedValue({
       asignatura: "Economía", percent: 39,
-      hexes: [{ concepto_id: "c1", nombre: "Coste de oportunidad", subtema_id: "s1", subtema: "La escasez", tema: "Decisiones", color: "#B05A8F", percent: 40 }],
+      hexes: [{ concepto_id: "c1", nombre: "Coste de oportunidad", subtema_id: "s1", subtema: "La escasez", tema: "Decisiones", tema_id: "t1", color: "#B05A8F", percent: 40 }],
       subtemas: [{ id: "s1", nombre: "La escasez", percent: 67 }],
     });
     const onSelect = vi.fn();

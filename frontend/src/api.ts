@@ -20,7 +20,7 @@ export interface Filtro {
 
 export interface Subject { id: string; nombre: string; idioma: string; color: string; acento: string; percent: number }
 export interface Hex {
-  concepto_id: string; nombre: string; subtema_id: string; subtema: string; tema: string; color: string; percent: number;
+  concepto_id: string; nombre: string; subtema_id: string; subtema: string; tema: string; tema_id: string; color: string; percent: number;
 }
 export interface MapResponse {
   asignatura: string; percent: number; hexes: Hex[]; subtemas: { id: string; nombre: string; percent: number }[];
