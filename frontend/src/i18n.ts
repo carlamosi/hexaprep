@@ -95,7 +95,7 @@ const es: Dict = {
   "hist.menos": "Menos",
   "hist.mas": "Más",
   "hist.evolucion": "Evolución del dominio",
-  "hist.evolucionSub": "Dominio estimado al final de cada día. Pasa el ratón o usa las flechas para ver cada fecha.",
+  "hist.evolucionSub": "Dominio sobre todo el temario al final de cada día (lo que aún no has practicado cuenta 0). Pasa el ratón o usa las flechas para ver cada fecha.",
   "hist.vista": "Ver la evolución de",
   "hist.vista.asignatura": "Asignatura",
   "hist.vista.temas": "Temas",
@@ -211,7 +211,7 @@ const es: Dict = {
   "panal.verPanal": "Ver panal",
   "nav.asignatura": "Asignatura",
   "panal.cerrar": "Cerrar",
-  "panel.escala": "Relleno del hexágono = dominio del concepto",
+  "panel.escala": "Relleno del hexágono = dominio del concepto (aciertos con respuestas suficientes)",
   "panel.colores": "Un color por tema, un tono por subtema",
   "panal.sinAsignaturas": "Todavía no hay ninguna asignatura importada.",
 };

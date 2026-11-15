@@ -2,7 +2,7 @@
 from collections import Counter, defaultdict
 from datetime import UTC, datetime, timedelta
 
-from sqlalchemy import select
+from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import mastery, tiempo
@@ -51,17 +51,26 @@ def _evolucion(session: Session, asignatura_id: str, desde: str | None) -> dict:
     sub: dict[tuple, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     tem: dict[tuple, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
     for snap, s, t in session.execute(q).all():
-        total[snap.fecha].append(snap.theta)
-        sub[(t.id, s.id, s.nombre)][snap.fecha].append(snap.theta)
-        tem[(t.id, t.nombre)][snap.fecha].append(snap.theta)
+        p = mastery.progreso(snap.theta, snap.sigma)
+        total[snap.fecha].append(p)
+        sub[(t.id, s.id, s.nombre)][snap.fecha].append(p)
+        tem[(t.id, t.nombre)][snap.fecha].append(p)
+    # el denominador es TODO el temario del nivel, no solo lo tocado
+    por_sub = dict(session.execute(select(Concepto.subtema_id, func.count()).where(Concepto.deleted_at.is_(None))
+                                   .group_by(Concepto.subtema_id)).all())
+    de_tema = dict(session.execute(select(Subtema.id, Subtema.tema_id)).all())
+    por_tema: dict[str, int] = defaultdict(int)
+    for sid, n in por_sub.items():
+        por_tema[de_tema[sid]] += n
+    n_asig = len(mastery._concept_ids(session, "asignatura", asignatura_id))
 
-    def serie(d: dict[str, list[float]]) -> list[dict]:
-        return [{"fecha": f, "percent": mastery.percent(sum(v) / len(v))} for f, v in sorted(d.items())]
+    def serie(d: dict[str, list[float]], n: int) -> list[dict]:
+        return [{"fecha": f, "percent": round(100 * sum(v) / n)} for f, v in sorted(d.items())]
 
     return {
-        "asignatura": serie(total),
-        "temas": [{"tema_id": tid, "tema": nombre, "puntos": serie(d),
-                   "subtemas": [{"subtema_id": sid, "subtema": sn, "puntos": serie(sd)}
+        "asignatura": serie(total, n_asig),
+        "temas": [{"tema_id": tid, "tema": nombre, "puntos": serie(d, por_tema[tid]),
+                   "subtemas": [{"subtema_id": sid, "subtema": sn, "puntos": serie(sd, por_sub[sid])}
                                 for (tt, sid, sn), sd in sub.items() if tt == tid]}
                   for (tid, nombre), d in tem.items()],
     }
@@ -123,7 +132,7 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
                                                      Dominio.n_intentos > 0).order_by(Dominio.theta).limit(8)):
         xs = por_concepto[dom.concepto_id]
         debiles.append({"concepto_id": dom.concepto_id, "concepto": nombres[dom.concepto_id][0],
-                        "subtema": nombres[dom.concepto_id][1], "percent": mastery.percent(dom.theta),
+                        "subtema": nombres[dom.concepto_id][1], "percent": mastery.percent_concepto(dom.theta, dom.sigma),
                         "n": len(xs), "aciertos_pct": _pct(sum(x.correcta for x in xs), len(xs))})
 
     por_sesion: dict[str, list[Intento]] = defaultdict(list)

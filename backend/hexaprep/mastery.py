@@ -35,7 +35,30 @@ def update(theta: float, sigma: float, dificultad: int, correcta: bool) -> tuple
 
 
 def percent(theta: float) -> int:
+    """Probabilidad de acertar una pregunta neutra (no es progreso: eso es `percent_concepto` y `percent_of`)."""
     return round(100 * sigmoid(theta))
+
+
+N_PLENO = 5  # respuestas de dificultad neutra con las que un concepto cuenta con toda su evidencia
+
+
+def evidencia(sigma: float) -> float:
+    """Cuánta evidencia hay (0 a 1), leída de la incertidumbre: cada respuesta neutra suma 0,25 a 1/sigma²."""
+    return min(1.0, max(0.0, (1 / sigma**2 - 1 / SIGMA0**2) / (0.25 * N_PLENO)))
+
+
+def competencia(theta: float) -> float:
+    """0 si no se acierta más de lo esperado en una pregunta neutra; tiende a 1 si se acierta con solidez."""
+    return max(0.0, 2 * sigmoid(theta) - 1)
+
+
+def progreso(theta: float, sigma: float) -> float:
+    """Progreso real de un concepto (0 a 1): competencia por evidencia. Con pocas respuestas casi no cuenta."""
+    return competencia(theta) * evidencia(sigma)
+
+
+def percent_concepto(theta: float, sigma: float) -> int:
+    return round(100 * progreso(theta, sigma))
 
 
 def _dominio(session: Session, concepto_id: str) -> Dominio:
@@ -93,10 +116,11 @@ def aggregate(session: Session, nivel: Literal["subtema", "tema", "asignatura"],
 
 
 def percent_of(session: Session, nivel: Literal["subtema", "tema", "asignatura"], id: str) -> int:
-    """Porcentaje mostrado: 0 mientras no haya ningún intento (no 50)."""
+    """Porcentaje mostrado: progreso medio sobre TODOS los conceptos del nivel (los no tocados cuentan 0)."""
     ids = _concept_ids(session, nivel, id)
-    has = session.scalar(select(Dominio.id).where(Dominio.concepto_id.in_(ids), Dominio.n_intentos > 0).limit(1))
-    return percent(aggregate(session, nivel, id)) if has else 0
+    filas = session.execute(select(Dominio.theta, Dominio.sigma).where(
+        Dominio.concepto_id.in_(ids), Dominio.n_intentos > 0)).all()
+    return round(100 * sum(progreso(t, s) for t, s in filas) / len(ids)) if ids else 0
 
 
 def snapshot_daily(session: Session, fecha: date) -> None:

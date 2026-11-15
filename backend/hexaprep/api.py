@@ -202,7 +202,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             .order_by(Bloque.orden, Tema.orden, Tema.nombre, Subtema.orden, Subtema.nombre, Concepto.nombre)).all()
         hexes = [{"concepto_id": c.id, "nombre": c.nombre, "subtema_id": sub.id, "subtema": sub.nombre,
                   "tema": t.nombre, "tema_id": t.id, "color": a.acento,
-                  "percent": mastery.percent(d.theta) if d is not None and d.n_intentos > 0 else 0}
+                  "percent": mastery.percent_concepto(d.theta, d.sigma) if d is not None and d.n_intentos > 0 else 0}
                  for c, sub, t, d in rows]
         subtemas = {h["subtema_id"]: h["subtema"] for h in hexes}
         return {"asignatura": a.nombre, "percent": mastery.percent_of(s, "asignatura", a.id), "hexes": hexes,
@@ -272,7 +272,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             "trampas": {o.posicion: o.tipo_trampa for o in s.scalars(select(Opcion).where(Opcion.pregunta_id == p.id))
                         if o.tipo_trampa},
             "fuente_id": p.fuente_id, "fuente_pagina": p.fuente_pagina, "fuente_cara": p.fuente_cara,
-            "percent": mastery.percent(dom.theta) if dom and dom.n_intentos else 0,
+            "percent": mastery.percent_concepto(dom.theta, dom.sigma) if dom and dom.n_intentos else 0,
         }
 
     @app.post("/api/answers/correct")
@@ -285,7 +285,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         p = s.get(Pregunta, body.pregunta_id)
         mastery.snapshot_daily(s, tiempo.hoy())
         dom = s.scalar(select(Dominio).where(Dominio.concepto_id == p.concepto_id))
-        return {"percent": mastery.percent(dom.theta) if dom and dom.n_intentos else 0}
+        return {"percent": mastery.percent_concepto(dom.theta, dom.sigma) if dom and dom.n_intentos else 0}
 
     @app.get("/api/questions/reported")
     def reported(s: Session = Depends(get_session)):
@@ -329,11 +329,13 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         by: dict[str, dict[str, list[float]]] = defaultdict(lambda: defaultdict(list))
         for snap, sub in s.execute(select(DominioSnapshot, Concepto.subtema_id)
                                    .join(Concepto, Concepto.id == DominioSnapshot.concepto_id)).all():
-            by[sub][snap.fecha].append(snap.theta)
+            by[sub][snap.fecha].append(mastery.progreso(snap.theta, snap.sigma))
         nombres = {i: n for i, n in s.execute(select(Subtema.id, Subtema.nombre))}
+        totales = dict(s.execute(select(Concepto.subtema_id, func.count()).where(Concepto.deleted_at.is_(None))
+                                 .group_by(Concepto.subtema_id)).all())
         return {"dias": dias, "evolucion": [
             {"subtema_id": sub, "subtema": nombres[sub],
-             "puntos": [{"fecha": f, "percent": mastery.percent(sum(t) / len(t))} for f, t in sorted(fechas.items())]}
+             "puntos": [{"fecha": f, "percent": round(100 * sum(p) / totales[sub])} for f, p in sorted(fechas.items())]}
             for sub, fechas in by.items()]}
 
     @app.get("/api/analytics")

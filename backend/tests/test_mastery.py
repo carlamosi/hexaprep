@@ -95,3 +95,47 @@ def test_snapshot_daily_is_idempotent(session, bank):
     snapshot_daily(session, date(2026, 11, 14))
     rows = session.scalars(select(DominioSnapshot)).all()
     assert len(rows) == 1 and rows[0].fecha == "2026-11-14"
+
+
+# ---------- progreso real: competencia por evidencia, sobre TODO el temario ----------
+from hexaprep.mastery import SIGMA0, evidencia, percent_concepto, percent_of, progreso  # noqa: E402
+
+
+def test_la_evidencia_empieza_en_cero_sube_con_las_respuestas_y_se_llena_a_las_pocas():
+    assert evidencia(SIGMA0) == 0.0
+    theta, sigma, ev = 0.0, SIGMA0, []
+    for _ in range(8):
+        theta, sigma = update(theta, sigma, 3, True)
+        ev.append(evidencia(sigma))
+    assert ev[0] == pytest.approx(0.2) and ev == sorted(ev) and ev[-1] == 1.0 and all(0 <= e <= 1 for e in ev)
+
+
+def test_fallar_nunca_da_progreso_y_acertar_mucho_se_acerca_al_maximo():
+    assert progreso(-1.0, 0.5) == 0.0 and progreso(0.0, 0.5) == 0.0
+    assert progreso(0.36, 1.2) == pytest.approx(0.18 * 0.2, abs=0.02)  # una sola respuesta correcta: casi nada
+    assert percent_concepto(3.0, 0.4) > 85
+
+
+def _dominio(session, concepto_id, theta, sigma, n):
+    session.add(Dominio(concepto_id=concepto_id, theta=theta, sigma=sigma, n_intentos=n, racha=0, tendencia=0.0))
+    session.flush()
+
+
+def test_el_porcentaje_cuenta_todo_el_temario_no_solo_lo_tocado(session, bank):
+    import_bank(session, bank)  # dos conceptos en el mismo subtema
+    c1, c2 = session.scalars(select(Concepto.id).order_by(Concepto.nombre)).all()[:2]
+    asig, sub = session.scalar(select(Asignatura.id)), session.scalar(select(Subtema.id))
+    assert percent_of(session, "asignatura", asig) == 0  # sin respuestas: 0, no 50
+    _dominio(session, c1, 3.0, 0.4, 12)  # un concepto muy dominado y el otro sin tocar: la mitad del temario
+    assert percent_of(session, "subtema", sub) == pytest.approx(percent_concepto(3.0, 0.4) / 2, abs=1)
+    assert percent_of(session, "asignatura", asig) == percent_of(session, "subtema", sub)
+    _dominio(session, c2, 3.0, 0.4, 12)
+    assert percent_of(session, "asignatura", asig) == percent_concepto(3.0, 0.4)
+
+
+def test_una_sola_respuesta_correcta_apenas_mueve_el_porcentaje(session, bank):
+    import_bank(session, bank)
+    q = session.scalars(select(Pregunta).order_by(Pregunta.clave)).first()
+    r = submit_answer(session, start_session(session, "practica", {}), q.id, ORDEN, "a", None, {})
+    asig = session.scalar(select(Asignatura.id))
+    assert r.correcta and 0 < percent_of(session, "asignatura", asig) <= 5
