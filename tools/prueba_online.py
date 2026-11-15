@@ -17,7 +17,7 @@ os.environ.setdefault("HEXAPREP_TZ", "Europe/Madrid")
 from hexaprep import perfiles, tiempo  # noqa: E402
 from hexaprep.api import create_app  # noqa: E402
 from hexaprep.db import database_url, get_engine_online  # noqa: E402
-from hexaprep.models import Dominio, DominioSnapshot, Evento, Intento, Sesion  # noqa: E402
+from hexaprep.models import Ajuste, Dominio, DominioSnapshot, Evento, Intento, Sesion  # noqa: E402
 
 TMP = "prueba_tmp"
 
@@ -59,17 +59,23 @@ def main() -> int:
                 r = cli.get(ruta)
                 if r.status_code != 200:
                     fallos.append(f"{ruta}: HTTP {r.status_code}")
+            fecha = (tiempo.hoy().replace(year=tiempo.hoy().year + 1)).isoformat()  # fecha de examen: se guarda y se lee
+            if cli.put(f"/api/examen/{asig}", json={"fecha": fecha}).status_code != 200 or cli.get(f"/api/examen/{asig}").json()["fecha"] != fecha:
+                fallos.append("la fecha de examen no se guarda")
             hora_esperada = tiempo.ahora().hour
         # Lectura con una conexión NUEVA: lo que no esté confirmado en disco no aparece.
         fresco = perfiles.engine_de(get_engine_online(url), TMP)
         with fresco.connect() as c:
             n = {t.__tablename__: c.scalar(select(func.count()).select_from(t)) for t in (Intento, Evento, Sesion, Dominio, DominioSnapshot)}
             horas = {h for (h,) in c.execute(select(Intento.hora_dia))}
+            examenes = c.scalar(select(func.count()).select_from(Ajuste).where(Ajuste.clave.like('examen:%')))
         print("respuestas enviadas:", enviadas, "| saltadas:", saltadas, "| filas guardadas:", n, "| hora guardada:", horas, "hora Madrid:", hora_esperada)
         if n["intento"] != enviadas:
             fallos.append(f"intentos guardados {n['intento']} != enviados {enviadas}")
         if n["evento"] < enviadas or n["sesion"] != 1 or n["dominio"] < 1 or n["dominio_snapshot"] < 1:
             fallos.append(f"faltan filas derivadas: {n}")
+        if examenes != 1:
+            fallos.append(f"la fecha de examen no persiste en una conexión nueva ({examenes})")
         if horas and horas != {hora_esperada} and abs(min(horas) - hora_esperada) > 1:
             fallos.append("la hora guardada no es la de Madrid")
     finally:

@@ -63,3 +63,15 @@ describe("pregunta escrita", () => {
     vi.useRealTimers();
   });
 });
+
+describe("pregunta escrita: corrección letra a letra", () => {
+  it("al_fallar_marca_donde_esta_la_diferencia_en_cada_hueco_fallado", async () => {
+    const { user } = setup();
+    await user.type(await screen.findByLabelText("Gerundi"), "admetent");
+    await user.type(screen.getByLabelText("Participi"), "admes");
+    await user.click(screen.getByRole("button", { name: "Comprobar" }));
+    const dif = await screen.findByLabelText(/Escribiste admes, lo correcto es admès/);
+    expect(dif).toBeInTheDocument();
+    expect(screen.queryByLabelText(/Escribiste admetent/)).toBeNull(); // el hueco acertado no lleva diferencia
+  });
+});

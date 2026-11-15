@@ -11,3 +11,8 @@ createRoot(document.getElementById("root")!).render(
     </Acceso>
   </StrictMode>,
 );
+
+// Solo en producción: el service worker hace la app instalable en el móvil y el portátil.
+if ("serviceWorker" in navigator && import.meta.env.PROD) {
+  navigator.serviceWorker.register("/sw.js").catch(() => { /* sin service worker la app funciona igual */ });
+}

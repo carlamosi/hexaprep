@@ -159,7 +159,7 @@ Orden recomendado: `superpowers:brainstorming` (ya hecho, esta especificación) 
 | Sensación | **Cuidada con microanimaciones**, sin gamificación |
 | Simulacro | **No** |
 | Notas y penalización | **No hay nota ni resta**: solo se marca cuándo es incorrecto |
-| Cuenta atrás al examen | **No** (da igual practicar semanas o un día antes) |
+| Cuenta atrás al examen | **No** (da igual practicar semanas o un día antes) | **Cambiado el 2026-11-15 a petición de Carla:** existe una fecha de examen OPCIONAL por asignatura (solo en «Hoy», solo si la pone ella, sin avisos ni rachas)
 | Dificultad | **Difícil desde el principio** y **test de nivel de 15 preguntas** |
 | Preguntas nuevas | **Lotes por booklet y bajo demanda** según flaquezas |
 | Idioma | Preguntas **en el idioma de la asignatura**. **[PROPUESTA]** interfaz en castellano, preparada para catalán (con la PAU de Cataluña lo más probable es acabar usándola en catalán; decidirlo al hacer los mockups) |

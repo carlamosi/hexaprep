@@ -55,6 +55,9 @@ export interface AnswerResult {
   /** Solo escritas: acierto, formas válidas y pista de cada hueco. */
   campos?: { etiqueta: string; correcto: boolean; esperado: string[]; nota: string | null }[] | null;
 }
+export interface Examen {
+  fecha: string | null; dias: number | null; por_dia: number | null; total: number; tocados: number; sin_tocar: number;
+}
 export interface Suggestion {
   tipo: "concepto" | "placement"; concepto_id: string | null; concepto: string | null; subtema_id: string | null;
   motivo: string; ganancia_por_minuto: number; riesgo_olvido: number; score: number;
@@ -112,6 +115,8 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
 }
 
 export const api = {
+  getExamen: (asignaturaId: string) => request<Examen>(`/api/examen/${asignaturaId}`),
+  setExamen: (asignaturaId: string, fecha: string | null) => request<Examen>(`/api/examen/${asignaturaId}`, "PUT", { fecha }),
   getAuthConfig: () => request<{ google_client_id: string | null }>("/api/auth/config"),
   authMe: () => request<{ email: string }>("/api/auth/me"),
   authGoogle: (credential: string) => request<{ email: string; nombre: string }>("/api/auth/google", "POST", { credential }),

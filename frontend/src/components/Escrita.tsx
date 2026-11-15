@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import type { AnswerResult } from "../api";
+import { compararLetras, masCercana, type Segmento } from "../diff";
 import { t } from "../i18n";
 
 /** Letras que no están en el teclado español y la ele geminada: se insertan donde está el cursor. */
@@ -7,6 +8,24 @@ export const CARACTERES = ["à", "è", "é", "í", "ï", "ò", "ó", "ú", "ü",
 
 export function insertar(valor: string, ini: number, fin: number, c: string): { valor: string; cursor: number } {
   return { valor: valor.slice(0, ini) + c + valor.slice(fin), cursor: ini + c.length };
+}
+
+function Letras({ segs, malo }: { segs: Segmento[]; malo: string }) {
+  return <>{segs.map((s, k) => (s.ok ? <span key={k}>{s.texto}</span> : <mark key={k} className={`rounded-sm bg-transparent font-bold ${malo}`}>{s.texto}</mark>))}</>;
+}
+
+/** «Escribiste X, lo correcto es Y» con las letras que difieren marcadas. */
+function Diferencia({ escrito, esperado }: { escrito: string; esperado: string[] }) {
+  const forma = masCercana(escrito, esperado);
+  if (!forma || !escrito.trim()) return null;
+  const d = compararLetras(escrito, forma);
+  return (
+    <p aria-label={`Escribiste ${escrito.trim()}, lo correcto es ${forma}`} className="w-full pl-0 text-lg sm:pl-[108px]">
+      <Letras segs={d.tu} malo="text-[var(--ko)] underline decoration-wavy" />
+      <span aria-hidden="true" className="px-2 text-[var(--ink-3)]">→</span>
+      <Letras segs={d.correcto} malo="text-[var(--ok)] underline" />
+    </p>
+  );
 }
 
 interface Props {
@@ -52,6 +71,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit }: Props) {
                 r ? (r.correcto ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]") : "border-[var(--rule-2)]"
               }`}
             />
+            {r && !r.correcto && <Diferencia escrito={valores[i]} esperado={r.esperado} />}
           </div>
         );
       })}

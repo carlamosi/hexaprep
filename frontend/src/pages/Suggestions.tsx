@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { api, type Suggestion } from "../api";
+import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
 
 interface Props {
-  client?: Pick<typeof api, "suggestions">;
+  client?: Pick<typeof api, "suggestions"> & Partial<ExamenClient>;
+  asignaturaId?: string;
   onPracticeSubtema: (subtemaId: string) => void;
 }
 
-/** Qué conviene repasar ahora: conceptos con el motivo. Sin fechas ni cuenta atrás. */
-export function Suggestions({ client = api, onPracticeSubtema }: Props) {
+/** Qué conviene repasar ahora: conceptos con el motivo. La fecha de examen es opcional y solo la ves si la pones. */
+export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: Props) {
   const [items, setItems] = useState<Suggestion[] | null>(null);
   const [failed, setFailed] = useState(false);
 
@@ -24,6 +26,7 @@ export function Suggestions({ client = api, onPracticeSubtema }: Props) {
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-6">
       <h1 className="text-2xl font-semibold">{t("hoy.titulo")}</h1>
+      {asignaturaId && client.getExamen && client.setExamen && <Examen asignaturaId={asignaturaId} client={client as ExamenClient} />}
       {items.length === 0 && <p className="mt-6 text-[var(--ink-2)]">{t("hoy.vacio")}</p>}
       <ol className="mt-6 space-y-4">
         {items.map((s, i) => (
