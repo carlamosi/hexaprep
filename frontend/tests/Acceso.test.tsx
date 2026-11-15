@@ -68,3 +68,35 @@ describe("acceso con Google", () => {
     expect(await screen.findByRole("heading", { name: /cuenta de Google/ })).toBeInTheDocument();
   });
 });
+
+describe("acceso dentro de la app instalada (iPhone)", () => {
+  function ajustes() {
+    return (window as unknown as { google: { accounts: { id: { initialize: ReturnType<typeof vi.fn> } } } }).google.accounts.id.initialize;
+  }
+  afterEach(() => { delete (window as unknown as { matchMedia?: unknown }).matchMedia; window.history.replaceState(null, "", "/"); });
+
+  it("en_la_app_instalada_usa_el_flujo_con_redireccion_porque_la_ventana_emergente_no_funciona", async () => {
+    conGoogle();
+    (window as unknown as { matchMedia: unknown }).matchMedia = vi.fn((q: string) => ({ matches: q.includes("standalone") }));
+    render(<Acceso client={cliente()}>{app}</Acceso>);
+    await waitFor(() => expect(ajustes()).toHaveBeenCalled());
+    expect(ajustes().mock.calls[0][0]).toMatchObject({ ux_mode: "redirect", login_uri: `${window.location.origin}/api/auth/google/redirect` });
+    expect(ajustes().mock.calls[0][0].callback).toBeUndefined();
+  });
+
+  it("en_el_navegador_normal_sigue_con_la_ventana_emergente", async () => {
+    conGoogle();
+    render(<Acceso client={cliente()}>{app}</Acceso>);
+    await waitFor(() => expect(ajustes()).toHaveBeenCalled());
+    expect(ajustes().mock.calls[0][0].ux_mode).toBeUndefined();
+    expect(typeof ajustes().mock.calls[0][0].callback).toBe("function");
+  });
+
+  it("al_volver_de_google_con_un_fallo_muestra_el_aviso_y_limpia_la_direccion", async () => {
+    conGoogle();
+    window.history.replaceState(null, "", "/?acceso=denegado");
+    render(<Acceso client={cliente()}>{app}</Acceso>);
+    expect(await screen.findByRole("alert")).toHaveTextContent(/no tiene acceso/i);
+    expect(window.location.search).toBe("");
+  });
+});

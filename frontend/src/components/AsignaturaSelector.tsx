@@ -26,9 +26,9 @@ export function AsignaturaSelector({ asignaturas, actual, onElegir, onAbrir }: P
   useEffect(() => {
     if (!open) return;
     raiz.current?.querySelector<HTMLElement>('[role="option"][aria-selected="true"]')?.focus();
-    const fuera = (e: MouseEvent) => !raiz.current?.contains(e.target as Node) && setOpen(false);
-    document.addEventListener("mousedown", fuera);
-    return () => document.removeEventListener("mousedown", fuera);
+    const fuera = (e: PointerEvent) => !raiz.current?.contains(e.target as Node) && setOpen(false);
+    document.addEventListener("pointerdown", fuera); // en iOS tocar una zona vacía no genera mousedown
+    return () => document.removeEventListener("pointerdown", fuera);
   }, [open]);
 
   function teclas(e: React.KeyboardEvent) {

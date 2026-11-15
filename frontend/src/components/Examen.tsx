@@ -50,7 +50,7 @@ export function Examen({ asignaturaId, client = api }: { asignaturaId: string; c
       {editando ? (
         <form className="mt-3 flex flex-wrap items-center gap-3" onSubmit={(e) => { e.preventDefault(); if (valor) void guardar(valor); }}>
           <label htmlFor="examen-fecha" className="text-sm text-[var(--ink-2)]">{t("examen.fecha")}</label>
-          <input id="examen-fecha" type="date" value={valor} onChange={(e) => setValor(e.target.value)} className="rounded-[11px] border border-[var(--rule-2)] px-3 py-2" />
+          <input id="examen-fecha" type="date" value={valor} onChange={(e) => setValor(e.target.value)} className="rounded-[11px] border border-[var(--rule-2)] px-3 py-2 text-base" />
           <button type="submit" className={boton}>{t("examen.guardar")}</button>
           <button type="button" className={boton} onClick={() => setEditando(false)}>{t("examen.cancelar")}</button>
         </form>

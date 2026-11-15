@@ -126,3 +126,41 @@ def test_un_exp_raro_en_el_token_se_rechaza_sin_romper(exp):
     c["exp"] = exp
     with pytest.raises(auth.AuthError):
         auth.verificar_google("tok", CLIENT, abrir_con(c))
+
+
+# ---------- flujo con redirección (app instalada en iPhone: la ventana emergente de Google no funciona allí) ----------
+def enviar_redirect(cliente, monkeypatch, email="carla@gmail.com", csrf_cookie="abc", csrf_form="abc", valido=True):
+    def verifica(cred, cid, abrir=None):
+        if not valido:
+            raise auth.AuthError("token no válido")
+        return claims_de_google(email)
+
+    monkeypatch.setattr(auth, "verificar_google", verifica)
+    cliente.cookies.clear()
+    if csrf_cookie is not None:
+        cliente.cookies.set("g_csrf_token", csrf_cookie)
+    return cliente.post("/api/auth/google/redirect", content=f"credential=tok&g_csrf_token={csrf_form}",
+                        headers={"Content-Type": "application/x-www-form-urlencoded"}, follow_redirects=False)
+
+
+def test_redirect_con_token_bueno_abre_sesion_y_vuelve_a_la_app(cliente, monkeypatch):
+    r = enviar_redirect(cliente, monkeypatch)
+    assert r.status_code == 303 and r.headers["location"] == "/"
+    assert "hp_session" in r.headers["set-cookie"] and "HttpOnly" in r.headers["set-cookie"]
+    assert cliente.get("/api/subjects").status_code == 200  # la cookie de sesión ya vale
+
+
+def test_redirect_exige_el_token_csrf_de_google_en_cookie_y_formulario(cliente, monkeypatch):
+    for cookie, form in ((None, "abc"), ("abc", "otro"), ("abc", ""), ("", "")):
+        r = enviar_redirect(cliente, monkeypatch, csrf_cookie=cookie, csrf_form=form)
+        assert r.status_code == 303 and r.headers["location"] == "/?acceso=error", (cookie, form)
+        assert "hp_session" not in r.headers.get("set-cookie", "")
+    assert cliente.get("/api/subjects").status_code == 401
+
+
+def test_redirect_con_email_no_permitido_o_token_falso_vuelve_con_aviso_y_sin_sesion(cliente, monkeypatch):
+    r = enviar_redirect(cliente, monkeypatch, email="intruso@gmail.com")
+    assert r.headers["location"] == "/?acceso=denegado" and "hp_session" not in r.headers.get("set-cookie", "")
+    r = enviar_redirect(cliente, monkeypatch, valido=False)
+    assert r.headers["location"] == "/?acceso=error" and "hp_session" not in r.headers.get("set-cookie", "")
+    assert cliente.get("/api/subjects").status_code == 401

@@ -36,3 +36,9 @@
 
 @keyframes asig-in { from { opacity: 0; transform: translateY(-4px) scale(.98); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .asig-pop { animation: none; } .asig-chev { transition: none; } }
+
+/* Móvil: el desplegable ocupa el ancho de la pantalla (anclado al botón se salía por la derecha) */
+@media (max-width: 639px) {
+  .asig-sel { position: static; }
+  .asig-pop { position: fixed; left: 12px; right: 12px; top: 68px; width: auto; max-height: calc(100dvh - 160px); overflow-y: auto; }
+}

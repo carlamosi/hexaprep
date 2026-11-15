@@ -3,6 +3,7 @@ import base64
 import os
 import secrets
 import tempfile
+import urllib.parse
 from collections import defaultdict
 from contextlib import asynccontextmanager
 from dataclasses import asdict
@@ -11,7 +12,7 @@ from pathlib import Path
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
-from fastapi.responses import FileResponse, JSONResponse, Response
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, ValidationError
 from sqlalchemy import func, select
@@ -142,21 +143,47 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             raise HTTPException(401, "Inicia sesión con Google")
         return {"email": datos["e"]}
 
-    @app.post("/api/auth/google")
-    def auth_google(body: GoogleIn, request: Request, response: Response):
-        if not client_id:
-            raise HTTPException(404, "El acceso con Google no está activado")
-        try:
-            c = auth.verificar_google(body.credential, client_id)
-        except auth.AuthError as e:
-            raise HTTPException(401, str(e))
+    def _abrir_sesion(request: Request, credential: str, response: Response) -> dict:
+        """Comprueba el token de Google y la lista de permitidos, crea el perfil si falta y pone la cookie de sesión.
+        AuthError si el token no vale; PermissionError si el email no está en la lista."""
+        c = auth.verificar_google(credential, client_id)
         if not auth.permitido(c["email"], permitidos()):
-            raise HTTPException(403, "Este email no tiene acceso")
+            raise PermissionError(c["email"])
         engine = request.app.state.engine
         esquema = perfiles.asegurar_perfil(engine, c["email"]) if engine.dialect.name == "postgresql" else "local"
         response.set_cookie(auth.COOKIE, auth.firmar(secreto, c["email"].lower(), esquema), max_age=auth.DURACION,
                             httponly=True, secure=online_url is not None, samesite="lax", path="/")
         return {"email": c["email"].lower(), "nombre": c.get("name", "")}
+
+    @app.post("/api/auth/google")
+    def auth_google(body: GoogleIn, request: Request, response: Response):
+        if not client_id:
+            raise HTTPException(404, "El acceso con Google no está activado")
+        try:
+            return _abrir_sesion(request, body.credential, response)
+        except auth.AuthError as e:
+            raise HTTPException(401, str(e))
+        except PermissionError:
+            raise HTTPException(403, "Este email no tiene acceso")
+
+    @app.post("/api/auth/google/redirect")
+    async def auth_google_redirect(request: Request):
+        """Flujo con redirección de Google (app instalada en iPhone, donde la ventana emergente no funciona):
+        Google envía un formulario con `credential` y `g_csrf_token` (que debe coincidir con su cookie) y volvemos a la app."""
+        if not client_id:
+            raise HTTPException(404, "El acceso con Google no está activado")
+        form = urllib.parse.parse_qs((await request.body()).decode("utf-8", "ignore"))
+        csrf = (form.get("g_csrf_token") or [""])[0]
+        if not csrf or not secrets.compare_digest(csrf, request.cookies.get("g_csrf_token", "")):
+            return RedirectResponse("/?acceso=error", status_code=303)
+        destino = RedirectResponse("/", status_code=303)
+        try:
+            await run_in_threadpool(_abrir_sesion, request, (form.get("credential") or [""])[0], destino)
+        except PermissionError:
+            return RedirectResponse("/?acceso=denegado", status_code=303)
+        except auth.AuthError:
+            return RedirectResponse("/?acceso=error", status_code=303)
+        return destino
 
     @app.post("/api/auth/logout")
     def auth_logout(response: Response):

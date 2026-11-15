@@ -55,7 +55,7 @@ interface Props {
 
 export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, onAbrirSelector, ruta, sinNav }: Props) {
   return (
-    <header className="sticky top-0 z-10 border-b border-[var(--rule)] bg-[var(--paper)]/95 backdrop-blur">
+    <header className="sticky top-0 z-10 border-b border-[var(--rule)] bg-[var(--paper)]/95 sm:backdrop-blur">
       <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-3">
         <a href="#panal" className="flex items-center gap-3 text-[var(--ink)] no-underline">
@@ -75,7 +75,7 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
           )}
         </div>
         {!sinNav && (
-          <nav aria-label={t("nav.principal")} className="flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[var(--paper)] max-sm:p-2">
+          <nav aria-label={t("nav.principal")} className="flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[var(--paper)] max-sm:p-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))]">
             {NAV.map((k) => (
               <a
                 key={k}

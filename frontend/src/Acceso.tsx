@@ -5,7 +5,7 @@ import { t } from "./i18n";
 declare global {
   interface Window {
     google?: {
-      accounts: { id: { initialize(o: { client_id: string; callback: (r: { credential: string }) => void }): void; renderButton(el: HTMLElement | null, o: object): void } };
+      accounts: { id: { initialize(o: { client_id: string; callback?: (r: { credential: string }) => void; ux_mode?: "popup" | "redirect"; login_uri?: string }): void; renderButton(el: HTMLElement | null, o: object): void } };
     };
   }
 }
@@ -13,6 +13,11 @@ declare global {
 export type AccesoClient = Pick<typeof api, "getAuthConfig" | "authMe" | "authGoogle" | "authLogout">;
 
 type Estado = { tipo: "cargando" } | { tipo: "libre" } | { tipo: "fuera"; clientId: string } | { tipo: "dentro"; clientId: string; email: string } | { tipo: "error" };
+
+/** ¿Está abierta como app instalada (pantalla de inicio)? Allí la ventana emergente de Google no funciona en iOS. */
+function enAppInstalada(): boolean {
+  return (navigator as unknown as { standalone?: boolean }).standalone === true || !!window.matchMedia?.("(display-mode: standalone)").matches;
+}
 
 function cargarGoogle(): Promise<void> {
   if (window.google) return Promise.resolve();
@@ -34,7 +39,10 @@ function Entrada({ clientId, aviso, onCredencial }: { clientId: string; aviso: s
   useEffect(() => {
     cargarGoogle()
       .then(() => {
-        window.google!.accounts.id.initialize({ client_id: clientId, callback: (r) => alRecibir.current(r.credential) });
+        window.google!.accounts.id.initialize(enAppInstalada()
+          // con redirección Google envía el token por formulario a nuestra API y vuelve aquí (flujo fiable dentro de la app instalada)
+          ? { client_id: clientId, ux_mode: "redirect", login_uri: `${window.location.origin}/api/auth/google/redirect` }
+          : { client_id: clientId, callback: (r) => alRecibir.current(r.credential) });
         window.google!.accounts.id.renderButton(boton.current, { theme: "outline", size: "large", text: "signin_with", locale: "es" });
       })
       .catch(() => setSinGoogle(true));
@@ -53,6 +61,13 @@ function Entrada({ clientId, aviso, onCredencial }: { clientId: string; aviso: s
 export function Acceso({ children, client = api }: { children: ReactNode; client?: AccesoClient }) {
   const [estado, setEstado] = useState<Estado>({ tipo: "cargando" });
   const [aviso, setAviso] = useState<string | null>(null);
+
+  useEffect(() => { // al volver de Google con redirección, el motivo del fallo llega en la dirección
+    const motivo = new URLSearchParams(window.location.search).get("acceso");
+    if (!motivo) return;
+    setAviso(t(motivo === "denegado" ? "acceso.denegado" : "acceso.error"));
+    window.history.replaceState(null, "", window.location.pathname + window.location.hash);
+  }, []);
 
   useEffect(() => {
     let vivo = true;

@@ -63,7 +63,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit }: Props) {
           <div key={i} className="flex flex-wrap items-center gap-3">
             <label htmlFor={`escrita-${i}`} className="w-24 text-sm font-semibold tracking-[.08em] text-[var(--ink-2)] uppercase">{et || t("practica.tuRespuesta")}</label>
             <input
-              id={`escrita-${i}`} ref={(el) => { cajas.current[i] = el; }} autoFocus={i === 0} autoComplete="off" autoCapitalize="none"
+              id={`escrita-${i}`} ref={(el) => { cajas.current[i] = el; }} autoFocus={i === 0} autoComplete="off" autoCorrect="off" autoCapitalize="none"
               spellCheck={false} lang="ca" value={valores[i]} disabled={disabled}
               onFocus={() => { activa.current = i; }} onChange={(e) => poner(i, e.target.value)}
               onKeyDown={(e) => { if (e.key === "Enter" && i < etiquetas.length - 1) { e.preventDefault(); cajas.current[i + 1]?.focus(); } }}
@@ -80,7 +80,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit }: Props) {
           {CARACTERES.map((c) => (
             <button
               key={c} type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => insertarCaracter(c)}
-              className="min-w-10 rounded-[8px] border border-[var(--rule-2)] bg-white px-2.5 py-1.5 text-lg"
+              className="min-h-11 min-w-11 rounded-[8px] border border-[var(--rule-2)] bg-white px-2.5 py-1.5 text-lg"
             >
               {c}
             </button>

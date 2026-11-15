@@ -35,7 +35,7 @@ export default function App() {
 
   const sinNav = route === "practica";
   return (
-    <div className="min-h-screen pb-20 font-sans sm:pb-0">
+    <div className="min-h-dvh pb-[calc(5rem+env(safe-area-inset-bottom))] font-sans sm:pb-0">
       <AppHeader asignatura={nombre} asignaturaId={asignaturaId} asignaturas={subjects} onCambiarAsignatura={(id) => { elegir(id); go("panal"); }} onAbrirSelector={refrescar} ruta={route} sinNav={sinNav} />
       <Fragment key={asignaturaId}>{page}</Fragment>
     </div>
