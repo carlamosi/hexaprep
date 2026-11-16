@@ -1,6 +1,7 @@
 import json
 import logging
 import math
+import random
 import re
 import time
 from dataclasses import dataclass, field
@@ -25,6 +26,7 @@ TIPOS = {
 }
 # los únicos que puede enviar el navegador por su cuenta (el resto los registra el servidor)
 TIPOS_CLIENTE = {"explicacion_cerrada", "ayuda_abierta", "contexto", "reanudacion"}
+OBJETIVOS = (0.6, 0.75, 0.85)  # acierto buscado; con (0.6,) se desactiva el experimento
 MAX_PAYLOAD = 1000  # caracteres del JSON de un evento de cliente
 TOLERANCIA_PROBLEMA = 0.01  # error relativo que cuenta como acierto en un problema
 CONFIANZAS = {"seguro", "dudo", "adivino"}
@@ -80,6 +82,7 @@ def _require_session(session: Session, sesion_id: str) -> Sesion:
 def start_session(session: Session, modo: str, filtro: dict) -> str:
     if modo not in MODOS:
         raise ValueError(f"modo no válido: {modo}")
+    filtro = {"objetivo": random.choice(OBJETIVOS), **filtro}  # experimento: acierto buscado, sorteado por sesión
     ses = Sesion(modo=modo, filtro=filtro, version_app=VERSION_APP, zona_horaria=time.tzname[0])
     session.add(ses)
     _commit(session)

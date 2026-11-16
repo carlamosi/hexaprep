@@ -51,7 +51,7 @@ def test_excluded_questions_do_not_count(session, bank):
     sid = start_session(session, "practica", {})
     submit_answer(session, sid, p["x-0"].id, ORDEN, "a", None, {})  # acierto fácil
     submit_answer(session, sid, p["x-1"].id, ORDEN, "b", None, {})  # fallo
-    expected = update(*update(0.0, 1.5, 2, True), 3, False)
+    expected = update(*update(0.0, 1.5, 2, True, "test"), 3, False, "test")
     dom = session.scalar(select(Dominio))
     assert (dom.theta, dom.sigma) == pytest.approx(expected)
 
@@ -59,7 +59,7 @@ def test_excluded_questions_do_not_count(session, bank):
     session.commit()
     rebuild(session, dom.concepto_id)
     session.refresh(dom)
-    assert (dom.theta, dom.sigma, dom.n_intentos) == pytest.approx((*update(0.0, 1.5, 2, True), 1))
+    assert (dom.theta, dom.sigma, dom.n_intentos) == pytest.approx((*update(0.0, 1.5, 2, True, "test"), 1))
 
 
 def test_answer_updates_mastery_and_records_before_after(session, bank):

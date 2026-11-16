@@ -44,6 +44,7 @@ class Filtro:
     subtema_id: str | None = None
     solo_fallos: bool = False
     tipos: list[str] | None = None  # test, vf, problema; None = todos
+    objetivo: float | None = None  # acierto buscado en esta sesión; None = TARGET (el experimento lo sortea por sesión)
 
 
 @dataclass
@@ -150,7 +151,7 @@ def _anotar(session: Session, out: QuestionOut, p: Pregunta, motivo: str) -> Que
             motivo = "repaso_fsrs"
         else:
             motivo = "practica" if dom is not None and dom.n_intentos else "nuevo"
-    out.servida = {"motivo": motivo, "p_pred": round(expected_correct(_theta_efectivo(dom), p.dificultad_base), 4),
+    out.servida = {"motivo": motivo, "p_pred": round(expected_correct(_theta_efectivo(dom), p.dificultad_base, p.tipo), 4),
                    "dias_concepto": round((utcnow() - ultimo).total_seconds() / 86400, 2) if ultimo else None}
     return out
 
@@ -234,7 +235,7 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
     def score(item: tuple[Pregunta, str]) -> float:
         p, sub = item
         dom = dominios.get(p.concepto_id)
-        s = abs(expected_correct(_theta_efectivo(dom), p.dificultad_base) - TARGET)
+        s = abs(expected_correct(_theta_efectivo(dom), p.dificultad_base, p.tipo) - (filtro.objetivo or TARGET))
         s += SEEN_PENALTY * min(seen.get(p.clave, 0), 3)
         if p.concepto_id == last_concept:
             s += SAME_CONCEPT

@@ -24,14 +24,25 @@ def sigmoid(x: float) -> float:
     return 1 / (1 + math.exp(-x))
 
 
-def expected_correct(theta: float, dificultad: int) -> float:
-    return sigmoid(theta - (dificultad - 3) * DIFF_SCALE)
+# Probabilidad de acertar sin saber: en un test de 4 opciones y en un V/F se acierta por azar; un problema numérico
+# o una respuesta escrita casi nunca. Sin tipo (o con otro) no se supone azar.
+ACIERTO_AZAR = {"test": 0.25, "vf": 0.5}
 
 
-def update(theta: float, sigma: float, dificultad: int, correcta: bool) -> tuple[float, float]:
-    p = expected_correct(theta, dificultad)
-    var = 1 / (1 / sigma**2 + p * (1 - p))
-    return theta + STEP * var * ((1.0 if correcta else 0.0) - p), max(SIGMA_MIN, math.sqrt(var))
+def expected_correct(theta: float, dificultad: int, tipo: str | None = None) -> float:
+    g = ACIERTO_AZAR.get(tipo, 0.0)
+    return g + (1 - g) * sigmoid(theta - (dificultad - 3) * DIFF_SCALE)
+
+
+def update(theta: float, sigma: float, dificultad: int, correcta: bool, tipo: str | None = None) -> tuple[float, float]:
+    """Un paso del modelo logístico con azar (3PL con acierto mínimo g): un acierto en test o V/F enseña menos."""
+    g = ACIERTO_AZAR.get(tipo, 0.0)
+    q = sigmoid(theta - (dificultad - 3) * DIFF_SCALE)
+    p = g + (1 - g) * q
+    pq = max(p * (1 - p), 1e-9)
+    dp = (1 - g) * q * (1 - q)
+    var = 1 / (1 / sigma**2 + dp * dp / pq)
+    return theta + STEP * var * ((1.0 if correcta else 0.0) - p) * dp / pq, max(SIGMA_MIN, math.sqrt(var))
 
 
 def percent(theta: float) -> int:
@@ -74,12 +85,12 @@ def rebuild(session: Session, concepto_id: str) -> Dominio:
     """Reconstruye el dominio de un concepto repitiendo sus intentos (sin los de preguntas excluidas)."""
     dom = _dominio(session, concepto_id)
     rows = session.execute(
-        select(Intento.correcta, Intento.dificultad).join(Pregunta, Pregunta.id == Intento.pregunta_id)
+        select(Intento.correcta, Intento.dificultad, Pregunta.tipo).join(Pregunta, Pregunta.id == Intento.pregunta_id)
         .where(Intento.concepto_id == concepto_id, Pregunta.excluida.is_(False), Intento.deleted_at.is_(None))
         .order_by(Intento.id)).all()
     theta, sigma, racha, history = 0.0, SIGMA0, 0, [0.0]
-    for correcta, dificultad in rows:
-        theta, sigma = update(theta, sigma, dificultad, correcta)
+    for correcta, dificultad, tipo in rows:
+        theta, sigma = update(theta, sigma, dificultad, correcta, tipo)
         racha = racha + 1 if correcta else 0
         history.append(theta)
     dom.theta, dom.sigma, dom.n_intentos, dom.racha = theta, sigma, len(rows), racha

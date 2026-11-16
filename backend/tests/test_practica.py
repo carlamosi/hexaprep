@@ -5,7 +5,7 @@ from collections import Counter
 import pytest
 from sqlalchemy import select
 
-from hexaprep import selector
+from hexaprep import mastery, selector
 from hexaprep.bank import BankFile, PreguntaIn
 from hexaprep.events import AlreadyAnswered, parse_numero, skip_question, start_session, submit_answer
 from hexaprep.importer import import_bank, question_digest
@@ -62,7 +62,8 @@ def test_never_serves_the_same_concept_twice_in_a_row_when_there_is_an_alternati
         responder(session, sid, q)
 
 
-def test_alternates_question_types_when_difficulty_is_equal(session):
+def test_alternates_question_types_when_difficulty_is_equal(session, monkeypatch):
+    monkeypatch.setattr(mastery, "ACIERTO_AZAR", {})  # «igual dificultad» = igual probabilidad esperada, sin azar en test
     asig, sid = montar(session, *[preg_test(f"t{i}", f"T{i}") for i in range(3)],
                        *[problema(f"p{i}", f"P{i}") for i in range(3)])
     tipos = []
