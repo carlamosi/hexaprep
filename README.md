@@ -1,8 +1,8 @@
 # HexaPrep
 
-App web local de práctica para Carla Monté Sihuro: Economía y Matemáticas de 1º de Bachillerato, Química (en catalán) y Català.
-Preguntas test, verdadero/falso y problemas con respuesta numérica, con repaso por tema y subtema, historial de análisis y progreso guardado en tu propio equipo.
-Sin cuentas, sin nube, sin claves de API y sin telemetría.
+App web de práctica para Carla Monté Sihuro: Economía y Matemáticas de 1º de Bachillerato, Química (en catalán) y Català.
+Preguntas test, verdadero/falso, problemas con respuesta numérica y preguntas escritas con corrección letra a letra, con repaso por tema, repaso espaciado, historial de análisis y un porcentaje que es el progreso real del temario.
+Dos modos: **local** (en tu equipo, sin cuentas ni nube) y **online** (Vercel y Neon, acceso con Google, instalable en el móvil). Sin claves de API ni telemetría. Este documento cubre el modo local; el estado completo está en `docs/ESTADO.md`.
 
 ## Requisitos
 

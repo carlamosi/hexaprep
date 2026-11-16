@@ -1,11 +1,11 @@
 # HexaPrep · instrucciones del proyecto
 
-App web local de práctica para Carla Monté Sihuro («Monté» siempre con acento): Economía, Química (catalán), Matemáticas y Català, con test, verdadero/falso y problemas numéricos. Qué y por qué: `SPEC.md` (última sección: decisiones posteriores a la v1). Cómo: `docs/superpowers/plans/2026-11-14-hexaprep-economia.md` (20 tareas). Qué modelo para cada tarea: `docs/MODELOS.md`.
+App web de práctica (local y online en Vercel con base Neon y acceso con Google) para Carla Monté Sihuro («Monté» siempre con acento) y otras dos personas: Economía, Química (catalán), Matemáticas y Català, con test, verdadero/falso, problemas numéricos y preguntas escritas. Qué y por qué: `SPEC.md` (última sección: decisiones posteriores a la v1). Cómo: `docs/superpowers/plans/2026-11-14-hexaprep-economia.md` (20 tareas). Qué modelo para cada tarea: `docs/MODELOS.md`. **Para retomar en una conversación nueva: `docs/ARRANQUE.md`; ideas y backlog: `docs/IDEAS.md`.**
 
 ## Estado y ejecución
 - **Las 20 tareas del plan están hechas** (v1 verificada) y después se añadió mucho más a petición de Carla. No vuelvas a ejecutar el plan. Lee primero `docs/ESTADO.md`: estado, cómo probar, **cómo se amplían los bancos (los ids dependen de la posición: no edites ni reordenes archivos antiguos de `banks/*/src`)**, pendientes y siguientes pasos propuestos. El trabajo nuevo se plantea con Carla a partir de esos pasos.
 - Los commits de este repositorio local están autorizados cuando acabes un cambio verificado y mientras el trabajo sea el acordado con Carla; los cambios de más de un archivo se proponen antes con un plan breve.
-- **Autorizado** trabajar directamente en la rama `main` de este repositorio local, sin remoto. No hagas push ni crees remotos.
+- **Autorizado** trabajar directamente en la rama `main`. El remoto es `github.com/carlamosi/hexaprep` (público) y **cada push a `main` despliega en producción** (https://hexaprep-app.vercel.app): empuja solo tras verificar y cuando Carla pida aplicar o desplegar; no crees otros remotos ni cambies la visibilidad del repo sin que lo pida. No escribas emails, secretos ni datos personales en archivos del repo.
 - Las decisiones tomadas durante la ejecución y los menores aplazados están en el ledger (`.superpowers/sdd/...`, ignorado por git); consúltalo en lugar de la memoria. Si cambias un mockup aprobado, avisa a Carla.
 
 ## Modelos
@@ -20,3 +20,5 @@ App web local de práctica para Carla Monté Sihuro («Monté» siempre con acen
 - Entorno (Windows con Git Bash): los comandos largos con varios heredocs y comillas fallan; escribe los scripts de Python con Write (en el scratchpad) y ejecútalos. El `/tmp` de Bash no lo ve el Python de Windows. Usa `PYTHONUTF8=1` al imprimir acentos.
 - Para librerías (fsrs, fastapi, sqlalchemy, alembic, tailwind, motion, katex) consulta la documentación actual con context7 antes de escribir código.
 - Redirige la salida larga de tests a un archivo y lee solo la cola.
+- Online: los cambios de tablas (migraciones) y los bancos nuevos hay que llevarlos a todos los perfiles de Neon con `tools/actualizar_perfiles.py`; los secretos viven en Vercel y `.env.local`, nunca en la conversación.
+- Gasta pocos créditos: subagentes con un brief mínimo, revisión Opus solo de lo que cambia, y preferir generadores por reglas a agentes que redactan.
