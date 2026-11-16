@@ -1,6 +1,6 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { AnswerResult } from "../api";
-import { compararLetras, masCercana, type Segmento } from "../diff";
+import { compararLetras, masCercana, mismaForma, type Segmento } from "../diff";
 import { t } from "../i18n";
 
 /** Letras que no están en el teclado español y la ele geminada: se insertan donde está el cursor. */
@@ -33,13 +33,20 @@ interface Props {
   disabled: boolean;
   resultado: AnswerResult["campos"];
   onSubmit: (valores: string[]) => void;
+  /** Avisa de si ya se puede seguir: falta escribir bien lo fallado (corrección activa) salvo que se salte. */
+  onCopiaLista?: (lista: boolean) => void;
 }
 
 /** Una caja por hueco (gerundi, participi...) con la barra de caracteres catalanes. Enter pasa al hueco siguiente y envía en el último. */
-export function Escrita({ etiquetas, disabled, resultado, onSubmit }: Props) {
+export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista }: Props) {
   const [valores, setValores] = useState<string[]>(() => etiquetas.map(() => ""));
   const cajas = useRef<(HTMLInputElement | null)[]>([]);
   const activa = useRef(0);
+  const [copias, setCopias] = useState<string[]>(() => etiquetas.map(() => ""));
+  const [omitida, setOmitida] = useState(false);
+  const falladas = (resultado ?? []).map((r, i) => (r.correcto ? -1 : i)).filter((i) => i >= 0);
+  const lista = omitida || falladas.every((i) => mismaForma(copias[i], resultado![i].esperado));
+  useEffect(() => { onCopiaLista?.(lista); }, [lista, onCopiaLista]);
 
   function poner(i: number, v: string) {
     setValores((vs) => vs.map((x, j) => (j === i ? v : x)));
@@ -72,6 +79,18 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit }: Props) {
               }`}
             />
             {r && !r.correcto && <Diferencia escrito={valores[i]} esperado={r.esperado} />}
+            {r && !r.correcto && (
+              <div className="flex w-full flex-wrap items-center gap-3 sm:pl-[108px]">
+                <label htmlFor={`copia-${i}`} className="sr-only">{t("practica.escribelaBien")}</label>
+                <input
+                  id={`copia-${i}`} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} lang="ca"
+                  placeholder={t("practica.escribelaBien")} value={copias[i]} disabled={omitida || mismaForma(copias[i], r.esperado)}
+                  onChange={(e) => setCopias((cs) => cs.map((c, j) => (j === i ? e.target.value : c)))}
+                  className={`w-64 rounded-[11px] border px-4 py-3 text-lg ${mismaForma(copias[i], r.esperado) ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--rule-2)]"}`}
+                />
+                {mismaForma(copias[i], r.esperado) && <span aria-hidden="true" className="text-[var(--ok)]">✓</span>}
+              </div>
+            )}
           </div>
         );
       })}
@@ -90,6 +109,12 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit }: Props) {
       <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
         {t("practica.comprobar")}
       </button>
+      {falladas.length > 0 && !lista && (
+        <div className="space-y-1">
+          <p className="text-sm text-[var(--ink-3)]">{t("practica.copiaAyuda")}</p>
+          <button type="button" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4" onClick={() => setOmitida(true)}>{t("practica.seguirSinCopiar")}</button>
+        </div>
+      )}
       <p className="text-sm text-[var(--ink-3)]">{t("practica.formatoEscrita")}</p>
     </form>
   );

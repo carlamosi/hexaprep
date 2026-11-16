@@ -12,6 +12,7 @@
 """
 import json
 import random
+from collections import defaultdict
 from dataclasses import dataclass, field
 
 from sqlalchemy import Select, func, select
@@ -25,6 +26,7 @@ PRIOR_THETA = 1.0
 PRIOR_ATTEMPTS = 3
 FAIL_GAP = 2  # respuestas intermedias antes de reintroducir un concepto fallado (siempre dentro de 5)
 SKIP_GAP = 3
+REINTENTO_GAP = 3  # respuestas intermedias antes de repetir una escrita fallada (la misma pregunta, una sola vez)
 SEEN_PENALTY = 0.15
 TOP_K = 5
 SAME_CONCEPT = 1.0
@@ -71,6 +73,7 @@ class QuestionOut:
     contexto: str | None = None
     apartado: str | None = None
     campos: list[str] = field(default_factory=list)  # etiquetas de los huecos de una escrita
+    reintento: bool = False  # repetición de una escrita fallada hace un momento
 
 
 def _candidates(filtro: Filtro) -> Select:
@@ -91,7 +94,7 @@ def _candidates(filtro: Filtro) -> Select:
     return q
 
 
-def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random) -> QuestionOut:
+def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random, reintento: bool = False) -> QuestionOut:
     sub = session.get(Subtema, subtema_id)
     textos = {o.posicion: o.texto for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == p.id))}
     etiquetas = [c.get("etiqueta", "") for c in json.loads(textos["a"])] if p.tipo == "escrita" else []
@@ -105,7 +108,7 @@ def _to_out(session: Session, p: Pregunta, subtema_id: str, rng: random.Random) 
         ayuda_larga=p.ayuda_larga, fuente_id=p.fuente_id, fuente_pagina=p.fuente_pagina, fuente_cara=p.fuente_cara,
         tema=session.get(Tema, sub.tema_id).nombre, subtema=sub.nombre, tipo=p.tipo, imagen=p.imagen,
         grupo=p.grupo, contexto=p.contexto, apartado=p.apartado,
-        campos=etiquetas)
+        campos=etiquetas, reintento=reintento)
 
 
 def _seen_counts(session: Session) -> dict[str, int]:
@@ -145,7 +148,18 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
         select(Intento.pregunta_id, Intento.correcta, Intento.concepto_id).where(Intento.sesion_id == sesion_id)
         .order_by(Intento.id)).all()
     answered_ids = {a[0] for a in answered}
-    cands = [(p, sub) for p, sub in session.execute(_candidates(filtro)).all() if p.id not in answered_ids]
+    todas = session.execute(_candidates(filtro)).all()
+    # corrección activa: una escrita fallada (una sola vez en la sesión) vuelve a salir pasadas REINTENTO_GAP respuestas
+    por_pregunta: dict[str, list[tuple[int, bool]]] = defaultdict(list)
+    for idx, (pid, correcta, _) in enumerate(answered):
+        por_pregunta[pid].append((idx, correcta))
+    debidas = [(por_pregunta[p.id][0][0], p, sub) for p, sub in todas
+               if p.tipo == "escrita" and len(por_pregunta.get(p.id, [])) == 1 and not por_pregunta[p.id][0][1]
+               and len(answered) - 1 - por_pregunta[p.id][0][0] >= REINTENTO_GAP]
+    if debidas:  # la fallada hace más tiempo primero
+        _, p, sub = min(debidas, key=lambda d: d[0])
+        return _to_out(session, p, sub, rng, reintento=True)
+    cands = [(p, sub) for p, sub in todas if p.id not in answered_ids]
     # una pregunta ya respondida en esta sesión, en otra versión, tampoco se repite
     answered_claves = set(session.scalars(select(Pregunta.clave).where(Pregunta.id.in_(answered_ids)))) \
         if answered_ids else set()

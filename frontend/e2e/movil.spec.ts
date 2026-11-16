@@ -21,7 +21,8 @@ async function auditar(page: Page): Promise<Auditoria> {
       desborde: document.documentElement.scrollWidth - window.innerWidth,
       culpables: [...document.querySelectorAll("html, body, body *")].filter((el) => el.getBoundingClientRect().right > window.innerWidth + 1 || el.scrollWidth > window.innerWidth + 1)
         .slice(0, 8).map((el) => `${el.tagName.toLowerCase()}.${(el.getAttribute("class") || "").slice(0, 40)} derecha=${Math.round(el.getBoundingClientRect().right)} «${(el.textContent || "").trim().slice(0, 30)}»`),
-      pequenos: controles.filter((el) => { const r = el.getBoundingClientRect(); return r.width < 44 || r.height < 44; })
+      pequenos: controles.filter((el) => { const r = el.getBoundingClientRect(); return r.width < 43.5 || r.height < 43.5; })  // 43,5: margen para el redondeo de los píxeles del dispositivo
+        
         .map((el) => { const r = el.getBoundingClientRect(); return `${nombre(el)} ${Math.round(r.width)}x${Math.round(r.height)}`; }),
       zoom: controles.filter((el) => /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName) && parseFloat(getComputedStyle(el).fontSize) < 16)
         .map((el) => `${nombre(el)} ${getComputedStyle(el).fontSize}`),
@@ -66,7 +67,7 @@ test("el_dispositivo_es_un_iphone_12_mini_con_webkit", async ({ page, browserNam
 
 for (const [nombre, asig, ruta] of [
   ["panal", "Economía", "panal"], ["hoy con fecha de examen", "Català", "hoy"], ["historial", "Economía", "historial"],
-  ["ajustes", "Economía", "ajustes"], ["practica test", "Economía", "practica"], ["practica escrita", "Català", "practica/_/escritas"],
+  ["perfil", "Economía", "perfil"], ["practica test", "Economía", "practica"], ["practica escrita", "Català", "practica/_/escritas"],
 ] as const) {
   test(`movil: ${nombre}`, async ({ page }) => {
     await abrir(page, asig, ruta);
@@ -125,4 +126,10 @@ test("movil: la barra de navegación va pegada abajo y no tapa la cabecera", asy
   expect(medidas.logoLibre, "nada tapa el logo").toBe(true);
   await page.getByRole("button", { name: /Asignatura: Economía/ }).tap();
   await expect(page.getByRole("listbox")).toBeVisible();
+});
+
+test("movil: el enlace antiguo de Ajustes lleva a Perfil y la barra inferior marca Perfil", async ({ page }) => {
+  await abrir(page, "Economía", "ajustes");
+  await expect(page.getByRole("heading", { name: "Perfil", level: 1 })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Perfil" })).toHaveAttribute("aria-current", "page");
 });

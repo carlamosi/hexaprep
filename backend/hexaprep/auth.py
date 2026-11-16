@@ -25,9 +25,9 @@ def _firma(secreto: str, cuerpo: str) -> str:
     return _b64(hmac.new(secreto.encode(), cuerpo.encode(), hashlib.sha256).digest())
 
 
-def firmar(secreto: str, email: str, esquema: str, ahora: float | None = None) -> str:
+def firmar(secreto: str, email: str, esquema: str, ahora: float | None = None, nombre: str = "") -> str:
     ahora = time.time() if ahora is None else ahora
-    cuerpo = _b64(json.dumps({"e": email, "s": esquema, "x": int(ahora) + DURACION}).encode())
+    cuerpo = _b64(json.dumps({"e": email, "s": esquema, "x": int(ahora) + DURACION, "n": nombre}).encode())
     return f"{cuerpo}.{_firma(secreto, cuerpo)}"
 
 

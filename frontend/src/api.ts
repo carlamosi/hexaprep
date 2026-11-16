@@ -36,6 +36,8 @@ export interface Question {
   imagen?: string | null; grupo?: string | null; contexto?: string | null; apartado?: string | null;
   /** Solo escritas: la etiqueta de cada hueco (Gerundi, Participi...). */
   campos?: string[];
+  /** Repetición de una escrita que acabas de fallar. */
+  reintento?: boolean;
 }
 export interface SessionState { sesion_id: string; modo: Modo; filtro: Record<string, unknown>; respondidas: string[]; pendiente: string | null }
 export interface AnswerBody {
@@ -55,6 +57,7 @@ export interface AnswerResult {
   /** Solo escritas: acierto, formas válidas y pista de cada hueco. */
   campos?: { etiqueta: string; correcto: boolean; esperado: string[]; nota: string | null }[] | null;
 }
+export interface PerfilDatos { email: string | null; nombre: string; online: boolean; reiniciar: boolean }
 export interface Examen {
   fecha: string | null; dias: number | null; por_dia: number | null; total: number; tocados: number; sin_tocar: number;
 }
@@ -115,6 +118,8 @@ async function request<T>(path: string, method = "GET", body?: unknown): Promise
 }
 
 export const api = {
+  getPerfil: () => request<PerfilDatos>("/api/perfil"),
+  reiniciarPerfil: () => request<{ archivado: string }>("/api/perfil/reiniciar", "POST", { confirmar: true }),
   getExamen: (asignaturaId: string) => request<Examen>(`/api/examen/${asignaturaId}`),
   setExamen: (asignaturaId: string, fecha: string | null) => request<Examen>(`/api/examen/${asignaturaId}`, "PUT", { fecha }),
   getAuthConfig: () => request<{ google_client_id: string | null }>("/api/auth/config"),

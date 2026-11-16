@@ -164,3 +164,32 @@ def test_redirect_con_email_no_permitido_o_token_falso_vuelve_con_aviso_y_sin_se
     r = enviar_redirect(cliente, monkeypatch, valido=False)
     assert r.headers["location"] == "/?acceso=error" and "hp_session" not in r.headers.get("set-cookie", "")
     assert cliente.get("/api/subjects").status_code == 401
+
+
+# ---------- perfil: quién eres y reiniciar ----------
+def test_la_cookie_lleva_tambien_el_nombre():
+    t = auth.firmar(SECRETO, "carla@gmail.com", "u_abc", ahora=1000, nombre="Carla Monté")
+    assert auth.leer(SECRETO, t, ahora=1001)["n"] == "Carla Monté"
+    assert auth.leer(SECRETO, auth.firmar(SECRETO, "a@b.c", "u_x", ahora=1000), ahora=1001).get("n", "") == ""
+
+
+def test_perfil_dice_quien_eres_y_si_se_puede_reiniciar(cliente, monkeypatch):
+    assert cliente.get("/api/perfil").status_code == 401
+    entrar(cliente, monkeypatch)
+    r = cliente.get("/api/perfil").json()
+    assert r == {"email": "carla@gmail.com", "nombre": "Carla", "online": False, "reiniciar": False}  # SQLite local: sin reinicio
+
+
+def test_reiniciar_exige_confirmacion_y_solo_existe_online(cliente, monkeypatch):
+    entrar(cliente, monkeypatch)
+    assert cliente.post("/api/perfil/reiniciar", json={}).status_code == 422
+    assert cliente.post("/api/perfil/reiniciar", json={"confirmar": False}).status_code == 422
+    assert cliente.post("/api/perfil/reiniciar", json={"confirmar": True}).status_code == 501  # aquí no hay Postgres
+
+
+def test_sin_google_perfil_responde_sin_email(tmp_path, monkeypatch):
+    for k in ("GOOGLE_CLIENT_ID", "SESSION_SECRET", "HEXAPREP_PASSWORD", "DATABASE_URL", "POSTGRES_URL"):
+        monkeypatch.delenv(k, raising=False)
+    (tmp_path / "f").mkdir()
+    with TestClient(create_app(db_path=tmp_path / "d" / "h.db", data_dir=tmp_path / "d", booklet_dir=tmp_path / "f")) as c:
+        assert c.get("/api/perfil").json() == {"email": None, "nombre": "", "online": False, "reiniciar": False}

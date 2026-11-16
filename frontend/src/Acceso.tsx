@@ -99,24 +99,8 @@ export function Acceso({ children, client = api }: { children: ReactNode; client
     }
   }
 
-  async function salir() {
-    if (estado.tipo !== "dentro") return;
-    await client.authLogout().catch(() => null);
-    setEstado({ tipo: "fuera", clientId: estado.clientId });
-  }
-
   if (estado.tipo === "cargando") return <p className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
   if (estado.tipo === "error") return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   if (estado.tipo === "fuera") return <Entrada clientId={estado.clientId} aviso={aviso} onCredencial={(c) => void credencial(c)} />;
-  return (
-    <>
-      {estado.tipo === "dentro" && (
-        <div className="flex justify-end gap-3 px-4 py-1 text-xs text-[var(--ink-3)]">
-          <span>{estado.email}</span>
-          <button type="button" onClick={() => void salir()} className="underline underline-offset-2">{t("acceso.salir")}</button>
-        </div>
-      )}
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }

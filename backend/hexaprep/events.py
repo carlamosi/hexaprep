@@ -173,7 +173,10 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
             raise ValueError("opción elegida u orden de opciones no válidos")
     if confianza is not None and confianza not in CONFIANZAS:
         raise ValueError(f"confianza no válida: {confianza}")
-    if session.scalar(select(Intento.id).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)):
+    previos_sesion = session.scalars(select(Intento.correcta).where(
+        Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id).order_by(Intento.id)).all()
+    # una escrita fallada puede repetirse una vez en la misma sesión (corrección activa); cualquier otra, no
+    if previos_sesion and (previos_sesion[-1] or len(previos_sesion) >= 2 or not escrita):
         raise AlreadyAnswered("pregunta ya respondida en esta sesión")
 
     opciones = {o.posicion: o for o in session.scalars(select(Opcion).where(Opcion.pregunta_id == pregunta_id))}

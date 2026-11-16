@@ -3,14 +3,14 @@ import { ApiError, api, type BackupRow, type ReportedQuestion } from "../api";
 import { Editor } from "../components/Editor";
 import { t } from "../i18n";
 
-type Client = Pick<typeof api,
+export type SettingsClient = Pick<typeof api,
   "getBackup" | "makeBackup" | "restoreBackup" | "exportWeak" | "exportEvents" | "exportBank" | "reportedQuestions" | "getQuestion" | "editQuestion">;
 
 const boton = "rounded-[11px] border border-[var(--rule-2)] bg-white px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
 const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-white p-5";
 
-/** Ajustes: copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */
-export function Settings({ asignaturaId, client = api }: { asignaturaId: string; client?: Client }) {
+/** Avanzado (dentro de Perfil): copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */
+export function Settings({ asignaturaId, client = api }: { asignaturaId: string; client?: SettingsClient }) {
   const [backup, setBackup] = useState<BackupRow | null | undefined>(undefined);
   const [sinCopias, setSinCopias] = useState(false); // online las copias las hace Neon, no hay archivo que copiar
   const [confirmar, setConfirmar] = useState(false);
@@ -38,9 +38,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
   }
 
   return (
-    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6">
-      <h1 className="text-2xl font-semibold">{t("ajustes.titulo")}</h1>
-
+    <div className="space-y-6">
       {!sinCopias && <section className={seccion} aria-labelledby="aj-copia">
         <h2 id="aj-copia" className="text-lg font-semibold">{t("ajustes.copia")}</h2>
         {backup ? (
@@ -79,7 +77,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
         {aviso && <p role="status">{aviso}</p>}
       </section>}
 
-      <section className={seccion} aria-labelledby="aj-exp">
+      {!sinCopias && <section className={seccion} aria-labelledby="aj-exp">
         <h2 id="aj-exp" className="text-lg font-semibold">{t("ajustes.exportar")}</h2>
         <div className="flex flex-wrap gap-3">
           <button type="button" className={boton} onClick={() => void run(async () => setWeak((await client.exportWeak(20)).ruta))}>
@@ -91,7 +89,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
         </div>
         {weak && <p>{t("ajustes.guardado")} {weak}</p>}
         {csv && <p>{t("ajustes.guardado")} {csv}</p>}
-      </section>
+      </section>}
 
       <section className={seccion} aria-labelledby="aj-edit">
         <h2 id="aj-edit" className="text-lg font-semibold">{t("ajustes.editor")}</h2>
@@ -119,6 +117,6 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
       </section>
 
       {error && <p role="alert" className="rounded-[11px] bg-[var(--ko-soft)] px-4 py-3 text-[var(--ko)]">{error}</p>}
-    </main>
+    </div>
   );
 }

@@ -4,7 +4,7 @@ import { BookletButton } from "./BookletButton";
 import { RichText } from "./RichText";
 
 /** Feedback breve tipo entrenador, explicación plegada y enlace al booklet. */
-export function Explanation({ result, onNext, onMarcarBien }: { result: AnswerResult; onNext: () => void; onMarcarBien?: () => void }) {
+export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado }: { result: AnswerResult; onNext: () => void; onMarcarBien?: () => void; siguienteBloqueado?: boolean }) {
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
       <div
@@ -53,8 +53,8 @@ export function Explanation({ result, onNext, onMarcarBien }: { result: AnswerRe
         )}
         <button
           type="button"
-          onClick={onNext}
-          className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]"
+          onClick={onNext} disabled={siguienteBloqueado}
+          className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-50"
         >
           {t("practica.siguiente")}
         </button>

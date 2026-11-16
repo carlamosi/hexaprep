@@ -5,7 +5,7 @@ import { t } from "./i18n";
 import { FreePractice } from "./pages/FreePractice";
 import { History } from "./pages/History";
 import { Home } from "./pages/Home";
-import { Settings } from "./pages/Settings";
+import { Perfil } from "./pages/Perfil";
 import { Subtopic } from "./pages/Subtopic";
 import { Suggestions } from "./pages/Suggestions";
 
@@ -24,12 +24,14 @@ export default function App() {
   const { id: asignaturaId, nombre, failed, subjects, elegir, refrescar } = useAsignatura();
   const [route, arg, arg2] = hash.split("/"); // practica/<tema o _>/<test o problemas>
 
+  useEffect(() => { if (route === "ajustes") go("perfil"); }, [route, go]); // enlaces antiguos
+
   let page = null;
   if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onPracticar={() => go("practica")} onPracticarTipo={(g) => go(`practica/_/${g}`)} onPracticarTema={(tm) => go(`practica/${tm}`)} />;
   else if (failed) page = <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   else if (asignaturaId && route === "hoy") page = <Suggestions asignaturaId={asignaturaId} onPracticeSubtema={(s) => go(`subtema/${s}`)} />;
   else if (asignaturaId && route === "historial") page = <History asignaturaId={asignaturaId} />;
-  else if (asignaturaId && route === "ajustes") page = <Settings asignaturaId={asignaturaId} />;
+  else if (route === "perfil") page = <Perfil asignaturaId={asignaturaId} />;
   else if (asignaturaId && route === "practica") page = <FreePractice key={`${arg}/${arg2}`} asignaturaId={asignaturaId} temaId={arg && arg !== "_" ? arg : undefined} tipos={arg2} onFinish={() => go("panal")} />;
   else if (asignaturaId && route === "subtema" && arg) page = <Subtopic asignaturaId={asignaturaId} subtemaId={arg} onBack={() => go("panal")} />;
 

@@ -3,7 +3,7 @@ import type { Subject } from "../api";
 import { t } from "../i18n";
 import { AsignaturaSelector } from "./AsignaturaSelector";
 
-const NAV = ["panal", "hoy", "historial", "ajustes"] as const;
+const NAV = ["panal", "hoy", "historial", "perfil"] as const;
 type Ruta = (typeof NAV)[number];
 
 const HEX = "M12 2.8 19.8 7.3v9.4L12 21.2 4.2 16.7V7.3Z";
@@ -31,12 +31,11 @@ const ICONOS: Record<Ruta, ReactNode> = {
       <path d="M4 10h16M8.5 3v4M15.5 3v4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </>
   ),
-  ajustes: (
+  perfil: (
     <>
-      <g transform="translate(1.8 1.8)"><circle cx="9" cy="8" r="2.5" fill="var(--lila-tint)" /><circle cx="15" cy="16" r="2.5" fill="var(--lila-tint)" /></g>
-      <path d="M4 8h16M4 16h16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="9" cy="8" r="2.5" fill="var(--paper)" stroke="currentColor" strokeWidth="1.6" />
-      <circle cx="15" cy="16" r="2.5" fill="var(--paper)" stroke="currentColor" strokeWidth="1.6" />
+      <g transform="translate(1.8 1.8)"><circle cx="12" cy="8" r="3.6" fill="var(--lila-tint)" /><path d="M5 20c0-3.9 3.1-6.2 7-6.2s7 2.3 7 6.2Z" fill="var(--lila-tint)" /></g>
+      <circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M5 20c0-3.9 3.1-6.2 7-6.2s7 2.3 7 6.2Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     </>
   ),
 };

@@ -50,6 +50,10 @@ class ExamenIn(BaseModel):
     fecha: str | None = None
 
 
+class ReiniciarIn(BaseModel):
+    confirmar: bool = False
+
+
 class GoogleIn(BaseModel):
     credential: str
 
@@ -151,7 +155,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             raise PermissionError(c["email"])
         engine = request.app.state.engine
         esquema = perfiles.asegurar_perfil(engine, c["email"]) if engine.dialect.name == "postgresql" else "local"
-        response.set_cookie(auth.COOKIE, auth.firmar(secreto, c["email"].lower(), esquema), max_age=auth.DURACION,
+        response.set_cookie(auth.COOKIE, auth.firmar(secreto, c["email"].lower(), esquema, nombre=c.get("name", "")), max_age=auth.DURACION,
                             httponly=True, secure=online_url is not None, samesite="lax", path="/")
         return {"email": c["email"].lower(), "nombre": c.get("name", "")}
 
@@ -184,6 +188,25 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         except auth.AuthError:
             return RedirectResponse("/?acceso=error", status_code=303)
         return destino
+
+    def _quien(request: Request) -> dict | None:
+        return auth.leer(secreto, request.cookies.get(auth.COOKIE)) if client_id else None
+
+    @app.get("/api/perfil")
+    def perfil(request: Request):
+        datos = _quien(request)
+        return {"email": datos["e"] if datos else None, "nombre": datos.get("n", "") if datos else "",
+                "online": online_url is not None, "reiniciar": bool(datos and online_url)}
+
+    @app.post("/api/perfil/reiniciar")
+    def perfil_reiniciar(body: ReiniciarIn, request: Request):
+        """Empieza de cero (solo online con Google): el progreso anterior se archiva, no se borra."""
+        if not body.confirmar:
+            raise HTTPException(422, "Falta confirmar el reinicio")
+        datos = _quien(request)
+        if not (datos and online_url):
+            raise HTTPException(501, "Reiniciar solo está disponible online")
+        return {"archivado": perfiles.reiniciar(request.app.state.engine, datos["e"], tiempo.ahora())}
 
     @app.post("/api/auth/logout")
     def auth_logout(response: Response):

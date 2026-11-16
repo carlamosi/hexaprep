@@ -1,5 +1,4 @@
 import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ApiError } from "../src/api";
 import { Acceso, type AccesoClient } from "../src/Acceso";
@@ -46,7 +45,6 @@ describe("acceso con Google", () => {
     callback!({ credential: "tok" });
     expect(await screen.findByText("CONTENIDO DE LA APP")).toBeInTheDocument();
     expect(c.authGoogle).toHaveBeenCalledWith("tok");
-    expect(screen.getByText("carla@gmail.com")).toBeInTheDocument();
   });
 
   it("un_email_sin_acceso_muestra_el_aviso_y_sigue_en_la_pantalla_de_entrada", async () => {
@@ -58,14 +56,11 @@ describe("acceso con Google", () => {
     expect(screen.queryByText("CONTENIDO DE LA APP")).toBeNull();
   });
 
-  it("con_sesion_abierta_enseña_la_app_y_cerrar_sesion_vuelve_a_la_entrada", async () => {
+  it("con_sesion_abierta_enseña_la_app_directamente_sin_barras_extra", async () => {
     conGoogle();
-    const c = cliente({ authMe: vi.fn().mockResolvedValue({ email: "carla@gmail.com" }) });
-    render(<Acceso client={c}>{app}</Acceso>);
+    render(<Acceso client={cliente({ authMe: vi.fn().mockResolvedValue({ email: "carla@gmail.com" }) })}>{app}</Acceso>);
     expect(await screen.findByText("CONTENIDO DE LA APP")).toBeInTheDocument();
-    await userEvent.click(screen.getByRole("button", { name: "Cerrar sesión" }));
-    expect(c.authLogout).toHaveBeenCalled();
-    expect(await screen.findByRole("heading", { name: /cuenta de Google/ })).toBeInTheDocument();
+    expect(screen.queryByText("Cerrar sesión")).toBeNull(); // eso está en Perfil
   });
 });
 

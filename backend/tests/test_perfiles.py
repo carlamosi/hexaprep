@@ -19,3 +19,12 @@ def test_un_nombre_de_esquema_raro_se_rechaza(malo):
 
 def test_el_catalogo_solo_nombra_tablas_que_existen():
     assert set(CATALOGO) <= {t.name for t in Base.metadata.tables.values()}
+
+
+def test_el_nombre_del_esquema_archivado_lleva_fecha_y_hora_y_es_valido():
+    from datetime import datetime
+
+    from hexaprep.perfiles import nombre_archivo
+    n = nombre_archivo("u_35af3cffa925", datetime(2026, 11, 16, 9, 5, 7))
+    assert n == "archivo_35af3cffa925_20261116_090507"
+    _q(n)  # cumple las reglas de nombre de esquema

@@ -43,6 +43,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   const [numeroMal, setNumeroMal] = useState(false);
   const [answered, setAnswered] = useState(initialAnswered);
   const [failed, setFailed] = useState(false);
+  const [copiado, setCopiado] = useState(true); // escritas falladas: hay que escribir bien lo fallado antes de seguir
   const locked = useRef(false); // respuesta firme: el primer clic cuenta, aunque la respuesta tarde
   const shownAt = useRef(0);
   const firstClickAt = useRef<number | null>(null);
@@ -57,6 +58,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     setValor("");
     setNumeroMal(false);
     setFailed(false);
+    setCopiado(true);
     locked.current = false;
     firstClickAt.current = null;
     try {
@@ -178,7 +180,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
       if (e.ctrlKey || e.metaKey || e.altKey) return;
       const target = e.target as HTMLElement | null;
       if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
-      if (e.key === "Enter" && (result || reported)) {
+      if (e.key === "Enter" && (result || reported) && !(question?.tipo === "escrita" && result && !copiado)) {
         e.preventDefault();
         void load();
         return;
@@ -193,7 +195,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [choose, load, reported, result, saltar]);
+  }, [choose, copiado, load, question, reported, result, saltar]);
 
   async function report(motivo: string) {
     if (!question) return;
@@ -214,6 +216,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
         <span className="text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
           {tn("practica.respondidas", answered)}
         </span>
+        {question.reintento && <span className="w-full rounded-[8px] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)]">{t("practica.repaso")}</span>}
         {!result && !reported && (
           <div className="flex items-center gap-4">
             {client.current.skip && (
@@ -266,7 +269,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
       ) : (
         <>
           {question.tipo === "escrita" ? (
-            <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v) => void submitEscrita(v)} />
+            <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v) => void submitEscrita(v)} onCopiaLista={setCopiado} />
           ) : question.tipo === "problema" ? (
             <form
               className="mt-5 flex flex-wrap items-center gap-3"
@@ -317,7 +320,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
             </ul>
           )}
 
-          {result && <Explanation result={result} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
+          {result && <Explanation result={result} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
 
           {question.ayuda_larga && result && ( // antes de responder podría desvelar la respuesta
             <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3">

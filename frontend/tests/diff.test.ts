@@ -25,3 +25,16 @@ describe("corrección letra a letra", () => {
     expect(masCercana("x", [])).toBe("");
   });
 });
+
+import { mismaForma } from "../src/diff";
+
+describe("comparar lo copiado con la forma correcta", () => {
+  it("ignora_mayusculas_espacios_y_apostrofos_pero_exige_los_acentos", () => {
+    expect(mismaForma("  Admès ", ["admès"])).toBe(true);
+    expect(mismaForma("l’home", ["l'home"])).toBe(true);
+    expect(mismaForma("col.legi", ["col·legi"])).toBe(true);
+    expect(mismaForma("admes", ["admès"])).toBe(false);
+    expect(mismaForma("complit", ["complert", "complit"])).toBe(true);
+    expect(mismaForma("", ["x"])).toBe(false);
+  });
+});

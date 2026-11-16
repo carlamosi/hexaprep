@@ -5,6 +5,7 @@ que no depende del estado de la sesión y por eso funciona con el pooler de Neon
 """
 import hashlib
 import re
+from datetime import datetime
 
 from sqlalchemy import Connection, Engine, text
 
@@ -61,6 +62,23 @@ def asegurar_perfil(engine: Engine, email: str) -> str:
                 raise RuntimeError("falta la plantilla de perfiles: ejecuta tools/perfiles.py plantilla")
             clonar_esquema(conn, PLANTILLA, esquema, "todo")
     return esquema
+
+
+def nombre_archivo(esquema: str, ahora: datetime) -> str:
+    """Nombre con el que se guarda un perfil reiniciado: archivo_<hash>_<fecha>_<hora> (no se borra nunca)."""
+    return f"archivo_{esquema[2:]}_{ahora:%Y%m%d_%H%M%S}"
+
+
+def reiniciar(engine: Engine, email: str, ahora: datetime) -> str:
+    """Empieza de cero: renombra el esquema del perfil (conserva todos sus datos) y crea uno nuevo desde la plantilla."""
+    esquema = esquema_de(email)
+    nuevo = nombre_archivo(esquema, ahora)
+    with engine.begin() as conn:
+        conn.execute(text("SELECT pg_advisory_xact_lock(hashtext(:e))"), {"e": esquema})
+        if existe(conn, esquema):
+            conn.execute(text(f"ALTER SCHEMA {_q(esquema)} RENAME TO {_q(nuevo)}"))
+    asegurar_perfil(engine, email)
+    return nuevo
 
 
 def engine_de(engine: Engine, esquema: str) -> Engine:

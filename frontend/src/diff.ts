@@ -50,3 +50,13 @@ export function masCercana(escrito: string, formas: string[]): string {
   const e = escrito.trim().toLowerCase();
   return formas.reduce((mejor, f) => (mejor === "" || distancia(e, f.toLowerCase()) < distancia(e, mejor.toLowerCase()) ? f : mejor), "");
 }
+
+function normalizar(t: string): string {
+  return t.trim().replace(/\s+/g, " ").toLowerCase().replace(/[’‘]/g, "'").replace(/(?<=l)[.•∙‧](?=l)/g, "·");
+}
+
+/** ¿Es lo escrito una de las formas válidas? Igual que el servidor: sin mayúsculas ni espacios de más, y con los acentos exigidos. */
+export function mismaForma(escrito: string, validas: string[]): boolean {
+  const e = normalizar(escrito);
+  return e !== "" && validas.some((v) => normalizar(v) === e);
+}

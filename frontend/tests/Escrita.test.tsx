@@ -75,3 +75,41 @@ describe("pregunta escrita: corrección letra a letra", () => {
     expect(screen.queryByLabelText(/Escribiste admetent/)).toBeNull(); // el hueco acertado no lleva diferencia
   });
 });
+
+describe("pregunta escrita: corrección activa", () => {
+  async function fallar(user: ReturnType<typeof userEvent.setup>) {
+    await user.type(await screen.findByLabelText("Gerundi"), "admetent");
+    await user.type(screen.getByLabelText("Participi"), "admetut");
+    await user.click(screen.getByRole("button", { name: "Comprobar" }));
+    await screen.findByLabelText(/Escribiste admetut, lo correcto es admès/);
+  }
+
+  it("no_deja_seguir_hasta_escribir_bien_lo_fallado_y_solo_pide_los_huecos_fallados", async () => {
+    const { user } = setup();
+    await fallar(user);
+    const siguiente = screen.getByRole("button", { name: "Siguiente" });
+    expect(siguiente).toBeDisabled();
+    expect(screen.getAllByLabelText("Escríbela bien")).toHaveLength(1); // el gerundi estaba bien
+    await user.type(screen.getByLabelText("Escríbela bien"), "admes"); // sin acento: no vale
+    expect(siguiente).toBeDisabled();
+    await user.clear(screen.getByLabelText("Escríbela bien"));
+    await user.type(screen.getByLabelText("Escríbela bien"), "admès");
+    expect(siguiente).toBeEnabled();
+  });
+
+  it("siempre_hay_una_salida_para_no_atascarse", async () => {
+    const { user } = setup();
+    await fallar(user);
+    await user.click(screen.getByRole("button", { name: "Seguir sin copiarla" }));
+    expect(screen.getByRole("button", { name: "Siguiente" })).toBeEnabled();
+  });
+
+  it("una_repeticion_de_una_pregunta_fallada_lleva_la_etiqueta_de_repaso", async () => {
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce({ ...Q, reintento: true }).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue(KO), reportQuestion: vi.fn(),
+    } satisfies PracticeClient;
+    render(<Practice sesionId="s1" client={client} />);
+    expect(await screen.findByText(/Repaso: la fallaste hace un momento/)).toBeInTheDocument();
+  });
+});

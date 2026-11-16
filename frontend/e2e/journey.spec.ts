@@ -81,9 +81,10 @@ test("recorrido completo: importar, práctica libre con saltar, práctica, repor
   await expect(page.getByRole("img", { name: /^Actividad: .*[^0-9]1 día con práctica/ })).toBeVisible(); // solo hoy, sin rachas
   await captura(page, "09-historial");
 
-  // 7. Ajustes: editor de la pregunta reportada, copia de seguridad y restauración
-  await page.getByRole("link", { name: "Ajustes" }).click();
-  await expect(page.getByRole("heading", { name: "Ajustes" })).toBeVisible();
+  // 7. Perfil > Avanzado: editor de la pregunta reportada, copia de seguridad y restauración
+  await page.getByRole("link", { name: "Perfil" }).click();
+  await expect(page.getByRole("heading", { name: "Perfil", level: 1 })).toBeVisible();
+  await page.getByText("Avanzado", { exact: true }).click(); // lo técnico va plegado
   await page.getByRole("button", { name: "Editar" }).click();
   await page.getByRole("textbox", { name: "Explicación", exact: true }).fill("Explicación revisada en el editor.");
   await page.getByLabel("Volver a incluirla en las estadísticas").check();
@@ -91,7 +92,7 @@ test("recorrido completo: importar, práctica libre con saltar, práctica, repor
   await expect(page.getByText("Versión 2 guardada")).toBeVisible();
   await page.getByRole("button", { name: "Hacer copia ahora" }).click();
   await expect(page.getByText(/hexaprep-.*\.db/)).toBeVisible();
-  await captura(page, "10-ajustes");
+  await captura(page, "10-perfil");
   await page.getByRole("button", { name: "Restaurar esta copia" }).click();
   await page.getByRole("button", { name: "Sí, restaurar" }).click();
   await expect(page.getByText(/Copia restaurada/)).toBeVisible();
