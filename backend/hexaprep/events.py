@@ -21,7 +21,11 @@ MODOS = {"practica", "repaso_subtema", "repaso_fallos"}
 TIPOS = {
     "pregunta_mostrada", "opcion_seleccionada", "confianza", "respuesta_enviada", "explicacion_abierta",
     "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion", "marcada_correcta", "pregunta_saltada",
+    "ayuda_abierta", "contexto",
 }
+# los únicos que puede enviar el navegador por su cuenta (el resto los registra el servidor)
+TIPOS_CLIENTE = {"explicacion_cerrada", "ayuda_abierta", "contexto", "reanudacion"}
+MAX_PAYLOAD = 1000  # caracteres del JSON de un evento de cliente
 TOLERANCIA_PROBLEMA = 0.01  # error relativo que cuenta como acierto en un problema
 CONFIANZAS = {"seguro", "dudo", "adivino"}
 LETRAS = ["a", "b", "c", "d"]
@@ -92,6 +96,28 @@ def record_event(session: Session, sesion_id: str, tipo: str, pregunta_id: str |
     session.add(ev)
     _commit(session)
     return ev.id
+
+
+def record_client_event(session: Session, sesion_id: str, tipo: str, pregunta_id: str | None, payload: dict) -> None:
+    """Evento enviado por el navegador (señales de uso). `explicacion_cerrada` rellena el tiempo en la explicación."""
+    if tipo not in TIPOS_CLIENTE:
+        raise ValueError(f"tipo de evento no válido: {tipo}")
+    if len(json.dumps(payload)) > MAX_PAYLOAD:
+        raise ValueError("payload demasiado grande")
+    if tipo == "explicacion_cerrada" and pregunta_id is not None and isinstance(payload.get("t"), (int, float)):
+        i = session.scalar(select(Intento).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)
+                           .order_by(Intento.id.desc()))
+        if i is not None:
+            i.t_explicacion = float(payload["t"])
+    record_event(session, sesion_id, tipo, pregunta_id, payload, tiempo.ahora())
+
+
+def error_relativo(valores: list[float], esperado: list[float], ordenada: bool) -> list[float] | None:
+    """Error relativo firmado de cada valor (con solución 0, el error absoluto); None si no hay la misma cantidad."""
+    if len(valores) != len(esperado):
+        return None
+    a, b = (valores, esperado) if ordenada else (sorted(valores), sorted(esperado))
+    return [round((x - y) / abs(y) if y else x - y, 4) for x, y in zip(a, b)]
 
 
 def _selection_path(session: Session, sesion_id: str, pregunta_id: str, elegida: str) -> list[str]:
@@ -199,8 +225,12 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     ev = Evento(sesion_id=sesion_id, tipo="respuesta_enviada", pregunta_id=pregunta_id, t_cliente=ahora_utc,
                 payload={"elegida": elegida, "orden_opciones": orden_opciones, "confianza": confianza,
                          "tiempos": tiempos, "correcta": es_correcta,
-                         **({"respuesta": respuesta} if problema else {}),
-                         **({"respuestas": respuestas} if escrita else {})})
+                         **({"respuesta": respuesta,
+                             "error_rel": error_relativo(valores, solucion if isinstance(solucion, list) else [solucion],
+                                                         ordenada)} if problema else {}),
+                         **({"respuestas": respuestas,
+                             "detalle": [{"etiqueta": d["etiqueta"], "correcto": d["correcto"], "nota": d["nota"]}
+                                         for d in detalle]} if escrita else {})})
     session.add(ev)
     session.flush()
     intento = Intento(

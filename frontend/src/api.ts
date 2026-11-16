@@ -61,6 +61,7 @@ export interface PerfilDatos { email: string | null; nombre: string; online: boo
 export interface Examen {
   fecha: string | null; dias: number | null; por_dia: number | null; total: number; tocados: number; sin_tocar: number;
 }
+export interface Nota { fecha: string; nota: number; dominio: number }
 export interface Suggestion {
   tipo: "concepto" | "placement"; concepto_id: string | null; concepto: string | null; subtema_id: string | null;
   motivo: string; ganancia_por_minuto: number; riesgo_olvido: number; score: number;
@@ -135,6 +136,11 @@ export const api = {
   answer: (body: AnswerBody) => request<AnswerResult>("/api/answers", "POST", body),
   skip: (sesionId: string, preguntaId: string) =>
     request<{ ok: boolean }>(`/api/sessions/${sesionId}/skip`, "POST", { pregunta_id: preguntaId }),
+  /** Señal de uso (explicación cerrada, ayuda abierta, contexto, vuelta a la pestaña). Nunca debe romper la práctica. */
+  evento: (sesionId: string, tipo: string, preguntaId: string | null, payload: Record<string, unknown> = {}) =>
+    request<{ ok: boolean }>(`/api/sessions/${sesionId}/evento`, "POST", { tipo, pregunta_id: preguntaId, payload }),
+  getNotas: (asignaturaId: string) => request<Nota[]>(`/api/examen/${asignaturaId}/nota`),
+  addNota: (asignaturaId: string, nota: number) => request<Nota[]>(`/api/examen/${asignaturaId}/nota`, "POST", { nota }),
   markCorrect: (sesionId: string, preguntaId: string) =>
     request<{ percent: number }>("/api/answers/correct", "POST", { sesion_id: sesionId, pregunta_id: preguntaId }),
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>

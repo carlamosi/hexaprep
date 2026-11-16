@@ -14,7 +14,7 @@ from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel, ValidationError
+from pydantic import BaseModel, Field, ValidationError
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
@@ -48,6 +48,16 @@ class AnswerIn(BaseModel):
 
 class ExamenIn(BaseModel):
     fecha: str | None = None
+
+
+class NotaIn(BaseModel):
+    nota: float = Field(ge=0, le=10)
+
+
+class EventoIn(BaseModel):
+    tipo: str
+    pregunta_id: str | None = None
+    payload: dict = {}
 
 
 class ReiniciarIn(BaseModel):
@@ -290,8 +300,20 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             k: v for k, v in state.filtro.items() if k in selector.Filtro.__dataclass_fields__}))
         if q is None:
             return None
-        events.record_event(s, sesion_id, "pregunta_mostrada", q.pregunta_id, {"orden": q.orden}, tiempo.ahora())
-        return asdict(q)
+        events.record_event(s, sesion_id, "pregunta_mostrada", q.pregunta_id, {"orden": q.orden, **q.servida},
+                            tiempo.ahora())
+        return {k: v for k, v in asdict(q).items() if k != "servida"}
+
+    @app.post("/api/sessions/{sesion_id}/evento")
+    def evento(sesion_id: str, body: EventoIn, s: Session = Depends(get_session)):
+        try:
+            events.record_client_event(s, sesion_id, body.tipo, body.pregunta_id, body.payload)
+        except events.UnknownSession:
+            raise HTTPException(404, "Sesión desconocida")
+        except ValueError as e:
+            s.rollback()
+            raise HTTPException(422, str(e))
+        return {"ok": True}
 
     @app.post("/api/sessions/{sesion_id}/skip")
     def skip(sesion_id: str, body: SkipIn, s: Session = Depends(get_session)):
@@ -411,6 +433,27 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
                 fila.valor = body.fecha
         s.commit()
         return _examen(s, asignatura_id)
+
+    # Nota real del examen: el único dato externo para comprobar si el % de dominio predice el resultado.
+    @app.get("/api/examen/{asignatura_id}/nota")
+    def nota_get(asignatura_id: str, s: Session = Depends(get_session)):
+        fila = s.scalar(select(Ajuste).where(Ajuste.clave == f"nota:{asignatura_id}"))
+        return fila.valor if fila is not None else []
+
+    @app.post("/api/examen/{asignatura_id}/nota")
+    def nota_post(asignatura_id: str, body: NotaIn, s: Session = Depends(get_session)):
+        if s.get(Asignatura, asignatura_id) is None:
+            raise HTTPException(404, "Asignatura desconocida")
+        clave = f"nota:{asignatura_id}"
+        fila = s.scalar(select(Ajuste).where(Ajuste.clave == clave))
+        nueva = {"fecha": tiempo.hoy().isoformat(), "nota": body.nota,
+                 "dominio": mastery.percent_of(s, "asignatura", asignatura_id)}
+        if fila is None:
+            s.add(Ajuste(clave=clave, valor=[nueva]))
+        else:
+            fila.valor = [*fila.valor, nueva]  # asignación nueva: el JSON mutable no se detecta si solo se añade
+        s.commit()
+        return nota_get(asignatura_id, s)
 
     # ---------- sugerencias e historial ----------
     @app.get("/api/suggestions")

@@ -5,7 +5,7 @@ import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
-export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip">>;
+export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento">>;
 
 const NUMERO = /^[+\-−]?(\d+([.,]\d*)?|[.,]\d+)(e[+\-]?\d+)?(\/[+\-−]?(\d+([.,]\d*)?|[.,]\d+))?$/i;
 
@@ -48,9 +48,36 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   const shownAt = useRef(0);
   const firstClickAt = useRef<number | null>(null);
   const loadId = useRef(0);
+  // señales de uso para analítica: primer toque, tiempo con la pestaña oculta y tiempo en la explicación
+  const primerToque = useRef<number | null>(null);
+  const ocultoMs = useRef(0);
+  const ocultoDesde = useRef<number | null>(null);
+  const preguntaId = useRef<string | null>(null);
+  const explicacion = useRef<{ pid: string; t0: number } | null>(null);
+
+  /** Envía una señal sin esperar y sin que un fallo afecte a la práctica. */
+  const senal = useCallback((tipo: string, pid: string | null, payload: Record<string, unknown> = {}) => {
+    try {
+      void Promise.resolve(client.current.evento?.(sesionId, tipo, pid, payload)).catch(() => {});
+    } catch { /* la señal es opcional */ }
+  }, [sesionId]);
+
+  /** Tiempos de la respuesta: de reloj, hasta el primer toque y activo (sin la pestaña oculta). */
+  function tiemposDe(now: number): Record<string, number> {
+    const oculto = ocultoMs.current + (ocultoDesde.current !== null ? now - ocultoDesde.current : 0);
+    const envio = (now - shownAt.current) / 1000;
+    return {
+      t_primer_clic: ((primerToque.current ?? now) - shownAt.current) / 1000, t_envio: envio,
+      t_oculto: oculto / 1000, t_activo: Math.max(0, envio - oculto / 1000),
+    };
+  }
 
   const load = useCallback(async () => {
     const id = ++loadId.current;
+    if (explicacion.current) { // cierra la medición de la explicación anterior
+      senal("explicacion_cerrada", explicacion.current.pid, { t: Math.round(performance.now() - explicacion.current.t0) / 1000 });
+      explicacion.current = null;
+    }
     setQuestion(undefined);
     setChosen(null);
     setResult(null);
@@ -70,15 +97,53 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
         return;
       }
       shownAt.current = performance.now();
+      primerToque.current = null;
+      ocultoMs.current = 0;
+      ocultoDesde.current = document.hidden ? shownAt.current : null;
+      preguntaId.current = q.pregunta_id;
       setQuestion(q);
     } catch {
       if (id === loadId.current) setFailed(true);
     }
-  }, [sesionId]);
+  }, [sesionId, senal]);
 
   useEffect(() => {
     void load();
   }, [load]);
+
+  useEffect(() => { // contexto del dispositivo, una vez por sesión
+    const standalone = window.matchMedia?.("(display-mode: standalone)").matches || (navigator as { standalone?: boolean }).standalone === true;
+    senal("contexto", null, { ancho: window.innerWidth, tactil: !!window.matchMedia?.("(pointer: coarse)").matches, standalone });
+  }, [senal]);
+
+  useEffect(() => { // primer toque o tecla de cada pregunta, y tiempo con la pestaña oculta
+    const toque = () => {
+      if (primerToque.current === null && shownAt.current && !locked.current) primerToque.current = performance.now();
+    };
+    const visibilidad = () => {
+      const now = performance.now();
+      if (document.hidden) {
+        ocultoDesde.current = now;
+      } else if (ocultoDesde.current !== null) {
+        const dur = now - ocultoDesde.current;
+        ocultoMs.current += dur;
+        ocultoDesde.current = null;
+        if (dur > 5000) senal("reanudacion", preguntaId.current, { oculto_s: Math.round(dur / 1000) });
+      }
+    };
+    window.addEventListener("keydown", toque);
+    window.addEventListener("pointerdown", toque);
+    document.addEventListener("visibilitychange", visibilidad);
+    return () => {
+      window.removeEventListener("keydown", toque);
+      window.removeEventListener("pointerdown", toque);
+      document.removeEventListener("visibilitychange", visibilidad);
+    };
+  }, [senal]);
+
+  useEffect(() => { // empieza a medir cuánto se queda en la explicación
+    if (result && question && explicacion.current?.pid !== question.pregunta_id) explicacion.current = { pid: question.pregunta_id, t0: performance.now() };
+  }, [result, question]);
 
   const choose = useCallback(
     async (pos: number) => {
@@ -94,7 +159,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
           pregunta_id: question.pregunta_id,
           orden_opciones: question.orden,
           elegida: letra,
-          tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
+          tiempos: tiemposDe(now),
         });
         onAnsweredRef.current?.(question, res);
         setAnswered((n) => n + 1);
@@ -120,7 +185,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     try {
       const res = await client.current.answer({
         sesion_id: sesionId, pregunta_id: question.pregunta_id, orden_opciones: [], elegida: "a", respuesta: valor.trim(),
-        tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
+        tiempos: tiemposDe(now),
       });
       onAnsweredRef.current?.(question, res);
       setAnswered((n) => n + 1);
@@ -139,7 +204,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     try {
       const res = await client.current.answer({
         sesion_id: sesionId, pregunta_id: question.pregunta_id, orden_opciones: [], elegida: "a", respuestas,
-        tiempos: { t_primer_clic: (now - shownAt.current) / 1000, t_envio: (now - shownAt.current) / 1000 },
+        tiempos: tiemposDe(now),
       });
       onAnsweredRef.current?.(question, res);
       setAnswered((n) => n + 1);
@@ -323,7 +388,8 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
           {result && <Explanation result={result} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
 
           {question.ayuda_larga && result && ( // antes de responder podría desvelar la respuesta
-            <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3">
+            <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3"
+              onToggle={(e) => { if (e.currentTarget.open) senal("ayuda_abierta", question.pregunta_id); }}>
               <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.ayuda")}</summary>
               <p className="mt-2 text-[var(--ink-2)]"><RichText text={question.ayuda_larga} /></p>
             </details>

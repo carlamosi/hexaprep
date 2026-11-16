@@ -53,6 +53,24 @@ describe("pantalla de práctica", () => {
     expect(a.client.answer.mock.calls[0][0].elegida).toBe("d");
   });
 
+  it("sends_split_times_context_and_explanation_time_without_breaking_practice", async () => {
+    const evento = vi.fn().mockRejectedValue(new Error("red")); // una señal que falla no debe afectar
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(Q).mockResolvedValueOnce({ ...Q, pregunta_id: "p2" }).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue(KO), reportQuestion: vi.fn(), evento,
+    } satisfies PracticeClient;
+    const user = userEvent.setup();
+    render(<Practice sesionId="s1" client={client} />);
+    await user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    await waitFor(() => expect(client.answer).toHaveBeenCalled());
+    const t = client.answer.mock.calls[0][0].tiempos;
+    expect(Object.keys(t).sort()).toEqual(["t_activo", "t_envio", "t_oculto", "t_primer_clic"]);
+    expect(t.t_primer_clic).toBeLessThanOrEqual(t.t_envio);
+    expect(evento).toHaveBeenCalledWith("s1", "contexto", null, expect.objectContaining({ tactil: expect.any(Boolean) }));
+    await user.click(await screen.findByRole("button", { name: /Siguiente/ })); // pasa a la siguiente pregunta
+    await waitFor(() => expect(evento).toHaveBeenCalledWith("s1", "explicacion_cerrada", "p1", { t: expect.any(Number) }));
+  });
+
   it("first_click_is_final", async () => {
     const a = setup({}, KO);
     await a.user.click(await screen.findByRole("button", { name: /Opción A: Texto C/ }));

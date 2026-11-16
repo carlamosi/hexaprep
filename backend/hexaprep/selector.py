@@ -74,6 +74,7 @@ class QuestionOut:
     apartado: str | None = None
     campos: list[str] = field(default_factory=list)  # etiquetas de los huecos de una escrita
     reintento: bool = False  # repetición de una escrita fallada hace un momento
+    servida: dict = field(default_factory=dict)  # analítica: motivo, p_pred y días desde el concepto; no sale al cliente
 
 
 def _candidates(filtro: Filtro) -> Select:
@@ -140,6 +141,20 @@ def _saltadas(session: Session, sesion_id: str) -> dict[str, int]:
     return out
 
 
+def _anotar(session: Session, out: QuestionOut, p: Pregunta, motivo: str) -> QuestionOut:
+    """Guarda por qué se sirvió la pregunta y la probabilidad de acierto que se esperaba (para calibrar el selector)."""
+    dom = session.scalar(select(Dominio).where(Dominio.concepto_id == p.concepto_id))
+    ultimo = session.scalar(select(func.max(Intento.created_at)).where(Intento.concepto_id == p.concepto_id))
+    if motivo == "auto":
+        if dom is not None and dom.proximo_repaso is not None and dom.proximo_repaso <= utcnow():
+            motivo = "repaso_fsrs"
+        else:
+            motivo = "practica" if dom is not None and dom.n_intentos else "nuevo"
+    out.servida = {"motivo": motivo, "p_pred": round(expected_correct(_theta_efectivo(dom), p.dificultad_base), 4),
+                   "dias_concepto": round((utcnow() - ultimo).total_seconds() / 86400, 2) if ultimo else None}
+    return out
+
+
 def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.Random | None = None,
                   variedad: int | None = None) -> QuestionOut | None:
     rng = rng or random.Random()
@@ -158,7 +173,7 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
                and len(answered) - 1 - por_pregunta[p.id][0][0] >= REINTENTO_GAP]
     if debidas:  # la fallada hace más tiempo primero
         _, p, sub = min(debidas, key=lambda d: d[0])
-        return _to_out(session, p, sub, rng, reintento=True)
+        return _anotar(session, _to_out(session, p, sub, rng, reintento=True), p, "reintento")
     cands = [(p, sub) for p, sub in todas if p.id not in answered_ids]
     # una pregunta ya respondida en esta sesión, en otra versión, tampoco se repite
     answered_claves = set(session.scalars(select(Pregunta.clave).where(Pregunta.id.in_(answered_ids)))) \
@@ -187,7 +202,7 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
             resto = sorted((c for c in cands if c[0].grupo == ultimo.grupo and saltada_en(c[0]) is None),
                            key=lambda c: c[0].apartado)
             if resto:
-                return _to_out(session, resto[0][0], resto[0][1], rng)
+                return _anotar(session, _to_out(session, resto[0][0], resto[0][1], rng), resto[0][0], "apartado")
     # los apartados b, c... solo entran como continuación; la entrada es el primer apartado activo del grupo
     grupos = {p.grupo for p, _ in cands if p.grupo}
     if grupos:
@@ -237,4 +252,4 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
     esperando = {p.id for p, _ in pool if saltada_en(p) is not None and len(answered) - saltada_en(p) < SKIP_GAP}
     ranking = sorted([it for it in pool if it[0].id not in esperando] or pool, key=score)[: max(variedad, 1)]
     p, sub = rng.choices(ranking, weights=[1 / (1 + i) ** 1.5 for i in range(len(ranking))])[0]
-    return _to_out(session, p, sub, rng)
+    return _anotar(session, _to_out(session, p, sub, rng), p, "fallo_sesion" if p.concepto_id in due else "auto")
