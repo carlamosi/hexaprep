@@ -24,9 +24,10 @@ def sigmoid(x: float) -> float:
     return 1 / (1 + math.exp(-x))
 
 
-# Probabilidad de acertar sin saber: en un test de 4 opciones y en un V/F se acierta por azar; un problema numérico
-# o una respuesta escrita casi nunca. Sin tipo (o con otro) no se supone azar.
-ACIERTO_AZAR = {"test": 0.25, "vf": 0.5}
+# Acierto sin saber, por debajo del azar puro (0,25 y 0,5): quien contesta casi nunca adivina a ciegas, descarta
+# opciones con lo que sabe, y un descuento total desanima sin que haga falta. Un problema numérico o una respuesta
+# escrita casi nunca se aciertan por casualidad. Sin tipo (o con otro) no se supone azar.
+ACIERTO_AZAR = {"test": 0.15, "vf": 0.3}
 
 
 def expected_correct(theta: float, dificultad: int, tipo: str | None = None) -> float:

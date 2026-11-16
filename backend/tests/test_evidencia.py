@@ -18,8 +18,9 @@ ASIG = {"nombre": "Mates", "idioma": "es", "color": "#D9822B", "acento": "#D9822
 def test_acertar_al_azar_sube_la_probabilidad_esperada_solo_en_test_y_vf():
     assert expected_correct(0.0, 3) == pytest.approx(0.5)
     assert expected_correct(0.0, 3, "problema") == expected_correct(0.0, 3, "escrita") == pytest.approx(0.5)
-    assert expected_correct(0.0, 3, "test") == pytest.approx(0.25 + 0.75 * 0.5)
-    assert expected_correct(0.0, 3, "vf") == pytest.approx(0.5 + 0.5 * 0.5)
+    for tipo, g in mastery.ACIERTO_AZAR.items():
+        assert expected_correct(0.0, 3, tipo) == pytest.approx(g + (1 - g) * 0.5)
+    assert 0 < mastery.ACIERTO_AZAR["test"] < mastery.ACIERTO_AZAR["vf"] < 1
 
 
 def test_un_acierto_en_test_o_vf_enseña_menos_que_uno_en_problema():
