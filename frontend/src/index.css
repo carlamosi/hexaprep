@@ -48,7 +48,7 @@ body {
 @media (prefers-reduced-motion: reduce) { .aro-avance { animation: none; stroke-dashoffset: 0; } }
 
 /* Pantalla de arranque: trazo del hexágono, relleno que sube y desvanecido */
-.splash { position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 14px; background: var(--paper); transition: opacity .3s ease; }
+.splash { pointer-events: none; position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 14px; background: var(--paper); transition: opacity .3s ease; }
 .splash-fuera { opacity: 0; pointer-events: none; }
 .splash-trazo { stroke-dasharray: 100; stroke-dashoffset: 100; animation: splash-dibuja .5s ease-out forwards; }
 .splash-llena { transform-origin: 50% 100%; transform: scaleY(0); animation: splash-sube .45s .35s ease-out forwards; }

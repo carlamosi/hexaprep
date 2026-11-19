@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { api, type Oculto, type PerfilDatos } from "../api";
 import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
+import { ABRIR_GUIA } from "../components/Onboarding";
 import { aplicarTema, leerTema, type Tema } from "../tema";
 import { Settings, type SettingsClient } from "./Settings";
 
@@ -97,6 +98,10 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
             </button>
           ))}
         </div>
+      </section>
+
+      <section className={seccion}>
+        <button type="button" className={boton} onClick={() => window.dispatchEvent(new Event(ABRIR_GUIA))}>{t("perfil.verGuia")}</button>
       </section>
 
       {asignaturaId && client.setFoco && temas.length > 0 && (

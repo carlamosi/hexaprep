@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { api, type MapResponse } from "../api";
 import { HexMap } from "../components/HexMap";
 import { PanelAsignatura } from "../components/PanelAsignatura";
+import { Buscador } from "../components/Buscador";
 import { Hexagon } from "../components/Hexagon";
 import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
@@ -52,7 +53,8 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
               {tn("panal.temas", temas)} · {tn("panal.subtemas", map.subtemas.length)} · {tn("panal.conceptos", map.hexes.length)}
             </p>
           </div>
-          <div className="flex flex-wrap gap-3 sm:ml-auto">
+          <div className="flex flex-wrap items-center gap-3 sm:ml-auto">
+            <Buscador hexes={map.hexes} onElegir={(id) => onSelectSubtema?.(id)} />
             {onPracticar && (
               <button type="button" onClick={onPracticar} className="rounded-[11px] bg-[var(--ink)] px-5 py-2.5 font-semibold text-[var(--on-ink)] shadow-[4px_4px_0_var(--lila)]">
                 {t("home.practicar")}

@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useState } from "react";
+import { Onboarding } from "./components/Onboarding";
 import { AppHeader } from "./components/AppHeader";
 import { useAsignatura } from "./hooks";
 import { t } from "./i18n";
@@ -45,6 +46,7 @@ export default function App() {
     <div className="min-h-dvh pb-[calc(5rem+env(safe-area-inset-bottom))] font-sans sm:pb-0">
       <AppHeader asignatura={nombre} asignaturaId={asignaturaId} asignaturas={subjects} onCambiarAsignatura={(id) => { elegir(id); go("panal"); }} onAbrirSelector={refrescar} ruta={route} sinNav={sinNav} />
       <Fragment key={asignaturaId}>{page}</Fragment>
+      <Onboarding />
     </div>
   );
 }
