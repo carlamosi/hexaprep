@@ -2232,16 +2232,15 @@
    "fuente_pagina": 5,
    "fuente_cara": 5,
    "tipo": "escrita",
-   "explicacion": "Escrivim «la ira». És una excepció per evitar confusions amb «lira». Truc: la ira, per no dir «l'ira».",
+   "explicacion": "El booklet demana «la ira» (per no confondre-ho amb «lira»), però també es veu «l'ira»: les dues formes es donen per bones.",
    "campos": [
     {
      "etiqueta": "Article i nom",
      "validas": [
-      "la ira"
+      "la ira",
+      "l'ira"
      ],
-     "errores": {
-      "l'ira": "Per no confondre-ho amb «lira», no s'apostrofa."
-     }
+     "errores": {}
     }
    ]
   },

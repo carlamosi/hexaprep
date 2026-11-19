@@ -82,6 +82,16 @@ class ReportIn(BaseModel):
     sesion_id: str | None = None
 
 
+class OcultarIn(BaseModel):
+    pregunta_id: str
+    alcance: str
+
+
+class TextoIn(BaseModel):
+    texto: str
+    sesion_id: str | None = None
+
+
 class PathIn(BaseModel):
     ruta: str
 
@@ -373,6 +383,45 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             return quality.question_content(s, pregunta_id)
         except ValueError as e:
             raise HTTPException(404, str(e))
+
+    @app.get("/api/ocultos")
+    def ocultos(s: Session = Depends(get_session)):
+        return quality.listar_ocultos(s)
+
+    @app.post("/api/ocultos")
+    def ocultar(body: OcultarIn, s: Session = Depends(get_session)):
+        try:
+            return quality.ocultar(s, body.pregunta_id, body.alcance)
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+
+    @app.delete("/api/ocultos/{registro_id}")
+    def mostrar(registro_id: str, s: Session = Depends(get_session)):
+        try:
+            quality.mostrar_oculto(s, registro_id)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+        return {"ok": True}
+
+    @app.post("/api/questions/{pregunta_id}/facil")
+    def facil(pregunta_id: str, body: ReportIn, s: Session = Depends(get_session)):
+        try:
+            quality.anotar_facil(s, pregunta_id, body.sesion_id)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+        return {"ok": True}
+
+    @app.post("/api/questions/{pregunta_id}/alternativa")
+    def alternativa(pregunta_id: str, body: TextoIn, s: Session = Depends(get_session)):
+        try:
+            quality.anotar_alternativa(s, pregunta_id, body.texto)
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+        return {"ok": True}
+
+    @app.get("/api/alternativas")
+    def alternativas(s: Session = Depends(get_session)):
+        return quality.listar_alternativas(s)
 
     @app.post("/api/questions/{pregunta_id}/report")
     def report(pregunta_id: str, body: ReportIn, s: Session = Depends(get_session)):

@@ -117,7 +117,12 @@ def _concept_ids(session: Session, nivel: Literal["subtema", "tema", "asignatura
     else:
         q = (q.join(Tema, Tema.id == Subtema.tema_id).join(Bloque, Bloque.id == Tema.bloque_id)
              .join(Asignatura, Asignatura.id == Bloque.asignatura_id).where(Asignatura.id == id))
-    return list(session.scalars(q.where(Concepto.deleted_at.is_(None))))
+    # un concepto con todas sus preguntas fuera (reportadas u ocultas) no cuenta en el porcentaje
+    todas_fuera = (select(Pregunta.id).where(Pregunta.concepto_id == Concepto.id, Pregunta.es_actual.is_(True),
+                                              Pregunta.excluida.is_(True)).exists()
+                   & ~select(Pregunta.id).where(Pregunta.concepto_id == Concepto.id, Pregunta.es_actual.is_(True),
+                                                Pregunta.excluida.is_(False)).exists())
+    return list(session.scalars(q.where(Concepto.deleted_at.is_(None), ~todas_fuera)))
 
 
 def aggregate(session: Session, nivel: Literal["subtema", "tema", "asignatura"], id: str) -> float:

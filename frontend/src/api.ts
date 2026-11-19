@@ -100,6 +100,8 @@ export interface QuestionContent {
   ayuda_larga: string; dificultad: number; fuente_pagina: number; fuente_cara: number;
 }
 export interface ReportedQuestion { pregunta_id: string; enunciado: string; motivo: string | null }
+export type Alcance = "pregunta" | "concepto" | "tema";
+export interface Oculto { id: string; alcance: Alcance; nombre: string; claves: string[] }
 export interface BackupRow { ruta: string; verificada: boolean; n_eventos: number; fecha: string }
 
 async function request<T>(path: string, method = "GET", body?: unknown): Promise<T> {
@@ -145,6 +147,14 @@ export const api = {
     request<{ percent: number }>("/api/answers/correct", "POST", { sesion_id: sesionId, pregunta_id: preguntaId }),
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>
     request<{ ok: boolean }>(`/api/questions/${id}/report`, "POST", { motivo, sesion_id: sesionId ?? null }),
+  ocultar: (preguntaId: string, alcance: Alcance) =>
+    request<Oculto>("/api/ocultos", "POST", { pregunta_id: preguntaId, alcance }),
+  ocultos: () => request<Oculto[]>("/api/ocultos"),
+  mostrarOculto: (id: string) => request<{ ok: boolean }>(`/api/ocultos/${encodeURIComponent(id)}`, "DELETE"),
+  facil: (id: string, sesionId?: string) =>
+    request<{ ok: boolean }>(`/api/questions/${id}/facil`, "POST", { motivo: "facil", sesion_id: sesionId ?? null }),
+  alternativa: (id: string, texto: string) =>
+    request<{ ok: boolean }>(`/api/questions/${id}/alternativa`, "POST", { texto }),
   editQuestion: (id: string, cambios: Record<string, unknown>) =>
     request<{ version: number }>(`/api/questions/${id}`, "PUT", cambios),
   getQuestion: (id: string) => request<QuestionContent>(`/api/questions/${id}`),

@@ -101,13 +101,53 @@ describe("pantalla de práctica", () => {
     expect(a.client.answer.mock.calls[0][0].confianza).toBeUndefined();
   });
 
-  it("report_button_marks_question", async () => {
-    const a = setup();
+  function setupMenu(result: AnswerResult = OK) {
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(Q).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue(result), reportQuestion: vi.fn().mockResolvedValue({ ok: true }),
+      facil: vi.fn().mockResolvedValue({ ok: true }), ocultar: vi.fn().mockResolvedValue({}), alternativa: vi.fn().mockResolvedValue({ ok: true }),
+    } satisfies PracticeClient;
+    render(<Practice sesionId="s1" client={client} onDone={vi.fn()} />);
+    return { client, user: userEvent.setup() };
+  }
+
+  it("report_menu_mal_o_dudosa_marks_question", async () => {
+    const a = setupMenu();
     await screen.findByText(Q.enunciado);
     await a.user.click(screen.getByText("Reportar"));
-    await a.user.click(screen.getByRole("button", { name: "Está mal formulada" }));
-    expect(a.client.reportQuestion).toHaveBeenCalledWith("p1", "Está mal formulada", "s1");
+    await a.user.click(screen.getByRole("button", { name: "Está mal o dudosa" }));
+    expect(a.client.reportQuestion).toHaveBeenCalledWith("p1", "Está mal o dudosa", "s1");
     expect(await screen.findByText(/Pregunta reportada/)).toBeInTheDocument();
+  });
+
+  it("report_menu_facil_only_notes_it_and_keeps_the_question", async () => {
+    const a = setupMenu();
+    await screen.findByText(Q.enunciado);
+    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Demasiado fácil u obvia" }));
+    expect(a.client.facil).toHaveBeenCalledWith("p1", "s1");
+    expect(await screen.findByText("Anotado. Gracias.")).toBeInTheDocument();
+    expect(screen.getByText(Q.enunciado)).toBeInTheDocument();
+    expect(a.client.reportQuestion).not.toHaveBeenCalled();
+  });
+
+  it.each([["Solo esta pregunta", "pregunta"], ["Todo este concepto", "concepto"], ["Todo este tema", "tema"]])("report_menu_aun_no_lo_hemos_dado_%s", async (boton, alcance) => {
+    const a = setupMenu();
+    await screen.findByText(Q.enunciado);
+    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByText("Aún no lo hemos dado"));
+    await a.user.click(screen.getByRole("button", { name: boton }));
+    expect(a.client.ocultar).toHaveBeenCalledWith("p1", alcance);
+    expect(await screen.findByText(/No volverá a salir/)).toBeInTheDocument();
+  });
+
+  it("mi_respuesta_tambien_valia_saves_what_was_chosen_without_changing_the_grade", async () => {
+    const a = setupMenu(KO);
+    await a.user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    await a.user.click(await screen.findByRole("button", { name: "Mi respuesta también valía" }));
+    expect(a.client.alternativa).toHaveBeenCalledWith("p1", "Texto A");
+    expect(await screen.findByText(/La nota no cambia/)).toBeInTheDocument();
+    expect(screen.getByText(/confunde coste con precio/)).toBeInTheDocument(); // sigue marcado como fallo
   });
 
   it("invalid_latex_falls_back_to_plain_text", async () => {

@@ -54,3 +54,17 @@ def test_en_troba_l_error_vale_un_fragmento_algo_mas_largo_pero_no_uno_distinto(
     for mal in ("tinc", "que", "tinc que anar a classe ara mateix", "tincque"):
         assert corregir_campo(mal, error)["correcto"] is False
     assert corregir_campo("tinc que anar", {"etiqueta": "Paraula", "validas": ["tinc que"]})["correcto"] is False  # solo en «Error»
+
+
+@pytest.mark.parametrize("escrito,esperado", [("l'", True), ("L'", True), ("l'handbol", True), ("el", False), ("la", False)])
+def test_en_un_hueco_con_articulo_vale_solo_el_articulo(escrito, esperado):
+    campo = {"etiqueta": "Article i nom", "validas": ["l'handbol"], "errores": {}}
+    ok, _ = corregir([campo], [escrito], "Escriu amb l'article masculí: «____ handbol».")
+    assert ok is esperado, f"escrito {escrito!r}: esperado {esperado}, obtenido {ok}"
+
+
+def test_el_articulo_solo_no_vale_fuera_de_un_hueco_de_articulo():
+    campo = {"etiqueta": "Article i nom", "validas": ["l'handbol"], "errores": {}}
+    assert corregir([campo], ["l'"], "Escriu amb l'article.")[0] is False
+    contraccion = {"etiqueta": "a", "validas": ["de l'"], "errores": {}}
+    assert corregir([contraccion], ["de"], "Parlarem «____ hotel»")[0] is False

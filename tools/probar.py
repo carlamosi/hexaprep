@@ -27,7 +27,7 @@ def correr(cmd, cwd, archivo):
 def resumen_pytest(texto):
     """Totales y, por cada fallo, test, línea y líneas «E» (esperado y obtenido)."""
     out = []
-    fallos = re.split(r"^_{3,} (.+?) _{3,}$", texto, flags=re.M)
+    fallos = re.split(r"^_+ (.+?) _+$", texto, flags=re.M)
     for nombre, cuerpo in zip(fallos[1::2], fallos[2::2]):
         e = [l.strip() for l in cuerpo.splitlines() if l.startswith("E ")][:3]
         ubic = re.findall(r"^(\S+\.py):(\d+):", cuerpo, flags=re.M)

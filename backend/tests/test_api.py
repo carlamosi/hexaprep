@@ -170,3 +170,18 @@ def test_images_are_served_from_any_bank_img_folder_and_only_those(client, loade
     assert r.status_code == 200 and r.content == b"\x89PNG-falso" and "max-age" in r.headers["cache-control"]
     for malo in ("pictogrames/no-existe.png", "../secreto.txt", "pictogrames/..%2f..%2fsecreto.txt", "x.exe", "%2e%2e/secreto.png"):
         assert client.get(f"/api/imagen/{malo}").status_code == 404
+
+
+def test_ocultar_listar_y_devolver_por_la_api_y_notas_de_pregunta(client, loaded):
+    sesion = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    pregunta = client.get(f"/api/sessions/{sesion}/next").json()["pregunta_id"]
+    assert client.post("/api/ocultos", json={"pregunta_id": pregunta, "alcance": "inventado"}).status_code == 422
+    reg = client.post("/api/ocultos", json={"pregunta_id": pregunta, "alcance": "pregunta"}).json()
+    assert client.get("/api/ocultos").json() == [reg]
+    assert client.delete(f"/api/ocultos/{reg['id']}").status_code == 200
+    assert client.get("/api/ocultos").json() == []
+    assert client.delete("/api/ocultos/nada").status_code == 404
+    assert client.post(f"/api/questions/{pregunta}/facil", json={"motivo": "facil", "sesion_id": sesion}).status_code == 200
+    assert client.post(f"/api/questions/{pregunta}/alternativa", json={"texto": ""}).status_code == 422
+    assert client.post(f"/api/questions/{pregunta}/alternativa", json={"texto": "otra forma"}).status_code == 200
+    assert client.get("/api/alternativas").json()[0]["texto"] == "otra forma"

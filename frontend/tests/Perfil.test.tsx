@@ -20,6 +20,14 @@ const ONLINE = { email: "carla@gmail.com", nombre: "Carla Monté", online: true,
 afterEach(() => vi.restoreAllMocks());
 
 describe("perfil", () => {
+  it("lista_lo_ocultado_y_permite_volver_a_mostrarlo", async () => {
+    const c = { ...cliente(ONLINE), ocultos: vi.fn().mockResolvedValue([{ id: "tema:t1", alcance: "tema", nombre: "Verbos", claves: ["q1"] }]), mostrarOculto: vi.fn().mockResolvedValue({ ok: true }) };
+    render(<Perfil asignaturaId="a1" client={c} />);
+    await userEvent.click(await screen.findByRole("button", { name: "Volver a mostrar" }));
+    expect(c.mostrarOculto).toHaveBeenCalledWith("tema:t1");
+    expect(await screen.findByText("No has ocultado nada.")).toBeInTheDocument();
+  });
+
   it("enseña_quien_eres_y_cierra_la_sesion", async () => {
     const c = cliente(ONLINE);
     const recarga = vi.fn();

@@ -10,7 +10,7 @@ from . import events, mastery, scheduling
 from .bank import AsignaturaIn, BankFile, CampoIn, FuenteIn, OpcionIn, PreguntaIn
 from .importer import _add_question, leer_solucion, question_digest
 from .models import (
-    Asignatura, Bloque, Concepto, Explicacion, Fuente, Opcion, Pregunta, ReporteCalidad, Subtema, Tema, utcnow,
+    Ajuste, Asignatura, Bloque, Concepto, Explicacion, Fuente, Opcion, Pregunta, ReporteCalidad, Subtema, Tema, utcnow,
 )
 
 EDITABLE = {"enunciado", "ayuda_larga", "explicacion", "dificultad", "opciones", "correcta", "fuente_pagina",
@@ -152,3 +152,94 @@ def export_bank(session: Session, asignatura_id: str, path: Path) -> None:
         preguntas=[_to_bank_question(session, p) for p in claves])
     Path(path).write_text(json.dumps(bank.model_dump(exclude_none=True), ensure_ascii=False, indent=2),
                           encoding="utf-8")
+
+
+# ---------- «Aún no lo hemos dado» (ocultar por alcance), «demasiado fácil» y «mi respuesta también valía» ----------
+ALCANCES = ("pregunta", "concepto", "tema")
+
+
+def _ajuste(session: Session, clave: str) -> list:
+    fila = session.scalar(select(Ajuste).where(Ajuste.clave == clave))
+    return list(fila.valor) if fila is not None and isinstance(fila.valor, list) else []
+
+
+def _guardar_ajuste(session: Session, clave: str, valor: list) -> None:
+    fila = session.scalar(select(Ajuste).where(Ajuste.clave == clave))
+    if fila is None:
+        session.add(Ajuste(clave=clave, valor=valor))
+    else:
+        fila.valor = valor
+    session.commit()
+
+
+def ocultar(session: Session, pregunta_id: str, alcance: str) -> dict:
+    """Oculta la pregunta, su concepto o su tema entero (no se sirven ni cuentan en el %). Reversible con `mostrar_oculto`.
+
+    Se guarda en `ajuste` del perfil qué claves oculta esta acción, para devolver solo esas (las ya reportadas siguen fuera)."""
+    if alcance not in ALCANCES:
+        raise ValueError(f"alcance no válido: {alcance}")
+    p = _current(session, pregunta_id)
+    c = session.get(Concepto, p.concepto_id)
+    sub = session.get(Subtema, c.subtema_id)
+    tema = session.get(Tema, sub.tema_id)
+    if alcance == "pregunta":
+        ident, nombre, filtro = p.id, p.enunciado[:80], [Pregunta.id == p.id]
+    elif alcance == "concepto":
+        ident, nombre, filtro = c.id, c.nombre, [Pregunta.concepto_id == c.id]
+    else:
+        ident, nombre = tema.id, tema.nombre
+        filtro = [Pregunta.concepto_id.in_(select(Concepto.id).join(Subtema, Subtema.id == Concepto.subtema_id)
+                                           .where(Subtema.tema_id == tema.id))]
+    ps = session.scalars(select(Pregunta).where(*filtro, Pregunta.es_actual.is_(True), Pregunta.excluida.is_(False),
+                                                Pregunta.deleted_at.is_(None))).all()
+    claves = sorted({q.clave for q in ps})
+    conceptos = {q.concepto_id for q in ps}
+    for clave in claves:
+        _set_excluida(session, clave, True)
+    session.flush()
+    for cid in conceptos:
+        _recompute(session, cid)
+    registro = {"id": f"{alcance}:{ident}", "alcance": alcance, "nombre": nombre, "claves": claves}
+    _guardar_ajuste(session, "ocultos", [o for o in _ajuste(session, "ocultos") if o["id"] != registro["id"]] + [registro])
+    return registro
+
+
+def listar_ocultos(session: Session) -> list[dict]:
+    return _ajuste(session, "ocultos")
+
+
+def mostrar_oculto(session: Session, registro_id: str) -> None:
+    """Devuelve a la práctica lo que ocultó esa acción (y solo eso)."""
+    ocultos = _ajuste(session, "ocultos")
+    reg = next((o for o in ocultos if o["id"] == registro_id), None)
+    if reg is None:
+        raise ValueError(f"no hay nada oculto con id {registro_id}")
+    conceptos = set()
+    for clave in reg["claves"]:
+        _set_excluida(session, clave, False)
+        conceptos |= set(session.scalars(select(Pregunta.concepto_id).where(Pregunta.clave == clave)))
+    session.flush()
+    for cid in conceptos:
+        _recompute(session, cid)
+    _guardar_ajuste(session, "ocultos", [o for o in ocultos if o["id"] != registro_id])
+
+
+def anotar_facil(session: Session, pregunta_id: str, sesion_id: str | None = None) -> None:
+    """«Demasiado fácil u obvia»: solo deja constancia (no oculta nada, es una opinión)."""
+    p = _current(session, pregunta_id)
+    if sesion_id:
+        events.record_event(session, sesion_id, "pregunta_reportada", p.id, {"motivo": "facil"}, datetime.now())
+
+
+def anotar_alternativa(session: Session, pregunta_id: str, texto: str) -> None:
+    """«Mi respuesta también valía»: no cambia la nota; guarda lo escrito para añadirlo al banco."""
+    texto = " ".join(texto.split())
+    if not texto:
+        raise ValueError("respuesta vacía")
+    p = _current(session, pregunta_id)
+    _guardar_ajuste(session, "alternativas", _ajuste(session, "alternativas")
+                    + [{"clave": p.clave, "enunciado": p.enunciado[:120], "texto": texto[:300]}])
+
+
+def listar_alternativas(session: Session) -> list[dict]:
+    return _ajuste(session, "alternativas")

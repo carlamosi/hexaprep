@@ -213,7 +213,7 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
     solucion, ordenada = leer_solucion(opciones["a"].texto) if problema else (None, False)
     detalle = None
     if escrita:
-        es_correcta, detalle = corregir(json.loads(opciones["a"].texto), respuestas)
+        es_correcta, detalle = corregir(json.loads(opciones["a"].texto), respuestas, pregunta.enunciado)
     elif problema:
         es_correcta = coincide(valores, solucion if isinstance(solucion, list) else [solucion], ordenada)
     else:

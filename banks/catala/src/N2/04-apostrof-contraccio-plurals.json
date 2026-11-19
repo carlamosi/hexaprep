@@ -20,7 +20,7 @@
    "pagina": 5,
    "ayuda": "L'article femení «la» s'apostrofa davant de paraules que comencen per vocal o hac: l'amiga, l'illa, l'ungla, l'hora. Excepcions: davant de «i», «u», «hi», «hu» àtones no s'apostrofa (la unitat, la humanitat, la història). Tampoc davant del so de «i» + vocal, ni davant de «la una», ni davant del nom de les lletres (la essa). Hi ha altres excepcions per evitar confusions amb una altra paraula.",
    "escritas": [
-    [4, "Escriu amb l'article femení: «____ ira».", [["Article i nom", ["la ira"], {"l'ira": "Per no confondre-ho amb «lira», no s'apostrofa."}]], "Escrivim «la ira». És una excepció per evitar confusions amb «lira». Truc: la ira, per no dir «l'ira»."],
+    [4, "Escriu amb l'article femení: «____ ira».", [["Article i nom", ["la ira", "l'ira"], {}]], "El booklet demana «la ira» (per no confondre-ho amb «lira»), però també es veu «l'ira»: les dues formes es donen per bones."],
     [3, "Escriu amb l'article femení: «____ Irene».", [["Article i nom", ["la Irene"], {"l'Irene": "La «i» és àtona: no s'apostrofa."}]], "Escrivim «la Irene». La «i» és àtona, per això no s'apostrofa. Truc: la Irene, la imatge, la universitat."],
     [4, "Escriu amb l'article femení: «____ Imma».", [["Article i nom", ["l'Imma"], {"la Imma": "Aquí la «i» és forta: s'apostrofa."}]], "Escrivim «l'Imma». La «i» és forta (Im-ma), per això s'apostrofa; en canvi «la Immaculada» és àtona. Truc: tònica, apòstrof."],
     [4, "Escriu amb l'article femení: «____ asimetria».", [["Article i nom", ["l'asimetria"], {"la asimetria": "Novetat del 2016: davant de «a» s'apostrofa sempre."}]], "Escrivim «l'asimetria». Segons la normativa del 2016, davant de «a» sempre s'apostrofa. Truc: l'asimetria, l'anormalitat."],

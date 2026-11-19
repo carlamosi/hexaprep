@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { api, type PerfilDatos } from "../api";
+import { api, type Oculto, type PerfilDatos } from "../api";
 import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
 import { Settings, type SettingsClient } from "./Settings";
 
-export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient;
+export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto">>;
 
 const boton = "rounded-[11px] border border-[var(--rule-2)] bg-white px-4 py-2 font-medium text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
 const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-white p-5";
@@ -14,12 +14,28 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
   const [perfil, setPerfil] = useState<PerfilDatos | null>(null);
   const [confirmar, setConfirmar] = useState(false);
   const [error, setError] = useState(false);
+  const [ocultos, setOcultos] = useState<Oculto[]>([]);
 
   useEffect(() => {
     let vivo = true;
     client.getPerfil().then((p) => vivo && setPerfil(p)).catch(() => vivo && setError(true));
     return () => { vivo = false; };
   }, [client]);
+
+  useEffect(() => {
+    let vivo = true;
+    client.ocultos?.().then((o) => vivo && setOcultos(o)).catch(() => {});
+    return () => { vivo = false; };
+  }, [client]);
+
+  async function volverAMostrar(id: string) {
+    try {
+      await client.mostrarOculto?.(id);
+      setOcultos((os) => os.filter((o) => o.id !== id));
+    } catch {
+      setError(true);
+    }
+  }
 
   async function salir() {
     await client.authLogout().catch(() => null);
@@ -49,6 +65,22 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
       )}
 
       {asignaturaId && <Examen asignaturaId={asignaturaId} client={client} />}
+
+      {client.ocultos && (
+        <section className={seccion} aria-label={t("perfil.ocultos")}>
+          <h2 className="text-lg font-semibold">{t("perfil.ocultos")}</h2>
+          {ocultos.length === 0 ? <p className="text-[var(--ink-3)]">{t("perfil.ocultosVacio")}</p> : (
+            <ul className="space-y-2">
+              {ocultos.map((o) => (
+                <li key={o.id} className="flex flex-wrap items-center justify-between gap-3">
+                  <span><span className="text-sm text-[var(--ink-3)]">{t(`perfil.alcance.${o.alcance}`)}</span> {o.nombre}</span>
+                  <button type="button" className={boton} onClick={() => void volverAMostrar(o.id)}>{t("perfil.volverAMostrar")}</button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
 
       <details className={seccion}>
         <summary className="cursor-pointer text-lg font-semibold">{t("perfil.instalar")}</summary>

@@ -20,11 +20,22 @@ def _contiene(n: str, valida: str) -> bool:
     return len(n.split()) <= len(valida.split()) + 2 and re.search(rf"(?<!\w){re.escape(valida)}(?!\w)", n) is not None
 
 
-def corregir_campo(escrito: str, campo: dict) -> dict:
+_ARTICULO = re.compile(r"^(l'|(?:el|la|els|les) )")
+
+
+def _solo_articulo(validas: list[str], enunciado: str) -> list[str]:
+    """En un hueco «____ nom» donde la respuesta empieza por artículo, el artículo solo también vale (el banco pide la frase)."""
+    if not re.search(r"____ \w", enunciado):
+        return []
+    return [m.group(1).strip() if m.group(1) != "l'" else "l'" for v in validas if (m := _ARTICULO.match(v))]
+
+
+def corregir_campo(escrito: str, campo: dict, enunciado: str = "") -> dict:
     n = normalizar(escrito)
     validas = [normalizar(v) for v in campo["validas"]]
+    validas_ok = validas + _solo_articulo(validas, enunciado)
     es_error = campo.get("etiqueta") == "Error"
-    acierta = bool(n) and (n in validas or es_error and any(_contiene(n, v) for v in validas))
+    acierta = bool(n) and (n in validas_ok or es_error and any(_contiene(n, v) for v in validas))
     resultado = {"etiqueta": campo.get("etiqueta", ""), "correcto": acierta,
                  "esperado": campo["validas"], "nota": None}
     if resultado["correcto"] or not n:
@@ -37,9 +48,9 @@ def corregir_campo(escrito: str, campo: dict) -> dict:
     return resultado
 
 
-def corregir(campos: list[dict], escritos: list[str]) -> tuple[bool, list[dict]]:
+def corregir(campos: list[dict], escritos: list[str], enunciado: str = "") -> tuple[bool, list[dict]]:
     """Acierta solo si todos los campos son correctos."""
     if len(escritos) != len(campos):
         raise ValueError(f"se esperaban {len(campos)} respuestas y llegaron {len(escritos)}")
-    detalle = [corregir_campo(e, c) for e, c in zip(escritos, campos)]
+    detalle = [corregir_campo(e, c, enunciado) for e, c in zip(escritos, campos)]
     return all(d["correcto"] for d in detalle), detalle

@@ -5,7 +5,7 @@ import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
-export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento">>;
+export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa">>;
 
 const NUMERO = /^[+\-−]?(\d+([.,]\d*)?|[.,]\d+)(e[+\-]?\d+)?(\/[+\-−]?(\d+([.,]\d*)?|[.,]\d+))?$/i;
 
@@ -17,6 +17,7 @@ export function respuestaValida(texto: string): boolean {
 }
 
 const LETTERS = ["A", "B", "C", "D"];
+const BTN_MENU = "block min-h-11 w-full rounded-[11px] border border-[var(--rule-2)] px-3 py-1.5 text-left text-sm";
 /** Tras un acierto pasa sola a la siguiente pregunta pasados estos ms (un fallo nunca pasa solo). */
 export const AVANCE_MS = 3000;
 
@@ -52,7 +53,10 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   const [question, setQuestion] = useState<Question | null | undefined>(undefined); // undefined = cargando
   const [chosen, setChosen] = useState<Letra | null>(null);
   const [result, setResult] = useState<AnswerResult | null>(null);
-  const [reported, setReported] = useState(false);
+  const [reported, setReported] = useState<string | false>(false); // texto de cierre tras reportar u ocultar
+  const [aviso, setAviso] = useState<string | null>(null);
+  const [valiaEnviada, setValiaEnviada] = useState(false);
+  const escritas = useRef<string[]>([]);
   const [valor, setValor] = useState(""); // problemas: lo que escribe la alumna
   const [numeroMal, setNumeroMal] = useState(false);
   const [answered, setAnswered] = useState(initialAnswered);
@@ -123,6 +127,9 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     setChosen(null);
     setResult(null);
     setReported(false);
+    setAviso(null);
+    setValiaEnviada(false);
+    escritas.current = [];
     setValor("");
     setNumeroMal(false);
     setFailed(false);
@@ -267,6 +274,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     if (!question || locked.current) return;
     escritura.current = stats;
     locked.current = true;
+    escritas.current = respuestas;
     const now = performance.now();
     firstClickAt.current = now;
     setChosen("a");
@@ -338,7 +346,29 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   async function report(motivo: string) {
     if (!question) return;
     await client.current.reportQuestion(question.pregunta_id, motivo, sesionId);
-    setReported(true);
+    setReported(t("practica.reportada"));
+  }
+
+  async function facil() {
+    if (!question || !client.current.facil) return;
+    await client.current.facil(question.pregunta_id, sesionId);
+    setAviso(t("practica.reporte_facilHecho"));
+  }
+
+  async function aunNo(alcance: "pregunta" | "concepto" | "tema") {
+    if (!question || !client.current.ocultar) return;
+    await client.current.ocultar(question.pregunta_id, alcance);
+    setReported(t("practica.ocultada"));
+  }
+
+  /** «Mi respuesta también valía»: guarda lo que se respondió, sin cambiar la nota. */
+  async function valia() {
+    if (!question || !client.current.alternativa) return;
+    const texto = question.tipo === "escrita" ? escritas.current.join(" / ")
+      : question.tipo === "problema" ? valor.trim() : (question.opciones.find((o) => o.letra === chosen)?.texto ?? "");
+    if (!texto) return;
+    await client.current.alternativa(question.pregunta_id, texto);
+    setValiaEnviada(true);
   }
 
   if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
@@ -364,11 +394,21 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
             <summary className="cursor-pointer text-sm text-[var(--ink-3)]">{t("practica.reportar")}</summary>
             <div role="group" aria-label={t("practica.reportar")} className="mt-2 space-y-2 rounded-[11px] border border-[var(--rule-2)] bg-white p-3">
               <p className="text-sm">{t("practica.reporte_pregunta")}</p>
-              {[t("practica.reporte_mal"), t("practica.reporte_dudosa")].map((m) => (
-                <button key={m} type="button" onClick={() => void report(m)} className="block rounded-[11px] border border-[var(--rule-2)] px-3 py-1.5 text-sm">
-                  {m}
-                </button>
-              ))}
+              <button type="button" onClick={() => void report(t("practica.reporte_mal"))} className={BTN_MENU}>{t("practica.reporte_mal")}</button>
+              {client.current.facil && <button type="button" onClick={() => void facil()} className={BTN_MENU}>{t("practica.reporte_facil")}</button>}
+              {client.current.ocultar && (
+                <details>
+                  <summary className="cursor-pointer text-sm">{t("practica.reporte_aun")}</summary>
+                  <div role="group" aria-label={t("practica.reporte_aun")} className="mt-2 space-y-2">
+                    {(["pregunta", "concepto", "tema"] as const).map((a) => (
+                      <button key={a} type="button" onClick={() => void aunNo(a)} className={BTN_MENU}>
+                        {t(`practica.reporte_aun${a[0].toUpperCase()}${a.slice(1)}`)}
+                      </button>
+                    ))}
+                  </div>
+                </details>
+              )}
+              {aviso && <p role="status" className="text-sm text-[var(--ok)]">{aviso}</p>}
               <p className="text-xs text-[var(--ink-3)]">{t("practica.reporte_nota")}</p>
             </div>
           </details>
@@ -397,7 +437,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
 
       {reported ? (
         <div className="mt-6 space-y-3">
-          <p role="status">{t("practica.reportada")}</p>
+          <p role="status">{reported}</p>
           <button type="button" onClick={() => void load()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
             {t("practica.siguiente")}
           </button>
@@ -457,6 +497,12 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
           )}
 
           {result && <Explanation result={result} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
+
+          {result && !result.correcta && client.current.alternativa && (
+            valiaEnviada
+              ? <p role="status" className="mt-3 text-sm text-[var(--ink-2)]">{t("practica.valiaHecho")}</p>
+              : <button type="button" onClick={() => void valia()} className="mt-3 text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.valia")}</button>
+          )}
 
           {question.ayuda_larga && result && ( // antes de responder podría desvelar la respuesta
             <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3"
