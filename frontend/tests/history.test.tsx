@@ -1,3 +1,4 @@
+import { colorTema } from "../src/colorTema";
 import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
@@ -79,11 +80,11 @@ describe("historial: agregados de presentación", () => {
     expect(lineas(evo, { nivel: "asignatura" }, orden)).toHaveLength(1);
     const temas = lineas(evo, { nivel: "temas" }, orden);
     expect(temas.map((l) => l.nombre)).toEqual(["Decisiones", "Sistemas"]);
-    expect(temas.map((l) => l.color)).toEqual(["var(--azul)", "var(--verde)"]);
+    expect(temas.map((l) => l.color)).toEqual([colorTema("#000", 0, 2), colorTema("#000", 1, 2)]); // el color sale de la asignatura
     const subs = lineas(evo, { nivel: "subtemas", temaId: "t1" }, orden);
     expect(subs.map((l) => l.nombre)).toEqual(["La escasez", "Cómo decidimos"]);
-    expect(subs[0].color).toBe("var(--azul)");
-    expect(subs[1].color).toContain("var(--azul)"); // un tono del color del tema
+    expect(subs[0].color).toBe(colorTema("#000", 0, 2));
+    expect(subs[1].color).toContain(colorTema("#000", 0, 2)); // un tono del color del tema
     expect(subs[1].trazo).toBeDefined(); // y un trazo distinto: no depende solo del color
   });
 

@@ -3,7 +3,9 @@ import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import type { Hex, MapResponse } from "../api";
 import { t, tn } from "../i18n";
 import { Hexagon } from "./Hexagon";
-import { group, TEMA_COLORS, tone } from "./HexMap";
+import { colorTema } from "../colorTema";
+import { Buscador } from "./Buscador";
+import { group } from "./HexMap";
 import { tipDe, Tooltip, type Tip } from "./Tooltip";
 import "./panel.css";
 
@@ -42,34 +44,31 @@ function MiniHex({ percent, grain, delay, reduce }: { percent: number; grain: st
   );
 }
 
-/** Un subtema como panal real: hexágonos encajados con columnas desplazadas media fila. */
-function Cluster({ hexes, s, grain, delay, reduce, onTip, onSelect }: {
-  hexes: Hex[]; s: number; grain: string; delay: number; reduce: boolean;
-  onTip: (tip: Tip | null) => void; onSelect?: () => void;
+/** Una sola masa de hexágonos: el temario de abajo arriba (los primeros temas abajo, los más nuevos arriba), en filas con
+ * columnas desplazadas media fila. El color dice el tema; el relleno, el progreso del concepto. */
+function PanalUnico({ hexes, colores, s, cols, grain, reduce, onTip, onSelect }: {
+  hexes: Hex[]; colores: Map<string, string>; s: number; cols: number; grain: string; reduce: boolean;
+  onTip: (tip: Tip | null) => void; onSelect: (subtemaId: string) => void;
 }) {
-  const cols = Math.max(1, Math.ceil(Math.sqrt(hexes.length * 1.3)));
-  const rows = Math.ceil(hexes.length / cols);
+  const filas = Math.ceil(hexes.length / cols);
   const show = (el: Element, h: Hex) =>
-    onTip(tipDe(el, <><b>{pctTxt(h.percent)}</b><span>{h.nombre}</span><span className="hp-tip-n">{h.subtema}</span></>));
+    onTip(tipDe(el, <><b>{pctTxt(h.percent)}</b><span>{h.nombre}</span><span className="hp-tip-n">{h.tema} · {h.subtema}</span></>));
   return (
-    <div className="pm-cluster" style={{ width: (cols - 1) * COL * s + s, height: (rows - 1) * FILA * s + ALTO * s + (cols > 1 ? (FILA * s) / 2 : 0) + 0.07 * s }}>
+    <div className="pm-cluster pm-masa" style={{ width: (cols - 1) * COL * s + s, height: (filas - 1) * FILA * s + ALTO * s + (cols > 1 ? (FILA * s) / 2 : 0) + 0.07 * s }}>
       {hexes.map((h, i) => {
         const c = i % cols;
-        const r = Math.floor(i / cols);
+        const r = filas - 1 - Math.floor(i / cols); // la primera fila (los primeros temas) queda abajo
+        const color = colores.get(h.tema_id) ?? "var(--lila)";
         return (
           <button
-            key={h.concepto_id}
-            type="button"
-            className="pm-hex"
+            key={h.concepto_id} type="button" className="pm-hex"
             aria-label={`${h.nombre}, ${Math.round(h.percent)} ${t("panal.porCientoDominio")}`}
-            style={{ left: c * COL * s, top: r * FILA * s + (c % 2 ? (FILA * s) / 2 : 0), width: s } as React.CSSProperties}
-            onClick={onSelect}
-            onPointerEnter={(e) => show(e.currentTarget, h)}
-            onPointerLeave={() => onTip(null)}
-            onFocus={(e) => show(e.currentTarget, h)}
-            onBlur={() => onTip(null)}
+            style={{ left: c * COL * s, top: r * FILA * s + (c % 2 ? (FILA * s) / 2 : 0), width: s, "--c": color, "--tc": color } as React.CSSProperties}
+            onClick={() => onSelect(h.subtema_id)}
+            onPointerEnter={(e) => show(e.currentTarget, h)} onPointerLeave={() => onTip(null)}
+            onFocus={(e) => show(e.currentTarget, h)} onBlur={() => onTip(null)}
           >
-            <MiniHex percent={h.percent} grain={grain} delay={delay + i * 0.012} reduce={reduce} />
+            <MiniHex percent={h.percent} grain={grain} delay={Math.min(0.5, 0.15 + i * 0.006)} reduce={reduce} />
           </button>
         );
       })}
@@ -77,7 +76,7 @@ function Cluster({ hexes, s, grain, delay, reduce, onTip, onSelect }: {
   );
 }
 
-/** Leyenda: el relleno es el dominio; el color, el tema; el tono, el subtema. */
+/** Leyenda: el relleno es el dominio y el color, el tema. */
 function Leyenda({ grain }: { grain: string }) {
   return (
     <div className="pm-legend" aria-label={`${t("panel.escala")}. ${t("panel.colores")}.`} role="img">
@@ -86,10 +85,6 @@ function Leyenda({ grain }: { grain: string }) {
           <span key={v} className="pm-legend-step"><MiniHex percent={v} grain={grain} delay={0} reduce /><small>{v}</small></span>
         ))}
       </span>
-      <span className="pm-legend-tones" style={{ "--tc": TEMA_COLORS[0] } as React.CSSProperties}>
-        {[0, 1, 2, 3].map((si) => <i key={si} style={{ background: tone(si) }} />)}
-      </span>
-      <span className="pm-legend-txt">{t("panel.colores")}</span>
     </div>
   );
 }
@@ -123,9 +118,10 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
   }, [onClose]);
 
   const temas = group(map.hexes);
+  const base = map.hexes[0]?.color ?? "";
+  const colores = new Map(temas.map((x, i) => [x.id, colorTema(base, i, temas.length)]));
+  const cols = typeof window !== "undefined" && window.innerWidth < 640 ? 7 : 14;
   const nSub = temas.reduce((a, x) => a + x.subtemas.length, 0);
-  const pct = (sub: { id: string; hexes: Hex[] }) => Math.round(map.subtemas.find((x) => x.id === sub.id)?.percent ?? mean(sub.hexes.map((h) => h.percent)));
-  const enter = (i: number) => (reduce ? {} : { initial: { opacity: 0, y: 10 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.35, delay: 0.08 + i * 0.07, ease: [0.2, 0.7, 0.2, 1] as const } });
 
   return (
     <motion.div className="pm-backdrop" onClick={onClose} {...(reduce ? {} : { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.2 } })}>
@@ -152,39 +148,22 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
             <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
           </button>
         </header>
-        <div className="pm-body" ref={bodyRef} style={{ "--cols": Math.min(3, Math.max(1, temas.length)) } as React.CSSProperties}>
-          {temas.map((tema, ti) => {
-            const tp = mean(tema.subtemas.flatMap((x) => x.hexes.map((h) => h.percent)));
-            return (
-              <motion.section key={tema.id} className="pm-tema" aria-labelledby={`pm-t-${ti}`} style={{ "--tc": TEMA_COLORS[ti % TEMA_COLORS.length] } as React.CSSProperties} {...enter(ti)}>
-                <header className="pm-tema-head">
+        <div className="pm-body" ref={bodyRef}>
+          <div className="pm-masa-top"><Buscador hexes={map.hexes} onElegir={(id) => onSelectSubtema?.(id)} /></div>
+          <PanalUnico hexes={map.hexes} colores={colores} s={s} cols={cols} grain={grain} reduce={reduce} onTip={setTip} onSelect={(id) => onSelectSubtema?.(id)} />
+          <ul className="pm-temas" aria-label={t("panal.temas")}>
+            {[...temas].reverse().map((tema, k) => {
+              const tp = mean(tema.subtemas.flatMap((x) => x.hexes.map((h) => h.percent)));
+              return (
+                <li key={tema.id} style={{ "--tc": colores.get(tema.id) } as React.CSSProperties}>
                   <i className="pm-chip" aria-hidden="true" />
-                  <div>
-                    <span className="pm-kicker">{t("panal.tema")} {ti + 1}</span>
-                    <h3 id={`pm-t-${ti}`}>{tema.nombre}</h3>
-                  </div>
+                  <span className="pm-kicker">{t("panal.tema")} {temas.length - k}</span>
+                  <span className="pm-tema-n">{tema.nombre}</span>
                   <b className="pm-tema-pct" data-testid={`pm-tema-pct-${tema.id}`}>{tp}<small>&nbsp;%</small></b>
-                </header>
-                <div className="pm-subs">
-                  {tema.subtemas.map((sub, si) => {
-                    const p = pct(sub);
-                    return (
-                      <div key={sub.id} className="pm-sub" style={{ "--c": tone(si) } as React.CSSProperties}>
-                        <button type="button" className="pm-sub-name" onClick={() => onSelectSubtema?.(sub.id)}>
-                          <span className="pm-sub-t">{sub.nombre}</span>
-                          <span className="pm-sub-row">
-                            <span className="pm-meter" aria-hidden="true"><i style={{ width: `${p}%` }} /></span>
-                            <b>{p} %</b>
-                          </span>
-                        </button>
-                        <Cluster hexes={sub.hexes} s={s} grain={grain} delay={0.15 + ti * 0.07} reduce={reduce} onTip={setTip} onSelect={() => onSelectSubtema?.(sub.id)} />
-                      </div>
-                    );
-                  })}
-                </div>
-              </motion.section>
-            );
-          })}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </motion.div>
       <Tooltip tip={tip} />

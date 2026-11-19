@@ -13,26 +13,34 @@ const MAP: MapResponse = {
   hexes: [hex({}), hex({ concepto_id: "c2", nombre: "Mercado", subtema_id: "s2", subtema: "Agentes", tema: "Sistemas", tema_id: "t2", percent: 80 })],
 };
 
-it("shows_every_concept_as_an_ink_hexagon_with_a_color_per_tema", () => {
+it("shows_every_concept_as_an_ink_hexagon_in_one_mass_with_a_color_per_tema", () => {
   const { container } = render(<PanelAsignatura map={MAP} onClose={() => {}} />);
   expect(screen.getByRole("dialog")).toBeInTheDocument();
-  const hexes = container.querySelectorAll(".pm-hex");
+  const hexes = container.querySelectorAll<HTMLElement>(".pm-hex");
   expect(hexes).toHaveLength(2);
-  // hexágono SVG de la marca: sombra desplazada, relleno y contorno de tinta
   for (const sel of [".shadow", ".level", ".line"]) expect(hexes[0].querySelector(sel)).not.toBeNull();
-  const colors = Array.from(container.querySelectorAll<HTMLElement>(".pm-tema")).map((s) => s.style.getPropertyValue("--tc"));
-  expect(new Set(colors).size).toBe(2);
+  expect(container.querySelectorAll(".pm-tema, .pm-cluster")).toHaveLength(1); // una sola masa, sin tarjetas por tema
+  expect(new Set(Array.from(hexes).map((h) => h.style.getPropertyValue("--c"))).size).toBe(2);
   expect(screen.getByRole("button", { name: "Mercado, 80 por ciento de dominio" })).toBeInTheDocument();
 });
 
-it("each_tema_is_a_card_with_title_percent_and_subtema_progress", () => {
+it("the_first_tema_sits_below_the_newest", () => {
+  const { container } = render(<PanelAsignatura map={{ ...MAP, hexes: [...MAP.hexes].map((h, i) => ({ ...h, concepto_id: `x${i}` })) }} onClose={() => {}} />);
+  const top = (n: string) => parseFloat(container.querySelector<HTMLElement>(`[aria-label^="${n},"]`)!.style.top);
+  // con 2 conceptos caben en una fila (14 columnas): se comprueba con 15, que obliga a una segunda fila
+  expect(top("Coste")).toBeGreaterThanOrEqual(0);
+  const muchos = Array.from({ length: 15 }, (_, i) => hex({ concepto_id: `m${i}`, nombre: `C${i}`, tema_id: i < 8 ? "t1" : "t2", tema: i < 8 ? "Primero" : "Segundo" }));
+  const r = render(<PanelAsignatura map={{ ...MAP, hexes: muchos }} onClose={() => {}} />);
+  const y = (n: string) => parseFloat(r.container.querySelector<HTMLElement>(`[aria-label^="${n},"]`)!.style.top);
+  expect(y("C0"), "el primer concepto va en la fila de abajo").toBeGreaterThan(y("C14"));
+});
+
+it("lists_the_temas_with_their_percent_and_has_a_search", async () => {
   render(<PanelAsignatura map={MAP} onClose={() => {}} />);
-  const tema = screen.getByRole("region", { name: "Sistemas" });
-  expect(within(tema).getByText("Tema 2")).toBeInTheDocument();
-  expect(within(tema).getByTestId("pm-tema-pct-t2")).toHaveTextContent("80");
-  expect(within(tema).getByRole("button", { name: /Agentes.*80 %/ })).toBeInTheDocument();
+  expect(screen.getByTestId("pm-tema-pct-t2")).toHaveTextContent("80");
+  expect(screen.getByText("Sistemas")).toBeInTheDocument();
   expect(screen.getByText("2 conceptos · 2 temas · 2 subtemas")).toBeInTheDocument();
-  expect(screen.getByRole("img", { name: /Relleno del hexágono = dominio del concepto/ })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "Buscar" })).toBeInTheDocument();
 });
 
 it("shows_the_concept_name_and_percent_on_hover_and_keyboard_focus", async () => {
@@ -54,11 +62,13 @@ it("closes_with_escape_and_button", async () => {
   expect(onClose).toHaveBeenCalledTimes(2);
 });
 
-it("subtema_name_and_its_hexagons_open_that_subtema", async () => {
+it("a_hexagon_and_a_search_result_open_that_subtema", async () => {
   const onSelect = vi.fn();
   render(<PanelAsignatura map={MAP} onClose={() => {}} onSelectSubtema={onSelect} />);
-  await userEvent.click(screen.getByRole("button", { name: /Agentes/ }));
-  expect(onSelect).toHaveBeenCalledWith("s2");
   await userEvent.click(screen.getByRole("button", { name: /^Coste,/ }));
   expect(onSelect).toHaveBeenLastCalledWith("s1");
+  await userEvent.click(screen.getByRole("button", { name: "Buscar" }));
+  await userEvent.type(screen.getByRole("searchbox"), "agentes");
+  await userEvent.click(within(screen.getByRole("searchbox").closest("div")!).getByRole("button", { name: /Mercado/ }));
+  expect(onSelect).toHaveBeenLastCalledWith("s2");
 });

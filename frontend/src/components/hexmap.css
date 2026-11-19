@@ -82,3 +82,18 @@
 @media (prefers-reduced-motion: reduce) {
   .hex-tile .hex-wrap { transition: none; }
 }
+
+/* Banner de asignatura (E5): franja del color de la asignatura con nombre grande, panal pequeño, porcentaje y marca de agua */
+.banner { position: relative; overflow: hidden; display: flex; align-items: center; gap: 18px; margin-top: 28px; padding: 22px 26px; min-height: 150px; border-radius: 16px; color: #fff; }
+.banner-marca { position: absolute; right: -30px; top: -50px; width: 280px; opacity: .16; pointer-events: none; }
+.banner-panal { position: relative; flex: none; width: 64px; height: 64px; padding: 6px; border: 0; border-radius: 14px; background: rgb(255 255 255 / .14); cursor: pointer; transition: transform .2s var(--ease), background .2s; }
+.banner-panal:hover, .banner-panal:focus-visible { transform: translate(-1px, -2px); background: rgb(255 255 255 / .24); }
+.banner-panal:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.banner-txt { position: relative; flex: 1; min-width: 0; }
+.banner-kicker { display: block; font-size: .72rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; opacity: .9; }
+.banner h1 { margin: 2px 0 4px; color: #fff; font-size: clamp(1.8rem, 6vw, 2.8rem); line-height: 1.05; letter-spacing: -.02em; text-shadow: 0 1px 0 rgb(0 0 0 / .12); }
+.banner-txt p { margin: 0; color: #fff; opacity: .92; font-size: .88rem; }
+.banner-pct { position: relative; flex: none; font-size: clamp(2.2rem, 8vw, 3.6rem); font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.banner-pct small { font-size: .45em; font-weight: 500; opacity: .9; }
+@media (max-width: 640px) { .banner { padding: 18px; gap: 12px; min-height: 120px; } .banner-panal { width: 52px; height: 52px; } }
+@media (prefers-reduced-motion: reduce) { .banner-panal { transition: none; } }

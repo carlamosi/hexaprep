@@ -1,9 +1,9 @@
 import type { Hex } from "../api";
 import { t } from "../i18n";
+import { colorTema } from "../colorTema";
 import { Hexagon } from "./Hexagon";
 
-// Color por tema en orden de aparición (mockup aprobado: T1 azul, T2 verde, T3 naranja).
-export const TEMA_COLORS = ["var(--azul)", "var(--verde)", "var(--naranja)", "var(--indigo)", "var(--ambar)", "var(--rosa)", "var(--marron)", "var(--carmin)"];
+// El color de cada tema sale de `colorTema` (color de la asignatura girado por el orden del temario).
 
 /** Tono del subtema: el color del tema (`--tc`) cada vez más claro. */
 export const tone = (si: number) => (si === 0 ? "var(--tc)" : `color-mix(in srgb, var(--tc) ${Math.max(35, 100 - si * 25)}%, var(--card))`);
@@ -33,11 +33,13 @@ export function HexMap({ hexes, onSelect, onPracticarTema, subtemas }: {
   /** % de subtema calculado por el backend; si falta, se usa la media de sus conceptos. */
   subtemas?: { id: string; percent: number }[];
 }) {
+  const temas = group(hexes);
+  const base = hexes[0]?.color ?? "";
   const subPct = (s: Sub) => Math.round(subtemas?.find((x) => x.id === s.id)?.percent ?? mean(s.hexes.map((h) => h.percent)));
   return (
     <>
-      {group(hexes).map((tema, ti) => (
-        <section key={tema.id} className="tema" style={{ "--c": TEMA_COLORS[ti % TEMA_COLORS.length], "--tc": TEMA_COLORS[ti % TEMA_COLORS.length] } as React.CSSProperties} aria-labelledby={`tema-${ti}`}>
+      {temas.map((tema, ti) => (
+        <section key={tema.id} className="tema" style={{ "--c": colorTema(base, ti, temas.length), "--tc": colorTema(base, ti, temas.length) } as React.CSSProperties} aria-labelledby={`tema-${ti}`}>
           <div className="tema-head">
             <i className="chip" aria-hidden="true" />
             <span className="kicker kicker-muted">{t("panal.tema")} {ti + 1}</span>

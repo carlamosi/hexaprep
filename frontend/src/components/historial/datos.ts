@@ -1,7 +1,8 @@
 // Agregados de presentación del historial: todo lo que se decide antes de pintar (sin React).
 import type { Analytics, Hex, Serie } from "../../api";
 import { t } from "../../i18n";
-import { group, TEMA_COLORS } from "../HexMap";
+import { colorTema } from "../../colorTema";
+import { group } from "../HexMap";
 
 /** Por debajo de este n un porcentaje engaña: la marca se atenúa y lo dice. */
 export const MIN_N = 5;
@@ -73,8 +74,9 @@ export const DASH = [undefined, "7 4", "2 4", "10 4 2 4", "1 6"];
  */
 export function ordenPanal(hexes: Hex[]) {
   const temas = new Map<string, { color: string; indice: number; subtemas: Map<string, number> }>();
-  group(hexes).forEach((t, ti) => temas.set(t.id, {
-    color: TEMA_COLORS[ti % TEMA_COLORS.length], indice: ti, subtemas: new Map(t.subtemas.map((s, si) => [s.id, si])),
+  const grupos = group(hexes);
+  grupos.forEach((t, ti) => temas.set(t.id, {
+    color: colorTema(hexes[0]?.color ?? "", ti, grupos.length), indice: ti, subtemas: new Map(t.subtemas.map((s, si) => [s.id, si])),
   }));
   return temas;
 }
@@ -86,12 +88,12 @@ export function lineas(evo: Analytics["evolucion"], vista: Vista, orden: ReturnT
   const temas = [...evo.temas].sort((a, b) => pos(a.tema_id) - pos(b.tema_id));
   if (vista.nivel === "asignatura") return [{ id: "asignatura", nombre: t("hist.vistaAsignatura"), color: "var(--lila)", puntos: evo.asignatura }];
   if (vista.nivel === "temas") {
-    return temas.map((x, i) => ({ id: x.tema_id, nombre: x.tema, color: orden.get(x.tema_id)?.color ?? TEMA_COLORS[i % TEMA_COLORS.length], puntos: x.puntos }));
+    return temas.map((x) => ({ id: x.tema_id, nombre: x.tema, color: orden.get(x.tema_id)?.color ?? "var(--ink-3)", puntos: x.puntos }));
   }
   const tema = temas.find((x) => x.tema_id === vista.temaId);
   if (!tema) return [];
   const o = orden.get(tema.tema_id);
-  const color = o?.color ?? TEMA_COLORS[0];
+  const color = o?.color ?? "var(--ink-3)";
   const si = (id: string) => o?.subtemas.get(id) ?? 99;
   return [...tema.subtemas].sort((a, b) => si(a.subtema_id) - si(b.subtema_id)).map((s, k) => ({
     id: s.subtema_id, nombre: s.subtema, color: subTone(color, k), trazo: DASH[k % DASH.length], puntos: s.puntos,
