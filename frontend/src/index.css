@@ -37,7 +37,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font: 400 16px/1.55 var(--font);
-  overflow-x: hidden;
+  overflow-x: clip; /* hidden crearía un contenedor de scroll y rompería el sticky de «Siguiente» */
   -webkit-font-smoothing: antialiased;
 }
 :focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 3px; border-radius: 8px; }

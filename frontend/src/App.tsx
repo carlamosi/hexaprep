@@ -2,7 +2,7 @@ import { Fragment, useEffect, useState } from "react";
 import { Onboarding } from "./components/Onboarding";
 import { AppHeader } from "./components/AppHeader";
 import { useAsignatura } from "./hooks";
-import { t } from "./i18n";
+import { setLang, t } from "./i18n";
 import { FreePractice } from "./pages/FreePractice";
 import { History } from "./pages/History";
 import { Home } from "./pages/Home";
@@ -31,6 +31,10 @@ export default function App() {
   useEffect(() => { // título de la pestaña: «Català · Historial · HexaPrep»
     document.title = [nombre, TITULOS[route] ? t(TITULOS[route]) : null, t("app.nombre")].filter(Boolean).join(" · ");
   }, [nombre, route]);
+
+  // la práctica de una asignatura en catalán lleva la interfaz en catalán; el resto de pantallas siguen en castellano
+  const idioma = subjects.find((s) => s.id === asignaturaId)?.idioma;
+  setLang((route === "practica" || route === "subtema") && idioma === "ca" ? "ca" : "es");
 
   let page = null;
   if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onPracticar={() => go("practica")} onPracticarTipo={(g) => go(`practica/_/${g}`)} onPracticarTema={(tm) => go(`practica/${tm}`)} />;

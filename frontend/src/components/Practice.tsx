@@ -387,7 +387,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   return (
     <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-        <div className="min-w-0 flex-1 space-y-1 text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
+        <div className="min-w-0 flex-1 space-y-0.5 text-[11px] tracking-[.1em] text-[var(--ink-3)] uppercase">
           <p>{question.tema && question.subtema ? `${question.tema} · ${question.subtema}` : ""}</p>
           <p>{tn("practica.respondidas", answered)}</p>
         </div>
@@ -505,21 +505,20 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
             </ul>
           )}
 
-          {result && <Explanation result={result} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined} />}
-
-          {result && !result.correcta && client.current.alternativa && (
-            valiaEnviada
-              ? <p role="status" className="mt-3 text-sm text-[var(--ink-2)]">{t("practica.valiaHecho")}</p>
-              : <button type="button" onClick={() => void valia()} className="mt-3 text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.valia")}</button>
-          )}
-
-          {question.ayuda_larga && result && ( // antes de responder podría desvelar la respuesta
-            <details className="mt-6 rounded-[11px] border border-[var(--rule)] px-4 py-3"
-              onToggle={(e) => { if (e.currentTarget.open) senal("ayuda_abierta", question.pregunta_id); }}>
-              <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.ayuda")}</summary>
-              <p className="mt-2 text-[var(--ink-2)]"><RichText text={question.ayuda_larga} /></p>
-            </details>
-          )}
+          {result && <Explanation result={result} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined}
+            extras={((!result.correcta && client.current.alternativa) || question.ayuda_larga) ? <>
+              {!result.correcta && client.current.alternativa && (
+                valiaEnviada
+                  ? <p role="status" className="text-sm text-[var(--ink-2)]">{t("practica.valiaHecho")}</p>
+                  : <button type="button" onClick={() => void valia()} className="block text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.valia")}</button>
+              )}
+              {question.ayuda_larga && ( // antes de responder podría desvelar la respuesta
+                <details onToggle={(e) => { if (e.currentTarget.open) senal("ayuda_abierta", question.pregunta_id); }}>
+                  <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.ayuda")}</summary>
+                  <p className="mt-2 text-[var(--ink-2)]"><RichText text={question.ayuda_larga} /></p>
+                </details>
+              )}
+            </> : undefined} />}
         </>
       )}
     </article>

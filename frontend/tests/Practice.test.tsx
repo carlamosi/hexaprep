@@ -179,6 +179,7 @@ describe("pantalla de práctica", () => {
     const a = setup();
     await screen.findByText(Q.enunciado);
     await a.user.click(screen.getByRole("button", { name: /Texto A/ }));
+    await a.user.click(await screen.findByText("Más")); // la ayuda va plegada dentro de «Más»
     const summary = await screen.findByText(/Ayuda: entender el concepto/);
     expect(summary.closest("details")).not.toHaveAttribute("open");
     await a.user.click(summary);

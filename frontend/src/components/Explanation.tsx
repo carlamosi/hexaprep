@@ -1,25 +1,34 @@
+import type { ReactNode } from "react";
 import type { AnswerResult } from "../api";
 import { t } from "../i18n";
 import { BookletButton } from "./BookletButton";
 import { RichText } from "./RichText";
 
 /** Feedback breve tipo entrenador, explicación plegada y enlace al booklet. */
-export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta }: {
+export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta, extras }: {
   result: AnswerResult; onNext: () => void; onMarcarBien?: () => void; siguienteBloqueado?: boolean;
   /** Si hay valor, la pregunta pasa sola en esos ms y se dibuja el aro de espera. */
   avanceMs?: number; onExplicacionAbierta?: () => void;
+  /** Secundario (valía, ayuda): se pliega con el booklet en «Más». */
+  extras?: ReactNode;
 }) {
+  const masBooklet = !!(result.fuente_id && result.fuente_pagina);
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
-      <div
-        className={`rounded-[11px] border px-4 py-3 ${
-          result.correcta ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]"
-        }`}
-      >
-        <p className="font-semibold">{result.correcta ? t("practica.acierto") : t(result.campos ? "practica.falloEscrita" : result.solucion != null ? "practica.falloProblema" : "practica.fallo")}</p>
-        {!result.correcta && result.trampa && <p className="mt-1">{result.trampa}</p>}
-        {result.solucion != null && <p className="mt-1">{t("practica.solucion")}: <strong>{[result.solucion].flat().map((v) => String(v).replace(".", ",")).join("; ")}</strong></p>}
-      </div>
+      {/* En una escrita fallada el rojo de los campos ya lo dice: solo queda el aviso para lectores de pantalla */}
+      {!result.correcta && result.campos && !result.trampa && result.solucion == null ? (
+        <p className="sr-only">{t("practica.falloEscrita")}</p>
+      ) : (
+        <div
+          className={`rounded-[11px] border px-4 py-3 ${
+            result.correcta ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]"
+          }`}
+        >
+          <p className="font-semibold">{result.correcta ? t("practica.acierto") : t(result.campos ? "practica.falloEscrita" : result.solucion != null ? "practica.falloProblema" : "practica.fallo")}</p>
+          {!result.correcta && result.trampa && <p className="mt-1">{result.trampa}</p>}
+          {result.solucion != null && <p className="mt-1">{t("practica.solucion")}: <strong>{[result.solucion].flat().map((v) => String(v).replace(".", ",")).join("; ")}</strong></p>}
+        </div>
+      )}
 
       {result.campos && !result.correcta && (
         <ul className="space-y-2">
@@ -46,10 +55,17 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
         {t("practica.dominio")}: {result.percent} %
       </p>
 
-      <div className="flex flex-wrap items-center gap-3">
-        {result.fuente_id && result.fuente_pagina && (
-          <BookletButton fuenteId={result.fuente_id} cara={result.fuente_cara} pagina={result.fuente_pagina} />
-        )}
+      {(masBooklet || extras) && (
+        <details className="rounded-[11px] border border-[var(--rule)] px-4 py-3">
+          <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.mas")}</summary>
+          <div className="mt-3 space-y-3">
+            {masBooklet && <BookletButton fuenteId={result.fuente_id!} cara={result.fuente_cara} pagina={result.fuente_pagina!} />}
+            {extras}
+          </div>
+        </details>
+      )}
+
+      <div className="sticky bottom-0 -mx-1 flex flex-wrap items-center gap-3 bg-[var(--card)] px-1 py-3">
         {onMarcarBien && !result.correcta && (
           <button type="button" onClick={onMarcarBien} className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-5 py-2 font-medium">
             {t("practica.loHeHechoBien")}
