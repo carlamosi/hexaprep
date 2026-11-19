@@ -4,6 +4,7 @@ import { Practice } from "../components/Practice";
 import { t } from "../i18n";
 import { clearSession, openSession, savedSession } from "../session";
 import { Review, type Fallo } from "./Review";
+import { ErrorCarga } from "../components/ErrorCarga";
 
 type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion" | "getMap"> & Partial<Pick<typeof api, "getSession">>;
 
@@ -48,7 +49,7 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
     client.getMap(asignaturaId).then(setMap).catch(() => undefined);
   }
 
-  if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  if (failed) return <ErrorCarga />;
   if (!map) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
 
   const conceptos = map.hexes.filter((h) => h.subtema_id === subtemaId);

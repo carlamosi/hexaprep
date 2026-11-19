@@ -60,10 +60,10 @@ describe("pregunta escrita", () => {
     await user.type(await screen.findByLabelText("Gerundi"), "admetent");
     await user.type(screen.getByLabelText("Participi"), "admetut");
     await user.click(screen.getByRole("button", { name: "Comprobar" }));
-    expect(await screen.findByText("admès")).toBeInTheDocument();
+    expect(await screen.findByLabelText(/lo correcto es admès/)).toBeInTheDocument();
     expect(screen.getByText(/no és «admetut»/)).toBeInTheDocument();
     await vi.advanceTimersByTimeAsync(5000);
-    expect(screen.getByText("admès"), "sigue en la misma pregunta hasta pulsar «Siguiente»").toBeInTheDocument();
+    expect(screen.getByLabelText(/lo correcto es admès/), "sigue en la misma pregunta hasta pulsar «Siguiente»").toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Siguiente" })).toBeInTheDocument();
     vi.useRealTimers();
   });

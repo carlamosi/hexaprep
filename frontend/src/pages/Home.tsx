@@ -6,6 +6,7 @@ import { tonoBanner } from "../colorTema";
 import { Buscador } from "../components/Buscador";
 import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
+import { ErrorCarga } from "../components/ErrorCarga";
 
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[] };
 
@@ -31,7 +32,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
   }, []);
 
   if (state.kind === "loading") return <main className="wrap"><section className="banner banner-sk" role="status" aria-busy="true"><span className="sr-only">{t("app.cargando")}</span></section></main>;
-  if (state.kind === "error") return <main className="wrap"><p className="lede" role="alert">{t("app.error")}</p></main>;
+  if (state.kind === "error") return <ErrorCarga />;
   if (state.kind === "empty") return <main className="wrap"><p className="lede">{t("panal.sinAsignaturas")}</p></main>;
 
   const { map, acento, tipos } = state;

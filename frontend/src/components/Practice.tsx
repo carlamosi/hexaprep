@@ -4,6 +4,7 @@ import { t, tn } from "../i18n";
 import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
+import { ErrorCarga } from "./ErrorCarga";
 
 export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
 
@@ -380,7 +381,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     setValiaEnviada(true);
   }
 
-  if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  if (failed) return <ErrorCarga />;
   if (question === undefined) return <Esqueleto />;
   if (question === null) return null;
 

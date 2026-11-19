@@ -33,13 +33,13 @@
    "pagina": 14,
    "ayuda": "Un barbarisme és una paraula del castellà (o d'una altra llengua) que fem servir en català amb forma castellana. Algunes parelles que cal recordar: ajornar (no aplaçar), enviament (no envio), fre (no freno), entrepà (no bocadillo), tauró (no tiburó), plet (no pleit), a més (no ademés), sud (no sur). A les interferències, fixa't que moltes diferències són d'una sola lletra.",
    "escritas": [
-    [3, "Completa: «Vam pagar la moto a ____ durant dos anys.»", [["Paraula", ["terminis"], {"plaços": "«A plaços» és un calc del castellà: en català són terminis.", "plazos": "No és castellà: és «terminis»."}]], "A terminis. «A plaços» és calc de «a plazos». Truc: termini, a terminis."],
-    [4, "Escriu la lletra que falta: «es_eveniment».", [["Lletra", ["d"], {"t": "Prové d'esdevenir: esdeveniment, amb d."}]], "Esdeveniment. Prové del verb esdevenir; «aconteixement» és un calc. Truc: esdevenir, esdeveniment."],
-    [3, "Completa: «Vam trobar ____ tothom a casa quan vam arribar.»", [["Paraula", ["quasi", "gairebé"], {"casi": "«Casi» és castellà: en català és quasi o gairebé."}]], "Quasi o gairebé. «Casi» és castellà. Truc: quasi, gairebé."],
-    [4, "Escriu la lletra que falta: «ambd_s».", [["Lletra", ["ó"], {"o": "És aguda acabada en -s: porta accent.", "ò": "L'accent és tancat: ó."}]], "Ambdós. És aguda acabada en -s, per això porta accent; «ambos» és la forma castellana. Truc: ambdós, ambdues."],
-    [4, "Escriu la lletra que falta: «estal_iar».", [["Lletra", ["v"], {"b": "En català és «v»: estalviar (en castellà «ahorrar»)."}]], "Estalviar. Verb català per a «ahorrar». Truc: estalviar, estalvi."],
-    [3, "Completa: «Ho vam fer ____ força, sense voler.»", [["Paraula", ["per"], {"a la": "«A la força» és calc del castellà: en català és «per força».", "a": "Cal «per força»."}]], "Per força. «A la força» és un calc. Truc: per força, de gust."],
-    [5, "Escriu la lletra que falta: «a_astar».", [["Lletra", ["b"], {"v": "En català és «b»: abastar, abarcar."}]], "Abastar. Verb català amb b, equivalent a «abarcar». Truc: abastar, comprendre."]
+    [3, "Completa: «Vam pagar la moto a ____ durant dos anys.» (cast.: plazos)", [["Paraula", ["terminis"], {"plaços": "«A plaços» és un calc del castellà: en català són terminis.", "plazos": "No és castellà: és «terminis»."}]], "A terminis. «A plaços» és calc de «a plazos». Truc: termini, a terminis."],
+    [4, "Escriu la lletra que falta: «es_eveniment». (cast.: acontecimiento)", [["Lletra", ["d"], {"t": "Prové d'esdevenir: esdeveniment, amb d."}]], "Esdeveniment. Prové del verb esdevenir; «aconteixement» és un calc. Truc: esdevenir, esdeveniment."],
+    [3, "Completa: «Vam trobar ____ tothom a casa quan vam arribar.» (cast.: casi)", [["Paraula", ["quasi", "gairebé"], {"casi": "«Casi» és castellà: en català és quasi o gairebé."}]], "Quasi o gairebé. «Casi» és castellà. Truc: quasi, gairebé."],
+    [4, "Escriu la lletra que falta: «ambd_s». (cast.: ambos)", [["Lletra", ["ó"], {"o": "És aguda acabada en -s: porta accent.", "ò": "L'accent és tancat: ó."}]], "Ambdós. És aguda acabada en -s, per això porta accent; «ambos» és la forma castellana. Truc: ambdós, ambdues."],
+    [4, "Escriu la lletra que falta: «estal_iar». (cast.: ahorrar)", [["Lletra", ["v"], {"b": "En català és «v»: estalviar (en castellà «ahorrar»)."}]], "Estalviar. Verb català per a «ahorrar». Truc: estalviar, estalvi."],
+    [3, "Completa: «Ho vam fer ____ força, sense voler.» (cast.: por fuerza)", [["Paraula", ["per"], {"a la": "«A la força» és calc del castellà: en català és «per força».", "a": "Cal «per força»."}]], "Per força. «A la força» és un calc. Truc: per força, de gust."],
+    [5, "Escriu la lletra que falta: «a_astar». (cast.: abarcar)", [["Lletra", ["b"], {"v": "En català és «b»: abastar, abarcar."}]], "Abastar. Verb català amb b, equivalent a «abarcar». Truc: abastar, comprendre."]
    ]
   },
   {

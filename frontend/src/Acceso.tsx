@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ApiError, api } from "./api";
 import { t } from "./i18n";
+import { ErrorCarga } from "./components/ErrorCarga";
 
 declare global {
   interface Window {
@@ -100,7 +101,7 @@ export function Acceso({ children, client = api }: { children: ReactNode; client
   }
 
   if (estado.tipo === "cargando") return <p className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
-  if (estado.tipo === "error") return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  if (estado.tipo === "error") return <ErrorCarga />;
   if (estado.tipo === "fuera") return <Entrada clientId={estado.clientId} aviso={aviso} onCredencial={(c) => void credencial(c)} />;
   return <>{children}</>;
 }

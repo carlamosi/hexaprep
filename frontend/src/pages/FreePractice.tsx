@@ -5,6 +5,7 @@ import { t } from "../i18n";
 import { clearSession, openSession } from "../session";
 import { Resumen } from "./Resumen";
 import { Review, type Fallo } from "./Review";
+import { ErrorCarga } from "../components/ErrorCarga";
 
 const TIPOS: Record<string, string[]> = { test: ["test", "vf"], problemas: ["problema"], escritas: ["escrita"] };
 
@@ -31,7 +32,7 @@ export function FreePractice({ asignaturaId, temaId, tipos, client = api, onFini
       .catch(() => setFailed(true));
   }, [asignaturaId, temaId, tipos, client, key, ronda]);
 
-  if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  if (failed) return <ErrorCarga />;
   if (!sid) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
   if (fin && client.resumenSesion) {
     return <Resumen sesionId={sid} fallos={fallos.current} client={client} onVolver={onFinish}

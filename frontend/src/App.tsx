@@ -9,6 +9,7 @@ import { Home } from "./pages/Home";
 import { Perfil } from "./pages/Perfil";
 import { Subtopic } from "./pages/Subtopic";
 import { Suggestions } from "./pages/Suggestions";
+import { ErrorCarga } from "./components/ErrorCarga";
 
 function useHash(): [string, (h: string) => void] {
   const [hash, setHash] = useState(() => window.location.hash.slice(1) || "panal");
@@ -38,7 +39,7 @@ export default function App() {
 
   let page = null;
   if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onPracticar={() => go("practica")} onPracticarTipo={(g) => go(`practica/_/${g}`)} onPracticarTema={(tm) => go(`practica/${tm}`)} />;
-  else if (failed) page = <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  else if (failed) page = <ErrorCarga />;
   else if (asignaturaId && route === "hoy") page = <Suggestions asignaturaId={asignaturaId} onPracticeSubtema={(s) => go(`subtema/${s}`)} />;
   else if (asignaturaId && route === "historial") page = <History asignaturaId={asignaturaId} />;
   else if (route === "perfil") page = <Perfil asignaturaId={asignaturaId} />;

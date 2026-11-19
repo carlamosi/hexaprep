@@ -60,3 +60,18 @@ body {
 @keyframes splash-dibuja { to { stroke-dashoffset: 0; } }
 @keyframes splash-sube { to { transform: scaleY(1); } }
 @keyframes splash-texto { to { opacity: 1; transform: none; } }
+
+/* Pantalla de error de carga */
+.error-carga { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 28rem; margin: 12vh auto 0; padding: 36px 28px; text-align: center;
+  border: 1px solid var(--rule); border-radius: 18px; background: var(--card); box-shadow: 0 1px 2px rgb(0 0 0 / .06), 0 18px 40px -22px rgb(0 0 0 / .35);
+  animation: error-in .45s var(--ease) both; }
+.error-carga-hex { display: grid; place-items: center; width: 84px; height: 84px; margin-bottom: 6px; border-radius: 50%; color: var(--ko); background: radial-gradient(closest-side, var(--ko-soft), transparent); animation: error-flota 3.2s ease-in-out infinite; }
+.error-carga h1 { margin: 0; font-size: 1.35rem; line-height: 1.2; letter-spacing: -.01em; }
+.error-carga p { margin: 0; max-width: 24rem; color: var(--ink-2); font-size: .95rem; line-height: 1.5; text-wrap: balance; }
+.error-carga button { min-height: 44px; margin-top: 12px; padding: 10px 22px; border: 0; border-radius: 11px; background: var(--ink); color: var(--on-ink); font: inherit; font-weight: 600; cursor: pointer;
+  box-shadow: 3px 3px 0 var(--lila); transition: transform .2s var(--ease), box-shadow .2s var(--ease); }
+.error-carga button:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); }
+.error-carga button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--lila); }
+@keyframes error-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes error-flota { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@media (prefers-reduced-motion: reduce) { .error-carga, .error-carga-hex { animation: none; } .error-carga button { transition: none; } }

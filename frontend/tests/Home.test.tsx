@@ -29,7 +29,7 @@ describe("Home", () => {
   it("shows_error_text_when_api_fails", async () => {
     vi.spyOn(api, "getSubjects").mockRejectedValue(new Error("x"));
     render(<Home />);
-    expect(await screen.findByRole("alert")).toHaveTextContent("No se ha podido cargar");
+    expect(await screen.findByRole("alert")).toHaveTextContent("No hemos podido cargar");
   });
 
   const MAPA = {

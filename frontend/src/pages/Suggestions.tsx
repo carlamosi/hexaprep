@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { api, type Suggestion } from "../api";
 import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
+import { ErrorCarga } from "../components/ErrorCarga";
 
 interface Props {
   client?: Pick<typeof api, "suggestions"> & Partial<ExamenClient>;
@@ -20,7 +21,7 @@ export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: P
     return () => { alive = false; };
   }, [client]);
 
-  if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  if (failed) return <ErrorCarga />;
   if (!items) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
 
   return (

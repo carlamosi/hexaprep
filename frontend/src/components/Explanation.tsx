@@ -30,17 +30,21 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
         </div>
       )}
 
-      {result.campos && !result.correcta && (
-        <ul className="space-y-2">
-          {result.campos.map((c, i) => (
-            <li key={i} className="rounded-[11px] border border-[var(--rule)] bg-[var(--card)] px-4 py-2">
-              <span className="font-semibold">{c.etiqueta}</span>: {c.correcto ? "✓ " : "✗ "}
-              <strong>{c.esperado.join(" o ")}</strong>
-              {c.nota && <p className="mt-1 text-[var(--ink-2)]">{c.nota}</p>}
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* Solo lo que aporta: los huecos bien ya van en verde y la diferencia ya muestra la forma correcta;
+          aquí quedan la regla de cada error y las formas alternativas válidas */}
+      {result.campos && !result.correcta && (() => {
+        const filas = result.campos.filter((c) => !c.correcto && (c.nota || c.esperado.length > 1));
+        return filas.length > 0 && (
+          <ul className="space-y-2">
+            {filas.map((c, i) => (
+              <li key={i} className="rounded-[11px] border border-[var(--rule)] bg-[var(--card)] px-4 py-2">
+                {c.esperado.length > 1 && <p><span className="font-semibold">{c.etiqueta}</span>: <strong>{c.esperado.join(" o ")}</strong></p>}
+                {c.nota && <p className={c.esperado.length > 1 ? "mt-1 text-[var(--ink-2)]" : ""}>{c.nota}</p>}
+              </li>
+            ))}
+          </ul>
+        );
+      })()}
 
       {result.explicacion && (
         <details className="rounded-[11px] border border-[var(--rule)] bg-[var(--card)] px-4 py-3" onToggle={(e) => { if (e.currentTarget.open) onExplicacionAbierta?.(); }}>

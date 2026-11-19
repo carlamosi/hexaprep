@@ -10,6 +10,7 @@ import { Evolucion } from "../components/historial/Evolucion";
 import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../components/historial/Listas";
 import "../components/historial/historial.css";
 import { t, tn } from "../i18n";
+import { ErrorCarga } from "../components/ErrorCarga";
 
 type Dias = 0 | 7 | 30;
 const RANGOS: Dias[] = [7, 30, 0];
@@ -81,7 +82,7 @@ export function History({ asignaturaId, client = api, mes }: {
 
   const orden = useMemo(() => ordenPanal(map?.hexes ?? []), [map]);
 
-  if (failed && !data) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
+  if (failed && !data) return <ErrorCarga />;
   if (!data) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
 
   const r = data.resumen;
