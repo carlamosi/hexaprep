@@ -128,9 +128,9 @@
 
 /* Listas: trampas, débiles, difíciles */
 .hp-rank, .hp-weak, .hp-hard { list-style: none; margin: 0; padding: 0; }
-.hp-rank li { display: grid; grid-template-columns: 26px minmax(0, 1fr) 72px auto; gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--rule); }
+.hp-rank li { display: grid; grid-template-columns: 26px minmax(0, 1fr) 72px auto; gap: 12px; align-items: start; padding: 10px 0; border-top: 1px solid var(--rule); }
 .hp-rank li:first-child { border-top: 0; padding-top: 0; }
-.hp-rank-i { display: grid; place-items: center; width: 26px; height: 23px; clip-path: var(--hex-flat); background: var(--lila-soft); font-size: .76rem; font-weight: 600; color: var(--lila-ink); }
+.hp-rank-i { display: grid; margin-top: 1px; place-items: center; width: 26px; height: 23px; clip-path: var(--hex-flat); background: var(--lila-soft); font-size: .76rem; font-weight: 600; color: var(--lila-ink); }
 .hp-rank li:nth-child(-n + 3) .hp-rank-i { background: var(--lila); color: var(--on-ink); }
 .hp-rank-t { margin: 0; font-size: .9rem; line-height: 1.35; color: var(--ink); }
 .hp-rank-sub { margin: 2px 0 0; font-size: .78rem; color: var(--ink-3); line-height: 1.3; }

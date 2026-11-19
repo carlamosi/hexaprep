@@ -1,5 +1,5 @@
 import { useState } from "react";
-import type { Analytics } from "../../api";
+import type { Analytics, QuestionContent } from "../../api";
 import { t } from "../../i18n";
 import { Hexagon } from "../Hexagon";
 import { RichText } from "../RichText";
@@ -18,10 +18,9 @@ function VerRespuesta({ id, abierto, onToggle }: { id: string; abierto: boolean;
 const Vacio = ({ texto }: { texto: string }) => <p className="hp-empty-line">{texto}</p>;
 
 /** Las trampas en las que más cae: ranking con barras de recuento. */
-export function Trampas({ trampas }: { trampas: Analytics["trampas"] }) {
+export function Trampas({ trampas, cargar }: { trampas: Analytics["trampas"]; cargar?: (id: string) => Promise<QuestionContent> }) {
   if (!trampas.length) return <Vacio texto={t("hist.trampasVacio")} />;
   const max = trampas[0].n;
-  const [abierta, setAbierta] = useState<string | null>(null);
   return (
     <ol className="hp-rank">
       {trampas.map((x, i) => (
@@ -30,8 +29,7 @@ export function Trampas({ trampas }: { trampas: Analytics["trampas"] }) {
           <div className="hp-rank-body">
             <p className="hp-rank-t">{x.trampa}</p>
             <p className="hp-rank-sub">{t("hist.sobreTodoEn")} {x.concepto}</p>
-            {x.pregunta_id && <VerRespuesta id={x.pregunta_id} abierto={abierta === x.trampa} onToggle={() => setAbierta(abierta === x.trampa ? null : x.trampa)} />}
-            {x.pregunta_id && abierta === x.trampa && <div id={`resp-${x.pregunta_id}`}><Respuesta preguntaId={x.pregunta_id} /></div>}
+            {x.pregunta_id && <Respuesta preguntaId={x.pregunta_id} cargar={cargar} explicacion={false} />}
           </div>
           <span className="hp-rank-bar" aria-hidden="true"><i style={{ width: `${(100 * x.n) / max}%` }} /></span>
           <b className="hp-rank-n">{x.n} <small>{t(x.n === 1 ? "hist.vez" : "hist.veces")}</small></b>

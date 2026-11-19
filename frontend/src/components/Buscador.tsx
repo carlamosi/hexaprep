@@ -12,21 +12,31 @@ export function buscar(hexes: Hex[], texto: string): Hex[] {
   return hexes.filter((h) => plano(`${h.nombre} ${h.subtema} ${h.tema}`).includes(q)).slice(0, 12);
 }
 
+const ANCHO = 352; // 22rem, el ancho máximo del cuadro
+
 /** Lupa discreta: abre un cuadro de búsqueda y lleva al subtema del resultado elegido. */
 export function Buscador({ hexes, onElegir }: { hexes: Hex[]; onElegir: (subtemaId: string) => void }) {
   const [abierto, setAbierto] = useState(false);
   const [texto, setTexto] = useState("");
+  const [alinea, setAlinea] = useState("left-0");
   const caja = useRef<HTMLInputElement>(null);
   useEffect(() => { if (abierto) caja.current?.focus(); }, [abierto]);
   const res = buscar(hexes, texto);
   return (
     <div className="relative">
-      <button type="button" aria-label={t("buscar.lupa")} aria-expanded={abierto} onClick={() => setAbierto((a) => !a)}
+      <button type="button" aria-label={t("buscar.lupa")} aria-expanded={abierto}
+        onClick={(e) => {
+          // el cuadro crece hacia donde hay sitio (la lupa suele estar pegada al borde izquierdo)
+          const r = e.currentTarget.getBoundingClientRect();
+          const ancho = Math.min(ANCHO, window.innerWidth - 32);
+          setAlinea(r.left + ancho > window.innerWidth - 8 ? "right-0" : "left-0");
+          setAbierto((a) => !a);
+        }}
         className="flex h-11 w-11 items-center justify-center rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] text-[var(--ink-2)]">
         <svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" strokeWidth="1.8" /><path d="M13 13l4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
       </button>
       {abierto && (
-        <div className="absolute right-0 z-20 mt-2 w-[min(92vw,22rem)] rounded-[14px] border border-[var(--ink)] bg-[var(--card)] p-3 shadow-[4px_4px_0_var(--lila)]"
+        <div className={`absolute ${alinea} z-20 mt-2 w-[min(calc(100vw-2rem),22rem)] rounded-[14px] border border-[var(--ink)] bg-[var(--card)] p-3 shadow-[4px_4px_0_var(--lila)]`}
           onKeyDown={(e) => { if (e.key === "Escape") setAbierto(false); }}>
           <input ref={caja} type="search" role="searchbox" aria-label={t("buscar.etiqueta")} placeholder={t("buscar.etiqueta")} value={texto}
             onChange={(e) => setTexto(e.target.value)} autoComplete="off" className="w-full rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2 text-base" />

@@ -30,7 +30,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
     return () => { alive = false; };
   }, []);
 
-  if (state.kind === "loading") return <main className="wrap"><p className="lede" role="status">{t("app.cargando")}</p></main>;
+  if (state.kind === "loading") return <main className="wrap"><section className="banner banner-sk" role="status" aria-busy="true"><span className="sr-only">{t("app.cargando")}</span></section></main>;
   if (state.kind === "error") return <main className="wrap"><p className="lede" role="alert">{t("app.error")}</p></main>;
   if (state.kind === "empty") return <main className="wrap"><p className="lede">{t("panal.sinAsignaturas")}</p></main>;
 
@@ -44,7 +44,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
   const temas = new Set(map.hexes.map((h) => h.tema)).size;
   return (
     <main id="main" className="wrap">
-      <section className="banner" style={{ background: tonoBanner(acento || "") }}>
+      <section className="banner" style={{ "--b": tonoBanner(acento || "") } as React.CSSProperties}>
         <svg className="banner-marca" viewBox="-20 -20 280 280" aria-hidden="true">
           {[[120, 120], [214, 120], [167, 201], [73, 201], [26, 120], [73, 39], [167, 39]].map(([x, y], i) => <polygon key={i} points={puntosHex(x, y, 52)} fill="#fff" />)}
         </svg>
@@ -56,8 +56,8 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
         <div className="banner-txt">
           <span className="banner-kicker">{t("panal.titulo")}</span>
           <h1>{map.asignatura}</h1>
-          <p>{tn("panal.temas", temas)} · {tn("panal.subtemas", map.subtemas.length)} · {tn("panal.conceptos", map.hexes.length)}</p>
         </div>
+        <p className="banner-stats">{tn("panal.temas", temas)} · {tn("panal.subtemas", map.subtemas.length)} · {tn("panal.conceptos", map.hexes.length)}</p>
         <div className="banner-pct" aria-label={`${map.percent} ${t("panal.porCientoDominio")}`}>{map.percent}<small>&nbsp;%</small></div>
       </section>
       <div className="flex flex-wrap items-center gap-3 py-5">

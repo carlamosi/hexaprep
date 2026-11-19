@@ -80,9 +80,9 @@ test("movil: responder una escrita y ver la corrección letra a letra", async ({
   const cajas = page.getByRole("textbox");
   await expect(cajas.first()).toBeVisible();
   for (let i = 0; i < (await cajas.count()); i++) await cajas.nth(i).fill("xxé");
-  await page.getByRole("button", { name: "Comprobar" }).tap();
+  await page.getByRole("button", { name: "Comprovar" }).tap();
   await expect(page.getByLabel(/Escribiste xxé, lo correcto es/).first()).toBeVisible();
-  await expect(page.getByRole("button", { name: "Siguiente" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Següent" })).toBeVisible();
   await revisar(page, "escrita corregida");
 });
 

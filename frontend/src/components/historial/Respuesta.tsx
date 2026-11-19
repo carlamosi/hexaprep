@@ -6,7 +6,7 @@ import { RichText } from "../RichText";
 const LETRAS = ["a", "b", "c", "d"];
 
 /** La pregunta con su respuesta correcta y su explicación, y nada de lo que respondiste. */
-export function Respuesta({ preguntaId, cargar = api.getQuestion }: { preguntaId: string; cargar?: (id: string) => Promise<QuestionContent> }) {
+export function Respuesta({ preguntaId, cargar = api.getQuestion, explicacion = true }: { preguntaId: string; cargar?: (id: string) => Promise<QuestionContent>; explicacion?: boolean }) {
   const [q, setQ] = useState<QuestionContent | null>(null);
   const [error, setError] = useState(false);
   useEffect(() => {
@@ -25,7 +25,7 @@ export function Respuesta({ preguntaId, cargar = api.getQuestion }: { preguntaId
       {q.contexto && <p className="hp-note"><RichText text={q.contexto} /></p>}
       <p><RichText text={q.enunciado} /></p>
       <p className="hp-answer-ok"><span>{t("hist.respuestaCorrecta")}</span> <b><RichText text={correcta} /></b></p>
-      {q.explicacion && <p className="hp-note"><RichText text={q.explicacion} /></p>}
+      {explicacion && q.explicacion && <p className="hp-note"><RichText text={q.explicacion} /></p>}
     </div>
   );
 }

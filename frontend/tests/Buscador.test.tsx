@@ -31,4 +31,22 @@ describe("buscador de temas, subtemas y conceptos", () => {
     await userEvent.keyboard("{Escape}");
     expect(screen.queryByRole("searchbox")).toBeNull();
   });
+
+  it("el_cuadro_no_se_sale_de_la_pantalla_segun_donde_este_la_lupa", async () => {
+    const rect = (left: number) => () => ({ left, right: left + 44, top: 0, bottom: 44, width: 44, height: 44, x: left, y: 0, toJSON() {} }) as DOMRect;
+    vi.stubGlobal("innerWidth", 375);
+    const abrir = async (left: number) => {
+      const { unmount } = render(<Buscador hexes={HEXES} onElegir={vi.fn()} />);
+      const boton = screen.getByRole("button", { name: "Buscar" });
+      boton.getBoundingClientRect = rect(left);
+      await userEvent.click(boton);
+      const cuadro = screen.getByRole("searchbox").closest("div")!;
+      const clase = cuadro.className;
+      unmount();
+      return clase;
+    };
+    expect(await abrir(16), "lupa pegada a la izquierda: el cuadro crece hacia la derecha").toContain("left-0");
+    expect(await abrir(320), "lupa a la derecha: el cuadro crece hacia la izquierda").toContain("right-0");
+    vi.unstubAllGlobals();
+  });
 });
