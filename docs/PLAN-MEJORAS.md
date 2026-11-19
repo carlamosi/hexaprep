@@ -34,7 +34,7 @@ Progreso:
 - [x] F Panal y búsqueda (F1 y F2 hechos; boceto aprobado por Carla)
 - [x] G Fin de sesión (implementado desde el texto del plan, sin memo de Opus)
 - [ ] H Trimestral de Economía (aplazado a petición de Carla)
-- [ ] C1 Desplegar (push, a petición de Carla)
+- [x] C1 Desplegar (push hecho el 2026-11-19 a petición de Carla; todo lo anterior está en producción)
 
 ## Hecho
 - ✓ Lote 1 de captura (commit a444d8d): tiempos reales (`t_primer_clic`, `t_activo`, `t_oculto`, tiempo en explicación), `motivo` y `p_pred` por pregunta, detalle de escritas, error relativo de problemas, eventos de uso, nota de examen. **No está desplegado (sin push).**

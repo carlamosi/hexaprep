@@ -1,6 +1,6 @@
 # Estado del proyecto (traspaso entre conversaciones)
 
-Última actualización: 2026-11-16. Todo está commiteado y subido a `main` (GitHub `carlamosi/hexaprep`, público). Cada push a `main` se despliega solo en producción (ver «Versión online»). **Para empezar una conversación nueva lee primero `docs/ARRANQUE.md`**; las ideas de mejora (neuroeducación, presentación, contenido) están en `docs/IDEAS.md`.
+Última actualización: 2026-11-19 (plan de mejoras 0, A a G ejecutado y subido; ver las líneas «bloque», «E1, E5 y F1», etc. dentro de «Funcionalidad añadida tras la v1» y `docs/PLAN-MEJORAS.md`). Todo está commiteado y subido a `main` (GitHub `carlamosi/hexaprep`, público). Cada push a `main` se despliega solo en producción (ver «Versión online»). **Para empezar una conversación nueva lee primero `docs/ARRANQUE.md`**; las ideas de mejora (neuroeducación, presentación, contenido) están en `docs/IDEAS.md`.
 
 ## Qué es hoy HexaPrep
 App web (local y online en Vercel) para Carla Monté Sihuro y otras dos personas con acceso por Google, con 4 asignaturas, unas 1700 preguntas activas y seguimiento del dominio por concepto. Las 20 tareas del plan original (`docs/superpowers/plans/2026-11-14-hexaprep-economia.md`) están hechas; desde entonces Carla ha pedido cambios en conversación y están todos implementados:
@@ -85,13 +85,11 @@ App web (local y online en Vercel) para Carla Monté Sihuro y otras dos personas
 - El editor de la app no muestra la solución de un problema, ni imagen ni apartados.
 - Menores de la v1: la navegación sigue visible en la práctica de subtema; fallos del repaso de una sesión reanudada no se reconstruyen; la API no valida la cabecera Host; `POST /api/sessions` sin `asignatura_id` da 500 y `PUT /api/questions/{id}` con id desconocido da 422; si falla la copia semanal al arrancar impide arrancar; `report_question` recalcula solo el concepto de la versión vigente.
 
-## Siguientes pasos propuestos (en este orden)
-Detalle y razones en `docs/IDEAS.md` (catálogo con backlog priorizado). Cada paso se propone antes con un plan breve.
-1. **Carla usa la app una semana** (en el portátil y en el iPhone) y anota lo que no le cuadre. Pide también **un examen real anterior** de Català para calibrar el contenido.
-2. **Repaso espaciado por pregunta + cuaderno de errores** (la mejora de memoria con más recorrido; hoy FSRS es por concepto; probablemente requiere una columna nueva y `tools/actualizar_perfiles.py`).
-3. **Regla de una línea visible tras el fallo, lenguaje del error y «tu patrón de error»** (pequeño, solo interfaz).
-4. **Simulacro de examen con tiempo** y **examen imprimible a mano**.
-5. **Química orgánica escrita generada por reglas** (nomenclatura determinista) y más Català generado por reglas, para no gastar créditos de agentes.
-6. Menores de robustez de la lista de arriba, contraste AA medido (axe en Playwright) e interfaz en catalán.
-
-Cada paso nuevo con lógica va por `superpowers:test-driven-development` y se cierra con `superpowers:verification-before-completion`.
+## Siguientes pasos propuestos (2026-11-19, para decidir con Carla)
+Hecho del plan de mejoras: bloques 0, A, B, C, D, E, F y G (ver `docs/PLAN-MEJORAS.md`). **Aplazado a petición de Carla: H (Trimestral de Economía).**
+1. **Neon (pendiente de confirmar):** `tools/actualizar_perfiles.py --solo bancos` se lanzó desde la terminal de Carla (con `.venv\Scripts\python.exe` y `DATABASE_URL` = `DATABASE_URL_UNPOOLED` de `.env.local`); la plantilla acabó (13 bancos, 83 actualizadas) y los perfiles tardan minutos cada uno. Comprobar que terminó y, después, que las imágenes de Química se ven online. Luego Carla reincorpora las preguntas con imagen en Perfil, «Avanzado», lista de reportadas (no hay script).
+2. **Usarlo y anotar fallos (Carla, iPhone):** splash, fin de sesión, guía, modo oscuro en historial, práctica y editor, panal único en móvil y escritorio grande, historial sin desborde horizontal (A9 sin captura de escritorio).
+3. **Revisar contenido señalado:** pregunta «ira» (acepta `la ira` y `l'ira`, a confirmar con la profesora), explicación de «Depèn» en N2 (dice que las agudas en -en llevan è y no siempre: entén, pretén, atén), reglas de -ès y -ós de `reglas_apertura.json` que casan con palabras de otra categoría.
+4. **Ajustes que dependen de ver datos reales:** el porcentaje baja por D5 (evidencia distribuida); mirar si `TOPE_POR_DIAS`, `REPETICION`, `REPASO_PESO` y el objetivo 0,7 dan buena práctica; `desfase_calibracion` necesita 30 respuestas con `p_pred`.
+5. **Ideas todavía sin hacer:** repaso por pregunta y no por concepto (requiere migración), ejemplo resuelto antes del primer problema en Química y Mates, espaciado ligado a la fecha de examen, H (Trimestral), lupa ya en el panal, C4 (apartados seguidos) si Carla da un ejemplo.
+6. **Tarea programada del sábado 21 a las 13:10** (`hexaprep-ejecucion-1`): ya no tiene nada que continuar; desactivarla si no se quiere que se ejecute.
