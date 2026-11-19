@@ -22,7 +22,7 @@ MODOS = {"practica", "repaso_subtema", "repaso_fallos"}
 TIPOS = {
     "pregunta_mostrada", "opcion_seleccionada", "confianza", "respuesta_enviada", "explicacion_abierta",
     "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion", "marcada_correcta", "pregunta_saltada",
-    "ayuda_abierta", "contexto", "carga", "copia",
+    "ayuda_abierta", "contexto", "carga", "copia", "sesion_terminada",
 }
 # los únicos que puede enviar el navegador por su cuenta (el resto los registra el servidor)
 TIPOS_CLIENTE = {"explicacion_cerrada", "explicacion_abierta", "ayuda_abierta", "contexto", "reanudacion", "carga", "copia"}
@@ -270,6 +270,29 @@ def skip_question(session: Session, sesion_id: str, pregunta_id: str) -> None:
     if session.scalar(select(Intento.id).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id)):
         raise AlreadyAnswered("pregunta ya respondida en esta sesión")
     record_event(session, sesion_id, "pregunta_saltada", pregunta_id, {}, tiempo.ahora())
+
+
+def finish_session(session: Session, sesion_id: str) -> dict:
+    """Cierra la sesión (al pulsar Terminar o al cerrar la pestaña): guarda `fin` y, la primera vez, un evento con las
+    respondidas y las abandonadas (mostradas sin respuesta ni salto). Repetirlo solo actualiza `fin`."""
+    ses = _require_session(session, sesion_id)
+    eventos = session.execute(select(Evento.tipo, Evento.pregunta_id).where(
+        Evento.sesion_id == sesion_id, Evento.tipo.in_(["pregunta_mostrada", "respuesta_enviada", "pregunta_saltada"]))
+        .order_by(Evento.id)).all()
+    pendientes: set[str] = set()
+    respondidas = 0
+    for tipo, pid in eventos:
+        if tipo == "pregunta_mostrada":
+            pendientes.add(pid)
+        else:
+            pendientes.discard(pid)
+            respondidas += tipo == "respuesta_enviada"
+    resultado = {"respondidas": respondidas, "abandonadas": len(pendientes)}
+    ses.fin = utcnow()
+    if session.scalar(select(Evento.id).where(Evento.sesion_id == sesion_id, Evento.tipo == "sesion_terminada")) is None:
+        session.add(Evento(sesion_id=sesion_id, tipo="sesion_terminada", pregunta_id=None, t_cliente=ses.fin, payload=resultado))
+    _commit(session)
+    return resultado
 
 
 def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:

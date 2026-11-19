@@ -144,3 +144,22 @@ def test_lote_2_eventos_de_cliente_carga_explicacion_abierta_y_copia(session):
         record_client_event(session, sid, tipo, ps["q-te"].id, p)
         ev = session.scalar(select(Evento).where(Evento.tipo == tipo))
         assert ev is not None and ev.payload == p, f"{tipo}: payload guardado {ev and ev.payload}"
+
+
+def test_fin_de_sesion_guarda_fin_y_cuenta_las_abandonadas(session):
+    from hexaprep.events import finish_session, record_event, skip_question
+    sid, ps = montar(session)
+    ahora = tiempo.ahora()
+    for clave in ("q-es", "q-pr", "q-te"):
+        record_event(session, sid, "pregunta_mostrada", ps[clave].id, {}, ahora)
+    submit_answer(session, sid, ps["q-te"].id, ["a", "b", "c", "d"], "a", None, {})
+    skip_question(session, sid, ps["q-pr"].id)
+    assert session.get(__import__("hexaprep.models", fromlist=["Sesion"]).Sesion, sid).fin is None
+    r = finish_session(session, sid)
+    assert r == {"respondidas": 1, "abandonadas": 1}, f"obtenido {r}: q-es se mostró y no se respondió ni saltó"
+    from hexaprep.models import Sesion
+    assert session.get(Sesion, sid).fin is not None
+    ev = session.scalar(select(Evento).where(Evento.tipo == "sesion_terminada"))
+    assert ev.payload == {"respondidas": 1, "abandonadas": 1}
+    assert finish_session(session, sid) == r, "terminar dos veces no falla ni duplica el evento"
+    assert len(session.scalars(select(Evento).where(Evento.tipo == "sesion_terminada")).all()) == 1

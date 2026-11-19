@@ -20,13 +20,13 @@
    "pagina": 1,
    "ayuda": "Els substantius masculins acostumen a acabar en -e (cotxe, llibre) i els femenins en -a (casa, taula). Les excepcions són les mateixes que en castellà: masculins en -ista (dentista), -cida (insecticida), -ma (clima) i -ta (atleta), i femenins com mare, febre o verge.",
    "escritas": [
-    [2, "Escriu la vocal que falta: «fas_» (femení).", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «fase»."}]], "Fase. És un femení acabat en -e, igual que en castellà. Truc: fase, base, frase."],
-    [2, "Escriu la vocal que falta: «bas_» (femení).", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «base»."}]], "Base. Femení acabat en -e, com en castellà. Truc: fase, base, frase."],
-    [3, "Escriu la vocal que falta: «teorem_» (masculí).", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «teorema»."}]], "Teorema. Els masculins en -ma són una excepció, igual que en castellà. Truc: «teorema» acaba en -a."],
-    [3, "Escriu la vocal que falta: «enigm_» (masculí).", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «enigma»."}]], "Enigma. Masculí en -ma, igual que en castellà. Truc: enigma, dilema, paradigma."],
-    [4, "Escriu les vocals que falten: «prof_t_» (masculí).", [["Vocal 1", ["e"], {"a": "Busca la forma castellana «profeta»: la vocal interior és e."}], ["Vocal 2", ["a"], {"e": "Masculí en -ta, com en castellà «profeta»."}]], "Profeta. Interior com en castellà (profeta) i masculí en -ta, que és excepció. Truc: profeta, poeta, atleta."],
-    [4, "Escriu la vocal que falta: «dilem_» (masculí).", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «dilema»."}]], "Dilema. Masculí en -ma, igual que en castellà. Truc: dilema, teorema, enigma."],
-    [5, "Escriu la vocal que falta: «paradigm_» (masculí).", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «paradigma»."}]], "Paradigma. Els masculins en -ma són excepció. Truc: paradigma, enigma, teorema."]
+    [2, "Escriu la vocal que falta: «fas_».", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «fase»."}]], "Fase. És un femení acabat en -e, igual que en castellà. Truc: fase, base, frase."],
+    [2, "Escriu la vocal que falta: «bas_».", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «base»."}]], "Base. Femení acabat en -e, com en castellà. Truc: fase, base, frase."],
+    [3, "Escriu la vocal que falta: «teorem_».", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «teorema»."}]], "Teorema. Els masculins en -ma són una excepció, igual que en castellà. Truc: «teorema» acaba en -a."],
+    [3, "Escriu la vocal que falta: «enigm_».", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «enigma»."}]], "Enigma. Masculí en -ma, igual que en castellà. Truc: enigma, dilema, paradigma."],
+    [4, "Escriu les vocals que falten: «prof_t_».", [["Vocal 1", ["e"], {"a": "Busca la forma castellana «profeta»: la vocal interior és e."}], ["Vocal 2", ["a"], {"e": "Masculí en -ta, com en castellà «profeta»."}]], "Profeta. Interior com en castellà (profeta) i masculí en -ta, que és excepció. Truc: profeta, poeta, atleta."],
+    [4, "Escriu la vocal que falta: «dilem_».", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «dilema»."}]], "Dilema. Masculí en -ma, igual que en castellà. Truc: dilema, teorema, enigma."],
+    [5, "Escriu la vocal que falta: «paradigm_».", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «paradigma»."}]], "Paradigma. Els masculins en -ma són excepció. Truc: paradigma, enigma, teorema."]
    ]
   },
   {

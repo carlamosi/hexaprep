@@ -88,7 +88,8 @@ def question_content(session: Session, pregunta_id: str) -> dict:
             "opciones": [o.model_dump() for o in q.opciones], "correcta": q.correcta, "explicacion": q.explicacion,
             "ayuda_larga": q.ayuda_larga, "dificultad": q.dificultad, "fuente_pagina": q.fuente_pagina,
             "fuente_cara": q.fuente_cara, "tipo": q.tipo, "solucion": q.solucion,
-            "ordenada": q.ordenada, "imagen": q.imagen, "contexto": q.contexto, "apartado": q.apartado}
+            "ordenada": q.ordenada, "imagen": q.imagen, "contexto": q.contexto, "apartado": q.apartado,
+            "campos": [c.model_dump() for c in q.campos] if q.campos else None}
 
 
 def reported_questions(session: Session) -> list[dict]:

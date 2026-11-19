@@ -92,7 +92,7 @@ def construir(verbos) -> list[dict]:
         dificultad = min(5, max(1, 3 + (ger != reg_ger) + (len(parts) > 1) - (inf in FRECUENTES)))
         preguntas.append({
             "tema": "Verbs", "subtema": "Gerundis i participis", "concepto": "Gerundi i participi dels verbs irregulars",
-            "dificultad": dificultad, "enunciado": f"Escriu el gerundi i el participi del verb «{inf}».",
+            "dificultad": dificultad, "enunciado": f"Verb: «{inf}».",
             "tipo": "escrita",
             "campos": [{"etiqueta": "Gerundi", "validas": [ger], "errores": errores_ger},
                        {"etiqueta": "Participi", "validas": parts, "errores": errores_part}],
@@ -109,7 +109,7 @@ def banco(verbos, asignatura: dict) -> dict:
 
 
 def main() -> None:
-    asignatura = json.loads((ROOT / "banks" / "catala" / "N1.json").read_text(encoding="utf-8"))["asignatura"]
+    asignatura = json.loads((ROOT / "banks" / "catala" / "retiradas" / "N1.json").read_text(encoding="utf-8"))["asignatura"]  # N1 está retirado
     verbos = leer_pdf()
     SALIDA.write_text(json.dumps(banco(verbos, asignatura), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"{SALIDA.name}: {len(verbos)} verbos")

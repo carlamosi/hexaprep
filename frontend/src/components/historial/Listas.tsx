@@ -1,8 +1,19 @@
+import { useState } from "react";
 import type { Analytics } from "../../api";
 import { t } from "../../i18n";
 import { Hexagon } from "../Hexagon";
 import { RichText } from "../RichText";
 import { duracion, fiable, modo, pct, respuestas } from "./datos";
+import { Respuesta } from "./Respuesta";
+
+/** Botón que despliega la respuesta correcta de una pregunta. */
+function VerRespuesta({ id, abierto, onToggle }: { id: string; abierto: boolean; onToggle: () => void }) {
+  return (
+    <button type="button" className="hp-link" aria-expanded={abierto} aria-controls={`resp-${id}`} onClick={onToggle}>
+      {t(abierto ? "hist.ocultarRespuesta" : "hist.verRespuesta")}
+    </button>
+  );
+}
 
 const Vacio = ({ texto }: { texto: string }) => <p className="hp-empty-line">{texto}</p>;
 
@@ -10,6 +21,7 @@ const Vacio = ({ texto }: { texto: string }) => <p className="hp-empty-line">{te
 export function Trampas({ trampas }: { trampas: Analytics["trampas"] }) {
   if (!trampas.length) return <Vacio texto={t("hist.trampasVacio")} />;
   const max = trampas[0].n;
+  const [abierta, setAbierta] = useState<string | null>(null);
   return (
     <ol className="hp-rank">
       {trampas.map((x, i) => (
@@ -18,7 +30,26 @@ export function Trampas({ trampas }: { trampas: Analytics["trampas"] }) {
           <div className="hp-rank-body">
             <p className="hp-rank-t">{x.trampa}</p>
             <p className="hp-rank-sub">{t("hist.sobreTodoEn")} {x.concepto}</p>
+            {x.pregunta_id && <VerRespuesta id={x.pregunta_id} abierto={abierta === x.trampa} onToggle={() => setAbierta(abierta === x.trampa ? null : x.trampa)} />}
+            {x.pregunta_id && abierta === x.trampa && <div id={`resp-${x.pregunta_id}`}><Respuesta preguntaId={x.pregunta_id} /></div>}
           </div>
+          <span className="hp-rank-bar" aria-hidden="true"><i style={{ width: `${(100 * x.n) / max}%` }} /></span>
+          <b className="hp-rank-n">{x.n} <small>{t(x.n === 1 ? "hist.vez" : "hist.veces")}</small></b>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+/** Errores de las preguntas escritas por tipo: ranking con barras de recuento. */
+export function ErroresEscritura({ errores }: { errores: { tipo: string; n: number }[] }) {
+  const max = errores[0]?.n ?? 1;
+  return (
+    <ol className="hp-rank">
+      {errores.map((x, i) => (
+        <li key={x.tipo}>
+          <span className="hp-rank-i" aria-hidden="true">{i + 1}</span>
+          <div className="hp-rank-body"><p className="hp-rank-t">{t(`hist.err.${x.tipo}`)}</p></div>
           <span className="hp-rank-bar" aria-hidden="true"><i style={{ width: `${(100 * x.n) / max}%` }} /></span>
           <b className="hp-rank-n">{x.n} <small>{t(x.n === 1 ? "hist.vez" : "hist.veces")}</small></b>
         </li>
@@ -51,12 +82,17 @@ export function Debiles({ debiles }: { debiles: Analytics["debiles"] }) {
 
 /** Preguntas que falla en la mitad o más de sus intentos (con al menos dos). */
 export function Dificiles({ dificiles }: { dificiles: Analytics["dificiles"] }) {
+  const [abierta, setAbierta] = useState<string | null>(null);
   if (!dificiles.length) return <Vacio texto={t("hist.dificilesVacio")} />;
   return (
     <ul className="hp-hard">
       {dificiles.map((d) => (
         <li key={d.pregunta_id}>
-          <p className="hp-hard-q"><RichText text={d.enunciado} /></p>
+          <div>
+            <p className="hp-hard-q"><RichText text={d.enunciado} /></p>
+            <VerRespuesta id={d.pregunta_id} abierto={abierta === d.pregunta_id} onToggle={() => setAbierta(abierta === d.pregunta_id ? null : d.pregunta_id)} />
+            {abierta === d.pregunta_id && <div id={`resp-${d.pregunta_id}`}><Respuesta preguntaId={d.pregunta_id} /></div>}
+          </div>
           <div className="hp-hard-stat">
             <b>{d.fallos} {t("practica.de")} {d.n}</b> <small>{t("hist.fallos")}</small>
             <span className="hp-meter ko" aria-hidden="true"><i style={{ width: `${(100 * d.fallos) / d.n}%` }} /></span>

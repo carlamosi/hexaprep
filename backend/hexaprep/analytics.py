@@ -1,4 +1,5 @@
 """Analítica del historial: agregaciones de los intentos de una asignatura (solo lectura, todo derivado)."""
+import json
 from collections import Counter, defaultdict
 from datetime import UTC, datetime, timedelta
 
@@ -7,6 +8,7 @@ from sqlalchemy.orm import Session
 
 from . import mastery, tiempo
 from .models import Bloque, Concepto, Dominio, DominioSnapshot, Evento, Intento, Opcion, Pregunta, Sesion, Subtema, Tema
+from .escritura import clasificar_error
 from .ritmo import carga_esperada
 
 CONFIANZAS = ("seguro", "dudo", "adivino")
@@ -96,6 +98,30 @@ def _tiempos_activos(session: Session, filas: list) -> tuple[dict[str, float], d
     return activo, ritmo
 
 
+def _errores_escritura(session: Session, filas: list) -> list[dict]:
+    """Tipo de cada hueco fallado en las escritas (apertura, acento omitido, letra cambiada, longitud...), comparando lo
+    escrito con las formas válidas. «Troba l'error» queda fuera: ahí se marca un fragmento, no se escribe la palabra."""
+    fallidas = [(i, p) for i, p, *_ in filas if p.tipo == "escrita" and not i.correcta]
+    if not fallidas:
+        return []
+    payloads = dict(session.execute(select(Evento.id, Evento.payload).where(Evento.id.in_([i.evento_id for i, _ in fallidas]))).all())
+    campos = dict(session.execute(select(Opcion.pregunta_id, Opcion.texto).where(
+        Opcion.pregunta_id.in_({p.id for _, p in fallidas}), Opcion.posicion == "a")).all())
+    cuenta: Counter = Counter()
+    for i, p in fallidas:
+        pay = payloads.get(i.evento_id) or {}
+        try:
+            cs = json.loads(campos[p.id])
+        except (KeyError, ValueError):
+            continue
+        for c, escrito, d in zip(cs, pay.get("respuestas") or [], pay.get("detalle") or []):
+            if d.get("correcto") or c.get("etiqueta") == "Error":
+                continue
+            if tipo := clasificar_error(escrito, c["validas"]):
+                cuenta[tipo] += 1
+    return [{"tipo": t, "n": n} for t, n in cuenta.most_common()]
+
+
 def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: datetime | None = None) -> dict:
     """Todo lo que muestra el historial. `dias` = 0 usa todo el historial."""
     ahora = ahora or datetime.now(UTC).replace(tzinfo=None)
@@ -128,10 +154,12 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
 
     trampas: Counter = Counter()
     trampa_concepto: dict[str, Counter] = defaultdict(Counter)
+    trampa_pregunta: dict[str, Counter] = defaultdict(Counter)  # pregunta en la que más cae con esa trampa
     for i, _, c, _, _ in filas:
         if i.trampa_elegida:
             trampas[i.trampa_elegida] += 1
             trampa_concepto[i.trampa_elegida][c.nombre] += 1
+            trampa_pregunta[i.trampa_elegida][i.pregunta_id] += 1
 
     por_pregunta: dict[str, list] = defaultdict(list)
     for i, p, *_ in filas:
@@ -192,8 +220,10 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
                       for g in _grupo(con_tiempo, lambda i: _tramo(activo[i.id], TRAMOS_TIEMPO), [t[2] for t in TRAMOS_TIEMPO])],
         "dificultad": [{"dificultad": g["clave"], "n": g["n"], "aciertos_pct": g["aciertos_pct"]}
                        for g in _grupo(intentos, lambda i: i.dificultad, [1, 2, 3, 4, 5])],
-        "trampas": [{"trampa": t, "n": c, "concepto": trampa_concepto[t].most_common(1)[0][0]}
+        "trampas": [{"trampa": t, "n": c, "concepto": trampa_concepto[t].most_common(1)[0][0],
+                     "pregunta_id": trampa_pregunta[t].most_common(1)[0][0]}
                     for t, c in trampas.most_common(10)],
+        "errores_escritura": _errores_escritura(session, filas),
         "debiles": debiles,
         "dificiles": dificiles,
         "sesiones_recientes": sesiones[:10],

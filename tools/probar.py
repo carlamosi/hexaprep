@@ -17,7 +17,8 @@ MAX = 40
 
 
 def correr(cmd, cwd, archivo):
-    p = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace", shell=sys.platform == "win32" and cmd[0] == "npx")
+    usa_shell = sys.platform == "win32" and cmd[0] == "npx"
+    p = subprocess.run(" ".join(f'"{a}"' if re.search(r"[|&<> ]", a) else a for a in cmd) if usa_shell else cmd, cwd=cwd, capture_output=True, text=True, encoding="utf-8", errors="replace", shell=usa_shell)
     texto = p.stdout + p.stderr
     SALIDA.mkdir(exist_ok=True)
     archivo.write_text(texto, encoding="utf-8")
@@ -45,6 +46,7 @@ def resumen_vitest(texto):
 
 
 def main(args):
+    sys.stdout.reconfigure(errors="replace")
     if not args or args[0] not in ("back", "front", "todo"):
         print(__doc__)
         return 2

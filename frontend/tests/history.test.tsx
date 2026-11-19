@@ -314,3 +314,27 @@ describe("ajustes", () => {
     expect(within(select).getByRole("option", { name: /Catalán/ })).toBeDisabled();
   });
 });
+
+describe("fallos clicables", () => {
+  it("las_trampas_abren_la_pregunta_con_su_respuesta_correcta_y_nada_de_lo_respondido", async () => {
+    const { Trampas } = await import("../src/components/historial/Listas");
+    const { Respuesta } = await import("../src/components/historial/Respuesta");
+    render(<Trampas trampas={[{ trampa: "confunde escasez con pobreza", n: 4, concepto: "La escasez", pregunta_id: "p9" }]} />);
+    await userEvent.click(screen.getByRole("button", { name: "Ver la respuesta correcta" }));
+    expect(screen.getByRole("button", { name: "Ocultar" })).toHaveAttribute("aria-expanded", "true");
+    const cargar = vi.fn().mockResolvedValue({ pregunta_id: "p9", enunciado: "¿Qué es la escasez?", opciones: [{ texto: "Pobreza" }, { texto: "Recursos limitados" }], correcta: "b", explicacion: "Porque sí.", version: 1, excluida: false, ayuda_larga: "", dificultad: 3, fuente_pagina: 1, fuente_cara: 1 });
+    render(<Respuesta preguntaId="p9" cargar={cargar} />);
+    expect(await screen.findByText("Recursos limitados")).toBeInTheDocument();
+    expect(screen.getByText("Porque sí.")).toBeInTheDocument();
+    expect(screen.queryByText("Pobreza")).toBeNull();
+  });
+});
+
+describe("errores de escritura por tipo", () => {
+  it("lista_cada_tipo_con_su_recuento", async () => {
+    const { ErroresEscritura } = await import("../src/components/historial/Listas");
+    render(<ErroresEscritura errores={[{ tipo: "apertura", n: 5 }, { tipo: "letra_cambiada", n: 1 }]} />);
+    expect(screen.getByText("Apertura de la vocal (é por è, ó por ò)")).toBeInTheDocument();
+    expect(screen.getByText(/Letra cambiada/)).toBeInTheDocument();
+  });
+});

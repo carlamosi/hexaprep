@@ -230,6 +230,16 @@ describe("pantalla de práctica", () => {
     expect(evento).toHaveBeenCalledWith("s1", "carga", "p1", expect.objectContaining({ prefetch: false, esqueleto: true }));
   });
 
+  it("closes_the_session_when_leaving_the_practice", async () => {
+    const fin = vi.fn().mockResolvedValue({ respondidas: 0, abandonadas: 1 });
+    const client = { nextQuestion: vi.fn().mockResolvedValue(Q), answer: vi.fn(), reportQuestion: vi.fn(), fin } satisfies PracticeClient;
+    const { unmount } = render(<Practice sesionId="s1" client={client} />);
+    await screen.findByText(Q.enunciado);
+    expect(fin).not.toHaveBeenCalled();
+    unmount();
+    expect(fin).toHaveBeenCalledWith("s1");
+  });
+
   it("a_wrong_answer_never_moves_on_by_itself", async () => {
     const a = setup({}, KO);
     await screen.findByText(Q.enunciado);
@@ -396,7 +406,7 @@ describe("saltar, imagen y problemas con apartados", () => {
   it("shows_the_image_with_a_generic_alt_that_does_not_give_the_answer_away", async () => {
     conSkip({ ...Q, imagen: "pictogrames/corrosiu.png", enunciado: "Quin pictograma és aquest?" });
     const img = await screen.findByRole("img", { name: "Imagen de la pregunta" });
-    expect(img).toHaveAttribute("src", "/api/imagen/pictogrames/corrosiu.png");
+    expect(img).toHaveAttribute("src", "/img/pictogrames/corrosiu.png");
   });
 
   it("shows_the_common_statement_and_the_part_letter", async () => {

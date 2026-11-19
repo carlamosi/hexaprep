@@ -32,7 +32,7 @@ def test_error_tipico_devuelve_su_regla():
 
 def test_fallo_sin_pista_lista_las_formas_validas():
     r = corregir_campo("vingut", VENIR)
-    assert r == {"correcto": False, "esperado": ["venint"], "nota": None, "etiqueta": "Gerundi"}
+    assert r == {"correcto": False, "esperado": ["venint"], "nota": None, "etiqueta": "Gerundi", "tipo_error": "letra_cambiada"}
 
 
 def test_corregir_exige_todos_los_campos_y_el_mismo_numero_de_respuestas():
@@ -68,3 +68,32 @@ def test_el_articulo_solo_no_vale_fuera_de_un_hueco_de_articulo():
     assert corregir([campo], ["l'"], "Escriu amb l'article.")[0] is False
     contraccion = {"etiqueta": "a", "validas": ["de l'"], "errores": {}}
     assert corregir([contraccion], ["de"], "Parlarem «____ hotel»")[0] is False
+
+
+from hexaprep.escritura import clasificar_error  # noqa: E402
+
+
+@pytest.mark.parametrize("escrito,valida,esperado", [
+    ("café", "cafè", "apertura"), ("cafè", "cafè", None), ("próleg", "pròleg", "apertura"),
+    ("má", "mà", "acento_distinto"), ("ma", "mà", "acento_omitido"),
+    ("vaca", "baca", "letra_cambiada"), ("pomo", "poma", "letra_cambiada"), ("pom", "pomes", "longitud"),
+    ("pomesss", "pomes", "longitud"),
+])
+def test_clasifica_el_error_de_escritura(escrito, valida, esperado):
+    assert clasificar_error(escrito, [valida]) == esperado, f"{escrito!r} frente a {valida!r}"
+
+
+def test_clasifica_contra_la_forma_valida_mas_cercana():
+    assert clasificar_error("complet", ["complert", "complit"]) == "longitud"
+    assert clasificar_error("cafè", ["cafe", "cafè"]) is None
+
+
+def test_un_fallo_de_apertura_lleva_la_pista_de_apertura_en_la_nota():
+    campo = {"etiqueta": "Paraula", "validas": ["cafè"], "errores": {}}
+    r = corregir_campo("café", campo)
+    assert r["correcto"] is False and r["tipo_error"] == "apertura"
+    assert "è" in r["nota"] and "abierta" in r["nota"], f"nota obtenida: {r['nota']}"
+    assert corregir_campo("cafe", campo)["nota"].startswith("Casi")
+    # un error típico del banco manda sobre la pista genérica
+    tipico = {"etiqueta": "P", "validas": ["cafè"], "errores": {"café": "regla del banco"}}
+    assert corregir_campo("café", tipico)["nota"] == "regla del banco"

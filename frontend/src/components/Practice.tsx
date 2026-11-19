@@ -5,7 +5,7 @@ import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 
-export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa">>;
+export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
 
 const NUMERO = /^[+\-−]?(\d+([.,]\d*)?|[.,]\d+)(e[+\-]?\d+)?(\/[+\-−]?(\d+([.,]\d*)?|[.,]\d+))?$/i;
 
@@ -172,6 +172,15 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   useEffect(() => {
     void load();
   }, [load]);
+
+  useEffect(() => { // fin de sesión: al salir de la práctica (Terminar, cambiar de pantalla) o al cerrar la pestaña
+    const cerrar = () => { try { navigator.sendBeacon?.(`/api/sessions/${sesionId}/fin`); } catch { /* opcional */ } };
+    window.addEventListener("pagehide", cerrar);
+    return () => {
+      window.removeEventListener("pagehide", cerrar);
+      try { void Promise.resolve(client.current.fin?.(sesionId)).catch(() => {}); } catch { /* opcional */ }
+    };
+  }, [sesionId]);
 
   useEffect(() => { // contexto del dispositivo, una vez por sesión
     const standalone = window.matchMedia?.("(display-mode: standalone)").matches || (navigator as { standalone?: boolean }).standalone === true;
@@ -430,7 +439,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
 
       {question.imagen && (
         <img
-          src={`/api/imagen/${question.imagen}`} alt={t("practica.imagenAlt")}
+          src={`/img/${question.imagen}`} alt={t("practica.imagenAlt")}
           className="mx-auto mt-4 max-h-72 w-auto max-w-full rounded-[11px] border border-[var(--rule)] bg-white object-contain p-2"
         />
       )}

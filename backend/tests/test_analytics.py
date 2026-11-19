@@ -52,6 +52,7 @@ def test_traps_hard_questions_weak_concepts_and_sessions(session, ctx):
     a, ps = ctx
     r = analytics(session, a)
     assert r["trampas"][0]["n"] == 2  # la trampa de la segunda pregunta, elegida dos veces
+    assert r["trampas"][0]["pregunta_id"] == ps[1].id, f"debe apuntar a la pregunta donde cayó: {r['trampas'][0]}"
     assert [d["pregunta_id"] for d in r["dificiles"]] == [ps[1].id]  # falla 2 de 3; la otra solo 1 de 3
     assert r["debiles"][0]["percent"] <= r["debiles"][-1]["percent"] and len(r["debiles"]) == 2
     assert len(r["sesiones_recientes"]) == 3 and all(s["n"] == 2 for s in r["sesiones_recientes"])
@@ -67,3 +68,13 @@ def test_range_filter_and_empty_state(session, ctx):
     assert all(c["n"] == 0 for c in r["confianza"])
     assert analytics(session, a, dias=7)["resumen"]["respondidas"] == 6
 
+
+
+def test_errores_de_escritura_por_tipo(session):
+    from test_captura import montar
+    _, ps = montar(session)  # q-es: un hueco «Paraula» con valida «ok»
+    for escrito in ("ko", "o", "ok", "ól"):
+        submit_answer(session, start_session(session, "practica", {}), ps["q-es"].id, [], "a", None, {}, respuestas=[escrito])
+    r = analytics(session, session.scalar(select(Asignatura.id)))
+    got = {e["tipo"]: e["n"] for e in r["errores_escritura"]}
+    assert got == {"letra_cambiada": 2, "longitud": 1}, f"obtenido {got}"  # «ko» y «ól» cambian letras; «o» es más corta

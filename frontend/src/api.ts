@@ -89,7 +89,8 @@ export interface Analytics {
   fatiga: (Grupo & { tramo: string; desde: number; tiempo_medio_s: number | null; ritmo?: number | null })[];
   velocidad: (Grupo & { tramo: string })[];
   dificultad: (Grupo & { dificultad: number })[];
-  trampas: { trampa: string; n: number; concepto: string }[];
+  trampas: { trampa: string; n: number; concepto: string; pregunta_id?: string }[];
+  errores_escritura?: { tipo: string; n: number }[];
   debiles: (Grupo & { concepto_id: string; concepto: string; subtema: string; percent: number })[];
   dificiles: { pregunta_id: string; enunciado: string; n: number; fallos: number }[];
   sesiones_recientes: { sesion_id: string; modo: Modo; inicio: string; duracion_s: number; n: number; aciertos: number }[];
@@ -98,6 +99,7 @@ export interface QuestionContent {
   pregunta_id: string; version: number; excluida: boolean; enunciado: string;
   opciones: { texto: string; trampa?: string | null }[]; correcta: Letra; explicacion: string;
   ayuda_larga: string; dificultad: number; fuente_pagina: number; fuente_cara: number;
+  tipo?: string; solucion?: number | number[] | null; campos?: { etiqueta: string; validas: string[] }[] | null; contexto?: string | null;
 }
 export interface ReportedQuestion { pregunta_id: string; enunciado: string; motivo: string | null }
 export type Alcance = "pregunta" | "concepto" | "tema";
@@ -147,6 +149,7 @@ export const api = {
     request<{ percent: number }>("/api/answers/correct", "POST", { sesion_id: sesionId, pregunta_id: preguntaId }),
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>
     request<{ ok: boolean }>(`/api/questions/${id}/report`, "POST", { motivo, sesion_id: sesionId ?? null }),
+  fin: (sesionId: string) => request<{ respondidas: number; abandonadas: number }>(`/api/sessions/${sesionId}/fin`, "POST"),
   ocultar: (preguntaId: string, alcance: Alcance) =>
     request<Oculto>("/api/ocultos", "POST", { pregunta_id: preguntaId, alcance }),
   ocultos: () => request<Oculto[]>("/api/ocultos"),

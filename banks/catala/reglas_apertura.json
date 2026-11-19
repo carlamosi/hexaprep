@@ -1,0 +1,144 @@
+{
+  "reglas": [
+    {
+      "id": "encia",
+      "vocal": "e",
+      "patron": "ènci(a|es)$",
+      "regla": "Las palabras en -ència llevan siempre è abierta: prudència, ciència, paciència.",
+      "ejemplos": [
+        "prudència",
+        "ciència",
+        "paciència",
+        "conferència",
+        "presència"
+      ],
+      "respaldo": "apuntes: normativa.md (prudència als aclariments; paciència, conferència, ciència als exemples) i apunts_gramatica.md (presència, permanència) | norma contrastada: Ortografia IEC, el sufix -ència s'escriu sempre amb è, sense excepcions conegudes"
+    },
+    {
+      "id": "erim-esim",
+      "vocal": "e",
+      "patron": "è(rrim|sim)(a|s|es)?$",
+      "regla": "Los superlativos en -èrrim y las fracciones en -èsim llevan è abierta: celebèrrim, mil·lèsim.",
+      "ejemplos": [
+        "celebèrrim",
+        "misèrrim",
+        "salubèrrima",
+        "mil·lèsim",
+        "centèsima"
+      ],
+      "respaldo": "apuntes: apunts_gramatica.md (taula cèlebre celebèrrim, íntegre integèrrim, pobre paupèrrim; mil·lèsima) i normativa.md (mil·lèsim) | norma contrastada: IEC, sufixos -èrrim i -èsim sempre amb è"
+    },
+    {
+      "id": "es-participi",
+      "vocal": "e",
+      "patron": "ès$",
+      "regla": "Participios y gentilicios en -ès llevan è abierta: admès, entès, imprès, anglès, francès.",
+      "ejemplos": [
+        "admès",
+        "entès",
+        "imprès",
+        "atès",
+        "anglès",
+        "novaiorquès"
+      ],
+      "respaldo": "apuntes: apunts_gramatica.md i normativa.md (taules de participis: admetre admès, atendre atès, imprimir imprès, empènyer empès; entès, encès, ofès, suspès) i normativa.md (novaiorquès) | norma contrastada: IEC, participis en -ès i gentilicis en -ès amb è"
+    },
+    {
+      "id": "es-proces",
+      "vocal": "e",
+      "patron": "(acc|exc|proc|progr|succ|rec|congr)és$|^(més|només|després)$",
+      "regla": "Procés, accés, progrés, més, només y després llevan é cerrada: suenan igual que en castellano.",
+      "ejemplos": [
+        "procés",
+        "accés",
+        "progrés",
+        "recés",
+        "més",
+        "només",
+        "després"
+      ],
+      "respaldo": "apuntes: normativa.md (procés als aclariments d'accent tancat; recés, més, només, després al text) i N2.json (truc procés, accés, progrés) | norma contrastada: IEC, aquests mots s'escriuen amb é"
+    },
+    {
+      "id": "que",
+      "vocal": "e",
+      "patron": "què$",
+      "regla": "Què y perquè llevan siempre è abierta.",
+      "ejemplos": [
+        "què",
+        "perquè"
+      ],
+      "respaldo": "apuntes: normativa.md (diacrític què) i N2.json (Perquè amb accent obert) | norma contrastada: IEC, sempre amb è"
+    },
+    {
+      "id": "oria-oleg",
+      "vocal": "o",
+      "patron": "ò(ri(a|es)|leg|log|gic)",
+      "regla": "Las palabras en -òria, -òleg y -ògic llevan ò abierta: història, biòloga, lògic.",
+      "ejemplos": [
+        "història",
+        "glòria",
+        "transitòries",
+        "biòloga",
+        "psicòleg",
+        "lògic",
+        "ideològic"
+      ],
+      "respaldo": "apuntes: normativa.md (història, lògic), apunts_gramatica.md (glòria, transitòries, ideològicosocial) i G1.json (biòloga, paleontòloga amb accent obert) | norma contrastada: IEC, aquestes terminacions sempre amb ò"
+    },
+    {
+      "id": "os-adjectiu",
+      "vocal": "o",
+      "patron": "ós$",
+      "regla": "Los adjetivos en -ós llevan ó cerrada, como el castellano -oso: famós, seriós, religiós.",
+      "ejemplos": [
+        "seriós",
+        "religiós",
+        "calorós",
+        "dubtós",
+        "carnós",
+        "famós"
+      ],
+      "respaldo": "apuntes: normativa.md (seriós, religiós, calorós, carnós) i apunts_gramatica.md (dubtós); regla dels apunts: sona igual que en castellà, accent tancat | norma contrastada: IEC, sufix -ós amb ó"
+    },
+    {
+      "id": "os-obert",
+      "vocal": "o",
+      "patron": "òs$",
+      "regla": "Arròs, repòs y desclòs llevan ò abierta: no suenan como arroz o reposo.",
+      "ejemplos": [
+        "arròs",
+        "repòs",
+        "desclòs"
+      ],
+      "respaldo": "apuntes: normativa.md (arròs, repòs als aclariments d'accent obert) i apunts_gramatica.md (desclòs) | norma contrastada: IEC, s'escriuen amb ò"
+    },
+    {
+      "id": "io",
+      "vocal": "o",
+      "patron": "ió$",
+      "regla": "Las palabras acabadas en -ió llevan siempre ó cerrada: avió, nació, visió.",
+      "ejemplos": [
+        "avió",
+        "visió",
+        "nació",
+        "repetició",
+        "atenció"
+      ],
+      "respaldo": "apuntes: normativa.md (avió, visió als aclariments d'accent tancat; atenció) i apunts_gramatica.md (repetició) | norma contrastada: IEC, terminació -ió sempre amb ó"
+    }
+  ],
+  "generica": {
+    "e": "La e lleva acento abierto (è) si suena distinto del castellano, como cafè o època, y cerrado (é) si suena igual, como puré o església.",
+    "o": "La o lleva acento abierto (ò) si suena distinto del castellano, como arròs o repòs, y cerrado (ó) si suena igual, como avió o tómbola."
+  },
+  "dudas": [
+    "La regla genérica (suena distinto del castellano = abierto) es el truco de los apuntes (normativa.md), no una norma del IEC: hay casos discutibles como interès (castellano interés) o anglès (inglés), que van con è.",
+    "Contraejemplos de -ès: muchas palabras acaban en -és cerrado (procés, accés, més, després y el imperfecto de subjuntivo como cantés o begués, que sale en apunts_gramatica.md). Por eso es-participi habla solo de participios y gentilicios; el patrón casa también con interès o cafès, donde la frase no explica el caso.",
+    "Contraejemplos de -ós: arròs, repòs y desclòs acaban en -òs abierto. Por eso os-adjectiu habla solo de adjetivos; el patrón casa también con ambdós, vós o nós, donde la frase de adjetivos no es la explicación.",
+    "Sin regla para -ó final en general: això, allò y però llevan ò, pero cançó o raó llevan ó. Tampoco para -è final (cafè, comitè frente a puré, també).",
+    "N2.json dice en Depèn que las agudas en -en llevan acento abierto. No siempre: entén, pretén o atén llevan é. No lo incluyo y conviene revisar esa explicación.",
+    "Sin regla para los ordinales en -è (cinquè, sisè): son correctos según el IEC pero no salen en los apuntes.",
+    "Los patrones se aplican a la forma correcta con su acento, así que solo casan con la apertura de la regla; un patrón no detecta por sí mismo si la palabra pertenece a la categoría (adjetivo, participio)."
+  ]
+}

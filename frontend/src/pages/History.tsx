@@ -7,7 +7,7 @@ import {
   DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, segundos, semanasDeRango,
 } from "../components/historial/datos";
 import { Evolucion } from "../components/historial/Evolucion";
-import { Debiles, Dificiles, Sesiones, Trampas } from "../components/historial/Listas";
+import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../components/historial/Listas";
 import "../components/historial/historial.css";
 import { t, tn } from "../i18n";
 
@@ -209,6 +209,9 @@ export function History({ asignaturaId, client = api, mes }: {
 
             <Grupo id="g-fallos" titulo={t("hist.g.fallos")}>
               <Card id="c-tra" titulo={t("hist.trampas")} sub={t("hist.trampasSub")}><Trampas trampas={data.trampas} /></Card>
+              {!!data.errores_escritura?.length && (
+                <Card id="c-esc" titulo={t("hist.erroresEscritura")} sub={t("hist.erroresEscrituraSub")}><ErroresEscritura errores={data.errores_escritura} /></Card>
+              )}
               <Card id="c-deb" titulo={t("hist.debiles")} sub={t("hist.debilesSub")}><Debiles debiles={data.debiles} /></Card>
               <Card id="c-difi" titulo={t("hist.dificiles")} sub={t("hist.dificilesSub")}><Dificiles dificiles={data.dificiles} /></Card>
               <Card id="c-ses" titulo={t("hist.sesionesRecientes")} sub={t("hist.sesionesSub")}><Sesiones sesiones={data.sesiones_recientes} /></Card>
