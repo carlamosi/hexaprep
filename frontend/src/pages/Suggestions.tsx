@@ -30,7 +30,7 @@ export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: P
       {items.length === 0 && <p className="mt-6 text-[var(--ink-2)]">{t("hoy.vacio")}</p>}
       <ol className="mt-6 space-y-4">
         {items.map((s, i) => (
-          <li key={s.concepto_id ?? `s-${i}`} className="rounded-[16px] border border-[var(--rule)] bg-white p-5">
+          <li key={s.concepto_id ?? `s-${i}`} className="rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5">
             {(
               <>
                 <h2 className="text-lg font-semibold">{s.concepto}</h2>

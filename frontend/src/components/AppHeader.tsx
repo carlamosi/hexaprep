@@ -1,4 +1,5 @@
 import { useEffect, type ReactNode } from "react";
+import { esOscuro } from "../tema";
 import type { Subject } from "../api";
 import { t } from "../i18n";
 import { AsignaturaSelector } from "./AsignaturaSelector";
@@ -53,19 +54,21 @@ interface Props {
 }
 
 /** Mezcla un color #rrggbb con blanco (p = parte de color) para una barra clara con tinte de la asignatura. */
-export function tinte(hex: string | undefined, p = 0.3): string | undefined {
+export function tinte(hex: string | undefined, p = 0.3, base = 255): string | undefined {
   const m = /^#([0-9a-f]{6})$/i.exec(hex ?? "");
   if (!m) return undefined;
   const n = parseInt(m[1], 16);
-  const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v * p + 255 * (1 - p)));
+  const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v * p + base * (1 - p)));
   return `#${c.map((v) => v.toString(16).padStart(2, "0")).join("")}`;
 }
 
 export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, onAbrirSelector, ruta, sinNav }: Props) {
-  const color = tinte(asignaturas.find((a) => a.id === asignaturaId)?.acento);
+  const acento = asignaturas.find((a) => a.id === asignaturaId)?.acento;
+  const color = tinte(acento) && `color-mix(in srgb, ${acento} 30%, var(--paper))`;
   useEffect(() => { // la barra de estado del iPhone toma el mismo color
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color ?? "#B05A8F");
-  }, [color]);
+    const oscuro = esOscuro();
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", tinte(acento, 0.3, oscuro ? 0x17 : 255) ?? "#B05A8F");
+  }, [acento]);
   return (
     <header style={color ? { background: color } : undefined} className={`sticky top-0 z-10 border-b border-[var(--rule)] sm:backdrop-blur ${color ? "" : "bg-[var(--paper)]/95"}`}>
       <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-4 py-3">
@@ -94,7 +97,7 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
                 href={`#${k}`}
                 aria-current={ruta === k ? "page" : undefined}
                 className={`flex items-center gap-2 rounded-[11px] border px-3 py-2 text-sm font-medium no-underline max-sm:flex-col max-sm:gap-0.5 max-sm:text-xs ${
-                  ruta === k ? "border-[var(--rule-2)] bg-white text-[var(--ink)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
+                  ruta === k ? "border-[var(--rule-2)] bg-[var(--card)] text-[var(--ink)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
                 }`}
               >
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">{ICONOS[k]}</svg>

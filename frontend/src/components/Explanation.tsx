@@ -24,7 +24,7 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
       {result.campos && !result.correcta && (
         <ul className="space-y-2">
           {result.campos.map((c, i) => (
-            <li key={i} className="rounded-[11px] border border-[var(--rule)] bg-white px-4 py-2">
+            <li key={i} className="rounded-[11px] border border-[var(--rule)] bg-[var(--card)] px-4 py-2">
               <span className="font-semibold">{c.etiqueta}</span>: {c.correcto ? "✓ " : "✗ "}
               <strong>{c.esperado.join(" o ")}</strong>
               {c.nota && <p className="mt-1 text-[var(--ink-2)]">{c.nota}</p>}
@@ -34,7 +34,7 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
       )}
 
       {result.explicacion && (
-        <details className="rounded-[11px] border border-[var(--rule)] bg-white px-4 py-3" onToggle={(e) => { if (e.currentTarget.open) onExplicacionAbierta?.(); }}>
+        <details className="rounded-[11px] border border-[var(--rule)] bg-[var(--card)] px-4 py-3" onToggle={(e) => { if (e.currentTarget.open) onExplicacionAbierta?.(); }}>
           <summary className="cursor-pointer font-medium">{t("practica.ver_explicacion")}</summary>
           <p className="mt-2 text-[var(--ink-2)]">
             <RichText text={result.explicacion} />
@@ -51,14 +51,14 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
           <BookletButton fuenteId={result.fuente_id} cara={result.fuente_cara} pagina={result.fuente_pagina} />
         )}
         {onMarcarBien && !result.correcta && (
-          <button type="button" onClick={onMarcarBien} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2 font-medium">
+          <button type="button" onClick={onMarcarBien} className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-5 py-2 font-medium">
             {t("practica.loHeHechoBien")}
           </button>
         )}
         <button
           type="button"
           onClick={onNext} disabled={siguienteBloqueado}
-          className="relative rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-50"
+          className="relative rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] disabled:opacity-50"
         >
           {t("practica.siguiente")}
           {avanceMs !== undefined && (

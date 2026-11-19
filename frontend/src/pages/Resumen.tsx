@@ -56,7 +56,7 @@ export function Resumen({ sesionId, fallos, onVolver, onSeguir, client = api }: 
           <h2 className="mb-3 text-lg font-semibold">{t("fin.errores")}</h2>
           <ul className="space-y-3">
             {fallos.map((f) => (
-              <li key={f.pregunta_id} className="rounded-[11px] border border-[var(--rule)] bg-white p-4">
+              <li key={f.pregunta_id} className="rounded-[11px] border border-[var(--rule)] bg-[var(--card)] p-4">
                 <p className="text-[var(--ink-2)]">{f.enunciado}</p>
                 <button type="button" aria-expanded={abierta === f.pregunta_id} onClick={() => setAbierta(abierta === f.pregunta_id ? null : f.pregunta_id)}
                   className="mt-2 min-h-11 text-sm font-medium text-[var(--lila-ink)] underline underline-offset-4">
@@ -70,8 +70,8 @@ export function Resumen({ sesionId, fallos, onVolver, onSeguir, client = api }: 
       )}
       <p className="text-sm text-[var(--ink-3)]">{t("fin.dormir")}</p>
       <div className="flex flex-wrap gap-3">
-        {onSeguir && <button type="button" onClick={onSeguir} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">{t("fin.seguir")}</button>}
-        <button type="button" onClick={onVolver} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2 font-medium">{t("fin.volver")}</button>
+        {onSeguir && <button type="button" onClick={onSeguir} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">{t("fin.seguir")}</button>}
+        <button type="button" onClick={onVolver} className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-5 py-2 font-medium">{t("fin.volver")}</button>
       </div>
     </main>
   );

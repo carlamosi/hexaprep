@@ -31,7 +31,7 @@ export function Review({ fallos }: { fallos: Fallo[] }) {
           for (const f of items) if (f.fuente_id && f.fuente_pagina) pages.set(`${f.fuente_id}:${f.fuente_pagina}`, f);
           const labelId = `fallo-grupo-${gi}`;
           return (
-            <div key={trampa} role="group" aria-labelledby={labelId} className="rounded-[16px] border border-[var(--rule)] bg-white p-5">
+            <div key={trampa} role="group" aria-labelledby={labelId} className="rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5">
               <h2 id={labelId} className="text-lg font-semibold">{trampa || t("review.otros")}</h2>
               <p className="text-sm text-[var(--ink-3)]">
                 {items.length} {items.length === 1 ? t("review.fallo") : t("review.fallos")}

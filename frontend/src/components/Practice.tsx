@@ -33,7 +33,7 @@ interface Props {
 /** Tarjeta vacía mientras llega la siguiente pregunta (nunca el texto «Cargando»). */
 function Esqueleto() {
   return (
-    <article data-testid="esqueleto" aria-busy="true" aria-label={t("app.cargando")} className="mx-auto w-full max-w-3xl animate-pulse rounded-[16px] border border-[var(--rule)] bg-white p-5 sm:p-8">
+    <article data-testid="esqueleto" aria-busy="true" aria-label={t("app.cargando")} className="mx-auto w-full max-w-3xl animate-pulse rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
       <div className="h-3 w-40 rounded bg-[var(--rule)]" />
       <div className="mt-6 h-6 w-4/5 rounded bg-[var(--rule)]" />
       <div className="mt-3 h-6 w-3/5 rounded bg-[var(--rule)]" />
@@ -385,7 +385,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   if (question === null) return null;
 
   return (
-    <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-white p-5 sm:p-8">
+    <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
         <div className="min-w-0 flex-1 space-y-1 text-xs tracking-[.14em] text-[var(--ink-3)] uppercase">
           <p>{question.tema && question.subtema ? `${question.tema} · ${question.subtema}` : ""}</p>
@@ -401,7 +401,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
             )}
           <details className="relative">
             <summary className="cursor-pointer text-sm text-[var(--ink-3)]">{t("practica.reportar")}</summary>
-            <div role="group" aria-label={t("practica.reportar")} className="mt-2 space-y-2 rounded-[11px] border border-[var(--rule-2)] bg-white p-3">
+            <div role="group" aria-label={t("practica.reportar")} className="mt-2 space-y-2 rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] p-3">
               <p className="text-sm">{t("practica.reporte_pregunta")}</p>
               <button type="button" onClick={() => void report(t("practica.reporte_mal"))} className={BTN_MENU}>{t("practica.reporte_mal")}</button>
               {client.current.facil && <button type="button" onClick={() => void facil()} className={BTN_MENU}>{t("practica.reporte_facil")}</button>}
@@ -440,14 +440,14 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
       {question.imagen && (
         <img
           src={`/img/${question.imagen}`} alt={t("practica.imagenAlt")}
-          className="mx-auto mt-4 max-h-72 w-auto max-w-full rounded-[11px] border border-[var(--rule)] bg-white object-contain p-2"
+          className="mx-auto mt-4 max-h-72 w-auto max-w-full rounded-[11px] border border-[var(--rule)] bg-[var(--card)] object-contain p-2"
         />
       )}
 
       {reported ? (
         <div className="mt-6 space-y-3">
           <p role="status">{reported}</p>
-          <button type="button" onClick={() => void load()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
+          <button type="button" onClick={() => void load()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
             {t("practica.siguiente")}
           </button>
         </div>
@@ -466,7 +466,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
                 onChange={(e) => setValor(e.target.value)} placeholder={t("practica.tuRespuesta")}
                 className="w-64 rounded-[11px] border border-[var(--rule-2)] px-4 py-3 text-lg tabular-nums focus-visible:border-[var(--lila)]"
               />
-              <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
+              <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
                 {t("practica.comprobar")}
               </button>
               <p className="w-full text-sm text-[var(--ink-3)]">{t("practica.formatoRespuesta")}</p>

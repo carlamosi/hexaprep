@@ -6,7 +6,7 @@ import { Hexagon } from "./Hexagon";
 export const TEMA_COLORS = ["var(--azul)", "var(--verde)", "var(--naranja)", "var(--indigo)", "var(--ambar)", "var(--rosa)", "var(--marron)", "var(--carmin)"];
 
 /** Tono del subtema: el color del tema (`--tc`) cada vez más claro. */
-export const tone = (si: number) => (si === 0 ? "var(--tc)" : `color-mix(in srgb, var(--tc) ${Math.max(35, 100 - si * 25)}%, #fff)`);
+export const tone = (si: number) => (si === 0 ? "var(--tc)" : `color-mix(in srgb, var(--tc) ${Math.max(35, 100 - si * 25)}%, var(--card))`);
 
 interface Sub { id: string; nombre: string; hexes: Hex[] }
 export interface Tema { id: string; nombre: string; subtemas: Sub[] }

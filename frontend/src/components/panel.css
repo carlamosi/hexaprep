@@ -48,7 +48,7 @@
   display: block; width: 100%; min-width: 128px; max-width: 220px; margin: 0 0 8px; padding: 4px 6px; border: 0; border-radius: 8px;
   background: none; font: inherit; text-align: left; color: var(--ink); cursor: pointer;
 }
-.pm-sub-name:hover { background: color-mix(in srgb, var(--tc) 8%, #fff); }
+.pm-sub-name:hover { background: color-mix(in srgb, var(--tc) 8%, var(--card)); }
 .pm-sub-name:hover .pm-sub-t { text-decoration: underline; text-underline-offset: 2px; }
 .pm-sub-t { display: block; font-size: .78rem; font-weight: 500; line-height: 1.25; color: var(--ink-2); }
 .pm-sub-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
@@ -63,8 +63,8 @@
 .pm-hex:focus-visible { outline: 2.5px solid var(--lila-ink); outline-offset: 1px; }
 .pm-hex-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .pm-hex-svg .shadow { fill: var(--tc); }
-.pm-hex-svg .base { fill: color-mix(in srgb, var(--c) 10%, #fff); }
-.pm-hex-svg .level { fill: color-mix(in srgb, var(--c) 82%, #fff); }
+.pm-hex-svg .base { fill: color-mix(in srgb, var(--c) 10%, var(--card)); }
+.pm-hex-svg .level { fill: color-mix(in srgb, var(--c) 82%, var(--card)); }
 .pm-hex-svg .line { fill: none; stroke: var(--ink); stroke-width: 1.4px; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 
 .pm-close:focus-visible, .pm-sub-name:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 2px; }

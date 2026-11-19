@@ -6,8 +6,8 @@ import { t } from "../i18n";
 export type SettingsClient = Pick<typeof api,
   "getBackup" | "makeBackup" | "restoreBackup" | "exportWeak" | "exportEvents" | "exportBank" | "reportedQuestions" | "getQuestion" | "editQuestion">;
 
-const boton = "rounded-[11px] border border-[var(--rule-2)] bg-white px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
-const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-white p-5";
+const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
+const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5";
 
 /** Avanzado (dentro de Perfil): copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */
 export function Settings({ asignaturaId, client = api }: { asignaturaId: string; client?: SettingsClient }) {
@@ -65,7 +65,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
             <div className="flex gap-3">
               <button
                 type="button"
-                className="rounded-[11px] bg-[var(--ko)] px-4 py-2 text-white"
+                className="rounded-[11px] bg-[var(--ko)] px-4 py-2 text-[var(--on-ink)]"
                 onClick={() => void run(async () => { await client.restoreBackup(backup.ruta); setConfirmar(false); setAviso(t("ajustes.restaurada")); })}
               >
                 {t("ajustes.confirmar_si")}
@@ -110,7 +110,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
 
       <section className={seccion}>
         <h2 className="text-lg font-semibold">{t("ajustes.idioma")}</h2>
-        <select aria-label={t("ajustes.idioma")} defaultValue="es" className="rounded-[11px] border border-[var(--rule-2)] bg-white px-3 py-2">
+        <select aria-label={t("ajustes.idioma")} defaultValue="es" className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2">
             <option value="es">{t("ajustes.castellano")}</option>
             <option value="ca" disabled>{t("ajustes.catalan")}</option>
           </select>

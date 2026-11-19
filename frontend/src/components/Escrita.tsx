@@ -100,7 +100,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
           </div>
         );
       })}
-      <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
+      <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
         {t("practica.comprobar")}
       </button>
       {falladas.length > 0 && !lista && (

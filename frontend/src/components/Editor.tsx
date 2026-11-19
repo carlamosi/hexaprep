@@ -81,9 +81,9 @@ export function Editor({ preguntaId, asignaturaId, client = api }: { preguntaId:
     }
   }
 
-  const campo = "mt-1 w-full rounded-[11px] border border-[var(--rule-2)] bg-white px-3 py-2";
+  const campo = "mt-1 w-full rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2";
   return (
-    <form onSubmit={(e) => { e.preventDefault(); void guardar(); }} className="space-y-4 rounded-[16px] border border-[var(--rule)] bg-white p-5">
+    <form onSubmit={(e) => { e.preventDefault(); void guardar(); }} className="space-y-4 rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5">
       <label className="block">
         {t("editor.enunciado")}
         <textarea className={campo} rows={3} value={form.enunciado} onChange={(e) => setForm({ ...form, enunciado: e.target.value })} />
@@ -127,7 +127,7 @@ export function Editor({ preguntaId, asignaturaId, client = api }: { preguntaId:
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <button type="submit" className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
+        <button type="submit" className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
           {t("editor.guardar")}
         </button>
         <button type="button" onClick={() => void exportar()} className="rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)]">

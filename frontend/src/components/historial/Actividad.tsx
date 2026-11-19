@@ -8,7 +8,7 @@ const MESES = ["ene", "feb", "mar", "abr", "may", "jun", "jul", "ago", "sept", "
 const IZQ = 24;
 const ARRIBA = 18;
 const GAP = 3;
-export const NIVEL = ["var(--rule)", "color-mix(in srgb, var(--lila) 24%, #fff)", "color-mix(in srgb, var(--lila) 48%, #fff)", "color-mix(in srgb, var(--lila) 74%, #fff)", "var(--lila)"];
+export const NIVEL = ["var(--rule)", "color-mix(in srgb, var(--lila) 24%, var(--card))", "color-mix(in srgb, var(--lila) 48%, var(--card))", "color-mix(in srgb, var(--lila) 74%, var(--card))", "var(--lila)"];
 
 const hexPts = (x: number, y: number, w: number, h: number) =>
   [[.25, 0], [.75, 0], [1, .5], [.75, 1], [.25, 1], [0, .5]].map(([a, b]) => `${x + a * w},${y + b * h}`).join(" ");

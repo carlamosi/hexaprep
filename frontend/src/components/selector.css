@@ -14,7 +14,7 @@
 
 .asig-pop {
   position: absolute; left: 0; top: calc(100% + 8px); z-index: 30; width: min(88vw, 330px); padding: 8px;
-  background: #fff; border: 1.5px solid var(--ink); border-radius: 14px; box-shadow: 4px 4px 0 var(--c);
+  background: var(--card); border: 1.5px solid var(--ink); border-radius: 14px; box-shadow: 4px 4px 0 var(--c);
   animation: asig-in .14s var(--ease);
 }
 .asig-op {
@@ -22,11 +22,11 @@
   background: none; border: 1.5px solid transparent; border-radius: 11px; cursor: pointer;
 }
 .asig-op + .asig-op { margin-top: 4px; }
-.asig-op:hover { background: color-mix(in srgb, var(--c) 9%, #fff); }
-.asig-op[aria-selected="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 10%, #fff); }
+.asig-op:hover { background: color-mix(in srgb, var(--c) 9%, var(--card)); }
+.asig-op[aria-selected="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 10%, var(--card)); }
 .asig-hex {
   flex: none; width: 42px; height: 37px; clip-path: var(--hex-flat);
-  background: linear-gradient(to top, var(--c) var(--p), color-mix(in srgb, var(--c) 16%, #fff) var(--p));
+  background: linear-gradient(to top, var(--c) var(--p), color-mix(in srgb, var(--c) 16%, var(--card)) var(--p));
 }
 .asig-txt { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .asig-op-nombre { font-weight: 600; }

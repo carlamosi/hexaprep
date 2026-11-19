@@ -42,7 +42,7 @@ export function FreePractice({ asignaturaId, temaId, tipos, client = api, onFini
       <>
         <Review fallos={fallos.current} />
         <div className="mx-auto max-w-3xl px-4 pb-8">
-          <button type="button" onClick={onFinish} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
+          <button type="button" onClick={onFinish} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
             {t("subtema.volver")}
           </button>
         </div>

@@ -24,7 +24,7 @@
 .hp-banner b { color: var(--ink); }
 .hp-banner > i { width: 20px; height: 18px; flex: none; margin-top: 2px; clip-path: var(--hex-flat); background: repeating-linear-gradient(135deg, var(--lila) 0 2px, var(--lila-tint) 2px 5px); }
 .hp-key-low { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; color: var(--ink-3); font-size: .8rem; }
-.hp-key-low i { flex: none; width: 22px; height: 10px; border-radius: 3px; outline: 1.5px dashed var(--ink-3); outline-offset: -1.5px; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--lila) 55%, #fff) 0 2px, #fff 2px 5px); }
+.hp-key-low i { flex: none; width: 22px; height: 10px; border-radius: 3px; outline: 1.5px dashed var(--ink-3); outline-offset: -1.5px; background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--lila) 55%, var(--card)) 0 2px, var(--card) 2px 5px); }
 
 /* Resumen: dominio protagonista y cifras grandes */
 .hp-summary { display: grid; grid-template-columns: minmax(250px, 320px) minmax(0, 1fr); gap: 16px; }
@@ -96,7 +96,7 @@
 .hp-bar-val { font-weight: 600; font-size: .9rem; text-align: right; font-variant-numeric: tabular-nums; }
 .hp-bar-n { color: var(--ink-3); font-size: .76rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .hp-bar.is-low .hp-bar-track i, .hp-col.is-low .hp-col-bar {
-  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--s) 60%, #fff) 0 2px, color-mix(in srgb, var(--s) 14%, #fff) 2px 5px);
+  background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--s) 60%, var(--card)) 0 2px, color-mix(in srgb, var(--s) 14%, var(--card)) 2px 5px);
   outline: 1.5px dashed color-mix(in srgb, var(--s) 70%, var(--ink)); outline-offset: -1.5px;
 }
 .hp-bar.is-low .hp-bar-val, .hp-bar.is-empty .hp-bar-val { color: var(--ink-3); font-weight: 500; }
@@ -131,7 +131,7 @@
 .hp-rank li { display: grid; grid-template-columns: 26px minmax(0, 1fr) 72px auto; gap: 12px; align-items: center; padding: 10px 0; border-top: 1px solid var(--rule); }
 .hp-rank li:first-child { border-top: 0; padding-top: 0; }
 .hp-rank-i { display: grid; place-items: center; width: 26px; height: 23px; clip-path: var(--hex-flat); background: var(--lila-soft); font-size: .76rem; font-weight: 600; color: var(--lila-ink); }
-.hp-rank li:nth-child(-n + 3) .hp-rank-i { background: var(--lila); color: #fff; }
+.hp-rank li:nth-child(-n + 3) .hp-rank-i { background: var(--lila); color: var(--on-ink); }
 .hp-rank-t { margin: 0; font-size: .9rem; line-height: 1.35; color: var(--ink); }
 .hp-rank-sub { margin: 2px 0 0; font-size: .78rem; color: var(--ink-3); line-height: 1.3; }
 .hp-rank-bar { height: 8px; border-radius: 4px; background: var(--paper); overflow: hidden; }
@@ -183,7 +183,7 @@
 .hp-empty p { margin: 8px 0 0; max-width: 52ch; color: var(--ink-2); }
 .hp-btn {
   margin-top: 16px; min-height: 42px; padding: 8px 16px; border: 1.5px solid var(--ink); border-radius: 11px; background: var(--ink);
-  color: #fff; font: 600 .9rem var(--font); cursor: pointer; box-shadow: 3px 3px 0 var(--lila);
+  color: var(--on-ink); font: 600 .9rem var(--font); cursor: pointer; box-shadow: 3px 3px 0 var(--lila);
 }
 .hp-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); }
 

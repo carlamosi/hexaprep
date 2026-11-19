@@ -83,7 +83,7 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
           <button type="button" onClick={() => { setFin(false); setSid(null); }} className="rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)]">
             {nombre}
           </button>
-          <button type="button" onClick={onBack} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
+          <button type="button" onClick={onBack} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
             {t("subtema.volver")}
           </button>
         </div>
@@ -104,7 +104,7 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
         ))}
       </ul>
       <div className="mt-6 flex gap-3">
-        <button type="button" onClick={() => void start()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)]">
+        <button type="button" onClick={() => void start()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
           {t("subtema.practicar")}
         </button>
         <button type="button" onClick={onBack} className="rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)]">

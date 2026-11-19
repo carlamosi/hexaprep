@@ -79,7 +79,7 @@ export function ordenPanal(hexes: Hex[]) {
   return temas;
 }
 
-const subTone = (color: string, si: number) => (si === 0 ? color : `color-mix(in srgb, ${color} ${Math.max(40, 100 - si * 16)}%, #fff)`);
+const subTone = (color: string, si: number) => (si === 0 ? color : `color-mix(in srgb, ${color} ${Math.max(40, 100 - si * 16)}%, var(--card))`);
 
 export function lineas(evo: Analytics["evolucion"], vista: Vista, orden: ReturnType<typeof ordenPanal>): Linea[] {
   const pos = (id: string) => orden.get(id)?.indice ?? 99;

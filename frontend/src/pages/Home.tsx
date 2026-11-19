@@ -54,14 +54,14 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
           </div>
           <div className="flex flex-wrap gap-3 sm:ml-auto">
             {onPracticar && (
-              <button type="button" onClick={onPracticar} className="rounded-[11px] bg-[var(--ink)] px-5 py-2.5 font-semibold text-white shadow-[4px_4px_0_var(--lila)]">
+              <button type="button" onClick={onPracticar} className="rounded-[11px] bg-[var(--ink)] px-5 py-2.5 font-semibold text-[var(--on-ink)] shadow-[4px_4px_0_var(--lila)]">
                 {t("home.practicar")}
               </button>
             )}
             {mezcla && (
               <>
                 {presentes.map(([clave, , texto]) => (
-                  <button key={clave} type="button" onClick={() => onPracticarTipo?.(clave)} className="rounded-[11px] border border-[var(--rule-2)] bg-white px-5 py-2.5 font-semibold">
+                  <button key={clave} type="button" onClick={() => onPracticarTipo?.(clave)} className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-5 py-2.5 font-semibold">
                     {t(texto)}
                   </button>
                 ))}
