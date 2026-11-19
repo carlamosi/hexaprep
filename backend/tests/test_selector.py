@@ -37,7 +37,7 @@ def clave(session, q):
 def test_starts_hard_because_the_student_already_has_prior_knowledge(session, bank):
     asig, sid = setup(session, bank, [(f"q{d}", f"c{d}", "s", d) for d in range(1, 6)])
     q = next_question(session, sid, Filtro(asig))
-    assert clave(session, q) == "q4"  # sin datos se supone un dominio previo: d4 acerca al 60 %, d3 sería demasiado fácil
+    assert clave(session, q) == "q3"  # sin datos se supone un dominio previo; con objetivo 0,7 (D8) la d3 es la que más se acerca
 
 
 def test_next_question_follows_the_measured_level_once_there_is_data(session, bank):

@@ -26,7 +26,7 @@ TIPOS = {
 }
 # los únicos que puede enviar el navegador por su cuenta (el resto los registra el servidor)
 TIPOS_CLIENTE = {"explicacion_cerrada", "explicacion_abierta", "ayuda_abierta", "contexto", "reanudacion", "carga", "copia"}
-OBJETIVOS = (0.6, 0.75, 0.85)  # acierto buscado; con (0.6,) se desactiva el experimento
+OBJETIVOS = (0.7,)  # D8: un solo objetivo (el sorteo 0,6/0,75/0,85 se retiró; el lote 1 no estaba desplegado)
 MAX_PAYLOAD = 1000  # caracteres del JSON de un evento de cliente
 TOLERANCIA_PROBLEMA = 0.01  # error relativo que cuenta como acierto en un problema
 CONFIANZAS = {"seguro", "dudo", "adivino"}

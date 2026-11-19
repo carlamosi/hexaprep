@@ -76,4 +76,4 @@ def test_el_selector_busca_la_dificultad_que_da_el_objetivo(session, monkeypatch
     facil = next_question(session, sid, Filtro(asig, objetivo=0.93), random.Random(0))
     dificil = next_question(session, sid, Filtro(asig, objetivo=0.35), random.Random(0))
     assert (facil.dificultad, dificil.dificultad) == (1, 5)
-    assert next_question(session, sid, Filtro(asig), random.Random(0)).dificultad == 3  # sin objetivo: 0,6
+    assert next_question(session, sid, Filtro(asig), random.Random(0)).dificultad == 3  # sin objetivo: 0,7

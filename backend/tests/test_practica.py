@@ -52,14 +52,15 @@ def responder(session, sid, q, bien=True):
 
 
 # ---------- orden y aleatoriedad ----------
-def test_never_serves_the_same_concept_twice_in_a_row_when_there_is_an_alternative(session):
+def test_never_serves_the_same_concept_three_times_in_a_row_when_there_is_an_alternative(session):
+    # D1: al empezar un concepto salen 2 seguidas y luego se intercala
     asig, sid = montar(session, *[preg_test(f"a{i}", "A") for i in range(3)], *[preg_test(f"b{i}", "B") for i in range(3)])
-    ultimo = None
+    seq = []
     for _ in range(6):
         q = next_question(session, sid, Filtro(asig))
-        assert q.concepto_id != ultimo
-        ultimo = q.concepto_id
+        seq.append(q.concepto_id)
         responder(session, sid, q)
+    assert all(not (a == b == c) for a, b, c in zip(seq, seq[1:], seq[2:])), f"secuencia servida {seq}"
 
 
 def test_alternates_question_types_when_difficulty_is_equal(session, monkeypatch):
