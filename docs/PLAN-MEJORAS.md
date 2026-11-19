@@ -4,20 +4,22 @@ Origen: lista de mejoras de Carla tras usar la app, más el análisis de sus dat
 
 ## Plan de ejecución y consumo de créditos
 
-El límite semanal de Carla se restablece el sábado 21 de noviembre de 2026 a las 13:00. Dos tareas programadas continúan solas: la ejecución 1 (sábado 13:10) y la ejecución 2 (domingo 13:10). Corren con la app abierta y el PC encendido; si la app está cerrada, corren al abrirla.
+El límite semanal de Carla se restablece el sábado 21 de noviembre de 2026 a las 13:00. Se trabaja hoy en una conversación nueva (contexto limpio: cada turno cuesta menos) hasta agotar el límite, y una tarea programada el sábado a las 13:10 continúa por donde se quedó. Corre con la app abierta y el PC encendido; si la app está cerrada, corre al abrirla. Si la sesión de hoy termina todo, la del sábado lo detecta en la lista de progreso y acaba enseguida.
 
-| Ejecución | Bloques | Por qué así |
+| Quién | Bloques, en este orden | Por qué así |
 |---|---|---|
-| 1 (sáb 13:10) | 0, A, B | Sin decisiones pendientes y casi todo frontend: la mayor mejora visible por crédito. |
-| 2 (dom 13:10) | C (menos C1), D1 a D9 | Lógica con pruebas primero; no necesita tu ojo. |
+| Sesión de hoy, hasta agotar el límite | 0, A, B, C (menos C1), D | Sin decisiones pendientes: primero lo que más se nota por crédito (frontend), después la lógica con pruebas primero. |
+| Tarea del sábado 13:10 | Lo que falte de 0, A, B, C y D, leyendo la lista de progreso | Continúa sola tras el reinicio del límite. |
 | Cuando la veas | E, F (con boceto aprobado), G (memo con Opus), H (piloto), C1 (push) | Necesitan tu aprobación o tu decisión. |
+
+Al empezar, cada sesión mira `git status`: si hay cambios sin commit de un bloque a medias (el límite cortó), los revisa, los termina si son pocos o los guarda con `git stash` (nunca los descarta) y lo anota en la lista de progreso.
 
 Reglas para gastar poco (valen para cada ejecución):
 - Sonnet 5.5, esfuerzo medio, sin subagentes ni sesiones paralelas. Opus solo para el memo de G1, la muestra de H y las reglas de B7.
 - Primero `tools/probar.py` (bloque 0); después, pruebas dirigidas con `-k`, y la suite completa una vez al cerrar cada bloque. Salida de pruebas siempre a archivo, leer solo la cola.
 - Leer solo los archivos que el bloque toca; el mapa del código está en `CLAUDE.md` y `docs/ESTADO.md`.
 - Sin capturas salvo una a escala 0,5 para A9. Playwright del iPhone una sola vez, al final de A.
-- Un commit por bloque con el mensaje habitual y su atribución. **Sin push** (cada push despliega en producción) y **sin escribir en Neon** (nada de `actualizar_perfiles.py` ni quitar reportes): eso se hace con Carla.
+- Un commit por bloque (o por grupo coherente), con la skill `commit:commit` indicando solo commit, sin push y en `main`; si la skill pregunta algo que no se puede contestar, `git commit` normal con mensaje claro y la atribución habitual. **Sin push** (cada push despliega en producción) y **sin escribir en Neon** (nada de `actualizar_perfiles.py` ni quitar reportes): eso se hace con Carla.
 - Si aparece un aviso de límite de uso: parar, anotar el estado en esta lista de progreso y no reintentar en bucle.
 - Al acabar cada bloque, marcar la casilla de abajo y actualizar `docs/ESTADO.md` en una sola línea.
 - Nada de emails, cuentas ni datos personales en archivos del repositorio.
