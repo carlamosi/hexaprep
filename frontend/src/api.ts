@@ -103,6 +103,10 @@ export interface QuestionContent {
   tipo?: string; solucion?: number | number[] | null; campos?: { etiqueta: string; validas: string[] }[] | null; contexto?: string | null;
 }
 export interface ReportedQuestion { pregunta_id: string; enunciado: string; motivo: string | null }
+export interface ResumenSesion {
+  respondidas: number; aciertos: number; tiempo_activo_s: number; percent_asignatura: number;
+  conceptos: { concepto_id: string; nombre: string; tema: string; percent_antes: number; percent_despues: number }[];
+}
 export type Alcance = "pregunta" | "concepto" | "tema";
 export interface Oculto { id: string; alcance: Alcance; nombre: string; claves: string[] }
 export interface BackupRow { ruta: string; verificada: boolean; n_eventos: number; fecha: string }
@@ -151,6 +155,7 @@ export const api = {
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>
     request<{ ok: boolean }>(`/api/questions/${id}/report`, "POST", { motivo, sesion_id: sesionId ?? null }),
   fin: (sesionId: string) => request<{ respondidas: number; abandonadas: number }>(`/api/sessions/${sesionId}/fin`, "POST"),
+  resumenSesion: (sesionId: string) => request<ResumenSesion>(`/api/sessions/${sesionId}/resumen`),
   getFoco: (asignaturaId: string) => request<{ tema_id: string | null }>(`/api/foco/${asignaturaId}`),
   setFoco: (asignaturaId: string, temaId: string | null) => request<{ tema_id: string | null }>(`/api/foco/${asignaturaId}`, "PUT", { tema_id: temaId }),
   ocultar: (preguntaId: string, alcance: Alcance) =>

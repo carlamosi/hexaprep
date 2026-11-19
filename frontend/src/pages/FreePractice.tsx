@@ -3,11 +3,12 @@ import { api } from "../api";
 import { Practice } from "../components/Practice";
 import { t } from "../i18n";
 import { clearSession, openSession } from "../session";
+import { Resumen } from "./Resumen";
 import { Review, type Fallo } from "./Review";
 
 const TIPOS: Record<string, string[]> = { test: ["test", "vf"], problemas: ["problema"], escritas: ["escrita"] };
 
-type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "getSession">>;
+type Client = Pick<typeof api, "createSession" | "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "getSession" | "resumenSesion">>;
 
 /** Práctica adaptativa libre: sin duración fija, mezclando temas. «Terminar sesión» enseña los fallos agrupados. */
 /** `tipos`: «test» (test y verdadero/falso) o «problemas»; sin indicar, mezcla todo. */
@@ -18,6 +19,7 @@ export function FreePractice({ asignaturaId, temaId, tipos, client = api, onFini
   const [failed, setFailed] = useState(false);
   const fallos = useRef<Fallo[]>([]);
   const started = useRef(false);
+  const [ronda, setRonda] = useState(0); // «Seguir practicando» abre una sesión nueva
   const key = `hexaprep.sesion.practica.${asignaturaId}${temaId ? `.${temaId}` : ""}${tipos ? `.${tipos}` : ""}`;
   const setFin = (v: boolean) => { if (v) clearSession(key); setFinState(v); };
 
@@ -27,10 +29,14 @@ export function FreePractice({ asignaturaId, temaId, tipos, client = api, onFini
     openSession(key, client, () => client.createSession("practica", { asignatura_id: asignaturaId, ...(temaId && { tema_id: temaId }), ...(tipos && { tipos: TIPOS[tipos] ?? [] }) }))
       .then((o) => { setSid(o.sid); setAnswered(o.answered); })
       .catch(() => setFailed(true));
-  }, [asignaturaId, temaId, tipos, client, key]);
+  }, [asignaturaId, temaId, tipos, client, key, ronda]);
 
   if (failed) return <p role="alert" className="px-4 py-8">{t("app.error")}</p>;
   if (!sid) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
+  if (fin && client.resumenSesion) {
+    return <Resumen sesionId={sid} fallos={fallos.current} client={client} onVolver={onFinish}
+      onSeguir={() => { fallos.current = []; started.current = false; setSid(null); setAnswered(0); setFinState(false); setRonda((n) => n + 1); }} />;
+  }
   if (fin) {
     return (
       <>

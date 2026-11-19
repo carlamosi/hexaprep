@@ -32,8 +32,8 @@ Progreso:
 - [x] D Selector y retención (D1 a D9; D2 solo se activa si Carla marca un tema en curso en Perfil)
 - [ ] E Identidad visual (con boceto)
 - [ ] F Panal y búsqueda (con boceto)
-- [ ] G Fin de sesión
-- [ ] H Trimestral de Economía
+- [x] G Fin de sesión (implementado desde el texto del plan, sin memo de Opus)
+- [ ] H Trimestral de Economía (aplazado a petición de Carla)
 - [ ] C1 Desplegar (push, a petición de Carla)
 
 ## Hecho

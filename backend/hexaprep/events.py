@@ -16,7 +16,7 @@ from .escritura import corregir
 from .ritmo import carga_esperada
 from .bank import MAX_VALORES
 from .importer import leer_solucion
-from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
+from .models import Bloque, Concepto, Evento, Intento, Opcion, Pregunta, Sesion, Subtema, Tema, utcnow
 
 logger = logging.getLogger(__name__)
 MODOS = {"practica", "repaso_subtema", "repaso_fallos"}
@@ -303,6 +303,37 @@ def finish_session(session: Session, sesion_id: str) -> dict:
         session.add(Evento(sesion_id=sesion_id, tipo="sesion_terminada", pregunta_id=None, t_cliente=ses.fin, payload=resultado))
     _commit(session)
     return resultado
+
+
+def session_summary(session: Session, sesion_id: str) -> dict:
+    """Resumen de una sesión para la pantalla final: lo tocado con su progreso antes y después, aciertos y tiempo activo."""
+    _require_session(session, sesion_id)
+    filas = session.execute(
+        select(Intento, Evento.payload, Concepto, Tema.nombre).join(Concepto, Concepto.id == Intento.concepto_id)
+        .join(Subtema, Subtema.id == Concepto.subtema_id).join(Tema, Tema.id == Subtema.tema_id)
+        .outerjoin(Evento, Evento.id == Intento.evento_id).where(Intento.sesion_id == sesion_id).order_by(Intento.id)).all()
+    activo = 0.0
+    for i, pay, _, _ in filas:
+        t = ((pay or {}).get("tiempos") or {}).get("t_activo", i.t_envio)
+        activo += float(t) if isinstance(t, (int, float)) else 0.0
+    vistos: dict[str, tuple[Concepto, str]] = {}
+    for _, _, c, tema in filas:
+        vistos.setdefault(c.id, (c, tema))
+    ids = list(vistos)
+    dias_antes = mastery.dias_acierto(session, ids, sesion_id)
+    dias_ahora = mastery.dias_acierto(session, ids)
+    conceptos = []
+    for cid, (c, tema) in vistos.items():
+        theta0, sigma0, n0, *_ = mastery.reconstruir(session, cid, sesion_id)
+        theta1, sigma1, *_ = mastery.reconstruir(session, cid)
+        conceptos.append({"concepto_id": cid, "nombre": c.nombre, "tema": tema,
+                          "percent_antes": mastery.percent_concepto(theta0, sigma0, dias_antes.get(cid, 0)) if n0 else 0,
+                          "percent_despues": mastery.percent_concepto(theta1, sigma1, dias_ahora.get(cid, 0))})
+    asig = session.scalar(select(Bloque.asignatura_id).join(Tema, Tema.bloque_id == Bloque.id)
+                          .join(Subtema, Subtema.tema_id == Tema.id).join(Concepto, Concepto.subtema_id == Subtema.id)
+                          .where(Concepto.id == ids[0])) if ids else None
+    return {"respondidas": len(filas), "aciertos": sum(1 for i, *_ in filas if i.correcta), "tiempo_activo_s": round(activo, 1),
+            "conceptos": conceptos, "percent_asignatura": mastery.percent_of(session, "asignatura", asig) if asig else 0}
 
 
 def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:

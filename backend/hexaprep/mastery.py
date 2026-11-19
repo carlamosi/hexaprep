@@ -95,13 +95,13 @@ def percent_de(session: Session, dom: Dominio) -> int:
     return percent_concepto(dom.theta, dom.sigma, dias_acierto(session, [dom.concepto_id]).get(dom.concepto_id, 0))
 
 
-def dias_acierto(session: Session, concepto_ids: list[str]) -> dict[str, int]:
+def dias_acierto(session: Session, concepto_ids: list[str], excluir_sesion: str | None = None) -> dict[str, int]:
     """Días distintos con algún acierto por concepto (sin intentos de preguntas excluidas)."""
     fechas: dict[str, set] = {}
     for cid, creado in session.execute(
             select(Intento.concepto_id, Intento.created_at).join(Pregunta, Pregunta.id == Intento.pregunta_id)
             .where(Intento.concepto_id.in_(concepto_ids), Intento.correcta.is_(True), Intento.deleted_at.is_(None),
-                   Pregunta.excluida.is_(False))):
+                   Pregunta.excluida.is_(False), Intento.sesion_id != (excluir_sesion or ""))):
         fechas.setdefault(cid, set()).add(creado.date())
     return {c: len(f) for c, f in fechas.items()}
 
@@ -115,13 +115,14 @@ def _dominio(session: Session, concepto_id: str) -> Dominio:
     return dom
 
 
-def reconstruir(session: Session, concepto_id: str) -> tuple[float, float, int, int, float]:
+def reconstruir(session: Session, concepto_id: str, excluir_sesion: str | None = None) -> tuple[float, float, int, int, float]:
     """Dominio de un concepto repitiendo sus intentos (sin los de preguntas excluidas), sin escribir nada:
     (theta, sigma, n_intentos, racha, tendencia)."""
     rows = session.execute(
         select(Intento.correcta, Intento.dificultad, Pregunta.tipo, Intento.sesion_id, Intento.pregunta_id)
         .join(Pregunta, Pregunta.id == Intento.pregunta_id)
-        .where(Intento.concepto_id == concepto_id, Pregunta.excluida.is_(False), Intento.deleted_at.is_(None))
+        .where(Intento.concepto_id == concepto_id, Pregunta.excluida.is_(False), Intento.deleted_at.is_(None),
+               Intento.sesion_id != (excluir_sesion or ""))
         .order_by(Intento.id)).all()
     theta, sigma, racha, history = 0.0, SIGMA0, 0, [0.0]
     en_sesion: dict[str, int] = {}

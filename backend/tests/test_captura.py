@@ -163,3 +163,15 @@ def test_fin_de_sesion_guarda_fin_y_cuenta_las_abandonadas(session):
     assert ev.payload == {"respondidas": 1, "abandonadas": 1}
     assert finish_session(session, sid) == r, "terminar dos veces no falla ni duplica el evento"
     assert len(session.scalars(select(Evento).where(Evento.tipo == "sesion_terminada")).all()) == 1
+
+
+def test_resumen_de_sesion_conceptos_tocados_progreso_y_tiempo(session):
+    from hexaprep.events import session_summary
+    sid, ps = montar(session)
+    submit_answer(session, sid, ps["q-te"].id, ["a", "b", "c", "d"], "a", None, {"t_activo": 12.0, "t_envio": 20.0})
+    r = session_summary(session, sid)
+    assert r["respondidas"] == 1 and r["aciertos"] == 1 and r["tiempo_activo_s"] == 12.0, f"resumen: {r}"
+    assert len(r["conceptos"]) == 1
+    c = r["conceptos"][0]
+    assert c["percent_despues"] >= c["percent_antes"] == 0, f"un acierto no puede bajar el progreso: {c}"
+    assert {"concepto_id", "nombre", "tema"} <= set(c) and r["percent_asignatura"] >= 0

@@ -137,3 +137,19 @@ describe("reanudar una sesión interrumpida", () => {
     expect(client.createSession).toHaveBeenCalledWith("practica", { asignatura_id: "a1", tipos: ["test", "vf"] });
   });
 });
+
+describe("fin de sesión", () => {
+  it("muestra_lo_trabajado_con_hexagonos_y_los_errores_con_su_respuesta", async () => {
+    const { Resumen } = await import("../src/pages/Resumen");
+    const client = { resumenSesion: vi.fn().mockResolvedValue({ respondidas: 8, aciertos: 6, tiempo_activo_s: 300, percent_asignatura: 12,
+      conceptos: [{ concepto_id: "c1", nombre: "Gerundi", tema: "Verbs", percent_antes: 10, percent_despues: 25 }, { concepto_id: "c2", nombre: "Hiats", tema: "Accents", percent_antes: 5, percent_despues: 5 }] }) };
+    render(<Resumen sesionId="s1" client={client} onVolver={vi.fn()} onSeguir={vi.fn()}
+      fallos={[{ pregunta_id: "p1", enunciado: "Escriu el gerundi", trampa: null, fuente_id: null, fuente_pagina: null, fuente_cara: null }]} />);
+    expect(await screen.findByText("Has subido 1 concepto en esta sesión")).toBeInTheDocument();
+    expect(screen.getByText(/8 preguntas · 5 min de tiempo activo · 75 % de acierto/)).toBeInTheDocument();
+    expect(screen.getByText("Gerundi")).toBeInTheDocument();
+    expect(screen.getByText("Escriu el gerundi")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Seguir practicando" })).toBeInTheDocument();
+    expect(screen.getByText(/repaso corto antes de dormir/)).toBeInTheDocument();
+  });
+});

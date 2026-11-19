@@ -346,6 +346,13 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
                             tiempo.ahora())
         return {k: v for k, v in asdict(q).items() if k != "servida"}
 
+    @app.get("/api/sessions/{sesion_id}/resumen")
+    def resumen(sesion_id: str, s: Session = Depends(get_session)):
+        try:
+            return events.session_summary(s, sesion_id)
+        except events.UnknownSession:
+            raise HTTPException(404, "Sesión desconocida")
+
     @app.post("/api/sessions/{sesion_id}/fin")
     def fin(sesion_id: str, s: Session = Depends(get_session)):
         try:
