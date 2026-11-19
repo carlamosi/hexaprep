@@ -47,12 +47,16 @@ body {
 .aro-avance { animation-name: aro-avance; animation-timing-function: linear; animation-fill-mode: forwards; stroke-dashoffset: 100; }
 @media (prefers-reduced-motion: reduce) { .aro-avance { animation: none; stroke-dashoffset: 0; } }
 
-/* Pantalla de arranque: trazo del hexágono, relleno que sube y desvanecido */
-.splash { pointer-events: none; position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 14px; background: var(--paper); transition: opacity .3s ease; }
-.splash-fuera { opacity: 0; pointer-events: none; }
-.splash-trazo { stroke-dasharray: 100; stroke-dashoffset: 100; animation: splash-dibuja .5s ease-out forwards; }
-.splash-llena { transform-origin: 50% 100%; transform: scaleY(0); animation: splash-sube .45s .35s ease-out forwards; }
-.splash-nombre { font-weight: 600; letter-spacing: .02em; color: var(--ink); opacity: 0; animation: splash-texto .3s .5s ease-out forwards; }
+/* Pantalla de arranque: panal que entra en cadena, hexágono central que se dibuja y se rellena, nombre que sube */
+.splash { pointer-events: none; position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 6px;
+  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--lila) 22%, var(--paper)) 0, var(--paper) 62%); transition: opacity .25s ease; }
+.splash-fuera { opacity: 0; }
+.splash-sat { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.3) rotate(-30deg); animation: splash-pop .38s cubic-bezier(.2, 1.4, .4, 1) forwards; }
+.splash-sombra { opacity: 0; animation: splash-texto .3s .2s ease-out forwards; }
+.splash-trazo { stroke-dasharray: 100; stroke-dashoffset: 100; animation: splash-dibuja .45s .1s ease-out forwards; }
+.splash-llena { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); animation: splash-sube .45s .35s cubic-bezier(.2, .7, .2, 1) forwards; }
+.splash-nombre { font-size: 1.6rem; font-weight: 600; letter-spacing: .02em; color: var(--ink); opacity: 0; transform: translateY(8px); animation: splash-texto .35s .5s ease-out forwards; }
+@keyframes splash-pop { to { opacity: 1; transform: scale(1) rotate(0); } }
 @keyframes splash-dibuja { to { stroke-dashoffset: 0; } }
 @keyframes splash-sube { to { transform: scaleY(1); } }
-@keyframes splash-texto { to { opacity: 1; } }
+@keyframes splash-texto { to { opacity: 1; transform: none; } }

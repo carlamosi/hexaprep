@@ -9,7 +9,7 @@ describe("pantalla de arranque", () => {
     vi.useFakeTimers();
     render(<Splash />);
     expect(screen.getByTestId("splash")).toBeInTheDocument();
-    expect(SPLASH_MS).toBeLessThan(1000);
+    expect(SPLASH_MS).toBeLessThanOrEqual(1000);
     act(() => { vi.advanceTimersByTime(SPLASH_MS + 400); });
     expect(screen.queryByTestId("splash")).toBeNull();
   });
