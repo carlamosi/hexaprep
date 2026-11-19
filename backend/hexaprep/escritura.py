@@ -69,7 +69,7 @@ def pista_apertura(escrito: str, validas: list[str]) -> str:
 def _reglas_apertura() -> list[dict]:
     global _REGLAS
     if _REGLAS is None:
-        f = Path(__file__).resolve().parents[2] / "banks" / "catala" / "reglas_apertura.json"
+        f = Path(__file__).with_name("reglas_apertura.json")  # dentro de backend/: viaja con el despliegue
         try:
             _REGLAS = json.loads(f.read_text(encoding="utf-8"))["reglas"]
         except (OSError, ValueError, KeyError):

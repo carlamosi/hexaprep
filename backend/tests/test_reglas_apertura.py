@@ -5,7 +5,7 @@ from pathlib import Path
 
 from hexaprep.escritura import corregir_campo
 
-REGLAS = json.loads((Path(__file__).resolve().parents[2] / "banks" / "catala" / "reglas_apertura.json").read_text(encoding="utf-8"))["reglas"]
+REGLAS = json.loads((Path(__file__).resolve().parents[1] / "hexaprep" / "reglas_apertura.json").read_text(encoding="utf-8"))["reglas"]
 
 
 def test_cada_patron_casa_con_sus_ejemplos_y_la_regla_es_de_una_linea_sin_guiones_largos():
