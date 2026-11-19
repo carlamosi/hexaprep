@@ -20,6 +20,14 @@ const ONLINE = { email: "carla@gmail.com", nombre: "Carla Monté", online: true,
 afterEach(() => vi.restoreAllMocks());
 
 describe("perfil", () => {
+  it("el_tema_en_curso_es_opcional_y_se_guarda_al_elegirlo", async () => {
+    const c = { ...cliente(ONLINE), getMap: vi.fn().mockResolvedValue({ asignatura: "X", percent: 0, subtemas: [], hexes: [{ concepto_id: "c", nombre: "n", subtema_id: "s", subtema: "S", tema: "Tema uno", tema_id: "t1", color: "#000", percent: 0 }] }),
+      getFoco: vi.fn().mockResolvedValue({ tema_id: null }), setFoco: vi.fn().mockResolvedValue({ tema_id: "t1" }) };
+    render(<Perfil asignaturaId="a1" client={c} />);
+    await userEvent.selectOptions(await screen.findByLabelText("Tema en curso (opcional)"), "t1");
+    expect(c.setFoco).toHaveBeenCalledWith("a1", "t1");
+  });
+
   it("lista_lo_ocultado_y_permite_volver_a_mostrarlo", async () => {
     const c = { ...cliente(ONLINE), ocultos: vi.fn().mockResolvedValue([{ id: "tema:t1", alcance: "tema", nombre: "Verbos", claves: ["q1"] }]), mostrarOculto: vi.fn().mockResolvedValue({ ok: true }) };
     render(<Perfil asignaturaId="a1" client={c} />);

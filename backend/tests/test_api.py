@@ -185,3 +185,17 @@ def test_ocultar_listar_y_devolver_por_la_api_y_notas_de_pregunta(client, loaded
     assert client.post(f"/api/questions/{pregunta}/alternativa", json={"texto": ""}).status_code == 422
     assert client.post(f"/api/questions/{pregunta}/alternativa", json={"texto": "otra forma"}).status_code == 200
     assert client.get("/api/alternativas").json()[0]["texto"] == "otra forma"
+
+
+def test_foco_se_guarda_solo_si_se_marca_y_viaja_al_filtro_de_la_sesion(client, loaded):
+    sid = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    assert "foco_tema_id" not in client.get(f"/api/sessions/{sid}").json()["filtro"], "sin foco no cambia nada"
+    mapa = client.get(f"/api/map/{loaded}").json()
+    tema = mapa["hexes"][0]["tema_id"]
+    assert client.put(f"/api/foco/{loaded}", json={"tema_id": "no-existe"}).status_code == 404
+    assert client.put(f"/api/foco/{loaded}", json={"tema_id": tema}).json() == {"tema_id": tema}
+    assert client.get(f"/api/foco/{loaded}").json() == {"tema_id": tema}
+    sid = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    assert client.get(f"/api/sessions/{sid}").json()["filtro"]["foco_tema_id"] == tema
+    client.put(f"/api/foco/{loaded}", json={"tema_id": None})
+    assert client.get(f"/api/foco/{loaded}").json() == {"tema_id": None}

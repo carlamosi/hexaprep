@@ -4,7 +4,7 @@ import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
 import { Settings, type SettingsClient } from "./Settings";
 
-export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto">>;
+export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto" | "getFoco" | "setFoco" | "getMap">>;
 
 const boton = "rounded-[11px] border border-[var(--rule-2)] bg-white px-4 py-2 font-medium text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
 const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-white p-5";
@@ -15,6 +15,8 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
   const [confirmar, setConfirmar] = useState(false);
   const [error, setError] = useState(false);
   const [ocultos, setOcultos] = useState<Oculto[]>([]);
+  const [temas, setTemas] = useState<{ id: string; nombre: string }[]>([]);
+  const [foco, setFocoState] = useState<string>("");
 
   useEffect(() => {
     let vivo = true;
@@ -27,6 +29,23 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
     client.ocultos?.().then((o) => vivo && setOcultos(o)).catch(() => {});
     return () => { vivo = false; };
   }, [client]);
+
+  useEffect(() => {
+    if (!asignaturaId || !client.getMap || !client.getFoco) return;
+    let vivo = true;
+    client.getMap(asignaturaId).then((m) => vivo && setTemas([...new Map(m.hexes.map((h) => [h.tema_id, { id: h.tema_id, nombre: h.tema }])).values()])).catch(() => {});
+    client.getFoco(asignaturaId).then((f) => vivo && setFocoState(f.tema_id ?? "")).catch(() => {});
+    return () => { vivo = false; };
+  }, [client, asignaturaId]);
+
+  async function cambiarFoco(id: string) {
+    try {
+      await client.setFoco?.(asignaturaId!, id || null);
+      setFocoState(id);
+    } catch {
+      setError(true);
+    }
+  }
 
   async function volverAMostrar(id: string) {
     try {
@@ -65,6 +84,17 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
       )}
 
       {asignaturaId && <Examen asignaturaId={asignaturaId} client={client} />}
+
+      {asignaturaId && client.setFoco && temas.length > 0 && (
+        <section className={seccion}>
+          <h2 className="text-lg font-semibold"><label htmlFor="foco-tema">{t("perfil.foco")}</label></h2>
+          <select id="foco-tema" value={foco} onChange={(e) => void cambiarFoco(e.target.value)} className="min-h-11 rounded-[11px] border border-[var(--rule-2)] bg-white px-3 py-2 text-base">
+            <option value="">{t("perfil.focoNinguno")}</option>
+            {temas.map((x) => <option key={x.id} value={x.id}>{x.nombre}</option>)}
+          </select>
+          <p className="text-sm text-[var(--ink-3)]">{t("perfil.focoNota")}</p>
+        </section>
+      )}
 
       {client.ocultos && (
         <section className={seccion} aria-label={t("perfil.ocultos")}>

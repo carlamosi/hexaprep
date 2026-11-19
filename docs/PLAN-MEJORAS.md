@@ -29,7 +29,7 @@ Progreso:
 - [x] A Práctica e interfaz (A1 a A12; A9 sin captura de escritorio, ver ESTADO)
 - [x] B Calidad del banco y reportes (B1 a B8; pendiente con Carla: quitar reportes de imágenes del perfil, `actualizar_perfiles.py` con N2 y V1, y revisar «Depèn» de N2)
 - [x] C Datos y robustez (C2, C3 y C5 hechos; C4 sin ejemplo concreto, no se reproduce)
-- [ ] D Selector y retención (D1 a D9)
+- [x] D Selector y retención (D1 a D9; D2 solo se activa si Carla marca un tema en curso en Perfil)
 - [ ] E Identidad visual (con boceto)
 - [ ] F Panal y búsqueda (con boceto)
 - [ ] G Fin de sesión

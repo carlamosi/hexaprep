@@ -82,6 +82,10 @@ class ReportIn(BaseModel):
     sesion_id: str | None = None
 
 
+class FocoIn(BaseModel):
+    tema_id: str | None = None
+
+
 class OcultarIn(BaseModel):
     pregunta_id: str
     alcance: str
@@ -288,11 +292,38 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     @app.post("/api/sessions")
     def create_session(body: SessionIn, s: Session = Depends(get_session)):
         filtro = dict(body.filtro)
+        asig = filtro.get("asignatura_id")
+        if asig and not filtro.get("tema_id") and not filtro.get("subtema_id"):  # D2: solo si Carla marcó un tema en curso
+            foco = s.scalar(select(Ajuste.valor).where(Ajuste.clave == f"foco:{asig}"))
+            if isinstance(foco, str) and foco:
+                filtro["foco_tema_id"] = foco
         try:
             sid = events.start_session(s, body.modo, filtro)
         except ValueError as e:
             raise HTTPException(422, str(e))
         return {"sesion_id": sid}
+
+    @app.get("/api/foco/{asignatura_id}")
+    def foco_get(asignatura_id: str, s: Session = Depends(get_session)):
+        v = s.scalar(select(Ajuste.valor).where(Ajuste.clave == f"foco:{asignatura_id}"))
+        return {"tema_id": v if isinstance(v, str) and v else None}
+
+    @app.put("/api/foco/{asignatura_id}")
+    def foco_put(asignatura_id: str, body: FocoIn, s: Session = Depends(get_session)):
+        clave = f"foco:{asignatura_id}"
+        fila = s.scalar(select(Ajuste).where(Ajuste.clave == clave))
+        if body.tema_id is None:
+            if fila is not None:
+                s.delete(fila)
+        else:
+            if s.get(Tema, body.tema_id) is None:
+                raise HTTPException(404, "Tema desconocido")
+            if fila is None:
+                s.add(Ajuste(clave=clave, valor=body.tema_id))
+            else:
+                fila.valor = body.tema_id
+        s.commit()
+        return {"tema_id": body.tema_id}
 
     @app.get("/api/sessions/{sesion_id}")
     def session_state(sesion_id: str, s: Session = Depends(get_session)):

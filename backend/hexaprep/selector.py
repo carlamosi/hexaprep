@@ -19,6 +19,7 @@
 import json
 import math
 import random
+import re
 from collections import defaultdict
 from dataclasses import dataclass, field
 
@@ -51,6 +52,15 @@ MAX_DESFASE = 1.0
 MIN_MUESTRA = 30  # respuestas con p_pred anotada para calibrar
 RECENCIA_PESO = 0.3
 RECENCIA_DIAS = 2.0
+# D7: conceptos que se confunden entre sí (letras parecidas, apertura de la vocal, artículo masculino y femenino). Tras un
+# concepto, uno de su familia va antes que uno ajeno (y más si se acaba de fallar): contrastar fija mejor que bloquear.
+FAMILIAS_CONFUSION = [
+    re.compile(r"^la \w+ i la |alternança", re.I),  # «La b i la v», «La o i la u», «La essa i la doble erra»
+    re.compile(r"accents|paraules (agudes|planes)", re.I),
+    re.compile(r"article|noms (femenins|masculins)", re.I),
+]
+CONFUNDIBLE_BONUS = 0.15
+CONFUNDIBLE_TRAS_FALLO = 0.3
 DIAS_CONSOLIDADO = 3  # días distintos con aciertos para llamar «consolidado» a un concepto
 SKIPPED_PENALTY = 2.0
 SKIPPED_BONUS = 0.1
@@ -63,6 +73,7 @@ class Filtro:
     subtema_id: str | None = None
     solo_fallos: bool = False
     tipos: list[str] | None = None  # test, vf, problema; None = todos
+    foco_tema_id: str | None = None  # D2: «tema en curso» que Carla marcó a propósito; sin él nada cambia
     objetivo: float | None = None  # acierto buscado en esta sesión; None = TARGET (el experimento lo sortea por sesión)
 
 
@@ -180,6 +191,20 @@ def _anotar(session: Session, out: QuestionOut, p: Pregunta, motivo: str, rank: 
                    "rank": rank, "n_cands": n_cands, "fase": fase_concepto(session, dom, p.concepto_id),
                    "r_fsrs": round(r, 4) if r is not None else None}
     return out
+
+
+PESOS_FOCO = {"foco": 0.6, "repaso": 0.3, "explorar": 0.1}  # D2: 60 % foco, 30 % repaso espaciado, 10 % exploración
+
+
+def elegir_categoria(rng: random.Random, disponibles: set[str]) -> str:
+    """Sortea la categoría del foco entre las que tienen conceptos, con los pesos 60/30/10 reescalados."""
+    cats = [c for c in PESOS_FOCO if c in disponibles]
+    return rng.choices(cats, weights=[PESOS_FOCO[c] for c in cats])[0]
+
+
+def familia_confusion(nombre: str) -> int | None:
+    """Índice de la familia de confusión de un concepto por su nombre, o None."""
+    return next((i for i, rx in enumerate(FAMILIAS_CONFUSION) if rx.search(nombre)), None)
 
 
 def calibrar(p: float, desfase: float) -> float:
@@ -334,6 +359,8 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
     for it in pool:
         por_concepto[it[0].concepto_id].append(it)
     hay_alternativa = len(por_concepto) > 1
+    nombres_c = dict(session.execute(select(Concepto.id, Concepto.nombre).where(Concepto.id.in_(list(por_concepto) + ([last_concept] if last_concept else [])))).all())
+    familia_ultimo = familia_confusion(nombres_c.get(last_concept) or "") if last_concept else None
 
     def score_concepto(cid: str) -> float:
         dom = dominios.get(cid)
@@ -350,9 +377,20 @@ def next_question(session: Session, sesion_id: str, filtro: Filtro, rng: random.
             sc += 10.0
         if cid == last_concept:
             sc += -CONTINUAR if 0 < n_ses[cid] < SEGUIDAS_AL_EMPEZAR else SAME_CONCEPT
+        elif familia_ultimo is not None and nombres_c.get(cid) is not None and familia_confusion(nombres_c[cid]) == familia_ultimo:
+            sc -= CONFUNDIBLE_TRAS_FALLO if answered and not answered[-1][1] else CONFUNDIBLE_BONUS
         return sc
 
-    ranking_c = sorted(por_concepto, key=lambda c: (score_concepto(c), c))[: max(variedad, 1)]
+    candidatos = list(por_concepto)
+    if filtro.foco_tema_id and not filtro.tema_id and not filtro.subtema_id:
+        tema_de = dict(session.execute(select(Concepto.id, Subtema.tema_id).join(Subtema, Subtema.id == Concepto.subtema_id)
+                                       .where(Concepto.id.in_(candidatos))).all())
+        cat = {c: ("foco" if tema_de.get(c) == filtro.foco_tema_id else
+                   "repaso" if (dominios.get(c) is not None and dominios[c].proximo_repaso is not None
+                                and dominios[c].proximo_repaso <= ahora) else "explorar") for c in candidatos}
+        elegida = elegir_categoria(rng, set(cat.values()))
+        candidatos = [c for c in candidatos if cat[c] == elegida]
+    ranking_c = sorted(candidatos, key=lambda c: (score_concepto(c), c))[: max(variedad, 1)]
     cid = rng.choices(ranking_c, weights=[1 / (1 + i) ** 1.5 for i in range(len(ranking_c))])[0]
     # paso 2: la pregunta de ese concepto
     ranking = sorted(por_concepto[cid], key=score)[: max(variedad, 1)]

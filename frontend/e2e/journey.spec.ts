@@ -69,7 +69,7 @@ test("recorrido completo: importar, práctica libre con saltar, práctica, repor
   await page.keyboard.press("Enter"); // siguiente
   await expect(page.getByText("1 respondida", { exact: true })).toBeVisible();
   await page.getByText("Reportar", { exact: true }).click();
-  await page.getByRole("button", { name: "Está mal formulada" }).click();
+  await page.getByRole("button", { name: "Está mal o dudosa" }).click();
   await expect(page.getByText(/Pregunta reportada/)).toBeVisible();
 
   // 6. Sugerencia de hoy e historial

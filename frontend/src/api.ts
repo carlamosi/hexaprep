@@ -151,6 +151,8 @@ export const api = {
   reportQuestion: (id: string, motivo: string, sesionId?: string) =>
     request<{ ok: boolean }>(`/api/questions/${id}/report`, "POST", { motivo, sesion_id: sesionId ?? null }),
   fin: (sesionId: string) => request<{ respondidas: number; abandonadas: number }>(`/api/sessions/${sesionId}/fin`, "POST"),
+  getFoco: (asignaturaId: string) => request<{ tema_id: string | null }>(`/api/foco/${asignaturaId}`),
+  setFoco: (asignaturaId: string, temaId: string | null) => request<{ tema_id: string | null }>(`/api/foco/${asignaturaId}`, "PUT", { tema_id: temaId }),
   ocultar: (preguntaId: string, alcance: Alcance) =>
     request<Oculto>("/api/ocultos", "POST", { pregunta_id: preguntaId, alcance }),
   ocultos: () => request<Oculto[]>("/api/ocultos"),
