@@ -75,7 +75,7 @@ export interface Grupo { n: number; aciertos_pct: number | null }
 export interface Serie { fecha: string; percent: number }
 export interface Analytics {
   resumen: {
-    respondidas: number; aciertos_pct: number | null; dias_estudiados: number; tiempo_medio_s: number | null;
+    respondidas: number; aciertos_pct: number | null; dias_estudiados: number; tiempo_medio_s: number | null; ritmo?: number | null;
     mejor_hora: number | null; sesiones: number; dominio_pct: number; dominio_delta: number;
   };
   actividad: { fecha: string; n: number; aciertos: number }[];
@@ -86,7 +86,7 @@ export interface Analytics {
   confianza: (Grupo & { confianza: Confianza | "sin" })[];
   horas: (Grupo & { hora: number })[];
   semana: (Grupo & { dia: number })[];
-  fatiga: (Grupo & { tramo: string; desde: number; tiempo_medio_s: number | null })[];
+  fatiga: (Grupo & { tramo: string; desde: number; tiempo_medio_s: number | null; ritmo?: number | null })[];
   velocidad: (Grupo & { tramo: string })[];
   dificultad: (Grupo & { dificultad: number })[];
   trampas: { trampa: string; n: number; concepto: string }[];

@@ -42,8 +42,8 @@ test("recorrido completo: importar, práctica libre con saltar, práctica, repor
   for (let i = 0; i < 3; i++) {
     await expect(page.getByRole("button", { name: "Saltar" })).toBeVisible();
     await page.keyboard.press("a");
-    // el contador queda fijo; la explicación solo se ve 1 s tras un acierto (avanza sola)
     await expect(page.getByText(new RegExp(`^${i + 1} respondidas?$`))).toBeVisible();
+    await page.keyboard.press("Enter"); // un fallo no avanza solo y un acierto tarda 3 s
   }
   await page.getByRole("button", { name: "Terminar sesión" }).click();
   await captura(page, "03-resumen-practica");

@@ -118,7 +118,7 @@
 .hp-cols-axis span { padding-top: 6px; font-size: .74rem; color: var(--ink-2); }
 .hp-cols-n span { font-size: .68rem; color: var(--ink-3); }
 .hp-cols-n span.low { font-style: italic; }
-.hp-cols-n::before { content: "n"; position: absolute; left: -14px; font-size: .68rem; color: var(--ink-3); font-style: italic; }
+.hp-cols-n::before { content: "n"; position: absolute; left: -12px; font-size: .68rem; color: var(--ink-3); font-style: italic; }
 .hp-cols-n { position: relative; }
 .hp-ref-h { position: absolute; left: 0; right: 0; height: 0; border-top: 1.5px dashed var(--ink-3); z-index: 1; pointer-events: none; }
 .hp-ref-key { display: flex; align-items: center; gap: 8px; margin: 12px 0 0; font-size: .76rem; color: var(--ink-3); }
@@ -146,10 +146,11 @@
 .hp-weak-stat small { font-size: .74rem; font-weight: 400; color: var(--ink-3); }
 .hp-weak-stat .hp-n { display: block; }
 .hp-weak-stat.is-low { color: var(--ink-3); font-weight: 500; }
-.hp-hard li { display: grid; grid-template-columns: minmax(0, 1fr) 104px; gap: 16px; align-items: center; padding: 11px 0; border-top: 1px solid var(--rule); }
+.hp-hard li { display: grid; grid-template-columns: minmax(0, 1fr) max-content; gap: 16px; align-items: center; padding: 11px 0; border-top: 1px solid var(--rule); }
 .hp-hard li:first-child { border-top: 0; padding-top: 0; }
 .hp-hard-q { margin: 0; font-size: .88rem; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.hp-hard-stat { text-align: right; white-space: nowrap; }
+.hp-hard-stat { min-width: 84px; text-align: right; white-space: normal; }
+.hp-hard-stat small { display: block; }
 .hp-hard-stat b { font-weight: 600; font-variant-numeric: tabular-nums; }
 .hp-hard-stat small { color: var(--ink-3); font-size: .76rem; }
 .hp-meter { display: block; height: 6px; margin-top: 6px; border-radius: 3px; background: var(--paper); overflow: hidden; box-shadow: inset 0 0 0 1px var(--rule); }
@@ -206,7 +207,7 @@
   .hp-bar-label { grid-column: 1 / -1; margin-top: 6px; font-size: .84rem; }
   .hp-rank li { grid-template-columns: 26px minmax(0, 1fr) auto; }
   .hp-rank-bar { display: none; }
-  .hp-hard li { grid-template-columns: minmax(0, 1fr) 84px; gap: 10px; }
+  .hp-hard li { grid-template-columns: minmax(0, 1fr) max-content; gap: 10px; }
   .hp-ses-dur { display: none; }
   .hp-weak li { grid-template-columns: 44px minmax(0, 1fr) auto; gap: 10px; }
   .hp-weak-hex { width: 44px; }

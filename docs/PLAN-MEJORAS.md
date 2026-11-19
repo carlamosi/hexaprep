@@ -26,7 +26,7 @@ Reglas para gastar poco (valen para cada ejecución):
 
 Progreso:
 - [x] 0 Herramientas de test (`python tools/probar.py back|front|todo [-k expr] [--lento]`)
-- [ ] A Práctica e interfaz (A1 a A12)
+- [x] A Práctica e interfaz (A1 a A12; A9 sin captura de escritorio, ver ESTADO)
 - [ ] B Calidad del banco y reportes (B1 a B8; B4 sin quitar reportes; B6 sin aplicar a Neon)
 - [ ] C Datos y robustez (C2 a C5)
 - [ ] D Selector y retención (D1 a D9)

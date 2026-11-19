@@ -26,6 +26,11 @@ export default function App() {
 
   useEffect(() => { if (route === "ajustes") go("perfil"); }, [route, go]); // enlaces antiguos
 
+  const TITULOS: Record<string, string> = { panal: "nav.panal", hoy: "nav.hoy", historial: "nav.historial", perfil: "nav.perfil" };
+  useEffect(() => { // título de la pestaña: «Català · Historial · HexaPrep»
+    document.title = [nombre, TITULOS[route] ? t(TITULOS[route]) : null, t("app.nombre")].filter(Boolean).join(" · ");
+  }, [nombre, route]);
+
   let page = null;
   if (route === "panal") page = <Home onSelectSubtema={(s) => go(`subtema/${s}`)} onPracticar={() => go("practica")} onPracticarTipo={(g) => go(`practica/_/${g}`)} onPracticarTema={(tm) => go(`practica/${tm}`)} />;
   else if (failed) page = <p role="alert" className="px-4 py-8">{t("app.error")}</p>;

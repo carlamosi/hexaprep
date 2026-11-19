@@ -29,6 +29,7 @@ export function Examen({ asignaturaId, client = api }: { asignaturaId: string; c
   const [notas, setNotas] = useState<Nota[]>([]);
   const [poniendoNota, setPoniendoNota] = useState(false);
   const [nota, setNota] = useState("");
+  const [guardado, setGuardado] = useState(false); // aviso breve tras guardar
 
   useEffect(() => {
     let vivo = true;
@@ -54,6 +55,8 @@ export function Examen({ asignaturaId, client = api }: { asignaturaId: string; c
     try {
       setDatos(await client.setExamen(asignaturaId, fecha));
       setEditando(false);
+      setGuardado(true);
+      setTimeout(() => setGuardado(false), 3000);
       setError(false);
     } catch {
       setError(true);
@@ -64,6 +67,7 @@ export function Examen({ asignaturaId, client = api }: { asignaturaId: string; c
   return (
     <section aria-labelledby="examen-t" className="mt-6 rounded-[16px] border border-[var(--rule)] bg-white p-5">
       <h2 id="examen-t" className="text-lg font-semibold">{t("examen.titulo")}</h2>
+      <p role="status" className="text-sm text-[var(--ok)]">{guardado ? t("examen.guardado") : ""}</p>
       {editando ? (
         <form className="mt-3 flex flex-wrap items-center gap-3" onSubmit={(e) => { e.preventDefault(); if (valor) void guardar(valor); }}>
           <label htmlFor="examen-fecha" className="text-sm text-[var(--ink-2)]">{t("examen.fecha")}</label>

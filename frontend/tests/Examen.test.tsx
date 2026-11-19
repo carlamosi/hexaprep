@@ -20,6 +20,7 @@ describe("fecha de examen opcional", () => {
     await user.type(screen.getByLabelText("Fecha del examen"), "2026-12-03");
     await user.click(screen.getByRole("button", { name: "Guardar" }));
     expect(c.setExamen).toHaveBeenCalledWith("a1", "2026-12-03");
+    expect(await screen.findByRole("status")).toHaveTextContent("Guardado");
   });
 
   it("con_fecha_dice_los_dias_y_el_ritmo_sin_dramatismo_y_se_puede_quitar", async () => {

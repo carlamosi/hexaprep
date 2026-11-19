@@ -89,7 +89,8 @@ export function History({ asignaturaId, client = api, mes }: {
   const filas = <T extends { n: number; aciertos_pct: number | null }>(xs: T[], id: (x: T) => string, et: (x: T) => string, corto?: (x: T) => string): Fila[] =>
     xs.map((x) => ({ id: id(x), etiqueta: et(x), corto: corto?.(x), n: x.n, valor: x.aciertos_pct }));
   const mejorDia = mejorGrupo(data.semana);
-  const tiempos = data.fatiga.map((f) => f.tiempo_medio_s ?? 0);
+  const ritmos = data.fatiga.map((f) => f.ritmo ?? 0);
+  const x1 = (v: number | null | undefined) => (v == null ? t("hist.sinDatos") : `×${(Math.round(v * 10) / 10).toString().replace(".", ",")}`);
 
   return (
     <main className="wrap hp" aria-busy={cargando}>
@@ -171,6 +172,10 @@ export function History({ asignaturaId, client = api, mes }: {
                 <Columnas titulo={t("hist.dificultad")} valores media={r.aciertos_pct}
                   filas={filas(data.dificultad, (x) => String(x.dificultad), (x) => `${t("hist.nivel")} ${x.dificultad}`, (x) => String(x.dificultad))} />
               </Card>
+              <Card id="c-vel" titulo={t("hist.velocidad")} sub={t("hist.velocidadSub")}>
+                <Barras titulo={t("hist.velocidad")} media={r.aciertos_pct}
+                  filas={filas(data.velocidad, (x) => x.tramo, (x) => x.tramo)} />
+              </Card>
             </Grupo>
 
             <Grupo id="g-cuando" titulo={t("hist.g.cuando")}>
@@ -185,7 +190,7 @@ export function History({ asignaturaId, client = api, mes }: {
             </Grupo>
 
             <Grupo id="g-sesion" titulo={t("hist.g.sesion")}>
-              <Card id="c-fat" titulo={t("hist.fatiga")} sub={t("hist.fatigaSub")}>
+              <Card id="c-fat" titulo={t("hist.fatiga")} sub={t("hist.fatigaSub")} wide>
                 <div className="hp-pair">
                   <div>
                     <h4>{t("hist.acierto")}</h4>
@@ -193,16 +198,12 @@ export function History({ asignaturaId, client = api, mes }: {
                       filas={filas(data.fatiga, (x) => x.tramo, (x) => `${t("hist.preguntas")} ${x.tramo}`, (x) => x.tramo)} />
                   </div>
                   <div>
-                    <h4>{t("hist.tiempoMedio")}</h4>
-                    <Columnas titulo={`${t("hist.fatiga")}, ${t("hist.tiempoMedio")}`} valores alto={120} color="var(--indigo)"
-                      max={Math.max(1, ...tiempos) * 1.15}
-                      filas={data.fatiga.map((x) => ({ id: x.tramo, etiqueta: `${t("hist.preguntas")} ${x.tramo}`, corto: x.tramo, n: x.n, valor: x.tiempo_medio_s, texto: segundos(x.tiempo_medio_s) }))} />
+                    <h4>{t("hist.ritmo")}</h4>
+                    <Columnas titulo={`${t("hist.fatiga")}, ${t("hist.ritmo")}`} valores alto={120} color="var(--indigo)"
+                      max={Math.max(1, ...ritmos) * 1.15}
+                      filas={data.fatiga.map((x) => ({ id: x.tramo, etiqueta: `${t("hist.preguntas")} ${x.tramo}`, corto: x.tramo, n: x.n, valor: x.ritmo ?? null, texto: x1(x.ritmo) }))} />
                   </div>
                 </div>
-              </Card>
-              <Card id="c-vel" titulo={t("hist.velocidad")} sub={t("hist.velocidadSub")}>
-                <Barras titulo={t("hist.velocidad")} media={r.aciertos_pct}
-                  filas={filas(data.velocidad, (x) => x.tramo, (x) => x.tramo)} />
               </Card>
             </Grupo>
 

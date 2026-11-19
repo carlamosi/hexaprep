@@ -6,7 +6,8 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import mastery, tiempo
-from .models import Bloque, Concepto, Dominio, DominioSnapshot, Intento, Pregunta, Sesion, Subtema, Tema
+from .models import Bloque, Concepto, Dominio, DominioSnapshot, Evento, Intento, Opcion, Pregunta, Sesion, Subtema, Tema
+from .ritmo import carga_esperada
 
 CONFIANZAS = ("seguro", "dudo", "adivino")
 TRAMOS_POSICION = [(1, 5, "1-5"), (6, 10, "6-10"), (11, 15, "11-15"), (16, 20, "16-20"), (21, None, "21+")]
@@ -74,6 +75,25 @@ def _evolucion(session: Session, asignatura_id: str, desde: str | None) -> dict:
                                 for (tt, sid, sn), sd in sub.items() if tt == tid]}
                   for (tid, nombre), d in tem.items()],
     }
+
+
+def _tiempos_activos(session: Session, filas: list) -> tuple[dict[str, float], dict[str, float]]:
+    """Por intento: segundos activos (sin la pestaña oculta; los antiguos usan t_envio) y su cociente con la carga esperada."""
+    por_evento = {i.evento_id: i for i, *_ in filas if i.t_envio is not None}
+    payloads = dict(session.execute(select(Evento.id, Evento.payload).where(Evento.id.in_(list(por_evento)))).all()) if por_evento else {}
+    textos: dict[str, list[str]] = defaultdict(list)
+    ids = {f[1].id for f in filas}
+    for pid, texto in session.execute(select(Opcion.pregunta_id, Opcion.texto).where(Opcion.pregunta_id.in_(ids)).order_by(Opcion.posicion)).all() if ids else []:
+        textos[pid].append(texto)
+    carga = {f[1].id: carga_esperada(f[1].tipo, f[1].enunciado, f[1].contexto, textos[f[1].id]) for f in filas}
+    activo, ritmo = {}, {}
+    for i, p, *_ in filas:
+        if i.t_envio is None:
+            continue
+        t = ((payloads.get(i.evento_id) or {}).get("tiempos") or {}).get("t_activo")
+        activo[i.id] = float(t) if isinstance(t, (int, float)) else i.t_envio
+        ritmo[i.id] = activo[i.id] / carga[p.id]
+    return activo, ritmo
 
 
 def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: datetime | None = None) -> dict:
@@ -146,11 +166,13 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
                          "n": len(xs), "aciertos": sum(x.correcta for x in xs)})
     sesiones.sort(key=lambda s: s["inicio"], reverse=True)
 
-    con_tiempo = [i for i in intentos if i.t_envio is not None]
+    activo, ritmo = _tiempos_activos(session, filas)
+    con_tiempo = [i for i in intentos if i.id in activo]
     return {
         "resumen": {
             "respondidas": n, "aciertos_pct": _pct(ok, n), "dias_estudiados": len(actividad),
-            "tiempo_medio_s": _media([i.t_envio for i in con_tiempo]), "mejor_hora": mejor, "sesiones": len(por_sesion),
+            "tiempo_medio_s": _media([activo[i.id] for i in con_tiempo]),
+            "ritmo": _media([ritmo[i.id] for i in con_tiempo]), "mejor_hora": mejor, "sesiones": len(por_sesion),
             "dominio_pct": mastery.percent_of(session, "asignatura", asignatura_id),
             "dominio_delta": serie[-1]["percent"] - serie[0]["percent"] if len(serie) > 1 else 0,
         },
@@ -162,11 +184,12 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
         "semana": [{"dia": g["clave"], "n": g["n"], "aciertos_pct": g["aciertos_pct"]}
                    for g in _grupo(intentos, lambda i: i.dia_semana, list(range(7)))],
         "fatiga": [{"tramo": t[2], "desde": t[0], "n": len(xs), "aciertos_pct": _pct(sum(x.correcta for x in xs), len(xs)),
-                    "tiempo_medio_s": _media([x.t_envio for x in xs if x.t_envio is not None])}
+                    "tiempo_medio_s": _media([activo[x.id] for x in xs if x.id in activo]),
+                    "ritmo": _media([ritmo[x.id] for x in xs if x.id in ritmo])}
                    for t in TRAMOS_POSICION
                    for xs in [[i for i in intentos if i.posicion_sesion >= t[0] and (t[1] is None or i.posicion_sesion <= t[1])]]],
         "velocidad": [{"tramo": g["clave"], "n": g["n"], "aciertos_pct": g["aciertos_pct"]}
-                      for g in _grupo(con_tiempo, lambda i: _tramo(i.t_envio, TRAMOS_TIEMPO), [t[2] for t in TRAMOS_TIEMPO])],
+                      for g in _grupo(con_tiempo, lambda i: _tramo(activo[i.id], TRAMOS_TIEMPO), [t[2] for t in TRAMOS_TIEMPO])],
         "dificultad": [{"dificultad": g["clave"], "n": g["n"], "aciertos_pct": g["aciertos_pct"]}
                        for g in _grupo(intentos, lambda i: i.dificultad, [1, 2, 3, 4, 5])],
         "trampas": [{"trampa": t, "n": c, "concepto": trampa_concepto[t].most_common(1)[0][0]}

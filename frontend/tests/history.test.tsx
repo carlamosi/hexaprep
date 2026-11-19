@@ -38,7 +38,7 @@ function analytics(over: Partial<Analytics["resumen"]> = {}): Analytics {
     confianza: [{ confianza: "seguro", ...g(60, 70) }, { confianza: "dudo", ...g(40, 45) }, { confianza: "adivino", ...g(3, 33) }, { confianza: "sin", ...g(0, null) }],
     horas: Array.from({ length: 24 }, (_, hora) => ({ hora, ...(hora === 20 ? g(50, 70) : hora === 9 ? g(2, 50) : g(0, null)) })),
     semana: Array.from({ length: 7 }, (_, dia) => ({ dia, ...g(dia === 2 ? 30 : 10, dia === 2 ? 80 : 50) })),
-    fatiga: [{ tramo: "1-5", desde: 1, ...g(60, 60), tiempo_medio_s: 12 }, { tramo: "6-10", desde: 6, ...g(40, 50), tiempo_medio_s: 11 }],
+    fatiga: [{ tramo: "1-5", desde: 1, ...g(60, 60), tiempo_medio_s: 12, ritmo: 1.2 }, { tramo: "6-10", desde: 6, ...g(40, 50), tiempo_medio_s: 11, ritmo: 0.9 }],
     velocidad: [{ tramo: "menos de 5 s", ...g(4, 25) }, { tramo: "5-10 s", ...g(80, 55) }],
     dificultad: [1, 2, 3, 4, 5].map((dificultad) => ({ dificultad, ...g(24, 70 - dificultad * 5) })),
     trampas: [{ trampa: "confunde escasez con pobreza", n: 4, concepto: "La escasez" }],

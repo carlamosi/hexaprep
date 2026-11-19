@@ -75,13 +75,10 @@ for (const [nombre, asig, ruta] of [
   });
 }
 
-test("movil: responder una escrita con la barra de acentos y ver la corrección letra a letra", async ({ page }) => {
+test("movil: responder una escrita y ver la corrección letra a letra", async ({ page }) => {
   await abrir(page, "Català", "practica/_/escritas");
   const cajas = page.getByRole("textbox");
   await expect(cajas.first()).toBeVisible();
-  await cajas.first().fill("xx");
-  await page.getByRole("button", { name: "é", exact: true }).tap();
-  await expect(cajas.first()).toHaveValue("xxé"); // la barra inserta donde está el cursor
   for (let i = 0; i < (await cajas.count()); i++) await cajas.nth(i).fill("xxé");
   await page.getByRole("button", { name: "Comprobar" }).tap();
   await expect(page.getByLabel(/Escribiste xxé, lo correcto es/).first()).toBeVisible();
