@@ -98,6 +98,14 @@ def _tiempos_activos(session: Session, filas: list) -> tuple[dict[str, float], d
     return activo, ritmo
 
 
+def _retencion(intentos: list) -> dict:
+    """Retención real (D9): % de aciertos en repasos hechos tras 1 día o más (y tras 7 o más) desde el intento anterior."""
+    def tras(dias: int) -> dict:
+        xs = [i for i in intentos if i.intervalo_desde_anterior is not None and i.intervalo_desde_anterior >= dias * 86400]
+        return {"n": len(xs), "pct": _pct(sum(i.correcta for i in xs), len(xs))}
+    return {"d1": tras(1), "d7": tras(7)}
+
+
 def _errores_escritura(session: Session, filas: list) -> list[dict]:
     """Tipo de cada hueco fallado en las escritas (apertura, acento omitido, letra cambiada, longitud...), comparando lo
     escrito con las formas válidas. «Troba l'error» queda fuera: ahí se marca un fragmento, no se escribe la palabra."""
@@ -180,7 +188,7 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
                                                      Dominio.n_intentos > 0).order_by(Dominio.theta).limit(8)):
         xs = por_concepto[dom.concepto_id]
         debiles.append({"concepto_id": dom.concepto_id, "concepto": nombres[dom.concepto_id][0],
-                        "subtema": nombres[dom.concepto_id][1], "percent": mastery.percent_concepto(dom.theta, dom.sigma),
+                        "subtema": nombres[dom.concepto_id][1], "percent": mastery.percent_de(session, dom),
                         "n": len(xs), "aciertos_pct": _pct(sum(x.correcta for x in xs), len(xs))})
 
     por_sesion: dict[str, list[Intento]] = defaultdict(list)
@@ -200,7 +208,7 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
         "resumen": {
             "respondidas": n, "aciertos_pct": _pct(ok, n), "dias_estudiados": len(actividad),
             "tiempo_medio_s": _media([activo[i.id] for i in con_tiempo]),
-            "ritmo": _media([ritmo[i.id] for i in con_tiempo]), "mejor_hora": mejor, "sesiones": len(por_sesion),
+            "ritmo": _media([ritmo[i.id] for i in con_tiempo]), "retencion": _retencion(intentos), "mejor_hora": mejor, "sesiones": len(por_sesion),
             "dominio_pct": mastery.percent_of(session, "asignatura", asignatura_id),
             "dominio_delta": serie[-1]["percent"] - serie[0]["percent"] if len(serie) > 1 else 0,
         },

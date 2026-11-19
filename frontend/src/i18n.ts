@@ -85,6 +85,8 @@ const es: Dict = {
   "hist.verRespuesta": "Ver la respuesta correcta",
   "hist.ocultarRespuesta": "Ocultar",
   "hist.ritmo": "Ritmo",
+  "hist.retencion": "Retención real",
+  "hist.retencionNota": "Aciertos en repasos tras 1 día o más ({n1} respuestas) y tras 7 días o más ({n7})",
   "hist.ritmoNota": "1 = lo que cabe esperar por lo que hay que leer y escribir",
   "hist.mejorHora": "Mejor hora",
   "hist.mejorHoraFalta": "Hacen falta 3 respuestas en una misma hora",

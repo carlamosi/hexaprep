@@ -13,6 +13,7 @@ from sqlalchemy.orm import Session
 from . import mastery, scheduling
 from . import tiempo
 from .escritura import corregir
+from .ritmo import carga_esperada
 from .bank import MAX_VALORES
 from .importer import leer_solucion
 from .models import Evento, Intento, Opcion, Pregunta, Sesion, utcnow
@@ -178,6 +179,15 @@ def coincide(valores: list[float], esperado: list[float], ordenada: bool) -> boo
     return all(math.isclose(x, y, rel_tol=TOLERANCIA_PROBLEMA, abs_tol=1e-9) for x, y in zip(a, b))
 
 
+def _ritmo(pregunta: Pregunta, opciones: dict, tiempos: dict) -> float | None:
+    """Tiempo activo entre la carga de lectura y escritura esperada de la pregunta (1 = lo esperado)."""
+    t = tiempos.get("t_activo", tiempos.get("t_envio"))
+    if not isinstance(t, (int, float)):
+        return None
+    carga = carga_esperada(pregunta.tipo, pregunta.enunciado, pregunta.contexto, [o.texto for o in opciones.values()])
+    return round(float(t) / carga, 3)
+
+
 def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opciones: list[str], elegida: str,
                   confianza: str | None, tiempos: dict, respuesta: str | None = None,
                   respuestas: list[str] | None = None) -> AnswerResult:
@@ -227,7 +237,7 @@ def submit_answer(session: Session, sesion_id: str, pregunta_id: str, orden_opci
 
     ev = Evento(sesion_id=sesion_id, tipo="respuesta_enviada", pregunta_id=pregunta_id, t_cliente=ahora_utc,
                 payload={"elegida": elegida, "orden_opciones": orden_opciones, "confianza": confianza,
-                         "tiempos": tiempos, "correcta": es_correcta,
+                         "tiempos": tiempos, "correcta": es_correcta, "ritmo": _ritmo(pregunta, opciones, tiempos),
                          **({"respuesta": respuesta,
                              "error_rel": error_relativo(valores, solucion if isinstance(solucion, list) else [solucion],
                                                          ordenada)} if problema else {}),

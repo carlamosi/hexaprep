@@ -152,6 +152,8 @@ export function History({ asignaturaId, client = api, mes }: {
                 <Stat valor={r.dias_estudiados} etiqueta={t(r.dias_estudiados === 1 ? "hist.diaConPractica" : "hist.diasConPractica")} />
                 <Stat valor={segundos(r.tiempo_medio_s)} etiqueta={t("hist.tiempoMedio")} />
                 <Stat valor={r.mejor_hora === null ? t("hist.aunNo") : hora(r.mejor_hora)} etiqueta={t("hist.mejorHora")} nota={r.mejor_hora === null ? t("hist.mejorHoraFalta") : undefined} />
+                {r.retencion && <Stat valor={r.retencion.d1.pct === null ? t("hist.aunNo") : `${r.retencion.d1.pct} %${r.retencion.d7.pct === null ? "" : ` · ${r.retencion.d7.pct} %`}`}
+                  etiqueta={t("hist.retencion")} nota={t("hist.retencionNota").replace("{n1}", String(r.retencion.d1.n)).replace("{n7}", String(r.retencion.d7.n))} />}
                 <Stat valor={r.sesiones} etiqueta={t(r.sesiones === 1 ? "hist.sesion" : "hist.sesiones")} />
               </div>
             </section>

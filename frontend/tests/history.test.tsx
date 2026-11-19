@@ -338,3 +338,12 @@ describe("errores de escritura por tipo", () => {
     expect(screen.getByText(/Letra cambiada/)).toBeInTheDocument();
   });
 });
+
+describe("retención real", () => {
+  it("muestra_el_acierto_en_repasos_tras_1_y_7_dias", async () => {
+    const a = analytics({ retencion: { d1: { n: 20, pct: 70 }, d7: { n: 5, pct: 60 } } } as never);
+    render(<History asignaturaId="a1" client={{ analytics: vi.fn().mockResolvedValue(a), getMap: vi.fn().mockResolvedValue({ asignatura: "X", percent: 0, hexes: [], subtemas: [] }) }} />);
+    expect(await screen.findByText("Retención real")).toBeInTheDocument();
+    expect(screen.getByText("70 % · 60 %")).toBeInTheDocument();
+  });
+});

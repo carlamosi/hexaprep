@@ -1,3 +1,4 @@
+from hexaprep import mastery
 import json
 from datetime import date
 
@@ -51,7 +52,7 @@ def test_excluded_questions_do_not_count(session, bank):
     sid = start_session(session, "practica", {})
     submit_answer(session, sid, p["x-0"].id, ORDEN, "a", None, {})  # acierto fácil
     submit_answer(session, sid, p["x-1"].id, ORDEN, "b", None, {})  # fallo
-    expected = update(*update(0.0, 1.5, 2, True, "test"), 3, False, "test")
+    expected = update(*update(0.0, 1.5, 2, True, "test"), 3, False, "test", peso=mastery.REPETICION)  # 2.ª del concepto en la sesión
     dom = session.scalar(select(Dominio))
     assert (dom.theta, dom.sigma) == pytest.approx(expected)
 
@@ -121,7 +122,8 @@ def _dominio(session, concepto_id, theta, sigma, n):
     session.flush()
 
 
-def test_el_porcentaje_cuenta_todo_el_temario_no_solo_lo_tocado(session, bank):
+def test_el_porcentaje_cuenta_todo_el_temario_no_solo_lo_tocado(session, bank, monkeypatch):
+    monkeypatch.setattr(mastery, "dias_acierto", lambda s, ids: {c: 3 for c in ids})  # dominios sembrados a mano: ya consolidados
     import_bank(session, bank)  # dos conceptos en el mismo subtema
     c1, c2 = session.scalars(select(Concepto.id).order_by(Concepto.nombre)).all()[:2]
     asig, sub = session.scalar(select(Asignatura.id)), session.scalar(select(Subtema.id))

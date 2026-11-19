@@ -274,9 +274,10 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             .outerjoin(Dominio, Dominio.concepto_id == Concepto.id)
             .where(Bloque.asignatura_id == a.id, Concepto.deleted_at.is_(None))
             .order_by(Bloque.orden, Tema.orden, Tema.nombre, Subtema.orden, Subtema.nombre, Concepto.nombre)).all()
+        dias = mastery.dias_acierto(s, [c.id for c, _, _, _ in rows])
         hexes = [{"concepto_id": c.id, "nombre": c.nombre, "subtema_id": sub.id, "subtema": sub.nombre,
                   "tema": t.nombre, "tema_id": t.id, "color": a.acento,
-                  "percent": mastery.percent_concepto(d.theta, d.sigma) if d is not None and d.n_intentos > 0 else 0}
+                  "percent": mastery.percent_concepto(d.theta, d.sigma, dias.get(c.id, 0)) if d is not None and d.n_intentos > 0 else 0}
                  for c, sub, t, d in rows]
         subtemas = {h["subtema_id"]: h["subtema"] for h in hexes}
         return {"asignatura": a.nombre, "percent": mastery.percent_of(s, "asignatura", a.id), "hexes": hexes,
@@ -365,7 +366,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             "trampas": {o.posicion: o.tipo_trampa for o in s.scalars(select(Opcion).where(Opcion.pregunta_id == p.id))
                         if o.tipo_trampa},
             "fuente_id": p.fuente_id, "fuente_pagina": p.fuente_pagina, "fuente_cara": p.fuente_cara,
-            "percent": mastery.percent_concepto(dom.theta, dom.sigma) if dom and dom.n_intentos else 0,
+            "percent": mastery.percent_de(s, dom) if dom and dom.n_intentos else 0,
         }
 
     @app.post("/api/answers/correct")
@@ -378,7 +379,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         p = s.get(Pregunta, body.pregunta_id)
         mastery.snapshot_daily(s, tiempo.hoy())
         dom = s.scalar(select(Dominio).where(Dominio.concepto_id == p.concepto_id))
-        return {"percent": mastery.percent_concepto(dom.theta, dom.sigma) if dom and dom.n_intentos else 0}
+        return {"percent": mastery.percent_de(s, dom) if dom and dom.n_intentos else 0}
 
     @app.get("/api/questions/reported")
     def reported(s: Session = Depends(get_session)):

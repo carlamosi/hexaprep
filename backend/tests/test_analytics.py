@@ -78,3 +78,19 @@ def test_errores_de_escritura_por_tipo(session):
     r = analytics(session, session.scalar(select(Asignatura.id)))
     got = {e["tipo"]: e["n"] for e in r["errores_escritura"]}
     assert got == {"letra_cambiada": 2, "longitud": 1}, f"obtenido {got}"  # «ko» y «ól» cambian letras; «o» es más corta
+
+
+def test_retencion_real_aciertos_en_repasos_tras_1_y_7_dias(session, ctx):
+    from sqlalchemy import update as sql_update
+
+    from hexaprep.models import Intento
+    a, _ = ctx
+    ids = list(session.scalars(select(Intento.id).order_by(Intento.id)))
+    # seis intentos: (intervalo en días, correcto) tras la fixture los intervalos son None o minúsculos
+    for i, (dias, ok) in zip(ids, [(0.5, True), (2, True), (2, False), (8, True), (10, False), (None, True)]):
+        session.execute(sql_update(Intento).where(Intento.id == i).values(
+            intervalo_desde_anterior=None if dias is None else dias * 86400, correcta=ok))
+    session.commit()
+    r = analytics(session, a)["resumen"]["retencion"]
+    assert r["d1"] == {"n": 4, "pct": 50}, f"tras 1 día o más: {r}"
+    assert r["d7"] == {"n": 2, "pct": 50}, f"tras 7 días o más: {r}"

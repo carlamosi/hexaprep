@@ -76,6 +76,7 @@ export interface Serie { fecha: string; percent: number }
 export interface Analytics {
   resumen: {
     respondidas: number; aciertos_pct: number | null; dias_estudiados: number; tiempo_medio_s: number | null; ritmo?: number | null;
+    retencion?: { d1: { n: number; pct: number | null }; d7: { n: number; pct: number | null } };
     mejor_hora: number | null; sesiones: number; dominio_pct: number; dominio_delta: number;
   };
   actividad: { fecha: string; n: number; aciertos: number }[];
