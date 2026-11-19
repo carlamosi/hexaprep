@@ -46,3 +46,13 @@ body {
 @keyframes aro-avance { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
 .aro-avance { animation-name: aro-avance; animation-timing-function: linear; animation-fill-mode: forwards; stroke-dashoffset: 100; }
 @media (prefers-reduced-motion: reduce) { .aro-avance { animation: none; stroke-dashoffset: 0; } }
+
+/* Pantalla de arranque: trazo del hexágono, relleno que sube y desvanecido */
+.splash { position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 14px; background: var(--paper); transition: opacity .3s ease; }
+.splash-fuera { opacity: 0; pointer-events: none; }
+.splash-trazo { stroke-dasharray: 100; stroke-dashoffset: 100; animation: splash-dibuja .5s ease-out forwards; }
+.splash-llena { transform-origin: 50% 100%; transform: scaleY(0); animation: splash-sube .45s .35s ease-out forwards; }
+.splash-nombre { font-weight: 600; letter-spacing: .02em; color: var(--ink); opacity: 0; animation: splash-texto .3s .5s ease-out forwards; }
+@keyframes splash-dibuja { to { stroke-dashoffset: 0; } }
+@keyframes splash-sube { to { transform: scaleY(1); } }
+@keyframes splash-texto { to { opacity: 1; } }
