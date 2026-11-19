@@ -33,7 +33,9 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
   const { map, acento, tipos } = state;
   // Solo en asignaturas con preguntas de teoría (test y V/F) y también problemas tiene sentido practicar una sola cosa
   const grupos = [["test", ["test", "vf"], "home.soloTest"], ["problemas", ["problema"], "home.soloProblemas"], ["escritas", ["escrita"], "home.soloEscritas"]] as const;
-  const presentes = grupos.filter(([, ts]) => ts.some((x) => tipos.includes(x)));
+  // Sin test (solo V/F) el grupo es la literatura de Català
+  const presentes = grupos.filter(([, ts]) => ts.some((x) => tipos.includes(x)))
+    .map(([c, ts, tx]) => [c, ts, c === "test" && !tipos.includes("test") ? "home.soloLiteratura" : tx] as const);
   const mezcla = presentes.length > 1;
   const temas = new Set(map.hexes.map((h) => h.tema)).size;
   return (

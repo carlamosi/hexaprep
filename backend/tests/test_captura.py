@@ -135,3 +135,12 @@ def test_nota_de_examen_guarda_la_nota_con_el_dominio_del_momento(cliente):
     for mala in (-1, 11, "x"):
         assert cliente.post(url, json={"nota": mala}).status_code == 422
     assert cliente.post("/api/examen/nada/nota", json={"nota": 5}).status_code == 404
+
+
+def test_lote_2_eventos_de_cliente_carga_explicacion_abierta_y_copia(session):
+    sid, ps = montar(session)
+    for tipo, p in (("carga", {"t_carga_ms": 120, "esqueleto": False, "prefetch": True}),
+                    ("explicacion_abierta", {}), ("copia", {"t_copia": 4.2, "n_copias": 1})):
+        record_client_event(session, sid, tipo, ps["q-te"].id, p)
+        ev = session.scalar(select(Evento).where(Evento.tipo == tipo))
+        assert ev is not None and ev.payload == p, f"{tipo}: payload guardado {ev and ev.payload}"

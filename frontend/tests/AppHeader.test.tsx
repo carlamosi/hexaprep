@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, expect, it, vi } from "vitest";
-import { AppHeader } from "../src/components/AppHeader";
+import { AppHeader, tinte } from "../src/components/AppHeader";
 import { elegirAsignatura } from "../src/hooks";
 
 const SUBJECTS = [
@@ -10,6 +10,12 @@ const SUBJECTS = [
 ];
 
 afterEach(() => localStorage.clear());
+
+it("tinte_mezcla_el_color_de_la_asignatura_con_blanco_y_rechaza_valores_raros", () => {
+  expect(tinte("#000000", 0.3)).toBe("#b3b3b3");
+  expect(tinte("#ffffff")).toBe("#ffffff");
+  expect(tinte("rojo")).toBeUndefined();
+});
 
 function abierto(onCambiar = vi.fn(), onAbrir = vi.fn()) {
   render(<AppHeader asignatura="Economía" asignaturaId="a1" asignaturas={SUBJECTS} onCambiarAsignatura={onCambiar} onAbrirSelector={onAbrir} ruta="panal" />);

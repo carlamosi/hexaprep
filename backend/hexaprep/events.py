@@ -22,10 +22,10 @@ MODOS = {"practica", "repaso_subtema", "repaso_fallos"}
 TIPOS = {
     "pregunta_mostrada", "opcion_seleccionada", "confianza", "respuesta_enviada", "explicacion_abierta",
     "explicacion_cerrada", "pregunta_reportada", "pausa", "reanudacion", "marcada_correcta", "pregunta_saltada",
-    "ayuda_abierta", "contexto",
+    "ayuda_abierta", "contexto", "carga", "copia",
 }
 # los únicos que puede enviar el navegador por su cuenta (el resto los registra el servidor)
-TIPOS_CLIENTE = {"explicacion_cerrada", "ayuda_abierta", "contexto", "reanudacion"}
+TIPOS_CLIENTE = {"explicacion_cerrada", "explicacion_abierta", "ayuda_abierta", "contexto", "reanudacion", "carga", "copia"}
 OBJETIVOS = (0.6, 0.75, 0.85)  # acierto buscado; con (0.6,) se desactiva el experimento
 MAX_PAYLOAD = 1000  # caracteres del JSON de un evento de cliente
 TOLERANCIA_PROBLEMA = 0.01  # error relativo que cuenta como acierto en un problema

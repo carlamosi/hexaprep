@@ -64,7 +64,7 @@ describe("pantalla de práctica", () => {
     await user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
     await waitFor(() => expect(client.answer).toHaveBeenCalled());
     const t = client.answer.mock.calls[0][0].tiempos;
-    expect(Object.keys(t).sort()).toEqual(["t_activo", "t_envio", "t_oculto", "t_primer_clic"]);
+    expect(Object.keys(t).sort()).toEqual(["t_activo", "t_envio", "t_oculto", "t_primer_clic", "t_sin_foco"]);
     expect(t.t_primer_clic).toBeLessThanOrEqual(t.t_envio);
     expect(evento).toHaveBeenCalledWith("s1", "contexto", null, expect.objectContaining({ tactil: expect.any(Boolean) }));
     await user.click(await screen.findByRole("button", { name: /Siguiente/ })); // pasa a la siguiente pregunta
@@ -145,20 +145,97 @@ describe("pantalla de práctica", () => {
     expect(screen.getByText("Ayuda larga de prueba")).toBeVisible();
   });
 
-  it.each([[OK, 1000], [KO, 2500]])("auto_advances_after_the_delay_of_the_result", async (result, ms) => {
-    const a = setup({}, result);
+  async function responderConRelojFalso(a: ReturnType<typeof setup>, ms: number, antes?: () => Promise<void> | void) {
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    try {
+      fireEvent.click(screen.getByRole("button", { name: /Opción B: Texto A/ }));
+      await act(async () => { await Promise.resolve(); await Promise.resolve(); });
+      await antes?.();
+      await act(async () => { vi.advanceTimersByTime(ms); });
+    } finally {
+      vi.useRealTimers();
+    }
+  }
+
+  it("a_correct_answer_moves_on_by_itself_at_3s_and_the_next_question_was_already_requested", async () => {
+    const a = setup({}, OK);
     await screen.findByText(Q.enunciado);
     vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
     try {
       fireEvent.click(screen.getByRole("button", { name: /Opción B: Texto A/ }));
       await act(async () => { await Promise.resolve(); await Promise.resolve(); });
-      await act(async () => { vi.advanceTimersByTime(ms - 1); });
-      expect(a.client.nextQuestion).toHaveBeenCalledTimes(1);
-      await act(async () => { vi.advanceTimersByTime(1); });
-      expect(a.client.nextQuestion).toHaveBeenCalledTimes(2);
+      expect(a.client.nextQuestion, "la siguiente se pide al recibir la corrección").toHaveBeenCalledTimes(2);
+      await act(async () => { vi.advanceTimersByTime(2999); });
+      expect(a.onDone, "a los 2,999 s aún no debe pasar").not.toHaveBeenCalled();
+      expect(screen.getByRole("progressbar", { name: /Siguiente pregunta/ })).toBeInTheDocument();
+      await act(async () => { vi.advanceTimersByTime(1); await Promise.resolve(); await Promise.resolve(); });
+      expect(a.onDone, "a los 3 s pasa a la siguiente (que era null)").toHaveBeenCalled();
+      expect(a.client.nextQuestion, "no se vuelve a pedir: se usa la ya pedida").toHaveBeenCalledTimes(2);
     } finally {
       vi.useRealTimers();
     }
+  });
+
+  it("sends_the_load_latency_event_with_prefetch_and_skeleton_flags", async () => {
+    const evento = vi.fn().mockResolvedValue({ ok: true });
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(Q).mockResolvedValueOnce({ ...Q, pregunta_id: "p2" }).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue(KO), reportQuestion: vi.fn(), evento,
+    } satisfies PracticeClient;
+    const user = userEvent.setup();
+    render(<Practice sesionId="s1" client={client} />);
+    await user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    await user.click(await screen.findByRole("button", { name: /Siguiente/ }));
+    await waitFor(() => expect(evento).toHaveBeenCalledWith("s1", "carga", "p2", expect.objectContaining({ prefetch: true, esqueleto: false, t_resp_ms: expect.any(Number) })));
+    expect(evento).toHaveBeenCalledWith("s1", "carga", "p1", expect.objectContaining({ prefetch: false, esqueleto: true }));
+  });
+
+  it("a_wrong_answer_never_moves_on_by_itself", async () => {
+    const a = setup({}, KO);
+    await screen.findByText(Q.enunciado);
+    await responderConRelojFalso(a, 60000);
+    expect(a.onDone).not.toHaveBeenCalled();
+    expect(screen.queryByRole("progressbar")).toBeNull();
+  });
+
+  it("opening_the_explanation_cancels_the_auto_advance_even_after_a_correct_answer", async () => {
+    const evento = vi.fn().mockResolvedValue({ ok: true });
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(Q).mockResolvedValue(null),
+      answer: vi.fn().mockResolvedValue(OK), reportQuestion: vi.fn(), evento,
+    } satisfies PracticeClient;
+    const onDone = vi.fn();
+    render(<Practice sesionId="s1" client={client} onDone={onDone} />);
+    await screen.findByText(Q.enunciado);
+    vi.useFakeTimers({ toFake: ["setTimeout", "clearTimeout"] });
+    try {
+      fireEvent.click(screen.getByRole("button", { name: /Opción B: Texto A/ }));
+      await act(async () => { await Promise.resolve(); await Promise.resolve(); });
+      fireEvent.click(screen.getByText("Ver explicación"));
+      await act(async () => { vi.advanceTimersByTime(10); }); // jsdom entrega «toggle» en un temporizador
+      await act(async () => { vi.advanceTimersByTime(10000); });
+    } finally {
+      vi.useRealTimers();
+    }
+    expect(onDone).not.toHaveBeenCalled();
+    expect(screen.queryByRole("progressbar")).toBeNull();
+    expect(evento).toHaveBeenCalledWith("s1", "explicacion_abierta", "p1", {});
+  });
+
+  it("shows_a_skeleton_never_the_loading_text_when_the_next_question_is_slow", async () => {
+    let soltar: (q: Question) => void = () => {};
+    const client = {
+      nextQuestion: vi.fn().mockResolvedValueOnce(Q).mockReturnValueOnce(new Promise<Question>((r) => { soltar = r; })),
+      answer: vi.fn().mockResolvedValue(KO), reportQuestion: vi.fn(),
+    } satisfies PracticeClient;
+    const user = userEvent.setup();
+    render(<Practice sesionId="s1" client={client} />);
+    await user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    await user.click(await screen.findByRole("button", { name: /Siguiente/ }));
+    expect(screen.queryByText("Cargando")).toBeNull();
+    expect(screen.getByTestId("esqueleto")).toBeInTheDocument();
+    soltar({ ...Q, pregunta_id: "p2", enunciado: "Otra pregunta" });
+    expect(await screen.findByText("Otra pregunta")).toBeInTheDocument();
   });
 
   it("enter_goes_to_next_question_and_finishes_with_onDone", async () => {
@@ -206,8 +283,8 @@ describe("problemas numéricos y verdadero/falso", () => {
     const a = setupProblem(RES_KO);
     await a.user.type(await screen.findByLabelText(/Tu respuesta/), "5{Enter}");
     expect(await screen.findByText("2", { selector: "strong" })).toBeInTheDocument();
-    await new Promise((r) => setTimeout(r, 2700)); // más que el avance automático de un fallo
-    expect(a.client.nextQuestion).toHaveBeenCalledTimes(1);
+    await new Promise((r) => setTimeout(r, 3200)); // más que el avance automático
+    expect(a.client.nextQuestion, "un problema fallado no pide la siguiente hasta marcarlo").toHaveBeenCalledTimes(1);
     await a.user.click(screen.getByRole("button", { name: "Lo he hecho bien" }));
     await waitFor(() => expect(a.client.markCorrect).toHaveBeenCalledWith("s1", "p9"));
     expect(await screen.findByText("Bien. Lo tienes.")).toBeInTheDocument();

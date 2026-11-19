@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import { useEffect, type ReactNode } from "react";
 import type { Subject } from "../api";
 import { t } from "../i18n";
 import { AsignaturaSelector } from "./AsignaturaSelector";
@@ -52,9 +52,22 @@ interface Props {
   sinNav?: boolean;
 }
 
+/** Mezcla un color #rrggbb con blanco (p = parte de color) para una barra clara con tinte de la asignatura. */
+export function tinte(hex: string | undefined, p = 0.3): string | undefined {
+  const m = /^#([0-9a-f]{6})$/i.exec(hex ?? "");
+  if (!m) return undefined;
+  const n = parseInt(m[1], 16);
+  const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v * p + 255 * (1 - p)));
+  return `#${c.map((v) => v.toString(16).padStart(2, "0")).join("")}`;
+}
+
 export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, onAbrirSelector, ruta, sinNav }: Props) {
+  const color = tinte(asignaturas.find((a) => a.id === asignaturaId)?.acento);
+  useEffect(() => { // la barra de estado del iPhone toma el mismo color
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", color ?? "#B05A8F");
+  }, [color]);
   return (
-    <header className="sticky top-0 z-10 border-b border-[var(--rule)] bg-[var(--paper)]/95 sm:backdrop-blur">
+    <header style={color ? { background: color } : undefined} className={`sticky top-0 z-10 border-b border-[var(--rule)] sm:backdrop-blur ${color ? "" : "bg-[var(--paper)]/95"}`}>
       <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-3">
         <a href="#panal" className="flex items-center gap-3 text-[var(--ink)] no-underline">

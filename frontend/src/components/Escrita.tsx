@@ -3,13 +3,6 @@ import type { AnswerResult } from "../api";
 import { compararLetras, masCercana, mismaForma, type Segmento } from "../diff";
 import { t } from "../i18n";
 
-/** Letras que no están en el teclado español y la ele geminada: se insertan donde está el cursor. */
-export const CARACTERES = ["à", "è", "é", "í", "ï", "ò", "ó", "ú", "ü", "ç", "l·l"];
-
-export function insertar(valor: string, ini: number, fin: number, c: string): { valor: string; cursor: number } {
-  return { valor: valor.slice(0, ini) + c + valor.slice(fin), cursor: ini + c.length };
-}
-
 function Letras({ segs, malo }: { segs: Segmento[]; malo: string }) {
   return <>{segs.map((s, k) => (s.ok ? <span key={k}>{s.texto}</span> : <mark key={k} className={`rounded-sm bg-transparent font-bold ${malo}`}>{s.texto}</mark>))}</>;
 }
@@ -32,37 +25,44 @@ interface Props {
   etiquetas: string[];
   disabled: boolean;
   resultado: AnswerResult["campos"];
-  onSubmit: (valores: string[]) => void;
+  onSubmit: (valores: string[], stats: Record<string, number>) => void;
+  /** Corrección activa terminada escribiendo (no al saltarla): segundos que tardó y huecos copiados. */
+  onCopia?: (d: { t_copia: number; n_copias: number }) => void;
   /** Avisa de si ya se puede seguir: falta escribir bien lo fallado (corrección activa) salvo que se salte. */
   onCopiaLista?: (lista: boolean) => void;
 }
 
-/** Una caja por hueco (gerundi, participi...) con la barra de caracteres catalanes. Enter pasa al hueco siguiente y envía en el último. */
-export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista }: Props) {
+/** Una caja por hueco (gerundi, participi...) . Enter pasa al hueco siguiente y envía en el último. */
+export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista, onCopia }: Props) {
   const [valores, setValores] = useState<string[]>(() => etiquetas.map(() => ""));
   const cajas = useRef<(HTMLInputElement | null)[]>([]);
-  const activa = useRef(0);
   const [copias, setCopias] = useState<string[]>(() => etiquetas.map(() => ""));
   const [omitida, setOmitida] = useState(false);
   const falladas = (resultado ?? []).map((r, i) => (r.correcto ? -1 : i)).filter((i) => i >= 0);
   const lista = omitida || falladas.every((i) => mismaForma(copias[i], resultado![i].esperado));
   useEffect(() => { onCopiaLista?.(lista); }, [lista, onCopiaLista]);
+  // señales de duda al escribir: teclas, borrados y tiempo desde la primera tecla hasta enviar
+  const teclas = useRef({ n: 0, borrados: 0, t0: null as number | null });
+  const copiaDesde = useRef<number | null>(null);
+  useEffect(() => {
+    if (falladas.length === 0) return;
+    if (copiaDesde.current === null) copiaDesde.current = performance.now();
+    if (lista && !omitida) onCopia?.({ t_copia: Math.round((performance.now() - copiaDesde.current) / 100) / 10, n_copias: falladas.length });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lista, falladas.length > 0]);
 
   function poner(i: number, v: string) {
     setValores((vs) => vs.map((x, j) => (j === i ? v : x)));
   }
-  function insertarCaracter(c: string) {
-    const i = activa.current;
-    const el = cajas.current[i];
-    const r = insertar(valores[i], el?.selectionStart ?? valores[i].length, el?.selectionEnd ?? valores[i].length, c);
-    poner(i, r.valor);
-    requestAnimationFrame(() => { el?.focus(); el?.setSelectionRange(r.cursor, r.cursor); });
-  }
-
   return (
     <form
       className="mt-5 space-y-3"
-      onSubmit={(e) => { e.preventDefault(); if (valores.every((v) => v.trim())) onSubmit(valores.map((v) => v.trim())); }}
+      onSubmit={(e) => {
+        e.preventDefault();
+        if (!valores.every((v) => v.trim())) return;
+        const k = teclas.current;
+        onSubmit(valores.map((v) => v.trim()), { n_teclas: k.n, n_borrados: k.borrados, t_escritura: k.t0 === null ? 0 : Math.round(performance.now() - k.t0) / 1000 });
+      }}
     >
       {etiquetas.map((et, i) => {
         const r = resultado?.[i];
@@ -72,8 +72,14 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
             <input
               id={`escrita-${i}`} ref={(el) => { cajas.current[i] = el; }} autoFocus={i === 0} autoComplete="off" autoCorrect="off" autoCapitalize="none"
               spellCheck={false} lang="ca" value={valores[i]} disabled={disabled}
-              onFocus={() => { activa.current = i; }} onChange={(e) => poner(i, e.target.value)}
-              onKeyDown={(e) => { if (e.key === "Enter" && i < etiquetas.length - 1) { e.preventDefault(); cajas.current[i + 1]?.focus(); } }}
+              onChange={(e) => poner(i, e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key.length === 1 || e.key === "Backspace" || e.key === "Delete") {
+                  teclas.current.t0 ??= performance.now();
+                  teclas.current.n += 1;
+                  if (e.key === "Backspace" || e.key === "Delete") teclas.current.borrados += 1;
+                }
+                if (e.key === "Enter" && i < etiquetas.length - 1) { e.preventDefault(); cajas.current[i + 1]?.focus(); } }}
               className={`w-64 rounded-[11px] border px-4 py-3 text-lg focus-visible:border-[var(--lila)] ${
                 r ? (r.correcto ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]") : "border-[var(--rule-2)]"
               }`}
@@ -94,18 +100,6 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
           </div>
         );
       })}
-      {!disabled && (
-        <div role="group" aria-label={t("practica.caracteres")} className="flex flex-wrap gap-2">
-          {CARACTERES.map((c) => (
-            <button
-              key={c} type="button" onMouseDown={(e) => e.preventDefault()} onClick={() => insertarCaracter(c)}
-              className="min-h-11 min-w-11 rounded-[8px] border border-[var(--rule-2)] bg-white px-2.5 py-1.5 text-lg"
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-      )}
       <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
         {t("practica.comprobar")}
       </button>
@@ -115,7 +109,6 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
           <button type="button" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4" onClick={() => setOmitida(true)}>{t("practica.seguirSinCopiar")}</button>
         </div>
       )}
-      <p className="text-sm text-[var(--ink-3)]">{t("practica.formatoEscrita")}</p>
     </form>
   );
 }

@@ -38,7 +38,7 @@ def resumen_pytest(texto):
 
 
 def resumen_vitest(texto):
-    lin = texto.splitlines()
+    lin = re.sub(r"\[[0-9;]*m", "", texto).splitlines()
     out = [l for l in lin if re.search(r"FAIL|AssertionError|expected|Expected|Received|✗|×", l)][: MAX - 6]
     out += [l for l in lin if re.match(r"\s*(Test Files|Tests)\s", l)]
     return out

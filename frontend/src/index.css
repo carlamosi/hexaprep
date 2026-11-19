@@ -41,3 +41,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 :focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 3px; border-radius: 8px; }
+
+/* aro de espera del avance automático: se vacía en la duración indicada */
+@keyframes aro-avance { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+.aro-avance { animation-name: aro-avance; animation-timing-function: linear; animation-fill-mode: forwards; stroke-dashoffset: 100; }
+@media (prefers-reduced-motion: reduce) { .aro-avance { animation: none; stroke-dashoffset: 0; } }

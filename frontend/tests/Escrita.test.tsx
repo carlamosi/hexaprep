@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import type { AnswerResult, Question } from "../src/api";
-import { insertar } from "../src/components/Escrita";
 import { Practice, type PracticeClient } from "../src/components/Practice";
 
 const Q: Question = {
@@ -27,20 +26,25 @@ function setup(result: AnswerResult = KO) {
 }
 
 describe("pregunta escrita", () => {
-  it("insertar_pone_el_caracter_en_el_cursor", () => {
-    expect(insertar("ades", 3, 3, "è")).toEqual({ valor: "adeès", cursor: 4 });
-    expect(insertar("pomes", 0, 5, "l·l")).toEqual({ valor: "l·l", cursor: 3 });
-  });
-
-  it("envia_un_texto_por_hueco_con_la_barra_de_letras_y_Enter_pasa_al_siguiente", async () => {
+  it("envia_un_texto_por_hueco_y_Enter_pasa_al_siguiente", async () => {
     const { client, user } = setup();
     const gerundi = await screen.findByLabelText("Gerundi");
     await user.type(gerundi, "admetent{Enter}");
     expect(screen.getByLabelText("Participi")).toHaveFocus();
-    await user.type(screen.getByLabelText("Participi"), "adm");
-    await user.click(screen.getByRole("button", { name: "è" }));
+    await user.type(screen.getByLabelText("Participi"), "admè");
     await user.click(screen.getByRole("button", { name: "Comprobar" }));
     expect(client.answer).toHaveBeenCalledWith(expect.objectContaining({ respuestas: ["admetent", "admè"], elegida: "a" }));
+  });
+
+  it("captura_teclas_borrados_y_tiempo_de_escritura_en_los_tiempos", async () => {
+    const { client, user } = setup();
+    await user.type(await screen.findByLabelText("Gerundi"), "admx{Backspace}etent{Enter}");
+    await user.type(screen.getByLabelText("Participi"), "admès");
+    await user.click(screen.getByRole("button", { name: "Comprobar" }));
+    const t = client.answer.mock.calls[0][0].tiempos;
+    expect(t.n_borrados, `tiempos enviados: ${JSON.stringify(t)}`).toBe(1);
+    expect(t.n_teclas).toBeGreaterThanOrEqual(15);
+    expect(t.t_escritura).toBeGreaterThanOrEqual(0);
   });
 
   it("no_envia_con_un_hueco_vacio", async () => {
@@ -52,14 +56,15 @@ describe("pregunta escrita", () => {
 
   it("al_fallar_muestra_la_forma_correcta_y_la_pista_y_no_avanza_sola", async () => {
     vi.useFakeTimers({ shouldAdvanceTime: true });
-    const { client, user } = setup();
+    const { user } = setup();
     await user.type(await screen.findByLabelText("Gerundi"), "admetent");
     await user.type(screen.getByLabelText("Participi"), "admetut");
     await user.click(screen.getByRole("button", { name: "Comprobar" }));
     expect(await screen.findByText("admès")).toBeInTheDocument();
     expect(screen.getByText(/no és «admetut»/)).toBeInTheDocument();
     await vi.advanceTimersByTimeAsync(5000);
-    expect(client.nextQuestion).toHaveBeenCalledTimes(1); // sigue en la misma pregunta hasta pulsar «Siguiente»
+    expect(screen.getByText("admès"), "sigue en la misma pregunta hasta pulsar «Siguiente»").toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Siguiente" })).toBeInTheDocument();
     vi.useRealTimers();
   });
 });

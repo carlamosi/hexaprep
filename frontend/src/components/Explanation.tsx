@@ -4,7 +4,11 @@ import { BookletButton } from "./BookletButton";
 import { RichText } from "./RichText";
 
 /** Feedback breve tipo entrenador, explicación plegada y enlace al booklet. */
-export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado }: { result: AnswerResult; onNext: () => void; onMarcarBien?: () => void; siguienteBloqueado?: boolean }) {
+export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta }: {
+  result: AnswerResult; onNext: () => void; onMarcarBien?: () => void; siguienteBloqueado?: boolean;
+  /** Si hay valor, la pregunta pasa sola en esos ms y se dibuja el aro de espera. */
+  avanceMs?: number; onExplicacionAbierta?: () => void;
+}) {
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
       <div
@@ -30,7 +34,7 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado }
       )}
 
       {result.explicacion && (
-        <details className="rounded-[11px] border border-[var(--rule)] bg-white px-4 py-3">
+        <details className="rounded-[11px] border border-[var(--rule)] bg-white px-4 py-3" onToggle={(e) => { if (e.currentTarget.open) onExplicacionAbierta?.(); }}>
           <summary className="cursor-pointer font-medium">{t("practica.ver_explicacion")}</summary>
           <p className="mt-2 text-[var(--ink-2)]">
             <RichText text={result.explicacion} />
@@ -54,9 +58,16 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado }
         <button
           type="button"
           onClick={onNext} disabled={siguienteBloqueado}
-          className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-50"
+          className="relative rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-white shadow-[3px_3px_0_var(--lila)] disabled:opacity-50"
         >
           {t("practica.siguiente")}
+          {avanceMs !== undefined && (
+            <svg role="progressbar" aria-label={t("practica.siguientePregunta")} className="ml-2 inline-block h-4 w-4 -rotate-90 align-[-2px]" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeOpacity=".3" strokeWidth="2" />
+              <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" pathLength="100"
+                strokeDasharray="100" className="aro-avance" style={{ animationDuration: `${avanceMs}ms` }} />
+            </svg>
+          )}
         </button>
       </div>
     </section>

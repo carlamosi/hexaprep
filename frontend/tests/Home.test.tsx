@@ -52,6 +52,14 @@ describe("Home", () => {
     expect(screen.queryByRole("button", { name: "Test de nivel" })).toBeNull();
   });
 
+  it("calls_the_vf_only_group_Literatura_when_the_subject_has_written_questions_too", async () => {
+    vi.spyOn(api, "getSubjects").mockResolvedValue([asignatura(["escrita", "vf"])]);
+    vi.spyOn(api, "getMap").mockResolvedValue(MAPA);
+    render(<Home onPracticar={vi.fn()} onPracticarTipo={vi.fn()} />);
+    expect(await screen.findByRole("button", { name: "Literatura" })).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "Solo test y V/F" })).toBeNull();
+  });
+
   it.each([[["test"]], [["problema"]], [["test", "vf"]], [[]]])("hides_the_type_buttons_when_the_subject_has_only_%j", async (tipos) => {
     vi.spyOn(api, "getSubjects").mockResolvedValue([asignatura(tipos)]);
     vi.spyOn(api, "getMap").mockResolvedValue(MAPA);
