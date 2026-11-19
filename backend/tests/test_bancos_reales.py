@@ -6,6 +6,7 @@ import pytest
 
 from hexaprep.bank import load_bank, validate_bank
 
+pytestmark = pytest.mark.lento
 BANKS = Path(__file__).resolve().parents[2] / "banks"
 ARCHIVOS = sorted(p for p in BANKS.glob("*/*.json") if p.parent.name != "src")
 

@@ -53,6 +53,7 @@ def test_el_banco_generado_valida_y_los_ids_son_estables():
     assert [q["id"] for q in banco["preguntas"]] == ["cat-v1-0001", "cat-v1-0002"]
 
 
+@pytest.mark.lento
 def test_la_tabla_real_de_los_apuntes():
     pdf = ROOT / "banks" / "catala" / "fuentes" / "Catala_Apunts_Gramatica.pdf"
     if not pdf.exists():

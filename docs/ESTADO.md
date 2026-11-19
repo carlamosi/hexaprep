@@ -40,6 +40,7 @@ App web (local y online en Vercel) para Carla Monté Sihuro y otras dos personas
 - Online no funcionan las copias de seguridad de archivo (las hace Neon), ni «Abrir el booklet» (los PDF no están en git). Los bancos nuevos se importan con `tools/import_bank.py` apuntando `DATABASE_URL` a Neon.
 
 ## Cómo se arranca y se prueba
+- **Atajo de pruebas (bloque 0):** `.venv\Scripts\python tools\probar.py back|front|todo [-k expr] [--lento]` guarda la salida completa en `data/probar-*.txt` y muestra un resumen de máx. 40 líneas. `back` salta las pruebas marcadas `lento` (bancos reales y tabla de verbos, ~10 s); `--lento` las incluye. Suite back completa: ~83 s.
 - Todo en un comando: `powershell -ExecutionPolicy Bypass -File .\run.ps1` (importa todos los bancos con `tools\import_bank.py --all` y abre el navegador; solo comprobada su sintaxis, no de punta a punta).
 - A mano: `.venv\Scripts\python tools\import_bank.py --all` y `.venv\Scripts\python -m hexaprep` (http://127.0.0.1:8000). `HEXAPREP_PORT` cambia el puerto y `HEXAPREP_DATA` la carpeta de datos (úsala para probar sin tocar `data\`).
 - Pruebas: `.venv\Scripts\python -m pytest backend`; `cd frontend`, `npx vitest run`, `npx tsc --noEmit`, `npm run build` (el backend sirve `frontend/dist`, hay que recompilar tras cambiar el frontend), `npx playwright test` (usa su propia carpeta de datos).

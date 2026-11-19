@@ -16,3 +16,4 @@ include = ["hexaprep*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+markers = ["lento: solo cuando cambian los bancos o su generador (python tools/probar.py back --lento)"]
