@@ -82,9 +82,9 @@ def _dominio(session: Session, concepto_id: str) -> Dominio:
     return dom
 
 
-def rebuild(session: Session, concepto_id: str) -> Dominio:
-    """Reconstruye el dominio de un concepto repitiendo sus intentos (sin los de preguntas excluidas)."""
-    dom = _dominio(session, concepto_id)
+def reconstruir(session: Session, concepto_id: str) -> tuple[float, float, int, int, float]:
+    """Dominio de un concepto repitiendo sus intentos (sin los de preguntas excluidas), sin escribir nada:
+    (theta, sigma, n_intentos, racha, tendencia)."""
     rows = session.execute(
         select(Intento.correcta, Intento.dificultad, Pregunta.tipo).join(Pregunta, Pregunta.id == Intento.pregunta_id)
         .where(Intento.concepto_id == concepto_id, Pregunta.excluida.is_(False), Intento.deleted_at.is_(None))
@@ -94,8 +94,13 @@ def rebuild(session: Session, concepto_id: str) -> Dominio:
         theta, sigma = update(theta, sigma, dificultad, correcta, tipo)
         racha = racha + 1 if correcta else 0
         history.append(theta)
-    dom.theta, dom.sigma, dom.n_intentos, dom.racha = theta, sigma, len(rows), racha
-    dom.tendencia = theta - history[max(0, len(history) - 6)]
+    return theta, sigma, len(rows), racha, theta - history[max(0, len(history) - 6)]
+
+
+def rebuild(session: Session, concepto_id: str) -> Dominio:
+    """Reconstruye el dominio de un concepto repitiendo sus intentos (sin los de preguntas excluidas)."""
+    dom = _dominio(session, concepto_id)
+    dom.theta, dom.sigma, dom.n_intentos, dom.racha, dom.tendencia = reconstruir(session, concepto_id)
     session.flush()
     return dom
 
