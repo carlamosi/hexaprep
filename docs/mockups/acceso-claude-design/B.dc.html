@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Acceso B, claro con panal</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.g{transition:transform .16s cubic-bezier(.2,.7,.2,1),box-shadow .16s cubic-bezier(.2,.7,.2,1)}
+.g:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 #B05A8F}
+.g:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #B05A8F}
+.g:focus-visible{outline:3px solid #8E3F70;outline-offset:3px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 0 24px; font-family: 'Lexend', system-ui, sans-serif; color: #231D27; background: #FBF9F6">
+  <svg viewBox="0 0 232 200" width="232" height="200" aria-hidden="true" style="position: absolute; right: -30px; top: -10px">
+    <sc-for list="{{celdas}}" as="c" hint-placeholder-count="15">
+      <polygon points="{{c.pts}}" fill="{{c.fill}}" opacity="{{c.op}}" stroke="{{c.fill}}" stroke-width="3" stroke-linejoin="round"/>
+    </sc-for>
+  </svg>
+  <header style="display: flex; align-items: center; gap: 10px; margin-top: 56px; position: relative">
+    <svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><g transform="translate(1.6 1.6)"><path d="M12 2.8 19.8 7.3v9.4L12 21.2 4.2 16.7V7.3Z" fill="#EBD4E2"/></g><path d="M12 2.8 19.8 7.3v9.4L12 21.2 4.2 16.7V7.3Z" fill="#F8EEF4" stroke="#231D27" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    <span style="font-size: 18px; font-weight: 600">HexaPrep</span>
+  </header>
+  <div style="flex: 1 1 auto"></div>
+  <section style="display: flex; flex-direction: column; gap: 14px; position: relative">
+    <h1 style="margin: 0; font-size: 32px; font-weight: 600; line-height: 1.15; letter-spacing: -.01em">Entra con tu cuenta de Google</h1>
+    <p style="margin: 0; font-size: 15px; line-height: 1.5; color: #554C5A">Tu progreso se guarda en tu cuenta y es el mismo en todos tus dispositivos.</p>
+    <ul style="list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 10px">
+      <li style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 14px; background: #FFFFFF; border: 1px solid #ECE6E9">
+        <span style="display: grid; place-items: center; flex: none; width: 36px; height: 32px; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); background: #F8EEF4; color: #8E3F70">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3M18 3v4h-4M6 21v-4h4"/></svg>
+        </span>
+        <span style="font-size: 14px; font-weight: 500">El mismo progreso en móvil y ordenador</span>
+      </li>
+      <li style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 14px; background: #FFFFFF; border: 1px solid #ECE6E9">
+        <span style="display: grid; place-items: center; flex: none; width: 36px; height: 32px; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); background: #F8EEF4; color: #8E3F70">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="12" r="3.5"/><path d="M11.5 12H21M17 12v3M20 12v2"/></svg>
+        </span>
+        <span style="font-size: 14px; font-weight: 500">Sin crear otra contraseña</span>
+      </li>
+      <li style="display: flex; align-items: center; gap: 14px; padding: 12px 14px; border-radius: 14px; background: #FFFFFF; border: 1px solid #ECE6E9">
+        <span style="display: grid; place-items: center; flex: none; width: 36px; height: 32px; clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%); background: #F8EEF4; color: #8E3F70">
+          <svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        </span>
+        <span style="font-size: 14px; font-weight: 500">Tu progreso es solo tuyo</span>
+      </li>
+    </ul>
+    <button class="g" type="button" style="margin-top: 14px; height: 56px; border: 0; border-radius: 14px; background: #231D27; color: #FFFFFF; font: 500 16px 'Lexend', system-ui, sans-serif; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer; box-shadow: 3px 3px 0 #B05A8F">
+      <span style="display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #FFFFFF">
+        <svg viewBox="0 0 48 48" width="18" height="18" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+      </span>
+      Continuar con Google
+    </button>
+  </section>
+  <div style="height: 40px; flex: none"></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const r = 24;
+    const hex = (cx, cy, rr) => Array.from({ length: 6 }, (_, i) => {
+      const a = (Math.PI / 180) * 60 * i;
+      return (cx + rr * Math.cos(a)).toFixed(1) + ',' + (cy + rr * Math.sin(a)).toFixed(1);
+    }).join(' ');
+    const celdas = [
+      [2,0,'#CC79A7',.9],[3,0,'#EBD4E2',1],[4,0,'#E69F00',.85],[5,0,'#F8EEF4',1],
+      [1,1,'#EBD4E2',1],[2,1,'#B05A8F',1],[3,1,'#F4B6D6',1],[4,1,'#009E73',.8],[5,1,'#EBD4E2',1],
+      [2,2,'#F8EEF4',1],[3,2,'#0072B2',.8],[4,2,'#EBD4E2',1],[5,2,'#CC79A7',.6],
+      [3,3,'#F8EEF4',1],[4,3,'#B05A8F',.7],
+    ].map(([c, rw, fill, op]) => ({
+      fill, op,
+      pts: hex(r + 1.5 * r * c, r + rw * 1.7320508 * r + (c % 2) * 0.8660254 * r, r - 3),
+    }));
+    return { celdas };
+  }
+}
+</script>
+</body>
+</html>

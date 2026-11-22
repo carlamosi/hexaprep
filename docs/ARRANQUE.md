@@ -11,11 +11,16 @@
 ## Primer mensaje (pegar tal cual)
 > Retoma HexaPrep. Lee `CLAUDE.md` y, de `docs/ESTADO.md`, solo «Hecho el 2026-11-22» y «Siguientes pasos propuestos», más la sección «Qué skill usar» de `docs/ARRANQUE.md`. Dime en una línea con qué modelo vas y, para el siguiente paso que propones, qué skills usarías y por qué. No cambies nada hasta que yo apruebe un plan breve. Cuando termines algo verificado, súbelo (push) y confirma que la web ya lo sirve.
 
+## Primer mensaje para rediseñar una pantalla con Claude Design (Perfil, ahora)
+Método y briefing completos en `docs/DISENO-CLAUDE.md`. Pegar tal cual:
+> Retoma HexaPrep y haz con Claude Design lo mismo que con la pantalla de acceso, ahora con la pantalla de Perfil. Lee `CLAUDE.md`, `docs/DISENO-CLAUDE.md` entero y, de `docs/ESTADO.md`, solo «Hecho el 2026-11-22 (noche)» y «Siguientes pasos propuestos». Dime en una línea con qué modelo vas, mira el Perfil actual en el navegador (390 px, claro y oscuro, con rutas simuladas, sin responder preguntas en datos reales) y crea el lienzo con 3 propuestas, los estados que cambian y una versión de escritorio. No toques el código hasta que yo elija una.
+
 ## Qué skill usar (según lo que pida Carla)
 Di en una frase cuál usas y por qué. Las de diseño están instaladas en `~/.claude/skills` (si no aparecen en la lista de la sesión, abre una conversación nueva).
 
 | Si Carla pide... | Usa | Notas |
 |---|---|---|
+| Rediseñar una pantalla con maquetas (Claude Design) | `Artifact` (tipo Design), `frontend-design`, `emil-design-eng`, `ux-motion` | Método en `docs/DISENO-CLAUDE.md`. 3 propuestas y estados antes de tocar código; no verificar el lienzo salvo que Carla lo pida. |
 | Una pantalla o función nueva (UI) | `superpowers:brainstorming` y luego `frontend-design`; si lleva movimiento, `animate` | Boceto aprobado antes de implementar (artefacto). Lógica nueva con `superpowers:test-driven-development`. |
 | Pulir o revisar la interfaz existente | `make-interfaces-feel-better` (`quick` o `full`) | Radios concéntricos, números tabulares, áreas táctiles de 44 px, sombras, iconos. |
 | «Que se sienta mejor», microinteracciones, auditar el movimiento | `improve-animations` (solo audita y planifica) y después `animate` para aplicar | Primero la puerta de frecuencia: lo que se repite cientos de veces por sesión no se anima (cambio de pregunta, teclado). |

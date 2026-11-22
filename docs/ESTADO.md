@@ -103,6 +103,17 @@ App web (local y online en Vercel) para Carla Monté Sihuro y otras dos personas
 - **No visto:** la web real con sesión (requiere Google), iPhone real, animaciones a cámara lenta. La cabecera de escritorio tiene enlaces de 30 a 38 px de alto (anterior).
 - **Pendiente de revisar con Carla:** erratas de V1 que vienen del PDF («meréixer» debería ser «merèixer»; «despendre» lleva el gerundi y el participi de «desprendre»); «Substantius masculins i femenins» (en Gènere) son preguntas de vocal final, más de ortografía de vocals; «Pronoms febles, haver-hi i obligació» mezcla 6 preguntas de temas distintos; el orden de los conceptos dentro de un subtema es alfabético (no hay columna de orden); los snapshots regenerados cortan por medianoche local frente a intentos en UTC. Neon: `import_bank` hace muchas consultas por pregunta (la carga de bancos tarda ~10 min), se puede cargar por lotes.
 
+## Hecho el 2026-11-22 (noche: splash, navbar, Hoy, Perfil, acceso y PWA, todo en producción)
+- **Splash** (`Splash.tsx`, `arranque.ts`, `Marca.tsx`): colores del icono, 6 hexágonos asimétricos en arco, destello, halo que respira, lema en inglés y **barra de carga honesta** (espera a que el acceso y la tipografía estén listos; mínimo 1,2 s, tope 5 s; una vez por sesión; con movimiento reducido no sale). Fondo ciruela desde el primer fotograma (`index.html`) y barra del navegador a juego.
+- **Iconos y PWA:** icono nuevo (hexágono luminoso sobre ciruela) generado por `tools/hacer_iconos.mjs` (`cd frontend && node ../tools/hacer_iconos.mjs`), `favicon.ico`, `icon-48.png`, botón «Instalar ahora» en Perfil, `background_color` del manifest ciruela. Suite medida: instalable en Chromium sin errores. **No probado en un iPhone real.**
+- **Navegación:** pastilla deslizante también en móvil, iconos inactivos solo con trazo, barra inferior de cristal; `.btn-duro`/`.btn-suave` con hover, pulsado y 44 px unificados (`index.css`).
+- **Hoy** (`Suggestions.tsx`, `hoy.css`): sugerencias **solo de la asignatura que se ve** (`/api/suggestions?asignatura_id=`; antes mezclaba todas), tarjetas numeradas con motivo en color (`razon`), riesgo de olvido y subida estimada, esqueleto de carga. **Examen** rediseñado (`Examen.tsx`, `examen.css`) y **Tema en curso** (`TemaEnCurso.tsx`) viven aquí, no en Perfil.
+- **Perfil:** tarjeta de cuenta con avatar hexagonal, «Tu práctica» (días practicados sin rachas), apariencia con interruptor de cielo, «Herramientas» (antes «Avanzado»), «Empezar de cero» en zona delicada.
+- **Historial en dos columnas** donde conviene (Evolución con Pendiente u Olvido, Duda con Olvido; el olvido ancho se parte en gráfica y lista).
+- **Acceso** (`Acceso.tsx`, `acceso.css`, `Marca.tsx`): diseño A de Claude Design (lienzo y fuentes en `docs/mockups/acceso-claude-design/`), errores en caja con icono, «Recargar» si Google no carga. **El registro se abrió a cualquier cuenta de Google** con `HEXAPREP_EMAILS_PERMITIDOS=*` en Vercel (puesto por Carla; ver el aviso de espacio en Neon arriba). Sin tope de perfiles. **No probado con una cuenta nueva real.**
+- **Verificación:** `vitest` 206, backend 352, `tsc` y build limpios. No visto: iPhone real, animaciones a cámara lenta, entrada con una cuenta nueva.
+- **Siguiente pedido por Carla:** hacer con Claude Design la pantalla de **Perfil** (`docs/DISENO-CLAUDE.md`). Ideas del acceso aparcadas: la propuesta B como onboarding.
+
 ## Siguientes pasos propuestos (2026-11-22, para decidir con Carla)
 
 ### Peticiones nuevas de Carla (2026-11-22): hacer primero, en este orden

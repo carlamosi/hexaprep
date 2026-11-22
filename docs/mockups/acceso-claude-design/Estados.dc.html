@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Acceso A, errores</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.g{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.g:active{transform:scale(.98)}
+.g:focus-visible{outline:3px solid #FFF6FB;outline-offset:3px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; gap: 16px; padding: 52px 24px 28px; font-family: 'Lexend', system-ui, sans-serif; color: #FBEFF6; background: radial-gradient(circle at 50% 20%, #9B4488 0, #5A2556 45%, #2A1030 90%)">
+
+  <section style="display: flex; flex-direction: column; gap: 12px; padding: 18px; border-radius: 18px; background: rgba(255,246,251,.07); border: 1px solid rgba(255,246,251,.16)">
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #F7C6E0">Error al iniciar sesión</span>
+    <div role="alert" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-radius: 12px; background: rgba(184,33,43,.22); border: 1px solid rgba(248,164,170,.6)">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="#F8A4AA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M12 3.5 21.5 20h-19z"/><path d="M12 10v4.5M12 17.5v.01"/></svg>
+      <p style="margin: 0; font-size: 14px; line-height: 1.45">No se ha podido iniciar sesión. Inténtalo otra vez.</p>
+    </div>
+    <button class="g" type="button" style="height: 52px; border: 0; border-radius: 26px; background: #FFFFFF; color: #1F1F1F; font: 500 15px 'Lexend', system-ui, sans-serif; display: flex; align-items: center; justify-content: center; gap: 12px; cursor: pointer">
+      <svg viewBox="0 0 48 48" width="20" height="20" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+      Continuar con Google
+    </button>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 12px; padding: 18px; border-radius: 18px; background: rgba(255,246,251,.07); border: 1px solid rgba(255,246,251,.16)">
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #F7C6E0">Google no carga</span>
+    <div role="alert" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px; border-radius: 12px; background: rgba(184,33,43,.22); border: 1px solid rgba(248,164,170,.6)">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="#F8A4AA" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="flex: none; margin-top: 1px"><path d="M12 3.5 21.5 20h-19z"/><path d="M12 10v4.5M12 17.5v.01"/></svg>
+      <p style="margin: 0; font-size: 14px; line-height: 1.45">No se ha podido cargar el acceso de Google. Revisa tu conexión y recarga.</p>
+    </div>
+    <button class="g" type="button" style="height: 52px; border: 1.5px solid #FBEFF6; border-radius: 26px; background: transparent; color: #FBEFF6; font: 500 15px 'Lexend', system-ui, sans-serif; display: flex; align-items: center; justify-content: center; gap: 10px; cursor: pointer">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.6-5.9M20 4v5h-5"/></svg>
+      Recargar
+    </button>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-11-22T20:00:00Z" },
+  "title": "Acceso HexaPrep",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 390, "h": 844, "title": "A · Portada ciruela (elegida, ya en la app)" },
+    "B.dc.html": { "x": 470, "y": 0, "w": 390, "h": 844, "title": "B · Idea para el onboarding" },
+    "C.dc.html": { "x": 940, "y": 0, "w": 390, "h": 844, "title": "C · Panal vivo (descartada)" },
+    "Estados.dc.html": { "x": 1410, "y": 0, "w": 390, "h": 844, "title": "A · Errores (ya en la app)" },
+    "Escritorio.dc.html": { "x": 0, "y": 964, "w": 1280, "h": 800, "title": "A en escritorio", "expand": "fill" }
+  },
+  "order": ["Main.dc.html", "B.dc.html", "C.dc.html", "Estados.dc.html", "Escritorio.dc.html"],
+  "notes": {
+    "titulo": { "x": 0, "y": -300, "text": "Acceso con Google: tres ideas y sus estados", "kind": "title1", "maxW": 1800 }
+  },
+  "designSystems": []
+}
