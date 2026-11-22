@@ -23,6 +23,11 @@ function cliente(over: Partial<AccesoClient> = {}): AccesoClient {
 const app = <p>CONTENIDO DE LA APP</p>;
 
 describe("acceso con Google", () => {
+  it("mientras_comprueba_la_sesion_no_se_ve_el_texto_Cargando", async () => {
+    render(<Acceso client={cliente({ getAuthConfig: () => new Promise<{ google_client_id: string | null }>(() => {}) })}>{app}</Acceso>);
+    expect(screen.getByRole("status")).toHaveClass("sr-only");
+  });
+
   it("sin_google_configurado_enseña_la_app_directamente", async () => {
     render(<Acceso client={cliente({ getAuthConfig: vi.fn().mockResolvedValue({ google_client_id: null }) })}>{app}</Acceso>);
     expect(await screen.findByText("CONTENIDO DE LA APP")).toBeInTheDocument();

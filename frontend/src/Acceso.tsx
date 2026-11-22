@@ -100,7 +100,8 @@ export function Acceso({ children, client = api }: { children: ReactNode; client
     }
   }
 
-  if (estado.tipo === "cargando") return <p className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
+  // mientras se comprueba la sesión no se ve nada (la portada cubre ese rato): el texto «Cargando» solo queda para lectores de pantalla
+  if (estado.tipo === "cargando") return <p role="status" className="sr-only">{t("app.cargando")}</p>;
   if (estado.tipo === "error") return <ErrorCarga />;
   if (estado.tipo === "fuera") return <Entrada clientId={estado.clientId} aviso={aviso} onCredencial={(c) => void credencial(c)} />;
   return <>{children}</>;
