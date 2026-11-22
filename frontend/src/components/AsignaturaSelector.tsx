@@ -18,19 +18,22 @@ export function AsignaturaSelector({ asignaturas, actual, onElegir, onAbrir }: P
   const boton = useRef<HTMLButtonElement>(null);
   const cur = asignaturas.find((a) => a.id === actual) ?? asignaturas[0];
 
+  const enfocarActual = () => raiz.current?.querySelector<HTMLElement>('[role="option"][aria-selected="true"]')?.focus();
   const [sale, setSale] = useState(false);
+  const salida = useRef<ReturnType<typeof setTimeout>>(undefined);
+  useEffect(() => () => clearTimeout(salida.current), []);
 
   /** Cierra con una salida corta (`.asig-sale`, menos de la mitad de lo que tarda en abrir). */
   function cerrar(devolverFoco = true) {
     if (devolverFoco) boton.current?.focus();
     if (sale) return;
     setSale(true);
-    setTimeout(() => { setOpen(false); setSale(false); }, 120);
+    salida.current = setTimeout(() => { setOpen(false); setSale(false); }, 120);
   }
 
   useEffect(() => {
     if (!open) return;
-    raiz.current?.querySelector<HTMLElement>('[role="option"][aria-selected="true"]')?.focus();
+    enfocarActual();
     const fuera = (e: PointerEvent) => !raiz.current?.contains(e.target as Node) && cerrar(false);
     document.addEventListener("pointerdown", fuera); // en iOS tocar una zona vacía no genera mousedown
     return () => document.removeEventListener("pointerdown", fuera);
@@ -58,7 +61,11 @@ export function AsignaturaSelector({ asignaturas, actual, onElegir, onAbrir }: P
       <button
         ref={boton} type="button" className="asig-btn" aria-haspopup="listbox" aria-expanded={open}
         aria-label={`${t("nav.asignatura")}: ${cur?.nombre ?? ""}`}
-        onClick={() => { if (open) cerrar(false); else { onAbrir?.(); setOpen(true); } }}
+        onClick={() => {
+          if (sale) { clearTimeout(salida.current); setSale(false); enfocarActual(); } // pulsar mientras se cierra lo vuelve a abrir desde donde estaba
+          else if (open) cerrar(false);
+          else { onAbrir?.(); setOpen(true); }
+        }}
       >
         <i aria-hidden="true" className="asig-dot" />
         <span className="asig-nombre">{cur?.nombre}</span>
