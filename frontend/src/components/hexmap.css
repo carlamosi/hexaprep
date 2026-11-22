@@ -125,6 +125,21 @@
 .banner-pct:active { transform: translateY(0) scale(.97); }
 .banner-flecha { width: .62em; height: .62em; margin-left: 6px; opacity: .85; transition: transform var(--dur-ui) var(--ease); }
 .banner-pct small { font-size: .45em; font-weight: 500; opacity: .85; }
+/* Franja fina bajo la cabecera cuando el banner ya salió por arriba: nombre y porcentaje, y abre el panel */
+.banner-mini {
+  position: fixed; z-index: 9; top: var(--cab, 0); left: 0; right: 0; height: 44px; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 max(16px, calc((100vw - 1064px) / 2)); color: #fff;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--b) 90%, #fff), var(--b));
+  box-shadow: 0 8px 16px -12px rgb(31 26 36 / .5); transform: translateY(-100%); opacity: 0; pointer-events: none;
+  transition: transform var(--dur-ui) var(--ease), opacity var(--dur-ui) var(--ease);
+}
+.banner-mini[data-visible="true"] { transform: none; opacity: 1; pointer-events: auto; }
+.banner-mini-nombre { font-weight: 700; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.banner-mini-pct { display: flex; align-items: center; gap: 2px; min-height: 44px; padding: 0 4px 0 12px; border: 0; background: none; color: inherit; font: inherit; font-weight: 600; font-variant-numeric: tabular-nums; cursor: pointer; }
+.banner-mini-pct small { opacity: .85; font-weight: 500; }
+.banner-mini-pct svg { width: 14px; height: 14px; margin-left: 4px; }
+.banner-mini-pct:focus-visible { outline: 3px solid #fff; outline-offset: -3px; border-radius: 8px; }
+@media (prefers-reduced-motion: reduce) { .banner-mini { transition: none; } }
 /* mientras carga: mismo hueco, sin texto */
 .banner-sk { min-height: 156px; --b: color-mix(in srgb, var(--ink) 22%, var(--paper)); animation: none; }
 .banner-sk::after { content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / .18) 50%, transparent 70%); background-size: 220% 100%; animation: banner-sk 1.4s linear infinite; }

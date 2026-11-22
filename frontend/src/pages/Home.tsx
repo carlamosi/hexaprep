@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { api, type MapResponse } from "../api";
 import { HexMap } from "../components/HexMap";
 import { PanelAsignatura } from "../components/PanelAsignatura";
@@ -8,6 +8,7 @@ import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
 import { ErrorCarga } from "../components/ErrorCarga";
 import { NovedadTemario, debeMostrarse } from "../components/NovedadTemario";
+import { BannerMini } from "../components/BannerMini";
 import { group } from "../components/HexMap";
 
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[]; animar: boolean };
@@ -22,6 +23,7 @@ const puntosHex = (cx: number, cy: number, r: number) =>
 export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPracticarTema }: { onSelectSubtema?: (id: string) => void; onPracticar?: () => void; onPracticarTipo?: (grupo: "test" | "problemas" | "escritas") => void; onPracticarTema?: (id: string) => void }) {
   const [state, setState] = useState<State>({ kind: "loading" });
   const [panel, setPanel] = useState(false);
+  const bannerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     let alive = true;
@@ -52,7 +54,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
   const temas = new Set(map.hexes.map((h) => h.tema)).size;
   return (
     <main id="main" className="wrap">
-      <section className={`banner${animar ? " banner-anim" : ""}`} style={{ "--b": tonoBanner(acento || "") } as React.CSSProperties}>
+      <section ref={bannerRef} className={`banner${animar ? " banner-anim" : ""}`} style={{ "--b": tonoBanner(acento || "") } as React.CSSProperties}>
         <svg className="banner-marca" viewBox="-20 -20 280 280" aria-hidden="true">
           {[[120, 120], [214, 120], [167, 201], [73, 201], [26, 120], [73, 39], [167, 39]].map(([x, y], i) => <polygon key={i} points={puntosHex(x, y, 52)} fill="#fff" />)}
         </svg>
@@ -66,6 +68,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
           <svg className="banner-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>
       </section>
+      <BannerMini banner={bannerRef} nombre={map.asignatura} percent={map.percent} color={tonoBanner(acento || "")} onAbrir={() => setPanel(true)} />
       {debeMostrarse(map.asignatura, map.hexes.some((h) => h.percent > 0)) && <NovedadTemario temas={group(map.hexes).map((x) => x.nombre)} base={map.hexes[0]?.color ?? acento} />}
       <div className="flex flex-wrap items-center gap-3 py-5">
         <Buscador hexes={map.hexes} onElegir={(id) => onSelectSubtema?.(id)} />
