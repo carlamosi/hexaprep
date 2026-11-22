@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ApiError, api } from "./api";
 import { t } from "./i18n";
+import { marcarListo } from "./arranque";
 import { enAppInstalada } from "./instalar"; // en la app instalada la ventana emergente de Google no funciona en iOS
 import { ErrorCarga } from "./components/ErrorCarga";
 
@@ -58,6 +59,8 @@ function Entrada({ clientId, aviso, onCredencial }: { clientId: string; aviso: s
 export function Acceso({ children, client = api }: { children: ReactNode; client?: AccesoClient }) {
   const [estado, setEstado] = useState<Estado>({ tipo: "cargando" });
   const [aviso, setAviso] = useState<string | null>(null);
+
+  useEffect(() => { if (estado.tipo !== "cargando") marcarListo("acceso"); }, [estado.tipo]); // la splash espera a saber si hay sesión
 
   useEffect(() => { // al volver de Google con redirección, el motivo del fallo llega en la dirección
     const motivo = new URLSearchParams(window.location.search).get("acceso");
