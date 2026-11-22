@@ -1,6 +1,6 @@
 {
- "tema": "T2 Gramàtica",
- "subtema": "Gènere del nom",
+ "tema": "El nom, l'adjectiu i l'article",
+ "subtema": "Gènere",
  "conceptos": [
   {
    "nombre": "Noms invariables",
@@ -615,6 +615,8 @@
   },
   {
    "nombre": "Adjectius invariables i variables",
+   "tema": "El nom, l'adjectiu i l'article",
+   "subtema": "Adjectiu",
    "pagina": 3,
    "cara": 2,
    "ayuda": "Els adjectius invariables tenen la mateixa forma en masculí i femení (per exemple, «fàcil», «alegre», «jove»). Els variables canvien al femení: «blanc → blanca», «gros → grossa»; alguns també canvien l'arrel: «roig → roja», «mig → mitja». Cal saber el femení, el plural masculí i el plural femení de cada adjectiu.",

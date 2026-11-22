@@ -1,6 +1,6 @@
 {
- "tema": "T2 Gramàtica",
- "subtema": "Adjectiu: gradació i vocals",
+ "tema": "El nom, l'adjectiu i l'article",
+ "subtema": "Adjectiu",
  "conceptos": [
   {
    "nombre": "Gradació irregular",
@@ -343,8 +343,8 @@
   },
   {
    "nombre": "Diftongs",
-   "tema": "T1 Normativa general",
-   "subtema": "Diftongs i hiats",
+   "tema": "Ortografia i accentuació",
+   "subtema": "Diftongs, hiats i dièresi",
    "pagina": 7,
    "cara": 6,
    "ayuda": "Un diftong és un grup de dues vocals en una sola síl·laba. Pot ser creixent (i o u + vocal a inici de paraula, vocal + i/u + vocal, o qu/gu + vocal) o decreixent (vocal + i/u, o i/u + i/u). Per exemple, «peix» té un diftong decreixent. Un hiat són dues vocals en síl·labes diferents; també es trenca el diftong amb accent o dièresi.",
@@ -550,8 +550,8 @@
   },
   {
    "nombre": "Hiats",
-   "tema": "T1 Normativa general",
-   "subtema": "Diftongs i hiats",
+   "tema": "Ortografia i accentuació",
+   "subtema": "Diftongs, hiats i dièresi",
    "pagina": 7,
    "cara": 6,
    "ayuda": "Un hiat és un grup de dues vocals que es pronuncien en síl·labes diferents. Es produeix quan es troben dues vocals que no són i ni u, o quan una i o u seguida de vocal no és a l'inici de paraula. Un diftong es trenca amb l'accent o amb la dièresi: «veí», «raïm».",

@@ -79,6 +79,22 @@ def _error_regular(inf: str, regular: str, validas: list[str], que: str) -> dict
     return {f: nota for f in (regular, _sin_acentos(regular)) if f not in validas}
 
 
+# Familias por reglas sobre las formas (sin IA); el orden es el de aparición en el temario. La primera regla que se cumple manda.
+FAMILIAS = ["Participis en -s", "Participis forts en -t", "Participis en -gut, -cut i -çut", "Verbs amb dos participis",
+            "Participi regular (compte amb el gerundi)"]
+
+
+def familia(inf: str, ger: str, parts: list[str]) -> str:
+    if len(parts) > 1:
+        return FAMILIAS[3]
+    p = parts[0]
+    if p.endswith("s"):
+        return FAMILIAS[0]
+    if p.endswith(("gut", "cut", "çut")):
+        return FAMILIAS[2]
+    return FAMILIAS[4] if _sin_acentos(p) == _sin_acentos(_part_regular(inf)) else FAMILIAS[1]
+
+
 def construir(verbos) -> list[dict]:
     preguntas = []
     for inf, ger, parts in verbos:
@@ -91,7 +107,7 @@ def construir(verbos) -> list[dict]:
                        + ("El participi és regular." if reg_part in parts else f"El participi és irregular (no és «{reg_part}»)."))
         dificultad = min(5, max(1, 3 + (ger != reg_ger) + (len(parts) > 1) - (inf in FRECUENTES)))
         preguntas.append({
-            "tema": "Verbs", "subtema": "Gerundis i participis", "concepto": "Gerundi i participi dels verbs irregulars",
+            "tema": "El verb", "subtema": "Gerundis i participis irregulars", "concepto": familia(inf, ger, parts),
             "dificultad": dificultad, "enunciado": f"Verb: «{inf}».",
             "tipo": "escrita",
             "campos": [{"etiqueta": "Gerundi", "validas": [ger], "errores": errores_ger},

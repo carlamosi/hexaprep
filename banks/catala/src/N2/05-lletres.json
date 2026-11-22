@@ -1,6 +1,6 @@
 {
- "tema": "T1 Normativa general",
- "subtema": "B/V, ela geminada, O/U, essa i erra",
+ "tema": "Ortografia i accentuació",
+ "subtema": "Consonants",
  "conceptos": [
   {
    "nombre": "La b i la v",
@@ -30,6 +30,8 @@
   },
   {
    "nombre": "La o i la u",
+   "tema": "Ortografia i accentuació",
+   "subtema": "Vocals",
    "pagina": 10,
    "ayuda": "Per saber si va «o» o «u», busquem el mot primitiu (forner ve de forn) o escrivim com en castellà. Però hi ha llistes d'excepcions: català «o» i castellà «u» (cobrir, sofrir, polir) i català «u» i castellà «o» (riu, europeu, trofeu). Als verbs collir, cosir, poder, sortir, voler i derivats escrivim «o» si és àtona; si és forta escrivim el que sona.",
    "escritas": [

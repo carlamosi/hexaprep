@@ -1,6 +1,6 @@
 {
- "tema": "T1 Normativa general",
- "subtema": "A/E àtones",
+ "tema": "Ortografia i accentuació",
+ "subtema": "Vocals",
  "conceptos": [
   {
    "nombre": "Penúltima lletra àtona",
@@ -17,6 +17,8 @@
   },
   {
    "nombre": "Substantius masculins i femenins",
+   "tema": "El nom, l'adjectiu i l'article",
+   "subtema": "Gènere",
    "pagina": 1,
    "ayuda": "Els substantius masculins acostumen a acabar en -e (cotxe, llibre) i els femenins en -a (casa, taula). Les excepcions són les mateixes que en castellà: masculins en -ista (dentista), -cida (insecticida), -ma (clima) i -ta (atleta), i femenins com mare, febre o verge.",
    "escritas": [
@@ -31,6 +33,8 @@
   },
   {
    "nombre": "Adjectius invariables i variables",
+   "tema": "El nom, l'adjectiu i l'article",
+   "subtema": "Adjectiu",
    "pagina": 1,
    "ayuda": "Si un adjectiu és invariable en castellà (una sola terminació), també ho és en català: amable, difícil, capaç. Si en castellà té dues terminacions, en català també (masculí i femení). Aquesta regla serveix per a qualsevol adjectiu, encara que no acabi en e/a. Hi ha poques excepcions que cal memoritzar.",
    "escritas": [

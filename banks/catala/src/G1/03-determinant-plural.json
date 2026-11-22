@@ -1,6 +1,6 @@
 {
- "tema": "T2 Gramàtica",
- "subtema": "Llur, qualsevol, diversos i plural",
+ "tema": "El nom, l'adjectiu i l'article",
+ "subtema": "Determinants i numerals",
  "conceptos": [
   {
    "nombre": "Llur i qualsevol",
@@ -175,6 +175,8 @@
   },
   {
    "nombre": "Plural en -os",
+   "tema": "El nom, l'adjectiu i l'article",
+   "subtema": "Nombre",
    "pagina": 5,
    "cara": 4,
    "ayuda": "Els mots acabats en -s, -x o -ç tònics fan el plural en -os: «gas → gasos», «peix → peixos». Els acabats en -sc, -st, -xt i -ig també fan -os, que és la forma dels apunts (la normativa admet també -s): «disc → discos», «gest → gestos». Quan el mot acaba en -ig, la g passa a -j- davant -os: «raig → rajos».",
@@ -317,6 +319,8 @@
   },
   {
    "nombre": "Plurals invariables",
+   "tema": "El nom, l'adjectiu i l'article",
+   "subtema": "Nombre",
    "pagina": 5,
    "cara": 4,
    "ayuda": "Alguns noms tenen el mateix plural que el singular: els dies de la setmana (excepte dissabte i diumenge), com «dilluns» o «divendres»; també alguns compostos acabats en -s, com «el llevataps / els llevataps». Els mots plans (accent a la penúltima síl·laba) acabats en -x només afegeixen -s: «fènix → fènixs».",

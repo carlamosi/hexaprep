@@ -1,6 +1,6 @@
 {
- "tema": "T1 Normativa general",
- "subtema": "Aspectes varis, barbarismes i pronoms",
+ "tema": "Pronoms, preposicions i lèxic",
+ "subtema": "Parelles que es confonen",
  "conceptos": [
   {
    "nombre": "a/ha, em/hem, tan/tant, quan/quant",
@@ -30,6 +30,8 @@
   },
   {
    "nombre": "Barbarismes i interferències del castellà",
+   "tema": "Pronoms, preposicions i lèxic",
+   "subtema": "Barbarismes i interferències",
    "pagina": 14,
    "ayuda": "Un barbarisme és una paraula del castellà (o d'una altra llengua) que fem servir en català amb forma castellana. Algunes parelles que cal recordar: ajornar (no aplaçar), enviament (no envio), fre (no freno), entrepà (no bocadillo), tauró (no tiburó), plet (no pleit), a més (no ademés), sud (no sur). A les interferències, fixa't que moltes diferències són d'una sola lletra.",
    "escritas": [
@@ -44,6 +46,8 @@
   },
   {
    "nombre": "Pronoms febles, haver-hi i obligació",
+   "tema": "Pronoms, preposicions i lèxic",
+   "subtema": "Pronoms febles",
    "pagina": 12,
    "ayuda": "«Lo» només existeix com a pronom (el vaig comprar, comprar-lo), mai com a article. «Lis» no existeix: s'usa «els». «Els hi» només si hi ha dos complements. «Hi ha» (haver-hi) és invariable: hi ha un llibre, hi ha molts llibres. L'obligació s'expressa amb «haver de» o «caldre», mai amb «tenir que». Cap infinitiu no acaba en -guer. El complement directe no porta «a»: he vist el teu germà.",
    "escritas": [

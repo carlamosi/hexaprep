@@ -1,6 +1,6 @@
 {
- "tema": "T1 Normativa general",
- "subtema": "Apòstrof, contracció i plurals",
+ "tema": "El nom, l'adjectiu i l'article",
+ "subtema": "Article, apòstrof i contracció",
  "conceptos": [
   {
    "nombre": "Apòstrof de l'article masculí",
@@ -29,7 +29,7 @@
    ]
   },
   {
-   "nombre": "Contracció de les preposicions amb l'article",
+   "nombre": "Contraccions",
    "pagina": 6,
    "ayuda": "Els articles «el» i «els» es contrauen amb les preposicions a, de, per i per a quan no es poden apostrofar (per exemple, de + els = dels). Davant de vocal no es contrau: per l'amic, de l'escola. Compte a distingir «per» (castellà «por») de «per a» (castellà «para»).",
    "escritas": [
@@ -43,6 +43,8 @@
   },
   {
    "nombre": "Canvis ortogràfics dels plurals",
+   "tema": "El nom, l'adjectiu i l'article",
+   "subtema": "Nombre",
    "pagina": 6,
    "ayuda": "Per mantenir el so, canvien algunes lletres en el plural: ca passa a ques (vaca, vaques), ça passa a ces (peça, peces), ja passa a ges (platja, platges), ga passa a gues (amiga, amigues), gua passa a gües (aigua, aigües). Els masculins acabats en dues consonants o en -x fan el plural amb -os (cost, costos; flux, fluxos). Mai no s'afegeix «-es» a aquests mots. Alguns mots acaben en -s en plural i no en singular (crisi, crisis; llapis, llapis).",
    "escritas": [
