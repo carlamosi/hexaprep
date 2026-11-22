@@ -72,13 +72,13 @@ def build(src: Path) -> tuple[dict, list[str]]:
         for c in data["conceptos"]:
             for tipo, clave in (("test", "test"), ("vf", "vf"), ("problema", "problemas"), ("escrita", "escritas")):
                 for q in c.get(clave, []):
-                    items.append((data["subtema"], c, tipo, q, f.name, data.get("tema", meta["tema"]), None))
+                    items.append((c.get("subtema", data["subtema"]), c, tipo, q, f.name, c.get("tema", data.get("tema", meta["tema"])), None))
             for g in c.get("grupos", []):  # problema con apartados: enunciado común y una respuesta por apartado
                 n_grupo += 1
                 if not 2 <= len(g["apartados"]) <= 5:
                     errores.append(f"{f.name}: un grupo lleva de 2 a 5 apartados")
                 for i, q in enumerate(g["apartados"]):
-                    items.append((data["subtema"], c, "problema", q, f.name, data.get("tema", meta["tema"]),
+                    items.append((c.get("subtema", data["subtema"]), c, "problema", q, f.name, c.get("tema", data.get("tema", meta["tema"])),
                                   {"grupo": f"{meta['prefijo']}-g{n_grupo:03d}", "contexto": g["contexto"], "apartado": "abcde"[i]}))
     n_test = sum(1 for i in items if i[2] == "test")
     # `tests_congelados`: las primeras N preguntas test conservan el reparto de letras que ya tenían (no se reimportan como versiones nuevas)

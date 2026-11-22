@@ -2,7 +2,7 @@ from datetime import datetime
 
 from sqlalchemy import func, select
 
-from conftest import bank_with
+from conftest import bank_with, make_bank
 from hexaprep.importer import import_bank
 from hexaprep.models import Concepto, Evento, Importacion, Intento, Opcion, Pregunta, Sesion, Subtema
 
@@ -85,3 +85,16 @@ def test_edited_bank_without_source_keeps_the_booklet_link(session, bank):
     import_bank(session, edited)
     cur = session.scalar(select(Pregunta).where(Pregunta.clave == clave, Pregunta.es_actual.is_(True)))
     assert cur.version == 2 and cur.fuente_id == before
+
+
+def test_moving_the_only_question_of_a_concept_hides_the_emptied_concept(session, bank):
+    base = make_bank(bank, [("x1", "C1", "S1", 1), ("x2", "C2", "S1", 1)])
+    import_bank(session, base)
+    antiguo = session.scalar(select(Concepto).where(Concepto.nombre == "C1"))
+    otro = session.scalar(select(Concepto).where(Concepto.nombre == "C2"))
+    import_bank(session, bank_with(base, subtema="S2"))
+    session.refresh(antiguo)
+    session.refresh(otro)
+    assert antiguo.deleted_at is not None and otro.deleted_at is None
+    nuevo = session.scalar(select(Concepto).where(Concepto.nombre == "C1", Concepto.deleted_at.is_(None)))
+    assert session.get(Subtema, nuevo.subtema_id).nombre == "S2"

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { api, type AnswerResult, type Letra, type Question } from "../api";
 import { t, tn } from "../i18n";
+import { Clasificar, columnasDe } from "./Clasificar";
 import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
@@ -455,7 +456,9 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
         </div>
       ) : (
         <>
-          {question.tipo === "escrita" ? (
+          {question.tipo === "escrita" && columnasDe(question.enunciado) ? (
+            <Clasificar key={question.pregunta_id} palabras={question.campos ?? []} columnas={columnasDe(question.enunciado)!} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} />
+          ) : question.tipo === "escrita" ? (
             <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} onCopia={(d) => senal("copia", question.pregunta_id, d)} />
           ) : question.tipo === "problema" ? (
             <form

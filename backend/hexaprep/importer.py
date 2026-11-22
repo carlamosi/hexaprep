@@ -7,7 +7,7 @@ from sqlalchemy.orm import Session
 
 from .bank import BankFile, PreguntaIn
 from .models import (
-    Asignatura, Bloque, Concepto, Explicacion, Fuente, Importacion, Lote, Opcion, Pregunta, Subtema, Tema,
+    Asignatura, Bloque, Concepto, Explicacion, Fuente, Importacion, Lote, Opcion, Pregunta, Subtema, Tema, utcnow,
 )
 
 
@@ -140,9 +140,13 @@ def import_bank(session: Session, bank: BankFile, archivo: str = "") -> ImportRe
         else:
             current.es_actual = False
             session.flush()
+            vaciado = current.concepto_id != concepto.id and not session.scalar(select(func.count()).select_from(Pregunta).where(
+                Pregunta.concepto_id == current.concepto_id, Pregunta.es_actual.is_(True)))
             _add_question(session, q, concepto, current.version + 1, (fuente and fuente.id) or current.fuente_id, lote and lote.id,
                           digest, current.excluida)
             report.updated += 1
+            if vaciado:  # el concepto antiguo se quedó sin preguntas vigentes: deja de mostrarse (su historial se conserva)
+                session.get(Concepto, current.concepto_id).deleted_at = utcnow()
 
     _ordenar_subtemas(session, asignatura, bank)
     session.add(Importacion(archivo=archivo, hash=_digest(bank.model_dump_json()), creadas=report.created,

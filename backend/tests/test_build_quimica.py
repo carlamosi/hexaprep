@@ -94,3 +94,15 @@ def test_written_question_checks_catch_authoring_mistakes(tmp_path):
     _, errores = build(src_escritas(tmp_path, esc))
     assert len(errores) == 3
     assert "no apareix a la frase" in errores[0] and "coincideix amb una forma vàlida" in errores[1] and "sense formes vàlides" in errores[2]
+
+
+def test_a_concept_can_override_theme_and_subtopic_without_changing_ids(tmp_path):
+    src = make_src(tmp_path)
+    f = src / "01-a.json"
+    data = json.loads(f.read_text(encoding="utf-8"))
+    antes = [p["id"] for p in build(src)[0]["preguntas"]]
+    data["conceptos"][0].update({"tema": "T0", "subtema": "Sub Z"})
+    f.write_text(json.dumps(data), encoding="utf-8")
+    bank, _ = build(src)
+    assert [p["id"] for p in bank["preguntas"]] == antes
+    assert {(p["tema"], p["subtema"]) for p in bank["preguntas"]} == {("T0", "Sub Z")}

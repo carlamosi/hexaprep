@@ -343,13 +343,15 @@
   },
   {
    "nombre": "Diftongs",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
    "pagina": 7,
    "cara": 6,
    "ayuda": "Un diftong és un grup de dues vocals en una sola síl·laba. Pot ser creixent (i o u + vocal a inici de paraula, vocal + i/u + vocal, o qu/gu + vocal) o decreixent (vocal + i/u, o i/u + i/u). Per exemple, «peix» té un diftong decreixent. Un hiat són dues vocals en síl·labes diferents; també es trenca el diftong amb accent o dièresi.",
    "escritas": [
     [
      3,
-     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     "Classifica cada paraula: creixent, decreixent, hiat o res.",
      [
       [
        "iogurt",
@@ -392,7 +394,7 @@
     ],
     [
      4,
-     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     "Classifica cada paraula: creixent, decreixent, hiat o res.",
      [
       [
        "quatre",
@@ -429,7 +431,7 @@
     ],
     [
      4,
-     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     "Classifica cada paraula: creixent, decreixent, hiat o res.",
      [
       [
        "raïm",
@@ -472,7 +474,7 @@
     ],
     [
      4,
-     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     "Classifica cada paraula: creixent, decreixent, hiat o res.",
      [
       [
        "bou",
@@ -509,7 +511,7 @@
     ],
     [
      5,
-     "Classifica cada paraula escrivint: creixent, decreixent, hiat o res.",
+     "Classifica cada paraula: creixent, decreixent, hiat o res.",
      [
       [
        "països",
@@ -548,6 +550,8 @@
   },
   {
    "nombre": "Hiats",
+   "tema": "T1 Normativa general",
+   "subtema": "Dièresi i diftongs",
    "pagina": 7,
    "cara": 6,
    "ayuda": "Un hiat és un grup de dues vocals que es pronuncien en síl·labes diferents. Es produeix quan es troben dues vocals que no són i ni u, o quan una i o u seguida de vocal no és a l'inici de paraula. Un diftong es trenca amb l'accent o amb la dièresi: «veí», «raïm».",
