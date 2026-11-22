@@ -5,6 +5,8 @@ import { sinPrefijoTema } from "../../rotulo";
 import type { ordenPanal } from "./datos";
 
 const M = { l: 44, r: 14, t: 14, b: 30 };
+/** Conceptos que se muestran de entrada; el resto, plegado, para que la tarjeta no crezca sin fin. */
+const VISIBLES = 4;
 
 /** Cuánto recordarás de cada tema dentro de unos días, según la memoria de cada concepto (FSRS). */
 export function Olvido({ olvido, orden }: { olvido: Analytics["olvido"]; orden: ReturnType<typeof ordenPanal> }) {
@@ -14,9 +16,13 @@ export function Olvido({ olvido, orden }: { olvido: Analytics["olvido"]; orden: 
   const piso = Math.min(olvido.umbral - 10, ...olvido.temas.map((t) => Math.min(...t.curva))); // el eje arranca bajo la curva más baja, no en 0
   const y = scaleLinear().domain([Math.max(0, Math.floor((piso - 5) / 10) * 10), 100]).range([H - M.b, M.t]);
   const resumen = olvido.temas.map((t) => `${sinPrefijoTema(t.tema)}: de ${Math.round(t.curva[0])} % hoy a ${Math.round(t.curva[t.curva.length - 1])} % dentro de ${olvido.dias[olvido.dias.length - 1]} días`).join("; ");
+  const fila = (c: Analytics["olvido"]["cruces"][number]) => (
+    <li key={c.concepto_id}><b>{c.concepto}</b> <small>{sinPrefijoTema(c.tema)} · bajará del {olvido.umbral} % en {c.dia} {c.dia === 1 ? "día" : "días"}</small></li>
+  );
   const ordenados = [...olvido.temas].sort((a, b) => (orden.get(a.tema_id)?.indice ?? 99) - (orden.get(b.tema_id)?.indice ?? 99));
   return (
-    <div ref={ref} className="hp-olvido">
+    <div className="hp-olvido">
+     <div ref={ref} className="hp-olvido-graf">
       <svg width={W} height={H} role="img" aria-label={`Curva de olvido. ${resumen}.`}>
         {y.ticks(4).map((v) => (
           <g key={v}>
@@ -44,12 +50,19 @@ export function Olvido({ olvido, orden }: { olvido: Analytics["olvido"]; orden: 
           </li>
         ))}
       </ul>
+     </div>
       {!!olvido.cruces.length && (
-        <ol className="hp-olvido-l" aria-label="Conceptos que cruzan el umbral">
-          {olvido.cruces.map((c) => (
-            <li key={c.concepto_id}><b>{c.concepto}</b> <small>{sinPrefijoTema(c.tema)} · bajará del {olvido.umbral} % en {c.dia} {c.dia === 1 ? "día" : "días"}</small></li>
-          ))}
-        </ol>
+        <div className="hp-olvido-der">
+          <ol className="hp-olvido-l" aria-label="Conceptos que cruzan el umbral">
+            {olvido.cruces.slice(0, VISIBLES).map(fila)}
+          </ol>
+          {olvido.cruces.length > VISIBLES && (
+            <details className="hp-mas">
+              <summary>Ver los {olvido.cruces.length - VISIBLES} restantes</summary>
+              <ol className="hp-olvido-l">{olvido.cruces.slice(VISIBLES).map(fila)}</ol>
+            </details>
+          )}
+        </div>
       )}
     </div>
   );

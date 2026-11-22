@@ -1,0 +1,50 @@
+/* Examen: cabecera con icono, cifra grande de días en hexágono, fecha y plan con jerarquía, notas como lista de resultados */
+.examen { margin-top: 24px; padding: 20px 22px 22px; border: 1px solid var(--rule); border-radius: 16px; background: var(--card); }
+.examen-cab { display: flex; align-items: center; gap: 12px; }
+.examen-cab h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.examen-hex { display: grid; place-items: center; flex: none; width: 38px; height: 34px; clip-path: var(--hex-flat); background: var(--lila-soft); color: var(--lila-ink); }
+.examen-i { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.examen-hex .examen-i { width: 17px; height: 17px; }
+.examen-ok { margin: 0 0 0 auto; font-size: .82rem; font-weight: 600; color: var(--ok); opacity: 0; transform: translateY(2px); transition: opacity var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease); }
+.examen-ok.is-on { opacity: 1; transform: none; }
+
+/* Con fecha: cifra grande + fecha + plan */
+.examen-cuenta { display: flex; align-items: center; gap: 18px; margin-top: 16px; }
+.examen-dias { display: grid; place-content: center; justify-items: center; flex: none; width: 84px; height: 76px; clip-path: var(--hex-flat); background: linear-gradient(160deg, var(--lila), var(--lila-ink)); color: var(--on-ink); line-height: 1; }
+.examen-dias b { font-size: 1.9rem; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+.examen-dias small { margin-top: 3px; font-size: .68rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+.examen-dias.is-hoy b { font-size: 1.15rem; }
+.examen-txt { min-width: 0; }
+.examen-fecha { margin: 0; font-size: 1.15rem; font-weight: 600; }
+.examen-plan { margin: 4px 0 0; color: var(--ink-2); line-height: 1.45; }
+
+/* Sin fecha */
+.examen-vacio { display: grid; justify-items: start; gap: 12px; margin-top: 12px; }
+.examen-vacio p { margin: 0; color: var(--ink-2); }
+
+/* Botones: los de acción llevan icono; «quitar» es más discreto que «cambiar» */
+.examen-acciones { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.examen-b { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid var(--rule-2); border-radius: 11px; background: var(--card); color: var(--lila-ink); font: inherit; font-size: .9rem; font-weight: 500; cursor: pointer; }
+.examen-suave { color: var(--ink-2); }
+.examen-primario { min-height: 44px; padding: 8px 20px; border: 0; border-radius: 11px; background: var(--ink); color: var(--on-ink); font: inherit; font-weight: 600; cursor: pointer; box-shadow: 3px 3px 0 var(--lila); }
+
+/* Formularios: panel con fondo suave */
+.examen-form { display: grid; justify-items: start; gap: 8px; margin-top: 14px; padding: 16px; border-radius: 12px; background: var(--lila-soft); }
+.examen-form label { font-size: .88rem; font-weight: 600; color: var(--ink-2); }
+.examen-form input { min-height: 44px; padding: 8px 12px; border: 1px solid var(--rule-2); border-radius: 11px; background: var(--card); color: var(--ink); font: inherit; font-size: 1rem; transition: border-color var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease); }
+.examen-form input:focus-visible { border-color: var(--lila); box-shadow: 0 0 0 3px color-mix(in srgb, var(--lila) 25%, transparent); outline: none; }
+.examen-form input.is-corto { width: 6.5rem; font-variant-numeric: tabular-nums; }
+.examen-form .examen-acciones { margin-top: 8px; }
+
+/* Notas */
+.examen-notas { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.examen-notas h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; font-size: .74rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--lila-ink); }
+.examen-notas ul { margin: 0 0 12px; padding: 0; list-style: none; display: grid; gap: 8px; }
+.examen-notas li { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 12px; background: var(--paper); }
+.examen-nota { min-width: 3.1ch; font-size: 1.25rem; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--lila-ink); }
+.examen-notas li span { color: var(--ink-2); font-size: .9rem; }
+.examen-notas time { margin-left: auto; color: var(--ink-3); font-size: .8rem; font-variant-numeric: tabular-nums; }
+.examen-error { margin: 12px 0 0; font-size: .88rem; color: var(--ko); }
+
+@media (max-width: 420px) { .examen { padding: 16px; } .examen-dias { width: 72px; height: 65px; } .examen-dias b { font-size: 1.6rem; } .examen-fecha { font-size: 1.05rem; } }
+@media (prefers-reduced-motion: reduce) { .examen-ok, .examen-form input { transition: none; } }

@@ -250,6 +250,12 @@
 .hp-dp.nosabe { fill: var(--ko); }
 .hp-dp.descuido { fill: var(--ink-3); }
 .hp-dp.is-low { fill-opacity: .45; stroke: var(--ink-3); stroke-dasharray: 2 2; stroke-width: 1.2; }
+/* Olvido: en una tarjeta ancha, gráfica a la izquierda y lista de conceptos a la derecha; en media tarjeta, una debajo de otra */
+@media (min-width: 901px) { .hp-card.is-wide .hp-olvido { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 32px; align-items: start; } .hp-card.is-wide .hp-olvido-l { margin-top: 0; } }
+.hp-olvido-der { min-width: 0; }
+.hp-mas { margin-top: 12px; }
+.hp-mas summary { cursor: pointer; min-height: 40px; display: flex; align-items: center; color: var(--lila-ink); font-size: .88rem; font-weight: 600; }
+.hp-mas .hp-olvido-l { margin-top: 4px; }
 .hp-dudo-l, .hp-olvido-l { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
 .hp-dudo-l li, .hp-olvido-l li { font-size: .9rem; color: var(--ink); }
 .hp-dudo-l small, .hp-olvido-l small { display: block; color: var(--ink-2); font-size: .82rem; }

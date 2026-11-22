@@ -100,6 +100,8 @@ export function History({ asignaturaId, client = api, mes }: {
   const olvido = data.olvido?.temas.length ? data.olvido : null;
   const titularSes = titularSesiones(data.sesiones_recientes);
   const titular = titularPendientes(pendientes(data.evolucion, orden));
+  // Composición en columnas: Evolución va con «pendiente»; si no hay, con el olvido (de dónde vienes | adónde vas); lo que quede suelto va ancho.
+  const olvidoConEvolucion = !!olvido && !titular && !tDuda;
   const ritmos = data.fatiga.map((f) => f.ritmo ?? 0);
   const x1 = (v: number | null | undefined) => (v == null ? t("hist.sinDatos") : `×${(Math.round(v * 10) / 10).toString().replace(".", ",")}`);
 
@@ -179,12 +181,17 @@ export function History({ asignaturaId, client = api, mes }: {
               <Card id="c-act" titulo={t("hist.actividad")} sub={t("hist.actividadSub")} wide>
                 <Actividad actividad={data.actividad} semanas={semanasDeRango(dias, data.actividad, hoy)} hoy={hoy} ampliable={dias === 0 && r.dias_estudiados >= 7} />
               </Card>
-              <Card id="c-evo" titulo={t("hist.evolucion")} sub={t("hist.evolucionSub")} wide>
+              <Card id="c-evo" titulo={t("hist.evolucion")} sub={t("hist.evolucionSub")} wide={!titular && !olvidoConEvolucion}>
                 <Evolucion evolucion={data.evolucion} orden={orden} />
               </Card>
               {titular && (
-                <Card id="c-pen" titulo={titular} sub="Dominio de cada tema el primer día del periodo frente a hoy. En color, los que se mueven más de 5 puntos; en gris, los que se estancan." wide>
+                <Card id="c-pen" titulo={titular} sub="Dominio de cada tema el primer día del periodo frente a hoy. En color, los que se mueven más de 5 puntos; en gris, los que se estancan.">
                   <Pendiente evolucion={data.evolucion} orden={orden} />
+                </Card>
+              )}
+              {olvido && olvidoConEvolucion && (
+                <Card id="c-olv" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema en los próximos 21 días si no repasas, calculado con el ritmo al que olvidas cada concepto.">
+                  <Olvido olvido={olvido} orden={orden} />
                 </Card>
               )}
             </Grupo>
@@ -200,15 +207,15 @@ export function History({ asignaturaId, client = api, mes }: {
               </Card>
             </Grupo>
 
-            {(tDuda || olvido) && (
+            {(tDuda || (olvido && !olvidoConEvolucion)) && (
               <Grupo id="g-memoria" titulo="Qué sabes y qué se te escapa">
                 {tDuda && (
-                  <Card id="c-duda" titulo={tDuda} sub="Cada punto es un concepto con 3 o más respuestas. A la derecha de «lo esperado» tardas más de lo normal; por encima de la línea de 70 % aciertas. Pasa el ratón por un punto para ver cuál es." wide>
+                  <Card id="c-duda" titulo={tDuda} sub="Cada punto es un concepto con 3 o más respuestas. A la derecha de «lo esperado» tardas más de lo normal; por encima de la línea de 70 % aciertas. Pasa el ratón por un punto para ver cuál es." wide={!olvido}>
                     <Duda conceptos={conceptos} />
                   </Card>
                 )}
-                {olvido && (
-                  <Card id="c-olv" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema en los próximos 21 días si no repasas, calculado con el ritmo al que olvidas cada concepto." wide>
+                {olvido && !olvidoConEvolucion && (
+                  <Card id="c-olv" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema en los próximos 21 días si no repasas, calculado con el ritmo al que olvidas cada concepto." wide={!tDuda}>
                     <Olvido olvido={olvido} orden={orden} />
                   </Card>
                 )}
@@ -250,7 +257,7 @@ export function History({ asignaturaId, client = api, mes }: {
                 <Card id="c-esc" titulo={t("hist.erroresEscritura")} sub={t("hist.erroresEscrituraSub")}><ErroresEscritura errores={data.errores_escritura} /></Card>
               )}
               <Card id="c-deb" titulo={t("hist.debiles")} sub={t("hist.debilesSub")}><Debiles debiles={data.debiles} /></Card>
-              <Card id="c-difi" titulo={t("hist.dificiles")} sub={t("hist.dificilesSub")}><Dificiles dificiles={data.dificiles} /></Card>
+              <Card id="c-difi" titulo={t("hist.dificiles")} sub={t("hist.dificilesSub")} wide={!data.errores_escritura?.length}> {/* sin errores de escritura quedan 3 tarjetas: la última ocupa el ancho para no dejar un hueco */}<Dificiles dificiles={data.dificiles} /></Card>
               <Card id="c-ses" titulo={titularSes || t("hist.sesionesRecientes")} sub={t("hist.sesionesSub")} wide>
                 <TiraSesiones sesiones={data.sesiones_recientes} />
                 <Sesiones sesiones={data.sesiones_recientes} />

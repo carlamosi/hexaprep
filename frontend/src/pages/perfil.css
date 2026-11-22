@@ -7,15 +7,19 @@
   background: linear-gradient(160deg, var(--lila), var(--lila-ink)); color: var(--on-ink); font-size: 1.3rem; font-weight: 600;
 }
 
-/* Apariencia: tres opciones en una sola pieza; la elegida se destaca y el cambio se funde en vez de saltar */
-.perfil-seg { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--rule-2); border-radius: 14px; background: var(--paper); }
-.perfil-seg button {
-  min-height: 40px; padding: 6px 16px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: var(--ink-2); font: inherit; font-weight: 500; cursor: pointer;
-  transition: background-color var(--dur-press) var(--ease), border-color var(--dur-press) var(--ease), color var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease), transform var(--dur-press) var(--ease);
-}
-@media (hover: hover) and (pointer: fine) { .perfil-seg button[aria-pressed="false"]:hover { color: var(--lila-ink); background: var(--lila-soft); } }
-.perfil-seg button[aria-pressed="true"] { background: var(--card); border-color: var(--ink); color: var(--ink); box-shadow: 2px 2px 0 var(--lila); }
-.perfil-seg button:active { transform: scale(.97); }
+/* Apariencia: interruptores de fila entera. El pulgar se estira al pulsar (squash) y recorre el carril; el modo oscuro cambia sol por luna */
+.sw-grupo { display: grid; }
+.sw-fila { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 6px 2px; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.sw-fila + .sw-fila { border-top: 1px solid var(--rule); }
+.sw-txt { display: flex; flex: 1; align-items: center; gap: 10px; font-weight: 500; }
+.sw-txt svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--lila-ink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.sw { position: relative; flex: none; width: 52px; height: 32px; border-radius: 99px; background: var(--rule-2); transition: background-color var(--dur-ui) var(--ease); }
+.sw-pulgar { position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 99px; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .35); transition: transform var(--dur-ui) var(--ease), width var(--dur-press) var(--ease); }
+.sw-fila[aria-checked="true"] .sw { background: var(--lila); }
+.sw-fila[aria-checked="true"] .sw-pulgar { transform: translateX(20px); }
+.sw-fila:active .sw-pulgar { width: 30px; }
+.sw-fila[aria-checked="true"]:active .sw-pulgar { transform: translateX(14px); }
+.sw-fila:focus-visible { outline-offset: 0; border-radius: 12px; }
 
 /* Ayuda: el desplegable de instalar queda dentro de la misma tarjeta, sin otra caja */
 .perfil-det summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 500; color: var(--lila-ink); list-style: none; }
@@ -34,6 +38,6 @@
 
 @media (prefers-reduced-motion: reduce) {
   .perfil-sec { animation: none; }
-  .perfil-seg button, .perfil-ko, .perfil-det summary::after { transition: none; }
-  .perfil-seg button:active, .perfil-ko:active { transform: none; }
+  .perfil-ko, .perfil-det summary::after, .sw, .sw-pulgar { transition: none; }
+  .perfil-ko:active { transform: none; }
 }

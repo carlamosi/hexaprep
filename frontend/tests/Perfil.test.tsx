@@ -87,10 +87,17 @@ describe("perfil", () => {
 describe("apariencia", () => {
   it("permite_elegir_sistema_claro_u_oscuro", async () => {
     render(<Perfil asignaturaId="a1" client={cliente(ONLINE)} />);
-    await userEvent.click(await screen.findByRole("button", { name: "Oscuro" }));
+    const oscuro = await screen.findByRole("switch", { name: "Modo oscuro" });
+    const sistema = screen.getByRole("switch", { name: "Igual que el dispositivo" });
+    expect(sistema).toHaveAttribute("aria-checked", "true"); // por defecto sigue al dispositivo
+    await userEvent.click(oscuro);
     expect(document.documentElement.getAttribute("data-theme")).toBe("dark");
-    expect(screen.getByRole("button", { name: "Oscuro" })).toHaveAttribute("aria-pressed", "true");
-    await userEvent.click(screen.getByRole("button", { name: "Sistema" }));
+    expect(oscuro).toHaveAttribute("aria-checked", "true");
+    expect(sistema).toHaveAttribute("aria-checked", "false"); // elegir a mano deja de seguir al dispositivo
+    await userEvent.click(oscuro);
+    expect(document.documentElement.getAttribute("data-theme")).toBe("light");
+    await userEvent.click(sistema);
     expect(document.documentElement.hasAttribute("data-theme")).toBe(false);
+    expect(sistema).toHaveAttribute("aria-checked", "true");
   });
 });

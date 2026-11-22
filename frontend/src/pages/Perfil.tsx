@@ -14,6 +14,23 @@ const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-
 const tarjeta = "rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 perfil-sec";
 const seccion = `space-y-3 ${tarjeta}`;
 
+/** Interruptor de fila entera (área de toque de 48 px): el pulgar se estira al pulsar y recorre el carril con la salida suave. */
+function Interruptor({ etiqueta, activo, onCambio, icono }: { etiqueta: string; activo: boolean; onCambio: (v: boolean) => void; icono: "sol" | "luna" | "pantalla" }) {
+  return (
+    <button type="button" role="switch" aria-checked={activo} className="sw-fila" onClick={() => onCambio(!activo)}>
+      <span className="sw-txt">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          {icono === "luna" ? <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" />
+            : icono === "pantalla" ? <><rect x="3" y="4.5" width="18" height="12" rx="2.5" /><path d="M9 20h6M12 16.5V20" /></>
+            : <><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" /></>}
+        </svg>
+        {etiqueta}
+      </span>
+      <span className="sw" aria-hidden="true"><span className="sw-pulgar" /></span>
+    </button>
+  );
+}
+
 /** Perfil: quién eres, fecha de examen, empezar de cero, instalar la app y, plegado, lo técnico. */
 export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string | null; client?: PerfilClient }) {
   const [perfil, setPerfil] = useState<PerfilDatos | null>(null);
@@ -24,6 +41,15 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
   const [foco, setFocoState] = useState<string>("");
   const [tema, setTema] = useState<Tema>(leerTema);
   const instalador = useInstalar();
+  const [sisOscuro, setSisOscuro] = useState(() => !!window.matchMedia?.("(prefers-color-scheme: dark)").matches);
+  useEffect(() => { // «igual que el dispositivo» sigue al sistema también si cambia con la pantalla abierta
+    const m = window.matchMedia?.("(prefers-color-scheme: dark)");
+    const f = () => setSisOscuro(!!m?.matches);
+    m?.addEventListener?.("change", f);
+    return () => m?.removeEventListener?.("change", f);
+  }, []);
+  const oscuro = tema === "sistema" ? sisOscuro : tema === "oscuro";
+  const elegirTema = (x: Tema) => { aplicarTema(x); setTema(x); };
 
   useEffect(() => {
     let vivo = true;
@@ -128,12 +154,9 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
 
       <section className={seccion} style={entra()} aria-label={t("perfil.apariencia")}>
         <h2 className="text-lg font-semibold">{t("perfil.apariencia")}</h2>
-        <div role="group" aria-label={t("perfil.apariencia")} className="perfil-seg">
-          {(["sistema", "claro", "oscuro"] as const).map((x) => (
-            <button key={x} type="button" aria-pressed={tema === x} onClick={() => { aplicarTema(x); setTema(x); }}>
-              {t(`perfil.tema.${x}`)}
-            </button>
-          ))}
+        <div role="group" aria-label={t("perfil.apariencia")} className="sw-grupo">
+          <Interruptor etiqueta={t("perfil.modoOscuro")} activo={oscuro} icono={oscuro ? "luna" : "sol"} onCambio={(v) => elegirTema(v ? "oscuro" : "claro")} />
+          <Interruptor etiqueta={t("perfil.igualSistema")} activo={tema === "sistema"} icono="pantalla" onCambio={(v) => elegirTema(v ? "sistema" : oscuro ? "oscuro" : "claro")} />
         </div>
       </section>
 
