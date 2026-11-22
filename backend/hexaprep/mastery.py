@@ -4,7 +4,7 @@ theta es la habilidad (0 = punto medio), sigma su incertidumbre. La dificultad 3
 punto de dificultad desplaza el umbral 0.8 unidades.
 """
 import math
-from datetime import date
+from datetime import date, datetime
 from typing import Literal
 
 from sqlalchemy import select
@@ -115,14 +115,15 @@ def _dominio(session: Session, concepto_id: str) -> Dominio:
     return dom
 
 
-def reconstruir(session: Session, concepto_id: str, excluir_sesion: str | None = None) -> tuple[float, float, int, int, float]:
+def reconstruir(session: Session, concepto_id: str, excluir_sesion: str | None = None,
+                hasta: datetime | None = None) -> tuple[float, float, int, int, float]:
     """Dominio de un concepto repitiendo sus intentos (sin los de preguntas excluidas), sin escribir nada:
-    (theta, sigma, n_intentos, racha, tendencia)."""
+    (theta, sigma, n_intentos, racha, tendencia). Con `hasta` solo cuentan los intentos anteriores a ese instante."""
     rows = session.execute(
         select(Intento.correcta, Intento.dificultad, Pregunta.tipo, Intento.sesion_id, Intento.pregunta_id)
         .join(Pregunta, Pregunta.id == Intento.pregunta_id)
         .where(Intento.concepto_id == concepto_id, Pregunta.excluida.is_(False), Intento.deleted_at.is_(None),
-               Intento.sesion_id != (excluir_sesion or ""))
+               Intento.sesion_id != (excluir_sesion or ""), Intento.created_at < (hasta or datetime.max))
         .order_by(Intento.id)).all()
     theta, sigma, racha, history = 0.0, SIGMA0, 0, [0.0]
     en_sesion: dict[str, int] = {}
