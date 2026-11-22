@@ -53,15 +53,17 @@ def main(argv: list[str] | None = None) -> int:
     estructura = cargar_estructura(a.estructura)
     informes = []
 
-    def pasada(nombre: str, motor) -> None:
+    def pasada(nombre: str, motor, en_seco: bool = False, callar: bool = False) -> bool:
         with Session(motor) as s:
             r = reorganizar(s, estructura)
-            if a.dry_run or r.huerfanos:
+            if a.dry_run or en_seco or r.huerfanos:
                 s.rollback()
             else:
                 s.commit()
         informes.append(r)
-        imprimir(nombre, r, a.detalle)
+        if not callar:
+            imprimir(nombre, r, a.detalle)
+        return not r.huerfanos
 
     url = database_url()
     if url:
@@ -70,6 +72,13 @@ def main(argv: list[str] | None = None) -> int:
         engine = get_engine_online(url)
         with engine.connect() as c:
             destinos = [a.esquema] if a.esquema else esquemas(c)
+        if not a.dry_run:  # dos fases: nada se confirma en ningún esquema si alguno trae huérfanos
+            if not all([pasada(e, perfiles.engine_de(engine, e), en_seco=True, callar=True) for e in destinos]):
+                for e, r in zip(destinos, informes):
+                    imprimir(e, r, False)
+                print("Validación previa fallida: no se guardó nada en ningún esquema.")
+                return 2
+            informes.clear()
         for esquema in destinos:
             pasada(esquema, perfiles.engine_de(engine, esquema))
     else:

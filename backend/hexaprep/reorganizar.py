@@ -102,7 +102,10 @@ def reorganizar(session: Session, estructura: dict) -> Informe:
     nombre_sub = {s.id: s.nombre for s in subs_v}
     # rutas ANTES de renombrar nada: así se localizan tanto los conceptos viejos como los que ya están en su sitio
     por_ruta: dict[tuple, list[Concepto]] = {}
-    for c in _vivos(session, Concepto, Concepto.subtema_id.in_(list(nombre_sub))):
+    # también los retirados que tienen intentos: si alguien importó los bancos nuevos antes, su progreso quedó en ellos
+    con_intentos = select(Intento.id).where(Intento.concepto_id == Concepto.id).exists()
+    for c in session.scalars(select(Concepto).where(Concepto.subtema_id.in_(list(nombre_sub)),
+                                                    Concepto.deleted_at.is_(None) | con_intentos)):
         s = next(s for s in subs_v if s.id == c.subtema_id)
         por_ruta.setdefault((nombre_tema[s.tema_id], s.nombre, c.nombre), []).append(c)
 
@@ -165,6 +168,10 @@ def reorganizar(session: Session, estructura: dict) -> Informe:
         candidatos = list({x.id: x for r in rutas for x in por_ruta.get(tuple(r), [])}.values())
         _partir(session, piezas, candidatos, informe)
 
+    conocidos = {c["nombre"] for t in estructura["temas"] for s_ in t["subtemas"] for c in s_["conceptos"]}
+    for c in _vivos(session, Concepto, Concepto.subtema_id.in_(list(en_mapa_subs))):
+        if c.nombre not in conocidos and _n_intentos(session, c.id):
+            informe.huerfanos.append(f"concepto «{c.nombre}» con intentos que el mapa no reconoce (¿catálogo antiguo?)")
     for s in _vivos(session, Subtema, Subtema.tema_id.in_([t.id for t in _vivos(session, Tema, Tema.bloque_id == bloque.id)])):
         if s.id not in en_mapa_subs:
             if _vivos(session, Concepto, Concepto.subtema_id == s.id):
@@ -188,6 +195,9 @@ def _mover_o_fusionar(session: Session, c: dict, sub: Subtema, candidatos: list[
     # el que queda es el que más intentos tiene (su historial es el que cuenta); a igualdad, el de nombre ya correcto
     candidatos.sort(key=lambda x: (-_n_intentos(session, x.id), x.nombre != c["nombre"]))
     quedan, otros = candidatos[0], candidatos[1:]
+    if quedan.deleted_at is not None:
+        quedan.deleted_at = None
+        informe.movidos.append(f"{quedan.nombre} (recuperado: estaba retirado con intentos) → {nuevo}")
     if quedan.subtema_id != sub.id or quedan.nombre != c["nombre"]:
         informe.movidos.append(f"{quedan.nombre} → {nuevo}")
         quedan.subtema_id, quedan.nombre = sub.id, c["nombre"]
@@ -218,7 +228,7 @@ def _partir(session: Session, piezas: list[tuple[Subtema, dict, str]], candidato
     if not candidatos:
         informe.faltan += [nuevo for _, c, nuevo in piezas if existentes[c["nombre"]] is None]
         return
-    fechas = _fechas(session, [x.id for x in candidatos])
+    fechas = _fechas(session, [x.id for x in candidatos] + [x.id for x in existentes.values() if x])
     ids = []
     for sub, c, nuevo in piezas:
         pieza = existentes[c["nombre"]]

@@ -314,6 +314,31 @@ def test_importar_los_bancos_nuevos_tras_migrar_no_crea_conceptos_y_solo_version
     assert sorted(muertos) == sorted(set(muertos)) and len(muertos) <= 3
 
 
+def test_si_los_bancos_nuevos_se_importaron_antes_el_progreso_se_recupera(db):
+    """Orden equivocado (importar y luego migrar): el importador retira los conceptos viejos con sus intentos."""
+    total_antes = db.scalar(select(func.count()).select_from(Intento))
+    por_clave = dict(db.execute(select(Pregunta.id, Pregunta.clave).join(Intento, Intento.pregunta_id == Pregunta.id)).all())
+    for b in BANCOS:
+        import_bank(db, load_bank(RAIZ / f"banks/catala/{b}.json"))
+    informe = migrar(db)
+    assert not informe.huerfanos, informe.huerfanos
+    perdidos = []
+    for c in vivos(db, Concepto):
+        n = _n_intentos(db, c.id)
+        dom = db.scalar(select(Dominio).where(Dominio.concepto_id == c.id))
+        if n and (dom is None or dom.n_intentos != n):
+            perdidos.append(f"«{ruta(db, c.id)}»: {n} intentos y dominio {dom and dom.n_intentos}")
+    assert not perdidos, " | ".join(perdidos)
+    total = db.scalar(select(func.count()).select_from(Intento).join(Concepto, Concepto.id == Intento.concepto_id)
+                      .where(Concepto.deleted_at.is_(None)))
+    assert total == total_antes, f"intentos en conceptos vivos: esperado {total_antes}, obtenido {total}"
+    assert len(vivos(db, Concepto)) == 78
+
+
+def _n_intentos(session, cid):
+    return session.scalar(select(func.count()).select_from(Intento).where(Intento.concepto_id == cid))
+
+
 def banco_nuevo(clave: str) -> list[str]:
     cache = banco_nuevo.__dict__.setdefault("cache", {})
     if not cache:
