@@ -4,9 +4,10 @@ import { Hexagon } from "../components/Hexagon";
 import { Actividad } from "../components/historial/Actividad";
 import { Barras, Columnas, type Fila } from "../components/historial/Barras";
 import {
-  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, segundos, semanasDeRango,
+  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, pendientes, segundos, semanasDeRango, titularPendientes,
 } from "../components/historial/datos";
 import { Evolucion } from "../components/historial/Evolucion";
+import { Pendiente } from "../components/historial/Pendiente";
 import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../components/historial/Listas";
 import "../components/historial/historial.css";
 import { t, tn } from "../i18n";
@@ -90,6 +91,7 @@ export function History({ asignaturaId, client = api, mes }: {
   const filas = <T extends { n: number; aciertos_pct: number | null }>(xs: T[], id: (x: T) => string, et: (x: T) => string, corto?: (x: T) => string): Fila[] =>
     xs.map((x) => ({ id: id(x), etiqueta: et(x), corto: corto?.(x), n: x.n, valor: x.aciertos_pct }));
   const mejorDia = mejorGrupo(data.semana);
+  const titular = titularPendientes(pendientes(data.evolucion, orden));
   const ritmos = data.fatiga.map((f) => f.ritmo ?? 0);
   const x1 = (v: number | null | undefined) => (v == null ? t("hist.sinDatos") : `×${(Math.round(v * 10) / 10).toString().replace(".", ",")}`);
 
@@ -168,6 +170,11 @@ export function History({ asignaturaId, client = api, mes }: {
               <Card id="c-evo" titulo={t("hist.evolucion")} sub={t("hist.evolucionSub")} wide>
                 <Evolucion evolucion={data.evolucion} orden={orden} />
               </Card>
+              {titular && (
+                <Card id="c-pen" titulo={titular} sub="Dominio de cada tema el primer día del periodo frente a hoy. En color, los que se mueven más de 5 puntos; en gris, los que se estancan." wide>
+                  <Pendiente evolucion={data.evolucion} orden={orden} />
+                </Card>
+              )}
             </Grupo>
 
             <Grupo id="g-acierto" titulo={t("hist.g.acierto")}>

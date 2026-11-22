@@ -101,6 +101,36 @@ export function lineas(evo: Analytics["evolucion"], vista: Vista, orden: ReturnT
   }));
 }
 
+// ---------- Pendiente por tema (antes y después) ----------
+
+/** Un cambio menor que esto es ruido: el tema «se estanca». */
+export const UMBRAL_CAMBIO = 5;
+export interface Pendiente { id: string; nombre: string; color: string; antes: number; ahora: number; delta: number; desde: string; hasta: string }
+
+/** Primer y último dominio de cada tema en el periodo, de más a menos subida. Sin dos días distintos no hay pendiente. */
+export function pendientes(evo: Analytics["evolucion"], orden: ReturnType<typeof ordenPanal>): Pendiente[] {
+  return evo.temas.flatMap((x) => {
+    const a = x.puntos[0], b = x.puntos[x.puntos.length - 1];
+    if (!a || !b || a.fecha === b.fecha) return [];
+    return [{ id: x.tema_id, nombre: sinPrefijoTema(x.tema), color: orden.get(x.tema_id)?.color ?? "var(--ink-3)",
+      antes: a.percent, ahora: b.percent, delta: b.percent - a.percent, desde: a.fecha, hasta: b.fecha }];
+  }).sort((p, q) => q.delta - p.delta);
+}
+
+const puntos = (n: number) => `${Math.abs(n)} puntos`;
+/** La conclusión en una frase: quién sube, y quién baja o se estanca. */
+export function titularPendientes(ps: Pendiente[]): string {
+  if (!ps.length) return "";
+  const sube = ps[0].delta >= UMBRAL_CAMBIO ? ps[0] : null;
+  const peor = ps[ps.length - 1];
+  const otro = peor !== sube ? peor : null;
+  const partes = [
+    sube && `${sube.nombre} sube ${puntos(sube.delta)}`,
+    otro && (otro.delta <= -UMBRAL_CAMBIO ? `${otro.nombre} baja ${puntos(otro.delta)}` : sube && `${otro.nombre} se estanca`),
+  ].filter(Boolean);
+  return partes.length ? partes.join(" y ") : `Ningún tema se ha movido más de ${UMBRAL_CAMBIO} puntos`;
+}
+
 /** El grupo con mejor acierto entre los que tienen respuestas suficientes. */
 export function mejorGrupo<T extends { n: number; aciertos_pct: number | null }>(xs: T[]): T | null {
   const ok = xs.filter((x) => fiable(x.n) && x.aciertos_pct !== null);

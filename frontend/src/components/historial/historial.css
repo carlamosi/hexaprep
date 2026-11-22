@@ -226,3 +226,11 @@
 .hp-answer { margin-top: 8px; padding: 12px 14px; border-left: 3px solid var(--ok); background: var(--paper); border-radius: 0 10px 10px 0; font-size: .88rem; }
 .hp-answer p { margin: 0 0 6px; }
 .hp-answer-ok span { color: var(--ink-3); }
+
+/* Pendiente por tema */
+.hp-slope { min-width: 0; }
+.hp-slope-g.is-quiet { opacity: .75; }
+.hp-slope-n { font: 400 12.5px var(--font); fill: var(--ink-2); }
+.hp-slope-n .up { fill: var(--ok); font-weight: 600; }
+.hp-slope-n .down { fill: var(--ko); font-weight: 600; }
+.hp-slope-nom { fill: var(--ink-2); }
