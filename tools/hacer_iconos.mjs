@@ -60,5 +60,23 @@ for (const [archivo, forma, px] of [
   await pagina.setContent(`<style>html,body{margin:0;background:transparent}svg{display:block;width:${px}px;height:${px}px}</style>${icono(forma)}`);
   await pagina.screenshot({ path: resolve(OUT, archivo), omitBackground: true });
 }
+// favicon.ico (16, 32 y 48 px con PNG dentro) e icon-48.png: Google pide un múltiplo de 48 px y los navegadores piden /favicon.ico.
+const pngs = [];
+for (const px of [16, 32, 48]) {
+  await pagina.setViewportSize({ width: px, height: px });
+  await pagina.setContent(`<style>html,body{margin:0;background:transparent}svg{display:block;width:${px}px;height:${px}px}</style>${FAVICON}`);
+  pngs.push([px, await pagina.screenshot({ omitBackground: true })]);
+}
+writeFileSync(resolve(OUT, "icon-48.png"), pngs[2][1]);
+const cab = Buffer.alloc(6 + 16 * pngs.length);
+cab.writeUInt16LE(1, 2); cab.writeUInt16LE(pngs.length, 4);
+let pos = cab.length;
+pngs.forEach(([px, buf], i) => {
+  const o = 6 + 16 * i;
+  cab[o] = px; cab[o + 1] = px; cab.writeUInt16LE(1, o + 4); cab.writeUInt16LE(32, o + 6);
+  cab.writeUInt32LE(buf.length, o + 8); cab.writeUInt32LE(pos, o + 12);
+  pos += buf.length;
+});
+writeFileSync(resolve(OUT, "favicon.ico"), Buffer.concat([cab, ...pngs.map(([, b]) => b)]));
 await navegador.close();
 console.log("iconos listos");
