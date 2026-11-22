@@ -5,7 +5,7 @@ import "./examen.css";
 
 export type ExamenClient = Pick<typeof api, "getExamen" | "setExamen"> & Partial<Pick<typeof api, "getNotas" | "addNota">>;
 
-function fechaLarga(iso: string): string {
+export function fechaLarga(iso: string): string {
   const [a, m, d] = iso.split("-").map(Number);
   return new Date(a, m - 1, d).toLocaleDateString("es-ES", { day: "numeric", month: "long" });
 }
@@ -15,7 +15,7 @@ function fechaCorta(iso: string): string {
   return new Date(a, m - 1, d).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
 }
 
-function mensaje(d: ExamenDatos): string {
+export function mensaje(d: ExamenDatos): string {
   if (d.dias === null) return "";
   if (d.dias < 0) return t("examen.paso");
   const cuando = d.dias === 0 ? t("examen.hoy") : d.dias === 1 ? t("examen.manana") : t("examen.faltan").replace("{n}", String(d.dias));

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Hoy A, empieza por aquí</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.fila:hover{background:rgba(142,63,112,.08)}
+.fila:focus-visible,.btn:focus-visible{outline:3px solid #8E3F70;outline-offset:-3px}
+.btn{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.btn:active{transform:scale(.97)}
+</style>
+</helmet>
+<div style="width: 390px; box-sizing: border-box; font-family: 'Lexend', system-ui, sans-serif; background: var(--paper); color: var(--ink); display: flex; flex-direction: column; gap: 22px; padding: 24px 16px 40px; {{vars}}">
+
+  <header>
+    <h1 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.02em">Hoy</h1>
+    <p style="margin: 4px 0 0; font-size: 14px; color: var(--ink2)">5 conceptos que conviene repasar, de más a menos útil.</p>
+  </header>
+
+  <section aria-label="Empieza por aquí" style="display: flex; flex-direction: column; gap: 16px; padding: 22px 20px 20px; border-radius: 24px; color: #FBEFF6; background: radial-gradient(circle at 30% 15%, {{heroA}} 0, {{heroB}} 50%, {{heroC}} 100%)">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+      <span style="font-size: 13px; font-weight: 500; color: rgba(251,239,246,.82)">Empieza por aquí</span>
+      <span style="display: inline-flex; align-items: center; gap: 6px; padding: 3px 11px 3px 9px; border-radius: 99px; background: rgba(255,246,251,.14); font-size: 12px; font-weight: 600"><svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>Se te puede olvidar</span>
+    </div>
+    <div>
+      <h2 style="margin: 0; font-size: 24px; font-weight: 600; line-height: 1.2; text-wrap: balance">Casos especials de dièresi</h2>
+      <p style="margin: 8px 0 0; font-size: 14px; line-height: 1.45; color: rgba(251,239,246,.85)">Hace tiempo que no lo repasas y se te puede olvidar.</p>
+    </div>
+    <dl style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 14px 16px; border-radius: 16px; background: rgba(42,16,48,.35)">
+      <div><dt style="font-size: 12px; color: rgba(251,239,246,.78)">Riesgo de olvido</dt><dd style="margin: 6px 0 0; display: flex; align-items: center; gap: 10px"><span style="flex: 1; height: 6px; border-radius: 3px; background: rgba(251,239,246,.22); overflow: hidden"><i style="display: block; width: 42%; height: 100%; border-radius: 3px; background: #FFB4BA"></i></span><b style="font-size: 16px; font-variant-numeric: tabular-nums">42 %</b></dd></div>
+      <div><dt style="font-size: 12px; color: rgba(251,239,246,.78)">Subida estimada</dt><dd style="margin: 4px 0 0; font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums">+17 <span style="font-size: 12px; font-weight: 400; color: rgba(251,239,246,.78)">pts por minuto</span></dd></div>
+    </dl>
+    <button class="btn" type="button" style="min-height: 54px; border: 0; border-radius: 14px; background: #FFF6FB; color: #4A1E4C; font: 600 17px 'Lexend', system-ui, sans-serif; box-shadow: 0 4px 0 rgba(0,0,0,.28); cursor: pointer">Practicar ahora</button>
+  </section>
+
+  <section aria-label="Después">
+    <h2 style="margin: 0 0 8px 4px; font-size: 14px; font-weight: 600; color: var(--ink2)">Después</h2>
+    <div style="border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--rule); overflow: hidden">
+      <sc-for list="{{resto}}" as="r" hint-placeholder-count="4">
+        <button class="fila" type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 72px; padding: 8px 16px; border: 0; border-top: 1px solid var(--rule); background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: var(--ink); text-align: left; cursor: pointer">
+          <span style="display: grid; place-items: center; flex: none; width: 40px; height: 35px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: var(--lilasoft); color: var(--lilaink); font-size: 14px; font-weight: 600">{{r.n}}</span>
+          <span style="flex: 1; min-width: 0"><span style="display: block; line-height: 1.3">{{r.t}}</span><span style="display: block; margin-top: 3px; font-size: 12.5px; font-weight: 400; color: {{r.fg}}">{{r.razon}}, olvido {{r.pct}} %</span></span>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: var(--ink3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </sc-for>
+    </div>
+    <p style="margin: 8px 4px 0; font-size: 12px; color: var(--ink3)">Tocar una fila practica su subtema.</p>
+  </section>
+
+  <section aria-label="Tu plan">
+    <h2 style="margin: 0 0 8px 4px; font-size: 14px; font-weight: 600; color: var(--ink2)">Tu plan</h2>
+    <div style="border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--rule); overflow: hidden">
+      <button class="fila" type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 68px; padding: 8px 16px; border: 0; background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: var(--ink); text-align: left; cursor: pointer">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: none; fill: none; stroke: var(--lilaink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round"><rect x="4" y="5" width="16" height="15" rx="3"/><path d="M4 10h16M8.5 3v4M15.5 3v4"/></svg>
+        <span style="flex: 1"><span style="display: block">Examen</span><span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.35; color: var(--ink3)">Sin fecha. Ponla y verás cuántos conceptos tocar cada día.</span></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: var(--ink3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <button class="fila" type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 68px; padding: 8px 16px; border: 0; border-top: 1px solid var(--rule); background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: var(--ink); text-align: left; cursor: pointer">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: none; fill: none; stroke: var(--lilaink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/></svg>
+        <span style="flex: 1"><span style="display: block">Tema en curso</span><span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.35; color: var(--ink3)">Ninguno: la práctica mezcla todo el temario.</span></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: var(--ink3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"$preview":{"width":390,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const k = dark
+      ? { paper: '#17131A', card: '#221C26', ink: '#F3EEF4', ink2: '#CFC6D4', ink3: '#A99FAF', rule: '#352E3A', rule2: '#4A4150', lila: '#C47AA6', lilaink: '#E8B1D2', lilasoft: '#2E2132', hero: ['#7A3470', '#4A1E4C', '#240D29'], ko: '#F28088' }
+      : { paper: '#FBF9F6', card: '#FFFFFF', ink: '#231D27', ink2: '#554C5A', ink3: '#6F6675', rule: '#ECE6E9', rule2: '#DAD1D6', lila: '#8E3F70', lilaink: '#8E3F70', lilasoft: '#F8EEF4', hero: ['#9B4488', '#5A2556', '#2A1030'], ko: '#B8212B' };
+    const vars = '--paper:' + k.paper + ';--card:' + k.card + ';--ink:' + k.ink + ';--ink2:' + k.ink2 + ';--ink3:' + k.ink3 + ';--rule:' + k.rule + ';--rule2:' + k.rule2 + ';--lila:' + k.lila + ';--lilaink:' + k.lilaink + ';--lilasoft:' + k.lilasoft;
+    const it = (n, t, razon, pct) => ({ n, t, razon, pct, fg: razon === 'Se te puede olvidar' ? k.ko : k.ink3 });
+    return {
+      vars, heroA: k.hero[0], heroB: k.hero[1], heroC: k.hero[2],
+      resto: [it(2, 'Substantius masculins i femenins', 'Se te puede olvidar', 40), it(3, 'Adjectius invariables i variables', 'Pocos datos', 19), it(4, 'Canvis ortogràfics dels plurals', 'Pocos datos', 19), it(5, "Interior de mot i llista d'excepcions", 'Pocos datos', 19)],
+    };
+  }
+}
+</script>
+</body>
+</html>

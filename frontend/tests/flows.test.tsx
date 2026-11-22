@@ -91,11 +91,11 @@ describe("flujos", () => {
     render(<Suggestions client={client} onPracticeSubtema={onPractice} />);
     expect(await screen.findByText("Análisis marginal")).toBeInTheDocument();
     expect(screen.getByText("Hace tiempo que no lo repasas y se te puede olvidar")).toBeInTheDocument();
-    expect(screen.getByText("Costes hundidos")).toBeInTheDocument();
+    expect(screen.getByText("Costes hundidos")).toBeInTheDocument(); // en la lista «Después»
     expect(screen.getByText("Se te puede olvidar")).toBeInTheDocument(); // el código del motivo, con su etiqueta
     expect(screen.getByText("50 %")).toBeInTheDocument(); // riesgo de olvido de la primera
     expect(screen.getByText("+3")).toBeInTheDocument(); // subida estimada por minuto
-    await user.click(screen.getAllByRole("button", { name: "Practicar su subtema" })[0]);
+    await user.click(screen.getByRole("button", { name: "Practicar ahora" }));
     expect(onPractice).toHaveBeenCalledWith("s1");
   });
 
@@ -115,7 +115,8 @@ describe("flujos", () => {
       getMap: vi.fn().mockResolvedValue({ asignatura: "X", percent: 0, subtemas: [], hexes }),
       getFoco: vi.fn().mockResolvedValue({ tema_id: null }), setFoco: vi.fn().mockResolvedValue({ tema_id: "t1" }),
     };
-    render(<Suggestions client={client} asignaturaId="a1" onPracticeSubtema={vi.fn()} />);
+    render(<Suggestions client={{ ...client, getExamen: vi.fn().mockResolvedValue({ fecha: null, dias: null, por_dia: null, total: 1, tocados: 0, sin_tocar: 1 }), setExamen: vi.fn() }} asignaturaId="a1" onPracticeSubtema={vi.fn()} />);
+    await userEvent.click(await screen.findByRole("button", { name: /^Tema en curso/ })); // la fila abre la hoja con el selector
     await userEvent.selectOptions(await screen.findByLabelText("Tema en curso (opcional)"), "t1");
     expect(client.setFoco).toHaveBeenCalledWith("a1", "t1");
   });

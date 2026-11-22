@@ -1,0 +1,21 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-11-22T23:55:00Z" },
+  "title": "Hoy HexaPrep",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 390, "h": 1500, "title": "A · Empieza por aquí (una acción grande y el plan abajo)" },
+    "B.dc.html": { "x": 470, "y": 0, "w": 390, "h": 1500, "title": "B · Sesión de hoy de 15 minutos (propuesta, función nueva)" },
+    "C.dc.html": { "x": 940, "y": 0, "w": 390, "h": 1700, "title": "C · Agrupado por motivo (menos repetición)" },
+    "Oscuro.dc.html": { "x": 1410, "y": 0, "w": 390, "h": 1500, "title": "A · Modo oscuro" },
+    "Estados.dc.html": { "x": 0, "y": 1820, "w": 390, "h": 1750, "title": "A · Estados: sin sugerencias, cargando y plan con examen puesto" },
+    "Plan.dc.html": { "x": 470, "y": 1820, "w": 390, "h": 900, "title": "A · Al tocar «Tu plan»: examen y tema en curso" },
+    "Escritorio.dc.html": { "x": 0, "y": 3690, "w": 1280, "h": 1000, "title": "A en escritorio: lo principal a la izquierda, el plan a la derecha", "expand": "fill" }
+  },
+  "order": ["Main.dc.html", "B.dc.html", "C.dc.html", "Oscuro.dc.html", "Estados.dc.html", "Plan.dc.html", "Escritorio.dc.html"],
+  "notes": {
+    "titulo": { "x": 0, "y": -300, "text": "Hoy: tres ideas, sus estados y el escritorio", "kind": "title1", "maxW": 1800 }
+  },
+  "designSystems": []
+}

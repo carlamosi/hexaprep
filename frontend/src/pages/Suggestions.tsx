@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { api, type Suggestion } from "../api";
-import { Examen, type ExamenClient } from "../components/Examen";
-import { TemaEnCurso, type FocoClient } from "../components/TemaEnCurso";
+import { Plan, type PlanClient } from "../components/Plan";
 import { t } from "../i18n";
 import { ErrorCarga } from "../components/ErrorCarga";
 import "./hoy.css";
 
 interface Props {
-  client?: Pick<typeof api, "suggestions"> & Partial<ExamenClient> & Partial<FocoClient>;
+  client?: Pick<typeof api, "suggestions"> & PlanClient;
   asignaturaId?: string;
   onPracticeSubtema: (subtemaId: string) => void;
 }
@@ -20,11 +19,10 @@ const ICONOS: Record<NonNullable<Suggestion["razon"]>, React.ReactNode> = {
   rendimiento: <path d="M5 17l5-5 3 3 6-7M14 8h5v5" />,
 };
 
-const botonPrincipal = "mt-4 rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro";
-const botonSecundario = "mt-4 rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)] btn-suave";
+const pct = (x: number) => `${Math.round(Math.min(1, x) * 100)} %`;
 
-/** Qué conviene repasar ahora: conceptos de la asignatura que estás viendo, en orden, con el motivo y dos medidas. La primera tarjeta es la
- * acción principal. La fecha de examen es opcional y solo la ves si la pones. */
+/** Qué conviene repasar ahora, de la asignatura que estás viendo. La primera sugerencia es la acción principal («Empieza por aquí»);
+ * el resto, una lista; y debajo, tu plan (examen y tema en curso), opcional. */
 export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: Props) {
   const [items, setItems] = useState<Suggestion[] | null>(null);
   const [failed, setFailed] = useState(false);
@@ -39,61 +37,92 @@ export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: P
   if (failed) return <ErrorCarga />;
   if (!items) {
     return (
-      <section className="mx-auto w-full max-w-3xl px-4 py-6">
+      <section className="hoy">
         <p role="status" className="sr-only">{t("app.cargando")}</p>
-        <div aria-hidden="true" className="space-y-4">{[0, 1, 2].map((i) => <div key={i} className="hoy-sk" />)}</div>
+        <div aria-hidden="true" className="hoy-sk-g"><div className="hoy-sk hoy-sk-hero" /><div className="hoy-sk" /><div className="hoy-sk" /></div>
       </section>
     );
   }
 
+  const [primera, ...resto] = items;
   const entra = (i: number) => ({ "--i": i }) as React.CSSProperties;
+  const subtitulo = items.length === 1 ? t("hoy.subtituloUno") : t("hoy.subtitulo").replace("{n}", String(items.length));
   return (
-    <section className="mx-auto w-full max-w-3xl px-4 py-6">
-      <h1 className="text-2xl font-semibold">{t("hoy.titulo")}</h1>
-      {items.length > 0 && <p className="mt-1 text-[var(--ink-2)]">{t("hoy.intro")}</p>}
-      {asignaturaId && (client.getExamen || client.getFoco) && (
-        <div className="hoy-plan">
-          {client.getExamen && client.setExamen && <Examen asignaturaId={asignaturaId} client={client as ExamenClient} />}
-          {client.getFoco && client.setFoco && client.getMap && <TemaEnCurso asignaturaId={asignaturaId} client={client as FocoClient} />}
-        </div>
-      )}
-      {items.length === 0 && (
-        <div className="hoy-vacio hoy-sec mt-6" style={entra(0)}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 19.8 7.3v9.4L12 21.2 4.2 16.7V7.3Z" fill="var(--lila-soft)" stroke="var(--lila)" strokeWidth="1.2" strokeLinejoin="round" /></svg>
+    <section className="hoy">
+      <header className="hoy-cab">
+        <h1>{t("hoy.h1")}</h1>
+        {items.length > 0 && <p>{subtitulo}</p>}
+      </header>
+
+      {primera ? (
+        <section className="hoy-hero hoy-sec" style={entra(0)} aria-label={t("hoy.empieza")}>
+          <div className="hoy-hero-cab">
+            <span>{t("hoy.empieza")}</span>
+            {primera.razon && (
+              <span className="hoy-chip">
+                <svg viewBox="0 0 24 24" aria-hidden="true">{ICONOS[primera.razon]}</svg>
+                {t(`hoy.razon.${primera.razon}`)}
+              </span>
+            )}
+          </div>
+          <div>
+            <h2>{primera.concepto}</h2>
+            <p>{primera.motivo}</p>
+          </div>
+          <dl className="hoy-medidas">
+            <div>
+              <dt>{t("hoy.olvido")}</dt>
+              <dd className="hoy-olvido">
+                <span className="hoy-barra" aria-hidden="true"><i style={{ "--v": Math.min(1, primera.riesgo_olvido) } as React.CSSProperties} /></span>
+                <b>{pct(primera.riesgo_olvido)}</b>
+              </dd>
+            </div>
+            <div>
+              <dt>{t("hoy.ganancia")}</dt>
+              <dd><b>+{primera.ganancia_por_minuto.toLocaleString("es", { maximumFractionDigits: 1 })}</b> <small>{t("hoy.ptsMin")}</small></dd>
+            </div>
+          </dl>
+          {primera.subtema_id && <button type="button" className="hoy-ahora" onClick={() => onPracticeSubtema(primera.subtema_id!)}>{t("hoy.practicarAhora")}</button>}
+        </section>
+      ) : (
+        <div className="hoy-vacio hoy-sec" style={entra(0)}>
+          <svg viewBox="0 0 92 80" aria-hidden="true"><polygon points="76,40 61,66 31,66 16,40 31,14 61,14" /></svg>
+          <h2>{t("hoy.vacioTitulo")}</h2>
           <p>{t("hoy.vacio")}</p>
           <a href="#panal" className="btn-suave">{t("hoy.vacioCta")}</a>
         </div>
       )}
-      <ol className="mt-6 space-y-4">
-        {items.map((s, i) => (
-          <li key={s.concepto_id ?? `s-${i}`} className={`hoy-card hoy-sec${i === 0 ? " is-top" : ""}`} style={entra(i)}>
-            <span className="hoy-n" aria-hidden="true">{i + 1}</span>
-            <div className="min-w-0">
-              <h2 className="text-lg font-semibold">{s.concepto}</h2>
-              {s.razon && (
-                <span className="hoy-razon mt-2" data-r={s.razon}>
-                  <svg viewBox="0 0 24 24" aria-hidden="true">{ICONOS[s.razon]}</svg>
-                  {t(`hoy.razon.${s.razon}`)}
-                </span>
-              )}
-              <p className="mt-2 text-[var(--ink-2)]">{s.motivo}</p>
-              <div className="hoy-medidas">
-                <span className="hoy-olvido">
-                  {t("hoy.olvido")}
-                  <span className="hoy-barra" aria-hidden="true"><i style={{ "--v": Math.min(1, s.riesgo_olvido), "--i": i } as React.CSSProperties} /></span>
-                  <b>{Math.round(s.riesgo_olvido * 100)} %</b>
-                </span>
-                <span>{t("hoy.ganancia")} <b>+{s.ganancia_por_minuto.toLocaleString("es", { maximumFractionDigits: 1 })}</b> {t("hoy.ptsMin")}</span>
-              </div>
-              {s.subtema_id && (
-                <button type="button" onClick={() => onPracticeSubtema(s.subtema_id!)} className={i === 0 ? botonPrincipal : botonSecundario}>
-                  {t("hoy.practicar")}
-                </button>
-              )}
-            </div>
-          </li>
-        ))}
-      </ol>
+
+      {resto.length > 0 && (
+        <section className="hoy-sec" style={entra(1)} aria-label={t("hoy.despues")}>
+          <h2 className="hoy-h2">{t("hoy.despues")}</h2>
+          <ol className="hoy-grupo">
+            {resto.map((s, i) => {
+              const sub = `${s.razon ? `${t(`hoy.razon.${s.razon}`)}, ` : ""}olvido ${pct(s.riesgo_olvido)}`;
+              const dentro = (
+                <>
+                  <span className="hoy-n" aria-hidden="true">{i + 2}</span>
+                  <span className="hoy-fila-txt">
+                    <b>{s.concepto}</b>
+                    <small className={s.razon === "olvido" ? "es-olvido" : undefined}>{sub}</small>
+                  </span>
+                  {s.subtema_id && <svg className="hoy-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>}
+                </>
+              );
+              return (
+                <li key={s.concepto_id ?? `s-${i}`}>
+                  {s.subtema_id
+                    ? <button type="button" className="hoy-fila" onClick={() => onPracticeSubtema(s.subtema_id!)}>{dentro}</button>
+                    : <div className="hoy-fila is-quieta">{dentro}</div>}
+                </li>
+              );
+            })}
+          </ol>
+          <p className="hoy-nota">{t("hoy.despuesNota")}</p>
+        </section>
+      )}
+
+      {asignaturaId && <Plan asignaturaId={asignaturaId} client={client} />}
     </section>
   );
 }
