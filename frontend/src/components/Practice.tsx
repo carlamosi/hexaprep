@@ -470,7 +470,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
               <input
                 id="respuesta" autoFocus inputMode="decimal" autoComplete="off" value={valor} disabled={chosen !== null}
                 onChange={(e) => setValor(e.target.value)} placeholder={t("practica.tuRespuesta")}
-                className="w-64 rounded-[11px] border border-[var(--rule-2)] px-4 py-3 text-lg tabular-nums focus-visible:border-[var(--lila)]"
+                className={`w-64 rounded-[11px] border border-[var(--rule-2)] px-4 py-3 text-lg tabular-nums focus-visible:border-[var(--lila)] ${result ? (result.correcta ? "fb-ok" : "fb-ko") : ""}`}
               />
               <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-60">
                 {t("practica.comprobar")}
@@ -492,11 +492,11 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
                       aria-label={`${t("practica.opcion")} ${LETTERS[i]}: ${o.texto}`}
                       aria-disabled={chosen !== null}
                       onClick={() => void choose(i)}
-                      className={`flex w-full items-start gap-3 rounded-[11px] border px-4 py-3 text-left transition-colors ${
+                      className={`flex w-full items-start gap-3 rounded-[11px] border px-4 py-3 text-left transition-[color,background-color,border-color,transform] duration-150 active:scale-[.99] ${
                         isCorrect
-                          ? "border-[var(--ok)] bg-[var(--ok-soft)]"
+                          ? `border-[var(--ok)] bg-[var(--ok-soft)] ${o.letra === chosen ? "fb-ok" : ""}`
                           : isWrongPick
-                            ? "border-[var(--ko)] bg-[var(--ko-soft)]"
+                            ? "fb-ko border-[var(--ko)] bg-[var(--ko-soft)]"
                             : done
                               ? "border-[var(--rule)] opacity-60"
                               : "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]"

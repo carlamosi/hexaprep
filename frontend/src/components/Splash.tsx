@@ -14,14 +14,23 @@ const SATELITES = [
 ].map((s) => ({ ...s, x: 120 + 94 * Math.cos((Math.PI / 180) * s.a), y: 120 + 94 * Math.sin((Math.PI / 180) * s.a) }));
 
 /** Duración total del arranque; el desvanecido final dura FUNDIDO_MS más. */
-export const SPLASH_MS = 1000;
-const FUNDIDO_MS = 250;
+export const SPLASH_MS = 700;
+const FUNDIDO_MS = 200;
+
+/** Solo se ve la primera vez de cada sesión del navegador: las recargas no repiten la espera. */
+function yaVisto() {
+  try {
+    if (sessionStorage.getItem("hexaprep-splash")) return true;
+    sessionStorage.setItem("hexaprep-splash", "1");
+  } catch { /* sin almacenamiento: se muestra siempre */ }
+  return false;
+}
 
 /** Pantalla de arranque: el panal se arma de golpe (seis hexágonos que entran en cadena), el hexágono central se dibuja
  * y se rellena en duotono y el nombre sube. Nunca está vacía: el primer fotograma ya tiene color. Solo al abrir la app. */
 export function Splash() {
   const reducir = typeof window !== "undefined" && !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-  const [fase, setFase] = useState<"on" | "fuera" | "fin">(reducir ? "fin" : "on");
+  const [fase, setFase] = useState<"on" | "fuera" | "fin">(() => (reducir || yaVisto() ? "fin" : "on"));
   useEffect(() => {
     if (reducir) return;
     const a = setTimeout(() => setFase("fuera"), SPLASH_MS);

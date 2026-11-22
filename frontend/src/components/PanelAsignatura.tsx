@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from "motion/react";
-import { EASE } from "../motion";
-import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
+import { EASE, EASE_IN, EXIT_S } from "../motion";
+import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import type { Hex, MapResponse } from "../api";
 import { t, tn } from "../i18n";
 import { Hexagon } from "./Hexagon";
@@ -128,12 +128,19 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
     return () => window.removeEventListener("resize", calcular);
   }, [nHex]);
 
+  const [sale, setSale] = useState(false);
+  const cerrar = useCallback(() => {
+    if (reduce) return onClose();
+    setSale(true);
+    setTimeout(onClose, EXIT_S * 1000);
+  }, [reduce, onClose]);
+
   useEffect(() => {
     closeRef.current?.focus();
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && cerrar();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onClose]);
+  }, [cerrar]);
 
   const temas = group(map.hexes);
   const numeros = numerosTemas(temas.map((x) => x.nombre));
@@ -142,11 +149,11 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
   const nSub = temas.reduce((a, x) => a + x.subtemas.length, 0);
 
   return (
-    <motion.div className="pm-backdrop" onClick={onClose} {...(reduce ? {} : { initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.2 } })}>
+    <motion.div className="pm-backdrop" onClick={cerrar} {...(reduce ? {} : { initial: { opacity: 0 }, animate: { opacity: sale ? 0 : 1 }, transition: { duration: sale ? EXIT_S : 0.2, ease: sale ? EASE_IN : "linear" } })}>
       <motion.div
         className="pm" role="dialog" aria-modal="true" aria-label={`${t("panal.verPanal")} ${map.asignatura}`}
         onClick={(e) => e.stopPropagation()}
-        {...(reduce ? {} : { initial: { opacity: 0, y: 14, scale: 0.985 }, animate: { opacity: 1, y: 0, scale: 1 }, transition: { duration: 0.3, ease: EASE } })}
+        {...(reduce ? {} : { initial: { opacity: 0, y: 14, scale: 0.985 }, animate: sale ? { opacity: 0, y: 6, scale: 0.99 } : { opacity: 1, y: 0, scale: 1 }, transition: sale ? { duration: EXIT_S, ease: EASE_IN } : { duration: 0.3, ease: EASE } })}
       >
         <svg className="pm-defs" aria-hidden="true" focusable="false">
           <filter id={grain} x="-5%" y="-5%" width="110%" height="110%">
@@ -162,7 +169,7 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
             <p>{tn("panal.conceptos", map.hexes.length)} · {tn("panal.temas", temas.length)} · {tn("panal.subtemas", nSub)}</p>
           </div>
           <Leyenda grain={grain} />
-          <button ref={closeRef} type="button" onClick={onClose} className="pm-close" aria-label={t("panal.cerrar")}>
+          <button ref={closeRef} type="button" onClick={cerrar} className="pm-close" aria-label={t("panal.cerrar")}>
             <svg aria-hidden="true" viewBox="0 0 16 16" width="16" height="16"><path d="M3 3l10 10M13 3L3 13" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
           </button>
         </header>

@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, expect, it, vi } from "vitest";
 import { AppHeader, tinte } from "../src/components/AppHeader";
@@ -53,7 +53,7 @@ it("selector_works_with_keyboard_and_escape_returns_focus", async () => {
   expect(a.onCambiar).toHaveBeenCalledWith("a2");
   await userEvent.click(a.boton);
   await userEvent.keyboard("{Escape}");
-  expect(screen.queryByRole("listbox")).toBeNull();
+  await waitFor(() => expect(screen.queryByRole("listbox")).toBeNull()); // la salida dura 120 ms
   expect(a.boton).toHaveFocus();
 });
 

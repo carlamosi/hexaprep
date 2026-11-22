@@ -18,15 +18,20 @@ export function AsignaturaSelector({ asignaturas, actual, onElegir, onAbrir }: P
   const boton = useRef<HTMLButtonElement>(null);
   const cur = asignaturas.find((a) => a.id === actual) ?? asignaturas[0];
 
+  const [sale, setSale] = useState(false);
+
+  /** Cierra con una salida corta (`.asig-sale`, menos de la mitad de lo que tarda en abrir). */
   function cerrar(devolverFoco = true) {
-    setOpen(false);
     if (devolverFoco) boton.current?.focus();
+    if (sale) return;
+    setSale(true);
+    setTimeout(() => { setOpen(false); setSale(false); }, 120);
   }
 
   useEffect(() => {
     if (!open) return;
     raiz.current?.querySelector<HTMLElement>('[role="option"][aria-selected="true"]')?.focus();
-    const fuera = (e: PointerEvent) => !raiz.current?.contains(e.target as Node) && setOpen(false);
+    const fuera = (e: PointerEvent) => !raiz.current?.contains(e.target as Node) && cerrar(false);
     document.addEventListener("pointerdown", fuera); // en iOS tocar una zona vacía no genera mousedown
     return () => document.removeEventListener("pointerdown", fuera);
   }, [open]);
@@ -53,16 +58,16 @@ export function AsignaturaSelector({ asignaturas, actual, onElegir, onAbrir }: P
       <button
         ref={boton} type="button" className="asig-btn" aria-haspopup="listbox" aria-expanded={open}
         aria-label={`${t("nav.asignatura")}: ${cur?.nombre ?? ""}`}
-        onClick={() => { if (!open) onAbrir?.(); setOpen(!open); }}
+        onClick={() => { if (open) cerrar(false); else { onAbrir?.(); setOpen(true); } }}
       >
         <i aria-hidden="true" className="asig-dot" />
         <span className="asig-nombre">{cur?.nombre}</span>
-        <svg aria-hidden="true" viewBox="0 0 12 8" width="11" height="8" className={open ? "asig-chev is-open" : "asig-chev"}>
+        <svg aria-hidden="true" viewBox="0 0 12 8" width="11" height="8" className={open && !sale ? "asig-chev is-open" : "asig-chev"}>
           <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
       {open && (
-        <div className="asig-pop" role="listbox" aria-label={t("nav.asignatura")} onKeyDown={teclas}>
+        <div className={sale ? "asig-pop asig-sale" : "asig-pop"} role="listbox" aria-label={t("nav.asignatura")} onKeyDown={teclas}>
           {asignaturas.map((a) => (
             <button
               key={a.id} type="button" role="option" aria-selected={a.id === cur?.id} className="asig-op"

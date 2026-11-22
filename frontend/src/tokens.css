@@ -45,6 +45,8 @@
   --ease-in-out: cubic-bezier(.77, 0, .175, 1); /* movimiento dentro de la pantalla */
   --dur-press: .16s; /* pulsar, hover pequeño */
   --dur-ui: .2s; /* desplegables, cambios de estado */
+  --ease-in: cubic-bezier(.7, 0, .84, 0); /* salidas */
+  --dur-exit: .14s; /* cerrar es más rápido que abrir */
   --dur-enter: .3s; /* entradas (máximo para UI; los modales pueden más) */
   --hex-flat: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
   --hex-pointy: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);

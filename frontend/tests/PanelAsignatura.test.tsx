@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import type { Hex, MapResponse } from "../src/api";
@@ -59,7 +59,7 @@ it("closes_with_escape_and_button", async () => {
   render(<PanelAsignatura map={MAP} onClose={onClose} />);
   await userEvent.keyboard("{Escape}");
   await userEvent.click(screen.getByRole("button", { name: "Cerrar" }));
-  expect(onClose).toHaveBeenCalledTimes(2);
+  await waitFor(() => expect(onClose).toHaveBeenCalledTimes(2)); // la salida dura 140 ms
 });
 
 it("a_hexagon_and_a_search_result_open_that_subtema", async () => {
