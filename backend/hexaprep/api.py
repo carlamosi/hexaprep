@@ -151,7 +151,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
 
     listos: set[str] = set()  # perfiles ya comprobados por esta instancia
 
-    if client_id:  # acceso con Google: solo los emails de la lista, cada uno con su perfil
+    if client_id:  # acceso con Google: los emails de la lista (o cualquiera con `*`), cada uno con su perfil
         @app.middleware("http")
         async def sesion(request: Request, call_next):
             ruta = request.url.path
@@ -178,7 +178,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
         return {"email": datos["e"]}
 
     def _abrir_sesion(request: Request, credential: str, response: Response) -> dict:
-        """Comprueba el token de Google y la lista de permitidos, crea el perfil si falta y pone la cookie de sesión.
+        """Comprueba el token de Google y la lista de permitidos (o `*`: cualquiera), crea el perfil si falta y pone la cookie de sesión.
         AuthError si el token no vale; PermissionError si el email no está en la lista."""
         c = auth.verificar_google(credential, client_id)
         if not auth.permitido(c["email"], permitidos()):

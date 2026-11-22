@@ -4,6 +4,9 @@ import { t } from "./i18n";
 import { marcarListo } from "./arranque";
 import { enAppInstalada } from "./instalar"; // en la app instalada la ventana emergente de Google no funciona en iOS
 import { ErrorCarga } from "./components/ErrorCarga";
+import { LEMA, MarcaHex } from "./components/Marca";
+import { CAMBIO_TEMA } from "./tema";
+import "./acceso.css";
 
 declare global {
   interface Window {
@@ -41,16 +44,40 @@ function Entrada({ clientId, aviso, onCredencial }: { clientId: string; aviso: s
           // con redirección Google envía el token por formulario a nuestra API y vuelve aquí (flujo fiable dentro de la app instalada)
           ? { client_id: clientId, ux_mode: "redirect", login_uri: `${window.location.origin}/api/auth/google/redirect` }
           : { client_id: clientId, callback: (r) => alRecibir.current(r.credential) });
-        window.google!.accounts.id.renderButton(boton.current, { theme: "outline", size: "large", text: "signin_with", locale: "es" });
+        window.google!.accounts.id.renderButton(boton.current, { theme: "outline", size: "large", shape: "pill", text: "continue_with", logo_alignment: "left", width: Math.min(340, window.innerWidth - 48), locale: "es" });
       })
       .catch(() => setSinGoogle(true));
   }, [clientId]);
+  useEffect(() => { // la barra del navegador y la de iOS toman el color de la portada; al entrar, el encabezado la repinta
+    const meta = document.querySelector('meta[name="theme-color"]');
+    const antes = meta?.getAttribute("content");
+    meta?.setAttribute("content", "#2A1030");
+    return () => { if (antes) meta?.setAttribute("content", antes); window.dispatchEvent(new Event(CAMBIO_TEMA)); };
+  }, []);
+  const mensaje = aviso ?? (sinGoogle ? t("acceso.sinGoogle") : null);
   return (
-    <main className="mx-auto flex max-w-md flex-col items-center gap-5 px-4 py-20 text-center">
-      <h1 className="text-2xl font-semibold">{t("acceso.titulo")}</h1>
-      <p className="text-[var(--ink-2)]">{t("acceso.nota")}</p>
-      <div ref={boton} />
-      {(aviso || sinGoogle) && <p role="alert" className="text-sm text-[var(--ko)]">{aviso ?? t("acceso.sinGoogle")}</p>}
+    <main className="acceso">
+      <div className="acceso-marca">
+        <MarcaHex />
+        <span className="acceso-nombre">{t("app.nombre")}</span>
+        <p lang="en" className="acceso-lema">{LEMA}</p>
+      </div>
+      <section className="acceso-form">
+        <h1>{t("acceso.titulo")}</h1>
+        <p>{t("acceso.nota")}</p>
+        {mensaje && (
+          <div role="alert" className="acceso-aviso">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 21.5 20h-19z" /><path d="M12 10v4.5M12 17.5v.01" /></svg>
+            <p>{mensaje}</p>
+          </div>
+        )}
+        {sinGoogle ? (
+          <button type="button" className="acceso-recargar" onClick={() => window.location.reload()}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9M20 4v5h-5" /></svg>
+            {t("acceso.recargar")}
+          </button>
+        ) : <div ref={boton} className="acceso-boton" />}
+      </section>
     </main>
   );
 }

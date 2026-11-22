@@ -33,7 +33,7 @@ No instaladas (del repo `emilkowalski/skills`, pedir OK a Carla antes): `review-
 
 ## Datos que no están en el código
 (Las reglas de subida, Neon y secretos están en `CLAUDE.md`; aquí solo los detalles.)
-- **Producción:** Vercel, proyecto `hexaprep`; base Neon `hexaprep-db`; acceso con Google solo para los emails de `HEXAPREP_EMAILS_PERMITIDOS`. Comprobar el despliegue: `curl -s https://hexaprep-app.vercel.app/ | grep -o 'assets/index-[^"]*\.js'` frente a `ls frontend/dist/assets/index-*.js`.
+- **Producción:** Vercel, proyecto `hexaprep`; base Neon `hexaprep-db`; acceso con Google para los emails de `HEXAPREP_EMAILS_PERMITIDOS` (o cualquiera si vale `*`). Comprobar el despliegue: `curl -s https://hexaprep-app.vercel.app/ | grep -o 'assets/index-[^"]*\.js'` frente a `ls frontend/dist/assets/index-*.js`.
 - **Neon desde la máquina:** URL directa (`DATABASE_URL_UNPOOLED` de `.env.local`). El entorno puede bloquear escrituras del asistente: no lo fuerces, dale a Carla el comando para su terminal (con `.venv\Scripts\python.exe`, no `python` a secas). Los secretos nuevos: `vercel env add ... --sensitive` con stdin.
 
 ## Comandos que más se usan (Windows, Git Bash)

@@ -344,6 +344,7 @@ const es: Dict = {
   "acceso.error": "No se ha podido iniciar sesión. Inténtalo otra vez.",
   "acceso.sinGoogle": "No se ha podido cargar el acceso de Google. Revisa tu conexión y recarga.",
   "acceso.salir": "Cerrar sesión",
+  "acceso.recargar": "Recargar",
   "practica.falloEscrita": "No está bien. Repasa cada hueco:",
   "hoy.vacio": "Todavía no hay sugerencias: practica un rato y aquí verás qué repasar.",
   "practica.comprobar": "Comprobar",

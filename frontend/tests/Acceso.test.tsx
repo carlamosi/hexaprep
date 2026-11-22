@@ -42,6 +42,31 @@ describe("acceso con Google", () => {
     await waitFor(() => expect(callback).not.toBeNull());
   });
 
+  it("la_portada_lleva_la_marca_y_el_lema_y_no_habla_de_cuentas_autorizadas_porque_entra_cualquier_cuenta", async () => {
+    conGoogle();
+    render(<Acceso client={cliente()}>{app}</Acceso>);
+    expect(await screen.findByText("Master it, one hexagon at a time.")).toBeInTheDocument();
+    expect(screen.getByText("HexaPrep")).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/autorizad/i);
+    await waitFor(() => expect(callback).not.toBeNull());
+    const g = (window as unknown as { google: { accounts: { id: { renderButton: ReturnType<typeof vi.fn> } } } }).google;
+    expect(g.accounts.id.renderButton).toHaveBeenCalledWith(expect.anything(), expect.objectContaining({ shape: "pill", text: "continue_with", locale: "es" }));
+  });
+
+  it("si_google_no_carga_avisa_en_una_caja_y_ofrece_recargar", async () => {
+    // sin `window.google` el script de Google se pide al cargar; jsdom lo da por fallido y no dispara onload
+    const original = document.head.appendChild.bind(document.head);
+    vi.spyOn(document.head, "appendChild").mockImplementation(<T extends Node>(n: T) => {
+      original(n);
+      queueMicrotask(() => (n as unknown as HTMLScriptElement).onerror?.(new Event("error")));
+      return n;
+    });
+    render(<Acceso client={cliente()}>{app}</Acceso>);
+    expect(await screen.findByRole("alert")).toHaveTextContent(/No se ha podido cargar el acceso de Google/);
+    expect(screen.getByRole("button", { name: "Recargar" })).toBeInTheDocument();
+    vi.restoreAllMocks();
+  });
+
   it("al_recibir_el_token_de_google_entra_y_enseña_la_app", async () => {
     conGoogle();
     const c = cliente();

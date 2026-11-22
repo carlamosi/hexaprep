@@ -1,20 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { alCambiar, todoListo } from "../arranque";
 import { CAMBIO_TEMA } from "../tema";
+import { HEX, LEMA, SAT_BASE } from "./Marca";
 
-/** Hexágono de vértices a izquierda y derecha: el mismo que el icono de la app. */
-const HEX = (cx: number, cy: number, r: number) =>
-  `M${Array.from({ length: 6 }, (_, i) => {
-    const a = (Math.PI / 180) * 60 * i;
-    return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
-  }).join("L")}Z`;
-
-/** Los seis hexágonos pequeños, a mano y sin simetría (ángulo en grados, distancia al centro, radio, opacidad): salen del centro
- * en arco (x con ease-out, y con ease-in-out) y entran en cadena cada 45 ms. */
-const SATELITES = [
-  { a: -75, l: 96, r: 17, o: 0.95 }, { a: -20, l: 118, r: 11, o: 0.6 }, { a: 35, l: 100, r: 20, o: 0.9 },
-  { a: 120, l: 112, r: 13, o: 0.55 }, { a: 165, l: 92, r: 18, o: 0.95 }, { a: 235, l: 124, r: 9, o: 0.5 },
-].map((s, i) => {
+/** Los seis hexágonos pequeños: salen del centro en arco (x con ease-out, y con ease-in-out) y entran en cadena cada 45 ms. */
+const SATELITES = SAT_BASE.map((s, i) => {
   const x = 120 + s.l * Math.cos((Math.PI / 180) * s.a), y = 120 + s.l * Math.sin((Math.PI / 180) * s.a);
   return { ...s, x, y, dx: -(x - 120) * 0.55, dy: -(y - 120) * 0.55, d: 180 + i * 45 };
 });
@@ -110,7 +100,7 @@ export function Splash() {
           <g clipPath="url(#splash-recorte)"><rect className="splash-brillo" x="70" y="60" width="34" height="120" fill="url(#splash-destello)" /></g>
         </svg>
         <span className="splash-nombre">HexaPrep</span>
-        <span lang="en" className="splash-lema">Master it, one hexagon at a time.</span>
+        <span lang="en" className="splash-lema">{LEMA}</span>
         <span className="splash-barra"><span ref={barra} className="splash-barra-i" /></span>
       </div>
     </div>

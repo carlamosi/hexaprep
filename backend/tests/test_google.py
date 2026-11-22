@@ -55,6 +55,13 @@ def test_lista_de_permitidos_no_distingue_mayusculas_ni_espacios():
     assert not auth.permitido("carla@gmail.com", "")
 
 
+def test_un_asterisco_abre_el_registro_a_cualquier_cuenta_y_vacio_sigue_cerrado():
+    assert auth.permitido("cualquiera@gmail.com", "*")
+    assert auth.permitido("cualquiera@gmail.com", " * ")
+    assert not auth.permitido("cualquiera@gmail.com", "")  # sin configurar no entra nadie: se abre a propósito, no por olvido
+    assert not auth.permitido("cualquiera@gmail.com", "carla@gmail.com")  # una lista sigue siendo una lista
+
+
 @pytest.fixture
 def cliente(tmp_path, monkeypatch):
     monkeypatch.setenv("GOOGLE_CLIENT_ID", CLIENT)
@@ -85,6 +92,13 @@ def test_entrar_con_un_email_permitido_abre_la_api_y_salir_la_cierra(cliente, mo
     assert cliente.get("/api/auth/me").json()["email"] == "carla@gmail.com"
     cliente.post("/api/auth/logout")
     assert cliente.get("/api/subjects").status_code == 401
+
+
+def test_con_el_registro_abierto_entra_cualquier_cuenta_de_google(cliente, monkeypatch):
+    monkeypatch.setenv("HEXAPREP_EMAILS_PERMITIDOS", "*")
+    r = entrar(cliente, monkeypatch, "nueva.persona@gmail.com")
+    assert r.status_code == 200 and r.json()["email"] == "nueva.persona@gmail.com"
+    assert cliente.get("/api/subjects").status_code == 200
 
 
 def test_un_email_no_permitido_o_un_token_falso_no_entran(cliente, monkeypatch):

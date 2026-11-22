@@ -63,4 +63,6 @@ def verificar_google(credential: str, client_id: str, abrir=urllib.request.urlop
 
 
 def permitido(email: str, lista: str) -> bool:
-    return email.strip().lower() in {e.strip().lower() for e in lista.split(",") if e.strip()}
+    """Lista de emails separados por comas, o `*` para que entre cualquier cuenta de Google. Vacía no deja entrar a nadie."""
+    permitidos = {e.strip().lower() for e in lista.split(",") if e.strip()}
+    return "*" in permitidos or email.strip().lower() in permitidos
