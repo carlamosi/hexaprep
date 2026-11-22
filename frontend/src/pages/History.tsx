@@ -88,7 +88,7 @@ export function History({ asignaturaId, client = api, mes }: {
   const orden = useMemo(() => ordenPanal(map?.hexes ?? []), [map]);
 
   if (failed && !data) return <ErrorCarga />;
-  if (!data) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
+  if (!data) return <p role="status" className="sr-only">{t("app.cargando")}</p>;
 
   const r = data.resumen;
   const est = estado(r.respondidas);

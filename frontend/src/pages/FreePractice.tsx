@@ -33,7 +33,7 @@ export function FreePractice({ asignaturaId, temaId, tipos, client = api, onFini
   }, [asignaturaId, temaId, tipos, client, key, ronda]);
 
   if (failed) return <ErrorCarga />;
-  if (!sid) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
+  if (!sid) return <p role="status" className="sr-only">{t("app.cargando")}</p>;
   if (fin && client.resumenSesion) {
     return <Resumen sesionId={sid} fallos={fallos.current} client={client} onVolver={onFinish}
       onSeguir={() => { fallos.current = []; started.current = false; setSid(null); setAnswered(0); setFinState(false); setRonda((n) => n + 1); }} />;

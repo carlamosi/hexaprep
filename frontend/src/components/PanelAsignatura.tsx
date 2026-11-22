@@ -16,9 +16,20 @@ const POINTS = "25,1 75,1 99,43.3 75,85.6 25,85.6 1,43.3";
 const COL = (75 / 110) * 1.04;
 const FILA = (86.6 / 110) * 1.06;
 const ALTO = 96 / 110;
-const MAX_S = 104; // en escritorio el panal crece hasta llenar la pantalla y se encoge hasta que cabe
+const MAX_S = 170; // en escritorio el panal se reparte por todo el ancho y crece hasta llenar también el alto
 const MOVIL_S = 51; // en el móvil el panal hace scroll vertical: tamaño fijo; 51 de ancho dejan 44 px de alto (área táctil mínima)
-const inicial = () => (typeof window !== "undefined" && window.innerWidth < 640 ? MOVIL_S : MAX_S);
+const esMovil = () => typeof window !== "undefined" && window.innerWidth < 640;
+const inicial = () => ({ s: esMovil() ? MOVIL_S : 104, cols: esMovil() ? 7 : 14 });
+
+/** Hexágono más grande y columnas con las que `n` hexágonos caben en `ancho` x `alto` (en escritorio: el panal llena el panel). */
+export function ajustarPanal(n: number, ancho: number, alto: number): { s: number; cols: number } {
+  for (let s = MAX_S; s > 16; s -= 2) {
+    const cols = Math.min(n, Math.max(1, Math.floor((ancho - s) / (COL * s)) + 1));
+    const filas = Math.ceil(n / cols);
+    if ((filas - 1) * FILA * s + ALTO * s + (cols > 1 ? (FILA * s) / 2 : 0) + 0.07 * s <= alto) return { s, cols };
+  }
+  return { s: 16, cols: Math.min(n, 14) };
+}
 
 const mean = (xs: number[]) => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : 0);
 const pctTxt = (p: number) => `${Math.round(p)} %`;
@@ -97,20 +108,25 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
   const bodyRef = useRef<HTMLDivElement>(null);
   const grain = useId();
   const reduce = useReducedMotion() ?? false;
-  const [s, setS] = useState(inicial);
+  const [{ s, cols }, setLay] = useState(inicial);
   const [tip, setTip] = useState<Tip | null>(null);
 
-  // Se encoge el hexágono hasta que todo cabe sin scroll (en el móvil no: ahí se hace scroll).
+  // En escritorio el panal se reparte por todo el ancho y el alto libres del panel (lo demás ocupa lo suyo); en móvil, tamaño fijo y scroll.
+  const nHex = map.hexes.length;
   useLayoutEffect(() => {
-    const b = bodyRef.current;
-    if (window.innerWidth < 640) return;
-    if (b && (b.scrollHeight > b.clientHeight + 1 || b.scrollWidth > b.clientWidth + 1) && s > 16) setS(Math.max(16, s - (s > 40 ? 4 : 2)));
-  }, [s]);
-  useEffect(() => {
-    const onResize = () => setS(inicial());
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
+    const calcular = () => {
+      const b = bodyRef.current;
+      if (!b || esMovil()) return setLay(inicial());
+      const cs = getComputedStyle(b), gap = parseFloat(cs.rowGap) || 14;
+      const otros = [...b.children].filter((c) => !c.classList.contains("pm-masa"));
+      const libreAlto = b.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom) - otros.reduce((a, c) => a + c.getBoundingClientRect().height + gap, 0) - 2;
+      const libreAncho = b.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      setLay((p) => { const n = ajustarPanal(nHex, libreAncho, libreAlto); return n.s === p.s && n.cols === p.cols ? p : n; });
+    };
+    calcular();
+    window.addEventListener("resize", calcular);
+    return () => window.removeEventListener("resize", calcular);
+  }, [nHex]);
 
   useEffect(() => {
     closeRef.current?.focus();
@@ -123,7 +139,6 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
   const numeros = numerosTemas(temas.map((x) => x.nombre));
   const base = map.hexes[0]?.color ?? "";
   const colores = new Map(temas.map((x, i) => [x.id, colorTema(base, i, temas.length)]));
-  const cols = typeof window !== "undefined" && window.innerWidth < 640 ? 7 : 14;
   const nSub = temas.reduce((a, x) => a + x.subtemas.length, 0);
 
   return (

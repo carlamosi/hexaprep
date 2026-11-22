@@ -1,8 +1,8 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import type { Hex, MapResponse } from "../src/api";
-import { PanelAsignatura } from "../src/components/PanelAsignatura";
+import { PanelAsignatura, ajustarPanal } from "../src/components/PanelAsignatura";
 
 const hex = (over: Partial<Hex>): Hex => ({
   concepto_id: "c1", nombre: "Coste", subtema_id: "s1", subtema: "Escasez", tema: "Decisiones", tema_id: "t1", color: "#000", percent: 40, ...over,
@@ -71,4 +71,19 @@ it("a_hexagon_and_a_search_result_open_that_subtema", async () => {
   await userEvent.type(screen.getByRole("searchbox"), "agentes");
   await userEvent.click(within(screen.getByRole("searchbox").closest("div")!).getByRole("button", { name: /Mercado/ }));
   expect(onSelect).toHaveBeenLastCalledWith("s2");
+});
+
+describe("ajustarPanal", () => {
+  const COL = (75 / 110) * 1.04, FILA = (86.6 / 110) * 1.06, ALTO = 96 / 110;
+  const medidas = (n: number, ancho: number, alto: number) => {
+    const { s, cols } = ajustarPanal(n, ancho, alto);
+    const filas = Math.ceil(n / cols);
+    return { s, cols, w: (cols - 1) * COL * s + s, h: (filas - 1) * FILA * s + ALTO * s + (cols > 1 ? (FILA * s) / 2 : 0) + 0.07 * s };
+  };
+  it.each([[1920, 800], [1280, 600], [2560, 1200], [1024, 700]])("el_panal_de_78_llena_el_ancho_y_cabe_en_el_alto_%i_x_%i", (ancho, alto) => {
+    const m = medidas(78, ancho, alto);
+    expect(m.h, `alto ${m.h} en ${alto} (s=${m.s}, cols=${m.cols})`).toBeLessThanOrEqual(alto);
+    expect(m.w, `ancho ${m.w} de ${ancho}: debe ocupar al menos el 80 %`).toBeGreaterThanOrEqual(ancho * 0.8);
+    expect(m.w).toBeLessThanOrEqual(ancho);
+  });
 });

@@ -22,7 +22,7 @@ export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: P
   }, [client]);
 
   if (failed) return <ErrorCarga />;
-  if (!items) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
+  if (!items) return <p role="status" className="sr-only">{t("app.cargando")}</p>;
 
   return (
     <section className="mx-auto w-full max-w-3xl px-4 py-6">

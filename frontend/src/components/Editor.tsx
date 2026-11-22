@@ -38,7 +38,7 @@ export function Editor({ preguntaId, asignaturaId, client = api }: { preguntaId:
     return () => { alive = false; };
   }, [preguntaId, client]);
 
-  if (!content || !form || !base) return error ? <p role="alert">{error}</p> : <p role="status">{t("app.cargando")}</p>;
+  if (!content || !form || !base) return error ? <p role="alert">{error}</p> : <p role="status" className="sr-only">{t("app.cargando")}</p>;
 
   function setOpcion(i: number, campo: "texto" | "trampa", valor: string) {
     setForm((f) => f && { ...f, opciones: f.opciones.map((o, k) => (k === i ? { ...o, [campo]: valor } : o)) });

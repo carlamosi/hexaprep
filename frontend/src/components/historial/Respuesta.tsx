@@ -15,7 +15,7 @@ export function Respuesta({ preguntaId, cargar = api.getQuestion, explicacion = 
     return () => { vivo = false; };
   }, [preguntaId, cargar]);
   if (error) return <p role="alert" className="hp-note">{t("app.error")}</p>;
-  if (!q) return <p role="status" className="hp-note">{t("app.cargando")}</p>;
+  if (!q) return <p role="status" className="sr-only">{t("app.cargando")}</p>;
   const correcta = q.campos?.length
     ? q.campos.map((c) => `${c.etiqueta ? `${c.etiqueta}: ` : ""}${c.validas.join(" o ")}`).join("; ")
     : q.solucion != null ? [q.solucion].flat().map((v) => String(v).replace(".", ",")).join("; ")

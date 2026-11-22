@@ -50,7 +50,7 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
   }
 
   if (failed) return <ErrorCarga />;
-  if (!map) return <p role="status" className="px-4 py-8 text-[var(--ink-3)]">{t("app.cargando")}</p>;
+  if (!map) return <p role="status" className="sr-only">{t("app.cargando")}</p>;
 
   const conceptos = map.hexes.filter((h) => h.subtema_id === subtemaId);
   const nombre = conceptos[0]?.subtema ?? "";
