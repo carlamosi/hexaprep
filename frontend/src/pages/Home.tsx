@@ -7,6 +7,8 @@ import { Buscador } from "../components/Buscador";
 import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
 import { ErrorCarga } from "../components/ErrorCarga";
+import { NovedadTemario, debeMostrarse } from "../components/NovedadTemario";
+import { group } from "../components/HexMap";
 
 type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[]; animar: boolean };
 
@@ -64,6 +66,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
           <svg className="banner-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </button>
       </section>
+      {debeMostrarse(map.asignatura, map.hexes.some((h) => h.percent > 0)) && <NovedadTemario temas={group(map.hexes).map((x) => x.nombre)} base={map.hexes[0]?.color ?? acento} />}
       <div className="flex flex-wrap items-center gap-3 py-5">
         <Buscador hexes={map.hexes} onElegir={(id) => onSelectSubtema?.(id)} />
         {onPracticar && (

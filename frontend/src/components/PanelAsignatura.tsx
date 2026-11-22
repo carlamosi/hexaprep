@@ -17,7 +17,7 @@ const COL = (75 / 110) * 1.04;
 const FILA = (86.6 / 110) * 1.06;
 const ALTO = 96 / 110;
 const MAX_S = 76;
-const MOVIL_S = 42; // en el móvil el panal hace scroll vertical: tamaño fijo y legible
+const MOVIL_S = 51; // en el móvil el panal hace scroll vertical: tamaño fijo; 51 de ancho dejan 44 px de alto (área táctil mínima)
 const inicial = () => (typeof window !== "undefined" && window.innerWidth < 640 ? MOVIL_S : MAX_S);
 
 const mean = (xs: number[]) => (xs.length ? Math.round(xs.reduce((a, b) => a + b, 0) / xs.length) : 0);

@@ -1,6 +1,6 @@
 // Sistema de color (E1): cada tema parte del color de la asignatura y gira el tono hasta ARCO grados a lo largo del temario;
 // la claridad alterna entre temas vecinos para que no se confundan. Los subtemas se mueven poco dentro de su tema.
-const ARCO = 40;
+const ARCO = 40; // hasta 4 temas; con más, el arco crece para que los vecinos no se confundan
 const LILA = "#B05A8F";
 
 function hsl(hex: string): [number, number, number] {
@@ -21,7 +21,7 @@ const css = (h: number, s: number, l: number) => `hsl(${Math.round(h) % 360} ${M
 /** Color del tema `i` de `n` a partir del color de la asignatura (#rrggbb; otro valor cae al lila de la marca). */
 export function colorTema(base: string, i: number, n: number): string {
   const [h, s, l] = hsl(base);
-  const paso = n > 1 ? ARCO / (n - 1) : 0;
+  const paso = n > 1 ? (ARCO + Math.max(0, n - 4) * 20) / (n - 1) : 0;
   return css(h + i * paso, Math.min(s, 78), Math.max(36, Math.min(58, l + (i % 2 ? 7 : -3))));
 }
 

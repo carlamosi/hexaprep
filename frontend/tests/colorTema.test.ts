@@ -4,14 +4,19 @@ import { colorTema, tonoBanner } from "../src/colorTema";
 const hslDe = (c: string) => c.match(/hsl\((\d+) (\d+)% (\d+)%\)/)!.slice(1).map(Number);
 
 describe("color de cada tema desde el color de la asignatura", () => {
-  it("el_tono_avanza_unos_40_grados_en_todo_el_temario_y_la_claridad_alterna", () => {
+  it("la_claridad_alterna_entre_temas_vecinos_y_ningun_color_se_repite", () => {
     const n = 5;
     const cs = Array.from({ length: n }, (_, i) => hslDe(colorTema("#B05A8F", i, n)));
-    const giro = (cs[n - 1][0] - cs[0][0] + 360) % 360;
-    expect(giro, `tonos: ${cs.map((c) => c[0])}`).toBeGreaterThanOrEqual(38);
-    expect(giro).toBeLessThanOrEqual(42);
     expect(cs[1][2], "temas vecinos con distinta claridad").not.toBe(cs[0][2]);
     expect(new Set(cs.map((c) => c.join("-"))).size).toBe(n);
+  });
+
+  it("con_cuatro_temas_o_menos_el_arco_sigue_en_40_grados_y_con_mas_crece", () => {
+    const giro = (n: number) => { const h = Array.from({ length: n }, (_, i) => hslDe(colorTema("#B05A8F", i, n))[0]); return (h[n - 1] - h[0] + 360) % 360; };
+    expect(giro(4), "4 temas").toBeGreaterThanOrEqual(38);
+    expect(giro(4)).toBeLessThanOrEqual(42);
+    expect(giro(5), "5 temas: los vecinos se distinguen mejor").toBeGreaterThanOrEqual(58);
+    expect(giro(5)).toBeLessThanOrEqual(62);
   });
 
   it("un_solo_tema_no_gira_y_un_color_raro_cae_al_lila", () => {
