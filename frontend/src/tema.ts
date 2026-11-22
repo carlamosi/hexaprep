@@ -1,6 +1,7 @@
 // Tema de color: Sistema (por defecto), Claro u Oscuro. Se guarda en el navegador y se aplica con `data-theme` en <html>.
 export type Tema = "sistema" | "claro" | "oscuro";
 const KEY = "hexaprep.tema";
+export const CAMBIO_TEMA = "hexaprep-tema";
 
 export function leerTema(): Tema {
   try {
@@ -15,6 +16,7 @@ export function aplicarTema(t: Tema): void {
   const el = document.documentElement;
   if (t === "sistema") el.removeAttribute("data-theme");
   else el.setAttribute("data-theme", t === "claro" ? "light" : "dark");
+  window.dispatchEvent(new Event(CAMBIO_TEMA));
 }
 
 export function esOscuro(): boolean {

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { api, type Oculto, type PerfilDatos } from "../api";
 import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
+import { enAppInstalada, useInstalar } from "../instalar";
 import { ABRIR_GUIA } from "../components/Onboarding";
 import { aplicarTema, leerTema, type Tema } from "../tema";
 import { Settings, type SettingsClient } from "./Settings";
@@ -20,6 +21,7 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
   const [temas, setTemas] = useState<{ id: string; nombre: string }[]>([]);
   const [foco, setFocoState] = useState<string>("");
   const [tema, setTema] = useState<Tema>(leerTema);
+  const instalador = useInstalar();
 
   useEffect(() => {
     let vivo = true;
@@ -131,15 +133,20 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
         </section>
       )}
 
-      <details className={seccion}>
-        <summary className="cursor-pointer text-lg font-semibold">{t("perfil.instalar")}</summary>
-        <ul className="mt-3 list-disc space-y-2 pl-5 text-[var(--ink-2)]">
-          <li>{t("perfil.instalarIphone")}</li>
-          <li>{t("perfil.instalarAndroid")}</li>
-          <li>{t("perfil.instalarOrdenador")}</li>
-        </ul>
-        <p className="mt-3 text-sm text-[var(--ink-3)]">{t("perfil.instalarNota")}</p>
-      </details>
+      {!enAppInstalada() && (
+        <details className={seccion} open={instalador.disponible || undefined}>
+          <summary className="cursor-pointer text-lg font-semibold">{t("perfil.instalar")}</summary>
+          {instalador.disponible && (
+            <button type="button" onClick={() => void instalador.instalar()} className={`${boton} mt-3`}>{t("perfil.instalarBoton")}</button>
+          )}
+          <ul className="mt-3 list-disc space-y-2 pl-5 text-[var(--ink-2)]">
+            <li>{t("perfil.instalarIphone")}</li>
+            <li>{t("perfil.instalarAndroid")}</li>
+            <li>{t("perfil.instalarOrdenador")}</li>
+          </ul>
+          <p className="mt-3 text-sm text-[var(--ink-3)]">{t("perfil.instalarNota")}</p>
+        </details>
+      )}
 
       {perfil?.reiniciar && (
         <section className={seccion}>

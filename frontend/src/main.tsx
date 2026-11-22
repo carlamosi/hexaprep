@@ -4,6 +4,7 @@ import { Acceso } from "./Acceso";
 import App from "./App";
 import { Splash } from "./components/Splash";
 import "./index.css";
+import "./instalar";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

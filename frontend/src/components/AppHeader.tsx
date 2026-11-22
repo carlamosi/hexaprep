@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
-import { esOscuro } from "../tema";
+import { CAMBIO_TEMA, esOscuro } from "../tema";
 import type { Subject } from "../api";
 import { t } from "../i18n";
 import { AsignaturaSelector } from "./AsignaturaSelector";
@@ -90,8 +90,10 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
     return () => window.removeEventListener("scroll", f);
   }, []);
   useEffect(() => { // la barra de estado del iPhone toma el mismo color
-    const oscuro = esOscuro();
-    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", tinte(acento, 0.3, oscuro ? 0x17 : 255) ?? "#B05A8F");
+    const pintar = () => document.querySelector('meta[name="theme-color"]')?.setAttribute("content", tinte(acento, 0.3, esOscuro() ? 0x17 : 255) ?? "#B05A8F");
+    pintar();
+    window.addEventListener(CAMBIO_TEMA, pintar); // al cambiar de tema en el Perfil, la barra se repinta sin recargar
+    return () => window.removeEventListener(CAMBIO_TEMA, pintar);
   }, [acento]);
   return (
     <header style={color ? { background: color } : undefined} className={`cab sticky top-0 z-10 border-b border-[var(--rule)] sm:backdrop-blur ${conSombra ? "cab-sombra" : ""} ${color ? "" : "bg-[var(--paper)]/95"}`}>

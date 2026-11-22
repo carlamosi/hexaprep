@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { ApiError, api } from "./api";
 import { t } from "./i18n";
+import { enAppInstalada } from "./instalar"; // en la app instalada la ventana emergente de Google no funciona en iOS
 import { ErrorCarga } from "./components/ErrorCarga";
 
 declare global {
@@ -14,11 +15,6 @@ declare global {
 export type AccesoClient = Pick<typeof api, "getAuthConfig" | "authMe" | "authGoogle" | "authLogout">;
 
 type Estado = { tipo: "cargando" } | { tipo: "libre" } | { tipo: "fuera"; clientId: string } | { tipo: "dentro"; clientId: string; email: string } | { tipo: "error" };
-
-/** ¿Está abierta como app instalada (pantalla de inicio)? Allí la ventana emergente de Google no funciona en iOS. */
-function enAppInstalada(): boolean {
-  return (navigator as unknown as { standalone?: boolean }).standalone === true || !!window.matchMedia?.("(display-mode: standalone)").matches;
-}
 
 function cargarGoogle(): Promise<void> {
   if (window.google) return Promise.resolve();
