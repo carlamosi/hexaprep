@@ -4,7 +4,7 @@ import { t } from "../i18n";
 
 export type ExamenClient = Pick<typeof api, "getExamen" | "setExamen"> & Partial<Pick<typeof api, "getNotas" | "addNota">>;
 
-const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-sm font-medium text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
+const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-sm font-medium text-[var(--lila-ink)] btn-suave";
 
 function fechaLarga(iso: string): string {
   const [a, m, d] = iso.split("-").map(Number);

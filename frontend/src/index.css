@@ -75,24 +75,36 @@ body {
 .error-carga h1 { margin: 0; font-size: 1.35rem; line-height: 1.2; letter-spacing: -.01em; }
 .error-carga p { margin: 0; max-width: 24rem; color: var(--ink-2); font-size: .95rem; line-height: 1.5; text-wrap: balance; }
 .error-carga button { min-height: 44px; margin-top: 12px; padding: 10px 22px; border: 0; border-radius: 11px; background: var(--ink); color: var(--on-ink); font: inherit; font-weight: 600; cursor: pointer;
-  box-shadow: 3px 3px 0 var(--lila); transition: transform var(--dur-ui) var(--ease), box-shadow var(--dur-ui) var(--ease); }
-@media (hover: hover) and (pointer: fine) { .error-carga button:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); } }
-.error-carga button:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--lila); }
+  box-shadow: 3px 3px 0 var(--lila); }
 @keyframes error-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .error-carga { animation: none; } .error-carga button { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .error-carga { animation: none; } }
 
-/* Botón de sombra dura: se hunde al pulsar (160 ms) y se levanta al pasar el puntero, solo con ratón */
-.btn-duro { transition: transform var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease); }
-.btn-duro:active:not(:disabled) { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--lila); }
-@media (hover: hover) and (pointer: fine) {
-  .btn-duro:hover:not(:disabled):not(:active) { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); }
+/* Botones de sombra dura (todos con la misma física): se levantan al pasar el ratón (solo puntero fino), se hunden al pulsar
+ * y vuelven con la salida suave de siempre. --sombra elige el color de la sombra. Sin efecto si están desactivados. */
+:is(.btn-duro, .error-carga button, .hp-btn, .pm-close, .tema-practicar) {
+  transition: transform var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease);
+  -webkit-tap-highlight-color: transparent;
 }
+@media (hover: hover) and (pointer: fine) {
+  :is(.btn-duro, .error-carga button, .hp-btn, .pm-close, .tema-practicar):hover:not(:disabled, [aria-disabled="true"], :active) {
+    transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--sombra, var(--lila));
+  }
+}
+:is(.btn-duro, .error-carga button, .hp-btn, .pm-close, .tema-practicar):active:not(:disabled, [aria-disabled="true"]) {
+  transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--sombra, var(--lila));
+}
+
+/* Botón suave (secundario): el fondo y el borde cambian con suavidad, se encoge un poco al pulsar y mide 44 px de alto */
+.btn-suave { min-height: 44px; transition: background-color var(--dur-press) var(--ease), border-color var(--dur-press) var(--ease), color var(--dur-press) var(--ease), transform var(--dur-press) var(--ease); }
+@media (hover: hover) and (pointer: fine) { .btn-suave:hover:not(:disabled) { background: var(--lila-soft); border-color: var(--lila-tint); } }
+.btn-suave:active:not(:disabled) { transform: scale(.97); background: var(--lila-soft); }
+.btn-suave:disabled { opacity: .55; cursor: not-allowed; }
 /* Popover que nace desde su botón: la esquina de origen se elige con .origen-izq / .origen-der */
 .pop-in { animation: pop-in var(--dur-press) var(--ease) both; }
 .origen-izq { transform-origin: top left; }
 .origen-der { transform-origin: top right; }
 @keyframes pop-in { from { opacity: 0; transform: scale(.97) translateY(-2px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { .btn-duro { transition: none; } .pop-in { animation: fade-in var(--dur-press) ease both; } }
+@media (prefers-reduced-motion: reduce) { :is(.btn-duro, .error-carga button, .hp-btn, .pm-close, .tema-practicar, .btn-suave) { transition: none; } :is(.btn-duro, .error-carga button, .hp-btn, .pm-close, .tema-practicar, .btn-suave):active { transform: none !important; } .pop-in { animation: fade-in var(--dur-press) ease both; } }
 @keyframes fade-in { from { opacity: 0; } }
 
 /* Feedback de respuesta: el acierto da un pop; el fallo, un temblor de unos 300 ms (solo en la opción pulsada) */

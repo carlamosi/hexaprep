@@ -37,7 +37,7 @@ export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: P
                 <h2 className="text-lg font-semibold">{s.concepto}</h2>
                 <p className="mt-1 text-[var(--ink-2)]">{s.motivo}</p>
                 {s.subtema_id && (
-                  <button type="button" onClick={() => onPracticeSubtema(s.subtema_id!)} className="mt-3 rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]">
+                  <button type="button" onClick={() => onPracticeSubtema(s.subtema_id!)} className="mt-3 rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)] btn-suave">
                     {t("hoy.practicar")}
                   </button>
                 )}

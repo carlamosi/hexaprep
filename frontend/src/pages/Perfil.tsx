@@ -9,7 +9,7 @@ import { Settings, type SettingsClient } from "./Settings";
 
 export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto" | "getFoco" | "setFoco" | "getMap">>;
 
-const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 font-medium text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
+const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 font-medium text-[var(--lila-ink)] btn-suave";
 const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5";
 
 /** Perfil: quién eres, fecha de examen, empezar de cero, instalar la app y, plegado, lo técnico. */

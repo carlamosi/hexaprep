@@ -185,7 +185,6 @@
   margin-top: 16px; min-height: 42px; padding: 8px 16px; border: 1.5px solid var(--ink); border-radius: 11px; background: var(--ink);
   color: var(--on-ink); font: 600 .9rem var(--font); cursor: pointer; box-shadow: 3px 3px 0 var(--lila);
 }
-@media (hover: hover) and (pointer: fine) { .hp-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); } }
 
 @media (max-width: 900px) {
   .hp-summary { grid-template-columns: minmax(0, 1fr); }

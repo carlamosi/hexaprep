@@ -28,7 +28,7 @@ export function BookletButton({ fuenteId, cara, pagina }: { fuenteId: string; ca
       <button
         type="button"
         onClick={open}
-        className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]"
+        className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-[var(--lila-ink)] btn-suave"
       >
         {t("practica.booklet")} {pagina}
       </button>

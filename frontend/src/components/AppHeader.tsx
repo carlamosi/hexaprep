@@ -128,7 +128,7 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
                 key={k}
                 href={`#${k}`}
                 aria-current={ruta === k ? "page" : undefined}
-                className={`relative z-[1] flex items-center gap-2 rounded-[11px] border px-3 py-2 text-sm font-medium no-underline max-sm:flex-col max-sm:gap-0.5 max-sm:text-xs ${
+                className={`relative z-[1] flex items-center gap-2 rounded-[11px] border px-3 py-2 text-sm font-medium no-underline transition-[color,transform] duration-150 active:scale-[.96] max-sm:flex-col max-sm:gap-0.5 max-sm:text-xs ${
                   ruta === k ? "border-transparent text-[var(--ink)] max-sm:border-[var(--rule-2)] max-sm:bg-[var(--card)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
                 }`}
               >

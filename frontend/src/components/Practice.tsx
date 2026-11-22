@@ -499,7 +499,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
                             ? "fb-ko border-[var(--ko)] bg-[var(--ko-soft)]"
                             : done
                               ? "border-[var(--rule)] opacity-60"
-                              : "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]"
+                              : chosen === null ? "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]" : "border-[var(--rule-2)]"
                       }`}
                     >
                       <span aria-hidden="true" className="flex h-[30px] w-[34px] shrink-0 items-center justify-center bg-[var(--lila-soft)] text-sm font-semibold text-[var(--lila-ink)] [clip-path:var(--hex-flat)]">{LETTERS[i]}</span>

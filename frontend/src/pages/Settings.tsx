@@ -6,7 +6,7 @@ import { t } from "../i18n";
 export type SettingsClient = Pick<typeof api,
   "getBackup" | "makeBackup" | "restoreBackup" | "exportWeak" | "exportEvents" | "exportBank" | "reportedQuestions" | "getQuestion" | "editQuestion">;
 
-const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-[var(--lila-ink)] hover:bg-[var(--lila-soft)]";
+const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-[var(--lila-ink)] btn-suave";
 const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5";
 
 /** Avanzado (dentro de Perfil): copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */

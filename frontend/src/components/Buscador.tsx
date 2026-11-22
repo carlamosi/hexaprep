@@ -46,7 +46,7 @@ export function Buscador({ hexes, onElegir }: { hexes: Hex[]; onElegir: (subtema
               {res.length === 0 && <li className="px-2 py-2 text-sm text-[var(--ink-3)]">{t("buscar.nada")}</li>}
               {res.map((h) => (
                 <li key={h.concepto_id}>
-                  <button type="button" onClick={() => { setAbierto(false); setTexto(""); onElegir(h.subtema_id); }} className="block min-h-11 w-full rounded-[8px] px-2 py-1.5 text-left hover:bg-[var(--lila-soft)]">
+                  <button type="button" onClick={() => { setAbierto(false); setTexto(""); onElegir(h.subtema_id); }} className="block min-h-11 w-full rounded-[8px] px-2 py-1.5 text-left transition-colors duration-150 hover:bg-[var(--lila-soft)]">
                     <span className="block text-sm font-medium">{h.nombre}</span>
                     <span className="block text-xs text-[var(--ink-3)]">{sinPrefijoTema(h.tema)} · {h.subtema}</span>
                   </button>
