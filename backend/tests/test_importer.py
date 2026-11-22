@@ -98,3 +98,19 @@ def test_moving_the_only_question_of_a_concept_hides_the_emptied_concept(session
     assert antiguo.deleted_at is not None and otro.deleted_at is None
     nuevo = session.scalar(select(Concepto).where(Concepto.nombre == "C1", Concepto.deleted_at.is_(None)))
     assert session.get(Subtema, nuevo.subtema_id).nombre == "S2"
+
+
+def test_reordenar_subtemas_fija_el_orden_sin_tocar_preguntas(session, bank):
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools"))
+    from reordenar_subtemas import aplicar
+    base = make_bank(bank, [("y1", "C1", "A", 1), ("y2", "C2", "B", 1), ("y3", "C3", "C", 1)])
+    import_bank(session, base)
+    t = session.scalar(select(Subtema.tema_id).limit(1))
+    from hexaprep.models import Tema
+    nombre = session.get(Tema, t).nombre
+    asig = session.scalar(select(__import__("hexaprep.models", fromlist=["Asignatura"]).Asignatura.nombre))
+    assert aplicar(session, {(asig, nombre): ["C", "A"]}) >= 1
+    orden = [s.nombre for s in session.scalars(select(Subtema).where(Subtema.tema_id == t).order_by(Subtema.orden))]
+    assert orden[:2] == ["C", "A"] and n(session, Pregunta, Pregunta.es_actual.is_(True)) == 3
