@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Analytics } from "../src/api";
-import { ordenPanal, pendientes, titularPendientes, titularSesiones } from "../src/components/historial/datos";
+import { ordenPanal, pendientes, titularPendientes, titularSesiones, cuadrante, titularDuda, titularOlvido } from "../src/components/historial/datos";
 
 type Evo = Analytics["evolucion"];
 const tema = (id: string, nombre: string, ps: [string, number][]) => ({
@@ -52,5 +52,35 @@ describe("tira de sesiones", () => {
 
   it("si la duración no cambia el acierto lo dice", () => {
     expect(titularSesiones(ses([[10, 7, 300], [10, 7, 1800], [10, 8, 400], [10, 7, 2000]]))).toBe("Rindes parecido dure lo que dure la sesión");
+  });
+});
+
+describe("dudo frente a no sé", () => {
+  const c = (aciertos_pct: number, ritmo: number, concepto = "x") => ({ concepto_id: concepto, concepto, subtema: "s", n: 5, aciertos_pct, ritmo });
+
+  it("separa por acierto (70 %) y por ritmo (1 = lo esperado)", () => {
+    expect(cuadrante(c(90, 0.8))).toBe("dominado");
+    expect(cuadrante(c(90, 1.6))).toBe("duda");
+    expect(cuadrante(c(40, 0.7))).toBe("descuido");
+    expect(cuadrante(c(40, 2))).toBe("nosabe");
+  });
+
+  it("el titular nombra el cuadrante que más cuesta y exige al menos 4 conceptos", () => {
+    expect(titularDuda([c(90, 2), c(90, 2), c(90, 2)])).toBe("");
+    expect(titularDuda([c(90, 2), c(95, 1.5), c(40, 3), c(90, 0.5)])).toBe("2 conceptos los aciertas, pero con duda");
+    expect(titularDuda([c(90, 2), c(40, 3), c(30, 2), c(20, 1.5)])).toBe("3 conceptos aún no los sabes: tardas y fallas");
+    expect(titularDuda([c(90, 0.5), c(95, 0.7), c(85, 0.9), c(40, 0.5)])).toBe("1 concepto lo fallas yendo deprisa: lee con calma");
+    expect(titularDuda([c(90, 0.5), c(95, 0.7), c(85, 0.9), c(80, 0.5)])).toBe("Aciertas con soltura todos tus conceptos");
+  });
+});
+
+describe("curva de olvido", () => {
+  const o = (p: Partial<{ cruzan_7: number; cruzan_14: number; ya_bajo: number }>) => ({ dias: [], umbral: 70, temas: [], cruces: [], ya_bajo: 0, cruzan_7: 0, cruzan_14: 0, ...p });
+  it("el titular dice cuántos conceptos se te olvidarán y cuándo", () => {
+    expect(titularOlvido(o({ cruzan_7: 4 }))).toBe("En 7 días 4 conceptos bajarán del 70 %");
+    expect(titularOlvido(o({ cruzan_7: 1 }))).toBe("En 7 días 1 concepto bajará del 70 %");
+    expect(titularOlvido(o({ cruzan_14: 3 }))).toBe("En 14 días 3 conceptos bajarán del 70 %");
+    expect(titularOlvido(o({ ya_bajo: 2 }))).toBe("2 conceptos ya están por debajo del 70 %: repásalos hoy");
+    expect(titularOlvido(o({}))).toBe("Tu memoria aguanta tres semanas por encima del 70 %");
   });
 });

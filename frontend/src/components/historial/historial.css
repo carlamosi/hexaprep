@@ -239,3 +239,19 @@
 .hp-strip { min-width: 0; margin-bottom: 18px; }
 .hp-strip-media { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
 .hp-strip-dot { fill: var(--lila); stroke: var(--card); stroke-width: 2; fill-opacity: .9; }
+
+/* Dudo frente a no sé */
+.hp-quad.duda { fill: color-mix(in srgb, var(--lila) 12%, transparent); }
+.hp-quad.nosabe { fill: color-mix(in srgb, var(--ko) 10%, transparent); }
+.hp-quad-l { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 4 4; }
+.hp-quad-t { fill: var(--ink-3); font: 600 11px var(--font); letter-spacing: .02em; }
+.hp-dp { stroke: var(--card); stroke-width: 2; fill: var(--ink-3); }
+.hp-dp.dominado { fill: var(--ok); }
+.hp-dp.duda { fill: var(--lila); }
+.hp-dp.nosabe { fill: var(--ko); }
+.hp-dp.descuido { fill: var(--ink-3); }
+.hp-dp.is-low { fill-opacity: .45; stroke: var(--ink-3); stroke-dasharray: 2 2; stroke-width: 1.2; }
+.hp-dudo-l, .hp-olvido-l { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.hp-dudo-l li, .hp-olvido-l li { font-size: .9rem; color: var(--ink); }
+.hp-dudo-l small, .hp-olvido-l small { display: block; color: var(--ink-2); font-size: .82rem; }
+.hp-umbral { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 6 4; }

@@ -94,3 +94,21 @@ def test_retencion_real_aciertos_en_repasos_tras_1_y_7_dias(session, ctx):
     r = analytics(session, a)["resumen"]["retencion"]
     assert r["d1"] == {"n": 4, "pct": 50}, f"tras 1 día o más: {r}"
     assert r["d7"] == {"n": 2, "pct": 50}, f"tras 7 días o más: {r}"
+
+
+def test_conceptos_ritmo_para_separar_duda_de_ignorancia(session, ctx):
+    a, _ = ctx
+    cs = analytics(session, a)["conceptos"]
+    assert sorted(c["aciertos_pct"] for c in cs) == [33, 67] and all(c["n"] == 3 and c["ritmo"] > 0 for c in cs)
+    assert {"concepto_id", "concepto", "subtema"} <= cs[0].keys()
+
+
+def test_curva_de_olvido_por_tema_baja_con_los_dias_y_nombra_los_que_cruzan(session, ctx):
+    a, _ = ctx
+    o = analytics(session, a)["olvido"]
+    assert o["dias"] == list(range(22)) and o["umbral"] == 70
+    assert o["temas"], "hay conceptos con estado FSRS"
+    for t in o["temas"]:
+        c = t["curva"]
+        assert len(c) == 22 and all(0 <= v <= 100 for v in c) and c == sorted(c, reverse=True)
+    assert all(0 <= x["dia"] <= 21 for x in o["cruces"]) and {"concepto", "dia"} <= o["cruces"][0].keys() if o["cruces"] else True

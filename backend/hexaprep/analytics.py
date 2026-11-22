@@ -10,6 +10,7 @@ from . import mastery, tiempo
 from .models import Bloque, Concepto, Dominio, DominioSnapshot, Evento, Intento, Opcion, Pregunta, Sesion, Subtema, Tema
 from .escritura import clasificar_error
 from .ritmo import carga_esperada
+from .scheduling import _retrievability
 
 CONFIANZAS = ("seguro", "dudo", "adivino")
 TRAMOS_POSICION = [(1, 5, "1-5"), (6, 10, "6-10"), (11, 15, "11-15"), (16, 20, "16-20"), (21, None, "21+")]
@@ -130,6 +131,39 @@ def _errores_escritura(session: Session, filas: list) -> list[dict]:
     return [{"tipo": t, "n": n} for t, n in cuenta.most_common()]
 
 
+DIAS_OLVIDO = 21
+UMBRAL_OLVIDO = 70  # % de recuperabilidad por debajo del cual conviene repasar
+
+
+def _olvido(session: Session, asignatura_id: str, ahora: datetime) -> dict:
+    """Recuperabilidad FSRS proyectada a 21 días: media por tema, y qué conceptos cruzan el umbral y cuándo."""
+    filas = session.execute(
+        select(Dominio, Concepto, Tema).join(Concepto, Concepto.id == Dominio.concepto_id)
+        .join(Subtema, Subtema.id == Concepto.subtema_id).join(Tema, Tema.id == Subtema.tema_id)
+        .join(Bloque, Bloque.id == Tema.bloque_id)
+        .where(Bloque.asignatura_id == asignatura_id, Dominio.n_intentos > 0, Dominio.fsrs_state.is_not(None))).all()
+    dias = list(range(DIAS_OLVIDO + 1))
+    por_tema: dict[tuple, list[list[float]]] = defaultdict(list)
+    cruces = []
+    ya_bajo = 0
+    for dom, c, t in filas:
+        curva = [100 * _retrievability(dom.fsrs_state, ahora + timedelta(days=d)) for d in dias]
+        por_tema[(t.id, t.nombre)].append(curva)
+        if curva[0] < UMBRAL_OLVIDO:
+            ya_bajo += 1
+        else:
+            dia = next((d for d, r in zip(dias, curva) if r < UMBRAL_OLVIDO), None)
+            if dia is not None:
+                cruces.append({"concepto_id": c.id, "concepto": c.nombre, "tema": t.nombre, "dia": dia})
+    cruces.sort(key=lambda x: x["dia"])
+    return {
+        "dias": dias, "umbral": UMBRAL_OLVIDO, "ya_bajo": ya_bajo,
+        "temas": [{"tema_id": tid, "tema": nombre, "n": len(cs), "curva": [round(sum(c[d] for c in cs) / len(cs), 1) for d in dias]}
+                  for (tid, nombre), cs in por_tema.items()],
+        "cruces": cruces[:8], "cruzan_7": sum(x["dia"] <= 7 for x in cruces), "cruzan_14": sum(x["dia"] <= 14 for x in cruces),
+    }
+
+
 def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: datetime | None = None) -> dict:
     """Todo lo que muestra el historial. `dias` = 0 usa todo el historial."""
     ahora = ahora or datetime.now(UTC).replace(tzinfo=None)
@@ -203,6 +237,9 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
     sesiones.sort(key=lambda s: s["inicio"], reverse=True)
 
     activo, ritmo = _tiempos_activos(session, filas)
+    conceptos = [{"concepto_id": cid, "concepto": nombres[cid][0], "subtema": nombres[cid][1], "n": len(xs),
+                  "aciertos_pct": _pct(sum(x.correcta for x in xs), len(xs)), "ritmo": round(_media([ritmo[x.id] for x in xs if x.id in ritmo]), 2)}
+                 for cid, xs in por_concepto.items() if len(xs) >= 3 and any(x.id in ritmo for x in xs)]
     con_tiempo = [i for i in intentos if i.id in activo]
     return {
         "resumen": {
@@ -232,6 +269,8 @@ def analytics(session: Session, asignatura_id: str, dias: int = 0, ahora: dateti
                      "pregunta_id": trampa_pregunta[t].most_common(1)[0][0]}
                     for t, c in trampas.most_common(10)],
         "errores_escritura": _errores_escritura(session, filas),
+        "conceptos": conceptos,
+        "olvido": _olvido(session, asignatura_id, ahora),
         "debiles": debiles,
         "dificiles": dificiles,
         "sesiones_recientes": sesiones[:10],

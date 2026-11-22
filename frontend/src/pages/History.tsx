@@ -4,9 +4,11 @@ import { Hexagon } from "../components/Hexagon";
 import { Actividad } from "../components/historial/Actividad";
 import { Barras, Columnas, type Fila } from "../components/historial/Barras";
 import {
-  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, pendientes, segundos, semanasDeRango, titularPendientes, titularSesiones,
+  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, pendientes, segundos, semanasDeRango, titularDuda, titularOlvido, titularPendientes, titularSesiones,
 } from "../components/historial/datos";
 import { Evolucion } from "../components/historial/Evolucion";
+import { Duda } from "../components/historial/Duda";
+import { Olvido } from "../components/historial/Olvido";
 import { TiraSesiones } from "../components/historial/TiraSesiones";
 import { Pendiente } from "../components/historial/Pendiente";
 import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../components/historial/Listas";
@@ -92,6 +94,9 @@ export function History({ asignaturaId, client = api, mes }: {
   const filas = <T extends { n: number; aciertos_pct: number | null }>(xs: T[], id: (x: T) => string, et: (x: T) => string, corto?: (x: T) => string): Fila[] =>
     xs.map((x) => ({ id: id(x), etiqueta: et(x), corto: corto?.(x), n: x.n, valor: x.aciertos_pct }));
   const mejorDia = mejorGrupo(data.semana);
+  const conceptos = data.conceptos ?? [];
+  const tDuda = titularDuda(conceptos);
+  const olvido = data.olvido?.temas.length ? data.olvido : null;
   const titularSes = titularSesiones(data.sesiones_recientes);
   const titular = titularPendientes(pendientes(data.evolucion, orden));
   const ritmos = data.fatiga.map((f) => f.ritmo ?? 0);
@@ -189,6 +194,21 @@ export function History({ asignaturaId, client = api, mes }: {
                   filas={filas(data.velocidad, (x) => x.tramo, (x) => x.tramo)} />
               </Card>
             </Grupo>
+
+            {(tDuda || olvido) && (
+              <Grupo id="g-memoria" titulo="Qué sabes y qué se te escapa">
+                {tDuda && (
+                  <Card id="c-duda" titulo={tDuda} sub="Cada punto es un concepto con 3 o más respuestas. A la derecha de «lo esperado» tardas más de lo normal; por encima de la línea de 70 % aciertas. Pasa el ratón por un punto para ver cuál es." wide>
+                    <Duda conceptos={conceptos} />
+                  </Card>
+                )}
+                {olvido && (
+                  <Card id="c-olv" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema en los próximos 21 días si no repasas, calculado con el ritmo al que olvidas cada concepto." wide>
+                    <Olvido olvido={olvido} orden={orden} />
+                  </Card>
+                )}
+              </Grupo>
+            )}
 
             <Grupo id="g-cuando" titulo={t("hist.g.cuando")}>
               <Card id="c-hora" titulo={t("hist.horas")} sub={r.mejor_hora === null ? t("hist.horasSub") : `${t("hist.mejorHoraTexto")} ${hora(r.mejor_hora)}.`}>

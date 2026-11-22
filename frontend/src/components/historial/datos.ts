@@ -146,6 +146,44 @@ export function titularSesiones(ses: SesionResumen[]): string {
   return dif < 0 ? `Tus sesiones largas acaban ${-dif} puntos peor que las cortas` : `Tus sesiones largas te salen ${dif} puntos mejor que las cortas`;
 }
 
+// ---------- Dudo frente a no sé ----------
+
+export type Concepto = Analytics["conceptos"][number];
+export type Cuadrante = "dominado" | "duda" | "descuido" | "nosabe";
+/** Acierto mínimo para decir que «lo sabes», y ritmo (1 = el tiempo esperado) a partir del cual vas lento. */
+export const ACIERTO_SABE = 70;
+export const RITMO_LENTO = 1;
+
+export function cuadrante(c: Concepto): Cuadrante {
+  const acierta = (c.aciertos_pct ?? 0) >= ACIERTO_SABE, lento = c.ritmo > RITMO_LENTO;
+  return acierta ? (lento ? "duda" : "dominado") : lento ? "nosabe" : "descuido";
+}
+
+const plural = (n: number, uno: string, varios: string) => `${n} ${n === 1 ? uno : varios}`;
+
+/** La conclusión: el cuadrante problemático más poblado. Con menos de 4 conceptos no hay patrón. */
+export function titularDuda(cs: Concepto[]): string {
+  if (cs.length < 4) return "";
+  const n = (q: Cuadrante) => cs.filter((c) => cuadrante(c) === q).length;
+  const [ns, du, de] = [n("nosabe"), n("duda"), n("descuido")];
+  const max = Math.max(ns, du, de);
+  if (!max) return "Aciertas con soltura todos tus conceptos";
+  if (max === ns) return `${plural(ns, "concepto aún no lo sabes", "conceptos aún no los sabes")}: tardas y fallas`;
+  if (max === du) return `${plural(du, "concepto lo aciertas", "conceptos los aciertas")}, pero con duda`;
+  return `${plural(de, "concepto lo fallas", "conceptos los fallas")} yendo deprisa: lee con calma`;
+}
+
+// ---------- Curva de olvido ----------
+
+export type Olvido = Analytics["olvido"];
+export function titularOlvido(o: Olvido): string {
+  const cuantos = (n: number) => plural(n, "concepto bajará", "conceptos bajarán");
+  if (o.cruzan_7) return `En 7 días ${cuantos(o.cruzan_7)} del ${o.umbral} %`;
+  if (o.cruzan_14) return `En 14 días ${cuantos(o.cruzan_14)} del ${o.umbral} %`;
+  if (o.ya_bajo) return `${plural(o.ya_bajo, "concepto ya está", "conceptos ya están")} por debajo del ${o.umbral} %: repásalos hoy`;
+  return `Tu memoria aguanta tres semanas por encima del ${o.umbral} %`;
+}
+
 /** El grupo con mejor acierto entre los que tienen respuestas suficientes. */
 export function mejorGrupo<T extends { n: number; aciertos_pct: number | null }>(xs: T[]): T | null {
   const ok = xs.filter((x) => fiable(x.n) && x.aciertos_pct !== null);

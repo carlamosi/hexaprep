@@ -23,6 +23,7 @@ function analytics(over: Partial<Analytics["resumen"]> = {}): Analytics {
   const g = (n: number, p: number | null) => ({ n, aciertos_pct: p });
   return {
     resumen: { respondidas: 120, aciertos_pct: 55, dias_estudiados: 9, tiempo_medio_s: 12.5, mejor_hora: 20, sesiones: 7, dominio_pct: 48, dominio_delta: 6, ...over },
+    conceptos: [], olvido: { dias: [], umbral: 70, ya_bajo: 0, cruzan_7: 0, cruzan_14: 0, temas: [], cruces: [] },
     actividad: [{ fecha: "2026-11-03", n: 20, aciertos: 10 }, { fecha: "2026-11-10", n: 5, aciertos: 4 }],
     evolucion: {
       asignatura: [{ fecha: "2026-11-03", percent: 40 }, { fecha: "2026-11-10", percent: 46 }],

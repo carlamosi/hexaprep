@@ -84,6 +84,12 @@ export interface Analytics {
     asignatura: Serie[];
     temas: { tema_id: string; tema: string; puntos: Serie[]; subtemas: { subtema_id: string; subtema: string; puntos: Serie[] }[] }[];
   };
+  conceptos: { concepto_id: string; concepto: string; subtema: string; n: number; aciertos_pct: number | null; ritmo: number }[];
+  olvido: {
+    dias: number[]; umbral: number; ya_bajo: number; cruzan_7: number; cruzan_14: number;
+    temas: { tema_id: string; tema: string; n: number; curva: number[] }[];
+    cruces: { concepto_id: string; concepto: string; tema: string; dia: number }[];
+  };
   confianza: (Grupo & { confianza: Confianza | "sin" })[];
   horas: (Grupo & { hora: number })[];
   semana: (Grupo & { dia: number })[];
