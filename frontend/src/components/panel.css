@@ -1,12 +1,11 @@
 /* Panel de la asignatura: todo el panal en una pantalla. Un color por tema, un tono por subtema. Marca de docs/mockups/styles.css. */
-.pm-backdrop { position: fixed; inset: 0; z-index: 40; display: grid; place-items: center; padding: 2.5vh 2.5vw; background: rgb(31 26 36 / .5); }
+.pm-backdrop { position: fixed; inset: 0; z-index: 40; display: block; background: var(--paper); }
 .pm {
-  position: relative; width: min(96vw, 1480px); height: 95vh; display: flex; flex-direction: column; overflow: hidden;
-  background: var(--paper); border: 1.5px solid var(--ink); border-radius: 18px; box-shadow: 7px 7px 0 var(--lila);
+  position: relative; width: 100vw; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; background: var(--paper);
 }
 .pm-defs { position: absolute; width: 0; height: 0; }
 
-.pm-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 22px; padding: 12px 22px; background: var(--card); border-bottom: 1.5px solid var(--ink); }
+.pm-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 22px; padding: 12px 22px; background: var(--card); border-bottom: 1px solid var(--rule-2); box-shadow: 0 8px 18px -12px rgb(31 26 36 / .38); position: relative; z-index: 1; }
 .pm-head-hex { width: 66px; flex: none; }
 .pm-head-hex .hex-pct { font-size: 1.05rem; letter-spacing: -.02em; }
 .pm-head-hex .hex-pct small { font-size: .6em; font-weight: 500; }
@@ -32,7 +31,7 @@
 /* Cuerpo: tarjetas de tema */
 .pm-body { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 14px 22px 22px; overflow: auto; }
 .pm-masa-top { align-self: flex-end; }
-.pm-masa { margin: 0 auto; flex: none; }
+.pm-cluster.pm-masa { margin: 0 auto; flex: none; }
 .pm-temas { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; }
 .pm-temas li { display: flex; align-items: center; gap: 8px; font-size: .85rem; }
 .pm-tema-n { color: var(--ink-2); }
@@ -78,7 +77,6 @@
 
 @media (max-width: 640px) {
   .pm-backdrop { padding: 0; }
-  .pm { width: 100vw; height: 100dvh; border-radius: 0; border: 0; box-shadow: none; }
   .pm-head { padding: 10px 14px; gap: 8px 12px; }
   .pm-head-hex { width: 52px; }
   .pm-head-txt { flex: 1; min-width: 0; }

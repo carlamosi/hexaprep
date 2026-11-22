@@ -16,7 +16,7 @@ const POINTS = "25,1 75,1 99,43.3 75,85.6 25,85.6 1,43.3";
 const COL = (75 / 110) * 1.04;
 const FILA = (86.6 / 110) * 1.06;
 const ALTO = 96 / 110;
-const MAX_S = 76;
+const MAX_S = 104; // en escritorio el panal crece hasta llenar la pantalla y se encoge hasta que cabe
 const MOVIL_S = 51; // en el móvil el panal hace scroll vertical: tamaño fijo; 51 de ancho dejan 44 px de alto (área táctil mínima)
 const inicial = () => (typeof window !== "undefined" && window.innerWidth < 640 ? MOVIL_S : MAX_S);
 
@@ -104,7 +104,7 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
   useLayoutEffect(() => {
     const b = bodyRef.current;
     if (window.innerWidth < 640) return;
-    if (b && b.scrollHeight > b.clientHeight + 1 && s > 16) setS(Math.max(16, s - (s > 40 ? 4 : 2)));
+    if (b && (b.scrollHeight > b.clientHeight + 1 || b.scrollWidth > b.clientWidth + 1) && s > 16) setS(Math.max(16, s - (s > 40 ? 4 : 2)));
   }, [s]);
   useEffect(() => {
     const onResize = () => setS(inicial());
