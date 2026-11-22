@@ -6,11 +6,13 @@ import { enAppInstalada, useInstalar } from "../instalar";
 import { ABRIR_GUIA } from "../components/Onboarding";
 import { aplicarTema, leerTema, type Tema } from "../tema";
 import { Settings, type SettingsClient } from "./Settings";
+import "./perfil.css";
 
 export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto" | "getFoco" | "setFoco" | "getMap">>;
 
 const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 font-medium text-[var(--lila-ink)] btn-suave";
-const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5";
+const tarjeta = "rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 perfil-sec";
+const seccion = `space-y-3 ${tarjeta}`;
 
 /** Perfil: quién eres, fecha de examen, empezar de cero, instalar la app y, plegado, lo técnico. */
 export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string | null; client?: PerfilClient }) {
@@ -76,38 +78,29 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
     }
   }
 
+  const inicial = (perfil?.nombre || perfil?.email || "").trim().charAt(0).toUpperCase();
+  let orden = 0; // las tarjetas que hay entran en cadena, sin huecos aunque falten algunas
+  const entra = () => ({ "--i": orden++ }) as React.CSSProperties;
+
   return (
     <main className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6">
       <h1 className="text-2xl font-semibold">{t("perfil.titulo")}</h1>
 
       {perfil?.email && (
-        <section className={seccion} aria-label={t("perfil.cuenta")}>
-          <p className="text-lg font-semibold">{perfil.nombre || perfil.email}</p>
-          {perfil.nombre && <p className="text-[var(--ink-2)]">{perfil.email}</p>}
+        <section className={`${tarjeta} flex flex-wrap items-center gap-4`} style={entra()} aria-label={t("perfil.cuenta")}>
+          <span className="perfil-avatar" aria-hidden="true">{inicial}</span>
+          <div className="min-w-[10rem] flex-1"> {/* si no cabe junto al botón, el botón baja a su línea en vez de recortar el nombre */}
+            <p className="text-lg font-semibold break-words">{perfil.nombre || perfil.email}</p>
+            {perfil.nombre && <p className="text-[var(--ink-2)] break-all">{perfil.email}</p>}
+          </div>
           <button type="button" className={boton} onClick={() => void salir()}>{t("perfil.salir")}</button>
         </section>
       )}
 
       {asignaturaId && <Examen asignaturaId={asignaturaId} client={client} />}
 
-      <section className={seccion} aria-label={t("perfil.apariencia")}>
-        <h2 className="text-lg font-semibold">{t("perfil.apariencia")}</h2>
-        <div role="group" aria-label={t("perfil.apariencia")} className="flex flex-wrap gap-2">
-          {(["sistema", "claro", "oscuro"] as const).map((x) => (
-            <button key={x} type="button" aria-pressed={tema === x} onClick={() => { aplicarTema(x); setTema(x); }}
-              className={`min-h-11 rounded-[11px] border px-4 py-2 font-medium ${tema === x ? "border-[var(--ink)] bg-[var(--lila-soft)] text-[var(--ink)]" : "border-[var(--rule-2)] bg-[var(--card)] text-[var(--ink-2)]"}`}>
-              {t(`perfil.tema.${x}`)}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      <section className={seccion}>
-        <button type="button" className={boton} onClick={() => window.dispatchEvent(new Event(ABRIR_GUIA))}>{t("perfil.verGuia")}</button>
-      </section>
-
       {asignaturaId && client.setFoco && temas.length > 0 && (
-        <section className={seccion}>
+        <section className={seccion} style={entra()}>
           <h2 className="text-lg font-semibold"><label htmlFor="foco-tema">{t("perfil.foco")}</label></h2>
           <select id="foco-tema" value={foco} onChange={(e) => void cambiarFoco(e.target.value)} className="min-h-11 rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2 text-base">
             <option value="">{t("perfil.focoNinguno")}</option>
@@ -118,7 +111,7 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
       )}
 
       {client.ocultos && (
-        <section className={seccion} aria-label={t("perfil.ocultos")}>
+        <section className={seccion} style={entra()} aria-label={t("perfil.ocultos")}>
           <h2 className="text-lg font-semibold">{t("perfil.ocultos")}</h2>
           {ocultos.length === 0 ? <p className="text-[var(--ink-3)]">{t("perfil.ocultosVacio")}</p> : (
             <ul className="space-y-2">
@@ -133,48 +126,63 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
         </section>
       )}
 
-      {!enAppInstalada() && (
-        <details className={seccion} open={instalador.disponible || undefined}>
-          <summary className="cursor-pointer text-lg font-semibold">{t("perfil.instalar")}</summary>
-          {instalador.disponible && (
-            <button type="button" onClick={() => void instalador.instalar()} className={`${boton} mt-3`}>{t("perfil.instalarBoton")}</button>
-          )}
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-[var(--ink-2)]">
-            <li>{t("perfil.instalarIphone")}</li>
-            <li>{t("perfil.instalarAndroid")}</li>
-            <li>{t("perfil.instalarOrdenador")}</li>
-          </ul>
-          <p className="mt-3 text-sm text-[var(--ink-3)]">{t("perfil.instalarNota")}</p>
+      <section className={seccion} style={entra()} aria-label={t("perfil.apariencia")}>
+        <h2 className="text-lg font-semibold">{t("perfil.apariencia")}</h2>
+        <div role="group" aria-label={t("perfil.apariencia")} className="perfil-seg">
+          {(["sistema", "claro", "oscuro"] as const).map((x) => (
+            <button key={x} type="button" aria-pressed={tema === x} onClick={() => { aplicarTema(x); setTema(x); }}>
+              {t(`perfil.tema.${x}`)}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className={seccion} style={entra()} aria-label={t("perfil.ayuda")}>
+        <h2 className="text-lg font-semibold">{t("perfil.ayuda")}</h2>
+        <button type="button" className={boton} onClick={() => window.dispatchEvent(new Event(ABRIR_GUIA))}>{t("perfil.verGuia")}</button>
+        {!enAppInstalada() && (
+          <details className="perfil-det" open={instalador.disponible || undefined}>
+            <summary>{t("perfil.instalar")}</summary>
+            {instalador.disponible && (
+              <button type="button" onClick={() => void instalador.instalar()} className={`${boton} mt-1`}>{t("perfil.instalarBoton")}</button>
+            )}
+            <ul className="mt-3 list-disc space-y-2 pl-5 text-[var(--ink-2)]">
+              <li>{t("perfil.instalarIphone")}</li>
+              <li>{t("perfil.instalarAndroid")}</li>
+              <li>{t("perfil.instalarOrdenador")}</li>
+            </ul>
+            <p className="mt-3 text-sm text-[var(--ink-3)]">{t("perfil.instalarNota")}</p>
+          </details>
+        )}
+      </section>
+
+      {asignaturaId && (
+        <details className={tarjeta} style={entra()}>
+          <summary className="cursor-pointer text-lg font-semibold">{t("perfil.avanzado")}</summary>
+          <div className="mt-4"><Settings asignaturaId={asignaturaId} client={client} /></div>
         </details>
       )}
 
       {perfil?.reiniciar && (
-        <section className={seccion}>
+        <section className={`${seccion} perfil-riesgo`} style={entra()}>
           <h2 className="text-lg font-semibold">{t("perfil.reiniciarTitulo")}</h2>
           <p className="text-[var(--ink-2)]">{t("perfil.reiniciarTexto")}</p>
           {confirmar ? (
-            <div role="alertdialog" aria-labelledby="perfil-conf" className="space-y-3 rounded-[11px] border border-[var(--ko)] bg-[var(--ko-soft)] p-4">
+            <div role="alertdialog" aria-labelledby="perfil-conf" onKeyDown={(e) => e.key === "Escape" && setConfirmar(false)} className="space-y-3 rounded-[11px] border border-[var(--ko)] bg-[var(--ko-soft)] p-4">
               <p id="perfil-conf" className="font-semibold">{t("perfil.reiniciarPregunta")}</p>
               <p>{t("perfil.reiniciarAviso")}</p>
-              <div className="flex gap-3">
-                <button type="button" className="rounded-[11px] bg-[var(--ko)] px-4 py-2 text-[var(--on-ink)]" onClick={() => void reiniciar()}>{t("perfil.reiniciarSi")}</button>
-                <button type="button" className={boton} onClick={() => setConfirmar(false)}>{t("ajustes.cancelar")}</button>
+              <div className="flex flex-wrap gap-3">
+                <button type="button" className={`perfil-ko perfil-ko-solido`} onClick={() => void reiniciar()}>{t("perfil.reiniciarSi")}</button>
+                <button type="button" autoFocus className={boton} onClick={() => setConfirmar(false)}>{t("ajustes.cancelar")}</button>
               </div>
             </div>
           ) : (
-            <button type="button" className={boton} onClick={() => setConfirmar(true)}>{t("perfil.reiniciar")}</button>
+            <button type="button" className="perfil-ko" onClick={() => setConfirmar(true)}>{t("perfil.reiniciar")}</button>
           )}
         </section>
       )}
 
       {error && <p role="alert" className="rounded-[11px] bg-[var(--ko-soft)] px-4 py-3 text-[var(--ko)]">{t("app.error")}</p>}
-
-      {asignaturaId && (
-        <details className={seccion}>
-          <summary className="cursor-pointer text-lg font-semibold">{t("perfil.avanzado")}</summary>
-          <div className="mt-4"><Settings asignaturaId={asignaturaId} client={client} /></div>
-        </details>
-      )}
     </main>
   );
 }

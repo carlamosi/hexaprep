@@ -1,0 +1,39 @@
+/* Perfil: las tarjetas entran en cadena (45 ms), avatar hexagonal, selector de apariencia segmentado y zona delicada al final */
+.perfil-sec { animation: perfil-in var(--dur-enter) var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
+@keyframes perfil-in { from { opacity: 0; transform: translateY(8px); } }
+
+.perfil-avatar {
+  display: grid; place-items: center; flex: none; width: 56px; height: 50px; clip-path: var(--hex-flat);
+  background: linear-gradient(160deg, var(--lila), var(--lila-ink)); color: var(--on-ink); font-size: 1.3rem; font-weight: 600;
+}
+
+/* Apariencia: tres opciones en una sola pieza; la elegida se destaca y el cambio se funde en vez de saltar */
+.perfil-seg { display: inline-flex; gap: 4px; padding: 4px; border: 1px solid var(--rule-2); border-radius: 14px; background: var(--paper); }
+.perfil-seg button {
+  min-height: 40px; padding: 6px 16px; border: 1px solid transparent; border-radius: 10px; background: transparent; color: var(--ink-2); font: inherit; font-weight: 500; cursor: pointer;
+  transition: background-color var(--dur-press) var(--ease), border-color var(--dur-press) var(--ease), color var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease), transform var(--dur-press) var(--ease);
+}
+@media (hover: hover) and (pointer: fine) { .perfil-seg button[aria-pressed="false"]:hover { color: var(--lila-ink); background: var(--lila-soft); } }
+.perfil-seg button[aria-pressed="true"] { background: var(--card); border-color: var(--ink); color: var(--ink); box-shadow: 2px 2px 0 var(--lila); }
+.perfil-seg button:active { transform: scale(.97); }
+
+/* Ayuda: el desplegable de instalar queda dentro de la misma tarjeta, sin otra caja */
+.perfil-det summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 500; color: var(--lila-ink); list-style: none; }
+.perfil-det summary::-webkit-details-marker { display: none; }
+.perfil-det summary::after { content: ""; width: 7px; height: 7px; margin-left: 10px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(-45deg); transition: transform var(--dur-ui) var(--ease); }
+.perfil-det[open] summary::after { transform: rotate(45deg); }
+
+/* Zona delicada: reiniciar. Borde y botones en rojo suave, para que no se pulse por error */
+.perfil-riesgo { border-color: color-mix(in srgb, var(--ko) 38%, var(--rule)); }
+.perfil-ko { min-height: 44px; padding: 8px 16px; border: 1px solid var(--ko); border-radius: 11px; background: transparent; color: var(--ko); font: inherit; font-weight: 500; cursor: pointer;
+  transition: background-color var(--dur-press) var(--ease), transform var(--dur-press) var(--ease); }
+@media (hover: hover) and (pointer: fine) { .perfil-ko:hover { background: var(--ko-soft); } }
+.perfil-ko:active { transform: scale(.97); }
+.perfil-ko-solido { background: var(--ko); color: var(--on-ink); }
+@media (hover: hover) and (pointer: fine) { .perfil-ko-solido:hover { background: var(--ko); filter: brightness(1.08); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .perfil-sec { animation: none; }
+  .perfil-seg button, .perfil-ko, .perfil-det summary::after { transition: none; }
+  .perfil-seg button:active, .perfil-ko:active { transform: none; }
+}

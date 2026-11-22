@@ -272,6 +272,7 @@ const es: Dict = {
   "fin.volver": "Volver al panal",
   "fin.dormir": "Un repaso corto antes de dormir ayuda a fijarlo.",
   "perfil.apariencia": "Apariencia",
+  "perfil.ayuda": "Ayuda",
   "perfil.tema.sistema": "Sistema",
   "perfil.tema.claro": "Claro",
   "perfil.tema.oscuro": "Oscuro",
@@ -334,9 +335,6 @@ const es: Dict = {
   "panel.escala": "Relleno del hexágono = dominio del concepto (aciertos con respuestas suficientes)",
   "panel.colores": "Un color por tema, un tono por subtema",
   "panal.sinAsignaturas": "Todavía no hay ninguna asignatura importada.",
-  "novedad.catala.titulo": "El temario de Català, por materias",
-  "novedad.catala.texto": "Ahora son 5 temas: ortografía, nombre y artículo, verbo, pronombres y léxico, y literatura. Tu progreso sigue donde estaba.",
-  "novedad.catala.ok": "Entendido",
 };
 
 // Solo la pantalla de práctica: lo que falta cae al castellano (ver `t`).
