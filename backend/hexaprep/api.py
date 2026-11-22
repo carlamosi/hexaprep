@@ -19,6 +19,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from . import analytics, auth, backup, events, examen, export, mastery, perfiles, quality, scheduling, selector, tiempo
+from .guardados import guardar, listar_guardados, quitar_guardado
 from .bank import RUTA_IMAGEN, load_bank, validate_bank
 from .db import check_integrity, database_url, get_engine, get_engine_online, upgrade
 from .importer import import_bank
@@ -89,6 +90,11 @@ class FocoIn(BaseModel):
 class OcultarIn(BaseModel):
     pregunta_id: str
     alcance: str
+
+
+class GuardarIn(BaseModel):
+    pregunta_id: str
+    tipo: str
 
 
 class TextoIn(BaseModel):
@@ -445,6 +451,25 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     def mostrar(registro_id: str, s: Session = Depends(get_session)):
         try:
             quality.mostrar_oculto(s, registro_id)
+        except ValueError as e:
+            raise HTTPException(404, str(e))
+        return {"ok": True}
+
+    @app.get("/api/guardados")
+    def guardados(asignatura_id: str | None = None, s: Session = Depends(get_session)):
+        return listar_guardados(s, asignatura_id)
+
+    @app.post("/api/guardados")
+    def guardar_(body: GuardarIn, s: Session = Depends(get_session)):
+        try:
+            return guardar(s, body.pregunta_id, body.tipo)
+        except ValueError as e:
+            raise HTTPException(422, str(e))
+
+    @app.delete("/api/guardados/{guardado_id}")
+    def quitar_(guardado_id: str, s: Session = Depends(get_session)):
+        try:
+            quitar_guardado(s, guardado_id)
         except ValueError as e:
             raise HTTPException(404, str(e))
         return {"ok": True}

@@ -199,3 +199,14 @@ def test_foco_se_guarda_solo_si_se_marca_y_viaja_al_filtro_de_la_sesion(client, 
     assert client.get(f"/api/sessions/{sid}").json()["filtro"]["foco_tema_id"] == tema
     client.put(f"/api/foco/{loaded}", json={"tema_id": None})
     assert client.get(f"/api/foco/{loaded}").json() == {"tema_id": None}
+
+
+def test_guardados_por_http(client, loaded):
+    sid = client.post("/api/sessions", json={"modo": "practica", "filtro": {"asignatura_id": loaded}}).json()["sesion_id"]
+    pregunta = client.get(f"/api/sessions/{sid}/next").json()["pregunta_id"]
+    assert client.post("/api/guardados", json={"pregunta_id": pregunta, "tipo": "raro"}).status_code == 422
+    g = client.post("/api/guardados", json={"pregunta_id": pregunta, "tipo": "ejemplo"}).json()
+    assert client.get(f"/api/guardados?asignatura_id={loaded}").json() == [g]
+    assert client.delete(f"/api/guardados/{g['id']}").status_code == 200
+    assert client.delete(f"/api/guardados/{g['id']}").status_code == 404
+    assert client.get("/api/guardados").json() == []
