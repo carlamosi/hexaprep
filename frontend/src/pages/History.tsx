@@ -4,9 +4,10 @@ import { Hexagon } from "../components/Hexagon";
 import { Actividad } from "../components/historial/Actividad";
 import { Barras, Columnas, type Fila } from "../components/historial/Barras";
 import {
-  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, pendientes, segundos, semanasDeRango, titularPendientes,
+  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, pendientes, segundos, semanasDeRango, titularPendientes, titularSesiones,
 } from "../components/historial/datos";
 import { Evolucion } from "../components/historial/Evolucion";
+import { TiraSesiones } from "../components/historial/TiraSesiones";
 import { Pendiente } from "../components/historial/Pendiente";
 import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../components/historial/Listas";
 import "../components/historial/historial.css";
@@ -91,6 +92,7 @@ export function History({ asignaturaId, client = api, mes }: {
   const filas = <T extends { n: number; aciertos_pct: number | null }>(xs: T[], id: (x: T) => string, et: (x: T) => string, corto?: (x: T) => string): Fila[] =>
     xs.map((x) => ({ id: id(x), etiqueta: et(x), corto: corto?.(x), n: x.n, valor: x.aciertos_pct }));
   const mejorDia = mejorGrupo(data.semana);
+  const titularSes = titularSesiones(data.sesiones_recientes);
   const titular = titularPendientes(pendientes(data.evolucion, orden));
   const ritmos = data.fatiga.map((f) => f.ritmo ?? 0);
   const x1 = (v: number | null | undefined) => (v == null ? t("hist.sinDatos") : `×${(Math.round(v * 10) / 10).toString().replace(".", ",")}`);
@@ -224,7 +226,10 @@ export function History({ asignaturaId, client = api, mes }: {
               )}
               <Card id="c-deb" titulo={t("hist.debiles")} sub={t("hist.debilesSub")}><Debiles debiles={data.debiles} /></Card>
               <Card id="c-difi" titulo={t("hist.dificiles")} sub={t("hist.dificilesSub")}><Dificiles dificiles={data.dificiles} /></Card>
-              <Card id="c-ses" titulo={t("hist.sesionesRecientes")} sub={t("hist.sesionesSub")}><Sesiones sesiones={data.sesiones_recientes} /></Card>
+              <Card id="c-ses" titulo={titularSes || t("hist.sesionesRecientes")} sub={t("hist.sesionesSub")} wide>
+                <TiraSesiones sesiones={data.sesiones_recientes} />
+                <Sesiones sesiones={data.sesiones_recientes} />
+              </Card>
             </Grupo>
           </>
         )}

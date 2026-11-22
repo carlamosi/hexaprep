@@ -131,6 +131,21 @@ export function titularPendientes(ps: Pendiente[]): string {
   return partes.length ? partes.join(" y ") : `Ningún tema se ha movido más de ${UMBRAL_CAMBIO} puntos`;
 }
 
+// ---------- Tira de sesiones ----------
+
+type SesionResumen = Analytics["sesiones_recientes"][number];
+const acierto = (xs: SesionResumen[]) => (100 * xs.reduce((a, s) => a + s.aciertos, 0)) / xs.reduce((a, s) => a + s.n, 0);
+
+/** Conclusión: las sesiones más largas (mitad de arriba por duración) frente a las cortas. Con menos de 4 sesiones, nada. */
+export function titularSesiones(ses: SesionResumen[]): string {
+  const xs = ses.filter((s) => fiable(s.n)).sort((a, b) => a.duracion_s - b.duracion_s);
+  if (xs.length < 4) return "";
+  const m = Math.floor(xs.length / 2);
+  const dif = Math.round(acierto(xs.slice(xs.length - m)) - acierto(xs.slice(0, m)));
+  if (Math.abs(dif) < 10) return "Rindes parecido dure lo que dure la sesión";
+  return dif < 0 ? `Tus sesiones largas acaban ${-dif} puntos peor que las cortas` : `Tus sesiones largas te salen ${dif} puntos mejor que las cortas`;
+}
+
 /** El grupo con mejor acierto entre los que tienen respuestas suficientes. */
 export function mejorGrupo<T extends { n: number; aciertos_pct: number | null }>(xs: T[]): T | null {
   const ok = xs.filter((x) => fiable(x.n) && x.aciertos_pct !== null);

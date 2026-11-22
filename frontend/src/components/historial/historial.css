@@ -234,3 +234,8 @@
 .hp-slope-n .up { fill: var(--ok); font-weight: 600; }
 .hp-slope-n .down { fill: var(--ko); font-weight: 600; }
 .hp-slope-nom { fill: var(--ink-2); }
+
+/* Tira de sesiones */
+.hp-strip { min-width: 0; margin-bottom: 18px; }
+.hp-strip-media { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.hp-strip-dot { fill: var(--lila); stroke: var(--card); stroke-width: 2; fill-opacity: .9; }
