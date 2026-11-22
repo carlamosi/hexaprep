@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { api, type Oculto, type PerfilDatos } from "../api";
-import { Examen, type ExamenClient } from "../components/Examen";
 import { t } from "../i18n";
 import { enAppInstalada, useInstalar } from "../instalar";
 import { ABRIR_GUIA } from "../components/Onboarding";
@@ -8,14 +7,14 @@ import { aplicarTema, leerTema, type Tema } from "../tema";
 import { Settings, type SettingsClient } from "./Settings";
 import "./perfil.css";
 
-export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & ExamenClient & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto" | "getFoco" | "setFoco" | "getMap">>;
+export type PerfilClient = Pick<typeof api, "getPerfil" | "reiniciarPerfil" | "authLogout"> & SettingsClient & Partial<Pick<typeof api, "ocultos" | "mostrarOculto" | "history">>;
 
 const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 font-medium text-[var(--lila-ink)] btn-suave";
 const tarjeta = "rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 perfil-sec";
 const seccion = `space-y-3 ${tarjeta}`;
 
 /** Interruptor de fila entera (área de toque de 48 px): el pulgar se estira al pulsar y recorre el carril con la salida suave. */
-function Interruptor({ etiqueta, activo, onCambio, icono }: { etiqueta: string; activo: boolean; onCambio: (v: boolean) => void; icono: "sol" | "luna" | "pantalla" }) {
+function Interruptor({ etiqueta, activo, onCambio, icono, cielo }: { etiqueta: string; activo: boolean; onCambio: (v: boolean) => void; icono: "sol" | "luna" | "pantalla"; cielo?: boolean }) {
   return (
     <button type="button" role="switch" aria-checked={activo} className="sw-fila" onClick={() => onCambio(!activo)}>
       <span className="sw-txt">
@@ -26,19 +25,30 @@ function Interruptor({ etiqueta, activo, onCambio, icono }: { etiqueta: string; 
         </svg>
         {etiqueta}
       </span>
-      <span className="sw" aria-hidden="true"><span className="sw-pulgar" /></span>
+      <span className={`sw${cielo ? " sw-cielo" : ""}`} aria-hidden="true"><span className="sw-pulgar" /></span>
     </button>
   );
 }
 
-/** Perfil: quién eres, fecha de examen, empezar de cero, instalar la app y, plegado, lo técnico. */
+/** Días de práctica a partir de la lista de fechas (AAAA-MM-DD, en hora local): cuántos, desde cuándo y cuántos de los últimos 7. No es una racha. */
+export function resumenDias(dias: string[], hoy = new Date()) {
+  const f = (d: Date) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  const hace6 = new Date(hoy); hace6.setDate(hace6.getDate() - 6);
+  return { total: dias.length, primero: dias[0] ?? null, ultimos: dias.filter((d) => d >= f(hace6) && d <= f(hoy)).length };
+}
+
+function fechaCorta(iso: string): string {
+  const [a, m, d] = iso.split("-").map(Number);
+  return new Date(a, m - 1, d).toLocaleDateString("es-ES", { day: "numeric", month: "short", year: "numeric" });
+}
+
+/** Perfil: quién eres, cuánto has practicado, preferencias, ayuda, herramientas y, al final, empezar de cero. */
 export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string | null; client?: PerfilClient }) {
   const [perfil, setPerfil] = useState<PerfilDatos | null>(null);
   const [confirmar, setConfirmar] = useState(false);
   const [error, setError] = useState(false);
   const [ocultos, setOcultos] = useState<Oculto[]>([]);
-  const [temas, setTemas] = useState<{ id: string; nombre: string }[]>([]);
-  const [foco, setFocoState] = useState<string>("");
+  const [dias, setDias] = useState<string[] | null>(null);
   const [tema, setTema] = useState<Tema>(leerTema);
   const instalador = useInstalar();
   const [sisOscuro, setSisOscuro] = useState(() => !!window.matchMedia?.("(prefers-color-scheme: dark)").matches);
@@ -64,21 +74,10 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
   }, [client]);
 
   useEffect(() => {
-    if (!asignaturaId || !client.getMap || !client.getFoco) return;
     let vivo = true;
-    client.getMap(asignaturaId).then((m) => vivo && setTemas([...new Map(m.hexes.map((h) => [h.tema_id, { id: h.tema_id, nombre: h.tema }])).values()])).catch(() => {});
-    client.getFoco(asignaturaId).then((f) => vivo && setFocoState(f.tema_id ?? "")).catch(() => {});
+    client.history?.().then((h) => vivo && setDias(h.dias)).catch(() => {});
     return () => { vivo = false; };
-  }, [client, asignaturaId]);
-
-  async function cambiarFoco(id: string) {
-    try {
-      await client.setFoco?.(asignaturaId!, id || null);
-      setFocoState(id);
-    } catch {
-      setError(true);
-    }
-  }
+  }, [client]);
 
   async function volverAMostrar(id: string) {
     try {
@@ -123,18 +122,20 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
         </section>
       )}
 
-      {asignaturaId && <Examen asignaturaId={asignaturaId} client={client} />}
-
-      {asignaturaId && client.setFoco && temas.length > 0 && (
-        <section className={seccion} style={entra()}>
-          <h2 className="text-lg font-semibold"><label htmlFor="foco-tema">{t("perfil.foco")}</label></h2>
-          <select id="foco-tema" value={foco} onChange={(e) => void cambiarFoco(e.target.value)} className="min-h-11 rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2 text-base">
-            <option value="">{t("perfil.focoNinguno")}</option>
-            {temas.map((x) => <option key={x.id} value={x.id}>{x.nombre}</option>)}
-          </select>
-          <p className="text-sm text-[var(--ink-3)]">{t("perfil.focoNota")}</p>
-        </section>
-      )}
+      {dias && dias.length > 0 && (() => {
+        const r = resumenDias(dias);
+        return (
+          <section className={seccion} style={entra()} aria-label={t("perfil.practica")}>
+            <h2 className="text-lg font-semibold">{t("perfil.practica")}</h2>
+            <dl className="perfil-stats">
+              <div><dd>{r.total}</dd><dt>{t(r.total === 1 ? "perfil.diaPracticado" : "perfil.diasPracticados")}</dt></div>
+              <div><dd>{r.primero ? fechaCorta(r.primero) : ""}</dd><dt>{t("perfil.practicasDesde")}</dt></div>
+              <div><dd>{t("perfil.ultimos7Valor").replace("{n}", String(r.ultimos))}</dd><dt>{t("perfil.ultimos7")}</dt></div>
+            </dl>
+            <p className="text-sm text-[var(--ink-3)]">{t("perfil.practicaNota")}</p>
+          </section>
+        );
+      })()}
 
       {client.ocultos && (
         <section className={seccion} style={entra()} aria-label={t("perfil.ocultos")}>
@@ -155,7 +156,7 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
       <section className={seccion} style={entra()} aria-label={t("perfil.apariencia")}>
         <h2 className="text-lg font-semibold">{t("perfil.apariencia")}</h2>
         <div role="group" aria-label={t("perfil.apariencia")} className="sw-grupo">
-          <Interruptor etiqueta={t("perfil.modoOscuro")} activo={oscuro} icono={oscuro ? "luna" : "sol"} onCambio={(v) => elegirTema(v ? "oscuro" : "claro")} />
+          <Interruptor etiqueta={t("perfil.modoOscuro")} activo={oscuro} icono={oscuro ? "luna" : "sol"} cielo onCambio={(v) => elegirTema(v ? "oscuro" : "claro")} />
           <Interruptor etiqueta={t("perfil.igualSistema")} activo={tema === "sistema"} icono="pantalla" onCambio={(v) => elegirTema(v ? "sistema" : oscuro ? "oscuro" : "claro")} />
         </div>
       </section>
@@ -181,8 +182,13 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
 
       {asignaturaId && (
         <details className={tarjeta} style={entra()}>
-          <summary className="cursor-pointer text-lg font-semibold">{t("perfil.avanzado")}</summary>
-          <div className="mt-4"><Settings asignaturaId={asignaturaId} client={client} /></div>
+          <summary className="perfil-herr">
+            <span className="perfil-herr-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M14.5 6.5a4 4 0 0 0 4.9 4.9L21 13l-3 3-1.6-1.6L8 22.8 5.2 20l8.4-8.4A4 4 0 0 1 14.5 6.5z" /></svg>
+            </span>
+            <span><b>{t("perfil.avanzado")}</b><small>{t(perfil?.online ? "perfil.avanzadoNotaOnline" : "perfil.avanzadoNota")}</small></span>
+          </summary>
+          <div className="mt-5"><Settings asignaturaId={asignaturaId} client={client} /></div>
         </details>
       )}
 

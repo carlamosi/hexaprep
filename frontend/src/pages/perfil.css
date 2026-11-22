@@ -3,8 +3,9 @@
 @keyframes perfil-in { from { opacity: 0; transform: translateY(8px); } }
 
 .perfil-avatar {
-  display: grid; place-items: center; flex: none; width: 56px; height: 50px; clip-path: var(--hex-flat);
-  background: linear-gradient(160deg, var(--lila), var(--lila-ink)); color: var(--on-ink); font-size: 1.3rem; font-weight: 600;
+  display: grid; place-items: center; flex: none; width: 60px; height: 54px; clip-path: var(--hex-flat); color: #FFF6FB; font-size: 1.4rem; font-weight: 600; text-shadow: 0 1px 6px rgb(42 16 48 / .45);
+  /* igual que el fondo del icono: luz rosa en el centro sobre el degradado ciruela */
+  background: radial-gradient(circle at 50% 46%, rgb(226 127 184 / .95) 0, rgb(176 90 143 / .4) 52%, transparent 80%), linear-gradient(180deg, #7A3470, #4A1E4C 55%, #2A1030);
 }
 
 /* Apariencia: interruptores de fila entera. El pulgar se estira al pulsar (squash) y recorre el carril; el modo oscuro cambia sol por luna */
@@ -41,3 +42,38 @@
   .perfil-ko, .perfil-det summary::after, .sw, .sw-pulgar { transition: none; }
   .perfil-ko:active { transform: none; }
 }
+
+/* Interruptor del modo oscuro: un cielo. De día, rosa claro con sol; de noche, ciruela con estrellas y luna. El pulgar gira al pasar de uno a otro. */
+.sw-cielo { width: 68px; height: 36px; overflow: hidden; background: linear-gradient(180deg, #FCE3F1, #F2A9D2); box-shadow: inset 0 1px 3px rgb(42 16 48 / .18); transition: background .35s var(--ease); }
+.sw-cielo::before { content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .35s var(--ease);
+  background: radial-gradient(circle at 16% 32%, #fff 0 1.1px, transparent 1.6px), radial-gradient(circle at 30% 70%, #fff 0 .9px, transparent 1.4px), radial-gradient(circle at 44% 26%, #fff 0 1.3px, transparent 1.8px), radial-gradient(circle at 52% 66%, rgb(255 255 255 / .7) 0 .8px, transparent 1.3px); }
+.sw-cielo .sw-pulgar { top: 4px; left: 4px; width: 28px; height: 28px; background: radial-gradient(circle at 38% 36%, #FFF3B0, #FFC857 72%);
+  box-shadow: 0 0 0 3px rgb(255 214 120 / .4), 0 0 14px rgb(255 190 70 / .65); transition: transform .45s var(--ease), width var(--dur-press) var(--ease), background .35s var(--ease), box-shadow .35s var(--ease); }
+.sw-cielo .sw-pulgar::after { content: ""; position: absolute; inset: 0; border-radius: inherit; opacity: 0; transition: opacity .3s var(--ease);
+  background: radial-gradient(circle at 30% 34%, rgb(176 150 200 / .55) 0 3px, transparent 3.5px), radial-gradient(circle at 66% 60%, rgb(176 150 200 / .5) 0 4px, transparent 4.5px), radial-gradient(circle at 44% 78%, rgb(176 150 200 / .45) 0 2px, transparent 2.5px); }
+.sw-fila[aria-checked="true"] .sw-cielo { background: linear-gradient(180deg, #4A1E4C, #2A1030); }
+.sw-fila[aria-checked="true"] .sw-cielo::before { opacity: 1; }
+.sw-fila[aria-checked="true"] .sw-cielo .sw-pulgar { transform: translateX(32px) rotate(360deg); background: radial-gradient(circle at 36% 34%, #FFF6FB, #E3D2F0 78%); box-shadow: 0 0 0 3px rgb(255 255 255 / .12), 0 0 14px rgb(226 200 255 / .5); }
+.sw-fila[aria-checked="true"] .sw-cielo .sw-pulgar::after { opacity: 1; }
+.sw-fila:active .sw-cielo .sw-pulgar { width: 34px; }
+.sw-fila[aria-checked="true"]:active .sw-cielo .sw-pulgar { transform: translateX(26px) rotate(360deg); }
+@media (prefers-reduced-motion: reduce) { .sw-cielo, .sw-cielo::before, .sw-cielo .sw-pulgar, .sw-cielo .sw-pulgar::after { transition: none; } .sw-fila[aria-checked="true"] .sw-cielo .sw-pulgar { transform: translateX(32px); } }
+
+/* Tu práctica: tres cifras. Es un recuento de días, no una racha */
+.perfil-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
+.perfil-stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 2px; padding: 12px 14px; border-radius: 12px; background: var(--paper); min-width: 0; }
+.perfil-stats dd { margin: 0; font-size: 1.45rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.perfil-stats dt { color: var(--ink-3); font-size: .78rem; line-height: 1.3; }
+.perfil-stats div:nth-child(2) dd { font-size: 1.05rem; padding-top: .25em; }
+@media (max-width: 420px) { .perfil-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .perfil-stats div:nth-child(2) { order: 3; grid-column: 1 / -1; } }
+
+/* Herramientas: antes «Avanzado». Icono, nombre y una línea que dice qué hay dentro */
+.perfil-herr { display: flex; align-items: center; gap: 14px; min-height: 48px; cursor: pointer; list-style: none; }
+.perfil-herr::-webkit-details-marker { display: none; }
+.perfil-herr b { display: block; font-size: 1.1rem; font-weight: 600; }
+.perfil-herr small { display: block; margin-top: 2px; font-size: .84rem; color: var(--ink-3); line-height: 1.35; }
+.perfil-herr-ico { display: grid; place-items: center; flex: none; width: 38px; height: 34px; clip-path: var(--hex-flat); background: var(--lila-soft); color: var(--lila-ink); }
+.perfil-herr-ico svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.perfil-herr::after { content: ""; margin-left: auto; flex: none; width: 8px; height: 8px; border: solid var(--ink-3); border-width: 0 2px 2px 0; transform: rotate(-45deg); transition: transform var(--dur-ui) var(--ease); }
+details[open] > .perfil-herr::after { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) { .perfil-herr::after { transition: none; } }

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { api, type Suggestion } from "../api";
 import { Examen, type ExamenClient } from "../components/Examen";
+import { TemaEnCurso, type FocoClient } from "../components/TemaEnCurso";
 import { t } from "../i18n";
 import { ErrorCarga } from "../components/ErrorCarga";
 import "./hoy.css";
 
 interface Props {
-  client?: Pick<typeof api, "suggestions"> & Partial<ExamenClient>;
+  client?: Pick<typeof api, "suggestions"> & Partial<ExamenClient> & Partial<FocoClient>;
   asignaturaId?: string;
   onPracticeSubtema: (subtemaId: string) => void;
 }
@@ -50,7 +51,12 @@ export function Suggestions({ client = api, asignaturaId, onPracticeSubtema }: P
     <section className="mx-auto w-full max-w-3xl px-4 py-6">
       <h1 className="text-2xl font-semibold">{t("hoy.titulo")}</h1>
       {items.length > 0 && <p className="mt-1 text-[var(--ink-2)]">{t("hoy.intro")}</p>}
-      {asignaturaId && client.getExamen && client.setExamen && <Examen asignaturaId={asignaturaId} client={client as ExamenClient} />}
+      {asignaturaId && (client.getExamen || client.getFoco) && (
+        <div className="hoy-plan">
+          {client.getExamen && client.setExamen && <Examen asignaturaId={asignaturaId} client={client as ExamenClient} />}
+          {client.getFoco && client.setFoco && client.getMap && <TemaEnCurso asignaturaId={asignaturaId} client={client as FocoClient} />}
+        </div>
+      )}
       {items.length === 0 && (
         <div className="hoy-vacio hoy-sec mt-6" style={entra(0)}>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8 19.8 7.3v9.4L12 21.2 4.2 16.7V7.3Z" fill="var(--lila-soft)" stroke="var(--lila)" strokeWidth="1.2" strokeLinejoin="round" /></svg>

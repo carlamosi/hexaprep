@@ -7,9 +7,10 @@ export type SettingsClient = Pick<typeof api,
   "getBackup" | "makeBackup" | "restoreBackup" | "exportWeak" | "exportEvents" | "exportBank" | "reportedQuestions" | "getQuestion" | "editQuestion">;
 
 const boton = "rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-4 py-2 text-[var(--lila-ink)] btn-suave";
-const seccion = "space-y-3 rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5";
+/* Secciones planas separadas por una línea: dentro de «Herramientas» no hace falta una tarjeta por cada una */
+const seccion = "space-y-3 border-t border-[var(--rule)] pt-6 first:border-t-0 first:pt-0";
 
-/** Avanzado (dentro de Perfil): copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */
+/** Herramientas (dentro de Perfil): copias de seguridad, exportaciones, editor de preguntas reportadas e idioma. */
 export function Settings({ asignaturaId, client = api }: { asignaturaId: string; client?: SettingsClient }) {
   const [backup, setBackup] = useState<BackupRow | null | undefined>(undefined);
   const [sinCopias, setSinCopias] = useState(false); // online las copias las hace Neon, no hay archivo que copiar
@@ -40,7 +41,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
   return (
     <div className="space-y-6">
       {!sinCopias && <section className={seccion} aria-labelledby="aj-copia">
-        <h2 id="aj-copia" className="text-lg font-semibold">{t("ajustes.copia")}</h2>
+        <h2 id="aj-copia" className="text-base font-semibold">{t("ajustes.copia")}</h2>
         {backup ? (
           <p>
             {t("ajustes.ultima")}: {backup.fecha.slice(0, 16).replace("T", " ")} · {backup.n_eventos} {t("ajustes.eventos")} · {backup.ruta}
@@ -78,7 +79,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
       </section>}
 
       {!sinCopias && <section className={seccion} aria-labelledby="aj-exp">
-        <h2 id="aj-exp" className="text-lg font-semibold">{t("ajustes.exportar")}</h2>
+        <h2 id="aj-exp" className="text-base font-semibold">{t("ajustes.exportar")}</h2>
         <div className="flex flex-wrap gap-3">
           <button type="button" className={boton} onClick={() => void run(async () => setWeak((await client.exportWeak(20)).ruta))}>
             {t("ajustes.weak")}
@@ -92,7 +93,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
       </section>}
 
       <section className={seccion} aria-labelledby="aj-edit">
-        <h2 id="aj-edit" className="text-lg font-semibold">{t("ajustes.editor")}</h2>
+        <h2 id="aj-edit" className="text-base font-semibold">{t("ajustes.editor")}</h2>
         {reportadas.length === 0 && !editando && <p className="text-[var(--ink-3)]">{t("ajustes.sin_reportadas")}</p>}
         <ul className="space-y-2">
           {reportadas.map((r) => (
@@ -109,7 +110,7 @@ export function Settings({ asignaturaId, client = api }: { asignaturaId: string;
       </section>
 
       <section className={seccion}>
-        <h2 className="text-lg font-semibold">{t("ajustes.idioma")}</h2>
+        <h2 className="text-base font-semibold">{t("ajustes.idioma")}</h2>
         <select aria-label={t("ajustes.idioma")} defaultValue="es" className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2">
             <option value="es">{t("ajustes.castellano")}</option>
             <option value="ca" disabled>{t("ajustes.catalan")}</option>

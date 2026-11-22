@@ -108,6 +108,18 @@ describe("flujos", () => {
     await waitFor(() => expect(client.suggestions).toHaveBeenLastCalledWith("a2"));
   });
 
+  it("el_tema_en_curso_vive_en_hoy_es_opcional_y_se_guarda_al_elegirlo", async () => {
+    const hexes = [{ concepto_id: "c", nombre: "n", subtema_id: "s", subtema: "S", tema: "Tema uno", tema_id: "t1", color: "#000", percent: 0 }];
+    const client = {
+      suggestions: vi.fn().mockResolvedValue([]),
+      getMap: vi.fn().mockResolvedValue({ asignatura: "X", percent: 0, subtemas: [], hexes }),
+      getFoco: vi.fn().mockResolvedValue({ tema_id: null }), setFoco: vi.fn().mockResolvedValue({ tema_id: "t1" }),
+    };
+    render(<Suggestions client={client} asignaturaId="a1" onPracticeSubtema={vi.fn()} />);
+    await userEvent.selectOptions(await screen.findByLabelText("Tema en curso (opcional)"), "t1");
+    expect(client.setFoco).toHaveBeenCalledWith("a1", "t1");
+  });
+
   it("suggestions_without_history_say_to_practice_first", async () => {
     render(<Suggestions client={{ suggestions: vi.fn().mockResolvedValue([]) }} onPracticeSubtema={vi.fn()} />);
     expect(await screen.findByText(/practica un rato/)).toBeInTheDocument();

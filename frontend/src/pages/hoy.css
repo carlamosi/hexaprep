@@ -31,3 +31,21 @@
 
 @media (max-width: 420px) { .hoy-card { gap: 12px; padding: 16px; } .hoy-n { width: 36px; height: 32px; font-size: .9rem; } }
 @media (prefers-reduced-motion: reduce) { .hoy-sec, .hoy-barra i { animation: none; } .hoy-sk { animation: none; } }
+
+/* Plan: examen y tema en curso, uno debajo del otro y a todo el ancho */
+.hoy-plan { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; margin-top: 24px; align-items: start; }
+.hoy-plan .examen { margin-top: 0; }
+/* Tema en curso: en pantallas anchas, título a la izquierda y selector a la derecha, como una fila de ajustes */
+@media (min-width: 600px) { .foco { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 320px); align-items: center; gap: 8px 24px; } .foco-cab { margin-bottom: 0; } .foco-nota { grid-column: 1 / -1; margin-top: 4px; } .foco-error { grid-column: 1 / -1; } }
+
+.foco { padding: 20px 22px 22px; border: 1px solid var(--rule); border-radius: 16px; background: var(--card); }
+.foco-cab { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.foco-cab h2 { margin: 0; font-size: 1.1rem; font-weight: 600; }
+.foco-hex { display: grid; place-items: center; flex: none; width: 38px; height: 34px; clip-path: var(--hex-flat); background: var(--lila-soft); color: var(--lila-ink); }
+.foco-hex svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.foco select { width: 100%; min-height: 48px; padding: 8px 14px; border: 1px solid var(--rule-2); border-radius: 12px; background: var(--card); color: var(--ink); font: inherit; font-size: 1rem; cursor: pointer; transition: border-color var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease); }
+.foco select:focus-visible { border-color: var(--lila); box-shadow: 0 0 0 3px color-mix(in srgb, var(--lila) 25%, transparent); outline: none; }
+.foco-nota { margin: 12px 0 0; font-size: .86rem; line-height: 1.45; color: var(--ink-3); }
+.foco-error { margin: 10px 0 0; font-size: .88rem; color: var(--ko); }
+@media (max-width: 420px) { .foco { padding: 16px; } }
+@media (prefers-reduced-motion: reduce) { .foco select { transition: none; } }
