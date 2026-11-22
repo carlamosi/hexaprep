@@ -9,7 +9,7 @@ import { Buscador } from "./Buscador";
 import { group } from "./HexMap";
 import { tipDe, Tooltip, type Tip } from "./Tooltip";
 import "./panel.css";
-import { numeroTema, sinPrefijoTema } from "../rotulo";
+import { numerosTemas, sinPrefijoTema } from "../rotulo";
 
 const POINTS = "25,1 75,1 99,43.3 75,85.6 25,85.6 1,43.3";
 // Geometría en unidades del viewBox (-2 -2 110 96) pasadas a anchos de caja: paso entre columnas y alto de fila.
@@ -120,6 +120,7 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
   }, [onClose]);
 
   const temas = group(map.hexes);
+  const numeros = numerosTemas(temas.map((x) => x.nombre));
   const base = map.hexes[0]?.color ?? "";
   const colores = new Map(temas.map((x, i) => [x.id, colorTema(base, i, temas.length)]));
   const cols = typeof window !== "undefined" && window.innerWidth < 640 ? 7 : 14;
@@ -159,7 +160,7 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
               return (
                 <li key={tema.id} style={{ "--tc": colores.get(tema.id) } as React.CSSProperties}>
                   <i className="pm-chip" aria-hidden="true" />
-                  <span className="pm-kicker">{t("panal.tema")} {numeroTema(tema.nombre, temas.length - k)}</span>
+                  <span className="pm-kicker">{t("panal.tema")} {numeros[temas.length - 1 - k]}</span>
                   <span className="pm-tema-n">{sinPrefijoTema(tema.nombre)}</span>
                   <b className="pm-tema-pct" data-testid={`pm-tema-pct-${tema.id}`}>{tp}<small>&nbsp;%</small></b>
                 </li>

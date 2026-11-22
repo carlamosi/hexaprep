@@ -2,7 +2,7 @@ import type { Hex } from "../api";
 import { t } from "../i18n";
 import { colorTema } from "../colorTema";
 import { Hexagon } from "./Hexagon";
-import { numeroTema, sinPrefijoTema } from "../rotulo";
+import { numerosTemas, sinPrefijoTema } from "../rotulo";
 
 // El color de cada tema sale de `colorTema` (color de la asignatura girado por el orden del temario).
 
@@ -35,6 +35,7 @@ export function HexMap({ hexes, onSelect, onPracticarTema, subtemas }: {
   subtemas?: { id: string; percent: number }[];
 }) {
   const temas = group(hexes);
+  const numeros = numerosTemas(temas.map((x) => x.nombre));
   const base = hexes[0]?.color ?? "";
   const subPct = (s: Sub) => Math.round(subtemas?.find((x) => x.id === s.id)?.percent ?? mean(s.hexes.map((h) => h.percent)));
   return (
@@ -43,7 +44,7 @@ export function HexMap({ hexes, onSelect, onPracticarTema, subtemas }: {
         <section key={tema.id} className="tema" style={{ "--c": colorTema(base, ti, temas.length), "--tc": colorTema(base, ti, temas.length) } as React.CSSProperties} aria-labelledby={`tema-${ti}`}>
           <div className="tema-head">
             <i className="chip" aria-hidden="true" />
-            <span className="kicker kicker-muted">{t("panal.tema")} {numeroTema(tema.nombre, ti + 1)}</span>
+            <span className="kicker kicker-muted">{t("panal.tema")} {numeros[ti]}</span>
             <h2 id={`tema-${ti}`}>{sinPrefijoTema(tema.nombre)}</h2>
             {/* shortcut: % de tema como media de conceptos, el backend no lo envía; usar el suyo si llega */}
             <span className="tema-pct"><span>{t("panal.dominio")}</span>{mean(tema.subtemas.flatMap((s) => s.hexes.map((h) => h.percent)))}&nbsp;%</span>
