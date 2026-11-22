@@ -1,8 +1,9 @@
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import { esOscuro } from "../tema";
 import type { Subject } from "../api";
 import { t } from "../i18n";
 import { AsignaturaSelector } from "./AsignaturaSelector";
+import "./appheader.css";
 
 const NAV = ["panal", "hoy", "historial", "perfil"] as const;
 type Ruta = (typeof NAV)[number];
@@ -65,15 +66,43 @@ export function tinte(hex: string | undefined, p = 0.3, base = 255): string | un
 export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambiarAsignatura, onAbrirSelector, ruta, sinNav }: Props) {
   const acento = asignaturas.find((a) => a.id === asignaturaId)?.acento;
   const color = tinte(acento) && `color-mix(in srgb, ${acento} 30%, var(--paper))`;
+  const navRef = useRef<HTMLElement>(null);
+  const [pastilla, setPastilla] = useState<{ x: number; y: number; w: number; h: number } | null>(null);
+  const [anima, setAnima] = useState(false); // la pastilla solo se desliza entre pestañas, no al aparecer
+  const [conSombra, setConSombra] = useState(false);
+  useLayoutEffect(() => {
+    const medir = () => {
+      const a = navRef.current?.querySelector<HTMLElement>('[aria-current="page"]');
+      setPastilla(a ? { x: a.offsetLeft, y: a.offsetTop, w: a.offsetWidth, h: a.offsetHeight } : null);
+    };
+    medir();
+    const id = requestAnimationFrame(() => setAnima(true));
+    window.addEventListener("resize", medir);
+    // los textos cambian de ancho al cargar la tipografía o al cambiar de idioma: la pastilla se vuelve a medir
+    const ro = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(medir);
+    navRef.current?.querySelectorAll("a").forEach((a) => ro?.observe(a));
+    return () => { cancelAnimationFrame(id); window.removeEventListener("resize", medir); ro?.disconnect(); };
+  }, [ruta, sinNav]);
+  useEffect(() => { // la sombra de la cabecera solo cuando hay contenido pasando por debajo
+    const f = () => setConSombra(window.scrollY > 2);
+    f();
+    window.addEventListener("scroll", f, { passive: true });
+    return () => window.removeEventListener("scroll", f);
+  }, []);
   useEffect(() => { // la barra de estado del iPhone toma el mismo color
     const oscuro = esOscuro();
     document.querySelector('meta[name="theme-color"]')?.setAttribute("content", tinte(acento, 0.3, oscuro ? 0x17 : 255) ?? "#B05A8F");
   }, [acento]);
   return (
-    <header style={color ? { background: color } : undefined} className={`sticky top-0 z-10 border-b border-[var(--rule)] sm:backdrop-blur ${color ? "" : "bg-[var(--paper)]/95"}`}>
+    <header style={color ? { background: color } : undefined} className={`cab sticky top-0 z-10 border-b border-[var(--rule)] sm:backdrop-blur ${conSombra ? "cab-sombra" : ""} ${color ? "" : "bg-[var(--paper)]/95"}`}>
       <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4 px-4 py-3">
         <div className="flex items-center gap-3">
-        <a href="#panal" className="flex items-center gap-3 text-[var(--ink)] no-underline">
+        <a href="#panal" className="flex items-center gap-3 text-[var(--ink)] no-underline" onClick={(e) => {
+          if (ruta === "panal" && window.scrollY > 0) { // ya estás en el Panal: el logo sube arriba
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+          }
+        }}>
           <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
             <g transform="translate(1.6 1.6)"><path d={HEX} fill="var(--lila-tint)" /></g>
             <path d={HEX} fill="var(--lila-soft)" stroke="var(--ink)" strokeWidth="1.6" strokeLinejoin="round" />
@@ -90,14 +119,15 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
           )}
         </div>
         {!sinNav && (
-          <nav aria-label={t("nav.principal")} className="flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[var(--paper)] max-sm:p-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+          <nav ref={navRef} aria-label={t("nav.principal")} className="relative flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[var(--paper)] max-sm:p-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+            {pastilla && <span aria-hidden="true" className={`nav-pastilla max-sm:hidden ${anima ? "anima" : ""}`} style={{ width: pastilla.w, height: pastilla.h, transform: `translate(${pastilla.x}px, ${pastilla.y}px)` }} />}
             {NAV.map((k) => (
               <a
                 key={k}
                 href={`#${k}`}
                 aria-current={ruta === k ? "page" : undefined}
-                className={`flex items-center gap-2 rounded-[11px] border px-3 py-2 text-sm font-medium no-underline max-sm:flex-col max-sm:gap-0.5 max-sm:text-xs ${
-                  ruta === k ? "border-[var(--rule-2)] bg-[var(--card)] text-[var(--ink)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
+                className={`relative z-[1] flex items-center gap-2 rounded-[11px] border px-3 py-2 text-sm font-medium no-underline max-sm:flex-col max-sm:gap-0.5 max-sm:text-xs ${
+                  ruta === k ? "border-transparent text-[var(--ink)] max-sm:border-[var(--rule-2)] max-sm:bg-[var(--card)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
                 }`}
               >
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">{ICONOS[k]}</svg>

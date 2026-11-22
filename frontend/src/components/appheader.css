@@ -1,0 +1,6 @@
+/* Cabecera: sombra solo con scroll y pastilla que se desliza entre pestañas (escritorio) */
+.cab { transition: box-shadow var(--dur-ui) var(--ease); }
+.cab-sombra { box-shadow: 0 8px 18px -14px rgb(31 26 36 / .45); }
+.nav-pastilla { position: absolute; left: 0; top: 0; border: 1px solid var(--rule-2); border-radius: 11px; background: var(--card); pointer-events: none; }
+.nav-pastilla.anima { transition: transform var(--dur-ui) var(--ease-in-out), width var(--dur-ui) var(--ease-in-out); }
+@media (prefers-reduced-motion: reduce) { .cab, .nav-pastilla.anima { transition: none; } }

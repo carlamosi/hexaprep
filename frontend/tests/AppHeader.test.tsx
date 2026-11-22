@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { act, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, expect, it, vi } from "vitest";
 import { AppHeader, tinte } from "../src/components/AppHeader";
@@ -69,4 +69,36 @@ it("elegirAsignatura_uses_the_saved_one_or_falls_back_to_the_first", () => {
   expect(elegirAsignatura(SUBJECTS)?.id).toBe("a2");
   localStorage.setItem("hexaprep.asignatura", "borrada");
   expect(elegirAsignatura(SUBJECTS)?.id).toBe("a1");
+});
+
+it("la_cabecera_solo_tiene_sombra_con_scroll", () => {
+  render(<AppHeader asignatura="Economía" asignaturaId="a1" asignaturas={SUBJECTS.slice(0, 1)} ruta="panal" />);
+  const cab = screen.getByRole("banner");
+  expect(cab.className).not.toContain("cab-sombra");
+  act(() => { Object.defineProperty(window, "scrollY", { value: 120, configurable: true }); window.dispatchEvent(new Event("scroll")); });
+  expect(cab.className).toContain("cab-sombra");
+  act(() => { Object.defineProperty(window, "scrollY", { value: 0, configurable: true }); window.dispatchEvent(new Event("scroll")); });
+  expect(cab.className).not.toContain("cab-sombra");
+});
+
+it("el_logo_sube_arriba_si_ya_estas_en_el_panal_y_hay_scroll", async () => {
+  const subir = vi.fn();
+  window.scrollTo = subir as never;
+  Object.defineProperty(window, "scrollY", { value: 300, configurable: true });
+  render(<AppHeader asignatura="Economía" asignaturaId="a1" asignaturas={SUBJECTS.slice(0, 1)} ruta="panal" />);
+  await userEvent.click(screen.getByRole("link", { name: /HexaPrep/ }));
+  expect(subir).toHaveBeenCalledWith(expect.objectContaining({ top: 0 }));
+  Object.defineProperty(window, "scrollY", { value: 0, configurable: true });
+});
+
+it("en_otra_pantalla_el_logo_navega_sin_interceptar_y_la_pastilla_marca_la_pestaña_activa", async () => {
+  const subir = vi.fn();
+  window.scrollTo = subir as never;
+  Object.defineProperty(window, "scrollY", { value: 300, configurable: true });
+  const { container } = render(<AppHeader asignatura="Economía" asignaturaId="a1" asignaturas={SUBJECTS.slice(0, 1)} ruta="historial" />);
+  await userEvent.click(screen.getByRole("link", { name: /HexaPrep/ }));
+  expect(subir).not.toHaveBeenCalled();
+  expect(container.querySelector(".nav-pastilla")).not.toBeNull();
+  expect(screen.getByRole("link", { name: /Historial/ })).toHaveAttribute("aria-current", "page");
+  Object.defineProperty(window, "scrollY", { value: 0, configurable: true });
 });
