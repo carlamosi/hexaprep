@@ -1,0 +1,21 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-11-22T23:30:00Z" },
+  "title": "Historial HexaPrep",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 390, "h": 2300, "title": "A · El resumen cuenta la historia (conclusiones y menos gráficas)" },
+    "B.dc.html": { "x": 470, "y": 0, "w": 390, "h": 1700, "title": "B · El panal es el historial (toca un tema)" },
+    "C.dc.html": { "x": 940, "y": 0, "w": 390, "h": 2250, "title": "C · ¿Dudas o no lo sabes? (vista de analista, por pestañas)" },
+    "Oscuro.dc.html": { "x": 1410, "y": 0, "w": 390, "h": 2300, "title": "A · Modo oscuro" },
+    "Estados.dc.html": { "x": 0, "y": 2420, "w": 390, "h": 1500, "title": "A · Estados: pocos datos, sin respuestas en el periodo, cargando" },
+    "Detalle.dc.html": { "x": 470, "y": 2420, "w": 390, "h": 900, "title": "B · Al tocar un tema: su historia" },
+    "Escritorio.dc.html": { "x": 0, "y": 4040, "w": 1280, "h": 1300, "title": "A en escritorio: cuadrícula de dos columnas", "expand": "fill" }
+  },
+  "order": ["Main.dc.html", "B.dc.html", "C.dc.html", "Oscuro.dc.html", "Estados.dc.html", "Detalle.dc.html", "Escritorio.dc.html"],
+  "notes": {
+    "titulo": { "x": 0, "y": -300, "text": "Historial: tres ideas, sus estados y el escritorio", "kind": "title1", "maxW": 1800 }
+  },
+  "designSystems": []
+}

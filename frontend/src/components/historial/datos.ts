@@ -191,3 +191,91 @@ export function mejorGrupo<T extends { n: number; aciertos_pct: number | null }>
 }
 
 export const modo = (m: string) => t(`hist.modo.${m}`);
+
+// ---------- Cabecera y movimientos (diseño A de Claude Design) ----------
+
+const PERIODO = { 7: "esta semana", 30: "este mes", 0: "desde que empezaste" } as const;
+/** La conclusión de la cabecera: cuánto sube o baja el dominio en el periodo elegido. */
+export function titularDominio(delta: number, dias: 0 | 7 | 30): string {
+  if (!delta) return `Sin cambios ${PERIODO[dias]}`;
+  const n = Math.abs(delta);
+  return `${delta > 0 ? "Subes" : "Bajas"} ${n} ${n === 1 ? "punto" : "puntos"} ${PERIODO[dias]}`;
+}
+
+/** «3 temas suben y 2 se estancan»: cuántos temas se mueven más de UMBRAL_CAMBIO puntos y cuántos se quedan. */
+export function titularMueve(ps: Pendiente[]): string {
+  if (!ps.length) return "";
+  const suben = ps.filter((p) => p.delta >= UMBRAL_CAMBIO).length, bajan = ps.filter((p) => p.delta <= -UMBRAL_CAMBIO).length;
+  const partes = ([[suben, "sube", "suben"], [bajan, "baja", "bajan"], [ps.length - suben - bajan, "se estanca", "se estancan"]] as const).filter(([n]) => n);
+  const textos = partes.map(([n, uno, varios], i) => `${n} ${i === 0 ? (n === 1 ? "tema" : "temas") + " " : ""}${n === 1 ? uno : varios}`);
+  return textos.length > 1 ? `${textos.slice(0, -1).join(", ")} y ${textos[textos.length - 1]}` : textos[0];
+}
+
+/** Hasta tres temas, de más a menos olvido dentro de 7 días: qué recuerdas hoy y qué recordarás. */
+export function olvidoProximo(o: Olvido) {
+  const i = o.dias.indexOf(7) >= 0 ? o.dias.indexOf(7) : o.dias.length - 1;
+  return o.temas.map((x) => {
+    const d7 = x.curva[i] ?? x.curva[x.curva.length - 1];
+    return { id: x.tema_id, nombre: sinPrefijoTema(x.tema), ahora: Math.round(x.curva[0]), d7: Math.round(d7), cruza: d7 < o.umbral };
+  }).sort((a, b) => a.d7 - b.d7).slice(0, 3);
+}
+
+export interface TemaDetalle {
+  id: string; nombre: string; ahora: number; delta: number; puntos: Serie[];
+  /** Días hasta que un concepto del tema baje del umbral (el menor), si alguno lo hace. */
+  cruce: number | null;
+  /** El olvido tiene curva para este tema. */
+  recuerda: boolean;
+  trampa: { trampa: string; n: number } | null;
+  debil: { concepto: string; percent: number } | null;
+}
+
+/** Todo lo que el historial sabe de un tema; los conceptos se asignan al tema por el nombre de su subtema. */
+export function datosTema(a: Analytics, temaId: string): TemaDetalle | null {
+  const tema = a.evolucion.temas.find((x) => x.tema_id === temaId);
+  if (!tema) return null;
+  const subs = new Set(tema.subtemas.map((s) => s.subtema));
+  const debiles = (a.debiles ?? []).filter((d) => subs.has(d.subtema));
+  const nombres = new Set([...(a.conceptos ?? []).filter((c) => subs.has(c.subtema)).map((c) => c.concepto), ...debiles.map((d) => d.concepto)]);
+  const trampa = (a.trampas ?? []).filter((x) => nombres.has(x.concepto)).sort((x, y) => y.n - x.n)[0];
+  const debil = [...debiles].sort((x, y) => x.percent - y.percent)[0];
+  const dias = (a.olvido?.cruces ?? []).filter((c) => sinPrefijoTema(c.tema) === sinPrefijoTema(tema.tema)).map((c) => c.dia);
+  const [primero, ultimo] = [tema.puntos[0], tema.puntos[tema.puntos.length - 1]];
+  return {
+    id: tema.tema_id, nombre: sinPrefijoTema(tema.tema), ahora: ultimo?.percent ?? 0, delta: primero && ultimo ? ultimo.percent - primero.percent : 0, puntos: tema.puntos,
+    cruce: dias.length ? Math.min(...dias) : null, recuerda: !!a.olvido?.temas.some((x) => x.tema_id === temaId),
+    trampa: trampa ? { trampa: trampa.trampa, n: trampa.n } : null, debil: debil ? { concepto: debil.concepto, percent: debil.percent } : null,
+  };
+}
+
+const veces = (n: number) => `${n} ${t(n === 1 ? "hist.vez" : "hist.veces")}`;
+/** La frase de una línea de cada gráfica de «Más análisis»: la conclusión, o el texto de ayuda si aún no hay datos. */
+export function conclusionesMas(a: Analytics, pend: Pendiente[]): Record<string, string> {
+  const r = a.resumen;
+  const dif = a.dificultad.filter((x) => fiable(x.n) && x.aciertos_pct !== null);
+  const mejorDif = dif.reduce((p, q) => (q.aciertos_pct! > p.aciertos_pct! ? q : p), dif[0]);
+  const peorDif = dif.reduce((p, q) => (q.aciertos_pct! < p.aciertos_pct! ? q : p), dif[0]);
+  const vel = mejorGrupo(a.velocidad), dia = mejorGrupo(a.semana);
+  const fat = a.fatiga.filter((x) => fiable(x.n) && x.aciertos_pct !== null);
+  const cae = fat.slice(1).find((x) => fat[0].aciertos_pct! - x.aciertos_pct! >= 10);
+  const trampa = [...(a.trampas ?? [])].sort((x, y) => y.n - x.n)[0];
+  const debil = [...(a.debiles ?? [])].sort((x, y) => x.percent - y.percent)[0];
+  const err = a.errores_escritura?.[0];
+  const dificiles = a.dificiles?.length ?? 0;
+  return {
+    cifras: `${segundos(r.tiempo_medio_s)} por respuesta${r.mejor_hora === null ? "" : `, mejor hora las ${hora(r.mejor_hora)}`}`,
+    evolucion: titularPendientes(pend) || "Cómo ha cambiado tu dominio día a día",
+    dificultad: dif.length >= 2 ? `Aciertas el ${mejorDif.aciertos_pct} % en el nivel ${mejorDif.dificultad} y el ${peorDif.aciertos_pct} % en el nivel ${peorDif.dificultad}` : t("hist.dificultadSub"),
+    velocidad: vel ? `Aciertas más cuando tardas ${vel.tramo}` : t("hist.velocidadSub"),
+    horas: r.mejor_hora === null ? t("hist.horasSub") : `Tu mejor hora son las ${hora(r.mejor_hora)}`,
+    semana: dia ? `Rindes mejor el ${DIAS[dia.dia]}` : t("hist.horasSub"),
+    fatiga: cae ? `Empeoras a partir de las preguntas ${cae.tramo}` : fat.length >= 2 ? "Tu acierto aguanta toda la sesión" : t("hist.fatigaSub"),
+    duda: titularDuda(a.conceptos ?? []),
+    olvido: a.olvido?.temas.length ? titularOlvido(a.olvido) : "",
+    trampas: trampa ? `${trampa.trampa}, ${veces(trampa.n)}` : t("hist.trampasVacio"),
+    escritura: err ? `${t(`hist.err.${err.tipo}`)}, ${veces(err.n)}` : "",
+    debiles: debil ? `${debil.concepto}, con el ${debil.percent} %` : t("hist.debilesVacio"),
+    dificiles: dificiles ? `${dificiles} ${dificiles === 1 ? "pregunta" : "preguntas"} que fallas a menudo` : t("hist.dificilesVacio"),
+    sesiones: titularSesiones(a.sesiones_recientes) || `${r.sesiones} ${t(r.sesiones === 1 ? "hist.sesion" : "hist.sesiones")}`,
+  };
+}

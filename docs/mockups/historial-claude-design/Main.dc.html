@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial A, el resumen cuenta la historia</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.fila:hover{background:rgba(142,63,112,.08)}
+.fila:focus-visible,.btn:focus-visible,.seg:focus-visible{outline:3px solid #8E3F70;outline-offset:-3px}
+.btn{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.btn:active{transform:scale(.97)}
+</style>
+</helmet>
+<div style="width: 390px; box-sizing: border-box; font-family: 'Lexend', system-ui, sans-serif; background: var(--paper); color: var(--ink); display: flex; flex-direction: column; gap: 22px; padding: 24px 16px 40px; {{vars}}">
+
+  <header style="display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+      <h1 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.02em">Historial</h1>
+      <button class="btn" type="button" aria-label="Guardados" style="display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--rule2); border-radius: 12px; background: var(--card); color: var(--lilaink); cursor: pointer"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round"><path d="M3.5 2h9v12L8 10.8 3.5 14z"/></svg></button>
+    </div>
+    <div role="group" aria-label="Periodo" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: var(--rule)">
+      <button class="seg" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: var(--ink2); font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">7 días</button>
+      <button class="seg" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: var(--ink2); font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">30 días</button>
+      <button class="seg" type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 10px; background: var(--card); color: var(--ink); font: 600 15px 'Lexend', system-ui, sans-serif; box-shadow: 0 1px 3px rgba(42,16,48,.18); cursor: pointer">Todo</button>
+    </div>
+  </header>
+
+  <section aria-label="Resumen" style="display: flex; flex-direction: column; gap: 18px; padding: 20px; border-radius: 24px; color: #FBEFF6; background: radial-gradient(circle at 30% 20%, {{heroA}} 0, {{heroB}} 48%, {{heroC}} 100%)">
+    <div style="display: flex; align-items: center; gap: 16px">
+      <div style="flex: none; width: 96px; height: 83px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); display: grid; place-items: center; background: radial-gradient(circle at 50% 44%, rgba(226,127,184,.9) 0, rgba(176,90,143,.4) 55%, transparent 82%), linear-gradient(180deg, #7A3470, #4A1E4C 55%, #2A1030); color: #FFF6FB; font-size: 28px; font-weight: 600; font-variant-numeric: tabular-nums">38 %</div>
+      <div>
+        <h2 style="margin: 0; font-size: 21px; font-weight: 600; line-height: 1.25; text-wrap: balance">Subes 6 puntos esta semana</h2>
+        <p style="margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: rgba(251,239,246,.82)">Dominio de la asignatura. Hace 7 días estabas en el 32 %.</p>
+      </div>
+    </div>
+    <dl style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin: 0; padding-top: 14px; border-top: 1px solid rgba(251,239,246,.22)">
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px"><dd style="margin: 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums">142</dd><dt style="font-size: 12px; color: rgba(251,239,246,.78)">respuestas</dt></div>
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding-left: 14px; border-left: 1px solid rgba(251,239,246,.22)"><dd style="margin: 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums">74 %</dd><dt style="font-size: 12px; color: rgba(251,239,246,.78)">de acierto</dt></div>
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding-left: 14px; border-left: 1px solid rgba(251,239,246,.22)"><dd style="margin: 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums">9</dd><dt style="font-size: 12px; color: rgba(251,239,246,.78)">días con práctica</dt></div>
+    </dl>
+  </section>
+
+  <section aria-label="Constancia" style="padding: 20px; border-radius: 20px; background: var(--card); box-shadow: 0 0 0 1px var(--rule)">
+    <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3; text-wrap: balance">{{tituloCal}}</h2>
+    <p style="margin: 6px 0 14px; font-size: 13px; line-height: 1.45; color: var(--ink3)">Un hexágono por día. Cuanto más intenso, más preguntas respondiste.</p>
+    <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-bottom: 6px">
+      <span style="font-size: 11px; text-align: center; color: var(--ink3)">L</span><span style="font-size: 11px; text-align: center; color: var(--ink3)">M</span><span style="font-size: 11px; text-align: center; color: var(--ink3)">X</span><span style="font-size: 11px; text-align: center; color: var(--ink3)">J</span><span style="font-size: 11px; text-align: center; color: var(--ink3)">V</span><span style="font-size: 11px; text-align: center; color: var(--ink3)">S</span><span style="font-size: 11px; text-align: center; color: var(--ink3)">D</span>
+    </div>
+    <div role="img" aria-label="Calendario de las últimas 5 semanas" style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px">
+      <sc-for list="{{celdas}}" as="c" hint-placeholder-count="35">
+        <div style="aspect-ratio: 8 / 7; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: {{c.bg}}"></div>
+      </sc-for>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; font-size: 12px; color: var(--ink3)">
+      <span>El punto marca hoy</span>
+      <span style="display: flex; align-items: center; gap: 4px">Menos
+        <sc-for list="{{escala}}" as="e" hint-placeholder-count="5"><span style="width: 14px; height: 12px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: {{e.bg}}"></span></sc-for>
+        Más</span>
+    </div>
+  </section>
+
+  <section aria-label="Qué se mueve" style="padding: 20px; border-radius: 20px; background: var(--card); box-shadow: 0 0 0 1px var(--rule)">
+    <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3; text-wrap: balance">3 temas suben y 2 se estancan</h2>
+    <p style="margin: 6px 0 14px; font-size: 13px; line-height: 1.45; color: var(--ink3)">Dominio de cada tema el primer día frente a hoy. En color los que se mueven más de 5 puntos; en gris los que se quedan.</p>
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <sc-for list="{{temas}}" as="r" hint-placeholder-count="5">
+        <div>
+          <p style="margin: 0 0 4px; font-size: 14px; font-weight: 500">{{r.nombre}}</p>
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div style="position: relative; flex: 1; height: 20px">
+              <div style="position: absolute; left: 0; right: 0; top: 7px; height: 6px; border-radius: 3px; background: var(--hx0)"></div>
+              <div style="position: absolute; top: 7px; height: 6px; border-radius: 3px; left: {{r.l}}; width: {{r.w}}; background: {{r.seg}}"></div>
+              <div style="position: absolute; top: 2px; width: 12px; height: 12px; margin-left: -8px; border-radius: 50%; box-sizing: content-box; border: 2px solid {{r.col}}; background: var(--card); left: {{r.a}}"></div>
+              <div style="position: absolute; top: 2px; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: {{r.col}}; left: {{r.h}}"></div>
+            </div>
+            <span style="flex: none; width: 76px; font-size: 13px; text-align: right; color: var(--ink2); font-variant-numeric: tabular-nums">{{r.txt}}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="display: flex; align-items: center; gap: 14px; margin: 14px 0 0; font-size: 12px; color: var(--ink3)"><span style="display: inline-flex; align-items: center; gap: 6px"><i style="width: 12px; height: 12px; box-sizing: border-box; border-radius: 50%; border: 2px solid var(--lila)"></i>hace 30 días</span><span style="display: inline-flex; align-items: center; gap: 6px"><i style="width: 12px; height: 12px; border-radius: 50%; background: var(--lila)"></i>hoy</span></p>
+  </section>
+
+  <section aria-label="Qué repasar" style="padding: 20px; border-radius: 20px; background: var(--card); box-shadow: 0 0 0 1px var(--rule)">
+    <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3; text-wrap: balance">En 7 días 1 concepto bajará del 70 %</h2>
+    <p style="margin: 6px 0 14px; font-size: 13px; line-height: 1.45; color: var(--ink3)">Lo que recordarás si no repasas. La parte rayada es lo que perderías.</p>
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <sc-for list="{{olvidos}}" as="o" hint-placeholder-count="3">
+        <div>
+          <div style="display: flex; justify-content: space-between; gap: 8px; margin-bottom: 6px; font-size: 14px"><span style="font-weight: 500">{{o.nombre}}</span><span style="color: var(--ink2); font-variant-numeric: tabular-nums">{{o.txt}}</span></div>
+          <div style="position: relative; height: 12px; border-radius: 6px; background: var(--hx0); overflow: hidden">
+            <div style="position: absolute; left: 0; top: 0; bottom: 0; width: {{o.d7}}; background: var(--lila)"></div>
+            <div style="position: absolute; top: 0; bottom: 0; left: {{o.d7}}; width: {{o.dif}}; background: repeating-linear-gradient(135deg, var(--lila) 0 2px, transparent 2px 5px)"></div>
+            <div style="position: absolute; top: 0; bottom: 0; left: 70%; width: 2px; background: var(--ink)"></div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <p style="margin: 10px 0 0; font-size: 12px; color: var(--ink3)">La línea negra marca el 70 %.</p>
+    <button class="btn" type="button" style="width: 100%; margin-top: 16px; min-height: 48px; border: 0; border-radius: 12px; background: #8E3F70; color: #FFFFFF; font: 500 16px 'Lexend', system-ui, sans-serif; box-shadow: 0 4px 0 #5A2556; cursor: pointer">Repasar estos conceptos</button>
+  </section>
+
+  <section aria-label="Más análisis">
+    <h2 style="margin: 0 0 8px 4px; font-size: 14px; font-weight: 600; color: var(--ink2)">Más análisis</h2>
+    <div style="border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--rule); overflow: hidden">
+      <sc-for list="{{mas}}" as="m" hint-placeholder-count="10">
+        <button class="fila" type="button" style="display: flex; align-items: center; gap: 12px; width: 100%; box-sizing: border-box; min-height: 64px; padding: 8px 16px; border: 0; border-top: 1px solid var(--rule); background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: var(--ink); text-align: left; cursor: pointer">
+          <span style="flex: 1"><span style="display: block">{{m.t}}</span><span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; line-height: 1.35; color: var(--ink3)">{{m.s}}</span></span>
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: var(--ink3); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </sc-for>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"dark":{"editor":"boolean","default":false},"$preview":{"width":390,"height":2300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const k = dark
+      ? { paper: '#17131A', card: '#221C26', ink: '#F3EEF4', ink2: '#CFC6D4', ink3: '#A99FAF', rule: '#352E3A', rule2: '#4A4150', lila: '#C47AA6', lilaink: '#E8B1D2', hx: ['#2C2531', '#4D3248', '#7E4C74', '#C47AA6', '#F0BEDB'], hero: ['#7A3470', '#4A1E4C', '#240D29'], gris: '#5E5566' }
+      : { paper: '#FBF9F6', card: '#FFFFFF', ink: '#231D27', ink2: '#554C5A', ink3: '#6F6675', rule: '#ECE6E9', rule2: '#DAD1D6', lila: '#8E3F70', lilaink: '#8E3F70', hx: ['#EFE7EC', '#EBD4E2', '#D9A3C4', '#B05A8F', '#7A3470'], hero: ['#9B4488', '#5A2556', '#2A1030'], gris: '#8F8195' };
+    const vars = '--paper:' + k.paper + ';--card:' + k.card + ';--ink:' + k.ink + ';--ink2:' + k.ink2 + ';--ink3:' + k.ink3 + ';--rule:' + k.rule + ';--rule2:' + k.rule2 + ';--lila:' + k.lila + ';--lilaink:' + k.lilaink + ';--hx0:' + k.hx[0];
+    const niveles = [0,0,1,0,0,0,0, 0,2,0,0,1,0,0, 0,3,2,0,0,1,0, 1,0,3,4,2,0,0, 0,2,1,0,3,0,4];
+    const celdas = niveles.map((n, i) => ({
+      bg: i === 34 ? 'radial-gradient(circle at 50% 50%, ' + k.card + ' 0 3px, transparent 3.5px), ' + k.hx[4] : k.hx[n],
+    }));
+    const activos = niveles.filter((n) => n > 0).length;
+    const mk = (nombre, a, h) => {
+      const sube = h - a > 5;
+      return { nombre, l: Math.min(a, h) + '%', w: Math.abs(h - a) + '%', a: a + '%', h: h + '%', col: sube ? k.lila : k.gris, seg: sube ? k.lila : k.gris, txt: a + ' → ' + h + ' %' };
+    };
+    const temas = [mk('Normativa general', 12, 31), mk('Treballar segur i separar la matèria', 20, 41), mk('Verbs irregulars', 38, 52), mk('Accentuació', 55, 56), mk('Sintaxi', 30, 29)];
+    const ol = (nombre, ahora, d7) => ({ nombre, d7: d7 + '%', dif: (ahora - d7) + '%', txt: ahora + ' % hoy, ' + d7 + ' % en 7 días' });
+    return {
+      vars, heroA: k.hero[0], heroB: k.hero[1], heroC: k.hero[2],
+      celdas, escala: k.hx.map((bg) => ({ bg })),
+      tituloCal: 'Practicaste ' + activos + ' de los últimos 35 días',
+      temas,
+      olvidos: [ol('Hiats', 78, 64), ol('Accents tònics', 90, 81), ol('Diftongs', 84, 73)],
+      mas: [
+        { t: 'Más cifras', s: '18 s por respuesta, mejor hora las 19:00, retención del 71 % tras un día' },
+        { t: 'Acierto por dificultad', s: 'Aciertas el 82 % en el nivel 1 y el 51 % en el nivel 4' },
+        { t: 'Velocidad y acierto', s: 'Aciertas más cuando tardas entre 10 y 20 segundos' },
+        { t: 'Acierto por hora del día', s: 'Tu mejor hora son las 19:00' },
+        { t: 'Acierto por día de la semana', s: 'Rindes mejor el martes' },
+        { t: 'Fatiga dentro de la sesión', s: 'Empeoras a partir de la pregunta 15' },
+        { t: 'Trampas en las que más caes', s: 'Apertura de la vocal, 7 veces' },
+        { t: 'Conceptos más débiles', s: 'Hiats, con el 31 %' },
+        { t: 'Preguntas que más fallas', s: '3 preguntas falladas en 2 de 3 intentos' },
+        { t: 'Sesiones recientes', s: '5 sesiones, la última el sábado' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

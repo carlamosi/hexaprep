@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial B, detalle de un tema</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.btn{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:3px solid #8E3F70;outline-offset:3px}
+</style>
+</helmet>
+<div style="position: relative; width: 390px; height: 900px; box-sizing: border-box; overflow: hidden; font-family: 'Lexend', system-ui, sans-serif; background: radial-gradient(circle at 50% 24%, #6A2C66 0, #3E1842 55%, #2A1030 100%); color: #231D27">
+
+  <div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 0; height: 250px; opacity: .55">
+    <div style="position: absolute; left: 150px; top: 60px; width: 90px; height: 78px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #B05A8F"></div>
+    <div style="position: absolute; left: 222px; top: 98px; width: 90px; height: 78px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #D9A3C4"></div>
+    <div style="position: absolute; left: 78px; top: 98px; width: 90px; height: 78px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #7A3470"></div>
+  </div>
+
+  <section role="dialog" aria-modal="true" aria-labelledby="tt" style="position: absolute; left: 0; right: 0; bottom: 0; top: 210px; box-sizing: border-box; display: flex; flex-direction: column; gap: 18px; padding: 10px 20px 28px; border-radius: 28px 28px 0 0; background: #FBF9F6">
+    <div aria-hidden="true" style="align-self: center; width: 44px; height: 5px; border-radius: 3px; background: #DAD1D6"></div>
+    <header style="display: flex; align-items: center; gap: 14px">
+      <div style="flex: none; width: 64px; height: 56px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); display: grid; place-items: center; background: #B05A8F; color: #FFFFFF; font-size: 18px; font-weight: 600">T3</div>
+      <div style="flex: 1; min-width: 0">
+        <h2 id="tt" style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.2">Verbs irregulars</h2>
+        <p style="margin: 3px 0 0; font-size: 14px; color: #554C5A">Dominio 52 %, 14 puntos más en 30 días</p>
+      </div>
+      <button class="btn" type="button" aria-label="Cerrar" style="display: grid; place-items: center; flex: none; width: 44px; height: 44px; border: 0; border-radius: 12px; background: #ECE6E9; color: #231D27; cursor: pointer"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </header>
+
+    <section aria-label="Evolución del tema" style="padding: 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9">
+      <h3 style="margin: 0 0 4px; font-size: 16px; font-weight: 600">Sube desde hace 3 semanas</h3>
+      <p style="margin: 0 0 6px; font-size: 13px; color: #6F6675">Dominio al final de cada día de práctica.</p>
+      <svg viewBox="0 0 330 150" width="100%" role="img" aria-label="Dominio del tema de 38 a 52 por ciento en 30 días" style="display: block">
+        <defs><linearGradient id="areaT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E3F70" stop-opacity=".22"/><stop offset="1" stop-color="#8E3F70" stop-opacity="0"/></linearGradient></defs>
+        <line x1="34" y1="12" x2="34" y2="124" stroke="#DAD1D6"/><line x1="34" y1="124" x2="322" y2="124" stroke="#DAD1D6"/>
+        <line x1="34" y1="{{g50}}" x2="322" y2="{{g50}}" stroke="#DAD1D6" stroke-dasharray="3 4"/>
+        <text x="30" y="{{g50t}}" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">50</text>
+        <text x="30" y="127" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">30</text>
+        <path d="{{area}}" fill="url(#areaT)"/>
+        <path d="{{linea}}" fill="none" stroke="#8E3F70" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="{{finX}}" cy="{{finY}}" r="6" fill="#8E3F70" stroke="#FFFFFF" stroke-width="2"/>
+        <text x="{{finX}}" y="{{finTy}}" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="13" font-weight="600" fill="#231D27">52 %</text>
+        <text x="34" y="144" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">hace 30 días</text>
+        <text x="322" y="144" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">hoy</text>
+      </svg>
+    </section>
+
+    <div style="border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9; overflow: hidden">
+      <div style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 8px 16px">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: none; fill: none; stroke: #8E3F70; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round"><path d="M3 5l5 7 4-3 5 8 4-4"/></svg>
+        <span style="font-size: 15px; font-weight: 500">Bajará del 70 % en 12 días<span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: #6F6675">Si no lo repasas</span></span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; min-height: 64px; padding: 8px 16px; border-top: 1px solid #ECE6E9">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" style="flex: none; fill: none; stroke: #8E3F70; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round"><path d="M12 3l9 16H3zM12 10v4M12 17v.01"/></svg>
+        <span style="font-size: 15px; font-weight: 500">Confundes «è» con «é», 3 veces<span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: #6F6675">Tu trampa más frecuente aquí</span></span>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: auto">
+      <button class="btn" type="button" style="min-height: 52px; border: 0; border-radius: 12px; background: #8E3F70; color: #FFFFFF; font: 500 16px 'Lexend', system-ui, sans-serif; box-shadow: 0 4px 0 #5A2556; cursor: pointer">Repasar este tema</button>
+      <button class="btn" type="button" style="min-height: 48px; border: 1px solid #DAD1D6; border-radius: 12px; background: #FFFFFF; color: #8E3F70; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">Ver sus conceptos</button>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const v = [38, 38, 40, 41, 41, 43, 45, 44, 47, 49, 50, 52];
+    const x = (i) => 34 + (i / (v.length - 1)) * 288;
+    const y = (p) => 12 + ((60 - (p - 30)) / 60) * 112;
+    const pts = v.map((p, i) => [x(i), y(p)]);
+    const linea = pts.map((q, i) => (i ? 'L' : 'M') + q[0].toFixed(1) + ',' + q[1].toFixed(1)).join(' ');
+    const area = linea + ' L322,124 L34,124 Z';
+    const fin = pts[pts.length - 1];
+    return { linea, area, finX: fin[0], finY: fin[1], finTy: fin[1] - 12, g50: y(50), g50t: y(50) + 4 };
+  }
+}
+</script>
+</body>
+</html>

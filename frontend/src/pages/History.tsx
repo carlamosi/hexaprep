@@ -1,16 +1,19 @@
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { api, type Analytics, type MapResponse } from "../api";
 import { Hexagon } from "../components/Hexagon";
 import { Actividad } from "../components/historial/Actividad";
 import { Barras, Columnas, type Fila } from "../components/historial/Barras";
 import {
-  DIAS, DIAS_CORTOS, estado, hora, MIN_N, mejorGrupo, ordenPanal, pct, pendientes, segundos, semanasDeRango, titularDuda, titularOlvido, titularPendientes, titularSesiones,
+  conclusionesMas, datosTema, DIAS, DIAS_CORTOS, estado, hora, MIN_N, ordenPanal, pct, pendientes, POCOS_DATOS, segundos, semanasActividad, semanasDeRango,
+  titularDominio, titularMueve, titularOlvido,
 } from "../components/historial/datos";
 import { Evolucion } from "../components/historial/Evolucion";
 import { Duda } from "../components/historial/Duda";
+import { Mueve } from "../components/historial/Mueve";
 import { Olvido } from "../components/historial/Olvido";
+import { Repasar } from "../components/historial/Repasar";
+import { TemaDetalle } from "../components/historial/TemaDetalle";
 import { TiraSesiones } from "../components/historial/TiraSesiones";
-import { Pendiente } from "../components/historial/Pendiente";
 import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../components/historial/Listas";
 import "../components/historial/historial.css";
 import { t, tn } from "../i18n";
@@ -27,11 +30,12 @@ function referencia(mes?: string): Date {
   return d ? new Date(y, m - 1, d) : new Date(y, m, 0);
 }
 
-function Card({ id, titulo, sub, children, wide = false }: { id: string; titulo: string; sub?: ReactNode; children: ReactNode; wide?: boolean }) {
+/** Tarjeta de la vista principal: el título es la conclusión, no el nombre de la gráfica. */
+function Bloque({ etiqueta, titulo, sub, children }: { etiqueta: string; titulo: string; sub?: ReactNode; children: ReactNode }) {
   return (
-    <section className={`hp-card ${wide ? "is-wide" : ""}`} aria-labelledby={id}>
+    <section className="hp-card" aria-label={etiqueta}>
       <header className="hp-card-head">
-        <h3 id={id}>{titulo}</h3>
+        <h3>{titulo}</h3>
         {sub && <p>{sub}</p>}
       </header>
       {children}
@@ -39,12 +43,15 @@ function Card({ id, titulo, sub, children, wide = false }: { id: string; titulo:
   );
 }
 
-function Grupo({ id, titulo, children }: { id: string; titulo: string; children: ReactNode }) {
+/** Una gráfica de «Más análisis»: cerrada solo se lee su conclusión; abierta, la gráfica entera. */
+function Fila({ titulo, conclusion, children }: { titulo: string; conclusion: string; children: ReactNode }) {
   return (
-    <section className="hp-group" aria-labelledby={id}>
-      <h2 id={id} className="hp-group-h"><i aria-hidden="true" />{titulo}</h2>
-      <div className="hp-grid">{children}</div>
-    </section>
+    <details className="hp-det">
+      <summary>
+        <span><h3>{titulo}</h3>{conclusion && <small>{conclusion}</small>}</span>
+      </summary>
+      <div className="hp-det-body">{children}</div>
+    </details>
   );
 }
 
@@ -58,7 +65,7 @@ function Stat({ valor, etiqueta, nota }: { valor: ReactNode; etiqueta: string; n
   );
 }
 
-/** Historial como panel de análisis: todo lo que la app registra al responder, con el rango elegido. */
+/** Historial: la conclusión arriba, lo que se mueve y lo que repasar, y el análisis completo plegado. */
 export function History({ asignaturaId, client = api, mes }: {
   asignaturaId: string; client?: Pick<typeof api, "analytics" | "getMap">; mes?: string;
 }) {
@@ -67,6 +74,8 @@ export function History({ asignaturaId, client = api, mes }: {
   const [map, setMap] = useState<MapResponse | null>(null);
   const [cargando, setCargando] = useState(true);
   const [failed, setFailed] = useState(false);
+  const [temaId, setTemaId] = useState<string | null>(null);
+  const abridor = useRef<HTMLElement | null>(null);
   const hoy = useMemo(() => referencia(mes), [mes]);
 
   useEffect(() => {
@@ -86,6 +95,8 @@ export function History({ asignaturaId, client = api, mes }: {
   }, [client, asignaturaId, dias]);
 
   const orden = useMemo(() => ordenPanal(map?.hexes ?? []), [map]);
+  const abrirTema = useCallback((id: string, el: HTMLElement) => { abridor.current = el; setTemaId(id); }, []);
+  const cerrarTema = useCallback(() => { setTemaId(null); abridor.current?.focus(); }, []);
 
   if (failed && !data) return <ErrorCarga />;
   if (!data) return <p role="status" className="sr-only">{t("app.cargando")}</p>;
@@ -94,28 +105,24 @@ export function History({ asignaturaId, client = api, mes }: {
   const est = estado(r.respondidas);
   const filas = <T extends { n: number; aciertos_pct: number | null }>(xs: T[], id: (x: T) => string, et: (x: T) => string, corto?: (x: T) => string): Fila[] =>
     xs.map((x) => ({ id: id(x), etiqueta: et(x), corto: corto?.(x), n: x.n, valor: x.aciertos_pct }));
-  const mejorDia = mejorGrupo(data.semana);
   const conceptos = data.conceptos ?? [];
-  const tDuda = titularDuda(conceptos);
   const olvido = data.olvido?.temas.length ? data.olvido : null;
-  const titularSes = titularSesiones(data.sesiones_recientes);
-  const titular = titularPendientes(pendientes(data.evolucion, orden));
-  // Composición en columnas: Evolución va con «pendiente»; si no hay, con el olvido (de dónde vienes | adónde vas); lo que quede suelto va ancho.
-  const olvidoConEvolucion = !!olvido && !titular && !tDuda;
+  const ps = pendientes(data.evolucion, orden);
+  const c = conclusionesMas(data, ps);
+  const celdas = semanasActividad(data.actividad, hoy, semanasDeRango(dias, data.actividad, hoy)).flat().filter((x) => !x.futura);
+  const practicados = celdas.filter((x) => x.n > 0).length;
   const ritmos = data.fatiga.map((f) => f.ritmo ?? 0);
   const x1 = (v: number | null | undefined) => (v == null ? t("hist.sinDatos") : `×${(Math.round(v * 10) / 10).toString().replace(".", ",")}`);
+  const detalle = temaId ? datosTema(data, temaId) : null;
+  const antes = r.dominio_pct - r.dominio_delta;
 
   return (
     <main className="wrap hp" aria-busy={cargando}>
       <header className="hp-head">
-        <div>
-          {map && <span className="kicker">{map.asignatura}</span>}
-          <h1>{t("hist.titulo")}</h1>
-          <p className="lede">{t("hist.lede")}</p>
-        </div>
-        <a className="hp-guardados" href="#guardados">
+        <h1>{t("hist.titulo")}</h1>
+        <a className="hp-guardados" href="#guardados" aria-label={t("hist.guardados")}>
           <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h9v12L8 10.8 3.5 14z" /></svg>
-          {t("hist.guardados")}
+          <span>{t("hist.guardados")}</span>
         </a>
         <div className="hp-seg hp-range" role="group" aria-label={t("hist.rango")}>
           {RANGOS.map((d) => (
@@ -150,122 +157,133 @@ export function History({ asignaturaId, client = api, mes }: {
               </p>
             )}
 
-            <section className="hp-summary" aria-label={t("hist.resumen")}>
-              <div className="hp-hero">
-                <span className="hp-hero-hex"><Hexagon percent={r.dominio_pct} color="var(--lila)" big /></span>
+            <section className={`hp-top${est === "pocos" ? " is-pocos" : ""}`} aria-label={t("hist.resumen")}>
+              <div className="hp-top-main">
+                <span className="hp-top-hex" aria-hidden="true">{r.dominio_pct} %</span>
                 <div>
-                  <span className="hp-hero-l">{t("hist.dominio")}</span>
-                  {r.dominio_delta !== 0 ? (
-                    <span className={`hp-delta ${r.dominio_delta > 0 ? "up" : "down"}`}>
-                      <span aria-hidden="true">{r.dominio_delta > 0 ? "▲" : "▼"}</span> {r.dominio_delta > 0 ? "+" : ""}{r.dominio_delta} {t("hist.puntos")}
-                      <small> {t("hist.enElPeriodo")}</small>
-                    </span>
-                  ) : <span className="hp-delta">{t("hist.sinCambio")}</span>}
+                  <h2>{est === "pocos" ? "Estás empezando" : titularDominio(r.dominio_delta, dias)}</h2>
+                  <p>{est === "pocos"
+                    ? `Con ${POCOS_DATOS} respuestas empezaremos a contarte qué se mueve.`
+                    : `${t("hist.dominio")}.${r.dominio_delta !== 0 && dias !== 0 ? ` Antes estabas en el ${antes} %.` : ""}`}</p>
                 </div>
               </div>
-              <div className="hp-stats">
-                <Stat valor={r.respondidas} etiqueta={t(r.respondidas === 1 ? "hist.respuesta" : "hist.respuestas")} />
-                <Stat valor={pct(r.aciertos_pct)} etiqueta={t("hist.acierto")} />
-                <Stat valor={r.dias_estudiados} etiqueta={t(r.dias_estudiados === 1 ? "hist.diaConPractica" : "hist.diasConPractica")} />
-                <Stat valor={segundos(r.tiempo_medio_s)} etiqueta={t("hist.tiempoMedio")} />
-                <Stat valor={r.mejor_hora === null ? t("hist.aunNo") : hora(r.mejor_hora)} etiqueta={t("hist.mejorHora")} nota={r.mejor_hora === null ? t("hist.mejorHoraFalta") : undefined} />
-                {r.retencion && <Stat valor={r.retencion.d1.pct === null ? t("hist.aunNo") : `${r.retencion.d1.pct} %${r.retencion.d7.pct === null ? "" : ` · ${r.retencion.d7.pct} %`}`}
-                  etiqueta={t("hist.retencion")} nota={t("hist.retencionNota").replace("{n1}", String(r.retencion.d1.n)).replace("{n7}", String(r.retencion.d7.n))} />}
-                <Stat valor={r.sesiones} etiqueta={t(r.sesiones === 1 ? "hist.sesion" : "hist.sesiones")} />
-              </div>
+              <dl className="hp-top-datos">
+                <div><dd>{r.respondidas}</dd><dt>{t(r.respondidas === 1 ? "hist.respuesta" : "hist.respuestas")}</dt></div>
+                <div><dd>{pct(r.aciertos_pct)}</dd><dt>{t("hist.deAcierto")}</dt></div>
+                <div><dd>{r.dias_estudiados}</dd><dt>{t(r.dias_estudiados === 1 ? "hist.diaConPractica" : "hist.diasConPractica")}</dt></div>
+              </dl>
             </section>
 
-            <p className="hp-key-low" aria-hidden="true"><i /> {t("hist.leyendaPocos").replace("{n}", String(MIN_N))}</p>
-
-            <Grupo id="g-ritmo" titulo={t("hist.g.constancia")}>
-              <Card id="c-act" titulo={t("hist.actividad")} sub={t("hist.actividadSub")} wide>
+            <div className="hp-main">
+              <Bloque etiqueta="Constancia" titulo={`Practicaste ${practicados} de los últimos ${celdas.length} días`} sub={t("hist.actividadSub")}>
                 <Actividad actividad={data.actividad} semanas={semanasDeRango(dias, data.actividad, hoy)} hoy={hoy} ampliable={dias === 0 && r.dias_estudiados >= 7} />
-              </Card>
-              <Card id="c-evo" titulo={t("hist.evolucion")} sub={t("hist.evolucionSub")} wide={!titular && !olvidoConEvolucion}>
-                <Evolucion evolucion={data.evolucion} orden={orden} />
-              </Card>
-              {titular && (
-                <Card id="c-pen" titulo={titular} sub="Dominio de cada tema el primer día del periodo frente a hoy. En color, los que se mueven más de 5 puntos; en gris, los que se estancan.">
-                  <Pendiente evolucion={data.evolucion} orden={orden} />
-                </Card>
+              </Bloque>
+
+              {ps.length > 0 && (
+                <Bloque etiqueta="Qué se mueve" titulo={titularMueve(ps)}
+                  sub="Dominio de cada tema el primer día del periodo frente a hoy. En color los que se mueven más de 5 puntos; en gris los que se quedan. Toca un tema para ver su historia.">
+                  <Mueve ps={ps} onAbrir={abrirTema} />
+                  <p className="hp-mv-clave" aria-hidden="true"><span><i className="a" />antes</span><span><i className="h" />hoy</span></p>
+                </Bloque>
               )}
-              {olvido && olvidoConEvolucion && (
-                <Card id="c-olv" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema en los próximos 21 días si no repasas, calculado con el ritmo al que olvidas cada concepto.">
-                  <Olvido olvido={olvido} orden={orden} />
-                </Card>
+
+              {olvido && (
+                <Bloque etiqueta="Qué repasar" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema si no repasas, calculado con el ritmo al que olvidas cada concepto. La parte rayada es lo que perderías.">
+                  <Repasar olvido={olvido} />
+                </Bloque>
               )}
-            </Grupo>
 
-            <Grupo id="g-acierto" titulo={t("hist.g.acierto")}>
-              <Card id="c-dif" titulo={t("hist.dificultad")} sub={t("hist.dificultadSub")}>
-                <Columnas titulo={t("hist.dificultad")} valores media={r.aciertos_pct}
-                  filas={filas(data.dificultad, (x) => String(x.dificultad), (x) => `${t("hist.nivel")} ${x.dificultad}`, (x) => String(x.dificultad))} />
-              </Card>
-              <Card id="c-vel" titulo={t("hist.velocidad")} sub={t("hist.velocidadSub")}>
-                <Barras titulo={t("hist.velocidad")} media={r.aciertos_pct}
-                  filas={filas(data.velocidad, (x) => x.tramo, (x) => x.tramo)} />
-              </Card>
-            </Grupo>
-
-            {(tDuda || (olvido && !olvidoConEvolucion)) && (
-              <Grupo id="g-memoria" titulo="Qué sabes y qué se te escapa">
-                {tDuda && (
-                  <Card id="c-duda" titulo={tDuda} sub="Cada punto es un concepto con 3 o más respuestas. A la derecha de «lo esperado» tardas más de lo normal; por encima de la línea de 70 % aciertas. Pasa el ratón por un punto para ver cuál es." wide={!olvido}>
-                    <Duda conceptos={conceptos} />
-                  </Card>
-                )}
-                {olvido && !olvidoConEvolucion && (
-                  <Card id="c-olv" titulo={titularOlvido(olvido)} sub="Lo que recordarás de cada tema en los próximos 21 días si no repasas, calculado con el ritmo al que olvidas cada concepto." wide={!tDuda}>
-                    <Olvido olvido={olvido} orden={orden} />
-                  </Card>
-                )}
-              </Grupo>
-            )}
-
-            <Grupo id="g-cuando" titulo={t("hist.g.cuando")}>
-              <Card id="c-hora" titulo={t("hist.horas")} sub={r.mejor_hora === null ? t("hist.horasSub") : `${t("hist.mejorHoraTexto")} ${hora(r.mejor_hora)}.`}>
-                <Columnas titulo={t("hist.horas")} media={r.aciertos_pct}
-                  filas={filas(data.horas, (x) => String(x.hora), (x) => hora(x.hora), (x) => (x.hora % 3 === 0 ? String(x.hora) : ""))} />
-              </Card>
-              <Card id="c-sem" titulo={t("hist.semana")} sub={mejorDia ? `${t("hist.mejorDiaTexto")} ${DIAS[mejorDia.dia]}.` : t("hist.horasSub")}>
-                <Columnas titulo={t("hist.semana")} valores media={r.aciertos_pct}
-                  filas={filas(data.semana, (x) => String(x.dia), (x) => DIAS[x.dia], (x) => DIAS_CORTOS[x.dia])} />
-              </Card>
-            </Grupo>
-
-            <Grupo id="g-sesion" titulo={t("hist.g.sesion")}>
-              <Card id="c-fat" titulo={t("hist.fatiga")} sub={t("hist.fatigaSub")} wide>
-                <div className="hp-pair">
-                  <div>
-                    <h4>{t("hist.acierto")}</h4>
-                    <Columnas titulo={`${t("hist.fatiga")}, ${t("hist.acierto")}`} valores alto={120} media={r.aciertos_pct}
-                      filas={filas(data.fatiga, (x) => x.tramo, (x) => `${t("hist.preguntas")} ${x.tramo}`, (x) => x.tramo)} />
-                  </div>
-                  <div>
-                    <h4>{t("hist.ritmo")}</h4>
-                    <Columnas titulo={`${t("hist.fatiga")}, ${t("hist.ritmo")}`} valores alto={120} color="var(--indigo)"
-                      max={Math.max(1, ...ritmos) * 1.15}
-                      filas={data.fatiga.map((x) => ({ id: x.tramo, etiqueta: `${t("hist.preguntas")} ${x.tramo}`, corto: x.tramo, n: x.n, valor: x.ritmo ?? null, texto: x1(x.ritmo) }))} />
-                  </div>
+              <section className="hp-mas-an" aria-label="Más análisis">
+                <h2>Más análisis</h2>
+                <div className="hp-acc">
+                  <Fila titulo="Más cifras" conclusion={c.cifras}>
+                    <div className="hp-stats">
+                      <Stat valor={segundos(r.tiempo_medio_s)} etiqueta={t("hist.tiempoMedio")} />
+                      <Stat valor={r.mejor_hora === null ? t("hist.aunNo") : hora(r.mejor_hora)} etiqueta={t("hist.mejorHora")} nota={r.mejor_hora === null ? t("hist.mejorHoraFalta") : undefined} />
+                      {r.retencion && <Stat valor={r.retencion.d1.pct === null ? t("hist.aunNo") : `${r.retencion.d1.pct} %${r.retencion.d7.pct === null ? "" : ` · ${r.retencion.d7.pct} %`}`}
+                        etiqueta={t("hist.retencion")} nota={t("hist.retencionNota").replace("{n1}", String(r.retencion.d1.n)).replace("{n7}", String(r.retencion.d7.n))} />}
+                      <Stat valor={r.sesiones} etiqueta={t(r.sesiones === 1 ? "hist.sesion" : "hist.sesiones")} />
+                    </div>
+                  </Fila>
+                  <Fila titulo={t("hist.evolucion")} conclusion={c.evolucion}>
+                    <p className="hp-det-sub">{t("hist.evolucionSub")}</p>
+                    <Evolucion evolucion={data.evolucion} orden={orden} />
+                  </Fila>
+                  {c.duda && (
+                    <Fila titulo="Lo que sabes y lo que se te escapa" conclusion={c.duda}>
+                      <p className="hp-det-sub">Cada punto es un concepto con 3 o más respuestas. A la derecha de «lo esperado» tardas más de lo normal; por encima de la línea de 70 % aciertas. Pasa el ratón por un punto para ver cuál es.</p>
+                      <Duda conceptos={conceptos} />
+                    </Fila>
+                  )}
+                  {olvido && (
+                    <Fila titulo="Curva de olvido" conclusion={c.olvido}>
+                      <p className="hp-det-sub">Lo que recordarás de cada tema en los próximos 21 días si no repasas.</p>
+                      <Olvido olvido={olvido} orden={orden} />
+                    </Fila>
+                  )}
+                  <Fila titulo={t("hist.dificultad")} conclusion={c.dificultad}>
+                    <Columnas titulo={t("hist.dificultad")} valores media={r.aciertos_pct}
+                      filas={filas(data.dificultad, (x) => String(x.dificultad), (x) => `${t("hist.nivel")} ${x.dificultad}`, (x) => String(x.dificultad))} />
+                  </Fila>
+                  <Fila titulo={t("hist.velocidad")} conclusion={c.velocidad}>
+                    <Barras titulo={t("hist.velocidad")} media={r.aciertos_pct} filas={filas(data.velocidad, (x) => x.tramo, (x) => x.tramo)} />
+                  </Fila>
+                  <Fila titulo={t("hist.horas")} conclusion={c.horas}>
+                    <Columnas titulo={t("hist.horas")} media={r.aciertos_pct}
+                      filas={filas(data.horas, (x) => String(x.hora), (x) => hora(x.hora), (x) => (x.hora % 3 === 0 ? String(x.hora) : ""))} />
+                  </Fila>
+                  <Fila titulo={t("hist.semana")} conclusion={c.semana}>
+                    <Columnas titulo={t("hist.semana")} valores media={r.aciertos_pct}
+                      filas={filas(data.semana, (x) => String(x.dia), (x) => DIAS[x.dia], (x) => DIAS_CORTOS[x.dia])} />
+                  </Fila>
+                  <Fila titulo={t("hist.fatiga")} conclusion={c.fatiga}>
+                    <p className="hp-det-sub">{t("hist.fatigaSub")}</p>
+                    <div className="hp-pair">
+                      <div>
+                        <h4>{t("hist.acierto")}</h4>
+                        <Columnas titulo={`${t("hist.fatiga")}, ${t("hist.acierto")}`} valores alto={120} media={r.aciertos_pct}
+                          filas={filas(data.fatiga, (x) => x.tramo, (x) => `${t("hist.preguntas")} ${x.tramo}`, (x) => x.tramo)} />
+                      </div>
+                      <div>
+                        <h4>{t("hist.ritmo")}</h4>
+                        <Columnas titulo={`${t("hist.fatiga")}, ${t("hist.ritmo")}`} valores alto={120} color="var(--indigo)"
+                          max={Math.max(1, ...ritmos) * 1.15}
+                          filas={data.fatiga.map((x) => ({ id: x.tramo, etiqueta: `${t("hist.preguntas")} ${x.tramo}`, corto: x.tramo, n: x.n, valor: x.ritmo ?? null, texto: x1(x.ritmo) }))} />
+                      </div>
+                    </div>
+                  </Fila>
+                  <Fila titulo={t("hist.trampas")} conclusion={c.trampas}>
+                    <p className="hp-det-sub">{t("hist.trampasSub")}</p>
+                    <Trampas trampas={data.trampas} />
+                  </Fila>
+                  {!!data.errores_escritura?.length && (
+                    <Fila titulo={t("hist.erroresEscritura")} conclusion={c.escritura}>
+                      <p className="hp-det-sub">{t("hist.erroresEscrituraSub")}</p>
+                      <ErroresEscritura errores={data.errores_escritura} />
+                    </Fila>
+                  )}
+                  <Fila titulo={t("hist.debiles")} conclusion={c.debiles}>
+                    <p className="hp-det-sub">{t("hist.debilesSub")}</p>
+                    <Debiles debiles={data.debiles} />
+                  </Fila>
+                  <Fila titulo={t("hist.dificiles")} conclusion={c.dificiles}>
+                    <p className="hp-det-sub">{t("hist.dificilesSub")}</p>
+                    <Dificiles dificiles={data.dificiles} />
+                  </Fila>
+                  <Fila titulo={t("hist.sesionesRecientes")} conclusion={c.sesiones}>
+                    <p className="hp-det-sub">{t("hist.sesionesSub")}</p>
+                    <TiraSesiones sesiones={data.sesiones_recientes} />
+                    <Sesiones sesiones={data.sesiones_recientes} />
+                  </Fila>
                 </div>
-              </Card>
-            </Grupo>
-
-            <Grupo id="g-fallos" titulo={t("hist.g.fallos")}>
-              <Card id="c-tra" titulo={t("hist.trampas")} sub={t("hist.trampasSub")}><Trampas trampas={data.trampas} /></Card>
-              {!!data.errores_escritura?.length && (
-                <Card id="c-esc" titulo={t("hist.erroresEscritura")} sub={t("hist.erroresEscrituraSub")}><ErroresEscritura errores={data.errores_escritura} /></Card>
-              )}
-              <Card id="c-deb" titulo={t("hist.debiles")} sub={t("hist.debilesSub")}><Debiles debiles={data.debiles} /></Card>
-              <Card id="c-difi" titulo={t("hist.dificiles")} sub={t("hist.dificilesSub")} wide={!data.errores_escritura?.length}> {/* sin errores de escritura quedan 3 tarjetas: la última ocupa el ancho para no dejar un hueco */}<Dificiles dificiles={data.dificiles} /></Card>
-              <Card id="c-ses" titulo={titularSes || t("hist.sesionesRecientes")} sub={t("hist.sesionesSub")} wide>
-                <TiraSesiones sesiones={data.sesiones_recientes} />
-                <Sesiones sesiones={data.sesiones_recientes} />
-              </Card>
-            </Grupo>
+                <p className="hp-key-low" aria-hidden="true"><i /> {t("hist.leyendaPocos").replace("{n}", String(MIN_N))}</p>
+              </section>
+            </div>
           </>
         )}
       </div>
+
+      {detalle && <TemaDetalle datos={detalle} umbral={data.olvido?.umbral ?? 70} onCerrar={cerrarTema} />}
     </main>
   );
 }

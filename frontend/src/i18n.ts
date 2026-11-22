@@ -125,7 +125,7 @@ const es: Dict = {
   "hist.media": "Tu media",
   "hist.menosDeUnMin": "menos de 1 min",
   "hist.leyendaPocos": "Rayado y con borde discontinuo: menos de {n} respuestas, el porcentaje todavía puede cambiar mucho.",
-  "hist.pocosTexto": "Es un buen comienzo, pero con tan pocas respuestas cada una mueve mucho los porcentajes. Las marcas con menos de {n} respuestas salen rayadas: tómalas como una primera pista, no como una conclusión.",
+  "hist.pocosTexto": "Aún son pocas: los porcentajes cambiarán mucho. Lo rayado (menos de {n} respuestas) es una primera pista, no una conclusión.",
   "hist.vacio": "Todavía no hay respuestas",
   "hist.vacioTexto": "Cuando practiques, aquí verás tu actividad, cómo sube el dominio y en qué trampas caes más.",
   "hist.vacioRango": "Sin respuestas en este periodo",

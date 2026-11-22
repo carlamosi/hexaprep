@@ -5,7 +5,7 @@ import { describe, expect, it, vi } from "vitest";
 import { ApiError } from "../src/api";
 import type { Analytics, BackupRow, Hex, MapResponse, QuestionContent } from "../src/api";
 import { Columnas } from "../src/components/historial/Barras";
-import { estado, lineas, mejorGrupo, ordenPanal, semanasActividad } from "../src/components/historial/datos";
+import { conclusionesMas, datosTema, estado, lineas, mejorGrupo, olvidoProximo, ordenPanal, pendientes, semanasActividad, titularDominio, titularMueve } from "../src/components/historial/datos";
 import { Editor } from "../src/components/Editor";
 import { History } from "../src/pages/History";
 import { Settings } from "../src/pages/Settings";
@@ -94,6 +94,54 @@ describe("historial: agregados de presentación", () => {
   });
 });
 
+describe("historial A: titulares y datos del tema", () => {
+  it("el_titular_del_dominio_dice_cuanto_subes_en_el_periodo", () => {
+    expect(titularDominio(6, 7)).toBe("Subes 6 puntos esta semana");
+    expect(titularDominio(1, 30)).toBe("Subes 1 punto este mes");
+    expect(titularDominio(-3, 0)).toBe("Bajas 3 puntos desde que empezaste");
+    expect(titularDominio(0, 7)).toBe("Sin cambios esta semana");
+  });
+
+  it("el_titular_de_movimientos_cuenta_quien_sube_baja_o_se_estanca", () => {
+    const p = (...d: number[]) => d.map((delta, i) => ({ id: String(i), nombre: "x", color: "#000", antes: 0, ahora: delta, delta, desde: "a", hasta: "b" }));
+    expect(titularMueve(p(14, 12, 9, 1, -2))).toBe("3 temas suben y 2 se estancan");
+    expect(titularMueve(p(10, -6, 0))).toBe("1 tema sube, 1 baja y 1 se estanca");
+    expect(titularMueve(p(2, 1))).toBe("2 temas se estancan");
+    expect(titularMueve(p(7))).toBe("1 tema sube");
+    expect(titularMueve([])).toBe("");
+  });
+
+  it("olvido_proximo_ordena_los_temas_por_lo_que_recordaras_en_7_dias", () => {
+    const o = { dias: [0, 7, 21], umbral: 70, ya_bajo: 0, cruzan_7: 0, cruzan_14: 0, cruces: [], temas: [
+      { tema_id: "t2", tema: "Sistemas", n: 2, curva: [95, 92, 88] }, { tema_id: "t1", tema: "T1 Decisiones", n: 3, curva: [90, 66, 60] }] };
+    expect(olvidoProximo(o)).toEqual([
+      { id: "t1", nombre: "Decisiones", ahora: 90, d7: 66, cruza: true }, { id: "t2", nombre: "Sistemas", ahora: 95, d7: 92, cruza: false }]);
+  });
+
+  it("datos_del_tema_reune_evolucion_olvido_trampa_y_concepto_debil", () => {
+    const a = analytics();
+    a.conceptos = [{ concepto_id: "c1", concepto: "La escasez", subtema: "La escasez", n: 6, aciertos_pct: 40, ritmo: 1.2 }];
+    a.olvido = { dias: [0, 7, 21], umbral: 70, ya_bajo: 0, cruzan_7: 1, cruzan_14: 0, temas: [{ tema_id: "t1", tema: "Decisiones", n: 2, curva: [90, 80, 60] }],
+      cruces: [{ concepto_id: "c1", concepto: "La escasez", tema: "Decisiones", dia: 12 }, { concepto_id: "c2", concepto: "Otro", tema: "Sistemas", dia: 3 }] };
+    const d = datosTema(a, "t1")!;
+    expect(d).toMatchObject({ nombre: "Decisiones", ahora: 60, delta: 10, cruce: 12, recuerda: true });
+    expect(d.puntos).toHaveLength(2);
+    expect(d.trampa).toEqual({ trampa: "confunde escasez con pobreza", n: 4 });
+    expect(d.debil).toEqual({ concepto: "Coste de oportunidad", percent: 12 });
+    expect(datosTema(a, "t2")).toMatchObject({ cruce: 3, recuerda: false, trampa: null, debil: null });
+    expect(datosTema(a, "nada")).toBeNull();
+  });
+
+  it("las_conclusiones_de_mas_analisis_salen_de_los_datos", () => {
+    const c = conclusionesMas(analytics(), pendientes(analytics().evolucion, ordenPanal(MAP.hexes)));
+    expect(c.dificultad).toBe("Aciertas el 65 % en el nivel 1 y el 45 % en el nivel 5");
+    expect(c.horas).toBe("Tu mejor hora son las 20:00");
+    expect(c.semana).toBe("Rindes mejor el miércoles");
+    expect(c.debiles).toBe("Coste de oportunidad, con el 12 %");
+    expect(c.trampas).toBe("confunde escasez con pobreza, 4 veces");
+  });
+});
+
 describe("historial: pantalla", () => {
   it("shows_the_summary_and_every_analysis_section", async () => {
     const c = client();
@@ -102,14 +150,15 @@ describe("historial: pantalla", () => {
     expect(c.analytics).toHaveBeenCalledWith("a1", 0);
     const resumen = screen.getByRole("region", { name: "Resumen del periodo" });
     expect(within(resumen).getByText("120")).toBeInTheDocument();
-    expect(within(resumen).getByText("20:00")).toBeInTheDocument();
-    expect(within(resumen).getByText(/\+6 puntos/)).toBeInTheDocument();
-    for (const h of ["Actividad", "Evolución del dominio", "Acierto por hora del día", "Acierto por día de la semana",
+    expect(within(resumen).getByRole("heading", { level: 2, name: "Subes 6 puntos desde que empezaste" })).toBeInTheDocument();
+    expect(within(screen.getByRole("heading", { name: "Más cifras" }).closest("details")!).getByText("20:00")).toBeInTheDocument();
+    for (const h of [/^Practicaste 2 de los últimos \d+ días$/, "Evolución del dominio", "Acierto por hora del día", "Acierto por día de la semana",
       "Fatiga dentro de la sesión", "Velocidad y acierto", "Acierto por dificultad", "Trampas en las que más caes", "Conceptos más débiles",
       "Preguntas que más fallas", "Sesiones recientes"]) {
       expect(screen.getByRole("heading", { name: h })).toBeInTheDocument();
     }
     expect(screen.getByRole("img", { name: /^Actividad: .*2 días con práctica, 25 respuestas/ })).toBeInTheDocument();
+    expect(screen.getByRole("region", { name: "Qué se mueve" })).toHaveTextContent("2 temas suben");
     expect(screen.queryByRole("heading", { name: "Calibración de la confianza" })).toBeNull(); // ya no se marca confianza
     expect(screen.getByText("confunde escasez con pobreza")).toBeInTheDocument();
     expect(screen.queryByText(/racha/i)).toBeNull();
@@ -152,6 +201,42 @@ describe("historial: pantalla", () => {
     expect(nota).toHaveTextContent(/menos de 5 respuestas/);
     expect(screen.getByText("Aún no")).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Acierto por dificultad" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 2, name: "Estás empezando" })).toBeInTheDocument(); // y la cabecera no presume de una conclusión
+    expect(screen.queryByRole("heading", { name: /^Subes/ })).toBeNull();
+  });
+
+  it("tocar_un_tema_abre_su_historia_y_escape_la_cierra_devolviendo_el_foco", async () => {
+    const a = analytics();
+    a.conceptos = [{ concepto_id: "c1", concepto: "La escasez", subtema: "La escasez", n: 6, aciertos_pct: 40, ritmo: 1.2 }];
+    a.olvido = { dias: [0, 7, 21], umbral: 70, ya_bajo: 0, cruzan_7: 1, cruzan_14: 0, temas: [{ tema_id: "t1", tema: "Decisiones", n: 2, curva: [90, 80, 60] }],
+      cruces: [{ concepto_id: "c1", concepto: "La escasez", tema: "Decisiones", dia: 12 }] };
+    const user = userEvent.setup();
+    render(<History asignaturaId="a1" client={client(a)} mes="2026-11-12" />);
+    const mueve = await screen.findByRole("region", { name: "Qué se mueve" });
+    const fila = within(mueve).getByRole("button", { name: /^Decisiones/ });
+    await user.click(fila);
+    const dlg = screen.getByRole("dialog", { name: "Decisiones" });
+    expect(dlg).toHaveTextContent("Dominio 60 %, 10 puntos más");
+    expect(dlg).toHaveTextContent("Bajará del 70 % en 12 días");
+    expect(dlg).toHaveTextContent("confunde escasez con pobreza, 4 veces");
+    expect(within(dlg).getByRole("button", { name: "Cerrar" })).toHaveFocus();
+    await user.keyboard("{Escape}");
+    expect(screen.queryByRole("dialog")).toBeNull();
+    expect(fila).toHaveFocus();
+  });
+
+  it("que_repasar_enseña_los_temas_que_mas_olvidaras_y_se_oculta_sin_curva", async () => {
+    const a = analytics();
+    a.olvido = { dias: [0, 7, 21], umbral: 70, ya_bajo: 0, cruzan_7: 1, cruzan_14: 0, cruces: [], temas: [
+      { tema_id: "t1", tema: "Decisiones", n: 2, curva: [90, 66, 60] }, { tema_id: "t2", tema: "Sistemas", n: 2, curva: [95, 92, 88] }] };
+    const { unmount } = render(<History asignaturaId="a1" client={client(a)} mes="2026-11-12" />);
+    const r = await screen.findByRole("region", { name: "Qué repasar" });
+    expect(within(r).getByRole("heading", { name: "En 7 días 1 concepto bajará del 70 %" })).toBeInTheDocument();
+    expect(r).toHaveTextContent(/Decisiones.*90 % hoy, 66 % en 7 días/);
+    unmount();
+    render(<History asignaturaId="a1" client={client()} mes="2026-11-12" />);
+    await screen.findByRole("region", { name: "Qué se mueve" });
+    expect(screen.queryByRole("region", { name: "Qué repasar" })).toBeNull();
   });
 
   it("empty_state_without_answers_and_shortcut_to_full_history", async () => {

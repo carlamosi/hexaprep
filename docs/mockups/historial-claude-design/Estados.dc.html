@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial A, estados</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.btn{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible{outline:3px solid #8E3F70;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; box-sizing: border-box; font-family: 'Lexend', system-ui, sans-serif; background: #FBF9F6; color: #231D27; display: flex; flex-direction: column; gap: 14px; padding: 24px 16px 40px">
+
+  <p style="margin: 0 4px; font-size: 13px; font-weight: 600; color: #554C5A">Pocos datos (menos de 5 respuestas)</p>
+  <p role="note" style="display: flex; align-items: flex-start; gap: 12px; margin: 0; padding: 14px 16px; border-radius: 16px; background: #F8EEF4; box-shadow: 0 0 0 1px #EBD4E2; font-size: 14px; line-height: 1.45">
+    <svg viewBox="0 0 14 12" width="18" height="16" aria-hidden="true" style="flex: none; margin-top: 3px"><defs><pattern id="rayas" width="4" height="4" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="4" stroke="#8E3F70" stroke-width="1.6"/></pattern></defs><polygon points="3.5,0.7 10.5,0.7 13.3,6 10.5,11.3 3.5,11.3 0.7,6" fill="url(#rayas)" stroke="#8E3F70" stroke-width="1.2"/></svg>
+    <span><b>3 respuestas.</b> Aún son pocas: los porcentajes cambiarán mucho. Lo rayado es una primera pista, no una conclusión.</span>
+  </p>
+  <section aria-label="Resumen" style="display: flex; align-items: center; gap: 16px; padding: 18px; border-radius: 24px; color: #FBEFF6; background: radial-gradient(circle at 30% 20%, #9B4488 0, #5A2556 48%, #2A1030 100%)">
+    <svg viewBox="0 0 96 83" width="96" height="83" aria-hidden="true" style="flex: none"><defs><pattern id="rayas2" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#4A1E4C"/><line x1="0" y1="0" x2="0" y2="6" stroke="#E27FB8" stroke-width="2"/></pattern></defs><polygon points="24,2 72,2 94,41.5 72,81 24,81 2,41.5" fill="url(#rayas2)" stroke="#F7C6E0" stroke-width="2" stroke-dasharray="5 4" stroke-linejoin="round"/><text x="48" y="50" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="26" font-weight="600" fill="#FFF6FB">1 %</text></svg>
+    <div><h2 style="margin: 0; font-size: 20px; font-weight: 600; line-height: 1.25">Estás empezando</h2><p style="margin: 6px 0 0; font-size: 14px; line-height: 1.4; color: rgba(251,239,246,.82)">Con 5 respuestas empezaremos a contarte qué se mueve.</p></div>
+  </section>
+
+  <p style="margin: 18px 4px 0; font-size: 13px; font-weight: 600; color: #554C5A">Periodo de 7 días sin respuestas</p>
+  <div role="group" aria-label="Periodo" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: #ECE6E9">
+    <button class="btn" type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 10px; background: #FFFFFF; color: #231D27; font: 600 15px 'Lexend', system-ui, sans-serif; box-shadow: 0 1px 3px rgba(42,16,48,.18); cursor: pointer">7 días</button>
+    <button class="btn" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">30 días</button>
+    <button class="btn" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">Todo</button>
+  </div>
+  <section aria-label="Sin respuestas" style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 28px 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9; text-align: center">
+    <svg viewBox="0 0 92 80" width="92" height="80" aria-hidden="true"><polygon points="76,40 61,66 31,66 16,40 31,14 61,14" fill="none" stroke="#8F8195" stroke-width="2.5" stroke-dasharray="5 5" stroke-linejoin="round"/></svg>
+    <h2 style="margin: 0; font-size: 18px; font-weight: 600">Sin respuestas en estos 7 días</h2>
+    <p style="margin: 0; max-width: 280px; font-size: 14px; line-height: 1.5; color: #554C5A">No has practicado en este periodo. Tu historial completo sigue ahí.</p>
+    <button class="btn" type="button" style="margin-top: 6px; min-height: 48px; padding: 0 24px; border: 1px solid #DAD1D6; border-radius: 12px; background: #FFFFFF; color: #8E3F70; font: 500 16px 'Lexend', system-ui, sans-serif; cursor: pointer">Ver todo el historial</button>
+  </section>
+
+  <p style="margin: 18px 4px 0; font-size: 13px; font-weight: 600; color: #554C5A">Cargando (con la silueta de lo que viene)</p>
+  <div role="status" aria-busy="true" aria-label="Cargando el historial" style="display: flex; flex-direction: column; gap: 14px">
+    <div style="height: 150px; border-radius: 24px; background: linear-gradient(90deg, #ECE6E9, #F5F0F3, #ECE6E9)"></div>
+    <div style="padding: 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9; display: flex; flex-direction: column; gap: 12px">
+      <div style="width: 70%; height: 16px; border-radius: 8px; background: #ECE6E9"></div>
+      <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px">
+        <sc-for list="{{celdas}}" as="c" hint-placeholder-count="21"><div style="aspect-ratio: 8 / 7; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #F1EBEF"></div></sc-for>
+      </div>
+    </div>
+    <div style="padding: 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9; display: flex; flex-direction: column; gap: 12px">
+      <div style="width: 60%; height: 16px; border-radius: 8px; background: #ECE6E9"></div>
+      <div style="height: 8px; border-radius: 4px; background: #F1EBEF"></div><div style="height: 8px; border-radius: 4px; background: #F1EBEF; width: 80%"></div><div style="height: 8px; border-radius: 4px; background: #F1EBEF; width: 55%"></div>
+    </div>
+  </div>
+  <p style="margin: 0 4px; font-size: 12px; color: #6F6675">Con «reducir movimiento» las siluetas no se animan; si no, un brillo suave recorre el bloque.</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() { return { celdas: Array.from({ length: 21 }, () => ({})) }; }
+}
+</script>
+</body>
+</html>

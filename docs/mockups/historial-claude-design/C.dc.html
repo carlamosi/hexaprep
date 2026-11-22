@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial C, dudas o no lo sabes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.btn:focus-visible,.seg:focus-visible,.tab:focus-visible{outline:3px solid #8E3F70;outline-offset:-3px}
+.btn{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.btn:active{transform:scale(.97)}
+</style>
+</helmet>
+<div style="width: 390px; box-sizing: border-box; font-family: 'Lexend', system-ui, sans-serif; background: #FBF9F6; color: #231D27; display: flex; flex-direction: column; gap: 20px; padding: 24px 16px 40px">
+
+  <header style="display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+      <h1 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.02em">Historial</h1>
+      <button class="btn" type="button" aria-label="Guardados" style="display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #DAD1D6; border-radius: 12px; background: #FFFFFF; color: #8E3F70; cursor: pointer"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round"><path d="M3.5 2h9v12L8 10.8 3.5 14z"/></svg></button>
+    </div>
+    <div role="group" aria-label="Periodo" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: #ECE6E9">
+      <button class="seg" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">7 días</button>
+      <button class="seg" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">30 días</button>
+      <button class="seg" type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 10px; background: #FFFFFF; color: #231D27; font: 600 15px 'Lexend', system-ui, sans-serif; box-shadow: 0 1px 3px rgba(42,16,48,.18); cursor: pointer">Todo</button>
+    </div>
+  </header>
+
+  <dl style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0">
+    <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 12px 14px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums">38 %</dd><dt style="font-size: 12px; color: #6F6675">dominio, +6 puntos</dt></div>
+    <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 12px 14px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums">74 %</dd><dt style="font-size: 12px; color: #6F6675">de acierto</dt></div>
+    <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 12px 14px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums">142</dd><dt style="font-size: 12px; color: #6F6675">respuestas</dt></div>
+  </dl>
+
+  <div role="tablist" aria-label="Qué mirar" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid #DAD1D6">
+    <button class="tab" type="button" role="tab" aria-selected="false" style="min-height: 48px; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px; background: none; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">Constancia</button>
+    <button class="tab" type="button" role="tab" aria-selected="true" style="min-height: 48px; border: 0; border-bottom: 3px solid #8E3F70; margin-bottom: -1px; background: none; color: #231D27; font: 600 15px 'Lexend', system-ui, sans-serif; cursor: pointer">Memoria</button>
+    <button class="tab" type="button" role="tab" aria-selected="false" style="min-height: 48px; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px; background: none; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">Rendimiento</button>
+  </div>
+
+  <section aria-label="Dudas" style="padding: 20px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9">
+    <h2 style="margin: 0 4px; font-size: 17px; font-weight: 600; line-height: 1.3; text-wrap: balance">4 conceptos los aciertas, pero te cuestan</h2>
+    <p style="margin: 6px 4px 8px; font-size: 13px; line-height: 1.45; color: #6F6675">Cada hexágono es un concepto con 3 o más respuestas. A la derecha de «lo esperado» tardas más de lo normal; por encima del 70 % aciertas.</p>
+    <svg viewBox="0 0 340 300" width="100%" role="img" aria-label="Dispersión de conceptos: tiempo frente a acierto. Cuatro conceptos aparecen arriba a la derecha, los que aciertas pero te cuestan." style="display: block">
+      <line x1="40" y1="16" x2="40" y2="260" stroke="#DAD1D6"/><line x1="40" y1="260" x2="328" y2="260" stroke="#DAD1D6"/>
+      <line x1="40" y1="{{y70}}" x2="328" y2="{{y70}}" stroke="#6F6675" stroke-dasharray="4 4"/>
+      <text x="326" y="{{y70t}}" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">70 %</text>
+      <line x1="{{x1}}" y1="16" x2="{{x1}}" y2="260" stroke="#6F6675"/>
+      <text x="46" y="32" font-family="Lexend, system-ui, sans-serif" font-size="12" font-weight="500" fill="#554C5A">Dominado</text>
+      <text x="{{x1t}}" y="32" font-family="Lexend, system-ui, sans-serif" font-size="12" font-weight="600" fill="#8E3F70">Dudas</text>
+      <text x="46" y="252" font-family="Lexend, system-ui, sans-serif" font-size="12" font-weight="500" fill="#554C5A">Descuido</text>
+      <text x="{{x1t}}" y="252" font-family="Lexend, system-ui, sans-serif" font-size="12" font-weight="500" fill="#554C5A">No lo sabes</text>
+      <sc-for list="{{puntos}}" as="p" hint-placeholder-count="14">
+        <polygon points="{{p.pts}}" fill="{{p.fill}}" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round"/>
+      </sc-for>
+      <sc-for list="{{ticksX}}" as="t" hint-placeholder-count="4">
+        <text x="{{t.x}}" y="278" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">{{t.l}}</text>
+      </sc-for>
+      <text x="40" y="12" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">100 %</text>
+      <text x="34" y="263" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">0</text>
+      <text x="184" y="296" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#6F6675">Tiempo frente a lo esperado</text>
+    </svg>
+    <button class="btn" type="button" style="width: 100%; margin-top: 12px; min-height: 48px; border: 0; border-radius: 12px; background: #8E3F70; color: #FFFFFF; font: 500 16px 'Lexend', system-ui, sans-serif; box-shadow: 0 4px 0 #5A2556; cursor: pointer">Practicar los 4 que dudas</button>
+  </section>
+
+  <section aria-label="Olvido" style="padding: 20px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9">
+    <h2 style="margin: 0 4px; font-size: 17px; font-weight: 600; line-height: 1.3; text-wrap: balance">El tema 2 bajará del 70 % en 6 días</h2>
+    <p style="margin: 6px 4px 8px; font-size: 13px; line-height: 1.45; color: #6F6675">Lo que recordarás de cada tema en 21 días si no repasas.</p>
+    <ul style="display: flex; flex-wrap: wrap; gap: 14px; margin: 0 4px 8px; padding: 0; list-style: none; font-size: 12px; color: #554C5A">
+      <li style="display: inline-flex; align-items: center; gap: 6px"><svg viewBox="0 0 22 6" width="22" height="6" aria-hidden="true"><line x1="0" y1="3" x2="22" y2="3" stroke="#8E3F70" stroke-width="2.5"/></svg>Tema 2</li>
+      <li style="display: inline-flex; align-items: center; gap: 6px"><svg viewBox="0 0 22 6" width="22" height="6" aria-hidden="true"><line x1="0" y1="3" x2="22" y2="3" stroke="#5854B0" stroke-width="2.5" stroke-dasharray="6 3"/></svg>Tema 1</li>
+      <li style="display: inline-flex; align-items: center; gap: 6px"><svg viewBox="0 0 22 6" width="22" height="6" aria-hidden="true"><line x1="0" y1="3" x2="22" y2="3" stroke="#8A5C38" stroke-width="2.5" stroke-dasharray="1 4" stroke-linecap="round"/></svg>Tema 3</li>
+    </ul>
+    <svg viewBox="0 0 340 220" width="100%" role="img" aria-label="Curvas de olvido de tres temas durante 21 días. El tema 2 cruza el 70 por ciento en el día 6." style="display: block">
+      <line x1="40" y1="12" x2="40" y2="190" stroke="#DAD1D6"/><line x1="40" y1="190" x2="316" y2="190" stroke="#DAD1D6"/>
+      <line x1="40" y1="{{o70}}" x2="316" y2="{{o70}}" stroke="#6F6675" stroke-dasharray="4 4"/>
+      <text x="36" y="{{o70t}}" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">70 %</text>
+      <text x="36" y="16" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">100</text>
+      <text x="36" y="193" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">40</text>
+      <sc-for list="{{curvas}}" as="c" hint-placeholder-count="3">
+        <path d="{{c.d}}" fill="none" stroke="{{c.col}}" stroke-width="2.5" stroke-dasharray="{{c.dash}}" stroke-linecap="round" stroke-linejoin="round"/>
+      </sc-for>
+      <circle cx="{{cruceX}}" cy="{{o70}}" r="6" fill="#FFFFFF" stroke="#8E3F70" stroke-width="2.5"/>
+      <text x="{{cruceX}}" y="{{cruceT}}" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="12" font-weight="600" fill="#231D27">día 6</text>
+      <sc-for list="{{ticksD}}" as="t" hint-placeholder-count="4">
+        <text x="{{t.x}}" y="208" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">{{t.l}}</text>
+      </sc-for>
+      <text x="316" y="220" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#6F6675">días sin repasar</text>
+    </svg>
+  </section>
+
+  <section aria-label="Sesiones" style="padding: 20px 16px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9">
+    <h2 style="margin: 0 4px; font-size: 17px; font-weight: 600; line-height: 1.3; text-wrap: balance">Tus 3 últimas sesiones superan tu media</h2>
+    <p style="margin: 6px 4px 8px; font-size: 13px; line-height: 1.45; color: #6F6675">Acierto de las 10 últimas sesiones, de la más antigua a la más reciente. P práctica, R repaso de fallos, N test de nivel.</p>
+    <svg viewBox="0 0 340 170" width="100%" role="img" aria-label="Acierto de las diez últimas sesiones; las tres últimas están por encima de la media del 74 por ciento." style="display: block">
+      <line x1="30" y1="{{m74}}" x2="334" y2="{{m74}}" stroke="#6F6675" stroke-dasharray="4 4"/>
+      <text x="26" y="{{m74t}}" text-anchor="end" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">74</text>
+      <line x1="30" y1="140" x2="334" y2="140" stroke="#DAD1D6"/>
+      <sc-for list="{{barras}}" as="b" hint-placeholder-count="10">
+        <g>
+          <path d="{{b.d}}" fill="{{b.fill}}"/>
+          <text x="{{b.cx}}" y="156" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="11" fill="#554C5A">{{b.l}}</text>
+          <text x="{{b.cx}}" y="{{b.ty}}" text-anchor="middle" font-family="Lexend, system-ui, sans-serif" font-size="11" font-weight="600" fill="#231D27">{{b.v}}</text>
+        </g>
+      </sc-for>
+    </svg>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2250}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const px = (x) => 40 + ((x - 0.4) / 1.8) * 288;
+    const py = (y) => 16 + (100 - y) * 2.44;
+    const hex = (cx, cy, r) => Array.from({ length: 6 }, (_, i) => {
+      const a = (Math.PI / 180) * 60 * i;
+      return (cx + r * Math.cos(a)).toFixed(1) + ',' + (cy + r * Math.sin(a)).toFixed(1);
+    }).join(' ');
+    const grupos = [
+      { fill: '#8F8195', pts: [[0.6, 92], [0.75, 88], [0.85, 95], [0.9, 78], [0.55, 81]] },
+      { fill: '#8E3F70', pts: [[1.3, 85], [1.55, 90], [1.8, 76], [2.0, 82]] },
+      { fill: '#8F8195', pts: [[0.7, 52], [0.9, 40], [1.4, 45], [1.7, 30], [1.2, 60]] },
+    ];
+    const puntos = [];
+    grupos.forEach((g) => g.pts.forEach(([x, y]) => puntos.push({ pts: hex(px(x), py(y), g.fill === '#8E3F70' ? 9 : 7.5), fill: g.fill })));
+    const ticksX = [0.5, 1, 1.5, 2].map((v) => ({ x: px(v), l: '×' + String(v).replace('.', ',') }));
+    const ox = (d) => 40 + (d / 21) * 276;
+    const oy = (p) => 12 + ((100 - p) / 60) * 178;
+    const curva = (s) => Array.from({ length: 22 }, (_, d) => (d === 0 ? 'M' : 'L') + ox(d).toFixed(1) + ',' + oy(Math.max(40, 100 * Math.exp(-d / s))).toFixed(1)).join(' ');
+    const sess = [58, 66, 61, 72, 70, 79, 83, 77, 81, 85];
+    const modos = ['P', 'P', 'R', 'P', 'N', 'P', 'R', 'P', 'P', 'R'];
+    const by = (v) => 140 - (v / 100) * 110;
+    const barras = sess.map((v, i) => {
+      const x = 34 + i * 30.4, w = 22, top = by(v), r = 4;
+      return { d: 'M' + x + ',140 V' + (top + r) + ' Q' + x + ',' + top + ' ' + (x + r) + ',' + top + ' H' + (x + w - r) + ' Q' + (x + w) + ',' + top + ' ' + (x + w) + ',' + (top + r) + ' V140 Z', fill: v > 74 && i >= 7 ? '#8E3F70' : '#9C7C92', cx: x + w / 2, l: modos[i], ty: top - 5, v: String(v) };
+    });
+    return {
+      y70: py(70), y70t: py(70) - 4, x1: px(1), x1t: px(1) + 6, puntos, ticksX,
+      o70: oy(70), o70t: oy(70) + 4, cruceX: ox(6), cruceT: oy(70) - 12,
+      curvas: [
+        { d: curva(16.8), col: '#8E3F70', dash: '0' },
+        { d: curva(39), col: '#5854B0', dash: '7 4' },
+        { d: curva(90), col: '#8A5C38', dash: '1 5' },
+      ],
+      ticksD: [0, 7, 14, 21].map((d) => ({ x: ox(d), l: String(d) })),
+      m74: by(74), m74t: by(74) + 4, barras,
+    };
+  }
+}
+</script>
+</body>
+</html>

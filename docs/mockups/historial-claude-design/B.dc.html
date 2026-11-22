@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Historial B, el panal es el historial</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+.fila:hover{background:rgba(142,63,112,.08)}
+.fila:focus-visible,.btn:focus-visible,.seg:focus-visible,.hex:focus-visible{outline:3px solid #231D27;outline-offset:-3px}
+.btn,.hex{transition:transform .16s cubic-bezier(.2,.7,.2,1)}
+.btn:active,.hex:active{transform:scale(.95)}
+</style>
+</helmet>
+<div style="width: 390px; box-sizing: border-box; font-family: 'Lexend', system-ui, sans-serif; background: #FBF9F6; color: #231D27; display: flex; flex-direction: column; gap: 22px; padding: 24px 16px 40px">
+
+  <header style="display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px">
+      <h1 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.02em">Historial</h1>
+      <button class="btn" type="button" aria-label="Guardados" style="display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #DAD1D6; border-radius: 12px; background: #FFFFFF; color: #8E3F70; cursor: pointer"><svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" style="fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round"><path d="M3.5 2h9v12L8 10.8 3.5 14z"/></svg></button>
+    </div>
+    <div role="group" aria-label="Periodo" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px; background: #ECE6E9">
+      <button class="seg" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">7 días</button>
+      <button class="seg" type="button" aria-pressed="true" style="min-height: 40px; border: 0; border-radius: 10px; background: #FFFFFF; color: #231D27; font: 600 15px 'Lexend', system-ui, sans-serif; box-shadow: 0 1px 3px rgba(42,16,48,.18); cursor: pointer">30 días</button>
+      <button class="seg" type="button" aria-pressed="false" style="min-height: 40px; border: 0; border-radius: 10px; background: transparent; color: #554C5A; font: 500 15px 'Lexend', system-ui, sans-serif; cursor: pointer">Todo</button>
+    </div>
+  </header>
+
+  <section aria-label="Panal de dominio" style="padding: 20px 16px 18px; border-radius: 24px; color: #FBEFF6; background: radial-gradient(circle at 50% 40%, #6A2C66 0, #3E1842 55%, #2A1030 100%)">
+    <h2 style="margin: 0 4px; font-size: 20px; font-weight: 600; line-height: 1.25; text-wrap: balance">Tu panal de Català: 38 % y subiendo</h2>
+    <p style="margin: 6px 4px 0; font-size: 13px; line-height: 1.45; color: rgba(251,239,246,.82)">Cada hexágono es un tema. Toca uno para ver cómo ha ido.</p>
+    <div style="position: relative; width: 100%; max-width: 330px; height: 300px; margin: 8px auto 0">
+      <sc-for list="{{hexes}}" as="h" hint-placeholder-count="7">
+        <button class="hex" type="button" aria-label="{{h.aria}}" style="position: absolute; left: {{h.l}}; top: {{h.t}}; width: 90px; height: 78px; padding: 0; border: 0; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0; font-family: 'Lexend', system-ui, sans-serif; cursor: pointer; background: {{h.bg}}; color: {{h.fg}}">
+          <span style="font-size: 12px; font-weight: 500">{{h.t1}}</span>
+          <span style="font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums">{{h.t2}}</span>
+        </button>
+      </sc-for>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 6px; font-size: 12px; color: rgba(251,239,246,.85)">
+      <span style="display: inline-flex; align-items: center; gap: 5px"><i style="width: 14px; height: 12px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #EBD4E2"></i>menos de 20</span>
+      <span style="display: inline-flex; align-items: center; gap: 5px"><i style="width: 14px; height: 12px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #D9A3C4"></i>20 a 39</span>
+      <span style="display: inline-flex; align-items: center; gap: 5px"><i style="width: 14px; height: 12px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #B05A8F"></i>40 a 59</span>
+      <span style="display: inline-flex; align-items: center; gap: 5px"><i style="width: 14px; height: 12px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #7A3470; box-shadow: 0 0 0 1px #F7C6E0"></i>60 o más</span>
+      <span style="display: inline-flex; align-items: center; gap: 5px"><i style="width: 14px; height: 12px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: rgba(247,198,224,.18)"></i>sin tocar</span>
+    </div>
+  </section>
+
+  <section aria-label="Esta semana" style="padding: 20px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9">
+    <h2 style="margin: 0; font-size: 17px; font-weight: 600; line-height: 1.3">Esta semana: 4 días y 38 respuestas</h2>
+    <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin-top: 14px">
+      <sc-for list="{{semana}}" as="d" hint-placeholder-count="7">
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px"><div style="width: 100%; max-width: 40px; aspect-ratio: 8 / 7; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: {{d.bg}}"></div><span style="font-size: 12px; color: #6F6675">{{d.l}}</span></div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section aria-label="Lo que pide atención">
+    <h2 style="margin: 0 0 8px 4px; font-size: 14px; font-weight: 600; color: #554C5A">Lo que pide atención</h2>
+    <div style="border-radius: 18px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9; overflow: hidden">
+      <button class="fila" type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 72px; padding: 8px 16px; border: 0; background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: #231D27; text-align: left; cursor: pointer">
+        <span style="display: grid; place-items: center; flex: none; width: 40px; height: 35px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #F8EEF4"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" style="fill: none; stroke: #8E3F70; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M3 5l5 7 4-3 5 8 4-4"/></svg></span>
+        <span style="flex: 1"><span style="display: block">Hiats bajará del 70 % en 5 días</span><span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: #6F6675">Olvido</span></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: #6F6675; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <button class="fila" type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 72px; padding: 8px 16px; border: 0; border-top: 1px solid #ECE6E9; background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: #231D27; text-align: left; cursor: pointer">
+        <span style="display: grid; place-items: center; flex: none; width: 40px; height: 35px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #F8EEF4"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" style="fill: none; stroke: #8E3F70; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><path d="M12 3l9 16H3zM12 10v4M12 17v.01"/></svg></span>
+        <span style="flex: 1"><span style="display: block">Caes en la apertura de la vocal</span><span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: #6F6675">Trampa, 7 veces</span></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: #6F6675; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <button class="fila" type="button" style="display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 72px; padding: 8px 16px; border: 0; border-top: 1px solid #ECE6E9; background: none; font: 500 15px 'Lexend', system-ui, sans-serif; color: #231D27; text-align: left; cursor: pointer">
+        <span style="display: grid; place-items: center; flex: none; width: 40px; height: 35px; clip-path: polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%); background: #F8EEF4"><svg viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" style="fill: none; stroke: #8E3F70; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17v.01"/></svg></span>
+        <span style="flex: 1"><span style="display: block">3 preguntas se te resisten</span><span style="display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: #6F6675">Falladas en 2 de cada 3 intentos</span></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: #6F6675; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <section aria-label="Cifras">
+    <h2 style="margin: 0 0 8px 4px; font-size: 14px; font-weight: 600; color: #554C5A">Tus cifras</h2>
+    <dl style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0">
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 14px 16px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums">74 %</dd><dt style="font-size: 13px; color: #6F6675">de acierto</dt></div>
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 14px 16px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums">18 s</dd><dt style="font-size: 13px; color: #6F6675">tiempo medio</dt></div>
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 14px 16px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums">19:00</dd><dt style="font-size: 13px; color: #6F6675">mejor hora</dt></div>
+      <div style="display: flex; flex-direction: column-reverse; gap: 2px; padding: 14px 16px; border-radius: 16px; background: #FFFFFF; box-shadow: 0 0 0 1px #ECE6E9"><dd style="margin: 0; font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums">71 %</dd><dt style="font-size: 13px; color: #6F6675">retención tras un día</dt></div>
+    </dl>
+  </section>
+
+  <button class="btn" type="button" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; box-sizing: border-box; min-height: 56px; padding: 0 18px; border: 1px solid #DAD1D6; border-radius: 16px; background: #FFFFFF; color: #8E3F70; font: 500 16px 'Lexend', system-ui, sans-serif; text-align: left; cursor: pointer">Ver el análisis completo
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round"><path d="M9 6l6 6-6 6"/></svg>
+  </button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const nivel = (p) => (p === 0 ? { bg: 'rgba(247,198,224,.18)', fg: '#F7C6E0' } : p < 20 ? { bg: '#EBD4E2', fg: '#231D27' } : p < 40 ? { bg: '#D9A3C4', fg: '#231D27' } : p < 60 ? { bg: '#B05A8F', fg: '#FFFFFF' } : { bg: '#7A3470', fg: '#FFFFFF' });
+    const cx = 165, cy = 150, w = 96, h = 83;
+    const pos = [[0, 0], [0, -h], [0, h], [0.75 * w, -0.5 * h], [0.75 * w, 0.5 * h], [-0.75 * w, -0.5 * h], [-0.75 * w, 0.5 * h]];
+    const datos = [['T4', 56], ['T3', 52], ['T6', 18], ['T2', 41], ['T1', 31], ['T5', 29], ['T7', 0]];
+    const hexes = datos.map(([t, p], i) => {
+      const n = nivel(p);
+      return { l: (cx + pos[i][0] - 45) + 'px', t: (cy + pos[i][1] - 39) + 'px', bg: n.bg, fg: n.fg, t1: t, t2: p === 0 ? 'nuevo' : p + ' %', aria: 'Tema ' + t + ', ' + (p === 0 ? 'sin tocar' : p + ' por ciento') };
+    });
+    const act = [1, 0, 1, 0, 1, 1, 0];
+    const letras = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+    return { hexes: hexes.map((x) => ({ ...x, bg: x.bg === 'transparent' ? 'transparent' : x.bg })), semana: letras.map((l, i) => ({ l, bg: act[i] ? '#8E3F70' : '#EFE7EC' })) };
+  }
+}
+</script>
+</body>
+</html>
