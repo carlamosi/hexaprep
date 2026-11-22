@@ -90,7 +90,7 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
     return () => window.removeEventListener("scroll", f);
   }, []);
   useEffect(() => { // la barra de estado del iPhone toma el mismo color
-    const pintar = () => document.querySelector('meta[name="theme-color"]')?.setAttribute("content", tinte(acento, 0.3, esOscuro() ? 0x17 : 255) ?? "#B05A8F");
+    const pintar = () => !document.querySelector(".splash") && document.querySelector('meta[name="theme-color"]')?.setAttribute("content", tinte(acento, 0.3, esOscuro() ? 0x17 : 255) ?? "#B05A8F");
     pintar();
     window.addEventListener(CAMBIO_TEMA, pintar); // al cambiar de tema en el Perfil, la barra se repinta sin recargar
     return () => window.removeEventListener(CAMBIO_TEMA, pintar);

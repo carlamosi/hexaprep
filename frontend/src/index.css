@@ -53,13 +53,13 @@ body {
 .splash-in { display: grid; justify-items: center; gap: 4px; transition: transform .2s var(--ease-in); }
 .splash-fuera { opacity: 0; }
 .splash-fuera .splash-in { transform: scale(1.05); }
-.splash-halo { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.8); animation: splash-halo .32s var(--ease) forwards; }
-.splash-hex { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.82); animation: splash-hex .34s var(--ease) forwards; }
-.splash-sx { transform: translateX(var(--dx)); animation: splash-x .26s var(--ease) both; }
-.splash-sy { transform: translateY(var(--dy)); animation: splash-y .26s var(--ease-in-out) both; }
-.splash-sat { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.5); animation: splash-sat .26s var(--ease) forwards; }
-.splash-nombre { font-size: 1.5rem; font-weight: 600; letter-spacing: .03em; color: #FBEFF6; opacity: 0; transform: translateY(8px); animation: splash-texto .26s .22s var(--ease) forwards; }
-.splash-lema { font-size: .95rem; font-weight: 400; letter-spacing: .02em; color: rgb(251 239 246 / .75); opacity: 0; transform: translateY(6px); animation: splash-texto .26s .32s var(--ease) forwards; }
+.splash-halo { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.8); animation: splash-halo .38s var(--ease) forwards; }
+.splash-hex { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.82); animation: splash-hex .4s var(--ease) forwards; }
+.splash-sx { transform: translateX(var(--dx)); animation: splash-x .3s var(--ease) both; }
+.splash-sy { transform: translateY(var(--dy)); animation: splash-y .3s var(--ease-in-out) both; }
+.splash-sat { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.5); animation: splash-sat .3s var(--ease) forwards; }
+.splash-nombre { font-size: 1.5rem; font-weight: 600; letter-spacing: .03em; color: #FBEFF6; opacity: 0; transform: translateY(8px); animation: splash-texto .3s .36s var(--ease) forwards; }
+.splash-lema { font-size: .95rem; font-weight: 400; letter-spacing: .02em; color: rgb(251 239 246 / .75); text-align: center; text-wrap: balance; padding-inline: 24px; opacity: 0; transform: translateY(6px); animation: splash-texto .3s .5s var(--ease) forwards; }
 @keyframes splash-halo { to { opacity: 1; transform: none; } }
 @keyframes splash-hex { 0% { opacity: 0; transform: scale(.82); } 45% { opacity: 1; } 72% { transform: scale(1.05); } 100% { opacity: 1; transform: none; } }
 @keyframes splash-x { to { transform: none; } }
