@@ -54,17 +54,15 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
         <svg className="banner-marca" viewBox="-20 -20 280 280" aria-hidden="true">
           {[[120, 120], [214, 120], [167, 201], [73, 201], [26, 120], [73, 39], [167, 39]].map(([x, y], i) => <polygon key={i} points={puntosHex(x, y, 52)} fill="#fff" />)}
         </svg>
-        <button type="button" className="banner-panal" aria-label={`${t("panal.verPanal")} ${map.asignatura}`} onClick={() => setPanel(true)}>
-          <svg viewBox="0 0 60 60" aria-hidden="true">
-            {[[30, 30], [53, 30], [41.5, 50], [18.5, 50], [7, 30], [18.5, 10], [41.5, 10]].map(([x, y], i) => <polygon key={i} points={puntosHex(x, y, 11)} fill={i === 0 ? "#fff" : "none"} stroke="#fff" strokeWidth="2" strokeLinejoin="round" />)}
-          </svg>
-        </button>
         <div className="banner-txt">
           <span className="banner-kicker">{t("panal.titulo")}</span>
           <h1>{map.asignatura}</h1>
         </div>
         <p className="banner-stats">{tn("panal.temas", temas)} · {tn("panal.subtemas", map.subtemas.length)} · {tn("panal.conceptos", map.hexes.length)}</p>
-        <div className="banner-pct" aria-label={`${map.percent} ${t("panal.porCientoDominio")}`}>{map.percent}<small>&nbsp;%</small></div>
+        <button type="button" className="banner-pct" aria-label={`${t("panal.verPanal")} ${map.asignatura}, ${map.percent} %`} onClick={() => setPanel(true)}>
+          {map.percent}<small>&nbsp;%</small>
+          <svg className="banner-flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        </button>
       </section>
       <div className="flex flex-wrap items-center gap-3 py-5">
         <Buscador hexes={map.hexes} onElegir={(id) => onSelectSubtema?.(id)} />

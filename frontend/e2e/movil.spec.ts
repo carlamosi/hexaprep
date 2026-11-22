@@ -34,7 +34,7 @@ async function auditar(page: Page): Promise<Auditoria> {
 let asignaturas: Record<string, string> = {};
 
 test.beforeAll(async ({ request }) => {
-  for (const f of ["economia/T1.json", "catala/V1.json", "catala/G1.json"]) {
+  for (const f of ["economia/T1.json", "catala/V1.json", "catala/G1.json", "mates/G.json"]) {
     const r = await request.post("/api/import", { data: { ruta: banco(f) } });
     expect(r.ok(), f).toBe(true);
   }
@@ -74,6 +74,18 @@ for (const [nombre, asig, ruta] of [
     await revisar(page, nombre);
   });
 }
+
+test("movil: el banner muestra «Matemáticas» entera, en una sola línea", async ({ page }) => {
+  await abrir(page, "Matemáticas", "panal");
+  await page.waitForTimeout(500);
+  const m = await page.evaluate(() => {
+    const h = document.querySelector<HTMLElement>(".banner h1")!;
+    const r = h.getBoundingClientRect();
+    return { lineas: Math.round(r.height / parseFloat(getComputedStyle(h).lineHeight)), recortado: h.scrollWidth > h.clientWidth + 1 };
+  });
+  expect(m.lineas, "la palabra no debe partirse en dos líneas").toBe(1);
+  expect(m.recortado).toBe(false);
+});
 
 test("movil: responder una escrita y ver la corrección letra a letra", async ({ page }) => {
   await abrir(page, "Català", "practica/_/escritas");

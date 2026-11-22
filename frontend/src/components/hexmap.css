@@ -89,7 +89,7 @@
 .banner {
   --b: #5b4a8a;
   position: relative; isolation: isolate; overflow: hidden; display: grid; align-items: center; column-gap: 20px;
-  grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "panal txt pct" "panal stats pct";
+  grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "txt txt" "stats pct";
   margin-top: 28px; padding: 24px 28px; min-height: 156px; border-radius: 18px; color: #fff;
   background:
     radial-gradient(120% 140% at 0% 0%, rgb(255 255 255 / .22), transparent 55%),
@@ -108,25 +108,21 @@
   -webkit-mask-image: linear-gradient(to left, #000 15%, transparent 85%); mask-image: linear-gradient(to left, #000 15%, transparent 85%);
   }
 .banner-anim .banner-marca { animation: banner-marca-in var(--dur-enter) var(--ease) .06s both; }
-.banner-panal { grid-area: panal; position: relative; flex: none; width: 64px; height: 64px; padding: 7px; border: 0; border-radius: 16px; cursor: pointer;
-  background: linear-gradient(160deg, rgb(255 255 255 / .26), rgb(255 255 255 / .08));
-  box-shadow: inset 0 0 0 1px rgb(255 255 255 / .3), 0 4px 12px -4px rgb(0 0 0 / .35);
-  transition: transform var(--dur-ui) var(--ease), box-shadow var(--dur-ui) var(--ease), background .25s; }
-.banner-panal:focus-visible { transform: translateY(-2px); background: linear-gradient(160deg, rgb(255 255 255 / .34), rgb(255 255 255 / .12)); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .4), 0 8px 16px -6px rgb(0 0 0 / .4); }
-@media (hover: hover) and (pointer: fine) { .banner-panal:hover { transform: translateY(-2px); background: linear-gradient(160deg, rgb(255 255 255 / .34), rgb(255 255 255 / .12)); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .4), 0 8px 16px -6px rgb(0 0 0 / .4); } }
-.banner-panal:active { transform: translateY(0) scale(.97); }
-.banner-panal:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 .banner-txt { grid-area: txt; align-self: end; position: relative; min-width: 0; }
 .banner-anim .banner-txt { animation: banner-up var(--dur-enter) var(--ease) .04s both; }
 .banner-kicker { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: .7rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; opacity: .82; }
 .banner h1 { margin: 3px 0 6px; color: #fff; font-size: clamp(1.8rem, 6vw, 2.8rem); line-height: 1.04; letter-spacing: -.025em; text-shadow: 0 1px 1px rgb(0 0 0 / .18), 0 6px 18px rgb(0 0 0 / .14); text-wrap: balance; overflow-wrap: anywhere; }
-.banner-stats { grid-area: stats; align-self: start; position: relative; margin: 0; color: #fff; opacity: .88; font-size: .86rem; }
+.banner-stats { grid-area: stats; align-self: end; position: relative; margin: 0; color: #fff; opacity: .88; font-size: .86rem; }
 .banner-anim .banner-stats { animation: banner-up var(--dur-enter) var(--ease) .07s both; }
-.banner-pct { grid-area: pct; position: relative; align-self: stretch; display: flex; align-items: center; padding-left: 22px;
-  font-size: clamp(2.2rem, 8vw, 3.6rem); font-weight: 600; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums;
-  text-shadow: 0 2px 12px rgb(0 0 0 / .16); }
+.banner-pct { grid-area: pct; position: relative; align-self: end; display: flex; align-items: center; gap: 2px; min-height: 48px; padding: 4px 10px 4px 16px; border: 0; border-radius: 16px; cursor: pointer; color: #fff; font-family: inherit;
+  font-size: clamp(1.8rem, 7vw, 2.6rem); font-weight: 600; line-height: 1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; text-shadow: 0 2px 12px rgb(0 0 0 / .16);
+  background: linear-gradient(160deg, rgb(255 255 255 / .26), rgb(255 255 255 / .08)); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .3), 0 4px 12px -4px rgb(0 0 0 / .35);
+  transition: transform var(--dur-ui) var(--ease), box-shadow var(--dur-ui) var(--ease), background var(--dur-ui) var(--ease); }
 .banner-anim .banner-pct { animation: banner-up var(--dur-enter) var(--ease) .1s both; }
-.banner-pct::before { content: ""; position: absolute; left: 0; top: 14%; bottom: 14%; width: 1px; background: linear-gradient(transparent, rgb(255 255 255 / .4), transparent); }
+.banner-pct:focus-visible { transform: translateY(-2px); background: linear-gradient(160deg, rgb(255 255 255 / .34), rgb(255 255 255 / .12)); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .4), 0 8px 16px -6px rgb(0 0 0 / .4); outline: 3px solid #fff; outline-offset: 3px; }
+@media (hover: hover) and (pointer: fine) { .banner-pct:hover { transform: translateY(-2px); background: linear-gradient(160deg, rgb(255 255 255 / .34), rgb(255 255 255 / .12)); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .4), 0 8px 16px -6px rgb(0 0 0 / .4); } .banner-pct:hover .banner-flecha { transform: translateX(3px); } }
+.banner-pct:active { transform: translateY(0) scale(.97); }
+.banner-flecha { width: .62em; height: .62em; margin-left: 6px; opacity: .85; transition: transform var(--dur-ui) var(--ease); }
 .banner-pct small { font-size: .45em; font-weight: 500; opacity: .85; }
 /* mientras carga: mismo hueco, sin texto */
 .banner-sk { min-height: 156px; --b: color-mix(in srgb, var(--ink) 22%, var(--paper)); animation: none; }
@@ -135,5 +131,5 @@
 @keyframes banner-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes banner-marca-in { from { opacity: 0; transform: translateX(18px) rotate(-4deg); } to { opacity: .2; transform: none; } }
 @keyframes banner-sk { from { background-position: 120% 0; } to { background-position: -120% 0; } }
-@media (max-width: 640px) { .banner { padding: 18px; column-gap: 12px; row-gap: 12px; min-height: 0; grid-template-areas: "panal txt pct" "stats stats stats"; } .banner-txt { align-self: center; } .banner-kicker { font-size: .66rem; letter-spacing: .11em; } .banner-panal { width: 52px; height: 52px; padding: 6px; } .banner-pct { padding-left: 14px; } }
-@media (prefers-reduced-motion: reduce) { .banner-anim, .banner-anim .banner-txt, .banner-anim .banner-stats, .banner-anim .banner-pct, .banner-anim .banner-marca, .banner-sk::after { animation: none; } .banner-panal { transition: none; } }
+@media (max-width: 640px) { .banner { padding: 18px; row-gap: 10px; min-height: 0; } .banner-kicker { font-size: .66rem; letter-spacing: .11em; } .banner-stats { font-size: .8rem; } }
+@media (prefers-reduced-motion: reduce) { .banner-anim, .banner-anim .banner-txt, .banner-anim .banner-stats, .banner-anim .banner-pct, .banner-anim .banner-marca, .banner-sk::after { animation: none; } .banner-pct, .banner-flecha { transition: none; } }
