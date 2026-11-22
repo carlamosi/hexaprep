@@ -1,0 +1,30 @@
+/* Pantalla de guardados y su acceso desde el Historial */
+.hp-guardados {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 11px;
+  border: 1px solid var(--rule-2); background: var(--card); color: var(--ink); font-weight: 600; text-decoration: none;
+}
+.hp-guardados svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
+.hp-guardados:focus-visible, .gd-volver:focus-visible, .gd-quitar:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) { .hp-guardados:hover { border-color: var(--lila); color: var(--lila-ink); } }
+
+.gd { padding-bottom: 48px; }
+.gd-volver { display: inline-flex; align-items: center; gap: 4px; min-height: 44px; margin-top: 16px; color: var(--ink-2); font-weight: 600; text-decoration: none; }
+.gd-volver svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.gd-head { padding: 8px 0 22px; }
+.gd-head .lede { margin: 8px 0 16px; max-width: 60ch; text-wrap: pretty; }
+.gd-filtro { display: inline-flex; background: var(--card); }
+.hp-seg.gd-filtro button { min-height: 44px; padding-inline: 16px; }
+.gd-vacio { padding: 32px 0; color: var(--ink-2); max-width: 52ch; text-wrap: pretty; }
+.gd-lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
+.gd-card {
+  display: flex; flex-direction: column; gap: 8px; padding: 16px 18px; border: 1px solid var(--rule-2); border-radius: 14px; background: var(--card);
+  animation: gd-in var(--dur-enter) var(--ease) calc(var(--i) * 40ms) both;
+}
+.gd-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; font-size: .78rem; color: var(--ink-3); }
+.gd-tipo { padding: 2px 9px; border-radius: 99px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; font-size: .68rem; background: var(--lila-soft); color: var(--lila-ink); }
+.gd-card h2 { font-size: 1.05rem; text-wrap: balance; }
+.gd-enun { margin: 0; font-weight: 600; font-size: .92rem; }
+.gd-texto { margin: 0; color: var(--ink-2); font-size: .92rem; line-height: 1.5; text-wrap: pretty; }
+.gd-quitar { align-self: flex-start; min-height: 44px; margin-top: auto; padding: 0 4px; background: none; border: 0; color: var(--ink-2); font-weight: 600; text-decoration: underline; text-underline-offset: 4px; }
+@keyframes gd-in { from { opacity: 0; transform: translateY(8px); } }
+@media (prefers-reduced-motion: reduce) { .gd-card { animation: none; } }

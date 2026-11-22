@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import { Onboarding } from "./components/Onboarding";
+import { Guardados } from "./pages/Guardados";
 import { AppHeader } from "./components/AppHeader";
 import { useAsignatura } from "./hooks";
 import { setLang, t } from "./i18n";
@@ -28,7 +29,7 @@ export default function App() {
 
   useEffect(() => { if (route === "ajustes") go("perfil"); }, [route, go]); // enlaces antiguos
 
-  const TITULOS: Record<string, string> = { panal: "nav.panal", hoy: "nav.hoy", historial: "nav.historial", perfil: "nav.perfil" };
+  const TITULOS: Record<string, string> = { panal: "nav.panal", hoy: "nav.hoy", historial: "nav.historial", guardados: "guardados.titulo", perfil: "nav.perfil" };
   useEffect(() => { // título de la pestaña: «Català · Historial · HexaPrep»
     document.title = [nombre, TITULOS[route] ? t(TITULOS[route]) : null, t("app.nombre")].filter(Boolean).join(" · ");
   }, [nombre, route]);
@@ -42,6 +43,7 @@ export default function App() {
   else if (failed) page = <ErrorCarga />;
   else if (asignaturaId && route === "hoy") page = <Suggestions asignaturaId={asignaturaId} onPracticeSubtema={(s) => go(`subtema/${s}`)} />;
   else if (asignaturaId && route === "historial") page = <History asignaturaId={asignaturaId} />;
+  else if (asignaturaId && route === "guardados") page = <Guardados asignaturaId={asignaturaId} />;
   else if (route === "perfil") page = <Perfil asignaturaId={asignaturaId} />;
   else if (asignaturaId && route === "practica") page = <FreePractice key={`${arg}/${arg2}`} asignaturaId={asignaturaId} temaId={arg && arg !== "_" ? arg : undefined} tipos={arg2} onFinish={() => go("panal")} />;
   else if (asignaturaId && route === "subtema" && arg) page = <Subtopic asignaturaId={asignaturaId} subtemaId={arg} onBack={() => go("panal")} />;
@@ -49,7 +51,7 @@ export default function App() {
   const sinNav = route === "practica";
   return (
     <div className="min-h-dvh pb-[calc(5rem+env(safe-area-inset-bottom))] font-sans sm:pb-0">
-      <AppHeader asignatura={nombre} asignaturaId={asignaturaId} asignaturas={subjects} onCambiarAsignatura={(id) => { elegir(id); go("panal"); }} onAbrirSelector={refrescar} ruta={route} sinNav={sinNav} />
+      <AppHeader asignatura={nombre} asignaturaId={asignaturaId} asignaturas={subjects} onCambiarAsignatura={(id) => { elegir(id); go("panal"); }} onAbrirSelector={refrescar} ruta={route === "guardados" ? "historial" : route} sinNav={sinNav} />
       <Fragment key={asignaturaId}>{page}</Fragment>
       <Onboarding />
     </div>

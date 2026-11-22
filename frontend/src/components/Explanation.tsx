@@ -1,18 +1,19 @@
 import type { ReactNode } from "react";
 import type { AnswerResult } from "../api";
 import { t } from "../i18n";
-import { BookletButton } from "./BookletButton";
+import { BotonGuardar } from "./BotonGuardar";
 import { RichText } from "./RichText";
 
-/** Feedback breve tipo entrenador, explicación plegada y enlace al booklet. */
-export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta, extras }: {
-  result: AnswerResult; onNext: () => void; onMarcarBien?: () => void; siguienteBloqueado?: boolean;
+/** Feedback breve tipo entrenador y explicación plegada, que se puede guardar. */
+export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta, extras }: {
+  result: AnswerResult; onNext: () => void;
+  /** Con ellos, la explicación se puede guardar (el enunciado la identifica). */
+  preguntaId?: string; enunciado?: string; onMarcarBien?: () => void; siguienteBloqueado?: boolean;
   /** Si hay valor, la pregunta pasa sola en esos ms y se dibuja el aro de espera. */
   avanceMs?: number; onExplicacionAbierta?: () => void;
-  /** Secundario (valía, ayuda): se pliega con el booklet en «Más». */
+  /** Secundario (valía, ayuda): se pliega en «Más». */
   extras?: ReactNode;
 }) {
-  const masBooklet = !!(result.fuente_id && result.fuente_pagina);
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
       {/* En una escrita fallada el rojo de los campos ya lo dice: solo queda el aviso para lectores de pantalla */}
@@ -52,6 +53,7 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
           <p className="mt-2 text-[var(--ink-2)]">
             <RichText text={result.explicacion} />
           </p>
+          {preguntaId && enunciado && <BotonGuardar preguntaId={preguntaId} tipo="ejemplo" huella={enunciado} />}
         </details>
       )}
 
@@ -59,11 +61,10 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
         {t("practica.dominio")}: {result.percent} %
       </p>
 
-      {(masBooklet || extras) && (
+      {extras && (
         <details className="rounded-[11px] border border-[var(--rule)] px-4 py-3">
           <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.mas")}</summary>
           <div className="mt-3 space-y-3">
-            {masBooklet && <BookletButton fuenteId={result.fuente_id!} cara={result.fuente_cara} pagina={result.fuente_pagina!} />}
             {extras}
           </div>
         </details>

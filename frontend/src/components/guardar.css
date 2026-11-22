@@ -1,0 +1,15 @@
+/* Botón «Guardar»: marcador que se rellena al guardar. Táctil de 44 px; el hover solo con puntero fino. */
+.guardar {
+  display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 8px; padding: 0 14px;
+  border: 1px solid var(--rule-2); border-radius: 11px; background: var(--card); color: var(--ink-2); font-weight: 600; font-size: .9rem;
+  transition: background-color var(--dur-ui) var(--ease), color var(--dur-ui) var(--ease), border-color var(--dur-ui) var(--ease), transform var(--dur-press) var(--ease);
+}
+.guardar svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; transition: fill var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease); }
+.guardar.is-on { border-color: var(--lila); background: var(--lila-soft); color: var(--lila-ink); }
+.guardar.is-on svg { fill: currentColor; animation: guardar-pop .24s var(--ease); }
+.guardar:active:not(:disabled) { transform: scale(.97); }
+.guardar:disabled { opacity: .55; }
+.guardar:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 2px; }
+@keyframes guardar-pop { 40% { transform: scale(1.25); } }
+@media (hover: hover) and (pointer: fine) { .guardar:hover:not(:disabled):not(.is-on) { border-color: var(--lila); color: var(--lila-ink); } }
+@media (prefers-reduced-motion: reduce) { .guardar, .guardar svg { transition: none; } .guardar.is-on svg { animation: none; } }

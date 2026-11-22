@@ -157,14 +157,11 @@ describe("pantalla de práctica", () => {
     expect(heading.querySelector(".katex")).not.toBeNull(); // la fórmula válida sí se renderiza
   });
 
-  it("missing_booklet_pdf_shows_clear_message", async () => {
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({
-      ok: false, status: 404, json: async () => ({ detail: "No encuentro el PDF Economia_T1.pdf" }),
-    }));
+  it("la_correccion_ya_no_ofrece_abrir_el_booklet", async () => {
     const a = setup();
     await a.user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
-    await a.user.click(await screen.findByRole("button", { name: /Abrir el booklet en la página 3/ }));
-    expect(await screen.findByRole("alert")).toHaveTextContent("No encuentro el PDF Economia_T1.pdf");
+    await screen.findByText(/Ver explicación/);
+    expect(screen.queryByRole("button", { name: /booklet/i })).toBeNull();
   });
 
   it("long_help_is_hidden_until_the_question_is_answered", async () => {

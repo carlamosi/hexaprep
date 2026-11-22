@@ -6,6 +6,7 @@ import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 import { ErrorCarga } from "./ErrorCarga";
+import { BotonGuardar } from "./BotonGuardar";
 import { sinPrefijoTema } from "../rotulo";
 
 export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
@@ -510,7 +511,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
             </ul>
           )}
 
-          {result && <Explanation result={result} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined}
+          {result && <Explanation result={result} preguntaId={question.pregunta_id} enunciado={question.enunciado} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined}
             extras={((!result.correcta && client.current.alternativa) || question.ayuda_larga) ? <>
               {!result.correcta && client.current.alternativa && (
                 valiaEnviada
@@ -521,6 +522,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
                 <details onToggle={(e) => { if (e.currentTarget.open) senal("ayuda_abierta", question.pregunta_id); }}>
                   <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.ayuda")}</summary>
                   <p className="mt-2 text-[var(--ink-2)]"><RichText text={question.ayuda_larga} /></p>
+                  <BotonGuardar preguntaId={question.pregunta_id} tipo="ayuda" huella={question.ayuda_larga} />
                 </details>
               )}
             </> : undefined} />}

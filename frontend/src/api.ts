@@ -115,6 +115,8 @@ export interface ResumenSesion {
 }
 export type Alcance = "pregunta" | "concepto" | "tema";
 export interface Oculto { id: string; alcance: Alcance; nombre: string; claves: string[] }
+export type TipoGuardado = "ayuda" | "ejemplo";
+export interface Guardado { id: string; tipo: TipoGuardado; asignatura_id: string; concepto_id: string; titulo: string; subtema: string; tema: string; texto: string; enunciado: string | null; fecha: string }
 export interface BackupRow { ruta: string; verificada: boolean; n_eventos: number; fecha: string }
 
 async function request<T>(path: string, method = "GET", body?: unknown): Promise<T> {
@@ -167,6 +169,9 @@ export const api = {
   ocultar: (preguntaId: string, alcance: Alcance) =>
     request<Oculto>("/api/ocultos", "POST", { pregunta_id: preguntaId, alcance }),
   ocultos: () => request<Oculto[]>("/api/ocultos"),
+  guardar: (preguntaId: string, tipo: TipoGuardado) => request<Guardado>("/api/guardados", "POST", { pregunta_id: preguntaId, tipo }),
+  guardados: (asignaturaId?: string) => request<Guardado[]>(`/api/guardados${asignaturaId ? `?asignatura_id=${encodeURIComponent(asignaturaId)}` : ""}`),
+  quitarGuardado: (id: string) => request<{ ok: boolean }>(`/api/guardados/${encodeURIComponent(id)}`, "DELETE"),
   mostrarOculto: (id: string) => request<{ ok: boolean }>(`/api/ocultos/${encodeURIComponent(id)}`, "DELETE"),
   facil: (id: string, sesionId?: string) =>
     request<{ ok: boolean }>(`/api/questions/${id}/facil`, "POST", { motivo: "facil", sesion_id: sesionId ?? null }),

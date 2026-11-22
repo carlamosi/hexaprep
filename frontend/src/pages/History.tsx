@@ -15,6 +15,7 @@ import { Debiles, Dificiles, ErroresEscritura, Sesiones, Trampas } from "../comp
 import "../components/historial/historial.css";
 import { t, tn } from "../i18n";
 import { ErrorCarga } from "../components/ErrorCarga";
+import "./guardados.css";
 
 type Dias = 0 | 7 | 30;
 const RANGOS: Dias[] = [7, 30, 0];
@@ -110,6 +111,10 @@ export function History({ asignaturaId, client = api, mes }: {
           <h1>{t("hist.titulo")}</h1>
           <p className="lede">{t("hist.lede")}</p>
         </div>
+        <a className="hp-guardados" href="#guardados">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 2h9v12L8 10.8 3.5 14z" /></svg>
+          {t("hist.guardados")}
+        </a>
         <div className="hp-seg hp-range" role="group" aria-label={t("hist.rango")}>
           {RANGOS.map((d) => (
             <button key={d} type="button" aria-pressed={dias === d} onClick={() => setDias(d)}>{t(`hist.rango.${d}`)}</button>
