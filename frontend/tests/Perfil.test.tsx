@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ApiError } from "../src/api";
-import { Perfil, resumenDias } from "../src/pages/Perfil";
+import { Perfil, resumenDias, semanaDias } from "../src/pages/Perfil";
 
 function cliente(perfil: object) {
   return {
@@ -91,6 +91,43 @@ describe("perfil", () => {
     expect(await screen.findByText("Preguntas reportadas")).toBeInTheDocument();
     await waitFor(() => expect(screen.queryByRole("heading", { name: "Copia de seguridad" })).toBeNull());
     expect(screen.queryByRole("heading", { name: "Exportar datos" })).toBeNull();
+  });
+});
+
+describe("perfil rediseñado (diseño A de Claude Design)", () => {
+  it("la_semana_son_los_7_ultimos_dias_acabando_hoy_con_su_inicial", () => {
+    const s = semanaDias(["2026-11-10", "2026-11-20", "2026-11-22"], new Date(2026, 10, 22)); // domingo
+    expect(s.map((d) => d.letra).join("")).toBe("LMXJVSD");
+    expect(s.map((d) => d.activo)).toEqual([false, false, false, false, true, false, true]);
+    expect(s.map((d) => d.hoy)).toEqual([false, false, false, false, false, false, true]);
+  });
+
+  it("sin_dias_invita_a_empezar_en_vez_de_esconder_la_tarjeta", async () => {
+    const c = { ...cliente(ONLINE), history: vi.fn().mockResolvedValue({ dias: [], evolucion: [] }) };
+    render(<Perfil asignaturaId="a1" client={c} />);
+    const tarjeta = await screen.findByRole("region", { name: "Tu práctica" });
+    expect(tarjeta).toHaveTextContent("Todavía no hay días");
+    expect(tarjeta).toHaveTextContent(/primer día/);
+  });
+
+  it("en_local_la_cabecera_dice_que_el_progreso_vive_en_este_equipo", async () => {
+    render(<Perfil asignaturaId="a1" client={cliente({ email: null, nombre: "", online: false, reiniciar: false })} />);
+    expect(await screen.findByText("Perfil de este equipo")).toBeInTheDocument();
+    expect(screen.getByText(/se guarda solo en este equipo/)).toBeInTheDocument();
+  });
+
+  it("agrupa_en_preferencias_ayuda_y_datos", async () => {
+    const c = { ...cliente(ONLINE), ocultos: vi.fn().mockResolvedValue([{ id: "tema:t1", alcance: "tema", nombre: "Verbos", claves: ["q1"] }]) };
+    render(<Perfil asignaturaId="a1" client={c} />);
+    for (const n of ["Preferencias", "Ayuda", "Datos"]) expect(await screen.findByRole("heading", { name: n })).toBeInTheDocument();
+    expect(await screen.findByText("1 elemento que aún no hemos dado")).toBeInTheDocument();
+  });
+
+  it("el_reinicio_es_una_fila_con_la_explicacion_debajo_y_sigue_pidiendo_confirmacion", async () => {
+    render(<Perfil asignaturaId="a1" client={cliente(ONLINE)} />);
+    expect(await screen.findByRole("button", { name: "Reiniciar mi progreso" })).toBeInTheDocument();
+    expect(screen.getByText(/se guarda archivado, no se borra/)).toBeInTheDocument(); // visible sin abrir nada
+    expect(screen.queryByRole("alertdialog")).toBeNull();
   });
 });
 

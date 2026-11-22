@@ -1,47 +1,100 @@
-/* Perfil: las tarjetas entran en cadena (45 ms), avatar hexagonal, selector de apariencia segmentado y zona delicada al final */
+/* Perfil (diseño A de Claude Design): cartel ciruela, práctica en hexágonos, tres grupos (Preferencias, Ayuda, Datos) y el reinicio como fila roja con la explicación debajo. */
+.perfil {
+  --hero: radial-gradient(circle at 50% 30%, #9B4488 0, #5A2556 42%, #2A1030 90%);
+  --hx-vacio: color-mix(in srgb, var(--rule-2) 60%, var(--card));
+  --hx-a: #C47AA6; --hx-b: #8E3F70;
+  --sombra: 0 10px 28px rgb(42 16 48 / .12);
+}
+:root[data-theme="dark"] .perfil { --hero: radial-gradient(circle at 50% 30%, #7A3470 0, #4A1E4C 44%, #240D29 92%); --hx-a: #F0BEDB; --hx-b: #C47AA6; --sombra: 0 10px 28px rgb(0 0 0 / .45); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .perfil { --hero: radial-gradient(circle at 50% 30%, #7A3470 0, #4A1E4C 44%, #240D29 92%); --hx-a: #F0BEDB; --hx-b: #C47AA6; --sombra: 0 10px 28px rgb(0 0 0 / .45); }
+}
+
 .perfil-sec { animation: perfil-in var(--dur-enter) var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
 @keyframes perfil-in { from { opacity: 0; transform: translateY(8px); } }
 
-.perfil-avatar {
-  display: grid; place-items: center; flex: none; width: 60px; height: 54px; clip-path: var(--hex-flat); color: #FFF6FB; font-size: 1.4rem; font-weight: 600; text-shadow: 0 1px 6px rgb(42 16 48 / .45);
+/* Cartel: marca con la inicial, nombre, correo y salir. El resto de la pantalla sube sobre él */
+.perfil-hero { display: flex; flex-direction: column; align-items: center; padding: 28px 24px 84px; border-radius: 0 0 32px 32px; color: #FBEFF6; background: var(--hero); }
+.perfil-hero h1 { align-self: flex-start; margin: 0 0 18px; font-size: 22px; font-weight: 600; }
+.perfil-marca { width: 140px; height: 124px; margin-bottom: 4px; }
+.perfil-marca text { font-family: var(--font); }
+.perfil-nombre { margin: 0; font-size: 24px; font-weight: 600; text-align: center; overflow-wrap: anywhere; text-wrap: balance; }
+.perfil-correo { margin: 4px 0 0; font-size: 14px; text-align: center; color: rgb(251 239 246 / .8); overflow-wrap: anywhere; }
+.perfil-nota-local { max-width: 270px; margin-top: 6px; line-height: 1.45; text-wrap: pretty; }
+.perfil-salir { margin-top: 16px; min-height: 44px; padding: 0 22px; border: 1px solid rgb(255 246 251 / .5); border-radius: 22px; background: rgb(255 246 251 / .08); color: #FFF6FB; font: inherit; font-weight: 500; cursor: pointer;
+  transition: background-color var(--dur-press) var(--ease), transform var(--dur-press) var(--ease); }
+@media (hover: hover) and (pointer: fine) { .perfil-salir:hover { background: rgb(255 246 251 / .18); } }
+.perfil-salir:active { transform: scale(.96); }
+.perfil-salir:focus-visible { outline: 3px solid #FFF6FB; outline-offset: 3px; }
+
+/* Tu práctica: una cifra en hexágono y los 7 últimos días. Es un recuento de días, no una racha */
+.perfil-practica { display: flex; flex-direction: column; gap: 18px; margin: -52px 16px 0; padding: 20px; border-radius: 22px; background: var(--card); box-shadow: var(--sombra), 0 0 0 1px var(--rule); }
+.perfil-practica h2 { margin: 0; font-size: 17px; font-weight: 600; }
+.perfil-practica-cifra { display: flex; align-items: center; gap: 18px; }
+.perfil-practica-cifra b { display: block; font-size: 15px; font-weight: 600; }
+.perfil-practica-cifra small { display: block; margin-top: 2px; font-size: 13px; line-height: 1.45; color: var(--ink-3); text-wrap: pretty; }
+.perfil-hex-n { display: grid; place-items: center; flex: none; width: 92px; height: 80px; clip-path: var(--hex-flat); color: #FFF6FB; font-size: 32px; font-weight: 600; font-variant-numeric: tabular-nums;
   /* igual que el fondo del icono: luz rosa en el centro sobre el degradado ciruela */
-  background: radial-gradient(circle at 50% 46%, rgb(226 127 184 / .95) 0, rgb(176 90 143 / .4) 52%, transparent 80%), linear-gradient(180deg, #7A3470, #4A1E4C 55%, #2A1030);
-}
+  background: radial-gradient(circle at 50% 44%, rgb(226 127 184 / .9) 0, rgb(176 90 143 / .4) 55%, transparent 82%), linear-gradient(180deg, #7A3470, #4A1E4C 55%, #2A1030); }
+.perfil-hex-vacio { flex: none; width: 92px; height: 80px; }
+.perfil-hex-vacio polygon { fill: none; stroke: var(--ink-3); stroke-width: 2.5; stroke-dasharray: 5 5; stroke-linejoin: round; }
+.perfil-hex-vacio text { font-family: var(--font); font-size: 28px; font-weight: 600; fill: var(--ink-3); }
+.perfil-semana-cab { display: flex; align-items: baseline; justify-content: space-between; margin: 0 0 10px; font-size: 14px; }
+.perfil-semana-cab span { font-weight: 500; color: var(--ink-2); }
+.perfil-semana-cab b { font-weight: 600; font-variant-numeric: tabular-nums; }
+.perfil-semana { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.perfil-semana li { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.perfil-semana .hx { width: 100%; max-width: 40px; aspect-ratio: 8 / 7; clip-path: var(--hex-flat); background: var(--hx-vacio);
+  animation: perfil-hx var(--dur-enter) var(--ease) both; animation-delay: calc(260ms + var(--k, 0) * 45ms); }
+.perfil-semana .hx.on { background: linear-gradient(180deg, var(--hx-a), var(--hx-b)); }
+.perfil-semana .dia { font-size: 12px; color: var(--ink-3); }
+.perfil-semana .es-hoy .dia { font-weight: 600; color: var(--lila-ink); }
+@keyframes perfil-hx { from { opacity: 0; transform: scale(.6); } }
+.perfil-nota { margin: 0; font-size: 13px; line-height: 1.45; color: var(--ink-3); text-wrap: pretty; }
+
+/* Cuerpo: tres grupos de filas */
+.perfil-cuerpo { display: flex; flex-direction: column; gap: 26px; padding: 28px 16px 24px; }
+.perfil-h2 { margin: 0 0 8px 4px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.perfil-grupo { overflow: hidden; border-radius: 18px; background: var(--card); box-shadow: 0 0 0 1px var(--rule); }
+.perfil-grupo > * + * { border-top: 1px solid var(--rule); }
+.perfil-fila { display: flex; align-items: center; gap: 14px; width: 100%; box-sizing: border-box; min-height: 60px; padding: 0 16px; border: 0; background: none; color: var(--ink); font: inherit; font-weight: 500; text-align: left; cursor: pointer; list-style: none;
+  transition: background-color var(--dur-press) var(--ease); }
+.perfil-fila::-webkit-details-marker { display: none; }
+.perfil-fila::after { content: ""; flex: none; width: 8px; height: 8px; margin-left: auto; border: solid var(--ink-3); border-width: 0 2px 2px 0; transform: rotate(-45deg); transition: transform var(--dur-ui) var(--ease); }
+details[open] > .perfil-fila::after { transform: rotate(45deg); }
+@media (hover: hover) and (pointer: fine) { .perfil-fila:not(.perfil-fila-quieta):hover { background: var(--lila-soft); } }
+.perfil-fila:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: -3px; }
+.perfil-ico { flex: none; width: 22px; height: 22px; fill: none; stroke: var(--lila-ink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.perfil-fila-txt b { display: block; font-weight: 500; }
+.perfil-fila-txt small { display: block; margin-top: 2px; font-size: .8125rem; font-weight: 400; line-height: 1.35; color: var(--ink-3); }
+.perfil-fila-quieta { cursor: default; }
+.perfil-fila-quieta::after, .perfil-fila-ko::after { content: none; }
+.perfil-fila-quieta .perfil-ico { stroke: var(--ink-3); }
+.perfil-fila-ko { justify-content: center; min-height: 56px; color: var(--ko); }
+@media (hover: hover) and (pointer: fine) { .perfil-fila-ko:hover { background: var(--ko-soft); } }
+.perfil-fila-ko:focus-visible { outline-color: var(--ko); }
+.perfil-detalle { margin: 0; padding: 16px; border-top: 1px solid var(--rule); list-style: none; }
+.perfil-nota-pie { margin: 8px 8px 0; }
+
+/* Reinicio: confirmación dentro del mismo grupo, en rojo suave */
+.perfil-conf { display: flex; flex-direction: column; gap: 10px; margin: 12px; padding: 16px; border: 1px solid var(--ko); border-radius: 12px; background: var(--ko-soft); }
+.perfil-ko { min-height: 44px; padding: 8px 16px; border: 1px solid var(--ko); border-radius: 11px; background: transparent; color: var(--ko); font: inherit; font-weight: 500; cursor: pointer;
+  transition: background-color var(--dur-press) var(--ease), transform var(--dur-press) var(--ease); }
+.perfil-ko:active { transform: scale(.96); }
+.perfil-ko-solido { background: var(--ko); color: var(--on-ink); }
+@media (hover: hover) and (pointer: fine) { .perfil-ko-solido:hover { background: var(--ko); filter: brightness(1.08); } }
 
 /* Apariencia: interruptores de fila entera. El pulgar se estira al pulsar (squash) y recorre el carril; el modo oscuro cambia sol por luna */
-.sw-grupo { display: grid; }
-.sw-fila { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 6px 2px; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
-.sw-fila + .sw-fila { border-top: 1px solid var(--rule); }
-.sw-txt { display: flex; flex: 1; align-items: center; gap: 10px; font-weight: 500; }
-.sw-txt svg { width: 20px; height: 20px; flex: none; fill: none; stroke: var(--lila-ink); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.sw-fila { display: flex; align-items: center; gap: 14px; width: 100%; min-height: 60px; padding: 0 16px; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; transition: background-color var(--dur-press) var(--ease); }
+@media (hover: hover) and (pointer: fine) { .sw-fila:hover { background: var(--lila-soft); } }
+.sw-txt { display: flex; flex: 1; align-items: center; gap: 14px; font-weight: 500; }
 .sw { position: relative; flex: none; width: 52px; height: 32px; border-radius: 99px; background: var(--rule-2); transition: background-color var(--dur-ui) var(--ease); }
 .sw-pulgar { position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 99px; background: #fff; box-shadow: 0 1px 3px rgb(0 0 0 / .35); transition: transform var(--dur-ui) var(--ease), width var(--dur-press) var(--ease); }
 .sw-fila[aria-checked="true"] .sw { background: var(--lila); }
 .sw-fila[aria-checked="true"] .sw-pulgar { transform: translateX(20px); }
 .sw-fila:active .sw-pulgar { width: 30px; }
 .sw-fila[aria-checked="true"]:active .sw-pulgar { transform: translateX(14px); }
-.sw-fila:focus-visible { outline-offset: 0; border-radius: 12px; }
-
-/* Ayuda: el desplegable de instalar queda dentro de la misma tarjeta, sin otra caja */
-.perfil-det summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 500; color: var(--lila-ink); list-style: none; }
-.perfil-det summary::-webkit-details-marker { display: none; }
-.perfil-det summary::after { content: ""; width: 7px; height: 7px; margin-left: 10px; border: solid currentColor; border-width: 0 2px 2px 0; transform: rotate(-45deg); transition: transform var(--dur-ui) var(--ease); }
-.perfil-det[open] summary::after { transform: rotate(45deg); }
-
-/* Zona delicada: reiniciar. Borde y botones en rojo suave, para que no se pulse por error */
-.perfil-riesgo { border-color: color-mix(in srgb, var(--ko) 38%, var(--rule)); }
-.perfil-ko { min-height: 44px; padding: 8px 16px; border: 1px solid var(--ko); border-radius: 11px; background: transparent; color: var(--ko); font: inherit; font-weight: 500; cursor: pointer;
-  transition: background-color var(--dur-press) var(--ease), transform var(--dur-press) var(--ease); }
-@media (hover: hover) and (pointer: fine) { .perfil-ko:hover { background: var(--ko-soft); } }
-.perfil-ko:active { transform: scale(.97); }
-.perfil-ko-solido { background: var(--ko); color: var(--on-ink); }
-@media (hover: hover) and (pointer: fine) { .perfil-ko-solido:hover { background: var(--ko); filter: brightness(1.08); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .perfil-sec { animation: none; }
-  .perfil-ko, .perfil-det summary::after, .sw, .sw-pulgar { transition: none; }
-  .perfil-ko:active { transform: none; }
-}
+.sw-fila:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: -3px; }
 
 /* Interruptor del modo oscuro: un cielo. De día, rosa claro con sol; de noche, ciruela con estrellas y luna. El pulgar gira al pasar de uno a otro. */
 .sw-cielo { width: 68px; height: 36px; overflow: hidden; background: linear-gradient(180deg, #FCE3F1, #F2A9D2); box-shadow: inset 0 1px 3px rgb(42 16 48 / .18); transition: background .35s var(--ease); }
@@ -57,23 +110,24 @@
 .sw-fila[aria-checked="true"] .sw-cielo .sw-pulgar::after { opacity: 1; }
 .sw-fila:active .sw-cielo .sw-pulgar { width: 34px; }
 .sw-fila[aria-checked="true"]:active .sw-cielo .sw-pulgar { transform: translateX(26px) rotate(360deg); }
-@media (prefers-reduced-motion: reduce) { .sw-cielo, .sw-cielo::before, .sw-cielo .sw-pulgar, .sw-cielo .sw-pulgar::after { transition: none; } .sw-fila[aria-checked="true"] .sw-cielo .sw-pulgar { transform: translateX(32px); } }
 
-/* Tu práctica: tres cifras. Es un recuento de días, no una racha */
-.perfil-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin: 0; }
-.perfil-stats div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 2px; padding: 12px 14px; border-radius: 12px; background: var(--paper); min-width: 0; }
-.perfil-stats dd { margin: 0; font-size: 1.45rem; font-weight: 600; letter-spacing: -.02em; line-height: 1.15; font-variant-numeric: tabular-nums; }
-.perfil-stats dt { color: var(--ink-3); font-size: .78rem; line-height: 1.3; }
-.perfil-stats div:nth-child(2) dd { font-size: 1.05rem; padding-top: .25em; }
-@media (max-width: 420px) { .perfil-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .perfil-stats div:nth-child(2) { order: 3; grid-column: 1 / -1; } }
+@media (prefers-reduced-motion: reduce) {
+  .perfil-sec, .perfil-semana .hx { animation: none; }
+  .perfil-ko, .perfil-salir, .perfil-fila, .perfil-fila::after, .sw-fila, .sw, .sw-pulgar { transition: none; }
+  .perfil-ko:active, .perfil-salir:active { transform: none; }
+  .sw-cielo, .sw-cielo::before, .sw-cielo .sw-pulgar, .sw-cielo .sw-pulgar::after { transition: none; }
+  .sw-fila[aria-checked="true"] .sw-cielo .sw-pulgar { transform: translateX(32px); }
+}
 
-/* Herramientas: antes «Avanzado». Icono, nombre y una línea que dice qué hay dentro */
-.perfil-herr { display: flex; align-items: center; gap: 14px; min-height: 48px; cursor: pointer; list-style: none; }
-.perfil-herr::-webkit-details-marker { display: none; }
-.perfil-herr b { display: block; font-size: 1.1rem; font-weight: 600; }
-.perfil-herr small { display: block; margin-top: 2px; font-size: .84rem; color: var(--ink-3); line-height: 1.35; }
-.perfil-herr-ico { display: grid; place-items: center; flex: none; width: 38px; height: 34px; clip-path: var(--hex-flat); background: var(--lila-soft); color: var(--lila-ink); }
-.perfil-herr-ico svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
-.perfil-herr::after { content: ""; margin-left: auto; flex: none; width: 8px; height: 8px; border: solid var(--ink-3); border-width: 0 2px 2px 0; transform: rotate(-45deg); transition: transform var(--dur-ui) var(--ease); }
-details[open] > .perfil-herr::after { transform: rotate(45deg); }
-@media (prefers-reduced-motion: reduce) { .perfil-herr::after { transition: none; } }
+/* Escritorio: identidad fija a la izquierda, ajustes a la derecha */
+@media (min-width: 900px) {
+  .perfil { display: grid; grid-template-columns: minmax(300px, 380px) minmax(0, 640px); justify-content: center; align-items: start; gap: 28px; max-width: 1100px; margin: 0 auto; padding: 32px 32px 56px; }
+  .perfil-lado { display: flex; flex-direction: column; gap: 16px; position: sticky; top: 16px; }
+  .perfil-hero { padding-bottom: 28px; border-radius: 28px; }
+  .perfil-practica { margin: 0; }
+  .perfil-cuerpo { padding: 0; }
+}
+
+/* index.css fija 44 px a button y summary con más peso que una clase: las filas necesitan 60 */
+.perfil .perfil-fila, .perfil .sw-fila { min-height: 60px; }
+.perfil .perfil-fila-ko { min-height: 56px; }

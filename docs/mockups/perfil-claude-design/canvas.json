@@ -1,0 +1,21 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-11-22T22:30:00Z" },
+  "title": "Perfil HexaPrep",
+  "launch": { "view": "canvas" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 390, "h": 1400, "title": "A · Cartel ciruela con tu práctica en hexágonos" },
+    "B.dc.html": { "x": 470, "y": 0, "w": 390, "h": 1400, "title": "B · Lista de ajustes con iconos hexagonales" },
+    "C.dc.html": { "x": 940, "y": 0, "w": 390, "h": 1400, "title": "C · Tu asignatura primero, ajustes en mosaico" },
+    "Oscuro.dc.html": { "x": 1410, "y": 0, "w": 390, "h": 1400, "title": "A · Modo oscuro" },
+    "Estados.dc.html": { "x": 0, "y": 1520, "w": 390, "h": 1460, "title": "A · Estado: primer día, sin cuenta (local), nada oculto" },
+    "Confirmar.dc.html": { "x": 470, "y": 1520, "w": 390, "h": 1300, "title": "A · Estado: confirmar reinicio, borrar cuenta (propuesta) y error de carga" },
+    "Escritorio.dc.html": { "x": 0, "y": 3100, "w": 1280, "h": 900, "title": "A en escritorio: identidad fija a la izquierda, ajustes a la derecha", "expand": "fill" }
+  },
+  "order": ["Main.dc.html", "B.dc.html", "C.dc.html", "Oscuro.dc.html", "Estados.dc.html", "Confirmar.dc.html", "Escritorio.dc.html"],
+  "notes": {
+    "titulo": { "x": 0, "y": -300, "text": "Perfil: tres ideas, sus estados y el escritorio", "kind": "title1", "maxW": 1800 }
+  },
+  "designSystems": []
+}
