@@ -3,6 +3,7 @@ import base64
 import hashlib
 import hmac
 import json
+import re
 import time
 import urllib.parse
 import urllib.request
@@ -60,6 +61,24 @@ def verificar_google(credential: str, client_id: str, abrir=urllib.request.urlop
             or not c.get("email") or caducado):
         raise AuthError("token de Google no válido")
     return c
+
+
+def nombre_de(c: dict) -> str:
+    """El nombre de la persona según Google: `name`, o nombre y apellido si no viene entero; vacío si no hay."""
+    return (c.get("name") or " ".join(x for x in (c.get("given_name"), c.get("family_name")) if x)).strip()
+
+
+_PARTES = re.compile(r"[A-Za-zÀ-ÖØ-öø-ÿ]+")
+
+
+def nombre_de_email(email: str) -> str:
+    """Para sesiones abiertas antes de guardar el nombre: «carla.monte@x» es «Carla Monte». Solo si el correo se lee como
+    nombre y apellido (letras separadas por punto, guion o guion bajo); con cifras o una sola palabra no se inventa nada."""
+    local = email.split("@")[0]
+    partes = re.split(r"[._-]+", local)
+    if len(partes) < 2 or not all(_PARTES.fullmatch(x) for x in partes):
+        return ""
+    return " ".join(x.capitalize() for x in partes)
 
 
 def permitido(email: str, lista: str) -> bool:

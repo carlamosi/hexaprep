@@ -185,9 +185,9 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
             raise PermissionError(c["email"])
         engine = request.app.state.engine
         esquema = perfiles.asegurar_perfil(engine, c["email"]) if engine.dialect.name == "postgresql" else "local"
-        response.set_cookie(auth.COOKIE, auth.firmar(secreto, c["email"].lower(), esquema, nombre=c.get("name", "")), max_age=auth.DURACION,
+        response.set_cookie(auth.COOKIE, auth.firmar(secreto, c["email"].lower(), esquema, nombre=auth.nombre_de(c)), max_age=auth.DURACION,
                             httponly=True, secure=online_url is not None, samesite="lax", path="/")
-        return {"email": c["email"].lower(), "nombre": c.get("name", "")}
+        return {"email": c["email"].lower(), "nombre": auth.nombre_de(c)}
 
     @app.post("/api/auth/google")
     def auth_google(body: GoogleIn, request: Request, response: Response):
@@ -225,7 +225,7 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
     @app.get("/api/perfil")
     def perfil(request: Request):
         datos = _quien(request)
-        return {"email": datos["e"] if datos else None, "nombre": datos.get("n", "") if datos else "",
+        return {"email": datos["e"] if datos else None, "nombre": (datos.get("n") or auth.nombre_de_email(datos["e"])) if datos else "",
                 "online": online_url is not None, "reiniciar": bool(datos and online_url)}
 
     @app.post("/api/perfil/reiniciar")

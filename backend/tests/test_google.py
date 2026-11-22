@@ -73,8 +73,8 @@ def cliente(tmp_path, monkeypatch):
         yield c
 
 
-def entrar(cliente, monkeypatch, email="carla@gmail.com"):
-    monkeypatch.setattr(auth, "verificar_google", lambda cred, cid, abrir=None: claims_de_google(email))
+def entrar(cliente, monkeypatch, email="carla@gmail.com", **claims):
+    monkeypatch.setattr(auth, "verificar_google", lambda cred, cid, abrir=None: claims_de_google(email, **claims))
     return cliente.post("/api/auth/google", json={"credential": "tok"})
 
 
@@ -185,6 +185,27 @@ def test_la_cookie_lleva_tambien_el_nombre():
     t = auth.firmar(SECRETO, "carla@gmail.com", "u_abc", ahora=1000, nombre="Carla Monté")
     assert auth.leer(SECRETO, t, ahora=1001)["n"] == "Carla Monté"
     assert auth.leer(SECRETO, auth.firmar(SECRETO, "a@b.c", "u_x", ahora=1000), ahora=1001).get("n", "") == ""
+
+
+def test_el_nombre_sale_de_google_aunque_no_venga_en_name():
+    assert auth.nombre_de({"name": "Carla Monté", "given_name": "X"}) == "Carla Monté"
+    assert auth.nombre_de({"given_name": "Carla", "family_name": "Monté"}) == "Carla Monté"
+    assert auth.nombre_de({"given_name": "Carla"}) == "Carla"
+    assert auth.nombre_de({"email": "a@b.c"}) == ""
+
+
+@pytest.mark.parametrize("email,esperado", [
+    ("carla.monte@gmail.com", "Carla Monte"), ("maria-jose_garcia@x.org", "Maria Jose Garcia"),
+    ("carla_monte92@gmail.com", ""), ("cmonte@gmail.com", ""), ("", ""),
+])
+def test_sin_nombre_guardado_se_deduce_del_email_solo_si_se_lee_como_nombre_y_apellido(email, esperado):
+    assert auth.nombre_de_email(email) == esperado
+
+
+def test_perfil_de_una_sesion_antigua_sin_nombre_lo_deduce_del_email(cliente, monkeypatch):
+    monkeypatch.setenv("HEXAPREP_EMAILS_PERMITIDOS", "*")
+    entrar(cliente, monkeypatch, email="carla.monte@gmail.com", name="")
+    assert cliente.get("/api/perfil").json()["nombre"] == "Carla Monte"
 
 
 def test_perfil_dice_quien_eres_y_si_se_puede_reiniciar(cliente, monkeypatch):

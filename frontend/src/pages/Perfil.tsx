@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { api, type Oculto, type PerfilDatos } from "../api";
 import { t } from "../i18n";
 import { enAppInstalada, useInstalar } from "../instalar";
@@ -49,6 +49,26 @@ export function semanaDias(dias: string[], hoy = new Date()) {
     const d = new Date(hoy); d.setDate(d.getDate() - (6 - i));
     return { letra: "DLMXJVS"[d.getDay()], activo: hay.has(iso(d)), hoy: i === 6 };
   });
+}
+
+/** Tamaño de letra (px) con el que un texto de `anchoA` px a tamaño `max` cabe en `disponible` px, sin bajar de `min`. Sin medidas, no toca nada. */
+export const tamanoParaCaber = (anchoA: number, disponible: number, max = 14, min = 10) =>
+  anchoA > 0 && disponible > 0 ? Math.max(min, Math.min(max, (max * disponible) / anchoA)) : max;
+
+/** Texto de una sola línea que encoge su letra para caber en el ancho que haya (un correo largo no se parte ni se corta). */
+function UnaLinea({ texto, className, max }: { texto: string; className: string; max: number }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const ajustar = () => { el.style.fontSize = `${max}px`; el.style.fontSize = `${tamanoParaCaber(el.scrollWidth, el.clientWidth, max)}px`; };
+    ajustar();
+    if (typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(ajustar);
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, [texto, max]);
+  return <p ref={ref} className={className} title={texto}>{texto}</p>;
 }
 
 function fechaCorta(f: string): string {
@@ -145,8 +165,9 @@ export function Perfil({ asignaturaId, client = api }: { asignaturaId?: string |
           </svg>
           {perfil?.email && (
             <>
-              <p className="perfil-nombre" aria-label={t("perfil.cuenta")}>{perfil.nombre || perfil.email}</p>
-              {perfil.nombre && <p className="perfil-correo">{perfil.email}</p>}
+              {perfil.nombre
+                ? <><p className="perfil-nombre" aria-label={t("perfil.cuenta")}>{perfil.nombre}</p><UnaLinea className="perfil-correo" texto={perfil.email} max={14} /></>
+                : <UnaLinea className="perfil-nombre perfil-uno" texto={perfil.email} max={24} />}
               <button type="button" className="perfil-salir" onClick={() => void salir()}>{t("perfil.salir")}</button>
             </>
           )}

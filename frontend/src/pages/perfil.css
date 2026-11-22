@@ -19,7 +19,9 @@
 .perfil-marca { width: 140px; height: 124px; margin-bottom: 4px; }
 .perfil-marca text { font-family: var(--font); }
 .perfil-nombre { margin: 0; font-size: 24px; font-weight: 600; text-align: center; overflow-wrap: anywhere; text-wrap: balance; }
-.perfil-correo { margin: 4px 0 0; font-size: 14px; text-align: center; color: rgb(251 239 246 / .8); overflow-wrap: anywhere; }
+/* El correo va siempre en una línea: el componente encoge la letra hasta que quepa (mínimo 10 px; si ni así, puntos suspensivos y el correo completo en el título). */
+.perfil-correo { align-self: stretch; margin: 4px 0 0; font-size: 14px; text-align: center; color: rgb(251 239 246 / .8); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.perfil-uno { align-self: stretch; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; overflow-wrap: normal; }
 .perfil-nota-local { max-width: 270px; margin-top: 6px; line-height: 1.45; text-wrap: pretty; }
 .perfil-salir { margin-top: 16px; min-height: 44px; padding: 0 22px; border: 1px solid rgb(255 246 251 / .5); border-radius: 22px; background: rgb(255 246 251 / .08); color: #FFF6FB; font: inherit; font-weight: 500; cursor: pointer;
   transition: background-color var(--dur-press) var(--ease), transform var(--dur-press) var(--ease); }

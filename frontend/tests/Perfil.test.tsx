@@ -2,7 +2,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ApiError } from "../src/api";
-import { Perfil, resumenDias, semanaDias } from "../src/pages/Perfil";
+import { Perfil, resumenDias, semanaDias, tamanoParaCaber } from "../src/pages/Perfil";
 
 function cliente(perfil: object) {
   return {
@@ -128,6 +128,28 @@ describe("perfil rediseñado (diseño A de Claude Design)", () => {
     expect(await screen.findByRole("button", { name: "Reiniciar mi progreso" })).toBeInTheDocument();
     expect(screen.getByText(/se guarda archivado, no se borra/)).toBeInTheDocument(); // visible sin abrir nada
     expect(screen.queryByRole("alertdialog")).toBeNull();
+  });
+});
+
+describe("correo y nombre en una línea", () => {
+  it("el_tamano_se_reduce_lo_justo_para_que_el_texto_quepa_con_un_minimo_legible", () => {
+    expect(tamanoParaCaber(200, 300)).toBe(14); // cabe: tamaño normal
+    expect(tamanoParaCaber(400, 300, 14, 10)).toBe(10.5);
+    expect(tamanoParaCaber(500, 300)).toBe(10); // el mínimo por defecto es 10
+    expect(tamanoParaCaber(900, 300, 14, 11)).toBe(11); // nunca por debajo del mínimo
+    expect(tamanoParaCaber(0, 0)).toBe(14); // sin medidas (sin maquetar): no se toca
+    expect(tamanoParaCaber(300, 24, 24, 11)).toBe(11);
+  });
+
+  it("sin_nombre_el_correo_ocupa_el_sitio_del_nombre_una_sola_vez", async () => {
+    render(<Perfil asignaturaId="a1" client={cliente({ email: "cmonte92@gmail.com", nombre: "", online: true, reiniciar: true })} />);
+    expect(await screen.findAllByText("cmonte92@gmail.com")).toHaveLength(1);
+  });
+
+  it("con_nombre_salen_el_nombre_y_el_correo_cada_uno_en_su_linea", async () => {
+    render(<Perfil asignaturaId="a1" client={cliente({ email: "carla.monte@gmail.com", nombre: "Carla Monte", online: true, reiniciar: true })} />);
+    expect(await screen.findByText("Carla Monte")).toBeInTheDocument();
+    expect(screen.getByText("carla.monte@gmail.com")).toBeInTheDocument();
   });
 });
 
