@@ -90,7 +90,8 @@
   --b: #5b4a8a;
   position: relative; isolation: isolate; overflow: hidden; display: grid; align-items: center; column-gap: 20px;
   grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "txt txt" "stats pct";
-  margin-top: 28px; padding: 24px 28px; min-height: 156px; border-radius: 18px; color: #fff;
+  /* de borde a borde de la web: sale del ancho de la página y el texto se queda alineado con el resto del contenido */
+  width: 100vw; margin: 0 calc(50% - 50vw); padding: 28px calc((100vw - 100%) / 2); min-height: 156px; border-radius: 0; color: #fff;
   background:
     radial-gradient(120% 140% at 0% 0%, rgb(255 255 255 / .22), transparent 55%),
     linear-gradient(135deg, color-mix(in srgb, var(--b) 84%, #fff) 0%, var(--b) 48%, color-mix(in srgb, var(--b) 78%, #000) 100%);
@@ -131,5 +132,5 @@
 @keyframes banner-up { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 @keyframes banner-marca-in { from { opacity: 0; transform: translateX(18px) rotate(-4deg); } to { opacity: .2; transform: none; } }
 @keyframes banner-sk { from { background-position: 120% 0; } to { background-position: -120% 0; } }
-@media (max-width: 640px) { .banner { padding: 18px; row-gap: 10px; min-height: 0; } .banner-kicker { font-size: .66rem; letter-spacing: .11em; } .banner-stats { font-size: .8rem; } }
+@media (max-width: 640px) { .banner { padding-block: 18px; row-gap: 10px; min-height: 0; } .banner-kicker { font-size: .66rem; letter-spacing: .11em; } .banner-stats { font-size: .8rem; } }
 @media (prefers-reduced-motion: reduce) { .banner-anim, .banner-anim .banner-txt, .banner-anim .banner-stats, .banner-anim .banner-pct, .banner-anim .banner-marca, .banner-sk::after { animation: none; } .banner-pct, .banner-flecha { transition: none; } }
