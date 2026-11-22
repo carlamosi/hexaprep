@@ -41,7 +41,7 @@ it("selector_picks_with_click_and_ignores_the_current_subject", async () => {
   await userEvent.click(a.boton);
   await userEvent.click(screen.getByRole("option", { name: /Química/ }));
   expect(a.onCambiar).toHaveBeenCalledWith("a2");
-  expect(screen.queryByRole("listbox")).toBeNull();
+  await waitFor(() => expect(screen.queryByRole("listbox")).toBeNull()); // la salida dura 120 ms
 });
 
 it("selector_works_with_keyboard_and_escape_returns_focus", async () => {
