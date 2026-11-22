@@ -1,20 +1,21 @@
 import { useEffect, useState } from "react";
 
-const HEX = (cx: number, cy: number, r: number) => {
-  const p = Array.from({ length: 6 }, (_, i) => {
-    const a = (Math.PI / 180) * (60 * i - 90); // vértice arriba: el hexágono de la marca
+/** Hexágono de vértices a izquierda y derecha: el mismo que el icono de la app. */
+const HEX = (cx: number, cy: number, r: number) =>
+  `M${Array.from({ length: 6 }, (_, i) => {
+    const a = (Math.PI / 180) * 60 * i;
     return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
-  });
-  return `M${p.join("L")}Z`;
-};
-/** Los seis hexágonos de alrededor: color y retraso de aparición (en ms) para que entren en cadena. */
-const SATELITES = [
-  { a: 0, c: "var(--lila-tint)", d: 0 }, { a: 60, c: "var(--lila)", d: 60 }, { a: 120, c: "var(--lila-soft)", d: 120 },
-  { a: 180, c: "var(--lila-tint)", d: 180 }, { a: 240, c: "var(--lila)", d: 240 }, { a: 300, c: "var(--lila-soft)", d: 300 },
-].map((s) => ({ ...s, x: 120 + 94 * Math.cos((Math.PI / 180) * s.a), y: 120 + 94 * Math.sin((Math.PI / 180) * s.a) }));
+  }).join("L")}Z`;
 
-/** Duración total del arranque; el desvanecido final dura FUNDIDO_MS más. */
-export const SPLASH_MS = 700;
+/** Los seis hexágonos pequeños: salen del centro en arco (x con ease-out, y con ease-in-out) y entran en cadena cada 40 ms. */
+const SATELITES = Array.from({ length: 6 }, (_, i) => {
+  const a = (Math.PI / 180) * (30 + 60 * i);
+  const x = 120 + 104 * Math.cos(a), y = 120 + 104 * Math.sin(a);
+  return { x, y, dx: -(x - 120) * 0.55, dy: -(y - 120) * 0.55, d: 150 + i * 40, o: i % 2 ? 0.55 : 0.95 };
+});
+
+/** El arranque entero cabe en 760 ms: 600 de movimiento y un instante quieto con el logo completo; el desvanecido dura FUNDIDO_MS más. */
+export const SPLASH_MS = 760;
 const FUNDIDO_MS = 200;
 
 /** Solo se ve la primera vez de cada sesión del navegador: las recargas no repiten la espera. */
@@ -26,30 +27,39 @@ function yaVisto() {
   return false;
 }
 
-/** Pantalla de arranque: el panal se arma de golpe (seis hexágonos que entran en cadena), el hexágono central se dibuja
- * y se rellena en duotono y el nombre sube. Nunca está vacía: el primer fotograma ya tiene color. Solo al abrir la app. */
+/** Pantalla de arranque con los colores del icono (así el paso del icono a la app no tiene salto): el hexágono aparece con un
+ * pequeño rebote, el halo se enciende detrás, los seis hexágonos pequeños lo rodean en cadena y el nombre sube. Nunca está
+ * vacía (el primer fotograma ya tiene color). Con movimiento reducido no se muestra. */
 export function Splash() {
   const reducir = typeof window !== "undefined" && !!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   const [fase, setFase] = useState<"on" | "fuera" | "fin">(() => (reducir || yaVisto() ? "fin" : "on"));
   useEffect(() => {
-    if (reducir) return;
+    if (fase === "fin") return;
     const a = setTimeout(() => setFase("fuera"), SPLASH_MS);
     const b = setTimeout(() => setFase("fin"), SPLASH_MS + FUNDIDO_MS);
     return () => { clearTimeout(a); clearTimeout(b); };
-  }, [reducir]);
+  }, [fase === "fin"]); // eslint-disable-line react-hooks/exhaustive-deps
   if (fase === "fin") return null;
   return (
     <div data-testid="splash" aria-hidden="true" className={`splash ${fase === "fuera" ? "splash-fuera" : ""}`}>
-      <svg viewBox="-20 -20 280 280" width="min(80vw, 300px)" height="min(80vw, 300px)">
-        <defs><clipPath id="splash-clip"><rect className="splash-llena" x="60" y="60" width="120" height="120" /></clipPath></defs>
-        {SATELITES.map((s, i) => (
-          <path key={i} d={HEX(s.x, s.y, 40)} fill={s.c} className="splash-sat" style={{ animationDelay: `${s.d}ms` }} />
-        ))}
-        <path d={HEX(125, 125, 54)} fill="var(--lila-tint)" className="splash-sombra" />
-        <path d={HEX(120, 120, 54)} fill="var(--lila)" clipPath="url(#splash-clip)" />
-        <path d={HEX(120, 120, 54)} className="splash-trazo" pathLength="100" fill="none" stroke="var(--ink)" strokeWidth="3" strokeLinejoin="round" />
-      </svg>
-      <span className="splash-nombre">HexaPrep</span>
+      <div className="splash-in">
+        <svg viewBox="-20 -20 280 280" width="min(72vw, 280px)" height="min(72vw, 280px)">
+          <defs>
+            <radialGradient id="splash-luz"><stop offset="0" stopColor="#E27FB8" stopOpacity=".9" /><stop offset=".55" stopColor="#B05A8F" stopOpacity=".35" /><stop offset="1" stopColor="#B05A8F" stopOpacity="0" /></radialGradient>
+            <linearGradient id="splash-cuerpo" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="#FFF6FB" /><stop offset=".55" stopColor="#F7C6E0" /><stop offset="1" stopColor="#E58FC0" /></linearGradient>
+          </defs>
+          <circle className="splash-halo" cx="120" cy="120" r="125" fill="url(#splash-luz)" />
+          {SATELITES.map((s, i) => (
+            <g key={i} className="splash-sx" style={{ "--dx": `${s.dx}px`, animationDelay: `${s.d}ms` } as React.CSSProperties}>
+              <g className="splash-sy" opacity={s.o} style={{ "--dy": `${s.dy}px`, animationDelay: `${s.d}ms` } as React.CSSProperties}>
+                <path d={HEX(s.x, s.y, 17)} fill="#F7C6E0" stroke="#F7C6E0" strokeWidth="8" strokeLinejoin="round" className="splash-sat" style={{ animationDelay: `${s.d}ms` }} />
+              </g>
+            </g>
+          ))}
+          <path d={HEX(120, 120, 44)} fill="url(#splash-cuerpo)" stroke="url(#splash-cuerpo)" strokeWidth="18" strokeLinejoin="round" className="splash-hex" />
+        </svg>
+        <span className="splash-nombre">HexaPrep</span>
+      </div>
     </div>
   );
 }

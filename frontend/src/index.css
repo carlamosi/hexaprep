@@ -47,18 +47,23 @@ body {
 .aro-avance { animation-name: aro-avance; animation-timing-function: linear; animation-fill-mode: forwards; stroke-dashoffset: 100; }
 @media (prefers-reduced-motion: reduce) { .aro-avance { animation: none; stroke-dashoffset: 0; } }
 
-/* Pantalla de arranque: panal que entra en cadena, hexágono central que se dibuja y se rellena, nombre que sube */
-.splash { pointer-events: none; position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center; gap: 6px;
-  background: radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--lila) 22%, var(--paper)) 0, var(--paper) 62%); transition: opacity .2s var(--ease-in); }
+/* Pantalla de arranque con los colores del icono: el hexágono rebota al aparecer, el halo se enciende, los seis pequeños lo rodean en arco y el nombre sube */
+.splash { pointer-events: none; position: fixed; inset: 0; z-index: 100; display: grid; place-content: center; justify-items: center;
+  background: radial-gradient(circle at 50% 44%, #9B4488 0, #5A2556 40%, #2A1030 85%); transition: opacity .2s var(--ease-in); }
+.splash-in { display: grid; justify-items: center; gap: 4px; transition: transform .2s var(--ease-in); }
 .splash-fuera { opacity: 0; }
-.splash-sat { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.3) rotate(-30deg); animation: splash-pop .3s var(--ease) forwards; }
-.splash-sombra { opacity: 0; animation: splash-texto .25s .15s var(--ease) forwards; }
-.splash-trazo { stroke-dasharray: 100; stroke-dashoffset: 100; animation: splash-dibuja .35s .05s var(--ease) forwards; }
-.splash-llena { transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0); animation: splash-sube .35s .25s var(--ease) forwards; }
-.splash-nombre { font-size: 1.6rem; font-weight: 600; letter-spacing: .02em; color: var(--ink); opacity: 0; transform: translateY(8px); animation: splash-texto .3s .35s var(--ease) forwards; }
-@keyframes splash-pop { to { opacity: 1; transform: scale(1) rotate(0); } }
-@keyframes splash-dibuja { to { stroke-dashoffset: 0; } }
-@keyframes splash-sube { to { transform: scaleY(1); } }
+.splash-fuera .splash-in { transform: scale(1.05); }
+.splash-halo { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.8); animation: splash-halo .32s var(--ease) forwards; }
+.splash-hex { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.82); animation: splash-hex .34s var(--ease) forwards; }
+.splash-sx { transform: translateX(var(--dx)); animation: splash-x .26s var(--ease) both; }
+.splash-sy { transform: translateY(var(--dy)); animation: splash-y .26s var(--ease-in-out) both; }
+.splash-sat { transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(.5); animation: splash-sat .26s var(--ease) forwards; }
+.splash-nombre { font-size: 1.5rem; font-weight: 600; letter-spacing: .03em; color: #FBEFF6; opacity: 0; transform: translateY(8px); animation: splash-texto .26s .22s var(--ease) forwards; }
+@keyframes splash-halo { to { opacity: 1; transform: none; } }
+@keyframes splash-hex { 0% { opacity: 0; transform: scale(.82); } 45% { opacity: 1; } 72% { transform: scale(1.05); } 100% { opacity: 1; transform: none; } }
+@keyframes splash-x { to { transform: none; } }
+@keyframes splash-y { to { transform: none; } }
+@keyframes splash-sat { to { opacity: 1; transform: none; } }
 @keyframes splash-texto { to { opacity: 1; transform: none; } }
 
 /* Pantalla de error de carga */
