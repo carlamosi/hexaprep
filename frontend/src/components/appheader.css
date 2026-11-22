@@ -4,3 +4,10 @@
 .nav-pastilla { position: absolute; left: 0; top: 0; border: 1px solid var(--rule-2); border-radius: 11px; background: var(--card); pointer-events: none; }
 .nav-pastilla.anima { transition: transform var(--dur-ui) var(--ease-in-out), width var(--dur-ui) var(--ease-in-out); }
 @media (prefers-reduced-motion: reduce) { .cab, .nav-pastilla.anima { transition: none; } }
+
+/* Iconos de la navegación: inactivos solo con trazo; el activo gana el tinte (sale desde detrás del trazo) y un pequeño pop con rebote */
+.ico-tinte { opacity: 0; transform: translate(0, 0); transition: opacity var(--dur-ui) var(--ease), transform var(--dur-ui) var(--ease); }
+[aria-current="page"] .ico-tinte { opacity: 1; transform: translate(1.8px, 1.8px); }
+.cab nav a svg { transition: transform .3s cubic-bezier(.34, 1.56, .64, 1); }
+.cab nav a[aria-current="page"] svg { transform: scale(1.08); }
+@media (prefers-reduced-motion: reduce) { .ico-tinte, .cab nav a svg { transition: none; } }

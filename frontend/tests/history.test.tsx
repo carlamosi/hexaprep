@@ -114,7 +114,7 @@ describe("historial: pantalla", () => {
     expect(screen.getByText("confunde escasez con pobreza")).toBeInTheDocument();
     expect(screen.queryByText(/racha/i)).toBeNull();
     expect(screen.queryByRole("note")).toBeNull();
-  });
+  }, 15000); // renderiza todas las secciones del análisis: con la suite en paralelo se acercaba al límite de 5 s
 
   it("marks_groups_with_few_answers_without_relying_on_color", async () => {
     const { container } = render(<History asignaturaId="a1" client={client()} mes="2026-11-12" />);

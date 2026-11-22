@@ -14,28 +14,28 @@ const HEX = "M12 2.8 19.8 7.3v9.4L12 21.2 4.2 16.7V7.3Z";
 const ICONOS: Record<Ruta, ReactNode> = {
   panal: (
     <>
-      <g transform="translate(1.8 1.8)"><path d={HEX} fill="var(--lila-tint)" /></g>
+      <g className="ico-tinte"><path d={HEX} fill="var(--lila-tint)" /></g>
       <path d={HEX} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
       <path d="M12 8.7 14.9 10.3v3.4L12 15.3 9.1 13.7v-3.4Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     </>
   ),
   hoy: (
     <>
-      <g transform="translate(1.8 1.8)"><circle cx="12" cy="12" r="8" fill="var(--lila-tint)" /></g>
+      <g className="ico-tinte"><circle cx="12" cy="12" r="8" fill="var(--lila-tint)" /></g>
       <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" strokeWidth="1.6" />
       <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" strokeWidth="1.6" />
     </>
   ),
   historial: (
     <>
-      <g transform="translate(1.8 1.8)"><rect x="4" y="5" width="16" height="15" rx="3" fill="var(--lila-tint)" /></g>
+      <g className="ico-tinte"><rect x="4" y="5" width="16" height="15" rx="3" fill="var(--lila-tint)" /></g>
       <rect x="4" y="5" width="16" height="15" rx="3" fill="none" stroke="currentColor" strokeWidth="1.6" />
       <path d="M4 10h16M8.5 3v4M15.5 3v4" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </>
   ),
   perfil: (
     <>
-      <g transform="translate(1.8 1.8)"><circle cx="12" cy="8" r="3.6" fill="var(--lila-tint)" /><path d="M5 20c0-3.9 3.1-6.2 7-6.2s7 2.3 7 6.2Z" fill="var(--lila-tint)" /></g>
+      <g className="ico-tinte"><circle cx="12" cy="8" r="3.6" fill="var(--lila-tint)" /><path d="M5 20c0-3.9 3.1-6.2 7-6.2s7 2.3 7 6.2Z" fill="var(--lila-tint)" /></g>
       <circle cx="12" cy="8" r="3.6" fill="none" stroke="currentColor" strokeWidth="1.6" />
       <path d="M5 20c0-3.9 3.1-6.2 7-6.2s7 2.3 7 6.2Z" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
     </>
@@ -121,15 +121,15 @@ export function AppHeader({ asignatura, asignaturaId, asignaturas = [], onCambia
           )}
         </div>
         {!sinNav && (
-          <nav ref={navRef} aria-label={t("nav.principal")} className="relative flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[var(--paper)] max-sm:p-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))]">
-            {pastilla && <span aria-hidden="true" className={`nav-pastilla max-sm:hidden ${anima ? "anima" : ""}`} style={{ width: pastilla.w, height: pastilla.h, transform: `translate(${pastilla.x}px, ${pastilla.y}px)` }} />}
+          <nav ref={navRef} aria-label={t("nav.principal")} className="relative flex items-center gap-1 max-sm:fixed max-sm:inset-x-0 max-sm:bottom-0 max-sm:z-10 max-sm:justify-around max-sm:border-t max-sm:border-[var(--rule)] max-sm:bg-[color-mix(in_srgb,var(--paper)_84%,transparent)] max-sm:backdrop-blur-md max-sm:p-2 max-sm:pb-[max(0.5rem,env(safe-area-inset-bottom))]">
+            {pastilla && <span aria-hidden="true" className={`nav-pastilla ${anima ? "anima" : ""}`} style={{ width: pastilla.w, height: pastilla.h, transform: `translate(${pastilla.x}px, ${pastilla.y}px)` }} />}
             {NAV.map((k) => (
               <a
                 key={k}
                 href={`#${k}`}
                 aria-current={ruta === k ? "page" : undefined}
                 className={`relative z-[1] flex items-center gap-2 rounded-[11px] border px-3 py-2 text-sm font-medium no-underline transition-[color,transform] duration-150 active:scale-[.96] max-sm:flex-col max-sm:gap-0.5 max-sm:text-xs ${
-                  ruta === k ? "border-transparent text-[var(--ink)] max-sm:border-[var(--rule-2)] max-sm:bg-[var(--card)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
+                  ruta === k ? "border-transparent text-[var(--ink)]" : "border-transparent text-[var(--ink-2)] hover:text-[var(--lila-ink)]"
                 }`}
               >
                 <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">{ICONOS[k]}</svg>

@@ -56,7 +56,7 @@ describe("flujos", () => {
     await screen.findByText(/Sin fallos/);
     expect(client.createSession).toHaveBeenCalledWith("repaso_subtema", { asignatura_id: "a1", subtema_id: "s1" });
     expect(client.nextQuestion).toHaveBeenCalledTimes(21); // 20 preguntas y la que dice que ya no quedan
-  });
+  }, 20000); // son 20 preguntas con teclado simulado: solo tarda unos 3 s, pero con la suite en paralelo se acercaba al límite de 5 s
 
   it("review_groups_failures_by_trap_with_booklet_link", () => {
     const fallos = [
