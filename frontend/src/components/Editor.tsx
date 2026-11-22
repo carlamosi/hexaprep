@@ -127,7 +127,7 @@ export function Editor({ preguntaId, asignaturaId, client = api }: { preguntaId:
       )}
 
       <div className="flex flex-wrap items-center gap-3">
-        <button type="submit" className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
+        <button type="submit" className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro">
           {t("editor.guardar")}
         </button>
         <button type="button" onClick={() => void exportar()} className="rounded-[11px] border border-[var(--rule-2)] px-4 py-2 text-[var(--lila-ink)]">

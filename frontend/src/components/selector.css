@@ -5,24 +5,25 @@
   color: var(--lila-ink); background: var(--lila-soft); border: 1px solid var(--lila-tint); border-radius: 999px; cursor: pointer;
   transition: border-color .15s, box-shadow .15s;
 }
-.asig-btn:hover, .asig-btn[aria-expanded="true"] { border-color: var(--c); box-shadow: 2px 2px 0 var(--c); }
+.asig-btn[aria-expanded="true"] { border-color: var(--c); box-shadow: 2px 2px 0 var(--c); }
+@media (hover: hover) and (pointer: fine) { .asig-btn:hover { border-color: var(--c); box-shadow: 2px 2px 0 var(--c); } }
 .asig-btn:focus-visible, .asig-op:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 2px; }
 .asig-nombre { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .asig-dot { width: 13px; height: 12px; flex: none; clip-path: var(--hex-flat); background: var(--c); }
-.asig-chev { flex: none; transition: transform .18s var(--ease); }
+.asig-chev { flex: none; transition: transform var(--dur-ui) var(--ease); }
 .asig-chev.is-open { transform: rotate(180deg); }
 
 .asig-pop {
   position: absolute; left: 0; top: calc(100% + 8px); z-index: 30; width: min(88vw, 330px); padding: 8px;
   background: var(--card); border: 1.5px solid var(--ink); border-radius: 14px; box-shadow: 4px 4px 0 var(--c);
-  animation: asig-in .14s var(--ease);
+  animation: asig-in var(--dur-press) var(--ease); transform-origin: top left;
 }
 .asig-op {
   display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 10px; text-align: left; font: inherit; color: var(--ink);
   background: none; border: 1.5px solid transparent; border-radius: 11px; cursor: pointer;
 }
 .asig-op + .asig-op { margin-top: 4px; }
-.asig-op:hover { background: color-mix(in srgb, var(--c) 9%, var(--card)); }
+@media (hover: hover) and (pointer: fine) { .asig-op:hover { background: color-mix(in srgb, var(--c) 9%, var(--card)); } }
 .asig-op[aria-selected="true"] { border-color: var(--c); background: color-mix(in srgb, var(--c) 10%, var(--card)); }
 .asig-hex {
   flex: none; width: 42px; height: 37px; clip-path: var(--hex-flat);
@@ -40,5 +41,5 @@
 /* Móvil: el desplegable ocupa el ancho de la pantalla (anclado al botón se salía por la derecha) */
 @media (max-width: 639px) {
   .asig-sel { position: static; }
-  .asig-pop { position: fixed; left: 12px; right: 12px; top: 68px; width: auto; max-height: calc(100dvh - 160px); overflow-y: auto; }
+  .asig-pop { transform-origin: top center; position: fixed; left: 12px; right: 12px; top: 68px; width: auto; max-height: calc(100dvh - 160px); overflow-y: auto; }
 }

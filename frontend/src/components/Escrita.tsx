@@ -80,7 +80,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
                   if (e.key === "Backspace" || e.key === "Delete") teclas.current.borrados += 1;
                 }
                 if (e.key === "Enter" && i < etiquetas.length - 1) { e.preventDefault(); cajas.current[i + 1]?.focus(); } }}
-              className={`w-64 rounded-[11px] border px-4 py-3 text-lg focus-visible:border-[var(--lila)] ${
+              className={`w-64 rounded-[11px] border px-4 py-3 text-lg transition-colors duration-150 focus-visible:border-[var(--lila)] ${
                 r ? (r.correcto ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--ko)] bg-[var(--ko-soft)]") : "border-[var(--rule-2)]"
               }`}
             />
@@ -92,7 +92,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
                   id={`copia-${i}`} autoComplete="off" autoCorrect="off" autoCapitalize="none" spellCheck={false} lang="ca"
                   placeholder={t("practica.escribelaBien")} value={copias[i]} disabled={omitida || mismaForma(copias[i], r.esperado)}
                   onChange={(e) => setCopias((cs) => cs.map((c, j) => (j === i ? e.target.value : c)))}
-                  className={`w-64 rounded-[11px] border px-4 py-3 text-lg ${mismaForma(copias[i], r.esperado) ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--rule-2)]"}`}
+                  className={`w-64 rounded-[11px] border px-4 py-3 text-lg transition-colors duration-150 ${mismaForma(copias[i], r.esperado) ? "border-[var(--ok)] bg-[var(--ok-soft)]" : "border-[var(--rule-2)]"}`}
                 />
                 {mismaForma(copias[i], r.esperado) && <span aria-hidden="true" className="text-[var(--ok)]">✓</span>}
               </div>
@@ -101,7 +101,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
         );
       })}
       {!resultado && (
-        <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
+        <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-60">
           {t("practica.comprobar")}
         </button>
       )}

@@ -70,7 +70,7 @@ export function Resumen({ sesionId, fallos, onVolver, onSeguir, client = api }: 
       )}
       <p className="text-sm text-[var(--ink-3)]">{t("fin.dormir")}</p>
       <div className="flex flex-wrap gap-3">
-        {onSeguir && <button type="button" onClick={onSeguir} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">{t("fin.seguir")}</button>}
+        {onSeguir && <button type="button" onClick={onSeguir} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro">{t("fin.seguir")}</button>}
         <button type="button" onClick={onVolver} className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-5 py-2 font-medium">{t("fin.volver")}</button>
       </div>
     </main>

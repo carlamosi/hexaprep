@@ -8,7 +8,10 @@ import { elegirAsignatura } from "../hooks";
 import { t, tn } from "../i18n";
 import { ErrorCarga } from "../components/ErrorCarga";
 
-type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[] };
+type State = { kind: "loading" } | { kind: "error" } | { kind: "empty" } | { kind: "ok"; map: MapResponse; acento: string; tipos: string[]; animar: boolean };
+
+/* La entrada del banner se ve al cambiar de asignatura, no cada vez que se vuelve al panal */
+let ultimaVista: string | null = null;
 
 /** Inicio: solo el panal de la primera asignatura, sin mensajes por días sin usar. */
 const puntosHex = (cx: number, cy: number, r: number) =>
@@ -24,7 +27,9 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
       const subjects = await api.getSubjects();
       if (!subjects.length) return { kind: "empty" } as const;
       const a = elegirAsignatura(subjects)!;
-      return { kind: "ok", map: await api.getMap(a.id), acento: a.acento, tipos: a.tipos ?? [] } as const;
+      const animar = ultimaVista !== a.id;
+      ultimaVista = a.id;
+      return { kind: "ok", map: await api.getMap(a.id), acento: a.acento, tipos: a.tipos ?? [], animar } as const;
     })()
       .then((s) => alive && setState(s))
       .catch(() => alive && setState({ kind: "error" }));
@@ -35,7 +40,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
   if (state.kind === "error") return <ErrorCarga />;
   if (state.kind === "empty") return <main className="wrap"><p className="lede">{t("panal.sinAsignaturas")}</p></main>;
 
-  const { map, acento, tipos } = state;
+  const { map, acento, tipos, animar } = state;
   // Solo en asignaturas con preguntas de teoría (test y V/F) y también problemas tiene sentido practicar una sola cosa
   const grupos = [["test", ["test", "vf"], "home.soloTest"], ["problemas", ["problema"], "home.soloProblemas"], ["escritas", ["escrita"], "home.soloEscritas"]] as const;
   // Sin test (solo V/F) el grupo es la literatura de Català
@@ -45,7 +50,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
   const temas = new Set(map.hexes.map((h) => h.tema)).size;
   return (
     <main id="main" className="wrap">
-      <section className="banner" style={{ "--b": tonoBanner(acento || "") } as React.CSSProperties}>
+      <section className={`banner${animar ? " banner-anim" : ""}`} style={{ "--b": tonoBanner(acento || "") } as React.CSSProperties}>
         <svg className="banner-marca" viewBox="-20 -20 280 280" aria-hidden="true">
           {[[120, 120], [214, 120], [167, 201], [73, 201], [26, 120], [73, 39], [167, 39]].map(([x, y], i) => <polygon key={i} points={puntosHex(x, y, 52)} fill="#fff" />)}
         </svg>
@@ -64,7 +69,7 @@ export function Home({ onSelectSubtema, onPracticar, onPracticarTipo, onPractica
       <div className="flex flex-wrap items-center gap-3 py-5">
         <Buscador hexes={map.hexes} onElegir={(id) => onSelectSubtema?.(id)} />
         {onPracticar && (
-          <button type="button" onClick={onPracticar} className="rounded-[11px] bg-[var(--ink)] px-5 py-2.5 font-semibold text-[var(--on-ink)] shadow-[4px_4px_0_var(--lila)]">
+          <button type="button" onClick={onPracticar} className="rounded-[11px] bg-[var(--ink)] px-5 py-2.5 font-semibold text-[var(--on-ink)] shadow-[4px_4px_0_var(--lila)] btn-duro">
             {t("home.practicar")}
           </button>
         )}

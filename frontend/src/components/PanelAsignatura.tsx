@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from "motion/react";
+import { EASE } from "../motion";
 import { useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import type { Hex, MapResponse } from "../api";
 import { t, tn } from "../i18n";
@@ -36,7 +37,7 @@ function MiniHex({ percent, grain, delay, reduce }: { percent: number; grain: st
           style={{ originY: 1, transformBox: "fill-box" }}
           initial={reduce ? false : { scaleY: 0 }}
           animate={{ scaleY: p }}
-          transition={reduce ? { duration: 0 } : { duration: 0.55, delay, ease: [0.2, 0.7, 0.2, 1] }}
+          transition={reduce ? { duration: 0 } : { duration: 0.4, delay, ease: EASE }}
         />
       </g>
       <polygon className="line" points={POINTS} />
@@ -128,7 +129,7 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
       <motion.div
         className="pm" role="dialog" aria-modal="true" aria-label={`${t("panal.verPanal")} ${map.asignatura}`}
         onClick={(e) => e.stopPropagation()}
-        {...(reduce ? {} : { initial: { opacity: 0, y: 14, scale: 0.985 }, animate: { opacity: 1, y: 0, scale: 1 }, transition: { duration: 0.3, ease: [0.2, 0.7, 0.2, 1] } })}
+        {...(reduce ? {} : { initial: { opacity: 0, y: 14, scale: 0.985 }, animate: { opacity: 1, y: 0, scale: 1 }, transition: { duration: 0.3, ease: EASE } })}
       >
         <svg className="pm-defs" aria-hidden="true" focusable="false">
           <filter id={grain} x="-5%" y="-5%" width="110%" height="110%">

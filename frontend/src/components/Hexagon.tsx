@@ -1,13 +1,18 @@
 import { motion, useReducedMotion } from "motion/react";
-import { useId } from "react";
+import { useId, useState } from "react";
+import { EASE } from "../motion";
 import "./hexmap.css";
 
 const POINTS = "25,1 75,1 99,43.3 75,85.6 25,85.6 1,43.3";
+
+/* El relleno sube desde 0 solo la primera vez que se ve un hexágono en la visita; después, volver al panal no repite la animación y solo se mueve si el valor cambia. */
+let primeraVez = true;
 
 /** Hexágono de la marca: relleno que sube desde abajo hasta `percent`, contorno de tinta y sombra con grano. */
 export function Hexagon({ percent, color, big = false }: { percent: number; color?: string; big?: boolean }) {
   const id = useId();
   const reduce = useReducedMotion();
+  const [desdeCero] = useState(() => { const v = primeraVez; primeraVez = false; return v; });
   const p = Math.max(0, Math.min(100, percent)) / 100;
   return (
     <div className="hex-wrap" style={color ? ({ "--c": color } as React.CSSProperties) : undefined}>
@@ -26,9 +31,9 @@ export function Hexagon({ percent, color, big = false }: { percent: number; colo
           <motion.rect
             className="level" width="100" height="87" data-fill={p}
             style={{ originY: 1, transformBox: "fill-box" }}
-            initial={reduce ? false : { scaleY: 0 }}
+            initial={reduce || !desdeCero ? false : { scaleY: 0 }}
             animate={{ scaleY: p }}
-            transition={reduce ? { duration: 0 } : { duration: 0.6, ease: [0.2, 0.7, 0.2, 1] }}
+            transition={reduce ? { duration: 0 } : { duration: 0.3, ease: EASE }}
           />
         </g>
         <polygon className="line" points={POINTS} />

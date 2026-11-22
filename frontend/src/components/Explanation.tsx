@@ -78,7 +78,7 @@ export function Explanation({ result, onNext, onMarcarBien, siguienteBloqueado, 
         <button
           type="button"
           onClick={onNext} disabled={siguienteBloqueado}
-          className="relative rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] disabled:opacity-50"
+          className="relative rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-50"
         >
           {t("practica.siguiente")}
           {avanceMs !== undefined && (

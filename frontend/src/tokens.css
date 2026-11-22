@@ -42,6 +42,10 @@
   --radius-s: 11px;
   --font: "Lexend", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-in-out: cubic-bezier(.77, 0, .175, 1); /* movimiento dentro de la pantalla */
+  --dur-press: .16s; /* pulsar, hover pequeño */
+  --dur-ui: .2s; /* desplegables, cambios de estado */
+  --dur-enter: .3s; /* entradas (máximo para UI; los modales pueden más) */
   --hex-flat: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
   --hex-pointy: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }

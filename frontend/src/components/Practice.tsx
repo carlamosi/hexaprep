@@ -34,7 +34,7 @@ interface Props {
 /** Tarjeta vacía mientras llega la siguiente pregunta (nunca el texto «Cargando»). */
 function Esqueleto() {
   return (
-    <article data-testid="esqueleto" aria-busy="true" aria-label={t("app.cargando")} className="mx-auto w-full max-w-3xl animate-pulse rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
+    <article data-testid="esqueleto" aria-busy="true" aria-label={t("app.cargando")} className="mx-auto w-full max-w-3xl motion-safe:animate-pulse rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
       <div className="h-3 w-40 rounded bg-[var(--rule)]" />
       <div className="mt-6 h-6 w-4/5 rounded bg-[var(--rule)]" />
       <div className="mt-3 h-6 w-3/5 rounded bg-[var(--rule)]" />
@@ -448,7 +448,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
       {reported ? (
         <div className="mt-6 space-y-3">
           <p role="status">{reported}</p>
-          <button type="button" onClick={() => void load()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)]">
+          <button type="button" onClick={() => void load()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro">
             {t("practica.siguiente")}
           </button>
         </div>
@@ -467,7 +467,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
                 onChange={(e) => setValor(e.target.value)} placeholder={t("practica.tuRespuesta")}
                 className="w-64 rounded-[11px] border border-[var(--rule-2)] px-4 py-3 text-lg tabular-nums focus-visible:border-[var(--lila)]"
               />
-              <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] disabled:opacity-60">
+              <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-60">
                 {t("practica.comprobar")}
               </button>
               <p className="w-full text-sm text-[var(--ink-3)]">{t("practica.formatoRespuesta")}</p>

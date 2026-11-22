@@ -36,7 +36,7 @@ export function Buscador({ hexes, onElegir }: { hexes: Hex[]; onElegir: (subtema
         <svg aria-hidden="true" viewBox="0 0 20 20" width="18" height="18"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" strokeWidth="1.8" /><path d="M13 13l4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
       </button>
       {abierto && (
-        <div className={`absolute ${alinea} z-20 mt-2 w-[min(calc(100vw-2rem),22rem)] rounded-[14px] border border-[var(--ink)] bg-[var(--card)] p-3 shadow-[4px_4px_0_var(--lila)]`}
+        <div className={`absolute ${alinea} z-20 mt-2 w-[min(calc(100vw-2rem),22rem)] rounded-[14px] border border-[var(--ink)] bg-[var(--card)] p-3 shadow-[4px_4px_0_var(--lila)] pop-in ${alinea === "left-0" ? "origen-izq" : "origen-der"}`}
           onKeyDown={(e) => { if (e.key === "Escape") setAbierto(false); }}>
           <input ref={caja} type="search" role="searchbox" aria-label={t("buscar.etiqueta")} placeholder={t("buscar.etiqueta")} value={texto}
             onChange={(e) => setTexto(e.target.value)} autoComplete="off" className="w-full rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-3 py-2 text-base" />

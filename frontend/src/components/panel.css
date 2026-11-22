@@ -14,9 +14,9 @@
 .pm-head-txt p { margin: 2px 0 0; font-size: .82rem; color: var(--ink-3); }
 .pm-close {
   margin-left: auto; display: inline-flex; align-items: center; justify-content: center; width: 44px; min-height: 44px; border: 1.5px solid var(--ink); border-radius: 11px; background: var(--card); padding: 0;
-  font: inherit; font-weight: 600; cursor: pointer; box-shadow: 3px 3px 0 var(--lila); transition: transform .15s var(--ease), box-shadow .15s var(--ease);
+  font: inherit; font-weight: 600; cursor: pointer; box-shadow: 3px 3px 0 var(--lila); transition: transform var(--dur-press) var(--ease), box-shadow var(--dur-press) var(--ease);
 }
-.pm-close:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); }
+@media (hover: hover) and (pointer: fine) { .pm-close:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--lila); } }
 
 /* Leyenda de la escala */
 .pm-legend { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 12px; margin-left: auto; padding: 6px 14px; border: 1px solid var(--rule); border-radius: 12px; background: var(--paper); }
@@ -54,8 +54,8 @@
   display: block; width: 100%; min-width: 128px; max-width: 220px; margin: 0 0 8px; padding: 4px 6px; border: 0; border-radius: 8px;
   background: none; font: inherit; text-align: left; color: var(--ink); cursor: pointer;
 }
-.pm-sub-name:hover { background: color-mix(in srgb, var(--tc) 8%, var(--card)); }
-.pm-sub-name:hover .pm-sub-t { text-decoration: underline; text-underline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) { .pm-sub-name:hover { background: color-mix(in srgb, var(--tc) 8%, var(--card)); } }
+@media (hover: hover) and (pointer: fine) { .pm-sub-name:hover .pm-sub-t { text-decoration: underline; text-underline-offset: 2px; } }
 .pm-sub-t { display: block; font-size: .78rem; font-weight: 500; line-height: 1.25; color: var(--ink-2); }
 .pm-sub-row { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
 .pm-sub-row b { font-size: .82rem; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
@@ -64,8 +64,9 @@
 
 /* Hexágonos */
 .pm-cluster { position: relative; margin-left: 4px; }
-.pm-hex { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 6px; line-height: 0; transition: transform .2s var(--ease); }
-.pm-hex:hover, .pm-hex:focus-visible { transform: translate(-1px, -2px); z-index: 1; }
+.pm-hex { position: absolute; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 6px; line-height: 0; transition: transform var(--dur-ui) var(--ease); }
+.pm-hex:focus-visible { transform: translate(-1px, -2px); z-index: 1; }
+@media (hover: hover) and (pointer: fine) { .pm-hex:hover { transform: translate(-1px, -2px); z-index: 1; } }
 .pm-hex:focus-visible { outline: 2.5px solid var(--lila-ink); outline-offset: 1px; }
 .pm-hex-svg { display: block; width: 100%; height: auto; overflow: visible; }
 .pm-hex-svg .shadow { fill: var(--tc); }
@@ -94,7 +95,8 @@
 
 /* Hexágono grande de la portada: invita a abrir el panel. */
 .hero-hex { background: none; border: 0; padding: 0; cursor: pointer; border-radius: 16px; }
-.hero-hex .hex-wrap { transition: transform .25s var(--ease); }
-.hero-hex:hover .hex-wrap, .hero-hex:focus-visible .hex-wrap { transform: translate(-2px, -3px) scale(1.04); }
+.hero-hex .hex-wrap { transition: transform var(--dur-ui) var(--ease); }
+.hero-hex:focus-visible .hex-wrap { transform: translate(-2px, -3px) scale(1.04); }
+@media (hover: hover) and (pointer: fine) { .hero-hex:hover .hex-wrap { transform: translate(-2px, -3px) scale(1.04); } }
 .hero-hex:focus-visible { outline: 3px solid var(--lila-ink); outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) { .hero-hex .hex-wrap { transition: none; } }
