@@ -7,11 +7,14 @@ const HEX = (cx: number, cy: number, r: number) =>
     return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
   }).join("L")}Z`;
 
-/** Los seis hexágonos pequeños: salen del centro en arco (x con ease-out, y con ease-in-out) y entran en cadena cada 40 ms. */
-const SATELITES = Array.from({ length: 6 }, (_, i) => {
-  const a = (Math.PI / 180) * (30 + 60 * i);
-  const x = 120 + 104 * Math.cos(a), y = 120 + 104 * Math.sin(a);
-  return { x, y, dx: -(x - 120) * 0.55, dy: -(y - 120) * 0.55, d: 150 + i * 40, o: i % 2 ? 0.55 : 0.95 };
+/** Los seis hexágonos pequeños, a mano y sin simetría (ángulo en grados, distancia al centro, radio, opacidad): salen del centro
+ * en arco (x con ease-out, y con ease-in-out) y entran en cadena cada 40 ms. */
+const SATELITES = [
+  { a: -75, l: 96, r: 17, o: 0.95 }, { a: -20, l: 118, r: 11, o: 0.6 }, { a: 35, l: 100, r: 20, o: 0.9 },
+  { a: 120, l: 112, r: 13, o: 0.55 }, { a: 165, l: 92, r: 18, o: 0.95 }, { a: 235, l: 124, r: 9, o: 0.5 },
+].map((s, i) => {
+  const x = 120 + s.l * Math.cos((Math.PI / 180) * s.a), y = 120 + s.l * Math.sin((Math.PI / 180) * s.a);
+  return { ...s, x, y, dx: -(x - 120) * 0.55, dy: -(y - 120) * 0.55, d: 150 + i * 40 };
 });
 
 /** El arranque entero cabe en 760 ms: 600 de movimiento y un instante quieto con el logo completo; el desvanecido dura FUNDIDO_MS más. */
@@ -52,13 +55,14 @@ export function Splash() {
           {SATELITES.map((s, i) => (
             <g key={i} className="splash-sx" style={{ "--dx": `${s.dx}px`, animationDelay: `${s.d}ms` } as React.CSSProperties}>
               <g className="splash-sy" opacity={s.o} style={{ "--dy": `${s.dy}px`, animationDelay: `${s.d}ms` } as React.CSSProperties}>
-                <path d={HEX(s.x, s.y, 17)} fill="#F7C6E0" stroke="#F7C6E0" strokeWidth="8" strokeLinejoin="round" className="splash-sat" style={{ animationDelay: `${s.d}ms` }} />
+                <path d={HEX(s.x, s.y, s.r)} fill="#F7C6E0" stroke="#F7C6E0" strokeWidth="8" strokeLinejoin="round" className="splash-sat" style={{ animationDelay: `${s.d}ms` }} />
               </g>
             </g>
           ))}
           <path d={HEX(120, 120, 44)} fill="url(#splash-cuerpo)" stroke="url(#splash-cuerpo)" strokeWidth="18" strokeLinejoin="round" className="splash-hex" />
         </svg>
         <span className="splash-nombre">HexaPrep</span>
+        <span lang="en" className="splash-lema">Master it, one hexagon at a time.</span>
       </div>
     </div>
   );
