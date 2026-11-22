@@ -3,6 +3,7 @@ import type { Analytics, Hex, Serie } from "../../api";
 import { t } from "../../i18n";
 import { colorTema } from "../../colorTema";
 import { group } from "../HexMap";
+import { sinPrefijoTema } from "../../rotulo";
 
 /** Por debajo de este n un porcentaje engaña: la marca se atenúa y lo dice. */
 export const MIN_N = 5;
@@ -88,7 +89,7 @@ export function lineas(evo: Analytics["evolucion"], vista: Vista, orden: ReturnT
   const temas = [...evo.temas].sort((a, b) => pos(a.tema_id) - pos(b.tema_id));
   if (vista.nivel === "asignatura") return [{ id: "asignatura", nombre: t("hist.vistaAsignatura"), color: "var(--lila)", puntos: evo.asignatura }];
   if (vista.nivel === "temas") {
-    return temas.map((x) => ({ id: x.tema_id, nombre: x.tema, color: orden.get(x.tema_id)?.color ?? "var(--ink-3)", puntos: x.puntos }));
+    return temas.map((x) => ({ id: x.tema_id, nombre: sinPrefijoTema(x.tema), color: orden.get(x.tema_id)?.color ?? "var(--ink-3)", puntos: x.puntos }));
   }
   const tema = temas.find((x) => x.tema_id === vista.temaId);
   if (!tema) return [];

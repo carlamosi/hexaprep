@@ -5,6 +5,7 @@ import { Escrita } from "./Escrita";
 import { Explanation } from "./Explanation";
 import { RichText } from "./RichText";
 import { ErrorCarga } from "./ErrorCarga";
+import { sinPrefijoTema } from "../rotulo";
 
 export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
 
@@ -389,7 +390,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
         <div className="min-w-0 flex-1 space-y-0.5 text-[11px] tracking-[.1em] text-[var(--ink-3)] uppercase">
-          <p>{question.tema && question.subtema ? `${question.tema} · ${question.subtema}` : ""}</p>
+          <p>{question.tema && question.subtema ? `${sinPrefijoTema(question.tema)} · ${question.subtema}` : ""}</p>
           <p>{tn("practica.respondidas", answered)}</p>
         </div>
         {question.reintento && <span className="w-full rounded-[8px] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)]">{t("practica.repaso")}</span>}

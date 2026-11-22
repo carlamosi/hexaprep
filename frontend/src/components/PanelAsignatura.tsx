@@ -9,6 +9,7 @@ import { Buscador } from "./Buscador";
 import { group } from "./HexMap";
 import { tipDe, Tooltip, type Tip } from "./Tooltip";
 import "./panel.css";
+import { numeroTema, sinPrefijoTema } from "../rotulo";
 
 const POINTS = "25,1 75,1 99,43.3 75,85.6 25,85.6 1,43.3";
 // Geometría en unidades del viewBox (-2 -2 110 96) pasadas a anchos de caja: paso entre columnas y alto de fila.
@@ -53,7 +54,7 @@ function PanalUnico({ hexes, colores, s, cols, grain, reduce, onTip, onSelect }:
 }) {
   const filas = Math.ceil(hexes.length / cols);
   const show = (el: Element, h: Hex) =>
-    onTip(tipDe(el, <><b>{pctTxt(h.percent)}</b><span>{h.nombre}</span><span className="hp-tip-n">{h.tema} · {h.subtema}</span></>));
+    onTip(tipDe(el, <><b>{pctTxt(h.percent)}</b><span>{h.nombre}</span><span className="hp-tip-n">{sinPrefijoTema(h.tema)} · {h.subtema}</span></>));
   return (
     <div className="pm-cluster pm-masa" style={{ width: (cols - 1) * COL * s + s, height: (filas - 1) * FILA * s + ALTO * s + (cols > 1 ? (FILA * s) / 2 : 0) + 0.07 * s }}>
       {hexes.map((h, i) => {
@@ -158,8 +159,8 @@ export function PanelAsignatura({ map, onClose, onSelectSubtema }: { map: MapRes
               return (
                 <li key={tema.id} style={{ "--tc": colores.get(tema.id) } as React.CSSProperties}>
                   <i className="pm-chip" aria-hidden="true" />
-                  <span className="pm-kicker">{t("panal.tema")} {temas.length - k}</span>
-                  <span className="pm-tema-n">{tema.nombre}</span>
+                  <span className="pm-kicker">{t("panal.tema")} {numeroTema(tema.nombre, temas.length - k)}</span>
+                  <span className="pm-tema-n">{sinPrefijoTema(tema.nombre)}</span>
                   <b className="pm-tema-pct" data-testid={`pm-tema-pct-${tema.id}`}>{tp}<small>&nbsp;%</small></b>
                 </li>
               );

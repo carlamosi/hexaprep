@@ -2,6 +2,7 @@ import type { Hex } from "../api";
 import { t } from "../i18n";
 import { colorTema } from "../colorTema";
 import { Hexagon } from "./Hexagon";
+import { numeroTema, sinPrefijoTema } from "../rotulo";
 
 // El color de cada tema sale de `colorTema` (color de la asignatura girado por el orden del temario).
 
@@ -42,12 +43,12 @@ export function HexMap({ hexes, onSelect, onPracticarTema, subtemas }: {
         <section key={tema.id} className="tema" style={{ "--c": colorTema(base, ti, temas.length), "--tc": colorTema(base, ti, temas.length) } as React.CSSProperties} aria-labelledby={`tema-${ti}`}>
           <div className="tema-head">
             <i className="chip" aria-hidden="true" />
-            <span className="kicker kicker-muted">{t("panal.tema")} {ti + 1}</span>
-            <h2 id={`tema-${ti}`}>{tema.nombre}</h2>
+            <span className="kicker kicker-muted">{t("panal.tema")} {numeroTema(tema.nombre, ti + 1)}</span>
+            <h2 id={`tema-${ti}`}>{sinPrefijoTema(tema.nombre)}</h2>
             {/* shortcut: % de tema como media de conceptos, el backend no lo envía; usar el suyo si llega */}
             <span className="tema-pct"><span>{t("panal.dominio")}</span>{mean(tema.subtemas.flatMap((s) => s.hexes.map((h) => h.percent)))}&nbsp;%</span>
             {onPracticarTema && (
-              <button type="button" className="tema-practicar" aria-label={`${t("panal.practicarTema")} ${tema.nombre}`} onClick={() => onPracticarTema(tema.id)}>
+              <button type="button" className="tema-practicar" aria-label={`${t("panal.practicarTema")} ${sinPrefijoTema(tema.nombre)}`} onClick={() => onPracticarTema(tema.id)}>
                 {t("panal.practicarTema")}
               </button>
             )}

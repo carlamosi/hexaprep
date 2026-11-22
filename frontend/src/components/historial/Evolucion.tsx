@@ -4,6 +4,7 @@ import type { Analytics } from "../../api";
 import { t } from "../../i18n";
 import { Tooltip, useActiva, useAncho } from "../Tooltip";
 import { fechaCorta, fechaLarga, lineas, type Linea, type ordenPanal, type Vista } from "./datos";
+import { sinPrefijoTema } from "../../rotulo";
 
 const M = { l: 44, r: 18, t: 14, b: 28 };
 const deIso = (f: string) => { const [y, m, d] = f.split("-").map(Number); return new Date(y, m - 1, d); };
@@ -77,7 +78,7 @@ export function Evolucion({ evolucion, orden }: { evolucion: Analytics["evolucio
             {temas.map((tm) => (
               <button key={tm.tema_id} type="button" aria-pressed={vista.temaId === tm.tema_id} onClick={() => cambiar({ nivel: "subtemas", temaId: tm.tema_id })}
                 style={{ "--c": orden.get(tm.tema_id)?.color ?? "var(--ink-3)" } as React.CSSProperties}>
-                <i aria-hidden="true" />{tm.tema}
+                <i aria-hidden="true" />{sinPrefijoTema(tm.tema)}
               </button>
             ))}
           </div>

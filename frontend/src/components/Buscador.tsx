@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { MapResponse } from "../api";
 import { t } from "../i18n";
+import { sinPrefijoTema } from "../rotulo";
 
 type Hex = MapResponse["hexes"][number];
 const plano = (s: string) => s.normalize("NFD").replace(/\p{Diacritic}/gu, "").toLowerCase();
@@ -47,7 +48,7 @@ export function Buscador({ hexes, onElegir }: { hexes: Hex[]; onElegir: (subtema
                 <li key={h.concepto_id}>
                   <button type="button" onClick={() => { setAbierto(false); setTexto(""); onElegir(h.subtema_id); }} className="block min-h-11 w-full rounded-[8px] px-2 py-1.5 text-left hover:bg-[var(--lila-soft)]">
                     <span className="block text-sm font-medium">{h.nombre}</span>
-                    <span className="block text-xs text-[var(--ink-3)]">{h.tema} · {h.subtema}</span>
+                    <span className="block text-xs text-[var(--ink-3)]">{sinPrefijoTema(h.tema)} · {h.subtema}</span>
                   </button>
                 </li>
               ))}
