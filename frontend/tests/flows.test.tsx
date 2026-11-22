@@ -82,7 +82,7 @@ describe("flujos", () => {
 
   it("suggestions_page_lists_concepts_with_reason", async () => {
     const lista: Suggestion[] = [
-      { tipo: "concepto", concepto_id: "c1", concepto: "Análisis marginal", subtema_id: "s1", motivo: "Hace tiempo que no lo repasas y se te puede olvidar", ganancia_por_minuto: 3, riesgo_olvido: 0.5, score: 0.9 },
+      { tipo: "concepto", concepto_id: "c1", concepto: "Análisis marginal", subtema_id: "s1", motivo: "Hace tiempo que no lo repasas y se te puede olvidar", ganancia_por_minuto: 3, riesgo_olvido: 0.5, score: 0.9, razon: "olvido" },
       { tipo: "concepto", concepto_id: "c2", concepto: "Costes hundidos", subtema_id: "s1", motivo: "Aún tienes pocos datos de este concepto", ganancia_por_minuto: 2, riesgo_olvido: 0.1, score: 0.4 },
     ];
     const client = { suggestions: vi.fn().mockResolvedValue(lista) };
@@ -92,14 +92,27 @@ describe("flujos", () => {
     expect(await screen.findByText("Análisis marginal")).toBeInTheDocument();
     expect(screen.getByText("Hace tiempo que no lo repasas y se te puede olvidar")).toBeInTheDocument();
     expect(screen.getByText("Costes hundidos")).toBeInTheDocument();
+    expect(screen.getByText("Se te puede olvidar")).toBeInTheDocument(); // el código del motivo, con su etiqueta
+    expect(screen.getByText("50 %")).toBeInTheDocument(); // riesgo de olvido de la primera
+    expect(screen.getByText("+3")).toBeInTheDocument(); // subida estimada por minuto
     await user.click(screen.getAllByRole("button", { name: "Practicar su subtema" })[0]);
     expect(onPractice).toHaveBeenCalledWith("s1");
+  });
+
+  it("suggestions_se_piden_de_la_asignatura_que_se_ve_y_se_vuelven_a_pedir_al_cambiarla", async () => {
+    const client = { suggestions: vi.fn().mockResolvedValue([]) };
+    const { rerender } = render(<Suggestions client={client} asignaturaId="a1" onPracticeSubtema={vi.fn()} />);
+    await screen.findByText(/practica un rato/);
+    expect(client.suggestions).toHaveBeenLastCalledWith("a1");
+    rerender(<Suggestions client={client} asignaturaId="a2" onPracticeSubtema={vi.fn()} />);
+    await waitFor(() => expect(client.suggestions).toHaveBeenLastCalledWith("a2"));
   });
 
   it("suggestions_without_history_say_to_practice_first", async () => {
     render(<Suggestions client={{ suggestions: vi.fn().mockResolvedValue([]) }} onPracticeSubtema={vi.fn()} />);
     expect(await screen.findByText(/practica un rato/)).toBeInTheDocument();
     expect(screen.queryByRole("button")).toBeNull();
+    expect(screen.getByRole("link", { name: "Ir al panal" })).toHaveAttribute("href", "#panal"); // sale de la pantalla vacía sin botones
   });
 });
 

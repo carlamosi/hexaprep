@@ -577,8 +577,8 @@ def create_app(db_path: Path | None = None, data_dir: Path | None = None, bookle
 
     # ---------- sugerencias e historial ----------
     @app.get("/api/suggestions")
-    def suggestions_(s: Session = Depends(get_session)):
-        return [asdict(x) for x in scheduling.suggestions(s, utcnow())]
+    def suggestions_(asignatura_id: str | None = None, s: Session = Depends(get_session)):
+        return [asdict(x) for x in scheduling.suggestions(s, utcnow(), asignatura_id=asignatura_id)]
 
     @app.get("/api/history")
     def history(s: Session = Depends(get_session)):

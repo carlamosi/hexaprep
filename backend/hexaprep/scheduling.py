@@ -8,7 +8,7 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from .mastery import _dominio, expected_correct, sigmoid, update
-from .models import Concepto, Dominio, Evento, Intento, Pregunta
+from .models import Bloque, Concepto, Dominio, Evento, Intento, Pregunta, Subtema, Tema
 
 # Sin pasos de aprendizaje: las sesiones son libres, el primer intervalo ya es de días.
 _SCHEDULER = Scheduler(learning_steps=(), relearning_steps=(), enable_fuzzing=False)
@@ -93,6 +93,7 @@ class Suggestion:
     ganancia_por_minuto: float
     riesgo_olvido: float
     score: float
+    razon: str = ""  # código del motivo (olvido, pocos_datos, poco_dominio, rendimiento): la pantalla lo usa para dar color e icono
 
 
 def _gain_per_minute(dom: Dominio, dificultad: float, segundos: float) -> float:
@@ -102,8 +103,14 @@ def _gain_per_minute(dom: Dominio, dificultad: float, segundos: float) -> float:
     return p * 100 * (sigmoid(theta_up) - sigmoid(dom.theta)) * 60.0 / max(segundos, MIN_SECONDS)
 
 
-def suggestions(session: Session, now: datetime, n: int = 5) -> list[Suggestion]:
+def suggestions(session: Session, now: datetime, n: int = 5, asignatura_id: str | None = None) -> list[Suggestion]:
+    """Qué repasar ahora. Con `asignatura_id` solo conceptos de esa asignatura (la pantalla «Hoy» muestra la que estás viendo)."""
     doms = session.scalars(select(Dominio).where(Dominio.n_intentos > 0)).all()
+    if asignatura_id is not None:
+        suyos = set(session.scalars(
+            select(Concepto.id).join(Subtema, Subtema.id == Concepto.subtema_id).join(Tema, Tema.id == Subtema.tema_id)
+            .join(Bloque, Bloque.id == Tema.bloque_id).where(Bloque.asignatura_id == asignatura_id)))
+        doms = [d for d in doms if d.concepto_id in suyos]
     if not doms:
         return []
     dom_by_concept = {d.concepto_id: d for d in doms}
@@ -131,14 +138,14 @@ def suggestions(session: Session, now: datetime, n: int = 5) -> list[Suggestion]
     for dom, gain, riesgo in rows:
         score = 0.5 * gain / max_gain + 0.5 * riesgo
         if riesgo >= 0.3:
-            motivo = "Hace tiempo que no lo repasas y se te puede olvidar"
+            razon, motivo = "olvido", "Hace tiempo que no lo repasas y se te puede olvidar"
         elif dom.sigma > 0.9:
-            motivo = "Aún tienes pocos datos de este concepto"
+            razon, motivo = "pocos_datos", "Aún tienes pocos datos de este concepto"
         elif dom.theta < 0:
-            motivo = "Lo dominas poco y mejorarlo rinde mucho"
+            razon, motivo = "poco_dominio", "Lo dominas poco y mejorarlo rinde mucho"
         else:
-            motivo = "Es donde más subirá tu dominio por minuto"
+            razon, motivo = "rendimiento", "Es donde más subirá tu dominio por minuto"
         c = nombres[dom.concepto_id]
-        out.append(Suggestion("concepto", c.id, c.nombre, c.subtema_id, motivo, gain, riesgo, score))
+        out.append(Suggestion("concepto", c.id, c.nombre, c.subtema_id, motivo, gain, riesgo, score, razon))
     out.sort(key=lambda s: s.score, reverse=True)
     return out[:n]

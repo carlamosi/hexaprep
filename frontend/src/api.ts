@@ -65,6 +65,8 @@ export interface Nota { fecha: string; nota: number; dominio: number }
 export interface Suggestion {
   tipo: "concepto" | "placement"; concepto_id: string | null; concepto: string | null; subtema_id: string | null;
   motivo: string; ganancia_por_minuto: number; riesgo_olvido: number; score: number;
+  /** Código del motivo; las respuestas antiguas no lo traen. */
+  razon?: "olvido" | "pocos_datos" | "poco_dominio" | "rendimiento";
 }
 export interface History {
   dias: string[];
@@ -181,7 +183,7 @@ export const api = {
     request<{ version: number }>(`/api/questions/${id}`, "PUT", cambios),
   getQuestion: (id: string) => request<QuestionContent>(`/api/questions/${id}`),
   reportedQuestions: () => request<ReportedQuestion[]>("/api/questions/reported"),
-  suggestions: () => request<Suggestion[]>("/api/suggestions"),
+  suggestions: (asignaturaId?: string) => request<Suggestion[]>(`/api/suggestions${asignaturaId ? `?asignatura_id=${encodeURIComponent(asignaturaId)}` : ""}`),
   history: () => request<History>("/api/history"),
   analytics: (asignaturaId: string, dias: 0 | 7 | 30 = 0) =>
     request<Analytics>(`/api/analytics?asignatura_id=${encodeURIComponent(asignaturaId)}&dias=${dias}`),

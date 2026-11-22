@@ -1,3 +1,4 @@
+import json
 from datetime import datetime, timedelta
 
 from fsrs import Rating
@@ -5,8 +6,9 @@ from sqlalchemy import select
 
 from conftest import make_bank
 from hexaprep.events import start_session, submit_answer
+from hexaprep.bank import BankFile
 from hexaprep.importer import import_bank
-from hexaprep.models import Concepto, Dominio, Pregunta, utcnow
+from hexaprep.models import Asignatura, Concepto, Dominio, Pregunta, utcnow
 from hexaprep.scheduling import rate, rebuild, schedule, suggestions
 
 T0 = datetime(2026, 1, 1, 9, 0)
@@ -101,3 +103,21 @@ def test_tiny_response_time_does_not_dominate_gain(session, bank):
                   None, {})
     dom = session.scalar(select(Dominio))
     assert _gain_per_minute(dom, 3, 0.001) == _gain_per_minute(dom, 3, 5.0)
+
+
+def test_suggestions_can_be_limited_to_one_subject_and_carry_a_reason_code(session, bank):
+    """Dos asignaturas con historial: «Hoy» solo debe proponer conceptos de la que se está viendo."""
+    otra = json.loads(make_bank(bank, [("qz", "Z", "s2", 3)]).model_dump_json())
+    otra["asignatura"]["nombre"] = "Otra asignatura"
+    import_bank(session, make_bank(bank, [("qa", "A", "s", 3)]))
+    import_bank(session, BankFile.model_validate(otra))
+    sid = start_session(session, "practica", {})
+    for clave in ("qa", "qz"):
+        submit_answer(session, sid, session.scalar(select(Pregunta.id).where(Pregunta.clave == clave)), ORDEN, "a", None, {})
+    now = utcnow()
+    assert {s.concepto for s in suggestions(session, now)} == {"A", "Z"}
+    primera = session.scalar(select(Asignatura.id).where(Asignatura.nombre != "Otra asignatura"))
+    solo = suggestions(session, now, asignatura_id=primera)
+    assert [s.concepto for s in solo] == ["A"]
+    assert solo[0].razon in {"olvido", "pocos_datos", "poco_dominio", "rendimiento"}
+    assert suggestions(session, now, asignatura_id="no-existe") == []

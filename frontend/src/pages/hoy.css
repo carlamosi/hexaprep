@@ -1,0 +1,33 @@
+/* Hoy: tarjetas numeradas con hexágono de prioridad, motivo con color e icono, y dos medidores. Entran en cadena (45 ms); la primera es la acción principal. */
+.hoy-sec { animation: hoy-in var(--dur-enter) var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms); }
+@keyframes hoy-in { from { opacity: 0; transform: translateY(8px); } }
+
+.hoy-card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; padding: 20px; border: 1px solid var(--rule); border-radius: 16px; background: var(--card); }
+.hoy-card.is-top { border-color: var(--lila); box-shadow: 4px 4px 0 var(--lila); }
+
+.hoy-n { display: grid; place-items: center; width: 44px; height: 39px; clip-path: var(--hex-flat); background: var(--lila-soft); color: var(--lila-ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.is-top .hoy-n { background: linear-gradient(160deg, var(--lila), var(--lila-ink)); color: var(--on-ink); }
+
+.hoy-razon { --rc: var(--ink-3); display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px 2px 8px; border-radius: 999px; font-size: .78rem; font-weight: 600; color: var(--rc); background: color-mix(in srgb, var(--rc) 12%, var(--card)); }
+.hoy-razon[data-r="olvido"] { --rc: var(--ko); }
+.hoy-razon[data-r="poco_dominio"] { --rc: var(--lila-ink); }
+.hoy-razon[data-r="rendimiento"] { --rc: var(--ok); }
+.hoy-razon svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.hoy-medidas { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 14px; font-size: .85rem; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.hoy-medidas b { color: var(--ink); font-weight: 600; }
+.hoy-olvido { display: flex; align-items: center; gap: 10px; }
+.hoy-barra { width: 72px; height: 5px; overflow: hidden; border-radius: 99px; background: var(--rule); }
+.hoy-barra i { display: block; height: 100%; border-radius: inherit; background: var(--ko); transform-origin: left; transform: scaleX(var(--v)); animation: hoy-barra .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 45ms + 120ms); }
+@keyframes hoy-barra { from { transform: scaleX(0); } }
+
+/* Mientras llegan los datos: tarjetas con el mismo tamaño que las reales, para que nada salte al aparecer */
+.hoy-sk { height: 132px; border-radius: 16px; border: 1px solid var(--rule); background: linear-gradient(100deg, var(--card) 30%, var(--lila-soft) 50%, var(--card) 70%); background-size: 220% 100%; animation: hoy-sk 1.4s linear infinite; }
+@keyframes hoy-sk { from { background-position: 120% 0; } to { background-position: -120% 0; } }
+
+.hoy-vacio { display: grid; justify-items: center; gap: 12px; padding: 36px 24px; text-align: center; border: 1px dashed var(--rule-2); border-radius: 16px; color: var(--ink-2); }
+.hoy-vacio svg { width: 64px; height: 64px; }
+.hoy-vacio a { display: inline-flex; align-items: center; padding: 0 18px; border: 1px solid var(--rule-2); border-radius: 11px; color: var(--lila-ink); font-weight: 500; text-decoration: none; background: var(--card); }
+
+@media (max-width: 420px) { .hoy-card { gap: 12px; padding: 16px; } .hoy-n { width: 36px; height: 32px; font-size: .9rem; } }
+@media (prefers-reduced-motion: reduce) { .hoy-sec, .hoy-barra i { animation: none; } .hoy-sk { animation: none; } }
