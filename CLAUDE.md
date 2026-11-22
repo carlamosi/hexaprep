@@ -5,7 +5,7 @@ App web de práctica (local y online en Vercel con base Neon y acceso con Google
 ## Estado y ejecución
 - **Las 20 tareas del plan están hechas** (v1 verificada) y después se añadió mucho más a petición de Carla. No vuelvas a ejecutar el plan. Lee primero `docs/ESTADO.md`: estado, cómo probar, **cómo se amplían los bancos (los ids dependen de la posición: no edites ni reordenes archivos antiguos de `banks/*/src`)**, pendientes y siguientes pasos propuestos. El trabajo nuevo se plantea con Carla a partir de esos pasos.
 - Los commits de este repositorio local están autorizados cuando acabes un cambio verificado y mientras el trabajo sea el acordado con Carla; los cambios de más de un archivo se proponen antes con un plan breve.
-- **Autorizado** trabajar directamente en la rama `main`. El remoto es `github.com/carlamosi/hexaprep` (público) y **cada push a `main` despliega en producción** (https://hexaprep-app.vercel.app): empuja solo tras verificar y cuando Carla pida aplicar o desplegar; no crees otros remotos ni cambies la visibilidad del repo sin que lo pida. No escribas emails, secretos ni datos personales en archivos del repo.
+- **Autorizado** trabajar directamente en la rama `main`. El remoto es `github.com/carlamosi/hexaprep` (público) y **cada push a `main` despliega en producción** (https://hexaprep-app.vercel.app): **al acabar cada cambio verificado haz commit y push a `main` sin esperar a que lo pida** (Carla quiere ver los cambios en la web al momento) y comprueba que el despliegue ya sirve el build nuevo (compara el `assets/index-*.js` de la web con el de `frontend/dist/assets`); no empujes nada sin verificar; no crees otros remotos ni cambies la visibilidad del repo sin que lo pida. No escribas emails, secretos ni datos personales en archivos del repo.
 - Las decisiones tomadas durante la ejecución y los menores aplazados están en el ledger (`.superpowers/sdd/...`, ignorado por git); consúltalo en lugar de la memoria. Si cambias un mockup aprobado, avisa a Carla.
 
 ## Modelos
@@ -22,3 +22,6 @@ App web de práctica (local y online en Vercel con base Neon y acceso con Google
 - Redirige la salida larga de tests a un archivo y lee solo la cola.
 - Online: los cambios de tablas (migraciones) y los bancos nuevos hay que llevarlos a todos los perfiles de Neon con `tools/actualizar_perfiles.py`; los secretos viven en Vercel y `.env.local`, nunca en la conversación.
 - Gasta pocos créditos: subagentes con un brief mínimo, revisión Opus solo de lo que cambia, y preferir generadores por reglas a agentes que redactan.
+- **Skills según lo que pida Carla:** tabla en `docs/ARRANQUE.md` (sección «Qué skill usar»). Di en una frase cuál usas y por qué.
+- Archivos con saltos CRLF (varios `.css` y `tokens.css`): un `replace` de Python con `\n` falla sin avisar. Usa `assert` sobre el recuento o la herramienta Edit, y comprueba midiendo en el navegador (estilos calculados), no solo con tests.
+- Para probar la interfaz sin tocar datos reales: copia `data/hexaprep.db*` al scratchpad y arranca con `HEXAPREP_DATA=<copia> HEXAPREP_PORT=8010`.
