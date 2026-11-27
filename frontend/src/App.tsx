@@ -11,9 +11,17 @@ import { Perfil } from "./pages/Perfil";
 import { Subtopic } from "./pages/Subtopic";
 import { Suggestions } from "./pages/Suggestions";
 import { ErrorCarga } from "./components/ErrorCarga";
+import { guardarRuta, rutaGuardada } from "./session";
 
 function useHash(): [string, (h: string) => void] {
-  const [hash, setHash] = useState(() => window.location.hash.slice(1) || "panal");
+  // Al reabrir la app instalada se pierde el «#»: se recupera la práctica en curso (se borra al salir de ella).
+  const [hash, setHash] = useState(() => {
+    const h = window.location.hash.slice(1);
+    if (h) return h;
+    const r = rutaGuardada();
+    if (r) window.location.hash = r;
+    return r || "panal";
+  });
   useEffect(() => {
     const on = () => setHash(window.location.hash.slice(1) || "panal");
     window.addEventListener("hashchange", on);
@@ -28,6 +36,7 @@ export default function App() {
   const [route, arg, arg2] = hash.split("/"); // practica/<tema o _>/<test o problemas>
 
   useEffect(() => { if (route === "ajustes") go("perfil"); }, [route, go]); // enlaces antiguos
+  useEffect(() => { guardarRuta(route === "practica" || route === "subtema" ? hash : null); }, [route, hash]);
 
   const TITULOS: Record<string, string> = { panal: "nav.panal", hoy: "nav.hoy", historial: "nav.historial", guardados: "guardados.titulo", perfil: "nav.perfil" };
   useEffect(() => { // título de la pestaña: «Català · Historial · HexaPrep»

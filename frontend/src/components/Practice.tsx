@@ -8,8 +8,9 @@ import { RichText } from "./RichText";
 import { ErrorCarga } from "./ErrorCarga";
 import { BotonGuardar } from "./BotonGuardar";
 import { sinPrefijoTema } from "../rotulo";
+import { guardarPregunta, preguntaGuardada } from "../session";
 
-export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
+export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "getSession" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
 
 const NUMERO = /^[+\-−]?(\d+([.,]\d*)?|[.,]\d+)(e[+\-]?\d+)?(\/[+\-−]?(\d+([.,]\d*)?|[.,]\d+))?$/i;
 
@@ -29,6 +30,8 @@ interface Props {
   sesionId: string;
   client?: PracticeClient;
   onDone?: () => void;
+  /** «Terminar sesión»: visible en toda pregunta, también tras responder o reportar. */
+  onTerminar?: () => void;
   /** Respuestas ya dadas si se reanuda una sesión. */
   initialAnswered?: number;
   onAnswered?: (question: Question, result: AnswerResult) => void;
@@ -46,7 +49,7 @@ function Esqueleto() {
   );
 }
 
-export function Practice({ sesionId, client: clientProp = api, onDone, initialAnswered = 0, onAnswered }: Props) {
+export function Practice({ sesionId, client: clientProp = api, onDone, initialAnswered = 0, onAnswered, onTerminar }: Props) {
   // Los callbacks y el cliente van por ref: un padre que los recree en cada render no debe relanzar la carga.
   const client = useRef(clientProp);
   client.current = clientProp;
@@ -70,6 +73,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   const shownAt = useRef(0);
   const firstClickAt = useRef<number | null>(null);
   const loadId = useRef(0);
+  const reanudar = useRef(true); // solo la primera carga puede recuperar la pregunta guardada
   // señales de uso para analítica: primer toque, tiempo con la pestaña oculta y tiempo en la explicación
   const primerToque = useRef<number | null>(null);
   const ocultoMs = useRef(0);
@@ -116,6 +120,16 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     pre.current = e;
   }, [sesionId]);
 
+  /** La pregunta que se veía al cerrar, si el servidor confirma que sigue sin responder. */
+  const pendienteGuardada = useCallback(async (): Promise<Question | null> => {
+    const q = preguntaGuardada<Question>(sesionId);
+    if (!q) return null;
+    try {
+      const st = await client.current.getSession?.(sesionId);
+      return st?.pendiente === q.pregunta_id ? q : null;
+    } catch { return null; }
+  }, [sesionId]);
+
   const load = useCallback(async () => {
     const id = ++loadId.current;
     const adelantada = pre.current;
@@ -142,13 +156,16 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     firstClickAt.current = null;
     try {
       let q: Question | null;
+      const guardada = reanudar.current ? await pendienteGuardada() : null; // reabrir la app: la misma pregunta, no otra
+      reanudar.current = false;
       try {
-        q = adelantada && !adelantada.fallo ? await adelantada.p : await client.current.nextQuestion(sesionId);
+        q = guardada ?? (adelantada && !adelantada.fallo ? await adelantada.p : await client.current.nextQuestion(sesionId));
       } catch (err) {
         if (!adelantada) throw err;
         q = await client.current.nextQuestion(sesionId); // la adelantada falló: se pide otra vez
       }
       if (id !== loadId.current) return;
+      if (q) guardarPregunta(sesionId, q);
       if (q === null) {
         setQuestion(null);
         onDoneRef.current?.();
@@ -396,8 +413,12 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
           <p>{tn("practica.respondidas", answered)}</p>
         </div>
         {question.reintento && <span className="w-full rounded-[8px] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)]">{t("practica.repaso")}</span>}
+        {onTerminar && result && (
+          <button type="button" onClick={onTerminar} className="shrink-0 text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.terminar")}</button>
+        )}
         {!result && !reported && (
           <div className="flex shrink-0 items-center gap-4"> {/* a la derecha, en posición fija, da igual lo largo que sea el tema */}
+            {onTerminar && <button type="button" onClick={onTerminar} className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.terminar")}</button>}
             {client.current.skip && (
               <button type="button" onClick={() => void saltar()} aria-keyshortcuts="S" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">
                 {t("practica.saltar")}

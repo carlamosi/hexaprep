@@ -64,6 +64,7 @@ export function Subtopic({ asignaturaId, subtemaId, client = api, onBack }: Prop
           client={client}
           initialAnswered={answered}
           onDone={done}
+          onTerminar={done}
           onAnswered={(q, r) => {
             if (!r.correcta) {
               fallos.current.push({

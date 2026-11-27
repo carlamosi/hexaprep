@@ -52,16 +52,12 @@ export function FreePractice({ asignaturaId, temaId, tipos, client = api, onFini
   }
   return (
     <section className="px-4 py-6">
-      <div className="mx-auto mb-4 flex max-w-3xl justify-end">
-        <button type="button" onClick={() => setFin(true)} className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">
-          {t("practica.terminar")}
-        </button>
-      </div>
       <Practice
         sesionId={sid}
         client={client}
         initialAnswered={answered}
         onDone={() => setFin(true)}
+        onTerminar={() => setFin(true)}
         onAnswered={(q, r) => {
           if (!r.correcta) {
             fallos.current.push({
