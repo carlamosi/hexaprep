@@ -114,7 +114,7 @@ describe("pantalla de práctica", () => {
   it("report_menu_mal_o_dudosa_marks_question", async () => {
     const a = setupMenu();
     await screen.findByText(Q.enunciado);
-    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Reportar" }));
     await a.user.click(screen.getByRole("button", { name: "Está mal o dudosa" }));
     expect(a.client.reportQuestion).toHaveBeenCalledWith("p1", "Está mal o dudosa", "s1");
     expect(await screen.findByText(/Pregunta reportada/)).toBeInTheDocument();
@@ -123,7 +123,7 @@ describe("pantalla de práctica", () => {
   it("report_menu_facil_only_notes_it_and_keeps_the_question", async () => {
     const a = setupMenu();
     await screen.findByText(Q.enunciado);
-    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Reportar" }));
     await a.user.click(screen.getByRole("button", { name: "Demasiado fácil u obvia" }));
     expect(a.client.facil).toHaveBeenCalledWith("p1", "s1");
     expect(await screen.findByText("Anotado. Gracias.")).toBeInTheDocument();
@@ -134,7 +134,7 @@ describe("pantalla de práctica", () => {
   it.each([["Solo esta pregunta", "pregunta"], ["Todo este concepto", "concepto"], ["Todo este tema", "tema"]])("report_menu_aun_no_lo_hemos_dado_%s", async (boton, alcance) => {
     const a = setupMenu();
     await screen.findByText(Q.enunciado);
-    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Reportar" }));
     await a.user.click(screen.getByText("Aún no lo hemos dado"));
     await a.user.click(screen.getByRole("button", { name: boton }));
     expect(a.client.ocultar).toHaveBeenCalledWith("p1", alcance);
@@ -145,7 +145,7 @@ describe("pantalla de práctica", () => {
     const a = setupMenu(KO);
     await a.user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
     await screen.findByText(/confunde coste con precio/);
-    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Reportar" }));
     await a.user.click(screen.getByRole("button", { name: "Está mal o dudosa" }));
     expect(a.client.reportQuestion).toHaveBeenCalledWith("p1", "Está mal o dudosa", "s1");
   });
@@ -154,7 +154,7 @@ describe("pantalla de práctica", () => {
     const a = setupMenu();
     a.client.reportQuestion.mockRejectedValueOnce(new Error("red"));
     await screen.findByText(Q.enunciado);
-    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Reportar" }));
     await a.user.click(screen.getByRole("button", { name: "Está mal o dudosa" }));
     expect(await screen.findByRole("alert")).toHaveTextContent(/No se ha podido enviar/);
     expect(screen.getByText(Q.enunciado)).toBeInTheDocument();
@@ -195,7 +195,6 @@ describe("pantalla de práctica", () => {
     const a = setup();
     await screen.findByText(Q.enunciado);
     await a.user.click(screen.getByRole("button", { name: /Texto A/ }));
-    await a.user.click(await screen.findByText("Más")); // la ayuda va plegada dentro de «Más»
     const summary = await screen.findByText(/Ayuda: entender el concepto/);
     expect(summary.closest("details")).not.toHaveAttribute("open");
     await a.user.click(summary);
@@ -245,6 +244,19 @@ describe("pantalla de práctica", () => {
     await user.click(await screen.findByRole("button", { name: /Siguiente/ }));
     await waitFor(() => expect(evento).toHaveBeenCalledWith("s1", "carga", "p2", expect.objectContaining({ prefetch: true, esqueleto: false, t_resp_ms: expect.any(Number) })));
     expect(evento).toHaveBeenCalledWith("s1", "carga", "p1", expect.objectContaining({ prefetch: false, esqueleto: true }));
+  });
+
+  it("diseno_B_terminar_y_corrección_siguen_a_la_vista_tras_responder", async () => {
+    const onTerminar = vi.fn();
+    const client = { nextQuestion: vi.fn().mockResolvedValue(Q), answer: vi.fn().mockResolvedValue(KO), reportQuestion: vi.fn() } satisfies PracticeClient;
+    const user = userEvent.setup();
+    render(<Practice sesionId="s1" client={client} onTerminar={onTerminar} />);
+    await user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    const hoja = (await screen.findByRole("button", { name: /Siguiente/ })).closest("section")!;
+    expect(hoja).toHaveTextContent("confunde coste con precio");
+    expect(screen.getByRole("button", { name: /Opción B: Texto A/ }).className).toContain("ok"); // correcta con icono, no solo color
+    await user.click(screen.getByRole("button", { name: "Terminar sesión" }));
+    expect(onTerminar).toHaveBeenCalled();
   });
 
   it("closes_the_session_when_leaving_the_practice", async () => {

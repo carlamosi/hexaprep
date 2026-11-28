@@ -9,6 +9,7 @@ import { ErrorCarga } from "./ErrorCarga";
 import { BotonGuardar } from "./BotonGuardar";
 import { sinPrefijoTema } from "../rotulo";
 import { guardarPregunta, preguntaGuardada } from "../session";
+import "./practice.css";
 
 export type PracticeClient = Pick<typeof api, "nextQuestion" | "answer" | "reportQuestion"> & Partial<Pick<typeof api, "markCorrect" | "skip" | "getSession" | "evento" | "facil" | "ocultar" | "alternativa" | "fin">>;
 
@@ -22,7 +23,6 @@ export function respuestaValida(texto: string): boolean {
 }
 
 const LETTERS = ["A", "B", "C", "D"];
-const BTN_MENU = "block min-h-11 w-full rounded-[11px] border border-[var(--rule-2)] px-3 py-1.5 text-left text-sm";
 /** Tras un acierto pasa sola a la siguiente pregunta pasados estos ms (un fallo nunca pasa solo). */
 export const AVANCE_MS = 3000;
 
@@ -37,14 +37,15 @@ interface Props {
   onAnswered?: (question: Question, result: AnswerResult) => void;
 }
 
-/** Tarjeta vacía mientras llega la siguiente pregunta (nunca el texto «Cargando»). */
+/** Esqueleto con la forma de la pregunta (nunca el texto «Cargando»). */
 function Esqueleto() {
   return (
-    <article data-testid="esqueleto" aria-busy="true" aria-label={t("app.cargando")} className="mx-auto w-full max-w-3xl motion-safe:animate-pulse rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
-      <div className="h-3 w-40 rounded bg-[var(--rule)]" />
-      <div className="mt-6 h-6 w-4/5 rounded bg-[var(--rule)]" />
-      <div className="mt-3 h-6 w-3/5 rounded bg-[var(--rule)]" />
-      <div className="mt-8 space-y-3">{[0, 1, 2, 3].map((i) => <div key={i} className="h-12 rounded-[11px] bg-[var(--rule)]/60" />)}</div>
+    <article data-testid="esqueleto" aria-busy="true" aria-label={t("app.cargando")} className="pq-esq motion-safe:animate-pulse">
+      <div className="h-11" />
+      <div className="mt-2 h-3 w-40 rounded bg-[var(--rule)]" />
+      <div className="mt-4 h-7 w-4/5 rounded bg-[var(--rule)]" />
+      <div className="mt-2 h-7 w-3/5 rounded bg-[var(--rule)]" />
+      <div className="mt-8 space-y-2">{[0, 1, 2, 3].map((i) => <div key={i} className="h-14 rounded-[14px] bg-[var(--rule)]/60" />)}</div>
     </article>
   );
 }
@@ -61,6 +62,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   const [chosen, setChosen] = useState<Letra | null>(null);
   const [result, setResult] = useState<AnswerResult | null>(null);
   const [reported, setReported] = useState<string | false>(false); // texto de cierre tras reportar u ocultar
+  const [menu, setMenu] = useState(false); // popover de reporte (⋯)
   const [aviso, setAviso] = useState<string | null>(null);
   const [errorReporte, setErrorReporte] = useState(false);
   const [valiaEnviada, setValiaEnviada] = useState(false);
@@ -146,6 +148,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     setChosen(null);
     setResult(null);
     setReported(false);
+    setMenu(false);
     setAviso(null);
     setErrorReporte(false);
     setValiaEnviada(false);
@@ -357,6 +360,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === "Escape") { setMenu(false); return; }
       const target = e.target as HTMLElement | null;
       if (target && /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName)) return;
       if (e.key === "Enter" && (result || reported) && !(question?.tipo === "escrita" && result && !copiado)) {
@@ -405,33 +409,37 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   if (question === undefined) return <Esqueleto />;
   if (question === null) return null;
 
+  const hecho = result !== null;
+  const hex = (d: string) => <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={d} /></svg>;
+
   return (
-    <article className="mx-auto w-full max-w-3xl rounded-[16px] border border-[var(--rule)] bg-[var(--card)] p-5 sm:p-8">
-      <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-        <div className="min-w-0 flex-1 space-y-0.5 text-[11px] tracking-[.1em] text-[var(--ink-3)] uppercase">
-          <p>{question.tema && question.subtema ? `${sinPrefijoTema(question.tema)} · ${question.subtema}` : ""}</p>
-          <p>{tn("practica.respondidas", answered)}</p>
-        </div>
-        {question.reintento && <span className="w-full rounded-[8px] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)]">{t("practica.repaso")}</span>}
-        <div className="flex shrink-0 items-center gap-4"> {/* a la derecha, en posición fija, da igual lo largo que sea el tema */}
-            {onTerminar && <button type="button" onClick={onTerminar} className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.terminar")}</button>}
-            {!result && !reported && client.current.skip && (
-              <button type="button" onClick={() => void saltar()} aria-keyshortcuts="S" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">
-                {t("practica.saltar")}
-              </button>
-            )}
-          {!reported && <details className="relative">
-            <summary className="cursor-pointer text-sm text-[var(--ink-3)]">{t("practica.reportar")}</summary>
-            <div role="group" aria-label={t("practica.reportar")} className="mt-2 space-y-2 rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] p-3">
-              <p className="text-sm">{t("practica.reporte_pregunta")}</p>
-              <button type="button" onClick={() => void report(t("practica.reporte_mal"))} className={BTN_MENU}>{t("practica.reporte_mal")}</button>
-              {client.current.facil && <button type="button" onClick={() => void facil()} className={BTN_MENU}>{t("practica.reporte_facil")}</button>}
+    <article className={`pq ${hecho ? "pq-hecho" : ""}`}>
+      <div className="pq-top">
+        {onTerminar
+          ? <button type="button" onClick={onTerminar} className="pq-back"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6" /></svg>{t("practica.terminar")}</button>
+          : <span />}
+        <div className="pq-rt">
+          <span className="pq-cnt" aria-hidden="true">{answered}</span>
+          <span className="sr-only">{tn("practica.respondidas", answered)}</span>
+          {!result && !reported && client.current.skip && (
+            <button type="button" onClick={() => void saltar()} aria-keyshortcuts="S" className="pq-sk">{t("practica.saltar")}</button>
+          )}
+          {!reported && (
+            <button type="button" aria-label={t("practica.reportar")} aria-expanded={menu} onClick={() => setMenu((m) => !m)} className="pq-dots">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg>
+            </button>
+          )}
+          {menu && !reported && (
+            <div role="group" aria-label={t("practica.reportar")} className="pq-menu">
+              <p>{t("practica.reporte_pregunta")}</p>
+              <button type="button" onClick={() => void report(t("practica.reporte_mal"))} className="pq-mi">{t("practica.reporte_mal")}</button>
+              {client.current.facil && <button type="button" onClick={() => void facil()} className="pq-mi">{t("practica.reporte_facil")}</button>}
               {client.current.ocultar && (
                 <details>
                   <summary className="cursor-pointer text-sm">{t("practica.reporte_aun")}</summary>
                   <div role="group" aria-label={t("practica.reporte_aun")} className="mt-2 space-y-2">
                     {(["pregunta", "concepto", "tema"] as const).map((a) => (
-                      <button key={a} type="button" onClick={() => void aunNo(a)} className={BTN_MENU}>
+                      <button key={a} type="button" onClick={() => void aunNo(a)} className="pq-mi">
                         {t(`practica.reporte_aun${a[0].toUpperCase()}${a.slice(1)}`)}
                       </button>
                     ))}
@@ -442,109 +450,111 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
               {errorReporte && <p role="alert" className="text-sm text-[var(--ko)]">{t("practica.reporte_error")}</p>}
               <p className="text-xs text-[var(--ink-3)]">{t("practica.reporte_nota")}</p>
             </div>
-          </details>}
+          )}
         </div>
       </div>
 
-      {question.contexto && (
-        <div className="mt-4 rounded-[11px] border border-[var(--lila-tint)] bg-[var(--lila-soft)] px-4 py-3 text-[var(--ink-2)]">
-          <span className="text-xs font-semibold tracking-[.14em] text-[var(--lila-ink)] uppercase">{t("practica.enunciadoComun")}</span>
-          <p className="mt-1"><RichText text={question.contexto} /></p>
-        </div>
-      )}
+      <div className="pq-col">
+        <div className="pq-main">
+          {question.reintento && <p className="mb-2 inline-block rounded-[8px] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)]">{t("practica.repaso")}</p>}
+          <p className="pq-topic">{question.tema && question.subtema ? `${sinPrefijoTema(question.tema)} · ${question.subtema}` : ""}</p>
 
-      <h1 className="mt-4 text-xl leading-snug font-semibold sm:text-2xl">
-        {question.apartado && <span className="text-[var(--lila-ink)]">{question.apartado})</span>}{" "}
-        <RichText text={question.enunciado} />
-      </h1>
-
-      {question.imagen && (
-        <img
-          src={`/img/${question.imagen}`} alt={t("practica.imagenAlt")}
-          className="mx-auto mt-4 max-h-72 w-auto max-w-full rounded-[11px] border border-[var(--rule)] bg-[var(--card)] object-contain p-2"
-        />
-      )}
-
-      {reported ? (
-        <div className="mt-6 space-y-3">
-          <p role="status">{reported}</p>
-          <button type="button" onClick={() => void load()} className="rounded-[11px] bg-[var(--ink)] px-5 py-2 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro">
-            {t("practica.siguiente")}
-          </button>
-        </div>
-      ) : (
-        <>
-          {question.tipo === "escrita" && columnasDe(question.enunciado) ? (
-            <Clasificar key={question.pregunta_id} palabras={question.campos ?? []} columnas={columnasDe(question.enunciado)!} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} />
-          ) : question.tipo === "escrita" ? (
-            <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} onSeguir={() => void load()} onCopia={(d) => senal("copia", question.pregunta_id, d)} />
-          ) : question.tipo === "problema" ? (
-            <form
-              className="mt-5 flex flex-wrap items-center gap-3"
-              onSubmit={(e) => { e.preventDefault(); void submitProblem(); }}
-            >
-              <label htmlFor="respuesta" className="sr-only">{t("practica.tuRespuesta")}</label>
-              <input
-                id="respuesta" autoFocus inputMode="decimal" autoComplete="off" value={valor} disabled={chosen !== null}
-                onChange={(e) => setValor(e.target.value)} placeholder={t("practica.tuRespuesta")}
-                className={`w-64 rounded-[11px] border border-[var(--rule-2)] px-4 py-3 text-lg tabular-nums focus-visible:border-[var(--lila)] ${result ? (result.correcta ? "fb-ok" : "fb-ko") : ""}`}
-              />
-              <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-60">
-                {t("practica.comprobar")}
-              </button>
-              <p className="w-full text-sm text-[var(--ink-3)]">{t("practica.formatoRespuesta")}</p>
-              {numeroMal && <p role="alert" className="w-full text-sm text-[var(--ko)]">{t("practica.numeroNoValido")}</p>}
-            </form>
-          ) : (
-            <ul aria-label={t("practica.opciones")} className="mt-5 space-y-3">
-              {question.opciones.map((o, i) => {
-                const done = result !== null;
-                const isCorrect = done && o.letra === result.opcion_correcta;
-                const isWrongPick = done && !result.correcta && o.letra === chosen;
-                return (
-                  <li key={o.letra}>
-                    <button
-                      type="button"
-                      aria-keyshortcuts={`${LETTERS[i]} ${i + 1}`}
-                      aria-label={`${t("practica.opcion")} ${LETTERS[i]}: ${o.texto}`}
-                      aria-disabled={chosen !== null}
-                      onClick={() => void choose(i)}
-                      className={`flex w-full items-start gap-3 rounded-[11px] border px-4 py-3 text-left transition-[color,background-color,border-color,transform] duration-150 active:scale-[.99] ${
-                        isCorrect
-                          ? `border-[var(--ok)] bg-[var(--ok-soft)] ${o.letra === chosen ? "fb-ok" : ""}`
-                          : isWrongPick
-                            ? "fb-ko border-[var(--ko)] bg-[var(--ko-soft)]"
-                            : done
-                              ? "border-[var(--rule)] opacity-60"
-                              : chosen === null ? "border-[var(--rule-2)] hover:border-[var(--lila)] hover:bg-[var(--lila-soft)]" : "border-[var(--rule-2)]"
-                      }`}
-                    >
-                      <span aria-hidden="true" className="flex h-[30px] w-[34px] shrink-0 items-center justify-center bg-[var(--lila-soft)] text-sm font-semibold text-[var(--lila-ink)] [clip-path:var(--hex-flat)]">{LETTERS[i]}</span>
-                      <span><RichText text={o.texto} /></span>
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+          {question.contexto && (
+            <div className="mb-4 rounded-[11px] border border-[var(--lila-tint)] bg-[var(--lila-soft)] px-4 py-3 text-[var(--ink-2)]">
+              <span className="text-xs font-semibold tracking-[.14em] text-[var(--lila-ink)] uppercase">{t("practica.enunciadoComun")}</span>
+              <p className="mt-1"><RichText text={question.contexto} /></p>
+            </div>
           )}
 
-          {result && <Explanation result={result} preguntaId={question.pregunta_id} enunciado={question.enunciado} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" || question.tipo === "escrita" ? () => void marcarBien() : undefined} etiquetaMarcarBien={question.tipo === "escrita" ? t("practica.errorEscritura") : undefined}
-            extras={((!result.correcta && client.current.alternativa) || question.ayuda_larga) ? <>
-              {!result.correcta && client.current.alternativa && (
-                valiaEnviada
-                  ? <p role="status" className="text-sm text-[var(--ink-2)]">{t("practica.valiaHecho")}</p>
-                  : <button type="button" onClick={() => void valia()} className="block text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.valia")}</button>
-              )}
-              {question.ayuda_larga && ( // antes de responder podría desvelar la respuesta
-                <details onToggle={(e) => { if (e.currentTarget.open) senal("ayuda_abierta", question.pregunta_id); }}>
-                  <summary className="cursor-pointer text-[var(--ink-2)]">{t("practica.ayuda")}</summary>
-                  <p className="mt-2 text-[var(--ink-2)]"><RichText text={question.ayuda_larga} /></p>
-                  <BotonGuardar preguntaId={question.pregunta_id} tipo="ayuda" huella={question.ayuda_larga} />
-                </details>
-              )}
-            </> : undefined} />}
-        </>
-      )}
+          <h1 className="pq-q">
+            {question.apartado && <span className="text-[var(--lila-ink)]">{question.apartado})</span>}{" "}
+            <RichText text={question.enunciado} />
+          </h1>
+
+          {question.imagen && (
+            <img
+              src={`/img/${question.imagen}`} alt={t("practica.imagenAlt")}
+              className="mx-auto mt-4 max-h-72 w-auto max-w-full rounded-[11px] border border-[var(--rule)] bg-[var(--card)] object-contain p-2"
+            />
+          )}
+        </div>
+
+        {reported ? (
+          <div className="pq-ans space-y-3">
+            <p role="status">{reported}</p>
+            <button type="button" onClick={() => void load()} className="pq-next btn-duro">{t("practica.siguiente")}</button>
+          </div>
+        ) : (
+          <div className="pq-ans">
+            {question.tipo === "escrita" && columnasDe(question.enunciado) ? (
+              <Clasificar key={question.pregunta_id} palabras={question.campos ?? []} columnas={columnasDe(question.enunciado)!} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} />
+            ) : question.tipo === "escrita" ? (
+              <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} onSeguir={() => void load()} onCopia={(d) => senal("copia", question.pregunta_id, d)} />
+            ) : question.tipo === "problema" ? (
+              <form
+                className="flex flex-wrap items-center gap-3"
+                onSubmit={(e) => { e.preventDefault(); void submitProblem(); }}
+              >
+                <label htmlFor="respuesta" className="sr-only">{t("practica.tuRespuesta")}</label>
+                <input
+                  id="respuesta" autoFocus inputMode="decimal" autoComplete="off" value={valor} disabled={chosen !== null}
+                  onChange={(e) => setValor(e.target.value)} placeholder={t("practica.tuRespuesta")}
+                  className={`pq-campo min-w-0 flex-1 basis-44 rounded-[14px] border border-[var(--rule-2)] bg-[var(--card)] px-4 tabular-nums focus-visible:border-[var(--lila)] ${result ? (result.correcta ? "fb-ok" : "fb-ko") : ""}`}
+                  style={result ? { borderColor: result.correcta ? "var(--ok)" : "var(--ko)", background: result.correcta ? "var(--ok-soft)" : "var(--ko-soft)" } : undefined}
+                />
+                <button type="submit" disabled={chosen !== null} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-60">
+                  {t("practica.comprobar")}
+                </button>
+                <p className="w-full text-sm text-[var(--ink-3)]">{t("practica.formatoRespuesta")}</p>
+                {numeroMal && <p role="alert" className="w-full text-sm text-[var(--ko)]">{t("practica.numeroNoValido")}</p>}
+              </form>
+            ) : (
+              <ul aria-label={t("practica.opciones")} className="pq-opts">
+                {question.opciones.map((o, i) => {
+                  const isCorrect = hecho && o.letra === result.opcion_correcta;
+                  const isWrongPick = hecho && !result.correcta && o.letra === chosen;
+                  const estado = isCorrect ? "ok" : isWrongPick ? "ko" : hecho ? "dim" : chosen === null ? "libre" : "";
+                  return (
+                    <li key={o.letra}>
+                      <button
+                        type="button"
+                        aria-keyshortcuts={`${LETTERS[i]} ${i + 1}`}
+                        aria-label={`${t("practica.opcion")} ${LETTERS[i]}: ${o.texto}`}
+                        aria-disabled={chosen !== null}
+                        onClick={() => void choose(i)}
+                        className={`pq-opt ${estado} ${isCorrect && o.letra === chosen ? "fb-ok" : isWrongPick ? "fb-ko" : ""}`}
+                      >
+                        <span aria-hidden="true" className="pq-lt">{LETTERS[i]}</span>
+                        <span className="pq-t"><RichText text={o.texto} /></span>
+                        {isCorrect && <span className="pq-ic" aria-hidden="true">{hex("M5 12.5l4.5 4.5L19 7.5")}</span>}
+                        {isWrongPick && <span className="pq-ic" aria-hidden="true">{hex("M6 6l12 12M18 6L6 18")}</span>}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </div>
+        )}
+
+        {result && !reported && <Explanation result={result} preguntaId={question.pregunta_id} enunciado={question.enunciado} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" || question.tipo === "escrita" ? () => void marcarBien() : undefined} etiquetaMarcarBien={question.tipo === "escrita" ? t("practica.errorEscritura") : undefined}
+          extras={((!result.correcta && client.current.alternativa) || question.ayuda_larga) ? <>
+            {!result.correcta && client.current.alternativa && (
+              valiaEnviada
+                ? <p role="status" className="pq-lk no-underline">{t("practica.valiaHecho")}</p>
+                : <button type="button" onClick={() => void valia()} className="pq-lk">{t("practica.valia")}</button>
+            )}
+            {question.ayuda_larga && ( // antes de responder podría desvelar la respuesta
+              <details onToggle={(e) => { if (e.currentTarget.open) senal("ayuda_abierta", question.pregunta_id); }}>
+                <summary className="pq-lk">{t("practica.ayuda")}</summary>
+                <p className="pq-sh-b"><RichText text={question.ayuda_larga} /></p>
+                <BotonGuardar preguntaId={question.pregunta_id} tipo="ayuda" huella={question.ayuda_larga} />
+              </details>
+            )}
+          </> : undefined} />}
+
+        <p className="pq-teclas">{t("practica.teclas")}</p>
+      </div>
     </article>
   );
 }
