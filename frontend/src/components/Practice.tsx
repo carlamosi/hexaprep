@@ -62,6 +62,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   const [result, setResult] = useState<AnswerResult | null>(null);
   const [reported, setReported] = useState<string | false>(false); // texto de cierre tras reportar u ocultar
   const [aviso, setAviso] = useState<string | null>(null);
+  const [errorReporte, setErrorReporte] = useState(false);
   const [valiaEnviada, setValiaEnviada] = useState(false);
   const escritas = useRef<string[]>([]);
   const [valor, setValor] = useState(""); // problemas: lo que escribe la alumna
@@ -146,6 +147,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     setResult(null);
     setReported(false);
     setAviso(null);
+    setErrorReporte(false);
     setValiaEnviada(false);
     escritas.current = [];
     setValor("");
@@ -374,23 +376,20 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
     return () => window.removeEventListener("keydown", onKey);
   }, [choose, copiado, load, question, reported, result, saltar]);
 
-  async function report(motivo: string) {
-    if (!question) return;
-    await client.current.reportQuestion(question.pregunta_id, motivo, sesionId);
-    setReported(t("practica.reportada"));
+  /** Envía un reporte; si falla se avisa en el propio menú en vez de quedarse callado. */
+  async function enviar(accion: () => Promise<unknown>, ok: () => void) {
+    setErrorReporte(false);
+    try { await accion(); ok(); } catch { setErrorReporte(true); }
   }
 
-  async function facil() {
-    if (!question || !client.current.facil) return;
-    await client.current.facil(question.pregunta_id, sesionId);
-    setAviso(t("practica.reporte_facilHecho"));
-  }
+  const report = (motivo: string) => question && enviar(
+    () => client.current.reportQuestion(question.pregunta_id, motivo, sesionId), () => setReported(t("practica.reportada")));
 
-  async function aunNo(alcance: "pregunta" | "concepto" | "tema") {
-    if (!question || !client.current.ocultar) return;
-    await client.current.ocultar(question.pregunta_id, alcance);
-    setReported(t("practica.ocultada"));
-  }
+  const facil = () => question && client.current.facil && enviar(
+    () => client.current.facil!(question.pregunta_id, sesionId), () => setAviso(t("practica.reporte_facilHecho")));
+
+  const aunNo = (alcance: "pregunta" | "concepto" | "tema") => question && client.current.ocultar && enviar(
+    () => client.current.ocultar!(question.pregunta_id, alcance), () => setReported(t("practica.ocultada")));
 
   /** «Mi respuesta también valía»: guarda lo que se respondió, sin cambiar la nota. */
   async function valia() {
@@ -414,18 +413,14 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
           <p>{tn("practica.respondidas", answered)}</p>
         </div>
         {question.reintento && <span className="w-full rounded-[8px] bg-[var(--lila-soft)] px-3 py-1 text-sm font-medium text-[var(--lila-ink)]">{t("practica.repaso")}</span>}
-        {onTerminar && result && (
-          <button type="button" onClick={onTerminar} className="shrink-0 text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.terminar")}</button>
-        )}
-        {!result && !reported && (
-          <div className="flex shrink-0 items-center gap-4"> {/* a la derecha, en posición fija, da igual lo largo que sea el tema */}
+        <div className="flex shrink-0 items-center gap-4"> {/* a la derecha, en posición fija, da igual lo largo que sea el tema */}
             {onTerminar && <button type="button" onClick={onTerminar} className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">{t("practica.terminar")}</button>}
-            {client.current.skip && (
+            {!result && !reported && client.current.skip && (
               <button type="button" onClick={() => void saltar()} aria-keyshortcuts="S" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4">
                 {t("practica.saltar")}
               </button>
             )}
-          <details className="relative">
+          {!reported && <details className="relative">
             <summary className="cursor-pointer text-sm text-[var(--ink-3)]">{t("practica.reportar")}</summary>
             <div role="group" aria-label={t("practica.reportar")} className="mt-2 space-y-2 rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] p-3">
               <p className="text-sm">{t("practica.reporte_pregunta")}</p>
@@ -444,11 +439,11 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
                 </details>
               )}
               {aviso && <p role="status" className="text-sm text-[var(--ok)]">{aviso}</p>}
+              {errorReporte && <p role="alert" className="text-sm text-[var(--ko)]">{t("practica.reporte_error")}</p>}
               <p className="text-xs text-[var(--ink-3)]">{t("practica.reporte_nota")}</p>
             </div>
-          </details>
-          </div>
-        )}
+          </details>}
+        </div>
       </div>
 
       {question.contexto && (

@@ -141,6 +141,25 @@ describe("pantalla de práctica", () => {
     expect(await screen.findByText(/No volverá a salir/)).toBeInTheDocument();
   });
 
+  it("report_menu_sigue_disponible_tras_responder", async () => {
+    const a = setupMenu(KO);
+    await a.user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
+    await screen.findByText(/confunde coste con precio/);
+    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Está mal o dudosa" }));
+    expect(a.client.reportQuestion).toHaveBeenCalledWith("p1", "Está mal o dudosa", "s1");
+  });
+
+  it("report_menu_avisa_si_el_servidor_falla_y_no_cambia_de_pregunta", async () => {
+    const a = setupMenu();
+    a.client.reportQuestion.mockRejectedValueOnce(new Error("red"));
+    await screen.findByText(Q.enunciado);
+    await a.user.click(screen.getByText("Reportar"));
+    await a.user.click(screen.getByRole("button", { name: "Está mal o dudosa" }));
+    expect(await screen.findByRole("alert")).toHaveTextContent(/No se ha podido enviar/);
+    expect(screen.getByText(Q.enunciado)).toBeInTheDocument();
+  });
+
   it("mi_respuesta_tambien_valia_saves_what_was_chosen_without_changing_the_grade", async () => {
     const a = setupMenu(KO);
     await a.user.click(await screen.findByRole("button", { name: /Opción B: Texto A/ }));
