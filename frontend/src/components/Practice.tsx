@@ -322,6 +322,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
   async function marcarBien() {
     if (!question || !result || !client.current.markCorrect) return;
     const { percent } = await client.current.markCorrect(sesionId, question.pregunta_id);
+    if (question.tipo === "escrita") { void load(); return; } // error de teclado: cuenta como bien y sigue, sin reescribir
     setResult({ ...result, correcta: true, trampa: null, percent });
   }
 
@@ -481,7 +482,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
           {question.tipo === "escrita" && columnasDe(question.enunciado) ? (
             <Clasificar key={question.pregunta_id} palabras={question.campos ?? []} columnas={columnasDe(question.enunciado)!} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} />
           ) : question.tipo === "escrita" ? (
-            <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} onCopia={(d) => senal("copia", question.pregunta_id, d)} />
+            <Escrita key={question.pregunta_id} etiquetas={question.campos ?? [""]} disabled={chosen !== null} resultado={result?.campos} onSubmit={(v, st) => void submitEscrita(v, st)} onCopiaLista={setCopiado} onSeguir={() => void load()} onCopia={(d) => senal("copia", question.pregunta_id, d)} />
           ) : question.tipo === "problema" ? (
             <form
               className="mt-5 flex flex-wrap items-center gap-3"
@@ -532,7 +533,7 @@ export function Practice({ sesionId, client: clientProp = api, onDone, initialAn
             </ul>
           )}
 
-          {result && <Explanation result={result} preguntaId={question.pregunta_id} enunciado={question.enunciado} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" ? () => void marcarBien() : undefined}
+          {result && <Explanation result={result} preguntaId={question.pregunta_id} enunciado={question.enunciado} avanceMs={avanza ? AVANCE_MS : undefined} onExplicacionAbierta={explicacionAbierta} siguienteBloqueado={question.tipo === "escrita" && !copiado} onNext={() => void load()} onMarcarBien={question.tipo === "problema" || question.tipo === "escrita" ? () => void marcarBien() : undefined} etiquetaMarcarBien={question.tipo === "escrita" ? t("practica.errorEscritura") : undefined}
             extras={((!result.correcta && client.current.alternativa) || question.ayuda_larga) ? <>
               {!result.correcta && client.current.alternativa && (
                 valiaEnviada

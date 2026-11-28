@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { describe, expect, it, vi } from "vitest";
 import type { AnswerResult, Question } from "../src/api";
@@ -106,7 +106,7 @@ describe("pregunta escrita: corrección activa", () => {
     const { user } = setup();
     await fallar(user);
     await user.click(screen.getByRole("button", { name: "Seguir sin copiarla" }));
-    expect(screen.getByRole("button", { name: "Siguiente" })).toBeEnabled();
+    await waitFor(() => expect(screen.queryByRole("button", { name: "Seguir sin copiarla" })).toBeNull()); // pasa solo a la siguiente
   });
 
   it("una_repeticion_de_una_pregunta_fallada_lleva_la_etiqueta_de_repaso", async () => {

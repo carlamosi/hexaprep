@@ -337,13 +337,13 @@ def session_summary(session: Session, sesion_id: str) -> dict:
 
 
 def mark_correct(session: Session, sesion_id: str, pregunta_id: str) -> None:
-    """«Lo he hecho bien»: da por acertado un problema que el margen automático rechazó, y recalcula el dominio."""
+    """«Lo he hecho bien» (problema) o «error de teclado» (escrita): da por acertada la respuesta y recalcula el dominio."""
     pregunta = session.get(Pregunta, pregunta_id)
-    if pregunta is None or pregunta.tipo != "problema":
-        raise ValueError("solo se puede marcar como correcto un problema")
+    if pregunta is None or pregunta.tipo not in ("problema", "escrita"):
+        raise ValueError("solo se puede marcar como correcto un problema o una escrita")
     intento = session.scalar(select(Intento).where(Intento.sesion_id == sesion_id, Intento.pregunta_id == pregunta_id))
     if intento is None:
-        raise ValueError("el problema no se ha respondido en esta sesión")
+        raise ValueError("la pregunta no se ha respondido en esta sesión")
     if intento.correcta:
         return
     intento.correcta = True

@@ -30,14 +30,17 @@ interface Props {
   onCopia?: (d: { t_copia: number; n_copias: number }) => void;
   /** Avisa de si ya se puede seguir: falta escribir bien lo fallado (corrección activa) salvo que se salte. */
   onCopiaLista?: (lista: boolean) => void;
+  /** «Continuar sense copiar-la» pasa directamente a la siguiente pregunta. */
+  onSeguir?: () => void;
 }
 
 /** Una caja por hueco (gerundi, participi...) . Enter pasa al hueco siguiente y envía en el último. */
-export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista, onCopia }: Props) {
+export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista, onCopia, onSeguir }: Props) {
   const [valores, setValores] = useState<string[]>(() => etiquetas.map(() => ""));
   const cajas = useRef<(HTMLInputElement | null)[]>([]);
   const [copias, setCopias] = useState<string[]>(() => etiquetas.map(() => ""));
   const [omitida, setOmitida] = useState(false);
+  const [vacio, setVacio] = useState(false); // se intentó comprobar con un hueco vacío
   const falladas = (resultado ?? []).map((r, i) => (r.correcto ? -1 : i)).filter((i) => i >= 0);
   const lista = omitida || falladas.every((i) => mismaForma(copias[i], resultado![i].esperado));
   useEffect(() => { onCopiaLista?.(lista); }, [lista, onCopiaLista]);
@@ -59,7 +62,9 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
       className="mt-5 space-y-3"
       onSubmit={(e) => {
         e.preventDefault();
-        if (!valores.every((v) => v.trim())) return;
+        const hueco = valores.findIndex((v) => !v.trim());
+        if (hueco >= 0) { setVacio(true); cajas.current[hueco]?.focus(); return; } // no sabe = que escriba al menos una letra
+        setVacio(false);
         const k = teclas.current;
         onSubmit(valores.map((v) => v.trim()), { n_teclas: k.n, n_borrados: k.borrados, t_escritura: k.t0 === null ? 0 : Math.round(performance.now() - k.t0) / 1000 });
       }}
@@ -100,6 +105,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
           </div>
         );
       })}
+      {vacio && !resultado && <p role="alert" className="text-sm text-[var(--ko)]">{t("practica.escribeAlgo")}</p>}
       {!resultado && (
         <button type="submit" disabled={disabled} className="rounded-[11px] bg-[var(--ink)] px-5 py-3 font-medium text-[var(--on-ink)] shadow-[3px_3px_0_var(--lila)] btn-duro disabled:opacity-60">
           {t("practica.comprobar")}
@@ -108,7 +114,7 @@ export function Escrita({ etiquetas, disabled, resultado, onSubmit, onCopiaLista
       {falladas.length > 0 && !lista && (
         <div className="space-y-1">
           <p className="text-sm text-[var(--ink-3)]">{t("practica.copiaAyuda")}</p>
-          <button type="button" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4" onClick={() => setOmitida(true)}>{t("practica.seguirSinCopiar")}</button>
+          <button type="button" className="text-sm font-medium text-[var(--ink-2)] underline underline-offset-4" onClick={() => { setOmitida(true); onSeguir?.(); }}>{t("practica.seguirSinCopiar")}</button>
         </div>
       )}
     </form>

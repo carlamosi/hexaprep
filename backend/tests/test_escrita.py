@@ -75,3 +75,11 @@ def test_respuesta_con_numero_de_campos_incorrecto_no_se_registra(session, ctx):
         with pytest.raises(ValueError):
             submit_answer(session, sid, p.id, [], "a", None, {}, respuestas=mala)
     assert session.scalars(select(Intento)).all() == []
+
+
+def test_error_de_teclado_da_por_buena_una_escrita_fallada(session, ctx):
+    from hexaprep.events import mark_correct
+    sid, p = ctx
+    assert submit_answer(session, sid, p.id, [], "a", None, {}, None, ["admetnt", "admès"]).correcta is False
+    mark_correct(session, sid, p.id)
+    assert session.scalar(select(Intento).where(Intento.pregunta_id == p.id)).correcta is True

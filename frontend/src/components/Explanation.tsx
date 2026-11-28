@@ -5,7 +5,7 @@ import { BotonGuardar } from "./BotonGuardar";
 import { RichText } from "./RichText";
 
 /** Feedback breve tipo entrenador y explicación plegada, que se puede guardar. */
-export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta, extras }: {
+export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBien, siguienteBloqueado, avanceMs, onExplicacionAbierta, extras, etiquetaMarcarBien }: {
   result: AnswerResult; onNext: () => void;
   /** Con ellos, la explicación se puede guardar (el enunciado la identifica). */
   preguntaId?: string; enunciado?: string; onMarcarBien?: () => void; siguienteBloqueado?: boolean;
@@ -13,6 +13,7 @@ export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBie
   avanceMs?: number; onExplicacionAbierta?: () => void;
   /** Secundario (valía, ayuda): se pliega en «Más». */
   extras?: ReactNode;
+  etiquetaMarcarBien?: string;
 }) {
   return (
     <section aria-live="polite" className="mt-6 space-y-4">
@@ -73,7 +74,7 @@ export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBie
       <div className="sticky bottom-0 -mx-1 flex flex-wrap items-center gap-3 bg-[var(--card)] px-1 py-3">
         {onMarcarBien && !result.correcta && (
           <button type="button" onClick={onMarcarBien} className="rounded-[11px] border border-[var(--rule-2)] bg-[var(--card)] px-5 py-2 font-medium">
-            {t("practica.loHeHechoBien")}
+            {etiquetaMarcarBien ?? t("practica.loHeHechoBien")}
           </button>
         )}
         <button
