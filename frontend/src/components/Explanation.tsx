@@ -46,6 +46,9 @@ export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBie
         );
       })()}
 
+      <p className="pq-dom">{t("practica.dominio")}: {result.percent} %</p>
+
+      <div className="pq-fbr">
       <div className="pq-lks">
         {result.explicacion && (
           <details onToggle={(e) => { if (e.currentTarget.open) onExplicacionAbierta?.(); }}>
@@ -57,13 +60,12 @@ export function Explanation({ result, preguntaId, enunciado, onNext, onMarcarBie
         {extras}
       </div>
 
-      <p className="pq-dom">{t("practica.dominio")}: {result.percent} %</p>
-
       {onMarcarBien && !ok && <button type="button" onClick={onMarcarBien} className="pq-alt">{etiquetaMarcarBien ?? t("practica.loHeHechoBien")}</button>}
       <button type="button" onClick={onNext} disabled={siguienteBloqueado} className="pq-next btn-duro">
-        {t("practica.siguiente")}
+        {t("practica.siguiente")}<kbd className="pq-kbd" aria-hidden="true">Enter</kbd>
         {avanceMs !== undefined && <span role="progressbar" aria-label={t("practica.siguientePregunta")} className="pq-bar" style={{ animationDuration: `${avanceMs}ms` }} />}
       </button>
+      </div>
     </section>
   );
 }
