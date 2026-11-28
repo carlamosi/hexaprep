@@ -12,7 +12,7 @@
     [3, "Escriu amb l'article masculí davant de la sigla: «____ FBI».", [["Article i sigla", ["l'FBI"], {"el FBI": "La sigla comença amb so de vocal (efe): l'article s'apostrofa."}]], "Escrivim «l'FBI». Les sigles segueixen la norma del so: «efe» comença amb vocal. Truc: l'ONU, l'IPC, l'FBI."],
     [4, "Escriu amb l'article masculí: «____ iode».", [["Article i nom", ["el iode"], {"l'iode": "Comença amb el so de «i» seguit d'una altra vocal: no s'apostrofa."}]], "Escrivim «el iode». Els mots que comencen amb el so de «i» + vocal no apostrofen. Truc: el iot, el iode, el iogurt."],
     [4, "Escriu amb l'article masculí: «____ ham».", [["Article i nom", ["l'ham"], {"el ham": "La hac és muda: s'apostrofa."}]], "Escrivim «l'ham». La hac és muda, així que davant hi ha so de vocal. Truc: si no sona l'hac, apostrofa."],
-    [4, "Troba l'error i corregeix-lo: «Els alumnes van analitzar l'hiat de la paraula.»", [["Error", ["l'hiat"]], ["Correcció", ["el hiat"]]], "Cal «el hiat», sense apòstrof. Comença amb el so de «i» seguit de vocal (hi-at). Truc: el iot, el iode, el hiat."]
+    [4, "Troba l'error i corregeix-lo: «Els alumnes van analitzar l'hiat de la paraula.»", [["Error", ["l'hiat"]], ["Correcció", ["el hiat", "el"]]], "Cal «el hiat», sense apòstrof. Comença amb el so de «i» seguit de vocal (hi-at). Truc: el iot, el iode, el hiat."]
    ]
   },
   {
@@ -22,7 +22,7 @@
    "escritas": [
     [4, "Escriu amb l'article femení: «____ ira».", [["Article i nom", ["la ira", "l'ira"], {}]], "El booklet demana «la ira» (per no confondre-ho amb «lira»), però també es veu «l'ira»: les dues formes es donen per bones."],
     [3, "Escriu amb l'article femení: «____ Irene».", [["Article i nom", ["la Irene"], {"l'Irene": "La «i» és àtona: no s'apostrofa."}]], "Escrivim «la Irene». La «i» és àtona, per això no s'apostrofa. Truc: la Irene, la imatge, la universitat."],
-    [4, "Escriu amb l'article femení: «____ Imma».", [["Article i nom", ["l'Imma"], {"la Imma": "Aquí la «i» és forta: s'apostrofa."}]], "Escrivim «l'Imma». La «i» és forta (Im-ma), per això s'apostrofa; en canvi «la Immaculada» és àtona. Truc: tònica, apòstrof."],
+    [4, "Escriu amb l'article femení: «____ Imma».", [["Article i nom", ["l'Imma"], {"la Imma": "Aquí la «i» és forta: s'apostrofa."}]], "Escrivim «l'Imma». La «i» és forta (Im-ma), per això s'apostrofa; en canvi «la Immaculada» és àtona. Truc: «la» davant «i» tònica s'apostrofa; davant «i» àtona, no."],
     [4, "Escriu amb l'article femení: «____ asimetria».", [["Article i nom", ["l'asimetria"], {"la asimetria": "Novetat del 2016: davant de «a» s'apostrofa sempre."}]], "Escrivim «l'asimetria». Segons la normativa del 2016, davant de «a» sempre s'apostrofa. Truc: l'asimetria, l'anormalitat."],
     [3, "Escriu amb l'article femení, parlant de la lletra: «____ ela».", [["Article i nom", ["la ela"], {"l'ela": "El nom de les lletres no s'apostrofa."}]], "Escrivim «la ela». El nom de les lletres és una excepció. Truc: la ela, la essa, la erra."],
     [3, "Escriu amb l'article femení: «____ iaia».", [["Article i nom", ["la iaia"], {"l'iaia": "Comença amb el so de «i» + vocal: no s'apostrofa."}]], "Escrivim «la iaia». Els mots amb so de «i» + vocal no apostrofen. Truc: la iaia, el iogurt."]

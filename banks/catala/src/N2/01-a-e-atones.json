@@ -23,7 +23,7 @@
    "ayuda": "Els substantius masculins acostumen a acabar en -e (cotxe, llibre) i els femenins en -a (casa, taula). Les excepcions són les mateixes que en castellà: masculins en -ista (dentista), -cida (insecticida), -ma (clima) i -ta (atleta), i femenins com mare, febre o verge.",
    "escritas": [
     [2, "Escriu la vocal que falta: «fas_».", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «fase»."}]], "Fase. És un femení acabat en -e, igual que en castellà. Truc: fase, base, frase."],
-    [2, "Escriu la vocal que falta: «bas_».", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «base»."}]], "Base. Femení acabat en -e, com en castellà. Truc: fase, base, frase."],
+    [2, "Escriu la vocal que falta: «bas_» (fonament d'una teoria).", [["Vocal", ["e"], {"a": "És una excepció femenina en -e, com en castellà «base»."}]], "Base. Femení acabat en -e, com en castellà. Truc: fase, base, frase."],
     [3, "Escriu la vocal que falta: «teorem_».", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «teorema»."}]], "Teorema. Els masculins en -ma són una excepció, igual que en castellà. Truc: «teorema» acaba en -a."],
     [3, "Escriu la vocal que falta: «enigm_».", [["Vocal", ["a"], {"e": "Excepció masculina en -ma, com en castellà «enigma»."}]], "Enigma. Masculí en -ma, igual que en castellà. Truc: enigma, dilema, paradigma."],
     [4, "Escriu les vocals que falten: «prof_t_».", [["Vocal 1", ["e"], {"a": "Busca la forma castellana «profeta»: la vocal interior és e."}], ["Vocal 2", ["a"], {"e": "Masculí en -ta, com en castellà «profeta»."}]], "Profeta. Interior com en castellà (profeta) i masculí en -ta, que és excepció. Truc: profeta, poeta, atleta."],
@@ -55,7 +55,7 @@
     [3, "Escriu la vocal que falta: «n_dar» (moure's dins l'aigua).", [["Vocal", ["e"], {"a": "Excepció: «nedar» porta e, encara que en castellà és «nadar»."}]], "Nedar. Excepció de la llista: e en català i a en castellà. Truc: «nedar» no és «nadar»."],
     [3, "Escriu la vocal que falta: «mon_stir».", [["Vocal", ["e"], {"a": "Excepció: «monestir» porta e, encara que en castellà és «monasterio»."}]], "Monestir. Excepció de la llista: e en català i a en castellà. Truc: «monestir» no és «monasterio»."],
     [4, "Escriu les vocals que falten: «_v_ntatge».", [["Vocal 1", ["a"], {"e": "Excepció: «avantatge» porta a, encara que en castellà és «ventaja»."}], ["Vocal 2", ["a"], {"e": "Excepció: «avantatge» porta a, encara que en castellà és «ventaja»."}]], "Avantatge. Excepció de la llista: a en català i e en castellà (ventaja). Truc: avantatge porta dues a."],
-    [4, "Escriu la vocal que falta: «_ssajar».", [["Vocal", ["a"], {"e": "Excepció: «assajar» porta a, encara que en castellà és «ensayar»."}]], "Assajar. Excepció de la llista: a en català i e en castellà. Truc: «assajar» té dues essa i a."],
+    [4, "Escriu la vocal que falta: «_ssajar».", [["Vocal", ["a"], {"e": "Excepció: «assajar» porta a, encara que en castellà és «ensayar»."}]], "Assajar. Excepció de la llista: a en català i e en castellà. Truc: «assajar» comença per a i porta ss."],
     [5, "Escriu la vocal que falta: «Aquest estiu n_ixeran tres cadells a la granja.»", [["Vocal", ["a"], {"e": "Si la e no és forta, canvia a a: «naix-»."}]], "Naixeran. En els verbs néixer, jeure i treure, la e es converteix en a si no és forta. Truc: neixo (forta), naixeran (no forta)."]
    ]
   }

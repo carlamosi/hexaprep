@@ -1133,7 +1133,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "aquella dolor"
+      "aquella dolor",
+      "aquella"
      ],
      "errores": {}
     }
@@ -1237,7 +1238,7 @@
    "fuente_pagina": 4,
    "fuente_cara": 3,
    "tipo": "escrita",
-   "explicacion": "Són «el llegum», «el ret», «l'escaire» i «el pendent». Tots masculins. Truc: el llegum, el ret.",
+   "explicacion": "Són «el llegum», «el ret», «l'escaire» i «el sofre». Tots masculins. Truc: la terminació no delata el gènere; memoritza'ls i recorda que «el» s'apostrofa davant vocal (l'escaire).",
    "campos": [
     {
      "etiqueta": "llegum",
@@ -1267,7 +1268,7 @@
      }
     },
     {
-     "etiqueta": "pendent",
+     "etiqueta": "sofre",
      "validas": [
       "el"
      ],
@@ -1289,10 +1290,10 @@
    "fuente_pagina": 4,
    "fuente_cara": 3,
    "tipo": "escrita",
-   "explicacion": "Són «l'interviu», «l'avantatge», «el noviu» i «el corrent». Tots masculins; davant vocal «el» s'apostrofa. Truc: tots masculins.",
+   "explicacion": "Són «l'origen», «l'avantatge», «el noviu» i «el corrent». Tots masculins; davant vocal «el» s'apostrofa. Truc: tots masculins.",
    "campos": [
     {
-     "etiqueta": "interviu",
+     "etiqueta": "origen",
      "validas": [
       "l'"
      ],
@@ -1319,7 +1320,7 @@
      }
     },
     {
-     "etiqueta": "corrent",
+     "etiqueta": "corrent (d'aigua)",
      "validas": [
       "el"
      ],
@@ -1353,7 +1354,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "un somriure"
+      "un somriure",
+      "un"
      ],
      "errores": {}
     }
@@ -1423,7 +1425,7 @@
    "fuente_pagina": 4,
    "fuente_cara": 3,
    "tipo": "escrita",
-   "explicacion": "Són «un somriure», «una dent», «un interviu» i «una vall». Truc: memoritza'ls per parelles.",
+   "explicacion": "Són «un somriure», «una dent», «un dubte» i «una vall». Truc: memoritza'ls per parelles.",
    "campos": [
     {
      "etiqueta": "somriure",
@@ -1444,12 +1446,12 @@
      }
     },
     {
-     "etiqueta": "interviu",
+     "etiqueta": "dubte",
      "validas": [
       "un"
      ],
      "errores": {
-      "una": "«Interviu» és masculí."
+      "una": "«Dubte» és masculí."
      }
     },
     {
@@ -1880,7 +1882,7 @@
    "subtema": "Determinants i numerals",
    "concepto": "Diversos i numerals",
    "dificultad": 3,
-   "enunciado": "Escriu la lletra que falta: «mil·l_nni».",
+   "enunciado": "Escriu la lletra que falta: «mil·l_nni» (període de mil anys).",
    "ayuda_larga": "Segons els apunts, «vari, vària» vol dir «de diferent tipus» i no s'usa per indicar una quantitat (per a això hi ha «alguns» o «uns quants»). Els derivats cultes de «mil» porten ela geminada quan sonen dues l, com «mil·lilitre». Alguns col·lectius numerals tenen forma pròpia que no és calc del castellà, com «una dotzena» o «un centenar».",
    "fuente_pagina": 5,
    "fuente_cara": 4,
@@ -2303,7 +2305,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "els dissabtes"
+      "els dissabtes",
+      "dissabtes"
      ],
      "errores": {}
     }
@@ -2490,7 +2493,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "la hipòtesi"
+      "la hipòtesi",
+      "la"
      ],
      "errores": {}
     }
@@ -2701,7 +2705,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "La ucraïnesa"
+      "La ucraïnesa",
+      "la"
      ],
      "errores": {}
     }
@@ -3943,7 +3948,7 @@
    "subtema": "Diftongs, hiats i dièresi",
    "concepto": "Hiats",
    "dificultad": 3,
-   "enunciado": "Escriu la lletra que falta: «e_lic».",
+   "enunciado": "Escriu la lletra que falta: «e_lic» (relatiu al vent).",
    "ayuda_larga": "Un hiat és un grup de dues vocals que es pronuncien en síl·labes diferents. Es produeix quan es troben dues vocals que no són i ni u, o quan una i o u seguida de vocal no és a l'inici de paraula. Un diftong es trenca amb l'accent o amb la dièresi: «veí», «raïm».",
    "fuente_pagina": 7,
    "fuente_cara": 6,
@@ -5258,7 +5263,7 @@
    "fuente_pagina": 8,
    "fuente_cara": 8,
    "tipo": "escrita",
-   "explicacion": "Són «cuso», «escullo» i «grunyo». Cap porta -eix-. Truc: tònica u, àtona o.",
+   "explicacion": "Són «cuso», «escullo» i «grunyo». Cap porta -eix-. Truc: cosir i escollir fan u si l'accent hi cau.",
    "campos": [
     {
      "etiqueta": "Cosir",
@@ -5651,7 +5656,7 @@
    "fuente_pagina": 8,
    "fuente_cara": 8,
    "tipo": "escrita",
-   "explicacion": "Són «consent», «dissenteixo» i «assenteix». Truc: consentir fa -o, dissentir i assentir fan -eixo.",
+   "explicacion": "Són «consent», «dissenteixo» i «assenteix». Truc: consentir no du -eix- (consento, consent); dissentir i assentir sí.",
    "campos": [
     {
      "etiqueta": "Consentir",
@@ -7290,7 +7295,7 @@
    "fuente_pagina": 4,
    "fuente_cara": 12,
    "tipo": "escrita",
-   "explicacion": "En català es diu «en + infinitiu»: «en sortir». Truc: en sortir, no al sortir.",
+   "explicacion": "En català (registre formal) es diu «en + infinitiu»: «en sortir». Truc: en sortir, no al sortir.",
    "campos": [
     {
      "etiqueta": "Error",
@@ -7302,7 +7307,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "En sortir"
+      "En sortir",
+      "en"
      ],
      "errores": {}
     }
@@ -7935,11 +7941,10 @@
     {
      "etiqueta": "Primer",
      "validas": [
-      "per a"
+      "per a",
+      "per"
      ],
-     "errores": {
-      "per": "Aquí és la finalitat: als apunts va amb «per a»."
-     }
+     "errores": {}
     },
     {
      "etiqueta": "Segon",
@@ -8012,11 +8017,10 @@
     {
      "etiqueta": "Primer",
      "validas": [
-      "per a"
+      "per a",
+      "per"
      ],
-     "errores": {
-      "per": "Aquí és la finalitat."
-     }
+     "errores": {}
     },
     {
      "etiqueta": "Segon",
@@ -8085,11 +8089,10 @@
     {
      "etiqueta": "Primer",
      "validas": [
-      "per a"
+      "per a",
+      "per"
      ],
-     "errores": {
-      "per": "Finalitat: per a."
-     }
+     "errores": {}
     },
     {
      "etiqueta": "Segon",
@@ -8372,7 +8375,7 @@
    "subtema": "Per, per a i preposicions",
    "concepto": "Per: lloc de pas i temps",
    "dificultad": 3,
-   "enunciado": "Escriu la forma de «per» + article: «Hem passat ____ pont, ____ carrers del barri i ____ la plaça.»",
+   "enunciado": "Escriu la forma de «per» + article definit: «Hem passat ____ pont, ____ carrers del barri i ____ plaça.»",
    "ayuda_larga": "A més del motiu, «per» també indica el lloc de pas, i també una època o un moment de l'any. Exemples: «El corredor va passar per Vic» i «Ho celebrarem per Pasqua». Davant l'article masculí es contreu: «per + el» dona «pel».",
    "fuente_pagina": 8,
    "fuente_cara": 7,
@@ -8466,7 +8469,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "per la"
+      "per la",
+      "per"
      ],
      "errores": {}
     }

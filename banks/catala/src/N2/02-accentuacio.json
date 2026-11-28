@@ -47,7 +47,7 @@
    "pagina": 3,
    "ayuda": "La a s'accentua sempre oberta (demà). La e i la o s'accentuen oberta (è, ò) si sonen diferent en castellà (cafè, arròs) i tancada (é, ó) si sonen igual (avió, cançó). La i i la u sempre porten accent tancat (pollí, ningú).",
    "escritas": [
-    [3, "Escriu la vocal tònica que falta: «esp_s».", [["Vocal", ["è"], {"e": "Aguda acabada en -s: porta accent.", "é": "Sona diferent del castellà «espeso»: accent obert."}]], "Espès. La e sona diferent en castellà («espeso»), per això l'accent és obert. Truc: si no sona igual, obert."],
+    [3, "Escriu la vocal tònica que falta: «esp_s» (dens, poc fluid).", [["Vocal", ["è"], {"e": "Aguda acabada en -s: porta accent.", "é": "Sona diferent del castellà «espeso»: accent obert."}]], "Espès. La e sona diferent en castellà («espeso»), per això l'accent és obert. Truc: si no sona igual, obert."],
     [3, "Escriu la vocal tònica que falta: «rep_s».", [["Vocal", ["ò"], {"o": "Aguda acabada en -s: porta accent.", "ó": "Sona diferent del castellà «reposo»: accent obert."}]], "Repòs. La o sona diferent de la castellana, per això l'accent és obert. Truc: repòs, arròs, cafè."],
     [4, "Escriu la vocal tònica que falta: «t_mbola».", [["Vocal", ["ó"], {"o": "Esdrúixola: sempre porta accent.", "ò": "Sona igual que en castellà («tómbola»): accent tancat."}]], "Tómbola. És esdrúixola i la o sona igual que en castellà, per això l'accent és tancat. Truc: tómbola, església, puré."],
     [3, "Escriu la vocal tònica que falta: «pur_».", [["Vocal", ["é"], {"e": "Aguda acabada en vocal: porta accent.", "è": "Sona igual que en castellà («puré»): accent tancat."}]], "Puré. La e sona igual que en castellà, per això l'accent és tancat. Truc: puré, procés, també."],

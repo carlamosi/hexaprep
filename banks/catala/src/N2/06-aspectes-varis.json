@@ -10,7 +10,7 @@
     [3, "Escriu la lletra que falta: «Nosaltres _em de llegir molt si volem escriure bé.»", [["Lletra", ["h"]]], "Hem. És el verb haver (nosaltres hem). Truc: substitueix per «havíem»: «havíem de llegir»."],
     [3, "Escriu la lletra que falta: «No sé quan_ val aquest abric.»", [["Lletra", ["t"]]], "Quant. Aquí és «cuánto» (quantitat), amb t final. Truc: «quant» és quantitat i porta t de «tanto»."],
     [4, "Escriu la lletra que falta: «T'estimo tan_ que no et voldria fer patir.»", [["Lletra", ["t"]]], "Tant. Davant de «que» va «tant» (tanto). Truc: «tan» només davant d'adjectiu o adverbi."],
-    [3, "Escriu la lletra que falta: «Fa ta_ fred que hem posat la calefacció.»", [["Lletra", ["n"], {"m": "Cal una n.", "t": "No va t: davant d'un adjectiu va «tan»."}]], "Tan. Davant d'un adjectiu (fred) va «tan», sense t final. Truc: «tan» és «tan» en castellà."],
+    [3, "Escriu la lletra que falta: «L'aigua és ta_ freda que no em puc banyar.»", [["Lletra", ["n"], {"m": "Cal una n.", "t": "No va t: davant d'un adjectiu va «tan»."}]], "Tan. Davant d'un adjectiu (freda) va «tan», sense t final. Truc: «tan» davant d'adjectiu o adverbi; «tant» davant més, menys, millor i pitjor."],
     [3, "Escriu la lletra que falta: «La Júlia _a vist aquella pel·lícula tres vegades.»", [["Lletra", ["h"]]], "Ha. És el verb haver (ha vist). Truc: si pots posar «havia», és «ha»."],
     [3, "Troba l'error i corregeix-lo: «Demà em de llegir tot el capítol abans de l'examen.»", [["Error", ["em de"]], ["Correcció", ["hem de"]]], "Cal «hem de». És el verb haver. Truc: substitueix per «havíem de»: té sentit, per tant és «hem»."]
    ]

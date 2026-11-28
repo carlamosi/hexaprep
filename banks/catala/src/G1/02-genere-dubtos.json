@@ -98,7 +98,8 @@
       [
        "Correcció",
        [
-        "aquella dolor"
+        "aquella dolor",
+        "aquella"
        ]
       ]
      ],
@@ -212,7 +213,7 @@
        }
       ],
       [
-       "pendent",
+       "sofre",
        [
         "el"
        ],
@@ -221,14 +222,14 @@
        }
       ]
      ],
-     "Són «el llegum», «el ret», «l'escaire» i «el pendent». Tots masculins. Truc: el llegum, el ret."
+     "Són «el llegum», «el ret», «l'escaire» i «el sofre». Tots masculins. Truc: la terminació no delata el gènere; memoritza'ls i recorda que «el» s'apostrofa davant vocal (l'escaire)."
     ],
     [
      3,
      "Escriu l'article definit davant cada nom.",
      [
       [
-       "interviu",
+       "origen",
        [
         "l'"
        ],
@@ -255,7 +256,7 @@
        }
       ],
       [
-       "corrent",
+       "corrent (d'aigua)",
        [
         "el"
        ],
@@ -264,7 +265,7 @@
        }
       ]
      ],
-     "Són «l'interviu», «l'avantatge», «el noviu» i «el corrent». Tots masculins; davant vocal «el» s'apostrofa. Truc: tots masculins."
+     "Són «l'origen», «l'avantatge», «el noviu» i «el corrent». Tots masculins; davant vocal «el» s'apostrofa. Truc: tots masculins."
     ],
     [
      4,
@@ -279,7 +280,8 @@
       [
        "Correcció",
        [
-        "un somriure"
+        "un somriure",
+        "un"
        ]
       ]
      ],
@@ -351,12 +353,12 @@
        }
       ],
       [
-       "interviu",
+       "dubte",
        [
         "un"
        ],
        {
-        "una": "«Interviu» és masculí."
+        "una": "«Dubte» és masculí."
        }
       ],
       [
@@ -369,7 +371,7 @@
        }
       ]
      ],
-     "Són «un somriure», «una dent», «un interviu» i «una vall». Truc: memoritza'ls per parelles."
+     "Són «un somriure», «una dent», «un dubte» i «una vall». Truc: memoritza'ls per parelles."
     ]
    ]
   },

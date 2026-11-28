@@ -14,12 +14,7 @@
      [
       [
        "Primer",
-       [
-        "per a"
-       ],
-       {
-        "per": "Aquí és la finalitat: als apunts va amb «per a»."
-       }
+       ["per a", "per"]
       ],
       [
        "Segon",
@@ -73,12 +68,7 @@
      [
       [
        "Primer",
-       [
-        "per a"
-       ],
-       {
-        "per": "Aquí és la finalitat."
-       }
+       ["per a", "per"]
       ],
       [
        "Segon",
@@ -126,12 +116,7 @@
      [
       [
        "Primer",
-       [
-        "per a"
-       ],
-       {
-        "per": "Finalitat: per a."
-       }
+       ["per a", "per"]
       ],
       [
        "Segon",
@@ -372,7 +357,7 @@
     ],
     [
      3,
-     "Escriu la forma de «per» + article: «Hem passat ____ pont, ____ carrers del barri i ____ la plaça.»",
+     "Escriu la forma de «per» + article definit: «Hem passat ____ pont, ____ carrers del barri i ____ plaça.»",
      [
       [
        "Primer",
@@ -442,7 +427,8 @@
       [
        "Correcció",
        [
-        "per la"
+        "per la",
+        "per"
        ]
       ]
      ],

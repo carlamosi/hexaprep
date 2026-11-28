@@ -196,7 +196,7 @@
    "subtema": "Gènere",
    "concepto": "Substantius masculins i femenins",
    "dificultad": 2,
-   "enunciado": "Escriu la vocal que falta: «bas_».",
+   "enunciado": "Escriu la vocal que falta: «bas_» (fonament d'una teoria).",
    "ayuda_larga": "Els substantius masculins acostumen a acabar en -e (cotxe, llibre) i els femenins en -a (casa, taula). Les excepcions són les mateixes que en castellà: masculins en -ista (dentista), -cida (insecticida), -ma (clima) i -ta (atleta), i femenins com mare, febre o verge.",
    "fuente_pagina": 1,
    "fuente_cara": 1,
@@ -619,7 +619,7 @@
    "fuente_pagina": 2,
    "fuente_cara": 2,
    "tipo": "escrita",
-   "explicacion": "Assajar. Excepció de la llista: a en català i e en castellà. Truc: «assajar» té dues essa i a.",
+   "explicacion": "Assajar. Excepció de la llista: a en català i e en castellà. Truc: «assajar» comença per a i porta ss.",
    "campos": [
     {
      "etiqueta": "Vocal",
@@ -1164,7 +1164,7 @@
    "subtema": "Accentuació",
    "concepto": "Accents oberts i tancats",
    "dificultad": 3,
-   "enunciado": "Escriu la vocal tònica que falta: «esp_s».",
+   "enunciado": "Escriu la vocal tònica que falta: «esp_s» (dens, poc fluid).",
    "ayuda_larga": "La a s'accentua sempre oberta (demà). La e i la o s'accentuen oberta (è, ò) si sonen diferent en castellà (cafè, arròs) i tancada (é, ó) si sonen igual (avió, cançó). La i i la u sempre porten accent tancat (pollí, ningú).",
    "fuente_pagina": 3,
    "fuente_cara": 3,
@@ -1898,7 +1898,7 @@
    "fuente_pagina": 5,
    "fuente_cara": 5,
    "tipo": "escrita",
-   "explicacion": "Riu: decreixent. Quota: creixent (qu + o amb u sonora). Caixa: res (vocal + ix). Poeta: hiat. Iode: creixent (i àtona inicial + vocal).",
+   "explicacion": "Riu: decreixent. Quota: creixent (qu + o amb u sonora). Caixa: res (vocal + ix). Poeta: hiat (dues vocals fortes, o i e, no formen diftong).",
    "campos": [
     {
      "etiqueta": "riu",
@@ -2214,7 +2214,8 @@
     {
      "etiqueta": "Correcció",
      "validas": [
-      "el hiat"
+      "el hiat",
+      "el"
      ],
      "errores": {}
     }
@@ -2281,7 +2282,7 @@
    "fuente_pagina": 5,
    "fuente_cara": 5,
    "tipo": "escrita",
-   "explicacion": "Escrivim «l'Imma». La «i» és forta (Im-ma), per això s'apostrofa; en canvi «la Immaculada» és àtona. Truc: tònica, apòstrof.",
+   "explicacion": "Escrivim «l'Imma». La «i» és forta (Im-ma), per això s'apostrofa; en canvi «la Immaculada» és àtona. Truc: «la» davant «i» tònica s'apostrofa; davant «i» àtona, no.",
    "campos": [
     {
      "etiqueta": "Article i nom",
@@ -3235,7 +3236,7 @@
    "subtema": "Consonants",
    "concepto": "La essa i la doble erra",
    "dificultad": 3,
-   "enunciado": "Escriu la lletra o lletres que falten: «dimi_ió».",
+   "enunciado": "Escriu la lletra o lletres que falten: «dimi_ió» (renúncia a un càrrec).",
    "ayuda_larga": "Si la essa sona com en castellà i és entre dues vocals, escrivim «ss» si en castellà és «s» i «ç» si en castellà és «z» (professor, assegurar; plaça, força). Hi ha excepcions que cal memoritzar. Amb prefix no es duplica: asocial. La doble erra: la normativa del 2016 duplica la erra en derivats i compostos (arrítmia, correferent, erradicar).",
    "fuente_pagina": 10,
    "fuente_cara": 10,
@@ -3287,7 +3288,7 @@
    "subtema": "Consonants",
    "concepto": "La essa i la doble erra",
    "dificultad": 4,
-   "enunciado": "Escriu la lletra o lletres que falten: «ta_a».",
+   "enunciado": "Escriu la lletra o lletres que falten: «ta_a» (recipient per beure).",
    "ayuda_larga": "Si la essa sona com en castellà i és entre dues vocals, escrivim «ss» si en castellà és «s» i «ç» si en castellà és «z» (professor, assegurar; plaça, força). Hi ha excepcions que cal memoritzar. Amb prefix no es duplica: asocial. La doble erra: la normativa del 2016 duplica la erra en derivats i compostos (arrítmia, correferent, erradicar).",
    "fuente_pagina": 10,
    "fuente_cara": 10,
@@ -3313,7 +3314,7 @@
    "subtema": "Consonants",
    "concepto": "La essa i la doble erra",
    "dificultad": 4,
-   "enunciado": "Escriu la lletra o lletres que falten: «ca_ola».",
+   "enunciado": "Escriu la lletra o lletres que falten: «ca_ola» (estri de cuina).",
    "ayuda_larga": "Si la essa sona com en castellà i és entre dues vocals, escrivim «ss» si en castellà és «s» i «ç» si en castellà és «z» (professor, assegurar; plaça, força). Hi ha excepcions que cal memoritzar. Amb prefix no es duplica: asocial. La doble erra: la normativa del 2016 duplica la erra en derivats i compostos (arrítmia, correferent, erradicar).",
    "fuente_pagina": 10,
    "fuente_cara": 10,
@@ -3339,7 +3340,7 @@
    "subtema": "Consonants",
    "concepto": "La essa i la doble erra",
    "dificultad": 4,
-   "enunciado": "Escriu la lletra o lletres que falten: «a_imetria».",
+   "enunciado": "Escriu la lletra o lletres que falten: «a_imetria» (falta d'equilibri entre les parts).",
    "ayuda_larga": "Si la essa sona com en castellà i és entre dues vocals, escrivim «ss» si en castellà és «s» i «ç» si en castellà és «z» (professor, assegurar; plaça, força). Hi ha excepcions que cal memoritzar. Amb prefix no es duplica: asocial. La doble erra: la normativa del 2016 duplica la erra en derivats i compostos (arrítmia, correferent, erradicar).",
    "fuente_pagina": 10,
    "fuente_cara": 10,
@@ -3364,7 +3365,7 @@
    "subtema": "Consonants",
    "concepto": "La essa i la doble erra",
    "dificultad": 5,
-   "enunciado": "Escriu la lletra o lletres que falten: «co_esponsable» (segons la normativa del 2016).",
+   "enunciado": "Escriu la lletra o lletres que falten: «co_esponsable».",
    "ayuda_larga": "Si la essa sona com en castellà i és entre dues vocals, escrivim «ss» si en castellà és «s» i «ç» si en castellà és «z» (professor, assegurar; plaça, força). Hi ha excepcions que cal memoritzar. Amb prefix no es duplica: asocial. La doble erra: la normativa del 2016 duplica la erra en derivats i compostos (arrítmia, correferent, erradicar).",
    "fuente_pagina": 10,
    "fuente_cara": 10,
@@ -3458,12 +3459,12 @@
    "subtema": "Parelles que es confonen",
    "concepto": "a/ha, em/hem, tan/tant, quan/quant",
    "dificultad": 3,
-   "enunciado": "Escriu la lletra que falta: «Fa ta_ fred que hem posat la calefacció.»",
+   "enunciado": "Escriu la lletra que falta: «L'aigua és ta_ freda que no em puc banyar.»",
    "ayuda_larga": "«a» és preposició (Vaig a Girona) i «ha» és el verb haver (Ha plogut). «Em» és el pronom «a mi» (Em truca) i «hem» és el verb haver (Hem sopat). «Tan» va davant d'un adjectiu o adverbi (tan lluny) i «tant» va sol, davant d'un nom o davant de «que» (tant de temps, plou tant). «Quan» és «cuando» (Quan vens?) i «quant» és «cuánto» (Quant val?).",
    "fuente_pagina": 12,
    "fuente_cara": 12,
    "tipo": "escrita",
-   "explicacion": "Tan. Davant d'un adjectiu (fred) va «tan», sense t final. Truc: «tan» és «tan» en castellà.",
+   "explicacion": "Tan. Davant d'un adjectiu (freda) va «tan», sense t final. Truc: «tan» davant d'adjectiu o adverbi; «tant» davant més, menys, millor i pitjor.",
    "campos": [
     {
      "etiqueta": "Lletra",
